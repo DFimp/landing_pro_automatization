@@ -14,8 +14,7 @@ const HeaderNav = () => {
                 <li key={index}>
                     <Link
                         href={`/${item.link}`}
-                        title={item.link}
-                        className='font-medium text-h15'
+                        className='font-medium text-h8'
                     >
                         {item.name}
                     </Link>
