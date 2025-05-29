@@ -1,6 +1,6 @@
 import Image from "next/image";
 import HeaderNav from "@/widgets/header/ui/HeaderNav";
-import Button from "@/shared/ui/Button";
+import Button from "@/shared/ui/button/Button";
 
 const Header = () => {
     return (
@@ -18,7 +18,10 @@ const Header = () => {
 
                 <div className='flex items-center gap-5'>
                     <HeaderNav />
-                    <Button text='Консультация'/>
+
+                    <div className='w-30'>
+                        <Button text='Консультация'/>
+                    </div>
                 </div>
             </div>
         </header>
