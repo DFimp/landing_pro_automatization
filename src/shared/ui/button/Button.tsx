@@ -17,9 +17,12 @@ const Button = ({
                     className = "",
                 }: ButtonProps) => {
     const variantClasses = {
-        primary: "bg-blue text-white text-h8 font-medium hover:bg-white hover:text-blue hover:border-blue",
-        secondary: "bg-blue2 text-white text-h5 font-semibold hover:bg-white hover:text-blue2 hover:border-blue2",
-        outline: "bg-white text-black text-h4 font-bold border-transparent hover:border-black hover:text-black active:bg-blue2 active:text-white",
+        primary: "bg-blue text-white text-h8 font-medium hover:bg-white hover:text-blue hover:border-blue " +
+            "active:bg-blue active:text-white",
+        secondary: "bg-blue2 text-white text-h5 font-semibold hover:bg-white hover:text-blue2 hover:border-blue2 " +
+            "active:bg-blue2 active:text-white",
+        outline: "bg-white text-blue text-h4 font-bold border-transparent hover:border-black hover:text-black " +
+            "active:bg-blue2 active:text-white",
     };
 
     const baseClass = "w-full px-4 py-2 rounded-4xl transition-colors duration-300 border-1 cursor-pointer";
