@@ -10,22 +10,15 @@
     /*Size*/
     --text-h1: 128px;
     --text-h2: 48px;
-    --text-h3: 24px;
-    --text-h4: 20px;
-    --text-h5: 24px;
-    --text-h6: 32px;
-    --text-h7: 20px;
-    --text-h8: 24px;
-    --text-h9: 16px;
-    --text-h10: 24px;
-    --text-h11: 48px;
-    --text-h12: 20px;
-    --h13-h13: 18px;
-    --h14-h14: 24px;
-    --text-h15: 14px;
+    --text-h3: 32px;
+    --text-h4: 24px;
+    --text-h5: 20px;
+    --text-h6: 18px;
+    --text-h7: 16px;
+    --text-h8: 14px;
 
     /*Colors*/
-    --color-gray-500: #828B8D;
+    --color-gray: #828B8D;
     --color-blue: #3760E7;
     --color-blue2: #1B46D4;
     --color-light-blue: #E2E2E2;
