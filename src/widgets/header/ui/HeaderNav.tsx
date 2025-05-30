@@ -1,15 +1,15 @@
 import Link from "next/link";
 
 const NavList = [
-    {name: "ВНЕДРЕНИЕ С0", link: "implementation" },
-    {name: "СОПРОВОЖДЕНИЕ", link: "about" },
-    {name: "ВИДЖЕТЫ", link: "contact" },
-    {name: "АНАЛИТИКА", link: "contact" },
+    {name: "ВНЕДРЕНИЕ С0", link: "/" },
+    {name: "СОПРОВОЖДЕНИЕ", link: "accompaniment" },
+    {name: "ВИДЖЕТЫ", link: "widgets" },
+    {name: "АНАЛИТИКА", link: "analytics" },
 ]
 
 const HeaderNav = () => {
     return(
-        <ul className='flex justify-between gap-5'>
+        <ul className='flex justify-between gap-5 bg-white'>
             {NavList.map((item, index) => (
                 <li key={index}>
                     <Link
