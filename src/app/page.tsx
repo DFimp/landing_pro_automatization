@@ -1,15 +1,19 @@
 import Hero from "@/widgets/hero/Hero";
 import Card from "@/shared/ui/card/Card";
 import {Services} from "@/widgets/services/Services";
-import ProcessList from "@/widgets/ProcessList/ProcessList";
+import ProcessList from "@/widgets/process/ProcessList";
+
 
 export default function Home() {
   return (
-      <div className="home mb-25 space-y-20">
+      <main className="home mb-25 pt-15 space-y-20">
           <Hero />
-          <Services />
+          <Services
+              text="Чем мы можем помочь вашему бизнесу"
+              link='/'
+          />
           <ProcessList />
           <Card />
-      </div>
+      </main>
   );
 }
