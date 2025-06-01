@@ -21,7 +21,7 @@ const Card = () => {
     }, [inView, controls]);
 
     return (
-        <motion.div
+        <motion.section
             ref={ref}
             initial={{ opacity: 0 }}
             animate={controls}
@@ -73,7 +73,7 @@ const Card = () => {
                     height={179}
                 />
             </div>
-        </motion.div>
+        </motion.section>
     );
 };
 

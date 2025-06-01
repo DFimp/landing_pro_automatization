@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Hero = () => {
     return(
-        <div className="hero">
+        <section className="hero">
             <div className='hero__container container flex justify-between items-center'>
                 <div className="space-y-9">
                     <h2 className='text-h3 font-semibold'>
@@ -25,7 +25,7 @@ const Hero = () => {
                     height={464}
                 />
             </div>
-        </div>
+        </section>
     )
 }
 
