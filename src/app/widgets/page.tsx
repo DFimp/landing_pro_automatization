@@ -2,7 +2,7 @@ import IndustryCards from "@/widgets/industry/IndustryCards";
 import FeaturesList from "@/widgets/feature/FeatureList";
 import StickyInfo from "@/shared/ui/stickyInfo/StickyInfo";
 import WorkSteps from "@/widgets/workSteps/WorkSteps";
-import Card from "@/shared/ui/card/Card";
+import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
 
 
 export default function Widgets() {
@@ -14,20 +14,17 @@ export default function Widgets() {
                 <h2 className="text-h2 font-bold max-w-4xl">
                     {title}
                 </h2>
-
                 <StickyInfo
                     text="amoCRM предлагает широкий спектр функций, которые помогают управлять продажами,
                     автоматизировать процессы и улучшать взаимодействие с клиентами."
                 />
-
-
                 <FeaturesList />
-
                 <IndustryCards />
+            </div>
 
-                <WorkSteps />
-
-                <Card />
+            <WorkSteps />
+            <div className="container">
+                <ConsultCard />
             </div>
         </main>
     );
