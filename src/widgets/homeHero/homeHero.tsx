@@ -1,7 +1,7 @@
 import Button from "@/shared/ui/button/Button";
 import Image from "next/image";
 
-const Hero = () => {
+const HomeHero = () => {
     return(
         <section className="hero">
             <div className='hero__container container flex justify-between items-center'>
@@ -29,4 +29,4 @@ const Hero = () => {
     )
 }
 
-export default Hero;
+export default HomeHero;

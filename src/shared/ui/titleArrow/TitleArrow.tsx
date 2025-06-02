@@ -1,14 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
+import {ServicesProps} from "@/shared/ui/titleArrow/models";
 
-type ServicesProps = {
-    text: string;
-    variant?: "primary" | "secondary" | "outline";
-    link: string;
-};
 
-export const Services: FC<ServicesProps> = ({
+
+export const TitleArrow: FC<ServicesProps> = ({
                                                 text,
                                                 variant = 'primary',
                                                 link
