@@ -1,16 +1,22 @@
 'use client'
 
 import { motion, useAnimation } from "framer-motion";
-import React, { useEffect } from "react";
+import React, {CSSProperties, useEffect} from "react";
 import { useInView } from "react-intersection-observer";
 
 type Props = {
     children: React.ReactNode;
     direction?: "left" | "right";
     className?: string;
+    style?: CSSProperties;
 };
 
-const AnimatedListItem = ({ children, direction = "left", className = "" }: Props) => {
+const AnimatedListItem = ({
+                              children,
+                              direction = "left",
+                              className = "",
+                              style,
+}: Props) => {
     const controls = useAnimation();
     const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
 
@@ -22,11 +28,9 @@ const AnimatedListItem = ({ children, direction = "left", className = "" }: Prop
 
     const variants = {
         hidden: {
-            opacity: 1,
-            x: direction === "left" ? -400 : 600,
+            x: direction === "left" ? -400 : 800,
         },
         visible: {
-            opacity: 1,
             x: 0,
             transition: {
                 duration: 1,
@@ -42,6 +46,7 @@ const AnimatedListItem = ({ children, direction = "left", className = "" }: Prop
             animate={controls}
             variants={variants}
             className={className}
+            style={style}
         >
             {children}
         </motion.li>
