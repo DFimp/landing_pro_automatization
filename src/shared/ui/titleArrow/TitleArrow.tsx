@@ -1,14 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
-import {ServicesProps} from "@/shared/ui/titleArrow/models";
+import {TittleArrowProps} from "@/shared/ui/titleArrow/models";
 
 
 
-export const TitleArrow: FC<ServicesProps> = ({
-                                                text,
-                                                variant = 'primary',
-                                                link
+export const TitleArrow: FC<TittleArrowProps> = ({
+                                                  text,
+                                                  variant = 'primary',
+                                                  link,
+                                                  className
                                             }) => {
     // Определяем путь к изображению в зависимости от варианта
     const getArrowSrc = () => {
@@ -35,8 +36,8 @@ export const TitleArrow: FC<ServicesProps> = ({
     const arrowDimensions = getArrowDimensions();
 
     return (
-        <section className='services'>
-            <div className={`services__container container flex justify-between items-center ${variant === "outline" ? 'relative' : ""}`}>
+        <section className={`tittleArrow ${className}`}>
+            <div className={`tittleArrow__container flex justify-between items-center ${variant === "outline" ? 'relative' : ""}`}>
                 <h2 className={`text-h3 font-semibold ${
                     variant === 'secondary' ? 'text-white' : ''
                 }`}>
