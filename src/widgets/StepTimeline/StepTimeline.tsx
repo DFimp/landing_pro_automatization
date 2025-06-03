@@ -1,61 +1,72 @@
 'use client'
 
 import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
-
-const steps = [
-    {
-        title: "Понедельник:\n планирование задач",
-        description:
-            "В начале каждой недели мы встречаемся с вами, обсуждаем текущие потребности и формируем список задач, которые нужно выполнить.",
-    },
-    {
-        title: "Еженедельная работа",
-        description:
-            "В течение недели наша команда последовательно решает задачи, придерживаясь установленного плана и приоритетов.",
-    },
-    {
-        title: "Пятница: сдача работ",
-        description:
-            "В конце недели мы предоставляем отчет о проделанной работе, показываем результаты и обсуждаем следующие шаги.",
-    },
-];
+import { useEffect, useRef, useState } from "react";
+import { steps } from "@/widgets/StepTimeline/lib";
 
 export default function StepTimeline() {
     const stepControls = useAnimation();
+    const containerRef = useRef<HTMLDivElement>(null);
+    const hasAnimatedRef = useRef(false); // для предотвращения повторной анимации
+    const [hasAnimated, setHasAnimated] = useState(false); // для обновления React-дерева
 
     useEffect(() => {
-        const sequence = async () => {
-            // Первая карточка сразу видима (пропускаем анимацию для index 0)
-            await stepControls.start((index) =>
-                index === 0 ? { opacity: 1, scale: 1 } : {}
-            );
+        const observer = new IntersectionObserver(
+            (entries) => {
+                const [entry] = entries;
+                if (entry.isIntersecting && !hasAnimatedRef.current) {
+                    hasAnimatedRef.current = true;
+                    setHasAnimated(true); // триггерим анимацию линии
 
-            // Анимируем остальные карточки с задержкой
-            for (let i = 1; i < steps.length; i++) {
-                await new Promise((res) => setTimeout(res, 675));
-                await stepControls.start((index) =>
-                    index === i ? { opacity: 1, scale: 1, transition: { duration: 0.4 } } : {}
-                );
+                    const sequence = async () => {
+                        // Первая карточка сразу видима
+                        await stepControls.start((index) =>
+                            index === 0 ? { opacity: 1, scale: 1 } : {}
+                        );
+
+                        // Анимируем остальные карточки с задержкой
+                        for (let i = 1; i < steps.length; i++) {
+                            await new Promise((res) => setTimeout(res, 675));
+                            await stepControls.start((index) =>
+                                index === i ? {
+                                    opacity: 1,
+                                    scale: 1,
+                                    transition: { duration: 0.4 }
+                                } : {}
+                            );
+                        }
+                    };
+                    sequence();
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        if (containerRef.current) {
+            observer.observe(containerRef.current);
+        }
+
+        return () => {
+            if (containerRef.current) {
+                observer.unobserve(containerRef.current);
             }
         };
-        sequence();
     }, []);
 
     const numPositions = [
-        {top: -20, left: 260},
-        {top: 140, left: 0},
-        {top: 270, left: -240},
-    ]
+        { top: -20, left: 260 },
+        { top: 140, left: 0 },
+        { top: 270, left: -240 },
+    ];
 
     return (
-        <div className="relative w-full h-[600px] text-white overflow-hidden">
+        <div ref={containerRef} className="relative w-full h-[650px] text-white overflow-x-hidden mb-20">
             {/* Диагональная линия */}
             <motion.div
                 initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
+                animate={hasAnimated ? { scaleX: 1 } : {}}
                 transition={{ duration: 5 }}
-                className="absolute top-[0] left-0 w-[110%] h-1 bg-blue-500 origin-left rotate-[21deg]"
+                className="absolute top-0 left-0 w-[110%] h-1 bg-blue-500 origin-left rotate-[21deg]"
             />
 
             {/* Steps */}
@@ -65,9 +76,12 @@ export default function StepTimeline() {
                         key={index}
                         custom={index}
                         animate={stepControls}
-                        initial={index === 0 ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                        initial={{ opacity: 0, scale: 0.8 }}
                         className="relative max-w-xs text-left"
-                        style={{top: `${numPositions[index].top}px`, left: `${numPositions[index].left}px`}}
+                        style={{
+                            top: `${numPositions[index].top}px`,
+                            left: `${numPositions[index].left}px`
+                        }}
                     >
                         <h4 className="font-semibold text-lg mb-10 max-w-50 whitespace-pre-line">
                             {step.title}
