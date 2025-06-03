@@ -1,4 +1,9 @@
+'use client'
+
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
 const services = [
     {
@@ -40,23 +45,33 @@ const services = [
 ];
 
 export default function AnalyticsResult() {
+    const containerRef = useRef(null);
+    const inView = useInView(containerRef, { once: true, threshold: 0.2 });
+
     return (
-        <>
-            <ul className='bg-black rounded-4xl grid grid-cols-2 gap-20 py-20 px-53'>
-                {services.map((service, idx) => (
-                    <li key={idx} className='flex items-end justify-center gap-12'>
-                        <Image src={service.img} alt={service.title} width={80} height={80} />
-                        <div className='contenet space-y-5'>
-                            <h4 className='font-semibold text-h5 text-white'>{service.title}</h4>
-                            <ul className='list-disc text-white'>
-                                {service.items.map((item, i) => (
-                                    <li key={i}>{item}</li>
-                                ))}
-                            </ul>
-                        </div>
-                    </li>
-                ))}
-            </ul>
-        </>
+        <ul
+            ref={containerRef}
+            className='bg-black rounded-4xl grid grid-cols-2 gap-20 py-20 px-53'
+        >
+            {services.map((service, idx) => (
+                <motion.li
+                    key={idx}
+                    className='flex items-end justify-center gap-12'
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={inView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.6, delay: idx * 0.3 }}
+                >
+                    <Image src={service.img} alt={service.title} width={80} height={80} />
+                    <div className='contenet space-y-5'>
+                        <h4 className='font-semibold text-h5 text-white'>{service.title}</h4>
+                        <ul className='list-disc text-white'>
+                            {service.items.map((item, i) => (
+                                <li key={i}>{item}</li>
+                            ))}
+                        </ul>
+                    </div>
+                </motion.li>
+            ))}
+        </ul>
     );
 }

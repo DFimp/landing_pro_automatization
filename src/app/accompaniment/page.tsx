@@ -1,112 +1,59 @@
-import {TitleArrow} from "@/shared/ui/titleArrow/TitleArrow";
-import "./style.css"
 import StickyInfo from "@/shared/ui/stickyInfo/StickyInfo";
-import Image from "next/image";
+import {TitleArrow} from "@/shared/ui/titleArrow/TitleArrow";
+import ProblemsGrid from "@/widgets/ProblemsGrid/ProblemsGrid";
 import StepTimeline from "@/widgets/StepTimeline/StepTimeline";
-
+import Tariffs from "@/widgets/tarrifs/Tarrifs";
+import HelpServices from "@/widgets/helpServices/HelpServices";
+import "./style.css"
 
 export default function Accompaniment() {
     return (
-        <main id="accompaniment" className="accompaniment mb-25 pt-15 mb-20">
-            <div className='accompaniment__container container space-y-20' >
+        <main id="accompaniment" className="accompaniment pb-25 pt-15 overflow-hidden space-y-20">
+            <div className='accompaniment__container container space-y-20'>
                 <div className='space-y-10'>
                     <h2 className='text-h2 text-white font-bold'>
                         Сопровождение
                     </h2>
-                    <p className='text-h4 text-white font-normal'>
+
+                    <p className='text-h4 text-white font-normal mb-20'>
                         <span className='font-bold'>Позаботимся</span> о том, чтобы amoCRM <span className='font-bold'>
-                    работала как часы</span>: возьмем на себя доработку и полное техническое
+                        работала как часы</span>: возьмем на себя доработку и полное техническое
                         сопровождение.
                     </p>
                 </div>
 
-
                 <StickyInfo
+                    text='CRM — это основа вашего бизнеса. Любые сбои в её работе напрямую влияют на его эффективность. '
                     left={false}
-                    text="CRM — это основа вашего бизнеса. Любые сбои в её работе напрямую влияют на его эффективность. "
                 />
+            </div>
 
+
+           <div className='container'>
+               <TitleArrow
+                   className='mt-40 mb-20'
+                   text='Вот часть распространенных проблем, которые влияют на качество работы с клиентами'
+                   link='/'
+                   variant='secondary'
+               />
+
+                <ProblemsGrid />
+            </div>
+
+            <div className='container'>
                 <TitleArrow
-                    text='Вот часть распространенных проблем, которые влияют на качество работы с клиентами'
-                    link='/'
-                    variant='secondary'
-                />
-
-                <div className='flex flex-wrap items-center justify-center gap-8'>
-                    <div className='card border-1 rounded-3xl shadow-2xl shadow-[#3760E7] px-10 py-15 space-y-3 max-w-85'>
-                        <Image src='/problem1.svg' alt="Проблема и ее решение" width={92} height={94} />
-                        <h3 className='text-white font-medium text-h5'>Отсутствие актуальной информации в карточке сделки</h3>
-                        <h4 className='text-white font-light text-h5'>
-                            Руководитель при заходе в карточку не понимает, на какой стадии диалог с клиентом. Любой другой
-                            сотрудник также, без переслушивания всех звонков из карточки, не сможет понять происходящее.
-                        </h4>
-                    </div>
-                    <div className='card border-1 rounded-3xl shadow-2xl shadow-[#3760E7] px-10 py-15 space-y-3 max-w-85'>
-                        <Image src='/problem1.svg' alt="Проблема и ее решение" width={92} height={94} />
-                        <h3 className='text-white font-medium text-h5'>Отсутствие актуальной информации в карточке сделки</h3>
-                        <h4 className='text-white font-light text-h5'>
-                            Руководитель при заходе в карточку не понимает, на какой стадии диалог с клиентом. Любой другой
-                            сотрудник также, без переслушивания всех звонков из карточки, не сможет понять происходящее.
-                        </h4>
-                    </div>
-                    <div className='card border-1 rounded-3xl shadow-2xl shadow-[#3760E7] px-10 py-15 space-y-3 max-w-85'>
-                        <Image src='/problem1.svg' alt="Проблема и ее решение" width={92} height={94} />
-                        <h3 className='text-white font-medium text-h5'>Отсутствие актуальной информации в карточке сделки</h3>
-                        <h4 className='text-white font-light text-h5'>
-                            Руководитель при заходе в карточку не понимает, на какой стадии диалог с клиентом. Любой другой
-                            сотрудник также, без переслушивания всех звонков из карточки, не сможет понять происходящее.
-                        </h4>
-                    </div>
-                    <div className='card border-1 rounded-3xl shadow-2xl shadow-[#3760E7] px-10 py-15 space-y-3 max-w-85'>
-                        <Image src='/problem1.svg' alt="Проблема и ее решение" width={92} height={94} />
-                        <h3 className='text-white font-medium text-h5'>Отсутствие актуальной информации в карточке сделки</h3>
-                        <h4 className='text-white font-light text-h5'>
-                            Руководитель при заходе в карточку не понимает, на какой стадии диалог с клиентом. Любой другой
-                            сотрудник также, без переслушивания всех звонков из карточки, не сможет понять происходящее.
-                        </h4>
-                    </div>
-                    <div className='card border-1 rounded-3xl shadow-2xl shadow-[#3760E7] px-10 py-15 space-y-3 max-w-85'>
-                        <Image src='/problem1.svg' alt="Проблема и ее решение" width={92} height={94} />
-                        <h3 className='text-white font-medium text-h5'>Отсутствие актуальной информации в карточке сделки</h3>
-                        <h4 className='text-white font-light text-h5'>
-                            Руководитель при заходе в карточку не понимает, на какой стадии диалог с клиентом. Любой другой
-                            сотрудник также, без переслушивания всех звонков из карточки, не сможет понять происходящее.
-                        </h4>
-                    </div>
-                </div>
-
-                <TitleArrow
+                    className='mt-40 mb-20'
                     text='Как мы можем помочь?'
                     link='/'
                     variant='secondary'
                 />
 
-                <div className='flex flex-wrap gap-3'>
-                    <div className="flex items-center justify-center flex-col text-center bg-transparent border-1 rounded-3xl shadow-2xl shadow-[#3760E7] px-20 py-15 space-y-3 h-[515px] w-[573px]">
-                        <Image src='/help1.svg' alt="Помощь" width={230} height={230} />
-                        <h4 className='text-h4 font-bold text-white'>Техническая поддержка</h4>
-                    </div>
-                    <div className="flex items-center justify-center flex-col text-center bg-transparent border-1 rounded-3xl shadow-2xl shadow-[#3760E7] px-20 py-15 space-y-3 h-[515px] w-[573px]">
-                        <Image src='/help1.svg' alt="Помощь" width={230} height={230} />
-                        <h4 className='text-h4 font-bold text-white'>Техническая поддержка</h4>
-                    </div>
-                    <div className="flex items-center justify-center flex-col text-center bg-transparent border-1 rounded-3xl shadow-2xl shadow-[#3760E7] px-20 py-15 space-y-3 h-[515px] w-[573px]">
-                        <Image src='/help1.svg' alt="Помощь" width={230} height={230} />
-                        <h4 className='text-h4 font-bold text-white'>Техническая поддержка</h4>
-                    </div>
-                    <div className="flex items-center justify-center flex-col text-center bg-transparent border-1 rounded-3xl shadow-2xl shadow-[#3760E7] px-20 py-15 space-y-3 h-[515px] w-[573px]">
-                        <Image src='/help1.svg' alt="Помощь" width={230} height={230} />
-                        <h4 className='text-h4 font-bold text-white'>Техническая поддержка</h4>
-                    </div>
-                    <div className="flex items-center justify-center flex-col text-center bg-transparent border-1 rounded-3xl shadow-2xl shadow-[#3760E7] px-20 py-15 space-y-3 h-[515px] w-[573px]">
-                        <Image src='/help1.svg' alt="Помощь" width={230} height={230} />
-                        <h4 className='text-h4 font-bold text-white'>Техническая поддержка</h4>
-                    </div>
-                </div>
+                <HelpServices />
+            </div>
 
-
+            <div className="container">
                 <h3 className='font-semibold text-h3 text-white'>Как мы работаем: четко и по Scrum</h3>
-                <h4 className='font-semibold text-h4 text-white'>
+                <h4 className='font-semibold text-h4 text-white mb-20'>
                     Мы используем гибкую методологию <span className='font-bold text-h3'>Scrum</span>, чтобы ваше сопровождение amoCRM было <span className='text-h3 font-bold'>эффективным и прозрачным</span>.
                 </h4>
             </div>
@@ -119,7 +66,11 @@ export default function Accompaniment() {
                     качество работы.
                 </h4>
 
-                <TitleArrow text="Тарифы" link='/' variant='secondary'/>
+                <TitleArrow
+                    className='mt-20 mb-20'
+                    text="Тарифы" link='/'
+                    variant='secondary'/>
+                <Tariffs />
             </div>
         </main>
     )
