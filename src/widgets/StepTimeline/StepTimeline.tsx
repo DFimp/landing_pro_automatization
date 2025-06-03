@@ -37,7 +37,7 @@ export default function StepTimeline() {
     }, []);
 
     return (
-        <div ref={containerRef} className="relative w-full h-[650px] text-white overflow-x-hidden mb-20">
+        <div ref={containerRef} className="relative w-full h-[650px] text-white overflow-hidden mb-20">
             {/* Линия – расширяется до нужной ширины в пикселях */}
             <motion.div
                 initial={{ width: 0 }}
