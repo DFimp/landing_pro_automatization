@@ -1,4 +1,4 @@
-import StepTimeline from "@/widgets/stepTimeline/StepTimeline";
+import StepTimeline from "@/widgets/accompaniment/AccompanimentScrumSection/ui/StepTimeline";
 
 
 export function AccompanimentScrumSection() {

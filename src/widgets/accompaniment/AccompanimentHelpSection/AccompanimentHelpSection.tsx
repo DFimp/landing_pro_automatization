@@ -1,5 +1,5 @@
 import { TitleArrow } from "@/shared/ui/titleArrow/TitleArrow";
-import HelpServices from "@/widgets/helpServices/HelpServices";
+import HelpServices from "@/widgets/accompaniment/AccompanimentHelpSection/ui/HelpServices";
 
 export function AccompanimentHelpSection() {
     return (

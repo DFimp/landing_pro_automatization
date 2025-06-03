@@ -1,5 +1,5 @@
 import { TitleArrow } from "@/shared/ui/titleArrow/TitleArrow";
-import Tariffs from "@/widgets/tarrifs/AccompanimentTariffsSection";
+import Tariffs from "@/widgets/accompaniment/AccompanimentTariffsSection/ui/Tariffs";
 
 export function AccompanimentTariffsSection() {
     return (

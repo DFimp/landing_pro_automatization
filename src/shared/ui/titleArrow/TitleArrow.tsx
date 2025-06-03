@@ -9,7 +9,7 @@ export const TitleArrow: FC<TittleArrowProps> = ({
                                                   text,
                                                   variant = 'primary',
                                                   link,
-                                                  className
+                                                  className = ""
                                             }) => {
     // Определяем путь к изображению в зависимости от варианта
     const getArrowSrc = () => {
@@ -36,9 +36,9 @@ export const TitleArrow: FC<TittleArrowProps> = ({
     const arrowDimensions = getArrowDimensions();
 
     return (
-        <section className={`tittleArrow ${className}`}>
+        <div className={`tittleArrow container ${className}`}>
             <div className={`tittleArrow__container flex justify-between items-center ${variant === "outline" ? 'relative' : ""}`}>
-                <h2 className={`text-h3 font-semibold ${
+                <h2 className={`text-h4 font-semibold ${
                     variant === 'secondary' ? 'text-white' : ''
                 }`}>
                     {text}
@@ -53,6 +53,6 @@ export const TitleArrow: FC<TittleArrowProps> = ({
                     />
                 </Link>
             </div>
-        </section>
+        </div>
     );
 };

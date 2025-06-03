@@ -1,5 +1,5 @@
 import { TitleArrow } from "@/shared/ui/titleArrow/TitleArrow";
-import ProblemsGrid from "@/widgets/problemsGrid/ProblemsGrid";
+import ProblemsGrid from "@/widgets/accompaniment/AccompanimentProblemsSection/ui/ProblemsGrid";
 
 export function AccompanimentProblemsSection() {
     return (
