@@ -1,72 +1,49 @@
 'use client'
 
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { steps } from "@/widgets/StepTimeline/lib";
 
 export default function StepTimeline() {
-    const stepControls = useAnimation();
     const containerRef = useRef<HTMLDivElement>(null);
-    const hasAnimatedRef = useRef(false); // для предотвращения повторной анимации
-    const [hasAnimated, setHasAnimated] = useState(false); // для обновления React-дерева
+    const [visibleStep, setVisibleStep] = useState(0);
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                const [entry] = entries;
-                if (entry.isIntersecting && !hasAnimatedRef.current) {
-                    hasAnimatedRef.current = true;
-                    setHasAnimated(true); // триггерим анимацию линии
-
-                    const sequence = async () => {
-                        // Первая карточка сразу видима
-                        await stepControls.start((index) =>
-                            index === 0 ? { opacity: 1, scale: 1 } : {}
-                        );
-
-                        // Анимируем остальные карточки с задержкой
-                        for (let i = 1; i < steps.length; i++) {
-                            await new Promise((res) => setTimeout(res, 675));
-                            await stepControls.start((index) =>
-                                index === i ? {
-                                    opacity: 1,
-                                    scale: 1,
-                                    transition: { duration: 0.4 }
-                                } : {}
-                            );
-                        }
-                    };
-                    sequence();
-                }
-            },
-            { threshold: 0.1 }
-        );
-
-        if (containerRef.current) {
-            observer.observe(containerRef.current);
-        }
-
-        return () => {
-            if (containerRef.current) {
-                observer.unobserve(containerRef.current);
-            }
-        };
-    }, []);
-
+    // Точки в пространстве (top / left по макету)
     const numPositions = [
         { top: -20, left: 260 },
         { top: 140, left: 0 },
         { top: 270, left: -240 },
     ];
 
+    // Длина линии до каждой точки (по x, если линия наклонена под 21°)
+    const lineStops = [750, 1200, 2500]; // ← заменишь на реальные пиксели от левого края
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (!containerRef.current) return;
+
+            const rect = containerRef.current.getBoundingClientRect();
+            const viewHeight = window.innerHeight || document.documentElement.clientHeight;
+            const progress = 1 - Math.max(0, Math.min(1, rect.bottom / (viewHeight + rect.height)));
+
+            if (progress >= 0.55) setVisibleStep(3);
+            else if (progress >= 0.3) setVisibleStep(2);
+            else if (progress >= 0.05) setVisibleStep(1);
+            else setVisibleStep(0);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
         <div ref={containerRef} className="relative w-full h-[650px] text-white overflow-x-hidden mb-20">
-            {/* Диагональная линия */}
+            {/* Линия – расширяется до нужной ширины в пикселях */}
             <motion.div
-                initial={{ scaleX: 0 }}
-                animate={hasAnimated ? { scaleX: 1 } : {}}
-                transition={{ duration: 5 }}
-                className="absolute top-0 left-0 w-[110%] h-1 bg-blue-500 origin-left rotate-[21deg]"
+                initial={{ width: 0 }}
+                animate={{ width: lineStops[visibleStep - 1] || 0 }}
+                transition={{ duration: 0.5 }}
+                className="absolute top-0 left-0 h-1 bg-blue-500 origin-left rotate-[21deg]"
             />
 
             {/* Steps */}
@@ -74,9 +51,12 @@ export default function StepTimeline() {
                 {steps.map((step, index) => (
                     <motion.div
                         key={index}
-                        custom={index}
-                        animate={stepControls}
                         initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{
+                            opacity: visibleStep > index ? 1 : 0,
+                            scale: visibleStep > index ? 1 : 0.8
+                        }}
+                        transition={{ duration: 0.5 }}
                         className="relative max-w-xs text-left"
                         style={{
                             top: `${numPositions[index].top}px`,
