@@ -4,7 +4,7 @@ import Button from "@/shared/ui/button/Button";
 
 const Header = () => {
     return (
-        <header id='header' className='mt-2.5'>
+        <header id='header'>
             <div className='header__container container flex justify-between items-center'>
                 <div className='header__logo'>
                     <Image
