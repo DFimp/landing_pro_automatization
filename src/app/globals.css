@@ -6,6 +6,10 @@
     padding: 0 1rem;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 @theme {
     /*Size*/
     --text-h1: 128px;
