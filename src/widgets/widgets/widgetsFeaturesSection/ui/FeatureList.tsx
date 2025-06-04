@@ -1,28 +1,25 @@
 import Link from "next/link";
 import Image from "next/image";
+import {links} from "@/widgets/widgets/widgetsFeaturesSection/ui/lib";
+import * as motion from "motion/react-client"
 
-const links = [
-    { name: "Управление сделками", link: "/" },
-    { name: "Автоматизация продаж", link: "/" },
-    { name: "Интеграции", link: "/" },
-    { name: "Документооборот", link: "/" },
-    { name: "CRM-платформа для общения с клиентами", link: "/" },
-    { name: "Управление контактами и клиентами", link: "/" },
-    { name: "Продвинутые отчёты и аналитика", link: "/" },
-    { name: "Обратная связь и поддержка", link: "/" },
-];
 
 export default function FeaturesList() {
     return (
-        <ul className="grid grid-cols-2 gap-4 mt-30">
+        <ul className="grid grid-cols-2 gap-8 mt-20">
             {links.map((link) => (
-                    <li key={link.name} className="bg-[#D8E3FD] rounded-full">
-                <Link className="flex justify-between items-center px-7.5 py-5" href={link.link}>
-                    {link.name}
-                    <Image src="/cross.svg" alt="Перейти" width={30} height={30} />
-    </Link>
-    </li>
-))}
-    </ul>
-);
+                    <motion.li
+                        key={link.name}
+                        className="bg-[#D8E3FD] rounded-full"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    >
+                        <Link className="flex justify-between items-center px-7.5 py-5" href={link.link}>
+                            {link.name}
+                            <Image src="/cross.svg" alt="Перейти" width={30} height={30} />
+                        </Link>
+                    </motion.li>
+            ))}
+        </ul>
+    );
 }
