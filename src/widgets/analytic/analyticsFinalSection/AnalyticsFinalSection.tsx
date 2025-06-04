@@ -3,9 +3,11 @@ import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
 
 export function AnalyticsFinalSection() {
     return (
-        <section className="container space-y-20">
+        <section className='flex flex-col gap-20'>
             <WhyChooseUs />
-            <ConsultCard />
+            <div className='container'>
+                <ConsultCard />
+            </div>
         </section>
     );
 }

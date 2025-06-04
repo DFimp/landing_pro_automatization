@@ -3,9 +3,8 @@ import Tariffs from "@/widgets/accompaniment/AccompanimentTariffsSection/ui/Tari
 
 export function AccompanimentTariffsSection() {
     return (
-        <div className='flex flex-col gap-20'>
+        <div className='flex flex-col gap-20 mt-20'>
             <TitleArrow
-                className='mt-20 mb-20'
                 text="Тарифы"
                 link='/'
                 variant='secondary'

@@ -3,9 +3,8 @@ import HelpServices from "@/widgets/accompaniment/AccompanimentHelpSection/ui/He
 
 export function AccompanimentHelpSection() {
     return (
-        <div className='flex flex-col gap-20'>
+        <div className='flex flex-col gap-20 mt-20'>
             <TitleArrow
-                className='mt-40 mb-20'
                 text='Как мы можем помочь?'
                 link='/'
                 variant='secondary'

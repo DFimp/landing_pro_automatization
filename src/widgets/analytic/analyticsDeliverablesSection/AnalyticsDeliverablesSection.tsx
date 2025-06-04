@@ -3,11 +3,11 @@ import { AnimatedResultsList } from "@/widgets/analytic/analyticsDeliverablesSec
 
 export function AnalyticsDeliverablesSection() {
     return (
-        <>
+        <section>
             <div className="container">
                 <TitleArrow text="Что вы получите в результате?" link="/" />
             </div>
             <AnimatedResultsList />
-        </>
+        </section>
     );
 }

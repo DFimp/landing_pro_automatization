@@ -5,6 +5,7 @@ export function AccompanimentProblemsSection() {
     return (
         <section className='flex flex-col gap-20'>
             <TitleArrow
+                className='mt-40'
                 text='Вот часть распространенных проблем, которые влияют на качество работы с клиентами'
                 link='/'
                 variant='secondary'
