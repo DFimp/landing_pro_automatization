@@ -2,15 +2,15 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import {services} from "@/widgets/accompaniment/AccompanimentHelpSection/ui/lib";
-
+import { services } from "@/widgets/accompaniment/AccompanimentHelpSection/ui/lib";
+import * as motion from "motion/react-client";
 
 export default function HelpServices() {
-
     const [flippedStates, setFlippedStates] = useState<boolean[]>(
         Array(services.length).fill(false)
     );
 
+    const [autoFlipped, setAutoFlipped] = useState(true);
 
     const handleClick = (index: number) => {
         setFlippedStates((prev) => {
@@ -18,11 +18,17 @@ export default function HelpServices() {
             newState[index] = !newState[index];
             return newState;
         });
+
+        // если пользователь кликнул по первой карточке — отключаем автофлип
+        if (index === 0) {
+            setAutoFlipped(false);
+        }
     };
 
     return (
-        <section className='flex flex-wrap gap-12 mb-20 container'>
+        <div className='flex flex-wrap gap-12 mb-20 container'>
             {services.map((service, index) => {
+                const isFlipped = flippedStates[index];
 
                 return (
                     <ul
@@ -30,18 +36,36 @@ export default function HelpServices() {
                         onClick={() => handleClick(index)}
                         className="relative w-[550px] h-[515px] perspective cursor-pointer"
                     >
-                        <li
+                        <motion.li
                             className="relative w-full h-full"
                             style={{ transformStyle: "preserve-3d" }}
+                            animate={{ rotateY: isFlipped ? 180 : 0 }}
+                            transition={{ duration: 0.8 }}
+                            onViewportEnter={() => {
+                                if (index === 0 && autoFlipped) {
+                                    setFlippedStates((prev) => {
+                                        const newState = [...prev];
+                                        newState[0] = true;
+                                        return newState;
+                                    });
+                                }
+                            }}
+                            viewport={{ once: true, amount: 1 }} // только когда хотя бы 60% карточки видно
                         >
                             {/* Front */}
-                            <div className="absolute w-full h-full backface-hidden flex flex-col items-center justify-center text-center bg-transparent border-1 rounded-3xl shadow-xl shadow-[#3760E7] px-20 py-15 space-y-3">
+                            <div
+                                style={{ boxShadow: `0 0 15px rgba(55, 96, 231, 0.5)` }}
+                                className="absolute w-full h-full backface-hidden flex flex-col items-center justify-center text-center bg-transparent border rounded-3xl px-20 py-15 space-y-3"
+                            >
                                 <Image src={service.image} alt="Помощь" width={230} height={230} />
                                 <h4 className='text-h4 font-bold text-white'>{service.title}</h4>
                             </div>
 
                             {/* Back */}
-                            <div className="absolute w-full h-full backface-hidden rotate-y-180 flex flex-col items-center justify-center text-center bg-transparent border-1 rounded-3xl shadow-xl shadow-[#3760E7] px-20 py-15 space-y-3">
+                            <div
+                                style={{ boxShadow: `0 0 15px rgba(55, 96, 231, 0.5)` }}
+                                className="absolute w-full h-full backface-hidden rotate-y-180 flex flex-col items-center justify-center text-center bg-transparent border rounded-3xl px-20 py-15 space-y-3"
+                            >
                                 <Image src={service.backside.image} alt="Back" width={140} height={140} />
                                 <h4 className='text-h5 font-normal text-white mb-10'>{service.backside.title}</h4>
                                 <ul className='text-white list-disc text-left'>
@@ -50,10 +74,10 @@ export default function HelpServices() {
                                     ))}
                                 </ul>
                             </div>
-                        </li>
+                        </motion.li>
                     </ul>
                 );
             })}
-        </section>
+        </div>
     );
 }
