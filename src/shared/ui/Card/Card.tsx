@@ -22,8 +22,6 @@ export const Card = ({
                          content,
                          withArrow = true,
                          variant = 'simple',
-
-                         // Expandable варианта
                          index,
                          description,
                          result,
@@ -36,14 +34,14 @@ export const Card = ({
             <li
                 onClick={() => setIsExpanded(!isExpanded)}
                 className={`
-          snap-start shrink-0 bg-black text-white rounded-4xl px-10 py-10
-          flex flex-col justify-between relative cursor-pointer
-          transition-all duration-500 ease-in-out min-w-[360px] will-change-transform
-          ${isExpanded ? "max-h-[800px]" : "max-h-[270px]"}
-          ${isFirst ? "ml-[175px]" : "0"}
-        `}
+                    snap-start shrink-0 bg-black text-white rounded-4xl px-10 py-10
+                    flex flex-col justify-between relative cursor-pointer
+                    transition-all duration-500 ease-in-out min-w-[360px] will-change-transform
+                    ${isExpanded ? "max-h-[800px]" : "max-h-[270px]"}
+                    ${isFirst ? "ml-[175px]" : ""}
+                `}
             >
-                <div>
+                <div className='card__header'>
                     <h4 className="text-h4 font-bold">Шаг - {index! + 1}.</h4>
                     <p className="font-semibold text-h5 max-w-62.5">
                         {content}
@@ -62,22 +60,26 @@ export const Card = ({
                 </div>
 
                 {description && (
-                    <div
-                        className={`
-              transition-all duration-500 ease-in-out mt-8
-              ${isExpanded ? "opacity-100" : "opacity-0"}
-            `}
-                    >
-                        <ul className="max-w-60 space-y-5 list-disc list-inside">
-                            {description.map((item, i) => (
-                                <li key={i}>{item}</li>
-                            ))}
-                        </ul>
+                    <>
+                        <div
+                            className={`
+                                transition-all duration-500 ease-in-out mt-8 flex flex-col justify-between
+                                ${isExpanded ? "opacity-100" : "opacity-0"}
+                            `}
+                        >
+                            <ul className="max-w-60 space-y-5 list-disc list-inside">
+                                {description.map((item, i) => (
+                                    <li key={i}>{item}</li>
+                                ))}
+                            </ul>
+                        </div>
 
-                        <p className="mt-4 max-w-60">
-                            <span className="text-blue">В результате:</span> {result}.
-                        </p>
-                    </div>
+                        {result && (
+                            <p className="mt-4 max-w-65">
+                                <span className="text-blue">В результате:</span> {result}.
+                            </p>
+                        )}
+                    </>
                 )}
             </li>
         );
