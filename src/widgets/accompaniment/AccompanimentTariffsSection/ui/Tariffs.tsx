@@ -1,21 +1,35 @@
-'use client'
-
 import Button from "@/shared/ui/button/Button";
 import { Tariff } from "@/widgets/accompaniment/AccompanimentTariffsSection/ui/models";
 import {tariffs} from "@/widgets/accompaniment/AccompanimentTariffsSection/ui/lib";
-
+import * as motion from "motion/react-client"
+import Image from "next/image";
 
 
 export default function Tariffs() {
-
     return (
         <section className='container'>
             <ul className='flex justify-between items-center gap-8'>
                 {tariffs.map((tariff: Tariff, index: number) => (
-                    <li
+                    <motion.li
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.8 }}
+                        transition={{ duration: 0.5, delay: index * 0.2 }}
+                        style={{ borderColor: "#3760E7" }}
                         key={index}
-                        className='card border-1 rounded-3xl shadow-xl shadow-[#3760E7] px-10 py-15 max-w-85 space-y-10'
+                        className='card border-1 rounded-3xl px-10 py-15 max-w-85 space-y-10 relative'
                     >
+                        {
+                            index === 0 &&
+                            <Image
+                                className='absolute top-0 left-0'
+                                src="/ribbon.svg"
+                                alt='Выгода'
+                                width={371}
+                                height={534}
+                            />
+                        }
+
                         <h3 className='text-white font-semibold text-h4'>{tariff.title}</h3>
                         <ul className='list-disc text-white font-normal text-h5'>
                             {tariff.features.map((feature: string, i: number) => (
@@ -24,7 +38,7 @@ export default function Tariffs() {
                         </ul>
                         <h4 className='text-white font-semibold text-h4'>{tariff.price}</h4>
                         <Button text="Купить" variant='outline' />
-                    </li>
+                    </motion.li>
                 ))}
             </ul>
         </section>
