@@ -8,7 +8,7 @@ import {
 
 export default function Widgets() {
     return (
-        <main className="widgets py-20 space-y-20">
+        <main id="widgets" className="pb-20 pt-20">
             <WidgetsHeroSection />
             <WidgetsFeaturesSection />
             <WidgetsStepsSection />

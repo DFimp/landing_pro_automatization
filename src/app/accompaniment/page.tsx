@@ -12,14 +12,12 @@ import {
 
 export default function Accompaniment() {
     return (
-        <main id="accompaniment" className="pt-20 pb-20">
-            <div className='accompaniment__container space-y-20'>
-                <AccompanimentHeroSection />
-                <AccompanimentProblemsSection />
-                <AccompanimentHelpSection />
-                <AccompanimentScrumSection />
-                <AccompanimentTariffsSection />
-            </div>
+        <main id="accompaniment" className="pb-20 pt-20">
+            <AccompanimentHeroSection />
+            <AccompanimentProblemsSection />
+            <AccompanimentHelpSection />
+            <AccompanimentScrumSection />
+            <AccompanimentTariffsSection />
         </main>
     );
 }
