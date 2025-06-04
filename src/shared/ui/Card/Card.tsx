@@ -1,7 +1,7 @@
-'use client';
+"use client"
 
-import React, { useState } from "react";
 import Image from "next/image";
+import React, {useState} from "react";
 
 interface CardProps {
     // Общие пропсы
@@ -75,7 +75,7 @@ export const Card = ({
                         </div>
 
                         {result && (
-                            <p className="mt-4 max-w-65">
+                            <p className={`mt-4 max-w-65 transition-opacity duration-600 ease-in-out ${isExpanded ? "opacity-100" : "opacity-0"}`}>
                                 <span className="text-blue">В результате:</span> {result}.
                             </p>
                         )}
