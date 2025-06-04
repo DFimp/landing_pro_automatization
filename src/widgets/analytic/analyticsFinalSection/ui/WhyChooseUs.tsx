@@ -1,23 +1,15 @@
-'use client'
-
 import Image from 'next/image';
-import React, { useRef } from 'react';
+import React from 'react';
 import { Card } from "@/shared/ui/Card/Card";
-import { motion, useInView } from 'framer-motion';
+import * as motion from "motion/react-client"
 
 const WhyChooseUs = () => {
-    const amoRef = useRef(null);
-    const isInView = useInView(amoRef, {
-        threshold: 0.5, // половина элемента в зоне видимости
-        once: true
-    });
-
     return (
-        <section>
+        <div className='mt-20'>
             <div className="text-center container overflow">
                 <h2 className='font-bold text-h2 mb-6'>Почему выбирают нас?</h2>
-                <div className='mx-auto max-w-3xl px-4'>
-                    <p className='text-h5 font-normal mb-6'>
+                <div className='mx-auto max-w-3xl px-4 mb-20'>
+                    <p className='text-h5 font-normal '>
                         Автоматизация становится умнее с каждым днем —
                         <span className='font-medium text-h4'> Мы </span>
                         внедряем самые актуальные инструменты, чтобы
@@ -50,7 +42,6 @@ const WhyChooseUs = () => {
 
                 <motion.div
                     initial={{ x: 300, opacity: 0 }}
-                    animate={isInView ? { x: 0, opacity: 1 } : {}}
                     transition={{ duration: 0.8, ease: 'easeOut' }}
                     className='absolute top-0 right-0 overflow-x-hidden'
                 >
@@ -64,7 +55,7 @@ const WhyChooseUs = () => {
             </div>
 
             {/* Вторая строка с карточками и RM слева */}
-            <div className='relative' ref={amoRef}>
+            <div className='relative'>
                 <div className='flex justify-end gap-20 container'>
                     <Card
                         title="Опыт"
@@ -86,7 +77,6 @@ const WhyChooseUs = () => {
 
                 <motion.div
                     initial={{ x: -300, opacity: 0 }}
-                    animate={isInView ? { x: 0, opacity: 1 } : {}}
                     transition={{ duration: 0.8, ease: 'easeOut' }}
                     className='absolute top-0 left-0'
                 >
@@ -98,7 +88,7 @@ const WhyChooseUs = () => {
                     />
                 </motion.div>
             </div>
-        </section>
+        </div>
     );
 };
 
