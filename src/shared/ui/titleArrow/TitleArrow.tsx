@@ -36,22 +36,25 @@ export const TitleArrow: FC<TittleArrowProps> = ({
     const arrowDimensions = getArrowDimensions();
 
     return (
-        <div className={`tittleArrow container ${className}`}>
-            <div className={`tittleArrow__container flex justify-between items-center ${variant === "outline" ? 'relative' : ""}`}>
-                <h2 className={`text-h4 font-semibold ${
-                    variant === 'secondary' ? 'text-white' : ''
-                }`}>
-                    {text}
-                </h2>
+        <div className={`${className}`}>
+            <div className={`tittleArrow ${variant !== "outline" && "container"} ${className}`}>
+                <div className={`tittleArrow__container flex justify-between items-center ${variant === "outline" ? 'relative' : ""}`}>
+                    <h2 className={`text-h4 font-semibold
+                    ${variant === "outline" && "container"} 
+                    ${variant === 'secondary' ? 'text-white' : ''
+                    }`}>
+                        {text}
+                    </h2>
 
-                <Link href={link} passHref className={variant === 'outline' ? "absolute -left-45 top-15" : ""}>
-                    <Image
-                        src={arrowSrc}
-                        alt="Стрелочка перехода"
-                        width={arrowDimensions.width}
-                        height={arrowDimensions.height}
-                    />
-                </Link>
+                    <Link href={link} passHref className={variant === 'outline' ? "absolute left-0 top-15" : ""}>
+                        <Image
+                            src={arrowSrc}
+                            alt="Стрелочка перехода"
+                            width={arrowDimensions.width}
+                            height={arrowDimensions.height}
+                        />
+                    </Link>
+                </div>
             </div>
         </div>
     );
