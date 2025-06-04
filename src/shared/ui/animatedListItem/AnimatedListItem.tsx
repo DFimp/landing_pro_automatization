@@ -20,11 +20,11 @@ export const AnimatedListItem = ({
         <motion.li
             key={index}
             initial={{
-                x: isLeft ? -50 : 300,
+                x: isLeft ? -50 : 200,
                 opacity: 0
             }}
             whileInView={{
-                x: isLeft ? 0 : 150,
+                x: 0,
                 opacity: 1
             }}
             transition={{ duration: 0.8 }}
