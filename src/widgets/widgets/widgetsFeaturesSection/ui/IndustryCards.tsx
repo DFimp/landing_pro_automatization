@@ -27,7 +27,7 @@ export default function IndustryCards() {
                     className="grid grid-cols-5 gap-4"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
+                    viewport={{ once: true, amount: 1 }}
                     transition={{ duration: 0.6, delay: rowIndex * 0.3 }}
                 >
                     {row.map((card, index) => (
