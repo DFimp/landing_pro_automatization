@@ -57,10 +57,10 @@ const WhyChooseUs = () => {
                             }
                         />
                         <Card
-                            title="Опыт"
+                            title="Прозрачность"
                             content={
                                 <p>
-                                    Более <span className="text-blue text-6xl">100</span> успешных проектов
+                                    Вы всегда в курсе, что мы делаем.
                                 </p>
                             }
                         />
@@ -95,18 +95,18 @@ const WhyChooseUs = () => {
                 <div className="flex justify-end gap-5 container h-full">
                     <div className="flex gap-5 items-center">
                         <Card
-                            title="Опыт"
+                            title="Современные технологии"
                             content={
                                 <p>
-                                    Более <span className="text-blue text-6xl">100</span> успешных проектов
+                                    Используем лучшие инструменты и методы.
                                 </p>
                             }
                         />
                         <Card
-                            title="Опыт"
+                            title="Индивидуальный подход"
                             content={
                                 <p>
-                                    Более <span className="text-blue text-6xl">100</span> успешных проектов
+                                    Каждое решение подстроено под вас.
                                 </p>
                             }
                         />
