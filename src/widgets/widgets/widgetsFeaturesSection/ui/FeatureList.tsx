@@ -14,7 +14,9 @@ export default function FeaturesList() {
                         whileHover={{ scale: 1.1 }}
                         transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     >
-                        <Link className="flex justify-between items-center px-7.5 py-5" href={link.link}>
+                        <Link className="text-h5 font-medium flex
+                        justify-between items-center
+                        px-7.5 py-5" href={link.link}>
                             {link.name}
                             <Image src="/cross.svg" alt="Перейти" width={30} height={30} />
                         </Link>
