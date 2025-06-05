@@ -22,7 +22,7 @@ const Header = () => {
                 <div className='flex items-center gap-5'>
                     <HeaderNav />
 
-                    <div className='w-34'>
+                    <div className='w-40'>
                         <Button
                             className="text-h8 font-medium"
                             text='КОНСУЛЬТАЦИЯ'/>
