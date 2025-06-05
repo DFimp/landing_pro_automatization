@@ -10,7 +10,7 @@ export function AnalyticsHeroSection() {
             <StickyInfo text="Начнём проект с надёжного фундамента" />
 
             <div className='container'>
-                <h4 className=" font-normal text-h5 max-w-135">
+                <h4 className=" font-normal text-h5 max-w-135 mt-20">
                     Мы анализируем текущее состояние вашего бизнеса, выявляем проблемы и разрабатываем решения,
                     чтобы ваш проект начался без рисков и лишних затрат.
                 </h4>
