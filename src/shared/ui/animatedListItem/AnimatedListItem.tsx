@@ -1,7 +1,6 @@
-import * as motion from "motion/react-client"
+import * as motion from "motion/react-client";
 import Image from "next/image";
-import {AnimatedListItemProps} from "@/shared/ui/animatedListItem/models";
-
+import { AnimatedListItemProps } from "@/shared/ui/animatedListItem/models";
 
 export const AnimatedListItem = ({
                                      index,
@@ -12,41 +11,38 @@ export const AnimatedListItem = ({
                                      number,
                                      descriptionClassName = "",
                                      className = "",
-                                     children
+                                     children,
+                                     oneLevel = true,
                                  }: AnimatedListItemProps) => {
     const isLeft = left ?? index % 2 === 0;
+
+    const initialX = isLeft ? -200 : 200;
+    const targetX = oneLevel ? 0 : (isLeft ? 0 : 200);
 
     return (
         <motion.li
             key={index}
             initial={{
-                x: isLeft ? -50 : 200,
-                opacity: 0
+                x: initialX,
+                opacity: 0,
             }}
             whileInView={{
-                x: 0,
-                opacity: 1
+                x: targetX,
+                opacity: 1,
             }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true, amount: 0.8 }}
             className={`flex items-center gap-4 ${className} ${
-                isLeft ? 'rounded-r-full' : 'rounded-l-full'
+                isLeft ? "rounded-r-full" : "rounded-l-full"
             }`}
         >
             {number && (
-                <h2 className="text-blue font-bold" style={{ fontSize: '64px' }}>
+                <h2 className="text-blue font-bold" style={{ fontSize: "64px" }}>
                     {number}
                 </h2>
             )}
 
-            {imageSrc && (
-                <Image
-                    src={imageSrc}
-                    alt={title}
-                    width={150}
-                    height={150}
-                />
-            )}
+            {imageSrc && <Image src={imageSrc} alt={title} width={150} height={150} />}
 
             <div className="content">
                 <h3 className="font-semibold text-h4">{title}</h3>
