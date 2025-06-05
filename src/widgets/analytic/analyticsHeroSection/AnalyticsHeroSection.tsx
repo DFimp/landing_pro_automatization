@@ -16,9 +16,13 @@ export function AnalyticsHeroSection() {
                 </h4>
             </div>
 
-            <h1 className="container text-h1 font-bold text-blue text-right">
-                Почему это важно?
-            </h1>
+            <div className="container grid grid-cols-[auto_800px]"> {/* Правая колонка 600px */}
+                <div className="col-start-2">
+                    <h1 className="text-h1 font-bold text-blue text-left">
+                        Почему это важно?
+                    </h1>
+                </div>
+            </div>
         </section>
     );
 }
