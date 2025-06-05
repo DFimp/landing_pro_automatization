@@ -13,6 +13,7 @@ const ProcessList = ({ descriptionClassName = "" }: Props) => {
                 <ul className='space-y-4'>
                     {solutions.map((solution, index) => (
                         <AnimatedListItem
+                            oneLevel={false}
                             key={index}
                             index={index}
                             imageSrc={solution.imageSrc}
