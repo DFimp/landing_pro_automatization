@@ -11,4 +11,5 @@ export type AnimatedListItemProps = {
     descriptionClassName?: string;
     className?: string;
     children?: React.ReactNode;
+    oneLevel?: boolean
 };
