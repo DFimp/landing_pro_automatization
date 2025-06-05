@@ -16,7 +16,7 @@ export const AnimatedListItem = ({
                                  }: AnimatedListItemProps) => {
     const isLeft = left ?? index % 2 === 0;
 
-    const initialX = isLeft ? -200 : 200;
+    const initialX = isLeft ? -200 : 400;
     const targetX = oneLevel ? 0 : (isLeft ? 0 : 200);
 
     return (
