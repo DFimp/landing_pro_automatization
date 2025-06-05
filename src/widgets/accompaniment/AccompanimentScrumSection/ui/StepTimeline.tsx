@@ -1,70 +1,46 @@
 'use client'
 
-import { motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
-import { steps } from "@/widgets/accompaniment/AccompanimentScrumSection/ui/lib";
+import { motion } from 'framer-motion';
+import {steps} from "@/widgets/widgets/widgetsStepsSection/ui/lib"; // Исправлено: используем framer-motion вместо motion/react
 
 export default function StepTimeline() {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const [visibleStep, setVisibleStep] = useState(0);
-
-    // Точки в пространстве (top / left по макету)
-    const numPositions = [
-        { top: -20, left: 260 },
-        { top: 140, left: 0 },
-        { top: 270, left: -240 },
-    ];
-
-    // Длина линии до каждой точки (по x, если линия наклонена под 21°)
-    const lineStops = [750, 1200, 2500]; // ← заменишь на реальные пиксели от левого края
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (!containerRef.current) return;
-
-            const rect = containerRef.current.getBoundingClientRect();
-            const viewHeight = window.innerHeight || document.documentElement.clientHeight;
-            const progress = 1 - Math.max(0, Math.min(1, rect.bottom / (viewHeight + rect.height)));
-
-            if (progress >= 0.55) setVisibleStep(3);
-            else if (progress >= 0.3) setVisibleStep(2);
-            else if (progress >= 0.05) setVisibleStep(1);
-            else setVisibleStep(0);
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    // Длина линии рассчитывается на основе ширины и высоты контейнера
+    const lineLength = Math.hypot(100, 100); // Процентные единицы для адаптивности
 
     return (
-        <div ref={containerRef} className="relative w-full h-[650px] text-white overflow-hidden mb-20">
-            {/* Линия – расширяется до нужной ширины в пикселях */}
+        <div className="timeline-container relative w-full h-[80vh] max-h-[628px] text-white mb-20">
+            {/* Diagonal Line */}
             <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: lineStops[visibleStep - 1] || 0 }}
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
                 transition={{ duration: 0.5 }}
-                className="absolute top-0 left-0 h-1 bg-blue-500 origin-left rotate-[21deg]"
-            />
+                style={{
+                    width: '100%',
+                    height: '100%',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    transformOrigin: 'top left',
+                    background: 'transparent',
+                }}
+            >
+                <div
+                    className="absolute bg-blue-500 h-[2px]"
+                    style={{
+                        width: `${lineLength}%`,
+                        transform: `rotate(${Math.atan2(628, window.innerWidth) * (180 / Math.PI)}deg)`,
+                        transformOrigin: 'top left',
+                    }}
+                />
+            </motion.div>
 
-            {/* Steps */}
-            <div className="absolute top-0 left-0 w-full h-full flex justify-between items-start px-16 py-10 pointer-events-none">
+            <ul>
                 {steps.map((step, index) => (
                     <motion.div
                         key={index}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{
-                            opacity: visibleStep > index ? 1 : 0,
-                            scale: visibleStep > index ? 1 : 0.8
-                        }}
-                        transition={{ duration: 0.5 }}
-                        className="relative max-w-xs text-left"
-                        style={{
-                            top: `${numPositions[index].top}px`,
-                            left: `${numPositions[index].left}px`
-                        }}
                     >
                         <h4 className="font-semibold text-lg mb-10 max-w-50 whitespace-pre-line">
-                            {step.title}
+                            {step.content}
                         </h4>
                         <div className="flex items-center justify-center mb-10 w-25 h-25 border-2 text-blue border-blue-500 rounded-full text-4xl font-bold bg-black z-10 mx-auto">
                             {index + 1}
@@ -74,7 +50,7 @@ export default function StepTimeline() {
                         </p>
                     </motion.div>
                 ))}
-            </div>
+            </ul>
         </div>
     );
 }
