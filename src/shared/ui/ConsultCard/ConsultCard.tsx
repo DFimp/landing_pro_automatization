@@ -39,7 +39,7 @@ const ConsultCard = () => {
                     </p>
 
                     <div className='btn__container mt-4 w-70'>
-                        <Button text="Консультация" variant={"outline"} />
+                        <Button text="КОНСУЛЬТАЦИЯ" variant={"outline"} />
                     </div>
                 </div>
 
