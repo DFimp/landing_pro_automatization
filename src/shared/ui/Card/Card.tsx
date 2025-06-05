@@ -4,17 +4,15 @@ import Image from "next/image";
 import React, {useState} from "react";
 
 interface CardProps {
-    // Общие пропсы
     title?: string;
     content?: React.ReactNode;
     withArrow?: boolean;
     variant?: 'expandable' | 'simple';
-
-    // Пропсы для expandable варианта
     index?: number;
     description?: string[];
     result?: string;
     isFirst?: boolean;
+    isLast?: boolean; // Добавляем новый пропс
 }
 
 export const Card = ({
@@ -25,7 +23,8 @@ export const Card = ({
                          index,
                          description,
                          result,
-                         isFirst = false
+                         isFirst = false,
+                         isLast = false, // Значение по умолчанию
                      }: CardProps) => {
     const [isExpanded, setIsExpanded] = useState(false);
 
@@ -39,6 +38,7 @@ export const Card = ({
                     transition-all duration-500 ease-in-out min-w-[360px] will-change-transform
                     ${isExpanded ? "max-h-[800px]" : "max-h-[270px]"}
                     ${isFirst ? "ml-[175px]" : ""}
+                    ${isLast ? "mr-[15px]" : ""}
                 `}
             >
                 <div className='card__header'>
@@ -85,7 +85,6 @@ export const Card = ({
         );
     }
 
-    // Simple вариант
     return (
         <div className="card border-blue border-1 rounded-4xl py-10 px-10 relative max-w-[300px] h-[310px]">
             {title && <h3 className='font-bold text-h4'>{title}</h3>}
