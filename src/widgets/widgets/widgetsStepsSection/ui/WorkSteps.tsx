@@ -24,7 +24,7 @@ export default function WorkSteps() {
             if (!isDragging.current) return;
             e.preventDefault();
             const x = e.pageX - container.offsetLeft;
-            const walk = (x - startX.current) * 1.5; // коэффициент чувствительности
+            const walk = (x - startX.current) * 1.5;
             container.scrollLeft = scrollLeft.current - walk;
         };
 
@@ -51,7 +51,7 @@ export default function WorkSteps() {
                 ref={scrollRef}
                 className="overflow-hidden cursor-grab active:cursor-grabbing"
             >
-                <ul className="flex gap-4 snap-x snap-mandatory pr-4 select-none">
+                <ul className="flex gap-4 snap-x snap-mandatory select-none">
                     {steps.map((step, index) => (
                         <Card
                             variant='expandable'
@@ -61,8 +61,11 @@ export default function WorkSteps() {
                             description={step.description}
                             result={step.result}
                             isFirst={index === 0}
+                            isLast={index === steps.length - 1}
                         />
                     ))}
+                    {/* Добавляем пустой элемент для отступа справа */}
+                    <div className="shrink-0 min-w-[175px]"></div>
                 </ul>
             </div>
         </div>
