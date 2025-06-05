@@ -10,7 +10,7 @@ const HomeHero = () => {
                         Ваш эксперт по amoCRM
                     </h2>
 
-                    <h2 className='text-h4 font-regular max-w-140'>
+                    <h2 className='text-h4 font-normal max-w-[506px]'>
                         от консультации в решении простых задач до полной автоматизации бизнес-процессов.
                     </h2>
                     <div className='w-90'>
