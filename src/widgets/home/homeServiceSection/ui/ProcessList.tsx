@@ -2,11 +2,7 @@ import { solutions } from "@/widgets/home/homeServiceSection/ui/lib";
 import {AnimatedListItem} from "@/shared/ui/animatedListItem/AnimatedListItem";
 
 
-type Props = {
-    descriptionClassName?: string;
-};
-
-const ProcessList = ({ descriptionClassName = "" }: Props) => {
+const ProcessList = () => {
     return (
         <section className="process-list">
             <div className='process-list__container container'>
@@ -19,7 +15,7 @@ const ProcessList = ({ descriptionClassName = "" }: Props) => {
                             imageSrc={solution.imageSrc}
                             title={solution.title}
                             description={solution.description}
-                            descriptionClassName={descriptionClassName}
+                            descriptionClassName={solution.descriptionClassname}
                         />
                     ))}
                 </ul>
