@@ -21,7 +21,7 @@ const Button = ({
             "active:bg-blue active:text-white",
         secondary: "bg-blue2 text-white text-h5 font-semibold hover:bg-white hover:text-blue2 hover:border-blue2 " +
             "active:bg-blue2 active:text-white",
-        outline: "bg-white text-blue text-h4 font-bold border-transparent hover:border-white hover:text-white hover:bg-blue2 " +
+        outline: "bg-white text-blue border-blue text-h4 font-bold  hover:text-white hover:bg-blue2 " +
             "active:bg-blue2 active:text-white",
     };
 
