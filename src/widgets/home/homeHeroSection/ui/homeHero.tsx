@@ -14,7 +14,7 @@ const HomeHero = () => {
                         от консультации в решении простых задач до полной автоматизации бизнес-процессов.
                     </h2>
                     <div className='w-90'>
-                        <Button text="Консультация" variant='secondary' />
+                        <Button text="КОНСУЛЬТАЦИЯ" variant='secondary' />
                     </div>
                 </div>
 
