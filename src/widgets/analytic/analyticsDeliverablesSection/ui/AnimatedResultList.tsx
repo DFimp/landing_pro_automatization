@@ -7,6 +7,7 @@ export const AnimatedResultsList = () => {
         <ul className="space-y-10 mt-10">
             {data.map((item, i) => (
                 <AnimatedListItem
+                    oneLevel={true}
                     key={i}
                     index={i}
                     title={item.title}
