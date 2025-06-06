@@ -34,7 +34,7 @@ export const Card = ({
                 onClick={() => setIsExpanded(!isExpanded)}
                 className={`
                     snap-start shrink-0 bg-black text-white rounded-4xl px-10 py-10
-                    flex flex-col justify-between relative cursor-pointer
+                    flex flex-col justify-start relative cursor-pointer
                     transition-all duration-500 ease-in-out min-w-[360px] will-change-transform
                     ${isExpanded ? "max-h-[800px]" : "max-h-[270px]"}
                     ${isFirst ? "ml-[175px]" : ""}
