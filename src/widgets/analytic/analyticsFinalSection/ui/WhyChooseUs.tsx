@@ -1,32 +1,42 @@
 'use client';
 
 import Image from 'next/image';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Card } from '@/shared/ui/Card/Card';
 import { motion, useInView, useAnimationControls } from 'framer-motion';
 
 const WhyChooseUs = () => {
     const ref = useRef(null);
-    const inView = useInView(ref, { amount: 1 });
+    const inView = useInView(ref, { amount: 0.3 });
     const controls = useAnimationControls();
+    const [offsetX, setOffsetX] = useState(300); // по умолчанию
 
-    // Варианты для обоих motion.div
+    // Вычисление X в зависимости от ширины экрана
+    useEffect(() => {
+        const handleResize = () => {
+            const width = window.innerWidth;
+            const x = Math.round(-0.3906 * width + 900);
+            setOffsetX(x);
+        };
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+
     const firstImage = {
-        visible: { x: 730 },
-        hidden: { x: 940},
+        visible: { x: offsetX },
+        hidden: { x: offsetX + 200 },
     };
 
     const secondImage = {
-        visible: { x: -740},
-        hidden: { x: -930},
+        visible: { x: -offsetX },
+        hidden: { x: -offsetX - 250 },
     };
 
     useEffect(() => {
-        if (inView) {
-            controls.start('visible');
-        } else {
-            controls.start('hidden');
-        }
+        controls.start(inView ? 'visible' : 'hidden');
     }, [inView, controls]);
 
     return (
@@ -44,8 +54,8 @@ const WhyChooseUs = () => {
                 </div>
             </div>
 
-            {/* Первая строка с карточками и AmoCRM справа */}
-            <div className="mb-12 relative h-[310px]">
+            {/* Первая строка */}
+            <div className="mb-12 relative h-[310px] overflow-hidden">
                 <div className="flex gap-20 container h-full">
                     <div className="flex gap-5 items-center">
                         <Card
@@ -58,11 +68,7 @@ const WhyChooseUs = () => {
                         />
                         <Card
                             title="Прозрачность"
-                            content={
-                                <p>
-                                    Вы всегда в курсе, что мы делаем.
-                                </p>
-                            }
+                            content={<p>Вы всегда в курсе, что мы делаем.</p>}
                         />
                     </div>
 
@@ -74,9 +80,9 @@ const WhyChooseUs = () => {
                         transition={{ duration: 0.8 }}
                     >
                         <Image
-                            src="/amocrm.svg"
+                            src="/amo.svg"
                             alt="AMO"
-                            width={575}
+                            width={1000}
                             height={310}
                             style={{
                                 width: 'auto',
@@ -89,26 +95,17 @@ const WhyChooseUs = () => {
                 </div>
             </div>
 
-            {/* Вторая строка с карточками и RM слева */}
-            <div
-                 className="relative h-[310px]">
+            {/* Вторая строка */}
+            <div className="relative h-[310px] overflow-hidden">
                 <div className="flex justify-end gap-5 container h-full">
-                    <div className="flex gap-5 items-center">
+                    <div ref={ref} className="flex gap-5 items-center">
                         <Card
                             title="Современные технологии"
-                            content={
-                                <p>
-                                    Используем лучшие инструменты и методы.
-                                </p>
-                            }
+                            content={<p>Используем лучшие инструменты и методы.</p>}
                         />
                         <Card
                             title="Индивидуальный подход"
-                            content={
-                                <p>
-                                    Каждое решение подстроено под вас.
-                                </p>
-                            }
+                            content={<p>Каждое решение подстроено под вас.</p>}
                         />
                     </div>
 
@@ -120,9 +117,9 @@ const WhyChooseUs = () => {
                         transition={{ duration: 0.5 }}
                     >
                         <Image
-                            src="/amocrm.svg"
+                            src="/crm.svg"
                             alt="CRM"
-                            width={575}
+                            width={1000}
                             height={310}
                             style={{
                                 width: 'auto',
@@ -134,7 +131,6 @@ const WhyChooseUs = () => {
                     </motion.div>
                 </div>
             </div>
-            <div ref={ref} className='marker'></div>
         </div>
     );
 };
