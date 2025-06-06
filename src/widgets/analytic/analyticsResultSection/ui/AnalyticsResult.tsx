@@ -21,7 +21,7 @@ export default function AnalyticsResult() {
                     <Image src={service.img} alt={service.title} width={80} height={80} />
                     <div className='contenet space-y-5'>
                         <h4 className='font-semibold text-h5 text-white'>{service.title}</h4>
-                        <ul className='list-disc text-white'>
+                        <ul className='list-disc text-white pl-4'>
                             {service.items.map((item, i) => (
                                 <li key={i}>{item}</li>
                             ))}
