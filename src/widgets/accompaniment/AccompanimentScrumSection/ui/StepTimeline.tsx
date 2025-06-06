@@ -86,7 +86,7 @@ export default function StepTimeline() {
     }, [coordinates]);
 
     const lineLength = useMemo(() => {
-        return Math.hypot(containerSize.width, containerSize.height);
+        return Math.hypot(containerSize.width, containerSize.height) + 40;
     }, [containerSize]);
 
     const lineWidth = useTransform(
