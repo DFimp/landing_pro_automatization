@@ -16,7 +16,7 @@ export const AnimatedListItem = ({
                                  }: AnimatedListItemProps) => {
     const isLeft = left ?? index % 2 === 0;
 
-    const initialX = isLeft ? -100 : 200;
+    const initialX = isLeft ? -100 : 160;
     const targetX = oneLevel ? 0 : (isLeft ? 0 : 150);
 
     return (
@@ -31,7 +31,7 @@ export const AnimatedListItem = ({
                 opacity: 1,
             }}
             transition={{ delay: 0.8, duration: 0.8 }}
-            viewport={{ once: true, amount: 1 }}
+            viewport={{ once: true, amount: oneLevel ? 0.8 : 1 }}
             className={`flex items-center gap-4 ${className} ${
                 isLeft ? "rounded-r-full" : "rounded-l-full"
             }`}
