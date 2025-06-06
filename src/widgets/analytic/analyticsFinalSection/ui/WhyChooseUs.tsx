@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 import { Card } from '@/shared/ui/Card/Card';
-import { motion, useInView, useAnimationControls } from 'framer-motion';
+import { motion, useInView, useAnimationControls } from 'motion/react';
 
 const WhyChooseUs = () => {
     const ref = useRef(null);
