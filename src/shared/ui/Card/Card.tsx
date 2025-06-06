@@ -86,7 +86,7 @@ export const Card = ({
     }
 
     return (
-        <div className="card border-blue border-1 rounded-4xl py-10 px-10 relative max-w-[300px] h-[310px]">
+        <div className="card shrink-0 border-blue border-1 rounded-4xl py-10 px-10 relative max-w-[300px] h-[310px]">
             <div className='flex justify-between flex-col h-full max-h-[150px]'>
                 {title && <h3 className='font-bold text-h4'>{title}</h3>}
                 {content && <div className="mt-4">{content}</div>}

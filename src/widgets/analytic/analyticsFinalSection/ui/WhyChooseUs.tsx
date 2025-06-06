@@ -9,31 +9,26 @@ const WhyChooseUs = () => {
     const ref = useRef(null);
     const inView = useInView(ref, { amount: 0.3 });
     const controls = useAnimationControls();
-    const [offsetX, setOffsetX] = useState(300); // по умолчанию
+
+    const [offsetRight, setOffsetRight] = useState(210);
+    const [offsetLeft, setOffsetLeft] = useState(-300);
 
     // Вычисление X в зависимости от ширины экрана
     useEffect(() => {
         const handleResize = () => {
             const width = window.innerWidth;
-            const x = Math.round(-0.3906 * width + 900);
-            setOffsetX(x);
+
+            const right = Math.round(0.546875 * width - 630); // при 1536 → 210, при 1920 → 420
+            const left = Math.round(-0.78125 * width + 900);  // при 1536 → -300, при 1920 → -600
+
+            setOffsetRight(right);
+            setOffsetLeft(left);
         };
 
         handleResize();
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
-
-
-    const firstImage = {
-        visible: { x: offsetX },
-        hidden: { x: offsetX + 200 },
-    };
-
-    const secondImage = {
-        visible: { x: -offsetX },
-        hidden: { x: -offsetX - 250 },
-    };
 
     useEffect(() => {
         controls.start(inView ? 'visible' : 'hidden');
@@ -45,10 +40,10 @@ const WhyChooseUs = () => {
                 <h2 className="font-bold text-h2 mb-6">Почему выбирают нас?</h2>
                 <div className="mx-auto max-w-3xl px-4 mb-20">
                     <p className="text-h5 font-normal">
-                        Автоматизация становится умнее с каждым днем —
-                        <span className="font-medium text-h4"> Мы </span>
-                        внедряем самые актуальные инструменты, чтобы
-                        <span className="font-medium text-h4"> Вы </span>
+                        Автоматизация становится умнее с каждым днем —{' '}
+                        <span className="font-medium text-h4">Мы</span>{' '}
+                        внедряем самые актуальные инструменты, чтобы{' '}
+                        <span className="font-medium text-h4">Вы</span>{' '}
                         оставались впереди конкурентов.
                     </p>
                 </div>
@@ -70,35 +65,60 @@ const WhyChooseUs = () => {
                             title="Прозрачность"
                             content={<p>Вы всегда в курсе, что мы делаем.</p>}
                         />
-                    </div>
 
-                    <motion.div
-                        className="absolute top-0 right-0 h-full"
-                        initial="hidden"
-                        animate={controls}
-                        variants={firstImage}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <Image
-                            src="/amo.svg"
-                            alt="AMO"
-                            width={1000}
-                            height={310}
-                            style={{
-                                width: 'auto',
-                                height: '100%',
-                                objectFit: 'contain',
+                        <motion.div
+                            className="h-full w-[1000px] relative flex-shrink-0"
+                            style={{ minWidth: '600px', maxWidth: '1000px' }}
+                            ref={ref}
+                            initial="hidden"
+                            animate={controls}
+                            variants={{
+                                visible: { x: 0 },
+                                hidden: { x: offsetRight }
                             }}
-                            priority
-                        />
-                    </motion.div>
+                            transition={{ duration: 0.8 }}
+                        >
+                            <Image
+                                src="/amo.svg"
+                                alt="AMO"
+                                fill
+                                style={{
+                                    objectFit: 'cover',
+                                }}
+                                priority
+                            />
+                        </motion.div>
+                    </div>
                 </div>
             </div>
 
             {/* Вторая строка */}
             <div className="relative h-[310px] overflow-hidden">
                 <div className="flex justify-end gap-5 container h-full">
-                    <div ref={ref} className="flex gap-5 items-center">
+                    <div className="flex gap-5 items-center">
+                        <motion.div
+                            className="h-full w-[1000px] relative flex-shrink-0"
+                            style={{ minWidth: '600px' }}
+                            ref={ref}
+                            initial="hidden"
+                            animate={controls}
+                            variants={{
+                                visible: { x: 0 },
+                                hidden: { x: offsetLeft }
+                            }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            <Image
+                                src="/crm.svg"
+                                alt="CRM"
+                                fill
+                                style={{
+                                    objectFit: 'cover',
+                                }}
+                                priority
+                            />
+                        </motion.div>
+
                         <Card
                             title="Современные технологии"
                             content={<p>Используем лучшие инструменты и методы.</p>}
@@ -108,27 +128,6 @@ const WhyChooseUs = () => {
                             content={<p>Каждое решение подстроено под вас.</p>}
                         />
                     </div>
-
-                    <motion.div
-                        className="absolute bottom-0 left-0 h-full"
-                        initial="hidden"
-                        animate={controls}
-                        variants={secondImage}
-                        transition={{ duration: 0.5 }}
-                    >
-                        <Image
-                            src="/crm.svg"
-                            alt="CRM"
-                            width={1000}
-                            height={310}
-                            style={{
-                                width: 'auto',
-                                height: '100%',
-                                objectFit: 'contain',
-                            }}
-                            priority
-                        />
-                    </motion.div>
                 </div>
             </div>
         </div>
