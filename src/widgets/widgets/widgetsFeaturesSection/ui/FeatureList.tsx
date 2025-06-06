@@ -11,7 +11,7 @@ export default function FeaturesList() {
                     <motion.li
                         key={link.name}
                         className="bg-[#D8E3FD] rounded-full"
-                        whileHover={{ scale: 1.1 }}
+                        whileHover={{ scale: 1.05 }}
                         transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     >
                         <Link className="text-h5 font-medium flex
