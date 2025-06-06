@@ -15,7 +15,7 @@ export default function StepTimeline() {
             case 1707:
                 return 15;
             case 1920:
-                return -20;
+                return -15;
             case 1396:
                 return 85;
             case 1229:
