@@ -8,15 +8,16 @@ export function AccompanimentScrumSection() {
                 <h3 className='font-semibold text-h3 text-white container'>
                     Как мы работаем: четко и по Scrum
                 </h3>
-                <h4 className='font-semibold text-h4 text-white mb-20 container'>
-                    Мы используем гибкую методологию <span className='font-bold text-h3'>Scrum</span>, чтобы ваше сопровождение amoCRM было <span className='text-h3 font-bold'>эффективным и прозрачным</span>.
+                <h4 className='font-light text-h4 text-white mb-20 container'>
+                    Мы используем гибкую методологию <span className='font-semibold'>Scrum</span>,
+                    чтобы ваше сопровождение amoCRM было <span className='font-semibold'>эффективным и прозрачным</span>.
                 </h4>
             </div>
 
             <StepTimeline />
 
             <div className='container'>
-                <h4 className='text-h4 font-medium text-white container'>
+                <h4 className='text-h4 font-medium text-white mt-40'>
                     Такой подход позволяет оперативно реагировать на изменения, соблюдать сроки и обеспечивать высокое
                     качество работы.
                 </h4>
