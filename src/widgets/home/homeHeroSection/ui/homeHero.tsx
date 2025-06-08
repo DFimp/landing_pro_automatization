@@ -23,7 +23,7 @@ const HomeHero = () => {
           </div>
         </div>
 
-        <Image src="/laptop.svg" alt="Laptop" width={580} height={464} />
+        <Image src="/laptop.png" alt="Laptop" width={580} height={464} />
       </div>
 
       <ConsultationModal
