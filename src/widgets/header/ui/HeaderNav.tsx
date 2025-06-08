@@ -11,12 +11,17 @@ const HeaderNav = () => {
     return(
         <ul className='flex justify-between gap-5 bg-white'>
             {NavList.map((item, index) => (
-                <li key={index}>
+                <li key={index} className="relative overflow-hidden">
                     <Link
                         href={`/${item.link}`}
-                        className='font-medium text-h8'
+                        className='font-medium text-h8 block relative transition-transform duration-300 ease-in-out hover:-translate-y-full '
                     >
-                        {item.name}
+                        <span className="block">
+                          {item.name}
+                        </span>
+                        <span className="block absolute top-full left-0 w-full">
+                          {item.name}
+                        </span>
                     </Link>
                 </li>
             ))}
