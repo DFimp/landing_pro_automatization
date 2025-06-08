@@ -95,7 +95,7 @@ export default function StepTimeline() {
         [0, lineLength]
     );
 
-    const top = topSwitch(window.innerWidth)
+    const top = typeof window !== 'undefined' ? topSwitch(window.innerWidth) : 50;
 
     return (
         <div ref={containerRef} className="timeline-container relative w-full h-[80vh] max-h-[628px] text-white mb-20 mt-20">
