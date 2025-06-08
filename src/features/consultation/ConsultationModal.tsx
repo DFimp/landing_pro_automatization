@@ -5,11 +5,7 @@ import XIcon from "@/features/consultation/XIcon";
 import Button from "@/shared/ui/button/Button";
 import Input from "@/shared/ui/Input/Input";
 import Modal from "@/shared/ui/Modal/Modal";
-
-interface FormData {
-  name: string;
-  phone: string;
-}
+import FormData from "@/shared/types/IFormData";
 
 interface FormErrors {
   name?: string;
