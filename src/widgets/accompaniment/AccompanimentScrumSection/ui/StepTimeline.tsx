@@ -26,6 +26,7 @@ export default function StepTimeline() {
     }
 
     const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
+    const [top, setTop] = useState(50);
     const containerRef = useRef<HTMLDivElement>(null);
     const refs = useRef<(HTMLLIElement | null)[]>([]);
     const [coordinates, setCoordinates] = useState<{ x: number, y: number }[]>([]);
@@ -76,6 +77,14 @@ export default function StepTimeline() {
         return () => window.removeEventListener("resize", updateMeasurements);
     }, []);
 
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+          const width = window.innerWidth;
+          const newTop = topSwitch(width);
+          setTop(newTop);
+        }
+    }, [])
+
     const angle = useMemo(() => {
         if (coordinates.length >= 3) {
             const dx = coordinates[2].x - coordinates[0].x;
@@ -94,8 +103,6 @@ export default function StepTimeline() {
         [0, 1],
         [0, lineLength]
     );
-
-    const top = typeof window !== 'undefined' ? topSwitch(window.innerWidth) : 50;
 
     return (
         <div ref={containerRef} className="timeline-container relative w-full h-[80vh] max-h-[628px] text-white mb-20 mt-20">
