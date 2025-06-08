@@ -6,7 +6,6 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
 import "./ConsultCard.css";
-import FormData from "@/shared/types/IFormData";
 import ConsultationModal from "@/features/consultation/ConsultationModal";
 
 const ConsultCard = () => {
@@ -17,10 +16,6 @@ const ConsultCard = () => {
   });
 
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-
-  const handleSubmit = async (formData: FormData): Promise<void> => {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-  };
 
   useEffect(() => {
     if (inView) {
@@ -89,7 +84,6 @@ const ConsultCard = () => {
         <ConsultationModal
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
-          onSubmit={handleSubmit}
         />
       </div>
     </motion.section>

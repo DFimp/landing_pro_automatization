@@ -11,7 +11,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Про автоматизация",
+  title: "Про Автоматизацию",
   description: "Ваш эксперт по amoCRM от консультации в решении простых задач до полной автоматизации бизнес-процессов.",
 };
 
@@ -26,12 +26,12 @@ export default function RootLayout({
         {/* SEO мета-теги */}
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Ваш эксперт по amoCRM от консультации в решении простых задач до полной автоматизации бизнес-процессов." />
+        <meta name="description" content="Ваш эксперт по amoCRM от консультации в решении простых задач до полной автоматизации бизнес-процессов" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Про автоматизация" />
+        <meta property="og:title" content="Про Автоматизацию" />
         <meta
           property="og:description"
-          content="Ваш эксперт по amoCRM от консультации в решении простых задач до полной автоматизации бизнес-процессов."
+          content="Ваш эксперт по amoCRM от консультации в решении простых задач до полной автоматизации бизнес-процессов"
         />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="URL к изображению для OpenGraph" />

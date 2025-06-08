@@ -4,14 +4,9 @@ import Button from "@/shared/ui/button/Button";
 import Image from "next/image";
 import { useState } from "react";
 import ConsultationModal from "@/features/consultation/ConsultationModal";
-import FormData from "@/shared/types/IFormData";
 
 const HomeHero = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-
-  const handleSubmit = async (formData: FormData): Promise<void> => {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-  };
 
   return (
     <section className="hero">
@@ -34,7 +29,6 @@ const HomeHero = () => {
       <ConsultationModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        onSubmit={handleSubmit}
       />
     </section>
   );

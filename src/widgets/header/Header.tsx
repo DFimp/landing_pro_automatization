@@ -6,14 +6,9 @@ import Button from "@/shared/ui/button/Button";
 import Link from "next/link";
 import { useState } from "react";
 import ConsultationModal from "@/features/consultation/ConsultationModal";
-import FormData from "@/shared/types/IFormData";
 
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-
-  const handleSubmit = async (formData: FormData): Promise<void> => {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-  };
 
   return (
     <header id="header">
@@ -42,7 +37,6 @@ const Header = () => {
       <ConsultationModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        onSubmit={handleSubmit}
       />
     </header>
   );

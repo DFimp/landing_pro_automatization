@@ -5,7 +5,16 @@ import XIcon from "@/features/consultation/XIcon";
 import Button from "@/shared/ui/button/Button";
 import Input from "@/shared/ui/Input/Input";
 import Modal from "@/shared/ui/Modal/Modal";
-import FormData from "@/shared/types/IFormData";
+import Loader from "@/shared/ui/Loader/Loader"; // Импортируем компонент лоадера
+import CustomAlert from "@/shared/ui/CustomAlert/CustomAlert"; // Импортируем кастомный alert
+import axios from "axios";
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+interface FormData {
+  name: string;
+  phone: string;
+}
 
 interface FormErrors {
   name?: string;
@@ -15,13 +24,17 @@ interface FormErrors {
 interface ConsultationModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onSubmit: (data: FormData) => Promise<void>;
+}
+
+interface AlertState {
+  isVisible: boolean;
+  type: 'success' | 'error';
+  message: string;
 }
 
 const ConsultationModal: React.FC<ConsultationModalProps> = ({ 
   isOpen, 
   onClose, 
-  onSubmit 
 }) => {
   const [formData, setFormData] = useState<FormData>({
     name: '',
@@ -29,6 +42,11 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [alert, setAlert] = useState<AlertState>({
+    isVisible: false,
+    type: 'success',
+    message: ''
+  });
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
@@ -46,18 +64,45 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({
     return Object.keys(newErrors).length === 0;
   };
 
+  const showAlert = (type: 'success' | 'error', message: string) => {
+    setAlert({
+      isVisible: true,
+      type,
+      message
+    });
+  };
+
+  const hideAlert = () => {
+    setAlert(prev => ({ ...prev, isVisible: false }));
+  };
+
   const handleSubmit = async (): Promise<void> => {
     if (!validateForm()) return;
     
     setIsSubmitting(true);
-    
+  
     try {
-      await onSubmit(formData);
+      // Формируем данные для отправки
+      const payload = {
+        name: formData.name,
+        phoneNumber: formData.phone.replace(/\D/g, ''), // Очищаем номер от символов
+      };
+
+      // Отправляем POST-запрос на бэкенд
+      await axios.post(`${API_URL}/lead-management/new-landing-lead`, payload);
+
+      // Показываем успешное уведомление
+      showAlert('success', 'Запрос принят! Наш эксперт свяжется с вами в ближайшее время.');
+
+      // Очищаем форму и закрываем модальное окно
       setFormData({ name: '', phone: '' });
       setErrors({});
       onClose();
     } catch (error) {
       console.error('Ошибка отправки формы:', error);
+      
+      // Показываем уведомление об ошибке
+      showAlert('error', 'Что-то пошло не так. Попробуйте позже или свяжитесь с нами.');
     } finally {
       setIsSubmitting(false);
     }
@@ -77,55 +122,74 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({
   };
 
   return (
-    <Modal isOpen={isOpen} onClose={handleClose}>
-      <div className="p-8">
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl font-bold text-gray-900">
-            Записаться на консультацию
-          </h2>
-          <button
-            onClick={handleClose}
-            className="text-gray-400 hover:text-gray-600 transition-colors p-1"
-          >
-            <XIcon size={24} />
-          </button>
-        </div>
-        
-        <p className="text-gray-600 mb-8">
-          Оставьте свои контактные данные, и наш эксперт свяжется с вами для бесплатной консультации по amoCRM
-        </p>
-
-        <div>
-          <Input
-            label="Ваше имя"
-            value={formData.name}
-            onChange={handleInputChange('name')}
-            placeholder="Введите ваше имя"
-            error={errors.name}
-            maxLength={300}
-          />
-          
-          <Input
-            label="Номер телефона"
-            value={formData.phone}
-            onChange={handleInputChange('phone')}
-            placeholder="+7 (___) ___-__-__"
-            mask="phone"
-            error={errors.phone}
-          />
-
-          <div className="flex gap-3 pt-4">
-            <Button
-              text={isSubmitting ? 'Отправка...' : 'Записаться на консультацию'}
-              onClick={handleSubmit}
+    <>
+      <Modal isOpen={isOpen} onClose={handleClose}>
+        <div className="p-8">
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-2xl font-bold text-gray-900">
+              Записаться на консультацию
+            </h2>
+            <button
+              onClick={handleClose}
+              className="text-gray-400 hover:text-gray-600 transition-colors p-1"
               disabled={isSubmitting}
-              className="flex-1"
             >
-            </Button>
+              <XIcon size={24} />
+            </button>
+          </div>
+          
+          <p className="text-gray-600 mb-8">
+            Оставьте свои контактные данные, и наш эксперт свяжется с вами для бесплатной консультации по amoCRM
+          </p>
+
+          <div>
+            <Input
+              label="Ваше имя"
+              value={formData.name}
+              onChange={handleInputChange('name')}
+              placeholder="Введите ваше имя"
+              error={errors.name}
+              maxLength={300}
+              disabled={isSubmitting}
+            />
+            
+            <Input
+              label="Номер телефона"
+              value={formData.phone}
+              onChange={handleInputChange('phone')}
+              placeholder="+7 (___) ___-__-__"
+              mask="phone"
+              error={errors.phone}
+              disabled={isSubmitting}
+            />
+
+            <div className="flex gap-3 pt-4">
+              <Button
+                text={
+                  <div className="flex items-center justify-center gap-2">
+                    {isSubmitting && <Loader size="small" color="#ffffff" />}
+                    {isSubmitting ? 'Отправка...' : 'Записаться на консультацию'}
+                  </div>
+                }
+                onClick={handleSubmit}
+                disabled={isSubmitting}
+                className="flex-1"
+              >
+              </Button>
+            </div>
           </div>
         </div>
-      </div>
-    </Modal>
+      </Modal>
+
+      {/* Кастомный Alert */}
+      <CustomAlert
+        isVisible={alert.isVisible}
+        type={alert.type}
+        message={alert.message}
+        duration={6000} // 6 секунд
+        onClose={hideAlert}
+      />
+    </>
   );
 };
 
