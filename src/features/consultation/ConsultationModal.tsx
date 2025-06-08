@@ -102,6 +102,7 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({
             onChange={handleInputChange('name')}
             placeholder="Введите ваше имя"
             error={errors.name}
+            maxLength={300}
           />
           
           <Input

@@ -7,6 +7,7 @@ interface InputProps {
   placeholder?: string;
   mask?: 'phone';
   error?: string;
+  maxLength?: number;
   [key: string]: any;
 }
 
@@ -16,7 +17,8 @@ const Input: React.FC<InputProps> = ({
   onChange, 
   placeholder, 
   mask, 
-  error, 
+  error,
+  maxLength,
   ...props 
 }) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -24,18 +26,23 @@ const Input: React.FC<InputProps> = ({
     
     if (mask === 'phone') {
       // Удаляем все нецифровые символы
-      inputValue = inputValue.replace(/\D/g, '');
+      const digitsOnly = inputValue.replace(/\D/g, '');
+      
+      // Ограничиваем до 11 цифр (российский номер) - это ключевая проверка
+      const limitedDigits = digitsOnly.slice(0, 11);
       
       // Применяем маску +7 (___) ___-__-__
-      if (inputValue.length > 0) {
-        if (inputValue.startsWith('8')) {
-          inputValue = '7' + inputValue.slice(1);
+      if (limitedDigits.length > 0) {
+        let workingDigits = limitedDigits;
+        
+        if (workingDigits.startsWith('8')) {
+          workingDigits = '7' + workingDigits.slice(1);
         }
-        if (!inputValue.startsWith('7')) {
-          inputValue = '7' + inputValue;
+        if (!workingDigits.startsWith('7')) {
+          workingDigits = '7' + workingDigits;
         }
         
-        const match = inputValue.match(/^7(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})$/);
+        const match = workingDigits.match(/^7(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})$/);
         if (match) {
           inputValue = '+7';
           if (match[1]) inputValue += ` (${match[1]}`;
@@ -44,16 +51,44 @@ const Input: React.FC<InputProps> = ({
           if (match[3]) inputValue += `-${match[3]}`;
           if (match[4]) inputValue += `-${match[4]}`;
         }
+        
+        // Дополнительная проверка: если получившаяся строка больше 18 символов, обрезаем
+        if (inputValue.length > 18) {
+          inputValue = inputValue.slice(0, 18);
+        }
+      } else {
+        inputValue = '';
+      }
+    } else {
+      // Проверяем maxLength для обычных полей
+      if (maxLength && inputValue.length > maxLength) {
+        inputValue = inputValue.slice(0, maxLength);
       }
     }
     
     onChange(inputValue);
   };
 
+  // Дополнительная проверка на keyPress для предотвращения ввода лишних символов
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (mask === 'phone') {
+      const currentDigits = value.replace(/\D/g, '');
+      // Если уже 11 цифр и пытаемся ввести еще одну цифру
+      if (currentDigits.length >= 11 && /\d/.test(e.key)) {
+        e.preventDefault();
+      }
+    }
+  };
+
   return (
     <div className="mb-4">
       <label className="block text-sm font-medium text-gray-700 mb-2">
         {label}
+        {maxLength && !mask && (
+          <span className="text-gray-400 text-xs ml-2">
+            ({value.length}/{maxLength})
+          </span>
+        )}
       </label>
       <input
         className={`w-full px-4 py-3 border-2 rounded-lg text-base transition-all duration-200 focus:outline-none ${
@@ -63,6 +98,7 @@ const Input: React.FC<InputProps> = ({
         }`}
         value={value}
         onChange={handleChange}
+        onKeyPress={handleKeyPress}
         placeholder={placeholder}
         {...props}
       />
