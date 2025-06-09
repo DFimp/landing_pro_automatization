@@ -7,7 +7,9 @@ export function AnalyticsHeroSection() {
                 Аудит и предпроектная подготовка
             </h2>
 
-            <StickyInfo text="Начнём проект с надёжного фундамента" />
+            <StickyInfo
+                className="max-w-[760px]"
+                text="Начнём проект с надёжного фундамента" />
 
             <div className='container'>
                 <h4 className=" font-normal text-h5 max-w-135">

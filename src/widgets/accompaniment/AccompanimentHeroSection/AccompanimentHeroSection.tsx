@@ -16,7 +16,6 @@ export const AccompanimentHeroSection = () => {
             </div>
 
             <StickyInfo
-                className='max-w-[1160px]'
                 text="CRM — это основа вашего бизнеса. Любые сбои в её работе напрямую влияют на его эффективность. "
                 left={false}
             />
