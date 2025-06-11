@@ -1,7 +1,10 @@
 import {
     HomeConsultSection,
     HomeHeroSection,
-    HomeServicesSection
+    HomeServicesSection,
+    HomeContainerSection,
+    HomeFeaturesSection,
+    HomeStepsSection,
 } from "@/widgets/home";
 
 export default function Home() {
@@ -9,6 +12,10 @@ export default function Home() {
         <main id="home" className="pb-20 pt-20 space-y-10">
             <HomeHeroSection />
             <HomeServicesSection />
+            <HomeContainerSection />
+            <HomeFeaturesSection />
+            <HomeStepsSection />
+            
             <HomeConsultSection />
         </main>
     );

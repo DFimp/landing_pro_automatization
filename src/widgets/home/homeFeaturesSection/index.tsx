@@ -2,7 +2,7 @@ import StickyInfo from "@/shared/ui/stickyInfo/StickyInfo";
 import FeaturesList from "@/widgets/home/homeFeaturesSection/ui/FeatureList";
 import IndustryCards from "@/widgets/home/homeFeaturesSection/ui/IndustryCards";
 
-export function WidgetsFeaturesSection() {
+export function HomeFeaturesSection() {
   return (
     <section className="flex flex-col gap-20 mt-20">
       <StickyInfo
