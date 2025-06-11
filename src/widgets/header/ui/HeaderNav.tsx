@@ -1,32 +1,37 @@
+import { useState } from "react";
 import Link from "next/link";
+import DropdownMenu from "./DropdownMenu"; 
 
-const NavList = [
-    {name: "ВНЕДРЕНИЕ С0", link: "/" },
-    {name: "СОПРОВОЖДЕНИЕ", link: "accompaniment" },
-    {name: "ВИДЖЕТЫ", link: "widgets" },
-    {name: "АНАЛИТИКА", link: "analytics" },
-]
+const ServicesItems = [
+    { name: "ВНЕДРЕНИЕ С НУЛЯ", link: "/" },
+    { name: "СОПРОВОЖДЕНИЕ", link: "/accompaniment" },
+    { name: "АУДИТ", link: "/analytics" }
+];
 
 const HeaderNav = () => {
-    return(
-        <ul className='flex justify-between gap-5 bg-white'>
-            {NavList.map((item, index) => (
-                <li key={index} className="relative overflow-hidden">
-                    <Link
-                        href={`/${item.link}`}
-                        className='font-medium text-h8 block relative transition-transform duration-300 ease-in-out hover:-translate-y-full '
-                    >
-                        <span className="block">
-                          {item.name}
-                        </span>
-                        <span className="block absolute top-full left-0 w-full">
-                          {item.name}
-                        </span>
-                    </Link>
-                </li>
-            ))}
+    const [isDropdownOpen, setDropdownOpen] = useState<boolean>(false);
+
+    return (
+        <ul 
+            className='flex justify-between gap-5 bg-white py-4'
+            onMouseLeave={() => setDropdownOpen(false)}
+        >
+            <DropdownMenu 
+                title="УСЛУГИ" 
+                items={ServicesItems} 
+                isOpen={isDropdownOpen}
+                setIsOpen={setDropdownOpen}
+            />
+            <li>
+                <Link
+                    href="/widgets"
+                    className='font-medium text-h8 hover:text-blue transition-colors duration-300'
+                >
+                    ВИДЖЕТЫ
+                </Link>
+            </li>
         </ul>
-    )
-}
+    );
+};
 
 export default HeaderNav;

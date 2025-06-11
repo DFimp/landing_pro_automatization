@@ -74,8 +74,8 @@ const ConsultCard = () => {
           height={222}
         />
         <Image
-          className="absolute bottom-0 right-[280px] z-1"
-          src="/phoneSmall.svg"
+          className="absolute w-[192px] h-[213px] bottom-[-35px] right-[250px] z-1"
+          src="/phoneSmall.png"
           alt="card phone"
           width={192}
           height={179}
