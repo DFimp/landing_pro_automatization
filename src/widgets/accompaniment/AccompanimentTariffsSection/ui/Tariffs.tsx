@@ -16,7 +16,7 @@ export default function Tariffs() {
                         transition={{ duration: 0.5, delay: index * 0.2 }}
                         style={{ borderColor: "#3760E7" }}
                         key={index}
-                        className='card border-1 rounded-3xl px-10 py-15 max-w-85 space-y-10 relative overflow-hidden' // Добавлено overflow-hidden
+                        className='card border-1 rounded-3xl px-10 py-15 max-w-85 space-y-10 relative overflow-hidden bg-black' // Добавлено overflow-hidden
                     >
                         {index === 0 && (
                             <div className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none">

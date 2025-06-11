@@ -1,0 +1,29 @@
+#tariffs-area {
+  position: relative;
+}
+
+#first-circle {
+  position: absolute;
+  z-index: 0;
+  left: 37%;
+  top: 7%;
+  width: 156px;
+  height: 156px;
+  filter: blur(1.5rem);
+  background: var(--color-violet);
+  opacity: 0.2;
+  border-radius: 50%;
+}
+
+#second-circle {
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  bottom: -30%;
+  width: 349px;
+  height: 349px;
+  filter: blur(1.5rem);
+  background: var(--color-blue);
+  opacity: 0.2;
+  border-radius: 50%;
+}
