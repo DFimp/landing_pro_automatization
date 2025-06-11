@@ -3,9 +3,9 @@ import Link from "next/link";
 import DropdownMenu from "./DropdownMenu"; 
 
 const ServicesItems = [
+    { name: "АУДИТ", link: "/audit" },
     { name: "ВНЕДРЕНИЕ С НУЛЯ", link: "/" },
     { name: "СОПРОВОЖДЕНИЕ", link: "/accompaniment" },
-    { name: "АУДИТ", link: "/analytics" }
 ];
 
 const HeaderNav = () => {

@@ -7,7 +7,7 @@ import {
 } from "@/widgets/analytic";
 
 
-export default function Analytics() {
+export default function Audit() {
 
     return (
         <main id="analytics" className='pb-20 pt-20'>

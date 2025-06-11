@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { Card } from "@/shared/ui/Card/Card";
-import { steps } from "@/widgets/widgets/widgetsStepsSection/ui/lib";
+import { steps } from "@/widgets/home/homeStepsSection/ui/lib";
 
 export default function WorkSteps() {
     const scrollRef = useRef<HTMLDivElement>(null);

@@ -1,4 +1,4 @@
-import WorkSteps from "@/widgets/widgets/widgetsStepsSection/ui/WorkSteps";
+import WorkSteps from "@/widgets/home/homeStepsSection/ui/WorkSteps";
 import {TitleArrow} from "@/shared/ui/titleArrow/TitleArrow";
 
 export function HomeStepsSection() {

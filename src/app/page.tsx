@@ -15,7 +15,6 @@ export default function Home() {
             <HomeContainerSection />
             <HomeFeaturesSection />
             <HomeStepsSection />
-            
             <HomeConsultSection />
         </main>
     );
