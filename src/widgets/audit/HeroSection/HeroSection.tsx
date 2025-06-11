@@ -1,6 +1,6 @@
 import StickyInfo from "@/shared/ui/stickyInfo/StickyInfo";
 
-export function AnalyticsHeroSection() {
+export function HeroSection() {
     return (
         <section className="flex flex-col gap-20">
             <h2 className="container text-h2 font-bold max-w-4xl">
