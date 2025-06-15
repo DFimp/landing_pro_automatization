@@ -12,7 +12,7 @@ export default function TelegramWidget() {
     };
 
     return (
-        <main id="telegram-widget" className="pb-0 pt-20 bg-white">
+        <main id="telegram-widget" className="pb-20 pt-20 bg-white">
             {/* Hero Section */}
             <section className="container mx-auto px-4 pb-16 bg-white">
                 <div className="text-center space-y-6">
@@ -581,7 +581,6 @@ export default function TelegramWidget() {
                     </div>
                 </div>
             </section>
-
             <ConsultCard></ConsultCard>
         </main>
     );
