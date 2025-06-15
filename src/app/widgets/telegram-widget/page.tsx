@@ -1,7 +1,5 @@
-// app/telegram-widget/page.tsx
 'use client';
 import React from 'react';
-import './style.css';
 
 export default function TelegramWidget() {
     const handleScrollToInstruction = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -13,9 +11,9 @@ export default function TelegramWidget() {
     };
 
     return (
-        <main id="telegram-widget" className="pb-0 pt-20">
+        <main id="telegram-widget" className="pb-0 pt-20 bg-white">
             {/* Hero Section */}
-            <section className="container mx-auto px-4 pb-16">
+            <section className="container mx-auto px-4 pb-16 bg-white">
                 <div className="text-center space-y-6">
                     <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-100 to-violet-100 px-6 py-2 rounded-full">
                         <span className="text-2xl">💬</span>
@@ -47,7 +45,7 @@ export default function TelegramWidget() {
             </section>
 
             {/* Features Section */}
-            <section className="container mx-auto px-4 animate-fade-in-up">
+            <section className="container mx-auto px-4 animate-fade-in-up bg-white">
                 <div className="text-center mb-16">
                     <h2 className="text-5xl font-bold text-gray-900 mb-4">
                         Почему именно наш виджет?
@@ -100,7 +98,7 @@ export default function TelegramWidget() {
             </section>
 
             {/* Preview Section */}
-            <section className="bg-gradient-to-r from-blue-50 to-violet-50 py-20 animate-fade-in-up">
+            <section className="bg-white py-20 animate-fade-in-up">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-12">
                         <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -167,7 +165,7 @@ export default function TelegramWidget() {
             </section>
 
             {/* Instruction Section */}
-            <section id="instruction" className="container mx-auto px-4 animate-fade-in-up py-16">
+            <section id="instruction" className="container mx-auto px-4 animate-fade-in-up py-16 bg-white">
                 <div className="text-center mb-16">
                     <h2 className="text-5xl font-bold text-gray-900 mb-8 pt-8">
                         📋 Пошаговая настройка виджета
@@ -539,7 +537,7 @@ export default function TelegramWidget() {
             </section>
 
             {/* Use Cases Section */}
-            <section className="bg-gradient-to-r from-blue-50 to-violet-50 py-20 animate-fade-in-up">
+            <section className="bg-white py-20 animate-fade-in-up">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-12">
                         <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -587,7 +585,7 @@ export default function TelegramWidget() {
             <section className="bg-gradient-to-r from-blue-600 via-violet-600 to-blue-800 text-white py-32 animate-fade-in-up min-h-screen flex items-center">
                 <div className="container mx-auto px-4 text-center">
                     <h2 className="text-6xl md:text-7xl font-bold mb-12 animate-pulse-slow">
-                        🚀 Готовы  увеличить продажи??
+                        🚀 Готовы увеличить продажи?
                     </h2>
                     <p className="text-2xl mb-16 opacity-90 max-w-4xl mx-auto leading-relaxed">
                         Установите виджет прямо сейчас и не упускайте ни одной возможности!
