@@ -175,7 +175,7 @@ export default function MassiveLeadsWidget() {
                                     1
                                 </div>
                                 <div className="flex-1">
-                                    <h3 className="text-2xl font-bold text-gray-900 mb-4">Установка виджета</h3>
+                                    <h3 className="text-2xl font-bold text-gray-900 mb-4">Установка виджета в AmoCRM</h3>
                                     <div className="text-gray-700 leading-relaxed space-y-4">
                                         <p>Установите виджет в вашу AmoCRM систему:</p>
                                         <ul className="space-y-2 ml-4">
@@ -192,14 +192,22 @@ export default function MassiveLeadsWidget() {
                                                 <span>Нажмите «Установить» и подтвердите установку</span>
                                             </li>
                                         </ul>
-
+                                        <div className="mt-4">
+                                            <button
+                                                className="bg-gradient-to-r from-blue-600 to-violet-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                                                Установить виджет сейчас
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         {/* Step 2 */}
-                        <div className="bg-white rounded-3xl p-8 transition-all duration-500" style={{boxShadow: '0 15px 35px -5px rgba(0, 0, 0, 0.25), 0 15px 20px -10px rgba(0, 0, 0, 0.2)', border: '1px solid rgba(0, 0, 0, 0.1)'}}>
+                        <div className="bg-white rounded-3xl p-8 transition-all duration-500" style={{
+                            boxShadow: '0 15px 35px -5px rgba(0, 0, 0, 0.25), 0 15px 20px -10px rgba(0, 0, 0, 0.2)',
+                            border: '1px solid rgba(0, 0, 0, 0.1)'
+                        }}>
                             <div className="flex items-start gap-6">
                                 <div className="bg-gradient-to-r from-blue-600 to-violet-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shrink-0">
                                     2
