@@ -9,7 +9,7 @@ import "./ConsultCard.css";
 import ConsultationModal from "@/features/consultation/ConsultationModal";
 
 interface ConsultCardProps {
-  className: string;
+  className?: string;
 }
 
 const ConsultCard: React.FC<ConsultCardProps> = ({ className }) => {
