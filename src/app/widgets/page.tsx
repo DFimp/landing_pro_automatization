@@ -51,7 +51,7 @@ export default function Widgets() {
           </p>
         </div>
         <div
-          onClick={() => router.push("/widgets/dublicate-leads")}
+          onClick={() => router.push("/widgets/duplicate-leads")}
           className="cursor-pointer bg-white p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 hover:transform hover:scale-105 animate-fade-in-up"
           style={{
             boxShadow:
@@ -59,14 +59,13 @@ export default function Widgets() {
           }}
         >
           <div className="flex flex-row">
+            <span className="text-2xl">🔗</span>
             <h1 className="text-xl font-bold text-gray-900 mb-3">
-              Дубли сделок
+              Объединение дублей сделок для AmoCRM
             </h1>
           </div>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-            deserunt quaerat fugiat eius, distinctio est, error, earum neque
-            quos necessitatibus excepturi.
+            Автоматическое склеивание дублированных сделок с сохранением всех важных данных. Экономьте время менеджеров и улучшайте качество вашей базы данных.
           </p>
         </div>
       </section>
