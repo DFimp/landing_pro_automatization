@@ -17,30 +17,30 @@ export default function AutoTasksWidget() {
             <section className="container mx-auto px-4 pb-16 bg-white">
                 <div className="text-center space-y-6">
                     <div
-                        className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-100 to-red-100 px-6 py-2 rounded-full">
+                        className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-100 to-violet-100 px-6 py-2 rounded-full">
                         <span className="text-2xl">⚡</span>
-                        <span className="text-orange-600 font-medium">Автозадачи для AmoCRM</span>
+                        <span className="text-blue-600 font-medium">Автозадачи для AmoCRM</span>
                     </div>
 
-                    <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-orange-600 via-red-600 to-orange-800 bg-clip-text text-transparent leading-tight mt-8 mb-8">
+                    <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-blue-600 via-violet-600 to-blue-800 bg-clip-text text-transparent leading-tight mt-8 mb-8">
                         Никогда не забывайте о сделках!
                     </h1>
 
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-10">
                         Автоматически создавайте задачи для сделок без активности. Настраиваемые статусы, типы задач и
                         ответственные.
-                        <strong className="text-orange-600"> Увеличьте конверсию на 35%</strong> благодаря
+                        <strong className="text-blue-600"> Увеличьте конверсию на 35%</strong> благодаря
                         своевременному контакту с клиентами.
                     </p>
 
                     <div className="flex flex-col gap-3 justify-center items-center mb-10">
                         <button
-                            className="bg-gradient-to-r from-orange-600 to-red-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            className="bg-gradient-to-r from-blue-600 to-violet-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105 cursor-pointer">
                             Установить виджет бесплатно ⚡
                         </button>
                         <a
                             href="#instruction"
-                            className="text-orange-600 font-medium hover:text-red-600 transition-colors cursor-pointer"
+                            className="text-blue-600 font-medium hover:text-violet-600 transition-colors cursor-pointer"
                             onClick={handleScrollToInstruction}
                         >
                             Смотреть инструкцию →
@@ -49,12 +49,12 @@ export default function AutoTasksWidget() {
 
                     {/* Статистика */}
                     <div className="grid md:grid-cols-3 gap-6 mt-16 max-w-3xl mx-auto">
-                        <div className="text-center p-6 bg-orange-50 rounded-xl">
-                            <div className="text-3xl font-bold text-orange-600">+35%</div>
+                        <div className="text-center p-6 bg-blue-50 rounded-xl">
+                            <div className="text-3xl font-bold text-blue-600">+35%</div>
                             <div className="text-gray-600">Рост конверсии</div>
                         </div>
-                        <div className="text-center p-6 bg-blue-50 rounded-xl">
-                            <div className="text-3xl font-bold text-blue-600">0</div>
+                        <div className="text-center p-6 bg-violet-50 rounded-xl">
+                            <div className="text-3xl font-bold text-violet-600">0</div>
                             <div className="text-gray-600">Забытых сделок</div>
                         </div>
                         <div className="text-center p-6 bg-green-50 rounded-xl">
@@ -103,7 +103,7 @@ export default function AutoTasksWidget() {
                                  boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 16px -8px rgba(0, 0, 0, 0.15)'
                              }}>
                             <div className="text-4xl mb-4">{problem.icon}</div>
-                            <h3 className="text-xl font-bold text-red-600 mb-3">{problem.title}</h3>
+                            <h3 className="text-xl font-bold text-gray-900 mb-3">{problem.title}</h3>
                             <p className="text-gray-600 leading-relaxed">{problem.description}</p>
                         </div>
                     ))}
@@ -116,7 +116,7 @@ export default function AutoTasksWidget() {
             <section className="container mx-auto px-4 animate-fade-in-up bg-white">
                 <div className="text-center mb-16 mt-35">
                     <h2 className="text-5xl font-bold text-gray-900 mb-4">
-                        ✅ Решение: Автозадачи в сделках
+                        Решение: Автозадачи в сделках
                     </h2>
                     <p className="text-xl text-gray-600">
                         Виджет автоматически следит за всеми сделками и создает задачи для "спящих" клиентов
@@ -189,13 +189,13 @@ export default function AutoTasksWidget() {
                                     step: 1,
                                     title: "Настройка отслеживания",
                                     description: "Вы выбираете воронки и статусы, которые нужно контролировать. Например: \"Презентация\", \"Переговоры\", \"Принятие решения\".",
-                                    color: "bg-orange-500"
+                                    color: "bg-blue-500"
                                 },
                                 {
                                     step: 2,
                                     title: "Автоматический мониторинг",
                                     description: "Каждые 5 минут виджет проверяет все сделки на выбранных этапах и ищет те, в которых давно не было активности.",
-                                    color: "bg-blue-500"
+                                    color: "bg-violet-500"
                                 },
                                 {
                                     step: 3,
@@ -250,7 +250,7 @@ export default function AutoTasksWidget() {
                              }}>
                             <div className="flex items-start gap-6">
                                 <div
-                                    className="bg-gradient-to-r from-orange-600 to-red-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shrink-0">
+                                    className="bg-gradient-to-r from-blue-600 to-violet-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shrink-0">
                                     1
                                 </div>
                                 <div className="flex-1">
@@ -260,26 +260,26 @@ export default function AutoTasksWidget() {
                                         <p>Первым делом установите виджет в вашу AmoCRM систему:</p>
                                         <ul className="space-y-2 ml-4">
                                             <li className="flex items-start gap-2">
-                                                <span className="text-orange-600">•</span>
+                                                <span className="text-blue-600">•</span>
                                                 <span>Зайдите в AmoCRM → Настройки → Виджеты</span>
                                             </li>
                                             <li className="flex items-start gap-2">
-                                                <span className="text-orange-600">•</span>
+                                                <span className="text-blue-600">•</span>
                                                 <span>Найдите виджет "Автозадачи в сделках" в каталоге</span>
                                             </li>
                                             <li className="flex items-start gap-2">
-                                                <span className="text-orange-600">•</span>
+                                                <span className="text-blue-600">•</span>
                                                 <span>Нажмите "Установить" и подтвердите установку</span>
                                             </li>
                                             <li className="flex items-start gap-2">
-                                                <span className="text-orange-600">•</span>
+                                                <span className="text-blue-600">•</span>
                                                 <span>Виджет автоматически создаст необходимое поле "Не проверять на задачи"</span>
                                             </li>
                                         </ul>
 
                                         <div className="mt-4">
                                             <button
-                                                className="bg-gradient-to-r from-orange-600 to-red-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                                                className="bg-gradient-to-r from-blue-600 to-violet-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 cursor-pointer">
                                                 Установить виджет сейчас
                                             </button>
                                         </div>
@@ -296,7 +296,7 @@ export default function AutoTasksWidget() {
                              }}>
                             <div className="flex items-start gap-6">
                                 <div
-                                    className="bg-gradient-to-r from-orange-600 to-red-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shrink-0">
+                                    className="bg-gradient-to-r from-blue-600 to-violet-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shrink-0">
                                     2
                                 </div>
                                 <div className="flex-1">
@@ -306,15 +306,15 @@ export default function AutoTasksWidget() {
                                         <p>Выберите воронки и этапы, которые нужно контролировать:</p>
                                         <ul className="space-y-2 ml-4">
                                             <li className="flex items-start gap-2">
-                                                <span className="text-orange-600">•</span>
+                                                <span className="text-blue-600">•</span>
                                                 <span>Откройте настройки виджета в AmoCRM</span>
                                             </li>
                                             <li className="flex items-start gap-2">
-                                                <span className="text-orange-600">•</span>
+                                                <span className="text-blue-600">•</span>
                                                 <span>В поле "Статус" выберите воронку или конкретные статусы</span>
                                             </li>
                                             <li className="flex items-start gap-2">
-                                                <span className="text-orange-600">•</span>
+                                                <span className="text-blue-600">•</span>
                                                 <span>Повторите для всех важных этапов (например: "Переговоры", "Презентация", "Принятие решения")</span>
                                             </li>
                                         </ul>
@@ -332,7 +332,7 @@ export default function AutoTasksWidget() {
                              }}>
                             <div className="flex items-start gap-6">
                                 <div
-                                    className="bg-gradient-to-r from-orange-600 to-red-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shrink-0">
+                                    className="bg-gradient-to-r from-blue-600 to-violet-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shrink-0">
                                     3
                                 </div>
                                 <div className="flex-1">
@@ -341,40 +341,40 @@ export default function AutoTasksWidget() {
                                         <p>Настройте параметры автоматически создаваемых задач:</p>
 
                                         <div>
-                                            <h4 className="text-lg font-semibold text-orange-600 mb-3">📝 Тип задачи</h4>
+                                            <h4 className="text-lg font-semibold text-blue-600 mb-3">📝 Тип задачи</h4>
                                             <p className="mb-3">Выберите тип задачи из списка доступных в AmoCRM:</p>
                                             <ul className="space-y-2 ml-4">
                                                 <li className="flex items-start gap-2">
-                                                    <span className="text-orange-600">•</span>
+                                                    <span className="text-blue-600">•</span>
                                                     <span>Встреча - для назначения личных встреч</span>
                                                 </li>
                                                 <li className="flex items-start gap-2">
-                                                    <span className="text-orange-600">•</span>
+                                                    <span className="text-blue-600">•</span>
                                                     <span>Звонок - для напоминания о необходимости позвонить</span>
                                                 </li>
                                                 <li className="flex items-start gap-2">
-                                                    <span className="text-orange-600">•</span>
+                                                    <span className="text-blue-600">•</span>
                                                     <span>Любой другой настроенный в вашей AmoCRM тип</span>
                                                 </li>
                                             </ul>
                                         </div>
 
                                         <div>
-                                            <h4 className="text-lg font-semibold text-orange-600 mb-3">📝 Текст задачи</h4>
+                                            <h4 className="text-lg font-semibold text-blue-600 mb-3">📝 Текст задачи</h4>
                                             <p className="mb-3">Напишите текст, который должен быть указан в задаче</p>
                                         </div>
 
                                         <div>
-                                            <h4 className="text-lg font-semibold text-orange-600 mb-3">👤 Ответственный
+                                            <h4 className="text-lg font-semibold text-blue-600 mb-3">👤 Ответственный
                                                 за задачу</h4>
                                             <p className="mb-3">Выберите, кому назначать создаваемые задачи:</p>
                                             <ul className="space-y-2 ml-4">
                                                 <li className="flex items-start gap-2">
-                                                    <span className="text-orange-600">•</span>
+                                                    <span className="text-blue-600">•</span>
                                                     <span><strong>Ответственному за сделку</strong> - задача назначается текущему ответственному (рекомендуется)</span>
                                                 </li>
                                                 <li className="flex items-start gap-2">
-                                                    <span className="text-orange-600">•</span>
+                                                    <span className="text-blue-600">•</span>
                                                     <span><strong>Конкретному пользователю</strong> - выберите менеджера из списка (например, для контроля руководителем)</span>
                                                 </li>
                                             </ul>
@@ -392,7 +392,7 @@ export default function AutoTasksWidget() {
                              }}>
                             <div className="flex items-start gap-6">
                                 <div
-                                    className="bg-gradient-to-r from-orange-600 to-red-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shrink-0">
+                                    className="bg-gradient-to-r from-blue-600 to-violet-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shrink-0">
                                     4
                                 </div>
                                 <div className="flex-1">
@@ -401,19 +401,19 @@ export default function AutoTasksWidget() {
                                         <p>Завершите настройку виджета:</p>
                                         <ul className="space-y-2 ml-4">
                                             <li className="flex items-start gap-2">
-                                                <span className="text-orange-600">•</span>
+                                                <span className="text-blue-600">•</span>
                                                 <span>Проверьте все заполненные поля</span>
                                             </li>
                                             <li className="flex items-start gap-2">
-                                                <span className="text-orange-600">•</span>
+                                                <span className="text-blue-600">•</span>
                                                 <span>Убедитесь, что выбраны правильные статусы для отслеживания</span>
                                             </li>
                                             <li className="flex items-start gap-2">
-                                                <span className="text-orange-600">•</span>
+                                                <span className="text-blue-600">•</span>
                                                 <span>Нажмите кнопку "Сохранить настройки"</span>
                                             </li>
                                             <li className="flex items-start gap-2">
-                                                <span className="text-orange-600">•</span>
+                                                <span className="text-blue-600">•</span>
                                                 <span>Виджет автоматически начнет работу в фоновом режиме</span>
                                             </li>
                                         </ul>
@@ -446,7 +446,7 @@ export default function AutoTasksWidget() {
                              }}>
                             <div className="flex items-start gap-6">
                                 <div
-                                    className="bg-gradient-to-r from-orange-600 to-red-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shrink-0">
+                                    className="bg-gradient-to-r from-blue-600 to-violet-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shrink-0">
                                     5
                                 </div>
                                 <div className="flex-1">
@@ -455,19 +455,19 @@ export default function AutoTasksWidget() {
                                         <p>Проверьте работу виджета и настройте мониторинг:</p>
                                         <ul className="space-y-2 ml-4">
                                             <li className="flex items-start gap-2">
-                                                <span className="text-orange-600">•</span>
+                                                <span className="text-blue-600">•</span>
                                                 <span>Найдите сделки на отслеживаемых этапах без недавней активности</span>
                                             </li>
                                             <li className="flex items-start gap-2">
-                                                <span className="text-orange-600">•</span>
+                                                <span className="text-blue-600">•</span>
                                                 <span>Подождите до 5-10 минут и проверьте, создались ли задачи</span>
                                             </li>
                                             <li className="flex items-start gap-2">
-                                                <span className="text-orange-600">•</span>
+                                                <span className="text-blue-600">•</span>
                                                 <span>Если нужно исключить сделку из проверки - поставьте галочку в поле "Не проверять на задачи"</span>
                                             </li>
                                             <li className="flex items-start gap-2">
-                                                <span className="text-orange-600">•</span>
+                                                <span className="text-blue-600">•</span>
                                                 <span>Обучите менеджеров работать с новыми автоматическими задачами</span>
                                             </li>
                                         </ul>
@@ -476,16 +476,11 @@ export default function AutoTasksWidget() {
                                             <div className="flex items-start gap-3">
                                                 <span className="text-xl">💡</span>
                                                 <div>
-                                                    <div className="font-semibold text-yellow-800">Советы по
-                                                        эффективному использованию:
-                                                    </div>
+                                                    <div className="font-semibold text-yellow-800">Советы по эффективному использованию:</div>
                                                     <ul className="text-yellow-700 mt-2 space-y-1">
                                                         <li>• Начните с 2-3 самых важных этапов</li>
-                                                        <li>• Используйте понятные тексты задач с конкретными
-                                                            действиями
-                                                        </li>
-                                                        <li>• Отслеживайте количество создаваемых задач в первые дни
-                                                        </li>
+                                                        <li>• Используйте понятные тексты задач с конкретными действиями</li>
+                                                        <li>• Отслеживайте количество создаваемых задач в первые дни</li>
                                                         <li>• При необходимости скорректируйте настройки</li>
                                                     </ul>
                                                 </div>
@@ -496,21 +491,13 @@ export default function AutoTasksWidget() {
                                             <div className="flex items-start gap-3">
                                                 <span className="text-xl">⚠️</span>
                                                 <div>
-                                                    <div className="font-semibold text-red-800">Если задачи не
-                                                        создаются:
-                                                    </div>
+                                                    <div className="font-semibold text-red-800">Если задачи не создаются:</div>
                                                     <ul className="text-red-700 mt-2 space-y-1">
-                                                        <li>• Проверьте правильность указанных воронок и этапов
-                                                        </li>
+                                                        <li>• Проверьте правильность указанных воронок и этапов</li>
                                                         <li>• Убедитесь, что есть сделки на выбранных этапах</li>
-                                                        <li>• Проверьте, что сделки не имеют галочку "Не проверять на
-                                                            задачи"
-                                                        </li>
-                                                        <li>• Подождите от 5 до 10 минут - виджет работает с
-                                                            интервалом
-                                                        </li>
-                                                        <li>• Обратитесь к нам за консультацией
-                                                        </li>
+                                                        <li>• Проверьте, что сделки не имеют галочку "Не проверять на задачи"</li>
+                                                        <li>• Подождите от 5 до 10 минут - виджет работает с интервалом</li>
+                                                        <li>• Обратитесь к нам за консультацией</li>
                                                     </ul>
                                                 </div>
                                             </div>

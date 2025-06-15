@@ -172,16 +172,16 @@ button, .cursor-pointer {
     transform: scale(0.95);
 }
 
-/* Градиентные кнопки - оранжево-красная тема */
+/* Градиентные кнопки - сине-фиолетовая тема как в Telegram виджете */
 .gradient-button {
-    background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     transition: all 0.3s ease;
 }
 
 .gradient-button:hover {
-    background: linear-gradient(135deg, #c2410c 0%, #b91c1c 100%);
+    background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(234, 88, 12, 0.3);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
 }
 
 /* Специальные стили для задач */
@@ -216,17 +216,17 @@ button, .cursor-pointer {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, #c2410c 0%, #b91c1c 100%);
+    background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
 }
 
 /* Дополнительные эффекты при наведении */
 .hover-glow:hover {
-    box-shadow: 0 0 20px rgba(234, 88, 12, 0.4);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
 }
 
 /* Анимация появления с задержкой */
@@ -277,9 +277,9 @@ details[open] summary span {
     transition: transform 0.3s ease;
 }
 
-/* Оранжево-красные градиенты для заголовков */
-.gradient-text-orange {
-    background: linear-gradient(135deg, #ea580c 0%, #dc2626 50%, #ea580c 100%);
+/* Сине-фиолетовые градиенты для заголовков */
+.gradient-text-blue {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #667eea 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -287,14 +287,14 @@ details[open] summary span {
 
 /* Специальные стили для статистики */
 .stats-card {
-    background: linear-gradient(135deg, rgba(234, 88, 12, 0.1) 0%, rgba(220, 38, 38, 0.1) 100%);
-    border: 1px solid rgba(234, 88, 12, 0.2);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    border: 1px solid rgba(102, 126, 234, 0.2);
     transition: all 0.3s ease;
 }
 
 .stats-card:hover {
-    background: linear-gradient(135deg, rgba(234, 88, 12, 0.15) 0%, rgba(220, 38, 38, 0.15) 100%);
-    border-color: rgba(234, 88, 12, 0.3);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+    border-color: rgba(102, 126, 234, 0.3);
     transform: translateY(-2px);
 }
 
