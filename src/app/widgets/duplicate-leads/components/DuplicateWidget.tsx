@@ -82,7 +82,7 @@ export default function DuplicateWidget() {
                         ].map((problem, index) => (
                             <div key={index} className="bg-white p-6 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 hover:transform hover:scale-105 animate-fade-in-up" style={{animationDelay: `${index * 0.1}s`, boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 16px -8px rgba(0, 0, 0, 0.15)'}}>
                                 <div className="text-4xl mb-4 animate-bounce-slow">{problem.icon}</div>
-                                <h3 className="text-xl font-bold text-red-600 mb-3">{problem.title}</h3>
+                                <h3 className="text-xl font-bold text-black-600 mb-3">{problem.title}</h3>
                                 <p className="text-gray-600 leading-relaxed text-sm">{problem.description}</p>
                             </div>
                         ))}
@@ -158,6 +158,11 @@ export default function DuplicateWidget() {
                                         <p>Нажмите кнопку "Установить виджет" и следуйте инструкциям amoCRM для подключения.</p>
                                     </div>
                                 </div>
+                                <div className="mt-4">
+                            <button className="bg-gradient-to-r from-blue-600 to-violet-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                                Установить виджет сейчас
+                            </button>
+                        </div>
                             </div>
                         </div>
 
