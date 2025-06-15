@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
 
 export default function TelegramWidget() {
     const handleScrollToInstruction = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -88,7 +89,7 @@ export default function TelegramWidget() {
                             description: "В сообщении отображается вся ключевая информация: клиент, сумма, ответственный, товары и многое другое!"
                         }
                     ].map((feature, index) => (
-                        <div key={index} className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 hover:transform hover:scale-105 animate-fade-in-up" style={{animationDelay: `${index * 0.1}s`}}>
+                        <div key={index} className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 hover:transform hover:scale-105 animate-fade-in-up" style={{animationDelay: `${index * 0.1}s`, boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 16px -8px rgba(0, 0, 0, 0.15)'}}>
                             <div className="text-4xl mb-4 animate-bounce-slow">{feature.icon}</div>
                             <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
                             <p className="text-gray-600 leading-relaxed">{feature.description}</p>
@@ -178,7 +179,7 @@ export default function TelegramWidget() {
                 <div className="max-w-4xl mx-auto">
                     <div className="space-y-8">
                         {/* Step 1 */}
-                        <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-500 animate-fade-in-up">
+                        <div className="bg-white rounded-3xl p-8 transition-all duration-500 animate-fade-in-up" style={{boxShadow: '0 15px 35px -5px rgba(0, 0, 0, 0.25), 0 15px 20px -10px rgba(0, 0, 0, 0.2)', border: '1px solid rgba(0, 0, 0, 0.1)'}}>
                             <div className="flex items-start gap-6">
                                 <div className="bg-gradient-to-r from-blue-600 to-violet-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shrink-0">
                                     1
@@ -213,7 +214,7 @@ export default function TelegramWidget() {
                         </div>
 
                         {/* Step 2 */}
-                        <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-500 animate-fade-in-up">
+                        <div className="bg-white rounded-3xl p-8 transition-all duration-500 animate-fade-in-up" style={{boxShadow: '0 15px 35px -5px rgba(0, 0, 0, 0.25), 0 15px 20px -10px rgba(0, 0, 0, 0.2)', border: '1px solid rgba(0, 0, 0, 0.1)'}}>
                             <div className="flex items-start gap-6">
                                 <div className="bg-gradient-to-r from-blue-600 to-violet-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shrink-0">
                                     2
@@ -253,7 +254,7 @@ export default function TelegramWidget() {
                         </div>
 
                         {/* Step 3 - NEW */}
-                        <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-500 animate-fade-in-up">
+                        <div className="bg-white rounded-3xl p-8 transition-all duration-500 animate-fade-in-up" style={{boxShadow: '0 15px 35px -5px rgba(0, 0, 0, 0.25), 0 15px 20px -10px rgba(0, 0, 0, 0.2)', border: '1px solid rgba(0, 0, 0, 0.1)'}}>
                             <div className="flex items-start gap-6">
                                 <div className="bg-gradient-to-r from-blue-600 to-violet-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shrink-0">
                                     3
@@ -303,7 +304,7 @@ export default function TelegramWidget() {
                         </div>
 
                         {/* Step 7 */}
-                        <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-500 animate-fade-in-up">
+                        <div className="bg-white rounded-3xl p-8 transition-all duration-500 animate-fade-in-up" style={{boxShadow: '0 15px 35px -5px rgba(0, 0, 0, 0.25), 0 15px 20px -10px rgba(0, 0, 0, 0.2)', border: '1px solid rgba(0, 0, 0, 0.1)'}}>
                             <div className="flex items-start gap-6">
                                 <div className="bg-gradient-to-r from-blue-600 to-violet-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shrink-0">
                                     4
@@ -336,7 +337,7 @@ export default function TelegramWidget() {
                         </div>
 
                         {/* Step 4 */}
-                        <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-500 animate-fade-in-up">
+                        <div className="bg-white rounded-3xl p-8 transition-all duration-500 animate-fade-in-up" style={{boxShadow: '0 15px 35px -5px rgba(0, 0, 0, 0.25), 0 15px 20px -10px rgba(0, 0, 0, 0.2)', border: '1px solid rgba(0, 0, 0, 0.1)'}}>
                             <div className="flex items-start gap-6">
                                 <div className="bg-gradient-to-r from-blue-600 to-violet-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shrink-0">
                                     5
@@ -447,7 +448,7 @@ export default function TelegramWidget() {
                         </div>
 
                         {/* Step 5 */}
-                        <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-500 animate-fade-in-up">
+                        <div className="bg-white rounded-3xl p-8 transition-all duration-500 animate-fade-in-up" style={{boxShadow: '0 15px 35px -5px rgba(0, 0, 0, 0.25), 0 15px 20px -10px rgba(0, 0, 0, 0.2)', border: '1px solid rgba(0, 0, 0, 0.1)'}}>
                             <div className="flex items-start gap-6">
                                 <div className="bg-gradient-to-r from-blue-600 to-violet-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shrink-0">
                                     6
@@ -495,7 +496,7 @@ export default function TelegramWidget() {
                         </div>
 
                         {/* Step 6 */}
-                        <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-500 animate-fade-in-up mb-10">
+                        <div className="bg-white rounded-3xl p-8 transition-all duration-500 animate-fade-in-up mb-10" style={{boxShadow: '0 15px 35px -5px rgba(0, 0, 0, 0.25), 0 15px 20px -10px rgba(0, 0, 0, 0.2)', border: '1px solid rgba(0, 0, 0, 0.1)'}}>
                             <div className="flex items-start gap-6">
                                 <div className="bg-gradient-to-r from-blue-600 to-violet-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shrink-0">
                                     7
@@ -571,7 +572,7 @@ export default function TelegramWidget() {
                                 description: "Получайте алерты о долго неактивных сделках и сразу принимайте меры для их реанимации."
                             }
                         ].map((useCase, index) => (
-                            <div key={index} className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-500 hover:transform hover:scale-105 animate-fade-in-up" style={{animationDelay: `${index * 0.1}s`}}>
+                            <div key={index} className="bg-white p-6 rounded-2xl transition-all duration-500 hover:transform hover:scale-105 animate-fade-in-up" style={{animationDelay: `${index * 0.1}s`, boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 16px -8px rgba(0, 0, 0, 0.15)', border: '1px solid rgba(0, 0, 0, 0.1)'}}>
                                 <div className="text-3xl mb-4 animate-bounce-slow">{useCase.icon}</div>
                                 <h3 className="text-lg font-bold text-gray-900 mb-3">{useCase.title}</h3>
                                 <p className="text-gray-600 text-sm leading-relaxed">{useCase.description}</p>
@@ -581,28 +582,7 @@ export default function TelegramWidget() {
                 </div>
             </section>
 
-            {/* CTA Section */}
-            <section className="bg-gradient-to-r from-blue-600 via-violet-600 to-blue-800 text-white py-32 animate-fade-in-up min-h-screen flex items-center">
-                <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-6xl md:text-7xl font-bold mb-12 animate-pulse-slow">
-                        🚀 Готовы увеличить продажи?
-                    </h2>
-                    <p className="text-2xl mb-16 opacity-90 max-w-4xl mx-auto leading-relaxed">
-                        Установите виджет прямо сейчас и не упускайте ни одной возможности!
-                        Начните получать уведомления уже сегодня и автоматизируйте свои продажи.
-                        Присоединяйтесь к тысячам компаний, которые уже используют наши решения.
-                    </p>
-
-                    <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
-                        <button className="bg-white text-blue-600 px-12 py-6 rounded-3xl font-bold text-2xl hover:shadow-2xl transition-all duration-500 transform hover:scale-110 cursor-pointer animate-bounce-subtle">
-                            Установить виджет бесплатно
-                        </button>
-                        <button className="border-2 border-white text-white px-12 py-6 rounded-3xl font-semibold text-2xl hover:bg-white hover:text-blue-600 transition-all duration-500 transform hover:scale-110 cursor-pointer">
-                            Получить консультацию
-                        </button>
-                    </div>
-                </div>
-            </section>
+            <ConsultCard></ConsultCard>
         </main>
     );
 }

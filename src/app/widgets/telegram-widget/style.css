@@ -147,16 +147,16 @@ button, .cursor-pointer {
 /* Улучшенные тени для карточек */
 .enhanced-shadow {
     box-shadow:
-            0 4px 6px -1px rgba(0, 0, 0, 0.1),
-            0 2px 4px -1px rgba(0, 0, 0, 0.06),
-            0 0 0 1px rgba(255, 255, 255, 0.05);
+            0 10px 25px -5px rgba(0, 0, 0, 0.2),
+            0 10px 16px -8px rgba(0, 0, 0, 0.15),
+            0 0 0 1px rgba(0, 0, 0, 0.05);
 }
 
 .enhanced-shadow:hover {
     box-shadow:
-            0 20px 25px -5px rgba(0, 0, 0, 0.1),
-            0 10px 10px -5px rgba(0, 0, 0, 0.04),
-            0 0 0 1px rgba(255, 255, 255, 0.05);
+            0 25px 50px -12px rgba(0, 0, 0, 0.3),
+            0 25px 25px -5px rgba(0, 0, 0, 0.15),
+            0 0 0 1px rgba(0, 0, 0, 0.1);
 }
 
 /* Анимация для кнопок */
