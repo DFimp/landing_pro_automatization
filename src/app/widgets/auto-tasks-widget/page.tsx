@@ -77,12 +77,12 @@ export default function AutoTasksWidget() {
                     {[
                         {
                             icon: "💸",
-                            title: "Сделки \"висят\" без движения",
+                            title: "Сделки «висят» без движения",
                             description: "Менеджеры забывают связаться с клиентами, сделки теряются, а вы теряете деньги. Особенно критично для дорогих продуктов."
                         },
                         {
                             icon: "😴",
-                            title: "Менеджеры \"забывают\" работать",
+                            title: "Менеджеры «забывают» работать",
                             description: "Без напоминаний сотрудники могут неделями не контактировать с потенциальными клиентами. Результат - потерянная прибыль."
                         },
                         {
@@ -119,7 +119,7 @@ export default function AutoTasksWidget() {
                         Решение: Автозадачи в сделках
                     </h2>
                     <p className="text-xl text-gray-600">
-                        Виджет автоматически следит за всеми сделками и создает задачи для "спящих" клиентов
+                        Виджет автоматически следит за всеми сделками и создает задачи для &quot;спящих&quot; клиентов
                     </p>
                 </div>
 
@@ -138,7 +138,7 @@ export default function AutoTasksWidget() {
                         {
                             icon: "🚫",
                             title: "Исключение системных сделок",
-                            description: "Специальное поле \"Не проверять на задачи\" позволяет исключить определенные сделки из автоматического контроля."
+                            description: "Специальное поле «Не проверять на задачи» позволяет исключить определенные сделки из автоматического контроля."
                         },
                         {
                             icon: "👤",
@@ -188,7 +188,7 @@ export default function AutoTasksWidget() {
                                 {
                                     step: 1,
                                     title: "Настройка отслеживания",
-                                    description: "Вы выбираете воронки и статусы, которые нужно контролировать. Например: \"Презентация\", \"Переговоры\", \"Принятие решения\".",
+                                    description: "Вы выбираете воронки и статусы, которые нужно контролировать. Например: «Переговоры», «Принятие решения».",
                                     color: "bg-blue-500"
                                 },
                                 {
@@ -200,7 +200,7 @@ export default function AutoTasksWidget() {
                                 {
                                     step: 3,
                                     title: "Создание задач",
-                                    description: "Для \"спящих\" сделок автоматически создается задача с настроенным текстом и назначается ответственному менеджеру.",
+                                    description: "Для «спящих» сделок автоматически создается задача с настроенным текстом и назначается ответственному менеджеру.",
                                     color: "bg-green-500"
                                 },
                                 {
@@ -265,15 +265,15 @@ export default function AutoTasksWidget() {
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
-                                                <span>Найдите виджет "Автозадачи в сделках" в каталоге</span>
+                                                <span>Найдите виджет &quot;Автозадачи в сделках&quot; в каталоге</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
-                                                <span>Нажмите "Установить" и подтвердите установку</span>
+                                                <span>Нажмите &quot;Установить&quot; и подтвердите установку</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
-                                                <span>Виджет автоматически создаст необходимое поле "Не проверять на задачи"</span>
+                                                <span>Виджет автоматически создаст необходимое поле &quot;Не проверять на задачи&quot;</span>
                                             </li>
                                         </ul>
 
@@ -311,11 +311,11 @@ export default function AutoTasksWidget() {
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
-                                                <span>В поле "Статус" выберите воронку или конкретные статусы</span>
+                                                <span>В поле &quot;Статус&quot; выберите воронку или конкретные статусы</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
-                                                <span>Повторите для всех важных этапов (например: "Переговоры", "Презентация", "Принятие решения")</span>
+                                                <span>Повторите для всех важных этапов (например: &quot;Переговоры&quot;, &quot;Принятие решения&quot;)</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -410,7 +410,7 @@ export default function AutoTasksWidget() {
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
-                                                <span>Нажмите кнопку "Сохранить настройки"</span>
+                                                <span>Нажмите кнопку &quot;Сохранить настройки&quot;</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
@@ -464,7 +464,7 @@ export default function AutoTasksWidget() {
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
-                                                <span>Если нужно исключить сделку из проверки - поставьте галочку в поле "Не проверять на задачи"</span>
+                                                <span>Если нужно исключить сделку из проверки - поставьте галочку в поле &quot;Не проверять на задачи&quot;</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
@@ -495,7 +495,7 @@ export default function AutoTasksWidget() {
                                                     <ul className="text-red-700 mt-2 space-y-1">
                                                         <li>• Проверьте правильность указанных воронок и этапов</li>
                                                         <li>• Убедитесь, что есть сделки на выбранных этапах</li>
-                                                        <li>• Проверьте, что сделки не имеют галочку "Не проверять на задачи"</li>
+                                                        <li>• Проверьте, что сделки не имеют галочку &quot;Не проверять на задачи&quot;</li>
                                                         <li>• Подождите от 5 до 10 минут - виджет работает с интервалом</li>
                                                         <li>• Обратитесь к нам за консультацией</li>
                                                     </ul>
