@@ -4,11 +4,15 @@ import Button from "@/shared/ui/button/Button";
 import Image from "next/image";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ConsultCard.css";
 import ConsultationModal from "@/features/consultation/ConsultationModal";
 
-const ConsultCard = () => {
+interface ConsultCardProps {
+  className: string;
+}
+
+const ConsultCard: React.FC<ConsultCardProps> = ({ className }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
     threshold: 0.5,
@@ -31,7 +35,7 @@ const ConsultCard = () => {
       transition={{ duration: 1.5, ease: "easeOut" }}
       id="card"
     >
-      <div className="card__container container rounded-4xl relative">
+      <div className={`card__container container rounded-4xl relative ${className || ""}`}>
         <div className="card__content p-10 space-y-15 rounded-4xl">
           <h2 className="text-h2 font-semibold text-white w-190">
             Освободим ваше время, за счет автоматизации процессов и аналитики
