@@ -185,11 +185,11 @@ export default function MassiveLeadsWidget() {
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
-                                                <span>Найдите "Массовое создание сделок" в каталоге</span>
+                                                <span>Найдите «Массовое создание сделок» в каталоге</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
-                                                <span>Нажмите "Установить" и подтвердите установку</span>
+                                                <span>Нажмите «Установить» и подтвердите установку</span>
                                             </li>
                                         </ul>
 
@@ -211,7 +211,7 @@ export default function MassiveLeadsWidget() {
                                         <ul className="space-y-2 ml-4">
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
-                                                <span>Перейдите в "Контакты" в разделе "Списки" в AmoCRM</span>
+                                                <span>Перейдите в «Контакты» в разделе «Списки» в AmoCRM</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
@@ -233,8 +233,7 @@ export default function MassiveLeadsWidget() {
                                             </div>
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
-                                                <span>В левом верхнем углу активируется кнопка "Создать сделки",
-                                                    наведитесь на нее чтобы она выехала из боковой панели</span>
+                                                <span>В левом верхнем углу активируется кнопка «Создать сделки», наведитесь на нее чтобы она выехала из боковой панели</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
@@ -271,10 +270,10 @@ export default function MassiveLeadsWidget() {
                                             <div className="bg-gray-50 p-4 rounded-xl">
                                                 <div className="font-semibold mb-2">Примеры хороших названий:</div>
                                                 <ul className="text-sm space-y-1">
-                                                    <li>• "Новогодняя акция 2025"</li>
-                                                    <li>• "Лиды с выставки RetailTech"</li>
-                                                    <li>• "Реактивация клиентов - май 2025"</li>
-                                                    <li>• "Партнерские лиды от CompanyX"</li>
+                                                    <li>• «Новогодняя акция 2025»</li>
+                                                    <li>• «Лиды с выставки RetailTech»</li>
+                                                    <li>• «Реактивация клиентов - май 2025»</li>
+                                                    <li>• «Партнерские лиды от CompanyX»</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -285,7 +284,7 @@ export default function MassiveLeadsWidget() {
                                             <ul className="space-y-2 ml-4">
                                                 <li className="flex items-start gap-2">
                                                     <span className="text-blue-600">•</span>
-                                                    <span>В поле "Статус" выберите воронку и этап</span>
+                                                    <span>В поле «Статус» выберите воронку и этап</span>
                                                 </li>
                                                 <li className="flex items-start gap-2">
                                                     <span className="text-blue-600">•</span>
@@ -333,7 +332,7 @@ export default function MassiveLeadsWidget() {
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
-                                                <span>Нажмите кнопку "Создать"</span>
+                                                <span>Нажмите кнопку «Создать»</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
