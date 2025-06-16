@@ -7,7 +7,7 @@ export default function Widgets() {
 
   return (
     <main id="widgets" className="container pb-20 pt-20">
-      <section className="mt-20 grid grid-cols-2 gap-8">
+      <section className="my-20 grid grid-cols-2 gap-8">
         <div
           onClick={() => router.push("/widgets/telegram-notify")}
           className="cursor-pointer bg-white p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 hover:transform hover:scale-105 animate-fade-in-up"
