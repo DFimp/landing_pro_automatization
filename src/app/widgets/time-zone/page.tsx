@@ -9,12 +9,12 @@ export default function TimezoneWidget() {
             <section className="container mx-auto px-4 pb-16 bg-white">
                 <div className="text-center space-y-6">
                     <div
-                        className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-100 to-green-100 px-6 py-2 rounded-full">
+                        className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-100 to-violet-100 px-6 py-2 rounded-full">
                         <span className="text-2xl">🕐</span>
                         <span className="text-blue-600 font-medium">Виджет времени клиента для AmoCRM</span>
                     </div>
 
-                    <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-blue-600 via-green-600 to-blue-800 bg-clip-text text-transparent leading-tight mt-8 mb-8">
+                    <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-blue-600 via-violet-600 to-blue-800 bg-clip-text text-transparent leading-tight mt-8 mb-8">
                         Звоните в правильное время!
                     </h1>
 
@@ -25,12 +25,12 @@ export default function TimezoneWidget() {
 
                     <div className="flex flex-col gap-3 justify-center items-center mb-10">
                         <button
-                            className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            className="bg-gradient-to-r from-blue-600 to-violet-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105 cursor-pointer">
                             Установить виджет бесплатно 🚀
                         </button>
                         <a
                             href="#instruction"
-                            className="text-blue-600 font-medium hover:text-green-600 transition-colors cursor-pointer"
+                            className="text-blue-600 font-medium hover:text-violet-600 transition-colors cursor-pointer"
                         >
                             Смотреть как работает →
                         </a>
@@ -140,10 +140,10 @@ export default function TimezoneWidget() {
                 <div className="max-w-4xl mx-auto">
                     <div className="space-y-8">
                         {/* Step 1 */}
-                        <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-200">
+                        <div className="bg-white rounded-3xl p-8 transition-all duration-500" style={{boxShadow: '0 15px 35px -5px rgba(0, 0, 0, 0.25), 0 15px 20px -10px rgba(0, 0, 0, 0.2)', border: '1px solid rgba(0, 0, 0, 0.1)'}}>
                             <div className="flex items-start gap-6">
                                 <div
-                                    className="bg-gradient-to-r from-blue-600 to-green-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shrink-0">
+                                    className="bg-gradient-to-r from-blue-600 to-violet-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shrink-0">
                                     1
                                 </div>
                                 <div className="flex-1">
@@ -158,11 +158,11 @@ export default function TimezoneWidget() {
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
-                                                <span>Найдите "Время клиента" в каталоге</span>
+                                                <span>Найдите &ldquo;Время клиента&rdquo; в каталоге</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
-                                                <span>Нажмите "Установить" и подтвердите</span>
+                                                <span>Нажмите &ldquo;Установить&rdquo; и подтвердите</span>
                                             </li>
                                         </ul>
                                         <div className="mt-4">
@@ -178,10 +178,10 @@ export default function TimezoneWidget() {
 
 
                         {/* Step 2 */}
-                        <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-200 mb-16">
+                        <div className="bg-white rounded-3xl p-8 transition-all duration-500 mb-16" style={{boxShadow: '0 15px 35px -5px rgba(0, 0, 0, 0.25), 0 15px 20px -10px rgba(0, 0, 0, 0.2)', border: '1px solid rgba(0, 0, 0, 0.1)'}}>
                             <div className="flex items-start gap-6">
                                 <div
-                                    className="bg-gradient-to-r from-blue-600 to-green-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shrink-0">
+                                    className="bg-gradient-to-r from-blue-600 to-violet-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shrink-0">
                                     2
                                 </div>
                                 <div className="flex-1">
@@ -200,10 +200,6 @@ export default function TimezoneWidget() {
                                             <li className="flex items-start gap-2">
                                                 <span className="text-green-600">✅</span>
                                                 <span>Мобильного оператора</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <span className="text-green-600">✅</span>
-                                                <span>Рекомендацию - звонить или подождать</span>
                                             </li>
                                         </ul>
                                         <div className="bg-green-50 border border-green-200 rounded-xl p-4">
