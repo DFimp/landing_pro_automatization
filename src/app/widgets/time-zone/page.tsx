@@ -44,86 +44,36 @@ export default function TimezoneWidget() {
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-16">
                         <h2 className="text-5xl font-bold text-gray-900 mb-4">
-                            🎯 А теперь представьте...
+                            Как это выглядит?
                         </h2>
-                        <p className="text-xl text-gray-600">
-                            Как изменится ваша работа с виджетом времени клиента
+                        <p className="text-xl text-gray-600 mb-12">
+                            Виджет автоматически отображается прямо в карточке контакта
                         </p>
                     </div>
 
+                    {/* GIF Demo */}
                     <div className="max-w-4xl mx-auto">
-                        <div className="bg-green-50 border border-green-200 rounded-3xl p-8 mb-8">
-                            <div className="flex items-center gap-4 mb-6">
-                                <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
-                                    <span className="text-2xl text-white">👤</span>
-                                </div>
-                                <div>
-                                    <div className="font-bold text-lg">Иван Петров</div>
-                                    <div className="text-gray-600">+7 (495) 123-45-67</div>
-                                </div>
+                        <div className="bg-white rounded-3xl p-8 transition-all duration-500" style={{
+                            boxShadow: '0 15px 35px -5px rgba(0, 0, 0, 0.25), 0 15px 20px -10px rgba(0, 0, 0, 0.2)',
+                            border: '1px solid rgba(0, 0, 0, 0.1)'
+                        }}>
+                            <div
+                                className="aspect-video w-full rounded-2xl overflow-hidden bg-gray-100 flex items-center justify-center">
+                                <img
+                                    src="/time-zone-demo.gif"
+                                    alt="Демонстрация работы виджета времени клиента в AmoCRM"
+                                    className="w-full h-full object-contain"
+                                />
                             </div>
-
-                            <div className="grid md:grid-cols-3 gap-4 mb-6">
-                                <div className="bg-white p-4 rounded-xl">
-                                    <div className="text-sm text-gray-600">Регион</div>
-                                    <div className="font-bold text-blue-600">Москва</div>
-                                </div>
-                                <div className="bg-white p-4 rounded-xl">
-                                    <div className="text-sm text-gray-600">Время клиента</div>
-                                    <div className="font-bold text-green-600 text-xl">14:23</div>
-                                </div>
-                                <div className="bg-white p-4 rounded-xl">
-                                    <div className="text-sm text-gray-600">Оператор</div>
-                                    <div className="font-bold">МТС</div>
-                                </div>
-                            </div>
-
-                            <div className="bg-green-100 p-4 rounded-xl">
-                                <div className="flex items-center gap-2">
-                                    <span className="text-green-600">✅</span>
-                                    <span className="font-medium text-green-800">Отличное время для звонка!</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="bg-yellow-50 border border-yellow-200 rounded-3xl p-8">
-                            <div className="flex items-center gap-4 mb-6">
-                                <div className="w-12 h-12 bg-yellow-600 rounded-full flex items-center justify-center">
-                                    <span className="text-2xl text-white">👤</span>
-                                </div>
-                                <div>
-                                    <div className="font-bold text-lg">Анна Владивостокова</div>
-                                    <div className="text-gray-600">+7 (423) 987-65-43</div>
-                                </div>
-                            </div>
-
-                            <div className="grid md:grid-cols-3 gap-4 mb-6">
-                                <div className="bg-white p-4 rounded-xl">
-                                    <div className="text-sm text-gray-600">Регион</div>
-                                    <div className="font-bold text-blue-600">Владивосток</div>
-                                </div>
-                                <div className="bg-white p-4 rounded-xl">
-                                    <div className="text-sm text-gray-600">Время клиента</div>
-                                    <div className="font-bold text-yellow-600 text-xl">01:23</div>
-                                </div>
-                                <div className="bg-white p-4 rounded-xl">
-                                    <div className="text-sm text-gray-600">Часовой пояс</div>
-                                    <div className="font-bold">UTC+10</div>
-                                </div>
-                            </div>
-
-                            <div className="bg-yellow-100 p-4 rounded-xl">
-                                <div className="flex items-center gap-2">
-                                    <span className="text-yellow-600">⚠️</span>
-                                    <span className="font-medium text-yellow-800">Слишком поздно! Лучше позвонить после 9:00 по времени клиента</span>
-                                </div>
+                            <div className="mt-6 text-center">
+                                <p className="text-gray-600 text-lg">
+                                    Виджет показывает время клиента, регион и оператора связи прямо в AmoCRM
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-
-
 
 
             {/* Instruction Section */}
@@ -140,7 +90,10 @@ export default function TimezoneWidget() {
                 <div className="max-w-4xl mx-auto">
                     <div className="space-y-8">
                         {/* Step 1 */}
-                        <div className="bg-white rounded-3xl p-8 transition-all duration-500" style={{boxShadow: '0 15px 35px -5px rgba(0, 0, 0, 0.25), 0 15px 20px -10px rgba(0, 0, 0, 0.2)', border: '1px solid rgba(0, 0, 0, 0.1)'}}>
+                        <div className="bg-white rounded-3xl p-8 transition-all duration-500" style={{
+                            boxShadow: '0 15px 35px -5px rgba(0, 0, 0, 0.25), 0 15px 20px -10px rgba(0, 0, 0, 0.2)',
+                            border: '1px solid rgba(0, 0, 0, 0.1)'
+                        }}>
                             <div className="flex items-start gap-6">
                                 <div
                                     className="bg-gradient-to-r from-blue-600 to-violet-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shrink-0">
@@ -178,7 +131,10 @@ export default function TimezoneWidget() {
 
 
                         {/* Step 2 */}
-                        <div className="bg-white rounded-3xl p-8 transition-all duration-500 mb-16" style={{boxShadow: '0 15px 35px -5px rgba(0, 0, 0, 0.25), 0 15px 20px -10px rgba(0, 0, 0, 0.2)', border: '1px solid rgba(0, 0, 0, 0.1)'}}>
+                        <div className="bg-white rounded-3xl p-8 transition-all duration-500 mb-16" style={{
+                            boxShadow: '0 15px 35px -5px rgba(0, 0, 0, 0.25), 0 15px 20px -10px rgba(0, 0, 0, 0.2)',
+                            border: '1px solid rgba(0, 0, 0, 0.1)'
+                        }}>
                             <div className="flex items-start gap-6">
                                 <div
                                     className="bg-gradient-to-r from-blue-600 to-violet-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shrink-0">
@@ -209,7 +165,7 @@ export default function TimezoneWidget() {
                                                     <div className="font-semibold text-green-800">Автоматическая
                                                         работа
                                                     </div>
-                                                    <p className="text-green-700 mt-1">После настройки виджет работает
+                                                    <p className="text-green-700 mt-1">После установки виджет работает
                                                         автоматически - никаких дополнительных действий не требуется</p>
                                                 </div>
                                             </div>
