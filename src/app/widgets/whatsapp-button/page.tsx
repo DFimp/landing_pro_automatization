@@ -1,9 +1,9 @@
-// app/widgets/button-widgets/components/TelegramWidget.tsx
 'use client';
 import React from 'react';
 import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
+import "./styles.css";
 
-export default function TelegramWidget() {
+export default function Page() {
     const handleScrollToInstruction = (e: React.MouseEvent<HTMLAnchorElement>) => {
         e.preventDefault();
         const element = document.querySelector('#instruction');
@@ -13,22 +13,21 @@ export default function TelegramWidget() {
     };
 
     return (
-        <main id="telegram-widget" className="pb-0 pt-20 bg-white">
+        <main id="whatsapp-widget" className="pb-20 pt-20 bg-white">
             {/* Hero Section */}
             <section className="container mx-auto px-4 pb-16 bg-white">
                 <div className="text-center space-y-6">
-                    <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-100 to-violet-100 px-6 py-2 rounded-full">
-                        <span className="text-2xl">📱</span>
-                        <span className="text-blue-600 font-medium">Мгновенный переход в Telegram из amoCRM</span>
-                    </div>
-
+                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-100 to-violet-100 px-6 py-2 rounded-full">
+                    <span className="text-2xl">💬</span>
+                    <span className="text-blue-600 font-medium">Мгновенный переход в WhatsApp из amoCRM</span>
+                </div>
                     <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-blue-600 via-violet-600 to-blue-800 bg-clip-text text-transparent leading-tight mt-8 mb-8">
-                        Написать в Telegram за 1 клик?
+                        Написать в WhatsApp за 1 клик?
                     </h1>
 
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-10">
-                        Превратите каждый номер телефона в прямую ссылку на чат с клиентом в Telegram. 
-                        Больше никакого копирования номеров и поиска контактов!
+                        Превратите каждый номер телефона в прямую ссылку на чат с клиентом в WhatsApp. 
+                        Мгновенное общение с клиентами прямо из карточки сделки!
                     </p>
 
                     <div className="flex flex-col gap-3 justify-center items-center mb-10">
@@ -54,7 +53,7 @@ export default function TelegramWidget() {
                             Проблемы традиционного способа
                         </h2>
                         <p className="text-xl text-gray-600">
-                            Почему менеджеры теряют время и клиентов при работе с Telegram
+                            Почему менеджеры теряют время и клиентов при работе с WhatsApp
                         </p>
                     </div>
 
@@ -62,23 +61,23 @@ export default function TelegramWidget() {
                         {[
                             {
                                 icon: "🐌",
-                                title: "Долгий процесс",
-                                description: "Копировать номер → Открыть Telegram → Найти контакт → Написать сообщение. Минимум 30-60 секунд на каждого клиента."
+                                title: "Медленный процесс",
+                                description: "Копировать номер → Открыть WhatsApp → Найти контакт → Начать чат. До минуты на каждого клиента вместо 1 секунды."
+                            },
+                            {
+                                icon: "🔄",
+                                title: "Постоянные переключения",
+                                description: "Туда-сюда между amoCRM и WhatsApp сбивает концентрацию и замедляет работу менеджеров."
                             },
                             {
                                 icon: "❌",
-                                title: "Ошибки в номерах",
-                                description: "Опечатки при копировании приводят к тому, что сообщения не доходят до клиента или идут не тому человеку."
+                                title: "Ошибки при вводе",
+                                description: "Опечатки в номере приводят к тому, что сообщения идут не тому человеку или вообще не доходят."
                             },
                             {
-                                icon: "😤",
-                                title: "Потеря концентрации",
-                                description: "Постоянное переключение между amoCRM и Telegram сбивает с рабочего ритма и снижает продуктивность."
-                            },
-                            {
-                                icon: "⏰",
-                                title: "Упущенные продажи",
-                                description: "Пока менеджер ищет контакт в Telegram, клиент может передумать или обратиться к конкурентам."
+                                icon: "💸",
+                                title: "Потерянные продажи",
+                                description: "Клиенты не ждут - пока вы ищете их в WhatsApp, они могут уйти к более быстрым конкурентам."
                             }
                         ].map((problem, index) => (
                             <div key={index} className="bg-white p-6 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 hover:transform hover:scale-105 animate-fade-in-up" style={{animationDelay: `${index * 0.1}s`, boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 16px -8px rgba(0, 0, 0, 0.15)'}}>
@@ -106,23 +105,23 @@ export default function TelegramWidget() {
                     {[
                         {
                             icon: "⚡",
-                            title: "1 секунда вместо минуты",
-                            description: "Один клик по кнопке и вы уже в чате с клиентом. Экономия времени в 30-60 раз!"
+                            title: "Мгновенная скорость",
+                            description: "Один клик и вы уже в WhatsApp чате с клиентом."
                         },
                         {
                             icon: "🎯",
-                            title: "100% точность",
-                            description: "Автоматическое форматирование номера исключает любые ошибки при переходе в чат."
+                            title: "Абсолютная точность",
+                            description: "Виджет автоматически форматирует номер правильно - никаких ошибок и опечаток."
                         },
                         {
-                            icon: "🔄",
-                            title: "Без переключений",
-                            description: "Telegram открывается в новой вкладке, amoCRM остается активной. Никаких потерь концентрации."
+                            icon: "🔥",
+                            title: "Горячие продажи",
+                            description: "Клиенты отвечают в WhatsApp быстрее, чем на звонки. Выше конверсия и больше сделок."
                         },
                         {
-                            icon: "📈",
-                            title: "Больше продаж",
-                            description: "Мгновенная связь с клиентом увеличивает конверсию и снижает время реакции на заявки."
+                            icon: "🎨",
+                            title: "Удобный интерфейс",
+                            description: "WhatsApp открывается в новой вкладке, amoCRM остается активной. Максимальное удобство."
                         }
                     ].map((benefit, index) => (
                         <div key={index} className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 hover:transform hover:scale-105 animate-fade-in-up" style={{animationDelay: `${index * 0.1}s`, boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 16px -8px rgba(0, 0, 0, 0.15)'}}>
@@ -142,7 +141,7 @@ export default function TelegramWidget() {
                             Посмотрите, как это работает
                         </h2>
                         <p className="text-xl text-gray-600">
-                            Просто и понятно - кликнул и уже в чате!
+                            Один клик - и вы уже общаетесь с клиентом!
                         </p>
                     </div>
 
@@ -163,7 +162,7 @@ export default function TelegramWidget() {
                                             <span>→ Копировать номер</span>
                                         </div>
                                         <div className="flex items-center gap-2 text-gray-500">
-                                            <span>→ Открыть Telegram</span>
+                                            <span>→ Открыть WhatsApp</span>
                                         </div>
                                         <div className="flex items-center gap-2 text-gray-500">
                                             <span>→ Найти контакт</span>
@@ -182,9 +181,9 @@ export default function TelegramWidget() {
                                             <span className="text-2xl">😍</span>
                                             <div className="flex-1">
                                                 <div className="font-semibold text-green-800 mb-2">+7 961 314-79-02</div>
-                                                <button className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2 hover:from-blue-600 hover:to-blue-700 transition-all">
-                                                    <span>📱</span>
-                                                    Написать в Telegram
+                                                <button className="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2 hover:from-green-600 hover:to-green-700 transition-all">
+                                                    <span>💬</span>
+                                                    Написать в WhatsApp
                                                 </button>
                                             </div>
                                         </div>
@@ -210,7 +209,7 @@ export default function TelegramWidget() {
                         📋 Пошаговая инструкция
                     </h2>
                     <p className="text-xl text-gray-600">
-                        Настройте быстрый переход в Telegram за 3 простых шага
+                        Настройте быстрый переход в WhatsApp за 3 простых шага
                     </p>
                 </div>
 
@@ -219,7 +218,7 @@ export default function TelegramWidget() {
                         {/* Step 1 */}
                         <div className="bg-white rounded-3xl p-8 transition-all duration-500 animate-fade-in-up" style={{boxShadow: '0 15px 35px -5px rgba(0, 0, 0, 0.25), 0 15px 20px -10px rgba(0, 0, 0, 0.2)', border: '1px solid rgba(0, 0, 0, 0.1)'}}>
                             <div className="flex items-start gap-6">
-                                <div className="bg-gradient-to-r from-blue-600 to-violet-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shrink-0">
+                            <div className="bg-gradient-to-r from-blue-600 to-violet-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shrink-0">
                                     1
                                 </div>
                                 <div className="flex-1">
@@ -240,7 +239,7 @@ export default function TelegramWidget() {
                                                 <span>Подтвердите установку виджета</span>
                                             </li>
                                             <li className="flex items-start gap-2">
-                                                <span className="text-green-600">•</span>
+                                                <span className="text-blue-600">•</span>
                                                 <span>Виджет сразу начнет работать во всех разделах amoCRM, где есть номера телефонов</span>
                                             </li>
                                         </ul>
@@ -272,7 +271,7 @@ export default function TelegramWidget() {
                                 <div className="flex-1">
                                     <h3 className="text-2xl font-bold text-gray-900 mb-4">Готово! Пользуйтесь</h3>
                                     <div className="text-gray-700 leading-relaxed space-y-4">
-                                        <p>Теперь рядом с каждым номером телефона будет кнопка Telegram:</p>
+                                        <p>Теперь рядом с каждым номером телефона будет кнопка WhatsApp:</p>
                                         <ul className="space-y-2 ml-4">
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
@@ -280,11 +279,11 @@ export default function TelegramWidget() {
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
-                                                <span>Выберите кнопку "Написать в Telegram"</span>
+                                                <span>Выберите кнопку "Написать в WhatsApp"</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
-                                                <span>Telegram откроется с чатом для этого номера</span>
+                                                <span>WhatsApp откроется с чатом для этого номера</span>
                                             </li>
                                         </ul>
                                         <div className="bg-purple-50 border border-purple-200 rounded-xl p-4">
@@ -292,7 +291,7 @@ export default function TelegramWidget() {
                                                 <span className="text-xl">🚀</span>
                                                 <div>
                                                     <div className="font-semibold text-purple-800">Результат:</div>
-                                                    <div className="text-purple-700 mt-1">Ваши менеджеры начнут работать в 10 раз быстрее и будут чаще связываться с клиентами!</div>
+                                                    <div className="text-purple-700 mt-1">Ваши менеджеры будут связываться с клиентами мгновенно и закрывать больше сделок!</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -326,7 +325,7 @@ export default function TelegramWidget() {
                             {
                                 icon: "🔧",
                                 title: "Автоматическое форматирование",
-                                description: "Виджет сам приводит номер к нужному формату для Telegram, исключая ошибки."
+                                description: "Виджет сам приводит номер к нужному формату для WhatsApp, исключая ошибки."
                             },
                             {
                                 icon: "⚡",
@@ -336,7 +335,7 @@ export default function TelegramWidget() {
                             {
                                 icon: "📱",
                                 title: "Веб и мобильные версии",
-                                description: "Корректно открывает Telegram Web в браузере или мобильное приложение на устройстве."
+                                description: "Корректно открывает WhatsApp Web в браузере или мобильное приложение на устройстве."
                             },
                             {
                                 icon: "🎯",
