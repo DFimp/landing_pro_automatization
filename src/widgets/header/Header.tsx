@@ -4,14 +4,24 @@ import Image from "next/image";
 import HeaderNav from "@/widgets/header/ui/HeaderNav";
 import Button from "@/shared/ui/button/Button";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ConsultationModal from "@/features/consultation/ConsultationModal";
+import styles from "./style.module.css";
 
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [isIframe, setIsIframe] = useState<boolean>(false);
+
+  useEffect(() => {
+    try {
+      setIsIframe(window.self !== window.top);
+    } catch (e) {
+      setIsIframe(true);
+    }
+  }, []);
 
   return (
-    <header id="header">
+    <header id="header" className={isIframe ? styles.hidden : ""}>
       <div className="header__container container flex justify-between items-center">
         <div className="header__logo">
           <Link href="/">
