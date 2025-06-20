@@ -58,12 +58,17 @@ export default function TimezoneWidget() {
                             border: '1px solid rgba(0, 0, 0, 0.1)'
                         }}>
                             <div
-                                className="aspect-video w-full rounded-2xl overflow-hidden bg-gray-100 flex items-center justify-center">
-                                <img
-                                    src="/time-zone-demo.gif"
-                                    alt="Демонстрация работы виджета времени клиента в AmoCRM"
+                                className="aspect-video w-full rounded-2xl overflow-hidden flex items-center justify-center">
+                                <video
+                                    src="/time-zone-demo.mp4"
+                                    autoPlay
+                                    loop
+                                    muted
+                                    playsInline
                                     className="w-full h-full object-contain"
-                                />
+                                >
+                                    <source src="/time-zone-demo.mp4" type="video/mp4"/>
+                                </video>
                             </div>
                             <div className="mt-6 text-center">
                                 <p className="text-gray-600 text-lg">
