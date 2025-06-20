@@ -27,8 +27,8 @@ const Header = () => {
           <Link href="/">
             <Image
               className="cursor-pointer"
-              src="/logo.svg"
-              alt="Логотип комании"
+              src="/logoAndText.png"
+              alt="Про автоматизацию"
               width={260}
               height={80}
             />

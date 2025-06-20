@@ -4,6 +4,7 @@ import "./globals.css";
 import React from "react";
 import Header from "@/widgets/header/Header";
 import Head from "next/head";
+import { Footer } from "@/widgets/footer";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -57,6 +58,7 @@ export default function RootLayout({
       <body className={`${montserrat.variable} antialiased`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
