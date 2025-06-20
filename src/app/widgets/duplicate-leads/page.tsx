@@ -278,7 +278,7 @@ export default function Page() {
                                         <ul className="space-y-2 ml-4">
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
-                                                <span>Задать приоритеты этапов (первый в блоке - самый приоритетный)</span>
+                                                <span>Задать приоритеты этапов (первый в блоке - самый приоритетный -&gt; последний в блоке - самый приоритетный)</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
