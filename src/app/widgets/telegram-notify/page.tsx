@@ -106,60 +106,20 @@ export default function TelegramWidget() {
                             📱 Как выглядят уведомления
                         </h2>
                         <p className="text-xl text-gray-600">
-                            Наглядные примеры сообщений в Telegram
+                            Наглядный пример сообщений в Telegram
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                        <div className="bg-slate-700 text-white p-6 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-500 hover:transform hover:scale-105 animate-slide-in-left">
-                            <div className="space-y-3">
-                                <div className="font-bold text-lg">💼 Новая крупная сделка!</div>
-                                <div className="space-y-1 text-sm">
-                                    <div>📋 Сделка: Разработка мобильного приложения</div>
-                                    <div>💰 Сумма: 850 000 ₽</div>
-                                    <div>👤 Клиент: Максим Технологов</div>
-                                    <div>📱 Телефон: +7 (999) 456-78-90</div>
-                                    <div>🏢 Компания: ООО &ldquo;ТехноИнновации&rdquo;</div>
-                                    <div>👨‍💼 Ответственный: Елена Проектова</div>
-                                    <div>📧 Email: m.tech@innov.ru</div>
-                                    <div>🎯 Этап: Презентация решения</div>
-                                </div>
-                                <div className="space-y-2 pt-4">
-                                    <button className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg text-sm font-medium">
-                                        📄 Отправить КП
-                                    </button>
-                                    <button className="w-full bg-green-600 text-white py-2 px-4 rounded-lg text-sm font-medium">
-                                        📅 Назначить встречу
-                                    </button>
-                                    <button className="w-full bg-gray-600 text-white py-2 px-4 rounded-lg text-sm font-medium">
-                                        📞 Запланировать звонок
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="bg-slate-700 text-white p-6 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-500 hover:transform hover:scale-105 animate-slide-in-right">
-                            <div className="space-y-3">
-                                <div className="font-bold text-lg">🎓 Заявка на обучение</div>
-                                <div className="space-y-1 text-sm">
-                                    <div>📋 Сделка: Корпоративное обучение по CRM</div>
-                                    <div>💰 Сумма: 120 000 ₽</div>
-                                    <div>👤 Клиент: Анна Менеджерова</div>
-                                    <div>📱 Телефон: +7 (812) 555-33-22</div>
-                                    <div>🏢 Компания: Центр &ldquo;Развитие&rdquo;</div>
-                                    <div>👨‍💼 Ответственный: Дмитрий Консультантов</div>
-                                    <div>👥 Участников: 15 человек</div>
-                                    <div>📅 Желаемая дата: 15 января 2025</div>
-                                </div>
-                                <div className="space-y-2 pt-4">
-                                    <button className="w-full bg-orange-600 text-white py-2 px-4 rounded-lg text-sm font-medium">
-                                        📋 Составить программу
-                                    </button>
-                                    <button className="w-full bg-gray-600 text-white py-2 px-4 rounded-lg text-sm font-medium">
-                                        📧 Отправить договор
-                                    </button>
-                                </div>
-                            </div>
+                    <div className="max-w-2xl mx-auto">
+                        <div className="bg-white rounded-3xl p-8 transition-all duration-500" style={{
+                            boxShadow: '0 15px 35px -5px rgba(0, 0, 0, 0.25), 0 15px 20px -10px rgba(0, 0, 0, 0.2)',
+                            border: '1px solid rgba(0, 0, 0, 0.1)'
+                        }}>
+                            <img
+                                src="/telegram-notifications-demo.jpg"
+                                alt="Примеры уведомлений Telegram виджета в AmoCRM"
+                                className="w-full h-full object-contain rounded-lg"
+                            />
                         </div>
                     </div>
                 </div>
