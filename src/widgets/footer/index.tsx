@@ -9,7 +9,7 @@ export const Footer = () => {
 
   return (
     <footer id={isIframe ? "hidden-in-iframe" : ""} className="bg-[#1e1e1e]">
-      <div className="max-w-[1200px] m-auto py-10 flex items-center justify-between">
+      <div className="max-w-[1200px] m-auto py-2 flex items-center justify-between">
         <Link href="/">
           <Image
             className="cursor-pointer"
