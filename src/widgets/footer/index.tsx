@@ -17,7 +17,7 @@ export const Footer = () => {
           />
         </Link>
 
-        <Link href={"/policy"} className="text-h7 text-blue">
+        <Link href={"/privacy"} className="text-h7 text-blue">
           Политика конфиденциальности
         </Link>
       </div>

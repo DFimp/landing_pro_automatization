@@ -11,13 +11,6 @@ body {
     font-family: var(--font-montserrat), sans-serif;
 }
 
-* {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none; 
-}
-
 @theme {
     /*Size*/
     --text-h1: 128px;
