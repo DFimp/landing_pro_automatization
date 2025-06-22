@@ -11,6 +11,10 @@ body {
     font-family: var(--font-montserrat), sans-serif;
 }
 
+#hidden-in-iframe {
+  display: none;
+}
+
 @theme {
     /*Size*/
     --text-h1: 128px;

@@ -1,8 +1,11 @@
 'use client';
 import React from 'react';
 import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
+import { hiddenInIframe } from "@/shared/utils/hiddenInIframe";
 
 export default function AutoTasksWidget() {
+    const { isIframe } = hiddenInIframe();
+    
     const handleScrollToInstruction = (e: React.MouseEvent<HTMLAnchorElement>) => {
         e.preventDefault();
         const element = document.querySelector('#instruction');
@@ -14,7 +17,7 @@ export default function AutoTasksWidget() {
     return (
         <main id="auto-tasks-widget" className="pb-20 pt-20 bg-white">
             {/* Hero Section */}
-            <section className="container mx-auto px-4 pb-16 bg-white">
+            <section id={isIframe ? "hidden-in-iframe" : ""} className="container mx-auto px-4 pb-16 bg-white">
                 <div className="text-center space-y-6">
                     <div
                         className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-100 to-violet-100 px-6 py-2 rounded-full">
@@ -66,7 +69,7 @@ export default function AutoTasksWidget() {
             </section>
 
             {/* Problem Section */}
-            <section className="container mx-auto px-4 animate-fade-in-up py-16 rounded-3xl mb-16">
+            <section id={isIframe ? "hidden-in-iframe" : ""} className="container mx-auto px-4 animate-fade-in-up py-16 rounded-3xl mb-16">
                 <div className="text-center mb-12 mt-27">
                     <h2 className="text-4xl font-bold text-gray-900 mb-4">
                         😰 Знакомые проблемы?
@@ -108,12 +111,10 @@ export default function AutoTasksWidget() {
                         </div>
                     ))}
                 </div>
-
-
             </section>
 
             {/* Features Section */}
-            <section className="container mx-auto px-4 animate-fade-in-up bg-white">
+            <section id={isIframe ? "hidden-in-iframe" : ""} className="container mx-auto px-4 animate-fade-in-up bg-white">
                 <div className="text-center mb-16 mt-35">
                     <h2 className="text-5xl font-bold text-gray-900 mb-4">
                         Решение: Автозадачи в сделках
@@ -171,7 +172,7 @@ export default function AutoTasksWidget() {
             </section>
 
             {/* How it works Section */}
-            <section className="py-20 animate-fade-in-up rounded-3xl">
+            <section id={isIframe ? "hidden-in-iframe" : ""} className="py-20 animate-fade-in-up rounded-3xl">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-12">
                         <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -510,7 +511,7 @@ export default function AutoTasksWidget() {
                 </div>
             </section>
 
-            <section className={"mt-16"}>
+            <section id={isIframe ? "hidden-in-iframe" : ""} className={"mt-16"}>
                 <ConsultCard></ConsultCard>
             </section>
 

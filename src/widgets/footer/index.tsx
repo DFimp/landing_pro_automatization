@@ -2,10 +2,13 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { hiddenInIframe } from "@/shared/utils/hiddenInIframe";
 
 export const Footer = () => {
+  const { isIframe } = hiddenInIframe();
+
   return (
-    <footer className="bg-black">
+    <footer id={isIframe ? "hidden-in-iframe" : ""} className="bg-black">
       <div className="max-w-[1200px] m-auto py-10 flex items-center justify-between">
         <Link href="/">
           <Image
