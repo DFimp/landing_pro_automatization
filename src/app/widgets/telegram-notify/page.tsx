@@ -116,7 +116,7 @@ export default function TelegramWidget() {
                             border: '1px solid rgba(0, 0, 0, 0.1)'
                         }}>
                             <img
-                                src="/telegram-notifications-demo.jpg"
+                                src="/telegram-notifications-demo.png"
                                 alt="Примеры уведомлений Telegram виджета в AmoCRM"
                                 className="w-full h-full object-contain rounded-lg"
                             />
