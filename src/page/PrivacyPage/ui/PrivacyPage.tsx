@@ -5,6 +5,12 @@ import { privacyPolicy } from "../model/const";
 import { Point } from "./Point";
 import { Fragment } from "react";
 
+type PrivacySection = {
+  title: string;
+  description: string;
+  subOption?: string[];
+};
+
 export default function PrivacyPage() {
   return (
     <main id="policy" className="min-h-screen bg-white">
@@ -92,9 +98,10 @@ export default function PrivacyPage() {
           {/* Section 3 */}
           <section className="mb-8">
             <TitleH2>{privacyPolicy[2].title}</TitleH2>
-            {privacyPolicy[2]?.point?.map((el, index) => (
+            {privacyPolicy[2]?.point?.map((el: PrivacySection, index) => (
               <div className="mb-6" key={index}>
                 <TitleH3>{el.title}</TitleH3>
+                
                 <ul className="list-disc pl-6 space-y-2 text-h7 text-gray">
                   {el?.subOption?.map((subPoint, index) => (
                     <li key={index}>{subPoint}</li>
@@ -107,7 +114,7 @@ export default function PrivacyPage() {
           {/* Section 4 */}
           <section className="mb-8">
             <TitleH2>{privacyPolicy[3].title}</TitleH2>
-            {privacyPolicy[3]?.point?.map((el, index) =>
+            {privacyPolicy[3]?.point?.map((el: PrivacySection, index) =>
               el.title === "4.3" ? (
                 <Point
                   key={index}
@@ -155,7 +162,7 @@ export default function PrivacyPage() {
           {/* Section 7 */}
           <section className="mb-8">
             <TitleH2>{privacyPolicy[6].title}</TitleH2>
-            {privacyPolicy[6]?.point?.map((el, index) =>
+            {privacyPolicy[6]?.point?.map((el: PrivacySection, index) =>
               el.title === '7.1' ? (
                 <div className="mb-6" key={index}>
                   <TitleH3>{el.title + " " + el.description}</TitleH3>
@@ -178,7 +185,7 @@ export default function PrivacyPage() {
           {/* Section 8 */}
           <section className="mb-8">
             <TitleH2>{privacyPolicy[7].title}</TitleH2>
-            {privacyPolicy[7]?.point?.map((el, index) =>
+            {privacyPolicy[7]?.point?.map((el: PrivacySection, index) =>
               el.title === '8.1' ? (
                 <div className="mb-6" key={index}>
                   <TitleH3>{el.title + " " + el.description}</TitleH3>
@@ -364,7 +371,7 @@ export default function PrivacyPage() {
           {/* Section 17 */}
           <section className="mb-8">
             <TitleH2>{privacyPolicy[16].title}</TitleH2>
-            {privacyPolicy[16]?.point?.map((el, index) => (
+            {privacyPolicy[16]?.point?.map((el: PrivacySection, index) => (
               <Fragment key={index}>
                 <Point
                   title={el.title + " "}
@@ -384,7 +391,7 @@ export default function PrivacyPage() {
           {/* Section 18 */}
           <section className="mb-8">
             <TitleH2>{privacyPolicy[17].title}</TitleH2>
-            {privacyPolicy[17]?.point?.map((el, index) => (
+            {privacyPolicy[17]?.point?.map((el: PrivacySection, index) => (
               <Fragment key={index}>
                 <Point
                   title={el.title + " "}
@@ -404,7 +411,7 @@ export default function PrivacyPage() {
           {/* Section 19 */}
           <section className="mb-8">
             <TitleH2>{privacyPolicy[18].title}</TitleH2>
-            {privacyPolicy[18]?.point?.map((el, index) => (
+            {privacyPolicy[18]?.point?.map((el: PrivacySection, index) => (
               <Fragment key={index}>
                 <Point
                   title={el.title + " "}
