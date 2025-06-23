@@ -2,8 +2,10 @@
 import React from 'react';
 import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
 import './style.css';
+import { hiddenInIframe } from "@/shared/utils/hiddenInIframe";
 
 export default function Page() {
+    const { isIframe } = hiddenInIframe();
     const handleScrollToInstruction = (e: React.MouseEvent<HTMLAnchorElement>) => {
         e.preventDefault();
         const element = document.querySelector('#instruction');
@@ -15,7 +17,7 @@ export default function Page() {
     return (
         <main id="duplicate-widget" className="pb-20 pt-20 bg-white">
             {/* Hero Section */}
-            <section className="container mx-auto px-4 pb-16 bg-white">
+            <section id={isIframe ? "hidden-in-iframe" : ""} className="container mx-auto px-4 pb-16 bg-white">
                 <div className="text-center space-y-6">
                     <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-100 to-violet-100 px-6 py-2 rounded-full">
                         <span className="text-2xl">🔗</span>
@@ -47,7 +49,7 @@ export default function Page() {
             </section>
 
             {/* Problems Section */}
-            <section className="py-20 animate-fade-in-up">
+            <section id={isIframe ? "hidden-in-iframe" : ""} className="py-20 animate-fade-in-up">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-12">
                         <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -92,7 +94,7 @@ export default function Page() {
             </section>
 
             {/* Solutions Section */}
-            <section className="container mx-auto px-4 animate-fade-in-up bg-white py-20">
+            <section id={isIframe ? "hidden-in-iframe" : ""} className="container mx-auto px-4 animate-fade-in-up bg-white py-20">
                 <div className="text-center mb-16 mt-16">
                     <h2 className="text-4xl font-bold text-gray-900 mb-4">
                         Решение всех проблем
@@ -352,7 +354,7 @@ export default function Page() {
             </section>
 
             {/* Features Section */}
-            <section className="bg-white py-20 animate-fade-in-up">
+            <section id={isIframe ? "hidden-in-iframe" : ""} className="bg-white py-20 animate-fade-in-up">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-12">
                         <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -406,7 +408,9 @@ export default function Page() {
                 </div>
             </section>
 
-            <ConsultCard></ConsultCard>
+            <section id={isIframe ? "hidden-in-iframe" : ""}>
+                <ConsultCard></ConsultCard>
+            </section>
         </main>
     );
 }
