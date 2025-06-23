@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react';
 import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
 import { hiddenInIframe } from "@/shared/utils/hiddenInIframe";
