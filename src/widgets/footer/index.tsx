@@ -25,7 +25,7 @@ export const Footer = () => {
             Политика конфиденциальности
           </Link>
 
-          <Link href={"https://t.me/@proavtomatization_support_bot"} target="_blank">
+          <Link href={"https://t.me/proavtomatization_support_bot"} target="_blank">
             Написать в поддержку
           </Link>
         </div>
