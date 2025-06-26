@@ -21,7 +21,7 @@ export default function Page() {
                 <div className="text-center space-y-6">
                     <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-100 to-violet-100 px-6 py-2 rounded-full">
                         <span className="text-2xl">🔗</span>
-                        <span className="text-blue-600 font-medium">Объединение дублей сделок для AmoCRM</span>
+                        <span className="text-blue-600 font-medium">Объединение дублей сделок для amoCRM</span>
                     </div>
 
                     <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-blue-600 via-violet-600 to-blue-800 bg-clip-text text-transparent leading-tight mt-8 mb-8">

@@ -19,7 +19,7 @@ export default function Widgets() {
           <div className="flex flex-row">
             <span className="text-2xl">💬</span>
             <h1 className="text-xl font-bold text-gray-900 mb-3">
-              Telegram Виджет для AmoCRM
+              Telegram Виджет для amoCRM
             </h1>
           </div>
 
@@ -40,7 +40,7 @@ export default function Widgets() {
           <div className="flex flex-row">
             <span className="text-2xl">⚡</span>
             <h1 className="text-xl font-bold text-gray-900 mb-3">
-              Автозадачи для AmoCRM
+              Автозадачи для amoCRM
             </h1>
           </div>
 
@@ -61,7 +61,7 @@ export default function Widgets() {
           <div className="flex flex-row">
             <span className="text-2xl">🔗</span>
             <h1 className="text-xl font-bold text-gray-900 mb-3">
-              Объединение дублей сделок для AmoCRM
+              Объединение дублей сделок для amoCRM
             </h1>
           </div>
           <p>
@@ -81,7 +81,7 @@ export default function Widgets() {
           <div className="flex flex-row">
             <span className="text-2xl">🕐</span>
             <h1 className="text-xl font-bold text-gray-900 mb-3">
-              Виджет времени клиента для AmoCRM
+              Виджет времени клиента для amoCRM
             </h1>
           </div>
           <p>
@@ -101,7 +101,7 @@ export default function Widgets() {
           <div className="flex flex-row">
             <span className="text-2xl">🚀</span>
             <h1 className="text-xl font-bold text-gray-900 mb-3">
-              Массовое создание сделок для AmoCRM
+              Массовое создание сделок для amoCRM
             </h1>
           </div>
           <p>
@@ -121,7 +121,7 @@ export default function Widgets() {
           <div className="flex flex-row">
             <span className="text-2xl">⚖️</span>
             <h1 className="text-xl font-bold text-gray-900 mb-3">
-              Умное распределение сделок для AmoCRM
+              Умное распределение сделок для amoCRM
             </h1>
           </div>
           <p>

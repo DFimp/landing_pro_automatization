@@ -15,7 +15,7 @@ export default function TimezoneWidget() {
                     <div
                         className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-100 to-violet-100 px-6 py-2 rounded-full">
                         <span className="text-2xl">🕐</span>
-                        <span className="text-blue-600 font-medium">Виджет времени клиента для AmoCRM</span>
+                        <span className="text-blue-600 font-medium">Виджет времени клиента для amoCRM</span>
                     </div>
 
                     <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-blue-600 via-violet-600 to-blue-800 bg-clip-text text-transparent leading-tight mt-8 mb-8">
@@ -76,7 +76,7 @@ export default function TimezoneWidget() {
                             </div>
                             <div className="mt-6 text-center">
                                 <p className="text-gray-600 text-lg">
-                                    Виджет показывает время клиента, регион и оператора связи прямо в AmoCRM
+                                    Виджет показывает время клиента, регион и оператора связи прямо в amoCRM
                                 </p>
                             </div>
                         </div>
@@ -110,13 +110,13 @@ export default function TimezoneWidget() {
                                 </div>
                                 <div className="flex-1">
                                     <h3 className="text-2xl font-bold text-gray-900 mb-4">Установите виджет в
-                                        AmoCRM</h3>
+                                        amoCRM</h3>
                                     <div className="text-gray-700 leading-relaxed space-y-4">
                                         <p>Добавьте виджет в вашу CRM-систему:</p>
                                         <ul className="space-y-2 ml-4">
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
-                                                <span>Перейдите в AmoCRM → amoМаркет → Виджеты</span>
+                                                <span>Перейдите в amoCRM → amoМаркет → Виджеты</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>

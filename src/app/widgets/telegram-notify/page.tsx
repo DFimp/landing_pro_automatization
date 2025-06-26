@@ -21,7 +21,7 @@ export default function TelegramWidget() {
                 <div className="text-center space-y-6">
                     <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-100 to-violet-100 px-6 py-2 rounded-full">
                         <span className="text-2xl">💬</span>
-                        <span className="text-blue-600 font-medium">Telegram Виджет для AmoCRM</span>
+                        <span className="text-blue-600 font-medium">Telegram Виджет для amoCRM</span>
                     </div>
 
                     <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-blue-600 via-violet-600 to-blue-800 bg-clip-text text-transparent leading-tight mt-8 mb-8">
@@ -74,7 +74,7 @@ export default function TelegramWidget() {
                         {
                             icon: "🤖",
                             title: "Запуск SalesBot одним кликом",
-                            description: "Прямо из Telegram запускайте любую автоматизацию AmoCRM. Экономьте время на рутинных действиях!"
+                            description: "Прямо из Telegram запускайте любую автоматизацию amoCRM. Экономьте время на рутинных действиях!"
                         },
                         {
                             icon: "🕐",
@@ -120,7 +120,7 @@ export default function TelegramWidget() {
                         }}>
                             <img
                                 src="/telegram-notifications-demo.png"
-                                alt="Примеры уведомлений Telegram виджета в AmoCRM"
+                                alt="Примеры уведомлений Telegram виджета в amoCRM"
                                 className="w-full h-full object-contain rounded-lg"
                             />
                         </div>
@@ -148,13 +148,13 @@ export default function TelegramWidget() {
                                     1
                                 </div>
                                 <div className="flex-1">
-                                    <h3 className="text-2xl font-bold text-gray-900 mb-4">Установка виджета в AmoCRM</h3>
+                                    <h3 className="text-2xl font-bold text-gray-900 mb-4">Установка виджета в amoCRM</h3>
                                     <div className="text-gray-700 leading-relaxed space-y-4">
-                                        <p>Установите виджет в вашу AmoCRM систему:</p>
+                                        <p>Установите виджет в вашу amoCRM систему:</p>
                                         <ul className="space-y-2 ml-4">
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
-                                                <span>Зайдите в AmoCRM → Настройки → Виджеты</span>
+                                                <span>Зайдите в amoCRM → Настройки → Виджеты</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
@@ -229,11 +229,11 @@ export default function TelegramWidget() {
                                         <ul className="space-y-2 ml-4">
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
-                                                <span>Откройте настройки виджета в AmoCRM</span>
+                                                <span>Откройте настройки виджета в amoCRM</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
-                                                <span>В столбце &ldquo;Пользователь&rdquo; выберите сотрудника из AmoCRM</span>
+                                                <span>В столбце &ldquo;Пользователь&rdquo; выберите сотрудника из amoCRM</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>

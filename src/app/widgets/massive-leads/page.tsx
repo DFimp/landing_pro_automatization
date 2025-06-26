@@ -21,7 +21,7 @@ export default function MassiveLeadsWidget() {
                 <div className="text-center space-y-6">
                     <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-100 to-violet-100 px-6 py-2 rounded-full">
                         <span className="text-2xl">🚀</span>
-                        <span className="text-blue-600 font-medium">Массовое создание сделок для AmoCRM</span>
+                        <span className="text-blue-600 font-medium">Массовое создание сделок для amoCRM</span>
                     </div>
 
                     <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-blue-600 via-violet-600 to-blue-800 bg-clip-text text-transparent leading-tight mt-8 mb-8">
@@ -178,13 +178,13 @@ export default function MassiveLeadsWidget() {
                                     1
                                 </div>
                                 <div className="flex-1">
-                                    <h3 className="text-2xl font-bold text-gray-900 mb-4">Установка виджета в AmoCRM</h3>
+                                    <h3 className="text-2xl font-bold text-gray-900 mb-4">Установка виджета в amoCRM</h3>
                                     <div className="text-gray-700 leading-relaxed space-y-4">
-                                        <p>Установите виджет в вашу AmoCRM систему:</p>
+                                        <p>Установите виджет в вашу amoCRM систему:</p>
                                         <ul className="space-y-2 ml-4">
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
-                                                <span>Зайдите в AmoCRM → Настройки → Виджеты</span>
+                                                <span>Зайдите в amoCRM → Настройки → Виджеты</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
@@ -222,7 +222,7 @@ export default function MassiveLeadsWidget() {
                                         <ul className="space-y-2 ml-4">
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
-                                                <span>Перейдите в «Контакты» в разделе «Списки» в AmoCRM</span>
+                                                <span>Перейдите в «Контакты» в разделе «Списки» в amoCRM</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
@@ -231,7 +231,7 @@ export default function MassiveLeadsWidget() {
                                             <div>
                                                 <h4 className="text-lg font-semibold text-blue-600 mb-3">🔍 Способ 1: По
                                                     фильтру</h4>
-                                                <p className="mb-3">Укажите в интерфейсе AmoCRM нужные фильтры,
+                                                <p className="mb-3">Укажите в интерфейсе amoCRM нужные фильтры,
                                                     виджет сам найдет нужные контакты и создаст для них сделки</p>
                                             </div>
 

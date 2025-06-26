@@ -22,7 +22,7 @@ export default function AutoTasksWidget() {
                     <div
                         className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-100 to-violet-100 px-6 py-2 rounded-full">
                         <span className="text-2xl">⚡</span>
-                        <span className="text-blue-600 font-medium">Автозадачи для AmoCRM</span>
+                        <span className="text-blue-600 font-medium">Автозадачи для amoCRM</span>
                     </div>
 
                     <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-blue-600 via-violet-600 to-blue-800 bg-clip-text text-transparent leading-tight mt-8 mb-8">
@@ -207,7 +207,7 @@ export default function AutoTasksWidget() {
                                 {
                                     step: 4,
                                     title: "Менеджер получает уведомление",
-                                    description: "Ответственный видит задачу в AmoCRM и связывается с клиентом. Сделка возвращается в работу!",
+                                    description: "Ответственный видит задачу в amoCRM и связывается с клиентом. Сделка возвращается в работу!",
                                     color: "bg-purple-500"
                                 }
                             ].map((item, index) => (
@@ -256,13 +256,13 @@ export default function AutoTasksWidget() {
                                 </div>
                                 <div className="flex-1">
                                     <h3 className="text-2xl font-bold text-gray-900 mb-4">Установка виджета в
-                                        AmoCRM</h3>
+                                        amoCRM</h3>
                                     <div className="text-gray-700 leading-relaxed space-y-4">
-                                        <p>Первым делом установите виджет в вашу AmoCRM систему:</p>
+                                        <p>Первым делом установите виджет в вашу amoCRM систему:</p>
                                         <ul className="space-y-2 ml-4">
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
-                                                <span>Зайдите в AmoCRM → Настройки → Виджеты</span>
+                                                <span>Зайдите в amoCRM → Настройки → Виджеты</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
@@ -308,7 +308,7 @@ export default function AutoTasksWidget() {
                                         <ul className="space-y-2 ml-4">
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
-                                                <span>Откройте настройки виджета в AmoCRM</span>
+                                                <span>Откройте настройки виджета в amoCRM</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
@@ -343,7 +343,7 @@ export default function AutoTasksWidget() {
 
                                         <div>
                                             <h4 className="text-lg font-semibold text-blue-600 mb-3">📝 Тип задачи</h4>
-                                            <p className="mb-3">Выберите тип задачи из списка доступных в AmoCRM:</p>
+                                            <p className="mb-3">Выберите тип задачи из списка доступных в amoCRM:</p>
                                             <ul className="space-y-2 ml-4">
                                                 <li className="flex items-start gap-2">
                                                     <span className="text-blue-600">•</span>
@@ -355,7 +355,7 @@ export default function AutoTasksWidget() {
                                                 </li>
                                                 <li className="flex items-start gap-2">
                                                     <span className="text-blue-600">•</span>
-                                                    <span>Любой другой настроенный в вашей AmoCRM тип</span>
+                                                    <span>Любой другой настроенный в вашей amoCRM тип</span>
                                                 </li>
                                             </ul>
                                         </div>
