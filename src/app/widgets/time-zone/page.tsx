@@ -28,10 +28,11 @@ export default function TimezoneWidget() {
                     </p>
 
                     <div className="flex flex-col gap-3 justify-center items-center mb-10">
-                        <button
-                            className="bg-gradient-to-r from-blue-600 to-violet-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105 cursor-pointer">
-                            Установить виджет бесплатно 🚀
-                        </button>
+                        <a href='https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=25f94eb8-f182-4296-b86f-da4e26854b47' target="_blank" rel="noopener">
+                            <button className="bg-gradient-to-r from-blue-600 to-violet-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                                Установить виджет ⚡
+                            </button>
+                        </a>
                         <a
                             href="#instruction"
                             className="text-blue-600 font-medium hover:text-violet-600 transition-colors cursor-pointer"
