@@ -90,7 +90,7 @@ export default function Widgets() {
             позвоните в полночь!
           </p>
         </div>
-        <div
+        {/* <div
           onClick={() => router.push("/widgets/massive-leads")}
           className="cursor-pointer bg-white p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 hover:transform hover:scale-105 animate-fade-in-up"
           style={{
@@ -109,7 +109,7 @@ export default function Widgets() {
             нажатием. Забудьте о рутинной работе - виджет сделает всё за вас
             быстро и без ошибок.
           </p>
-        </div>
+        </div> */}
         <div
           onClick={() => router.push("/widgets/lead-distribution")}
           className="cursor-pointer bg-white p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 hover:transform hover:scale-105 animate-fade-in-up"
