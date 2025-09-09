@@ -30,7 +30,7 @@ const Header = () => {
         <div className="flex items-center gap-5">
           <HeaderNav />
 
-          <div className="w-40">
+          <div className="flex-shrink-0"> 
             <Button className="text-h8 font-medium" text="КОНСУЛЬТАЦИЯ" onClick={() => setIsModalOpen(true)} />
           </div>
         </div>
