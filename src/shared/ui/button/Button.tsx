@@ -7,6 +7,7 @@ type ButtonProps = {
   onClick?: () => void;
   variant?: "primary" | "secondary" | "outline";
   className?: string;
+  fullWidth?: boolean;
 };
 
 const Button = ({
@@ -15,6 +16,7 @@ const Button = ({
   onClick,
   variant = "primary",
   className = "",
+  fullWidth = false,
 }: ButtonProps) => {
   const variantClasses = {
     primary:
@@ -28,8 +30,11 @@ const Button = ({
       "active:bg-blue2 active:text-white",
   };
 
-  const baseClass =
-    "w-full px-4 py-2 rounded-4xl transition-colors duration-300 border-1 cursor-pointer";
+  const baseClass = clsx(
+    "px-4 py-2 rounded-4xl transition-colors duration-300 border-1 cursor-pointer",
+    "inline-flex items-center justify-center whitespace-nowrap",
+    fullWidth ? "w-full" : "w-auto"
+  );
 
   const disabledClasses = "bg-gray text-white opacity-50 cursor-not-allowed";
 

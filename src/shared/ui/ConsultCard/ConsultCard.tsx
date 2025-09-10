@@ -51,6 +51,7 @@ const ConsultCard: React.FC<ConsultCardProps> = ({ className }) => {
               text="КОНСУЛЬТАЦИЯ"
               variant={"outline"}
               onClick={() => setIsModalOpen(true)}
+              className="px-7"
             />
           </div>
         </div>
