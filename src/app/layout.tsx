@@ -5,6 +5,8 @@ import React from "react";
 import Header from "@/widgets/header/Header";
 import Head from "next/head";
 import { Footer } from "@/widgets/footer";
+import { isMobile } from "@/shared/utils/isMobile";
+
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",

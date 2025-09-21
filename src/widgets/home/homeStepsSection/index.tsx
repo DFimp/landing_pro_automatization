@@ -3,7 +3,7 @@ import {TitleArrow} from "@/shared/ui/titleArrow/TitleArrow";
 
 export function HomeStepsSection() {
     return (
-        <section>
+        <section className="container">
             <TitleArrow
                 className='mt-20'
                 text="Как мы работаем?"

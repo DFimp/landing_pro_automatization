@@ -14,8 +14,8 @@ export const AnimatedResultsList = () => {
           number={i + 1}
           className={`bg-[#EBF0FD] py-4 ${
             i % 2 === 0
-              ? "rounded-r-full px-66 mr-[185px]"
-              : "rounded-l-full ml-[175px] px-22"
+              ? "rounded-r-full sm:px-66 px-10 sm:mr-[185px]"
+              : "rounded-l-full sm:ml-[175px] sm:px-22 px-10"
           }`}
         />
       ))}

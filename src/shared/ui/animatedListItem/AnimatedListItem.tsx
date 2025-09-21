@@ -1,6 +1,9 @@
+"use client"
+
 import * as motion from "motion/react-client";
 import Image from "next/image";
 import { AnimatedListItemProps } from "@/shared/ui/animatedListItem/models";
+import { isMobile } from "@/shared/utils/isMobile";
 
 export const AnimatedListItem = ({
                                      index,
@@ -23,11 +26,11 @@ export const AnimatedListItem = ({
         <motion.li
             key={index}
             initial={{
-                x: initialX,
-                opacity: 0,
+                x: isMobile() ? 0 : initialX,
+                opacity: isMobile() ? 1 : 0,
             }}
             whileInView={{
-                x: targetX,
+                x: isMobile() ? 0 : targetX,
                 opacity: 1,
             }}
             transition={{ delay: 0.8, duration: 0.8 }}
@@ -37,7 +40,7 @@ export const AnimatedListItem = ({
             }`}
         >
             {number && (
-                <h2 className="text-blue font-bold" style={{ fontSize: "64px" }}>
+                <h2 className="text-blue font-bold" style={{ fontSize: isMobile() ? "24px" : "64px" }}>
                     {number}
                 </h2>
             )}
@@ -45,9 +48,9 @@ export const AnimatedListItem = ({
             {imageSrc && <Image src={imageSrc} alt={title} width={150} height={150} />}
 
             <div className="content">
-                <h3 className="font-semibold text-h4">{title}</h3>
+                <h3 className="font-semibold sm:text-h4">{title}</h3>
                 {description && (
-                    <p className={`font-normal text-h7 ${descriptionClassName}`}>
+                    <p className={`font-normal sm:text-h7 ${descriptionClassName}`}>
                         {description}
                     </p>
                 )}

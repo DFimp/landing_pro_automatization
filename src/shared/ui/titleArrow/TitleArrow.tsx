@@ -46,7 +46,7 @@ export const TitleArrow: FC<TittleArrowProps> = ({
           }`}
         >
           <h2
-            className={`text-h4 font-semibold
+            className={`sm:text-h4 font-semibold text-base
                     ${variant === "outline" && "container"} 
                     ${variant === "secondary" ? "text-white" : ""}`}
           >

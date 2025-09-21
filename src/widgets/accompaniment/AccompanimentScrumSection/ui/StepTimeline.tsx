@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, useMemo } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { steps } from "@/widgets/accompaniment/AccompanimentScrumSection/ui/lib"
+import { isMobile } from '@/shared/utils/isMobile';
 
 export default function StepTimeline() {
     const positions = [20, 50, 80]; // x-координаты (%)
@@ -95,7 +96,12 @@ export default function StepTimeline() {
     }, [coordinates]);
 
     const lineLength = useMemo(() => {
-        return Math.hypot(containerSize.width, containerSize.height) + 40;
+        function normalizeForMobile(length: number) {
+            return length > 500 ? 500 : length
+        }
+        const length = Math.hypot(containerSize.width, containerSize.height) + 40
+        
+        return isMobile() ? normalizeForMobile(length) : length;
     }, [containerSize]);
 
     const lineWidth = useTransform(
@@ -105,70 +111,115 @@ export default function StepTimeline() {
     );
 
     return (
-        <div ref={containerRef} className="timeline-container relative w-full h-[80vh] max-h-[628px] text-white mb-20 mt-20">
+        <div ref={containerRef} className="timeline-container relative w-full sm:h-[80vh] sm:max-h-[628px] text-white mb-20 mt-20">
             <motion.div
                 style={{
                     width: lineWidth,
-                    rotate: `${angle}deg`,
+                    rotate: isMobile() ? '90deg' : `${angle}deg`,
                     top: `${top}px`,
                     transformOrigin: 'top left',
                 }}
-                className='absolute bg-blue-500 h-[2px] left-0'
+                className='absolute bg-blue-500 h-[2px] sm:left-0 left-[66px]'
             />
 
-            <ul className='relative h-full container'>
+            <ul className='relative sm:h-full container'>
                 {/* Шаг 1 - появляется сразу */}
                 <motion.li
                     ref={(el) => { refs.current[0] = el }}
-                    className='absolute flex flex-col items-center'
-                    style={{
+                    className='sm:absolute flex flex-col items-center'
+                    style={isMobile() ? {} : {
                         left: `${positions[0]}%`,
                         top: `${yPositions[0]}%`,
                         transform: 'translateX(-50%)',
                         opacity: step1Opacity
                     }}
                 >
-                    <h4 className="font-semibold text-h5 mb-8 max-w-[240px]">{steps[0].title}</h4>
-                    <div className="flex items-center justify-center mb-20 w-25 h-25 border-2 text-blue-500 border-blue-500 rounded-full font-bold bg-black z-10" style={{ fontSize: "64px" }}>
-                        1
-                    </div>
-                    <p className="text-h6 font-normal text-gray-300 max-w-[270px]">{steps[0].description}</p>
+                   {
+                    !isMobile() ? (<>
+                        <h4 className="font-semibold text-h5 mb-8 max-w-[240px]">{steps[1].title}</h4>
+                        <div className="flex items-center justify-center mb-20 w-25 h-25 border-2 text-blue-500 border-blue-500 rounded-full font-bold bg-black z-10" style={{ fontSize: "64px" }}>
+                            1
+                        </div>
+                        <p className="text-h6 font-normal text-gray-300 max-w-[270px]">{steps[1].description}</p>
+                    </>):
+                    (
+                        <>
+                            <div className='flex'>
+                                <div className="flex items-center justify-center mb-20 w-25 h-25 border-2 text-blue-500 border-blue-500 rounded-full font-bold bg-black z-10" style={{ fontSize: "64px" }}>
+                                    1
+                                </div>
+                                <div className='mt-10 ml-5'>
+                                <h4 className="font-semibold text-h5 mb-8 max-w-[240px]">{steps[1].title}</h4>
+                                <p className="text-h6 font-normal text-gray-300 max-w-[270px]">{steps[1].description}</p>
+                                </div>
+                            </div>
+                        </>
+                    )}
                 </motion.li>
 
                 {/* Шаг 2 - появляется при 1/3 */}
                 <motion.li
                     ref={(el) => { refs.current[1] = el }}
-                    className='absolute flex flex-col items-center'
-                    style={{
+                    className='sm:absolute flex flex-col items-center'
+                    style={isMobile() ? {} : {
                         left: `${positions[1]}%`,
                         top: `${yPositions[1]}%`,
                         transform: 'translateX(-50%)',
                         opacity: step2Opacity
                     }}
                 >
-                    <h4 className="font-semibold text-h5 mb-8 max-w-[240px]">{steps[1].title}</h4>
-                    <div className="flex items-center justify-center mb-20 w-25 h-25 border-2 text-blue-500 border-blue-500 rounded-full font-bold bg-black z-10" style={{ fontSize: "64px" }}>
-                        2
-                    </div>
-                    <p className="text-h6 font-normal text-gray-300 max-w-[270px]">{steps[1].description}</p>
+                    {
+                    !isMobile() ? (<>
+                        <h4 className="font-semibold text-h5 mb-8 max-w-[240px]">{steps[1].title}</h4>
+                        <div className="flex items-center justify-center mb-20 w-25 h-25 border-2 text-blue-500 border-blue-500 rounded-full font-bold bg-black z-10" style={{ fontSize: "64px" }}>
+                            2
+                        </div>
+                        <p className="text-h6 font-normal text-gray-300 max-w-[270px]">{steps[1].description}</p>
+                    </>):
+                    (
+                        <div className='flex'>
+                            <div className="flex items-center justify-center mb-20 w-25 h-25 border-2 text-blue-500 border-blue-500 rounded-full font-bold bg-black z-10" style={{ fontSize: "64px" }}>
+                                2
+                            </div>
+                            <div className='mt-10 ml-5'>
+                            <h4 className="font-semibold text-h5 mb-8 max-w-[240px]">{steps[1].title}</h4>
+                            <p className="text-h6 font-normal text-gray-300 max-w-[270px]">{steps[1].description}</p>
+                            </div>
+                        </div>
+                    )}
+                    
                 </motion.li>
 
                 {/* Шаг 3 - появляется при 2/3 */}
                 <motion.li
                     ref={(el) => { refs.current[2] = el }}
-                    className='absolute flex flex-col items-center'
-                    style={{
+                    className='sm:absolute flex flex-col items-center'
+                    style={isMobile() ? {} : {
                         left: `${positions[2]}%`,
                         top: `${yPositions[2]}%`,
                         transform: 'translateX(-50%)',
                         opacity: step3Opacity
                     }}
                 >
-                    <h4 className="font-semibold text-h5 mb-8 max-w-[240px]">{steps[2].title}</h4>
-                    <div className="flex items-center justify-center mb-20 w-25 h-25 border-2 text-blue-500 border-blue-500 rounded-full font-bold bg-black z-10" style={{ fontSize: "64px" }}>
-                        3
-                    </div>
-                    <p className="text-h6 font-normal text-gray-300 max-w-[270px]">{steps[2].description}</p>
+                    {
+                    !isMobile() ? (<>
+                        <h4 className="font-semibold text-h5 mb-8 max-w-[240px]">{steps[1].title}</h4>
+                        <div className="flex items-center justify-center mb-20 w-25 h-25 border-2 text-blue-500 border-blue-500 rounded-full font-bold bg-black z-10" style={{ fontSize: "64px" }}>
+                            3
+                        </div>
+                        <p className="text-h6 font-normal text-gray-300 max-w-[270px]">{steps[1].description}</p>
+                    </>):
+                    (
+                        <div className='flex'>
+                            <div className="flex items-center justify-center mb-20 w-25 h-25 border-2 text-blue-500 border-blue-500 rounded-full font-bold bg-black z-10" style={{ fontSize: "64px" }}>
+                                3
+                            </div>
+                            <div className='mt-10 ml-5'>
+                            <h4 className="font-semibold text-h5 mb-8 max-w-[240px]">{steps[1].title}</h4>
+                            <p className="text-h6 font-normal text-gray-300 max-w-[270px]">{steps[1].description}</p>
+                            </div>
+                        </div>
+                    )}
                 </motion.li>
             </ul>
         </div>

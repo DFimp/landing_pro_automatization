@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { services } from "@/widgets/accompaniment/AccompanimentHelpSection/ui/lib";
 import * as motion from "motion/react-client";
+import { isMobile } from "@/shared/utils/isMobile";
 
 export default function HelpServices() {
     const [flippedStates, setFlippedStates] = useState<boolean[]>(
@@ -34,7 +35,7 @@ export default function HelpServices() {
                     <ul
                         key={index}
                         onClick={() => handleClick(index)}
-                        className="relative w-[550px] h-[515px] perspective cursor-pointer"
+                        className="relative w-[550px] sm:h-[515px] h-[302px] perspective cursor-pointer"
                     >
                         <motion.li
                             className="relative w-full h-full"
@@ -57,18 +58,18 @@ export default function HelpServices() {
                                 style={{ boxShadow: `0 0 15px rgba(55, 96, 231, 0.5)` }}
                                 className="absolute w-full h-full backface-hidden flex flex-col items-center justify-center text-center bg-transparent border rounded-3xl px-20 py-15 space-y-3"
                             >
-                                <Image src={service.image} alt="Помощь" width={230} height={230} />
+                                <Image src={service.image} alt="Помощь" width={isMobile() ? 115 : 230} height={isMobile() ? 115 : 230} />
                                 <h4 className='text-h4 font-bold text-white'>{service.title}</h4>
                             </div>
 
                             {/* Back */}
                             <div
                                 style={{ boxShadow: `0 0 15px rgba(55, 96, 231, 0.5)` }}
-                                className="absolute w-full h-full backface-hidden rotate-y-180 flex flex-col items-center justify-center text-center bg-transparent border rounded-3xl px-20 py-15 space-y-3"
+                                className="absolute w-full h-full backface-hidden rotate-y-180 flex flex-col items-center justify-center text-center bg-transparent border rounded-3xl sm:px-20 px-10 py-15 space-y-3"
                             >
-                                <Image src={service.backside.image} alt="Back" width={140} height={140} />
-                                <h4 className='text-h5 font-normal text-white mb-10'>{service.backside.title}</h4>
-                                <ul className='text-white list-disc text-left'>
+                                <Image src={service.backside.image} alt="Back" width={isMobile() ? 70 : 140} height={isMobile() ? 70 : 140} />
+                                <h4 className='sm:text-h5 font-normal text-white sm:mb-10'>{service.backside.title}</h4>
+                                <ul className='text-white text-[12px] sm:text-base list-disc text-left'>
                                     {service.backside.fixes.map((fix: string, i: number) => (
                                         <li key={i}>{fix}</li>
                                     ))}

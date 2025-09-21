@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { Card } from "@/shared/ui/Card/Card";
 import { steps } from "@/widgets/home/homeStepsSection/ui/lib";
+import { isMobile } from "@/shared/utils/isMobile";
 
 export default function WorkSteps() {
     const scrollRef = useRef<HTMLDivElement>(null);
@@ -51,7 +52,7 @@ export default function WorkSteps() {
                 ref={scrollRef}
                 className="overflow-hidden cursor-grab active:cursor-grabbing"
             >
-                <ul className="flex gap-4 snap-x snap-mandatory select-none">
+                <ul className="flex sm:flex-row flex-col gap-4 snap-x snap-mandatory select-none">
                     {steps.map((step, index) => (
                         <Card
                             variant='expandable'
@@ -60,8 +61,8 @@ export default function WorkSteps() {
                             content={step.content}
                             description={step.description}
                             result={step.result}
-                            isFirst={index === 0}
-                            isLast={index === steps.length - 1}
+                            isFirst={!isMobile() && index === 0}
+                            isLast={!isMobile() && index === steps.length - 1}
                         />
                     ))}
                     {/* Добавляем пустой элемент для отступа справа */}

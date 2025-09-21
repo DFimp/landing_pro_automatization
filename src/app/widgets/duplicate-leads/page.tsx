@@ -3,6 +3,7 @@ import React from 'react';
 import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
 import './style.css';
 import { hiddenInIframe } from "@/shared/utils/hiddenInIframe";
+import { isMobile } from '@/shared/utils/isMobile';
 
 export default function Page() {
     const { isIframe } = hiddenInIframe();
@@ -162,12 +163,17 @@ export default function Page() {
                                     <div className="text-gray-700 leading-relaxed space-y-4">
                                         <p>Нажмите кнопку "Установить виджет" и следуйте инструкциям amoCRM для подключения.</p>
                                     </div>
+                                    { isMobile() && <div className="mt-4">
+                                    <button className="bg-gradient-to-r from-blue-600 to-violet-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                                        Установить виджет сейчас
+                                    </button>
+                                </div> }
                                 </div>
-                                <div className="mt-4">
-                            <button className="bg-gradient-to-r from-blue-600 to-violet-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 cursor-pointer">
-                                Установить виджет сейчас
-                            </button>
-                        </div>
+                                { !isMobile() && <div className="mt-4">
+                                    <button className="bg-gradient-to-r from-blue-600 to-violet-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                                        Установить виджет сейчас
+                                    </button>
+                                </div> }
                             </div>
                         </div>
 

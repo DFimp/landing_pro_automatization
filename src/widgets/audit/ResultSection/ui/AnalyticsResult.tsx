@@ -6,12 +6,12 @@ import { services } from "@/widgets/audit/ResultSection/ui/lib";
 
 export default function AnalyticsResult() {
   return (
-    <div className="bg-black rounded-4xl py-20 px-53">
-      <ul className="container grid grid-cols-2 gap-20">
+    <div className="bg-black rounded-4xl py-20 sm:px-53">
+      <ul className="container flex flex-col sm:grid sm:grid-cols-2 sm:gap-20 gap-10">
         {services.map((service, index) => (
           <motion.li
             key={index}
-            className="flex items-start gap-12 min-h-[200px]"
+            className="flex items-start sm:gap-12 gap-4 min-h-[200px]"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.6 }}
@@ -27,10 +27,10 @@ export default function AnalyticsResult() {
               />
             </div>
             <div className="space-y-5">
-              <h4 className="font-semibold text-h5 text-white">
+              <h4 className="font-semibold sm:text-h5 text-white">
                 {service.title}
               </h4>
-              <ul className="list-disc text-white pl-4 space-y-2">
+              <ul className="list-disc text-white pl-4 sm:space-y-2">
                 {service.items.map((item, i) => (
                   <li key={i}>{item}</li>
                 ))}

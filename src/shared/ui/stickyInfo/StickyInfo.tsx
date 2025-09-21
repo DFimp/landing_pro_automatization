@@ -16,8 +16,8 @@ export default function StickyInfo({
                 <div
                     className="container"
                     style={{padding:'0'}}>
-                    <div className={`bg-blue text-white text-h4 font-normal py-5 whitespace-normal 
-            ${left ? "rounded-r-full pl-5 pr-20" : "rounded-l-full pr-5 pl-20"} 
+                    <div className={`bg-blue text-white sm:text-h4 text-base font-normal py-5 whitespace-normal 
+            ${left ? "rounded-r-full pl-5 pr-20" : "rounded-l-full pr-5 sm:pl-20 pl-10 sm:ml-0 ml-5"} 
             ${className}`}
                     >
                         {text}

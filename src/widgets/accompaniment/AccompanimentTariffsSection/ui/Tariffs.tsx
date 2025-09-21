@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function Tariffs() {
     return (
         <section className='container'>
-            <ul className='flex justify-between items-center gap-8'>
+            <ul className='flex sm:flex-row flex-col justify-between items-center gap-8'>
                 {tariffs.map((tariff: Tariff, index: number) => (
                     <motion.li
                         initial={{ opacity: 0, y: 50 }}
@@ -16,22 +16,23 @@ export default function Tariffs() {
                         transition={{ duration: 0.5, delay: index * 0.2 }}
                         style={{ borderColor: "#3760E7" }}
                         key={index}
-                        className='card border-1 rounded-3xl px-10 py-15 max-w-85 space-y-10 relative overflow-hidden bg-black' // Добавлено overflow-hidden
+                        className='card border-1 rounded-3xl px-10 py-15 sm:max-w-85 w-full space-y-10 relative overflow-hidden bg-black' // Добавлено overflow-hidden
                     >
                         {index === 0 && (
                             <div className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none">
                                 <Image
                                     src="/ribbon.svg"
                                     alt='Выгода'
-                                    fill
-                                    className="object-cover"
+                                    width={1000}
+                                    height={1000}
+                                    className="object-cover absolute top-0 right-0"
                                 />
                             </div>
                         )}
 
                         <div className="relative z-10 space-y-10"> {/* Добавлен контейнер с z-10 */}
                             <h3 className='text-white font-semibold text-h4'>{tariff.title}</h3>
-                            <ul className='list-disc text-white font-normal text-h5'>
+                            <ul className='list-disc text-white font-normal sm:text-h5'>
                                 {tariff.features.map((feature: string, i: number) => (
                                     <li key={i}>{feature}</li>
                                 ))}

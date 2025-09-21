@@ -3,12 +3,12 @@ import StickyInfo from "@/shared/ui/stickyInfo/StickyInfo";
 export const AccompanimentHeroSection = () => {
     return(
         <section>
-            <div className='container flex flex-col gap-20'>
-                <h2 className='text-h2 text-white font-bold'>
+            <div className='container flex flex-col gap-10 sm:gap-20'>
+                <h2 className='mt-4 sm:mt-0 sm:text-h2 text-white sm:font-bold text-2xl font-semibold'>
                     Сопровождение
                 </h2>
 
-                <p className='text-h4 text-white font-normal mb-20'>
+                <p className='sm:text-h4 text-white font-normal sm:mb-20 mb-10'>
                     <span className='font-bold'>Позаботимся</span> о том, чтобы amoCRM <span className='font-bold'>
                         работала как часы</span>: возьмем на себя доработку и полное техническое
                     сопровождение.

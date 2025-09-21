@@ -191,7 +191,7 @@ export default function TelegramWidget() {
                                         <ul className="space-y-2 ml-4">
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>
-                                                <span>Перейдите в нашего бота: <a href="https://t.me/pro_automatization_telegram_bot" className="text-blue-600 underline hover:text-blue-800 transition-colors" target="_blank" rel="noopener noreferrer">@pro_automatization_telegram_bot</a></span>
+                                                <span>Перейдите в нашего бота: <a href="https://t.me/pro_automatization_telegram_bot" className="text-[12px] text-blue-600 underline hover:text-blue-800 transition-colors" target="_blank" rel="noopener noreferrer">@pro_automatization_telegram_bot</a></span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>

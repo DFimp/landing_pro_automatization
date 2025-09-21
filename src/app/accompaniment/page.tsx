@@ -10,7 +10,7 @@ import {
 
 export default function Accompaniment() {
     return (
-        <main id="accompaniment" className="pb-20 pt-20 overflow-hidden">
+        <main id="accompaniment" className="sm:pb-20 sm:pt-20 overflow-hidden">
             <AccompanimentHeroSection />
             <AccompanimentProblemsSection />
             <AccompanimentHelpSection />

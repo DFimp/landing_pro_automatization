@@ -4,6 +4,8 @@ import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 import { Card } from '@/shared/ui/Card/Card';
 import { motion, useInView, useAnimationControls } from 'motion/react';
+import { isMobile } from '@/shared/utils/isMobile';
+import { TitleArrow } from '@/shared/ui/titleArrow/TitleArrow';
 
 const WhyChooseUs = () => {
     const ref = useRef(null);
@@ -36,28 +38,32 @@ const WhyChooseUs = () => {
 
     return (
         <div className="mt-20">
-            <div className="text-center container overflow">
-                <h2 className="font-bold text-h2 mb-6">Почему выбирают нас?</h2>
+            <div className="sm:text-center container overflow">
+                {
+                    isMobile()
+                    ? <TitleArrow text='Почему выбирают нас?' link='/' className='mb-6'/>
+                    : <h2 className="font-bold text-h2 mb-6">Почему выбирают нас?</h2>
+                }
                 <div className="mx-auto max-w-3xl px-4 mb-20">
-                    <p className="text-h5 font-normal">
+                    <p className="sm:text-h5 font-normal">
                         Автоматизация становится умнее с каждым днем —{' '}
-                        <span className="font-medium text-h4">Мы</span>{' '}
+                        <span className="font-medium sm:text-h4">Мы</span>{' '}
                         внедряем самые актуальные инструменты, чтобы{' '}
-                        <span className="font-medium text-h4">Вы</span>{' '}
+                        <span className="font-medium sm:text-h4">Вы</span>{' '}
                         оставались впереди конкурентов.
                     </p>
                 </div>
             </div>
 
             {/* Первая строка */}
-            <div className="mb-12 relative h-[310px] overflow-hidden">
-                <div className="flex gap-20 container h-full">
-                    <div className="flex gap-5 items-center">
+            <div className="sm:mb-12 mb-5 relative sm:h-[310px] overflow-hidden">
+                <div className="flex sm:flex-row flex-col gap-20 container h-full">
+                    <div className="flex sm:flex-row flex-col gap-5 items-center">
                         <Card
                             title="Опыт"
                             content={
-                                <p>
-                                    Более <span className="text-blue text-6xl">100</span> успешных проектов
+                                <p className='sm:font-base font-[24px]'>
+                                    Более <span className="text-blue text-6xl sm:font-normal font-bold">100</span> успешных проектов
                                 </p>
                             }
                         />
@@ -66,7 +72,7 @@ const WhyChooseUs = () => {
                             content={<p>Вы всегда в курсе, что мы делаем.</p>}
                         />
 
-                        <motion.div
+                        { !isMobile() && <motion.div
                             className="h-full w-[1000px] relative flex-shrink-0"
                             style={{ minWidth: '600px', maxWidth: '1000px' }}
                             ref={ref}
@@ -87,16 +93,16 @@ const WhyChooseUs = () => {
                                 }}
                                 priority
                             />
-                        </motion.div>
+                        </motion.div>}
                     </div>
                 </div>
             </div>
 
             {/* Вторая строка */}
-            <div className="relative h-[310px] overflow-hidden">
-                <div className="flex justify-end gap-5 container h-full">
-                    <div className="flex gap-5 items-center">
-                        <motion.div
+            <div className="relative sm:h-[310px] overflow-hidden">
+                <div className="flex sm:flex-row flex-col justify-end gap-5 container h-full">
+                    <div className="flex sm:flex-row flex-col gap-5 items-center">
+                        { !isMobile() && <motion.div
                             className="h-full w-[1000px] relative flex-shrink-0"
                             style={{ minWidth: '600px' }}
                             ref={ref}
@@ -117,7 +123,7 @@ const WhyChooseUs = () => {
                                 }}
                                 priority
                             />
-                        </motion.div>
+                        </motion.div> }
 
                         <Card
                             title="Современные технологии"

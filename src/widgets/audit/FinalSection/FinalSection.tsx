@@ -5,7 +5,7 @@ export function FinalSection() {
   return (
     <section className="flex flex-col gap-20">
       <WhyChooseUs />
-      <div className="container">
+      <div className="sm:container">
         <ConsultCard />
       </div>
     </section>
