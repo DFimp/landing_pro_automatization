@@ -8,12 +8,72 @@ import { Footer } from "@/widgets/footer";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
-  subsets: ["latin"],
+  subsets: ["latin", "cyrillic"],
 });
 
 export const metadata: Metadata = {
-  title: "Про Автоматизацию",
-  description: "Ваш эксперт по amoCRM от консультации в решении простых задач до полной автоматизации бизнес-процессов.",
+  title: {
+    default: "Про Автоматизацию",
+    template: "%s | Про Автоматизацию -  Эксперт по amoCRM и автоматизации бизнеса"
+  },
+  description: "Ваш эксперт по amoCRM: настройка, интеграции, автоматизация бизнес-процессов. Консультации по amoCRM, воронки продаж, CRM-системы. Полная автоматизация вашего бизнеса с amoCRM.",
+  keywords: [
+    "amocrm", 
+    "амо срм", 
+    "настройка amocrm", 
+    "интеграция amocrm", 
+    "автоматизация бизнеса", 
+    "crm системы", 
+    "воронки продаж", 
+    "настройка crm", 
+    "консультант amocrm",
+    "эксперт amocrm",
+    "внедрение amocrm",
+    "обучение amocrm"
+  ],
+  authors: [{ name: "Про Автоматизацию" }],
+  creator: "Про Автоматизацию",
+  publisher: "Про Автоматизацию",
+
+  openGraph: {
+    type: "website",
+    locale: "ru_RU",
+    url: "https://pro-automatization.ru/",
+    title: "Про Автоматизацию - Эксперт по amoCRM и автоматизации бизнеса",
+    description: "Настройка amoCRM, интеграции, автоматизация. Консультации и полное внедрение CRM-системы для вашего бизнеса.",
+    siteName: "Про Автоматизацию",
+    images: [
+      {
+        url: "/og-image.png", 
+        width: 1200,
+        height: 630,
+        alt: "Про Автоматизацию - эксперт по amoCRM"
+      }
+    ],
+  },
+  
+  twitter: {
+    card: "summary_large_image",
+    title: "Про Автоматизацию - Эксперт по amoCRM",
+    description: "Настройка amoCRM, интеграции, автоматизация бизнес-процессов",
+    images: ["/og-image.png"],
+  },
+  
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
+  alternates: {
+    canonical: "https://pro-automatization.ru/",
+  },
 };
 
 export default function RootLayout({
@@ -23,38 +83,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <Head>
-        {/* SEO мета-теги */}
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Ваш эксперт по amoCRM от консультации в решении простых задач до полной автоматизации бизнес-процессов" />
-        <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Про Автоматизацию" />
-        <meta
-          property="og:description"
-          content="Ваш эксперт по amoCRM от консультации в решении простых задач до полной автоматизации бизнес-процессов"
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="URL к изображению для OpenGraph" />
-        <meta name="twitter:card" content="summary_large_image" />
-
-        {/* Теги для иконки и названия */}
-        <link rel="icon" href="/favicon.ico" sizes="16x16" />
-        <link rel="icon" href="/favicon.ico" sizes="32x32" />
-        <link rel="icon" href="/favicon.ico" sizes="64x64" />
-        <link rel="icon" href="/favicon.ico" sizes="128x128" />
-        <link rel="apple-touch-icon" href="/favicon.png" sizes="180x180" />
-
-        {/* Шрифты */}
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
-
-        {/* Заголовок страницы */}
-        <title>Про автоматизация</title>
-      </Head>
       <body className={`${montserrat.variable} antialiased`}>
         <Header />
         {children}
