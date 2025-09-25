@@ -70,6 +70,26 @@ export default function WidgetsClient() {
           </p>
         </div>
         <div
+          onClick={() => router.push("/widgets/duplicate-contacts")}
+          className="cursor-pointer bg-white p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 hover:transform hover:scale-105 animate-fade-in-up"
+          style={{
+            boxShadow:
+              "0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 16px -8px rgba(0, 0, 0, 0.15)",
+          }}
+        >
+          <div className="flex flex-row">
+            <span className="text-2xl">🔗</span>
+            <h1 className="text-xl font-bold text-gray-900 mb-3">
+              Объединение дублей контактов для amoCRM
+            </h1>
+          </div>
+          <p>
+            Автоматическое склеивание дублированных контактов с умными
+            алгоритмами поиска. Экономьте время менеджеров и улучшайте качество
+            вашей базы контактов.
+          </p>
+        </div>
+        <div
           onClick={() => router.push("/widgets/time-zone")}
           className="cursor-pointer bg-white p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 hover:transform hover:scale-105 animate-fade-in-up"
           style={{
