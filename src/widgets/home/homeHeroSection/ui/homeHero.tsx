@@ -15,7 +15,7 @@ const HomeHero = () => {
         <div className="space-y-9">
           <h2 className="sm:text-h3 text-2xl font-semibold">Ваш эксперт по amoCRM</h2>
 
-          <h2 className="sm:text-h4 text-lg font-normal max-w-[506px]">
+          <h2 className="sm:text-h4 text-lg font-normal max-w-[506px] -mb-0 sm:mb-9">
             от консультации в решении простых задач до полной автоматизации
             бизнес-процессов.
           </h2>
@@ -24,7 +24,7 @@ const HomeHero = () => {
           </div>
         </div>
 
-        <Image className="ml-auto" src="/laptop.png" alt="Laptop" width={isMobile() ? 195 : 580} height={isMobile() ? 161 : 464} />
+        <Image className="ml-auto" src="/laptop.png" alt="Laptop" width={isMobile() ? 240 : 580} height={isMobile() ? 210 : 464} />
       </div>
 
       <ConsultationModal

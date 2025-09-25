@@ -11,7 +11,7 @@ import {
 
 export default function Home() {
     return (
-        <main id="home" className="sm:pb-20 pt-20 space-y-10">
+        <main id="home" className="sm:pb-20 sm:pt-20 space-y-10">
             <HomeHeroSection />
             <HomeServicesSection />
             { !isMobile() && <HomeContainerSection />}

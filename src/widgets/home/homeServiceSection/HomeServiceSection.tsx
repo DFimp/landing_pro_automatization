@@ -8,7 +8,7 @@ export function HomeServicesSection() {
         ? <h2 className="text-2xl font-semibold">Чем мы можем помочь вашему бизнесу</h2>
         : <TitleArrow text="Чем мы можем помочь вашему бизнесу" link="/" />
     return (
-        <section className='flex flex-col px-4 gap-20'>
+        <section className='flex flex-col px-4 gap-5 sm:gap-20'>
             { titleJsx }
             <ProcessList />
         </section>

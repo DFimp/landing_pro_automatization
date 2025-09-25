@@ -3,4 +3,5 @@ export type TittleArrowProps = {
     variant?: "primary" | "secondary" | "outline";
     link: string;
     className?: string;
+    bold?: boolean
 };

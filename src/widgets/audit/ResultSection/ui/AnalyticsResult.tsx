@@ -3,15 +3,16 @@
 import Image from "next/image";
 import * as motion from "motion/react-client";
 import { services } from "@/widgets/audit/ResultSection/ui/lib";
+import { isMobile } from "@/shared/utils/isMobile";
 
 export default function AnalyticsResult() {
   return (
-    <div className="bg-black rounded-4xl py-20 sm:px-53">
-      <ul className="container flex flex-col sm:grid sm:grid-cols-2 sm:gap-20 gap-10">
+    <div className="bg-black sm:rounded-4xl rounded-[60px] sm:py-20 py-10 sm:px-53">
+      <ul className="sm:container flex flex-col sm:grid sm:grid-cols-2 sm:gap-20 gap-8 px-5">
         {services.map((service, index) => (
           <motion.li
             key={index}
-            className="flex items-start sm:gap-12 gap-4 min-h-[200px]"
+            className="flex sm:items-start items-center sm:gap-12 gap-4 sm:min-h-[200px]"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.6 }}
@@ -21,12 +22,12 @@ export default function AnalyticsResult() {
               <Image
                 src={service.img}
                 alt={service.title}
-                width={80}
-                height={80}
+                width={isMobile() ? 42 :80}
+                height={isMobile() ? 42 :80}
                 className="object-contain"
               />
             </div>
-            <div className="space-y-5">
+            <div className="sm:space-y-5 space-y-2 text-[14px]">
               <h4 className="font-semibold sm:text-h5 text-white">
                 {service.title}
               </h4>

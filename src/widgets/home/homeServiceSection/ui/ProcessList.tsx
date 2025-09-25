@@ -28,7 +28,12 @@ const ProcessList = () => {
                 : (
                     <div>
                     {solutions.map((solution, index) => (
-                    <div className="my-5 px-6 py-8 flex flex-col gap-3 rounded-[64px] shadow-lg/50 shadow-blue-500/50 items-center">
+                    <div
+                        className="my-5 px-6 py-8 flex flex-col gap-3 rounded-[64px] items-center"
+                        style={{
+                            boxShadow: "0 4px 20px #3760E780"
+                        }}
+                    >
                         <Image
                             src={solution.imageSrc}
                             alt="Кнопка"

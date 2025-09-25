@@ -37,23 +37,46 @@ const WhyChooseUs = () => {
     }, [inView, controls]);
 
     return (
-        <div className="mt-20">
+        <div className="sm:mt-20 mt-10">
             <div className="sm:text-center container overflow">
                 {
                     isMobile()
                     ? <TitleArrow text='Почему выбирают нас?' link='/' className='mb-6'/>
                     : <h2 className="font-bold text-h2 mb-6">Почему выбирают нас?</h2>
                 }
-                <div className="mx-auto max-w-3xl px-4 mb-20">
-                    <p className="sm:text-h5 font-normal">
+                <div className="mx-auto max-w-3xl px-4 sm:mb-20">
+                    <p className="sm:text-h5 text-[14px] font-normal">
                         Автоматизация становится умнее с каждым днем —{' '}
-                        <span className="font-medium sm:text-h4">Мы</span>{' '}
+                        <span className="sm:font-medium sm:text-h4">Мы</span>{' '}
                         внедряем самые актуальные инструменты, чтобы{' '}
-                        <span className="font-medium sm:text-h4">Вы</span>{' '}
+                        <span className="sm:font-medium sm:text-h4">Вы</span>{' '}
                         оставались впереди конкурентов.
                     </p>
                 </div>
             </div>
+
+            {isMobile() && <div className='h-[200px] flex items-center justify-center'>
+                <div className='h-[40px] w-[1000px] absolute bg-[#3760E7] text-center rotate-z-[-6.29deg] flex items-center gap-2'>
+                    <span className='text-white text-[24px] font-semibold'>AMO</span>
+                    <span className='text-white text-[24px] font-semibold'>CRM</span>
+                    <span className='text-white text-[24px] font-semibold'>AMO</span>
+                    <span className='text-white text-[24px] font-semibold'>CRM</span>
+                    <span className='text-white text-[24px] font-semibold'>AMO</span>
+                    <span className='text-white text-[24px] font-semibold'>CRM</span>
+                    <span className='text-white text-[24px] font-semibold'>AMO</span>
+                    <span className='text-white text-[24px] font-semibold'>CRM</span>
+                    <span className='text-white text-[24px] font-semibold'>AMO</span>
+                    <span className='text-white text-[24px] font-semibold'>CRM</span>
+                    <span className='text-white text-[24px] font-semibold'>AMO</span>
+                    <span className='text-white text-[24px] font-semibold'>CRM</span>
+                    <span className='text-white text-[24px] font-semibold'>AMO</span>
+                    <span className='text-white text-[24px] font-semibold'>CRM</span>
+                    <span className='text-white text-[24px] font-semibold'>AMO</span>
+                    <span className='text-white text-[24px] font-semibold'>CRM</span>
+                    <span className='text-white text-[24px] font-semibold'>AMO</span>
+                    <span className='text-white text-[24px] font-semibold'>CRM</span>
+                </div>
+            </div>}
 
             {/* Первая строка */}
             <div className="sm:mb-12 mb-5 relative sm:h-[310px] overflow-hidden">
@@ -62,14 +85,14 @@ const WhyChooseUs = () => {
                         <Card
                             title="Опыт"
                             content={
-                                <p className='sm:font-base font-[24px]'>
+                                <p className='sm:font-base sm:text-base text-[24px] my-[40px]'>
                                     Более <span className="text-blue text-6xl sm:font-normal font-bold">100</span> успешных проектов
                                 </p>
                             }
                         />
                         <Card
                             title="Прозрачность"
-                            content={<p>Вы всегда в курсе, что мы делаем.</p>}
+                            content={<p className='sm:font-base sm:text-base text-[24px] my-[40px]' >Вы всегда в курсе, что мы делаем.</p>}
                         />
 
                         { !isMobile() && <motion.div
@@ -127,11 +150,11 @@ const WhyChooseUs = () => {
 
                         <Card
                             title="Современные технологии"
-                            content={<p>Используем лучшие инструменты и методы.</p>}
+                            content={<p className='sm:font-base sm:text-base text-[24px] my-[40px]' >Используем лучшие инструменты и методы.</p>}
                         />
                         <Card
                             title="Индивидуальный подход"
-                            content={<p>Каждое решение подстроено под вас.</p>}
+                            content={<p className='sm:font-base sm:text-base text-[24px] my-[40px]'>Каждое решение подстроено под вас.</p>}
                         />
                     </div>
                 </div>

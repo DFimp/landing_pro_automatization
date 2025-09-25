@@ -2,10 +2,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { links } from "@/widgets/home/homeFeaturesSection/ui/lib";
 import * as motion from "motion/react-client";
+import { isMobile } from "@/shared/utils/isMobile";
 
 export default function FeaturesList() {
   return (
-    <ul className="sm:grid sm:grid-cols-2 flex flex-col gap-8 sm:mt-20 mt-10">
+    <ul className="sm:grid sm:grid-cols-2 flex flex-col sm:gap-8 gap-4 sm:mt-20 mt-5">
       {links.map((link) => (
         <motion.li
           key={link.name}
@@ -14,13 +15,13 @@ export default function FeaturesList() {
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
           <Link
-            className="sm:text-h5 font-medium flex
+            className="sm:text-h5 text-[14px] font-medium flex
                         justify-between items-center
-                        px-7.5 py-5"
+                        sm:px-7.5 px-7 sm:py-5 py-3"
             href={link.link}
           >
             {link.name}
-            <Image src="/cross.svg" alt="Перейти" width={30} height={30} />
+            <Image src="/cross.svg" alt="Перейти" width={isMobile() ? 14 : 30} height={isMobile() ? 14 : 30} />
           </Link>
         </motion.li>
       ))}

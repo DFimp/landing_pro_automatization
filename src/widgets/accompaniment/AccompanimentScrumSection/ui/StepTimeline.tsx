@@ -97,7 +97,7 @@ export default function StepTimeline() {
 
     const lineLength = useMemo(() => {
         function normalizeForMobile(length: number) {
-            return length > 500 ? 500 : length
+            return length > 400 ? 400 : length
         }
         const length = Math.hypot(containerSize.width, containerSize.height) + 40
         
@@ -111,7 +111,7 @@ export default function StepTimeline() {
     );
 
     return (
-        <div ref={containerRef} className="timeline-container relative w-full sm:h-[80vh] sm:max-h-[628px] text-white mb-20 mt-20">
+        <div ref={containerRef} className="timeline-container relative w-full sm:h-[80vh] sm:max-h-[628px] text-white sm:mb-20 sm:mt-20 mt-10">
             <motion.div
                 style={{
                     width: lineWidth,
@@ -119,7 +119,7 @@ export default function StepTimeline() {
                     top: `${top}px`,
                     transformOrigin: 'top left',
                 }}
-                className='absolute bg-blue-500 h-[2px] sm:left-0 left-[66px]'
+                className='absolute bg-blue-500 h-[2px] sm:left-0 left-[62px]'
             />
 
             <ul className='relative sm:h-full container'>
@@ -136,21 +136,21 @@ export default function StepTimeline() {
                 >
                    {
                     !isMobile() ? (<>
-                        <h4 className="font-semibold text-h5 mb-8 max-w-[240px]">{steps[1].title}</h4>
+                        <h4 className="font-semibold text-h5 mb-8 max-w-[240px]">{steps[0].title}</h4>
                         <div className="flex items-center justify-center mb-20 w-25 h-25 border-2 text-blue-500 border-blue-500 rounded-full font-bold bg-black z-10" style={{ fontSize: "64px" }}>
                             1
                         </div>
-                        <p className="text-h6 font-normal text-gray-300 max-w-[270px]">{steps[1].description}</p>
+                        <p className="text-h6 font-normal text-gray-300 max-w-[270px]">{steps[0].description}</p>
                     </>):
                     (
                         <>
-                            <div className='flex'>
-                                <div className="flex items-center justify-center mb-20 w-25 h-25 border-2 text-blue-500 border-blue-500 rounded-full font-bold bg-black z-10" style={{ fontSize: "64px" }}>
+                            <div className='flex mb-[50px]'>
+                                <div className="flex items-center justify-center mb-20 w-[60px] h-[60px] border-2 text-blue-500 border-blue-500 rounded-full font-bold bg-black z-10" style={{ fontSize: "24px" }}>
                                     1
                                 </div>
-                                <div className='mt-10 ml-5'>
-                                <h4 className="font-semibold text-h5 mb-8 max-w-[240px]">{steps[1].title}</h4>
-                                <p className="text-h6 font-normal text-gray-300 max-w-[270px]">{steps[1].description}</p>
+                                <div className='mt-2 ml-5'>
+                                <h4 className="font-semibold text-[14px] mb-5 max-w-[240px]">{steps[0].title}</h4>
+                                <p className="text-[14px] font-normal text-gray-300 max-w-[294px] -ml-6">{steps[0].description}</p>
                                 </div>
                             </div>
                         </>
@@ -177,13 +177,13 @@ export default function StepTimeline() {
                         <p className="text-h6 font-normal text-gray-300 max-w-[270px]">{steps[1].description}</p>
                     </>):
                     (
-                        <div className='flex'>
-                            <div className="flex items-center justify-center mb-20 w-25 h-25 border-2 text-blue-500 border-blue-500 rounded-full font-bold bg-black z-10" style={{ fontSize: "64px" }}>
+                        <div className='flex mb-[50px]'>
+                            <div className="flex items-center justify-center mb-20 w-[60px] h-[60px] border-2 text-blue-500 border-blue-500 rounded-full font-bold bg-black z-10" style={{ fontSize: "24px" }}>
                                 2
                             </div>
-                            <div className='mt-10 ml-5'>
-                            <h4 className="font-semibold text-h5 mb-8 max-w-[240px]">{steps[1].title}</h4>
-                            <p className="text-h6 font-normal text-gray-300 max-w-[270px]">{steps[1].description}</p>
+                            <div className='mt-5 ml-5'>
+                            <h4 className="font-semibold text-[14px] mb-5 max-w-[240px]">{steps[1].title}</h4>
+                            <p className="text-[14px] font-normal text-gray-300 max-w-[294px] -ml-6">{steps[1].description}</p>
                             </div>
                         </div>
                     )}
@@ -203,20 +203,20 @@ export default function StepTimeline() {
                 >
                     {
                     !isMobile() ? (<>
-                        <h4 className="font-semibold text-h5 mb-8 max-w-[240px]">{steps[1].title}</h4>
+                        <h4 className="font-semibold text-h5 mb-8 max-w-[240px]">{steps[2].title}</h4>
                         <div className="flex items-center justify-center mb-20 w-25 h-25 border-2 text-blue-500 border-blue-500 rounded-full font-bold bg-black z-10" style={{ fontSize: "64px" }}>
                             3
                         </div>
-                        <p className="text-h6 font-normal text-gray-300 max-w-[270px]">{steps[1].description}</p>
+                        <p className="text-h6 font-normal text-gray-300 max-w-[270px]">{steps[2].description}</p>
                     </>):
                     (
-                        <div className='flex'>
-                            <div className="flex items-center justify-center mb-20 w-25 h-25 border-2 text-blue-500 border-blue-500 rounded-full font-bold bg-black z-10" style={{ fontSize: "64px" }}>
+                        <div className='flex mb-[50px]'>
+                            <div className="flex items-center justify-center mb-20 w-[60px] h-[60px] border-2 text-blue-500 border-blue-500 rounded-full font-bold bg-black z-10" style={{ fontSize: "24px" }}>
                                 3
                             </div>
-                            <div className='mt-10 ml-5'>
-                            <h4 className="font-semibold text-h5 mb-8 max-w-[240px]">{steps[1].title}</h4>
-                            <p className="text-h6 font-normal text-gray-300 max-w-[270px]">{steps[1].description}</p>
+                            <div className='mt-5 ml-5'>
+                            <h4 className="font-semibold text-[14px] mb-5 max-w-[240px]">{steps[2].title}</h4>
+                            <p className="font-normal text-[14px] text-gray-300 max-w-[294px] -ml-6">{steps[2].description}</p>
                             </div>
                         </div>
                     )}

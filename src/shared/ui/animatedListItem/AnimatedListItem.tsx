@@ -48,9 +48,9 @@ export const AnimatedListItem = ({
             {imageSrc && <Image src={imageSrc} alt={title} width={150} height={150} />}
 
             <div className="content">
-                <h3 className="font-semibold sm:text-h4">{title}</h3>
+                <h3 className="font-semibold sm:text-h4 text-[14px]">{title}</h3>
                 {description && (
-                    <p className={`font-normal sm:text-h7 ${descriptionClassName}`}>
+                    <p className={`font-normal sm:text-h7 text-[14px] ${descriptionClassName}`}>
                         {description}
                     </p>
                 )}

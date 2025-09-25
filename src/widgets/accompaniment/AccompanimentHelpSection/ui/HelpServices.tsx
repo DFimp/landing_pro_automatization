@@ -6,7 +6,8 @@ import { services } from "@/widgets/accompaniment/AccompanimentHelpSection/ui/li
 import * as motion from "motion/react-client";
 import { isMobile } from "@/shared/utils/isMobile";
 
-export default function HelpServices() {
+export default function 
+HelpServices() {
     const [flippedStates, setFlippedStates] = useState<boolean[]>(
         Array(services.length).fill(false)
     );
@@ -55,8 +56,8 @@ export default function HelpServices() {
                         >
                             {/* Front */}
                             <div
-                                style={{ boxShadow: `0 0 15px rgba(55, 96, 231, 0.5)` }}
-                                className="absolute w-full h-full backface-hidden flex flex-col items-center justify-center text-center bg-transparent border rounded-3xl px-20 py-15 space-y-3"
+                                style={{ boxShadow: isMobile() ? '0 4px 4px #3760E780' : `0 0 15px rgba(55, 96, 231, 0.5)` }}
+                                className="absolute w-full h-full backface-hidden flex flex-col items-center justify-center text-center bg-transparent border sm:rounded-3xl rounded-[60px] px-20 py-15 space-y-3"
                             >
                                 <Image src={service.image} alt="Помощь" width={isMobile() ? 115 : 230} height={isMobile() ? 115 : 230} />
                                 <h4 className='text-h4 font-bold text-white'>{service.title}</h4>
@@ -65,10 +66,10 @@ export default function HelpServices() {
                             {/* Back */}
                             <div
                                 style={{ boxShadow: `0 0 15px rgba(55, 96, 231, 0.5)` }}
-                                className="absolute w-full h-full backface-hidden rotate-y-180 flex flex-col items-center justify-center text-center bg-transparent border rounded-3xl sm:px-20 px-10 py-15 space-y-3"
+                                className="absolute w-full h-full backface-hidden rotate-y-180 flex flex-col items-center justify-center text-center bg-transparent border sm:rounded-3xl rounded-[60px] sm:px-20 px-10 py-15 space-y-3"
                             >
                                 <Image src={service.backside.image} alt="Back" width={isMobile() ? 70 : 140} height={isMobile() ? 70 : 140} />
-                                <h4 className='sm:text-h5 font-normal text-white sm:mb-10'>{service.backside.title}</h4>
+                                <h4 className='sm:text-h5 sm:font-normal font-semibold text-white sm:mb-10'>{service.backside.title}</h4>
                                 <ul className='text-white text-[12px] sm:text-base list-disc text-left'>
                                     {service.backside.fixes.map((fix: string, i: number) => (
                                         <li key={i}>{fix}</li>

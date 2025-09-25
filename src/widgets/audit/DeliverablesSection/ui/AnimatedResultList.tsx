@@ -3,7 +3,7 @@ import { AnimatedListItem } from "@/shared/ui/animatedListItem/AnimatedListItem"
 
 export const AnimatedResultsList = () => {
   return (
-    <ul className="space-y-10 mt-10">
+    <ul className="sm:space-y-10 space-y-5 mt-10">
       {data.map((item, i) => (
         <AnimatedListItem
           oneLevel={true}

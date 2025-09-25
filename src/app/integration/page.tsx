@@ -7,7 +7,7 @@ import {
 
 export default function Integration() {
     return (
-        <main id="integration" className="sm:pb-20 pt-20 space-y-10">
+        <main id="integration" className="sm:pb-20 sm:pt-20 space-y-10">
             <HomeContainerSection />
             <HomeFeaturesSection />
             <HomeStepsSection />
