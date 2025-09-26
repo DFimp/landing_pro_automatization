@@ -8,16 +8,17 @@ import { useEffect, useState } from "react";
 import ConsultationModal from "@/features/consultation/ConsultationModal";
 import { hiddenInIframe } from "@/shared/utils/hiddenInIframe";
 import { userAgent } from "next/server";
-import { isMobile } from "@/shared/utils/isMobile";
+
 import MobileMenu from "./ui/MobileMenu";
+import {detectMobile} from '@/shared/utils/detectMobile'
 
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const { isIframe } = hiddenInIframe();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+  const { isMobileView } = detectMobile()
 
-
-  return !isMobile() ? (
+  return !isMobileView ? (
     <header id={isIframe ? "hidden-in-iframe" : ""}>
       <div className="header__container container flex justify-between items-center">
         <div className="header__logo">

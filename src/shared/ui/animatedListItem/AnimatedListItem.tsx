@@ -3,7 +3,7 @@
 import * as motion from "motion/react-client";
 import Image from "next/image";
 import { AnimatedListItemProps } from "@/shared/ui/animatedListItem/models";
-import { isMobile } from "@/shared/utils/isMobile";
+import { detectMobile } from "@/shared/utils/detectMobile";
 
 export const AnimatedListItem = ({
                                      index,
@@ -21,16 +21,16 @@ export const AnimatedListItem = ({
 
     const initialX = isLeft ? -100 : 160;
     const targetX = oneLevel ? 0 : (isLeft ? 0 : 150);
-
+    const { isMobileView } = detectMobile()
     return (
         <motion.li
-            key={index}
+            key={index + Number(isMobileView) * 10}
             initial={{
-                x: isMobile() ? 0 : initialX,
-                opacity: isMobile() ? 1 : 0,
+                x: isMobileView ? 0 : initialX,
+                opacity: isMobileView ? 1 : 0,
             }}
             whileInView={{
-                x: isMobile() ? 0 : targetX,
+                x: isMobileView ? 0 : targetX,
                 opacity: 1,
             }}
             transition={{ delay: 0.8, duration: 0.8 }}
@@ -40,7 +40,7 @@ export const AnimatedListItem = ({
             }`}
         >
             {number && (
-                <h2 className="text-blue font-bold" style={{ fontSize: isMobile() ? "24px" : "64px" }}>
+                <h2 className="text-blue font-bold" style={{ fontSize: isMobileView ? "24px" : "64px" }}>
                     {number}
                 </h2>
             )}

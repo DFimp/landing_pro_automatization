@@ -3,9 +3,10 @@
 import Image from "next/image";
 import * as motion from "motion/react-client";
 import { services } from "@/widgets/audit/ResultSection/ui/lib";
-import { isMobile } from "@/shared/utils/isMobile";
+import { detectMobile } from "@/shared/utils/detectMobile";
 
 export default function AnalyticsResult() {
+  const { isMobileView } = detectMobile()
   return (
     <div className="bg-black sm:rounded-4xl rounded-[60px] sm:py-20 py-10 sm:px-53">
       <ul className="sm:container flex flex-col sm:grid sm:grid-cols-2 sm:gap-20 gap-8 px-5">
@@ -22,8 +23,8 @@ export default function AnalyticsResult() {
               <Image
                 src={service.img}
                 alt={service.title}
-                width={isMobile() ? 42 :80}
-                height={isMobile() ? 42 :80}
+                width={isMobileView ? 42 :80}
+                height={isMobileView ? 42 :80}
                 className="object-contain"
               />
             </div>

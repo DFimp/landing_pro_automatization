@@ -3,9 +3,10 @@ import { Tariff } from "@/widgets/accompaniment/AccompanimentTariffsSection/ui/m
 import {tariffs} from "@/widgets/accompaniment/AccompanimentTariffsSection/ui/lib";
 import * as motion from "motion/react-client"
 import Image from "next/image";
-import { isMobile } from "@/shared/utils/isMobile";
+import { detectMobile } from "@/shared/utils/detectMobile";
 
 export default function Tariffs() {
+    const { isMobileView } = detectMobile()
     return (
         <section className='container'>
             <ul className='flex sm:flex-row flex-col justify-between items-center gap-8'>
@@ -15,7 +16,7 @@ export default function Tariffs() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.8 }}
                         transition={{ duration: 0.5, delay: index * 0.2 }}
-                        style={ isMobile() ? { boxShadow: '0 4px 13px #3760E780'} : { borderColor: "#3760E7" }}
+                        style={ isMobileView ? { boxShadow: '0 4px 13px #3760E780'} : { borderColor: "#3760E7" }}
                         key={index}
                         className='card sm:border-1 shadow-[0_4px_13px_#3760E780] sm:rounded-3xl rounded-[60px] px-10 py-15 sm:max-w-85 w-full space-y-10 relative overflow-hidden bg-black' // Добавлено overflow-hidden
                     >

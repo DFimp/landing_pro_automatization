@@ -1,3 +1,5 @@
+"use client"
+
 import { TitleArrow } from "@/shared/ui/titleArrow/TitleArrow";
 import AnalyticsResult from "@/widgets/audit/ResultSection/ui/AnalyticsResult";
 

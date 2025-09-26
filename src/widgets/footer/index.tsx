@@ -3,12 +3,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { hiddenInIframe } from "@/shared/utils/hiddenInIframe";
-import { isMobile } from "@/shared/utils/isMobile";
+import { detectMobile } from "@/shared/utils/detectMobile";
 
 export const Footer = () => {
   const { isIframe } = hiddenInIframe();
+  const { isMobileView } = detectMobile()
 
-  return !isMobile() && ( 
+  return !isMobileView && ( 
     <footer id={isIframe ? "hidden-in-iframe" : ""} className="bg-[#1e1e1e]">
       <div className="max-w-[1200px] m-auto py-2 flex items-center justify-between">
         <Link href="/">

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
 import { TittleArrowProps } from "@/shared/ui/titleArrow/models";
-import { isMobile } from "@/shared/utils/isMobile";
+import { detectMobile } from "@/shared/utils/detectMobile";
 
 export const TitleArrow: FC<TittleArrowProps> = ({
   text,
@@ -36,6 +36,7 @@ export const TitleArrow: FC<TittleArrowProps> = ({
 
   const arrowSrc = getArrowSrc();
   const arrowDimensions = getArrowDimensions();
+  const { isMobileView } = detectMobile()
 
   return (
     <div className={`${className}`}>
@@ -65,8 +66,8 @@ export const TitleArrow: FC<TittleArrowProps> = ({
             <Image
               src={arrowSrc}
               alt="Стрелочка перехода"
-              width={isMobile() ? 42 : arrowDimensions.width}
-              height={isMobile() ? 10 : arrowDimensions.height}
+              width={isMobileView ? 42 : arrowDimensions.width}
+              height={isMobileView ? 10 : arrowDimensions.height}
             />
           </Link>
         </div>

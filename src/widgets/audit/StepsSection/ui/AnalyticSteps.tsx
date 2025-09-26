@@ -1,17 +1,19 @@
-"use client"
+'use client'
 
 import { steps } from "@/widgets/audit/StepsSection/ui/lib";
 import * as motion from "motion/react-client";
-import { isMobile } from "@/shared/utils/isMobile";
+import { detectMobile } from "@/shared/utils/detectMobile";
 
 export default function AnalyticsSteps() {
+  const { isMobileView } = detectMobile()
+
   return (
     <ul className="my-[40px]">
       {steps.map((step, index) => (
         <motion.li
-          key={index}
-          initial={{ x: isMobile() ? 0 : -250, opacity:  isMobile() ? 1 : 0 }}
-          whileInView={{ x: isMobile() ? 0 : 40 + 200 * index, opacity: 1 }}
+          key={index + Number(isMobileView) * 10}
+          initial={{ x: isMobileView ? 0 : -250, opacity:  0 }}
+          whileInView={{ x: isMobileView ? 0 : 40 + 200 * index, opacity: 1 }}
           viewport={{ once: true, amount: 0.8 }}
           transition={{ duration: 0.8, delay: index * 0.2 }}
           className="mb-5"

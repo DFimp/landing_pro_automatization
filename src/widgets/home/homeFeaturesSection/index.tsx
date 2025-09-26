@@ -4,9 +4,11 @@ import StickyInfo from "@/shared/ui/stickyInfo/StickyInfo";
 import FeaturesList from "@/widgets/home/homeFeaturesSection/ui/FeatureList";
 import IndustryCards from "@/widgets/home/homeFeaturesSection/ui/IndustryCards";
 import { TitleArrow } from "@/shared/ui/titleArrow/TitleArrow";
-import { isMobile } from "@/shared/utils/isMobile";
+
+import { detectMobile } from "@/shared/utils/detectMobile";
 
 export function HomeFeaturesSection() {
+  const { isMobileView } = detectMobile()
   return (
     <section className="flex flex-col sm:gap-20 sm:mt-20 mt-5">
       <StickyInfo
@@ -16,7 +18,7 @@ export function HomeFeaturesSection() {
       />
       <div className="container flex flex-col sm:gap-20 gap-10">
         <FeaturesList />
-        {isMobile() && <TitleArrow
+        {isMobileView && <TitleArrow
           text="Для каких сфер"
           link="/" />}
         <IndustryCards />

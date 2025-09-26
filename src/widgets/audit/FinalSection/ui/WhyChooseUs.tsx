@@ -4,14 +4,14 @@ import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 import { Card } from '@/shared/ui/Card/Card';
 import { motion, useInView, useAnimationControls } from 'motion/react';
-import { isMobile } from '@/shared/utils/isMobile';
+import { detectMobile } from '@/shared/utils/detectMobile';
 import { TitleArrow } from '@/shared/ui/titleArrow/TitleArrow';
 
 const WhyChooseUs = () => {
     const ref = useRef(null);
     const inView = useInView(ref, { amount: 0.3 });
     const controls = useAnimationControls();
-
+    const { isMobileView } = detectMobile()
     const [offsetRight, setOffsetRight] = useState(210);
     const [offsetLeft, setOffsetLeft] = useState(-300);
 
@@ -40,7 +40,7 @@ const WhyChooseUs = () => {
         <div className="sm:mt-20 mt-10">
             <div className="sm:text-center container overflow">
                 {
-                    isMobile()
+                    isMobileView
                     ? <TitleArrow text='Почему выбирают нас?' link='/' className='mb-6'/>
                     : <h2 className="font-bold text-h2 mb-6">Почему выбирают нас?</h2>
                 }
@@ -55,7 +55,7 @@ const WhyChooseUs = () => {
                 </div>
             </div>
 
-            {isMobile() && <div className='h-[200px] flex items-center justify-center'>
+            {isMobileView && <div className='w-full overflow-hidden h-[200px] relative flex items-center justify-center'>
                 <div className='h-[40px] w-[1000px] absolute bg-[#3760E7] text-center rotate-z-[-6.29deg] flex items-center gap-2'>
                     <span className='text-white text-[24px] font-semibold'>AMO</span>
                     <span className='text-white text-[24px] font-semibold'>CRM</span>
@@ -95,7 +95,7 @@ const WhyChooseUs = () => {
                             content={<p className='sm:font-base sm:text-base text-[24px] my-[40px]' >Вы всегда в курсе, что мы делаем.</p>}
                         />
 
-                        { !isMobile() && <motion.div
+                        { !isMobileView && <motion.div
                             className="h-full w-[1000px] relative flex-shrink-0"
                             style={{ minWidth: '600px', maxWidth: '1000px' }}
                             ref={ref}
@@ -125,7 +125,7 @@ const WhyChooseUs = () => {
             <div className="relative sm:h-[310px] overflow-hidden">
                 <div className="flex sm:flex-row flex-col justify-end gap-5 container h-full">
                     <div className="flex sm:flex-row flex-col gap-5 items-center">
-                        { !isMobile() && <motion.div
+                        { !isMobileView && <motion.div
                             className="h-full w-[1000px] relative flex-shrink-0"
                             style={{ minWidth: '600px' }}
                             ref={ref}

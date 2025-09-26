@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, useMemo } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { steps } from "@/widgets/accompaniment/AccompanimentScrumSection/ui/lib"
-import { isMobile } from '@/shared/utils/isMobile';
+import { detectMobile } from '@/shared/utils/detectMobile'
 
 export default function StepTimeline() {
     const positions = [20, 50, 80]; // x-координаты (%)
@@ -31,6 +31,7 @@ export default function StepTimeline() {
     const containerRef = useRef<HTMLDivElement>(null);
     const refs = useRef<(HTMLLIElement | null)[]>([]);
     const [coordinates, setCoordinates] = useState<{ x: number, y: number }[]>([]);
+    const { isMobileView } = detectMobile()
 
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -101,7 +102,7 @@ export default function StepTimeline() {
         }
         const length = Math.hypot(containerSize.width, containerSize.height) + 40
         
-        return isMobile() ? normalizeForMobile(length) : length;
+        return isMobileView ? normalizeForMobile(length) : length;
     }, [containerSize]);
 
     const lineWidth = useTransform(
@@ -115,7 +116,7 @@ export default function StepTimeline() {
             <motion.div
                 style={{
                     width: lineWidth,
-                    rotate: isMobile() ? '90deg' : `${angle}deg`,
+                    rotate: isMobileView ? '90deg' : `${angle}deg`,
                     top: `${top}px`,
                     transformOrigin: 'top left',
                 }}
@@ -127,7 +128,7 @@ export default function StepTimeline() {
                 <motion.li
                     ref={(el) => { refs.current[0] = el }}
                     className='sm:absolute flex flex-col items-center'
-                    style={isMobile() ? {} : {
+                    style={isMobileView ? {} : {
                         left: `${positions[0]}%`,
                         top: `${yPositions[0]}%`,
                         transform: 'translateX(-50%)',
@@ -135,7 +136,7 @@ export default function StepTimeline() {
                     }}
                 >
                    {
-                    !isMobile() ? (<>
+                    !isMobileView ? (<>
                         <h4 className="font-semibold text-h5 mb-8 max-w-[240px]">{steps[0].title}</h4>
                         <div className="flex items-center justify-center mb-20 w-25 h-25 border-2 text-blue-500 border-blue-500 rounded-full font-bold bg-black z-10" style={{ fontSize: "64px" }}>
                             1
@@ -161,7 +162,7 @@ export default function StepTimeline() {
                 <motion.li
                     ref={(el) => { refs.current[1] = el }}
                     className='sm:absolute flex flex-col items-center'
-                    style={isMobile() ? {} : {
+                    style={isMobileView ? {} : {
                         left: `${positions[1]}%`,
                         top: `${yPositions[1]}%`,
                         transform: 'translateX(-50%)',
@@ -169,7 +170,7 @@ export default function StepTimeline() {
                     }}
                 >
                     {
-                    !isMobile() ? (<>
+                    !isMobileView ? (<>
                         <h4 className="font-semibold text-h5 mb-8 max-w-[240px]">{steps[1].title}</h4>
                         <div className="flex items-center justify-center mb-20 w-25 h-25 border-2 text-blue-500 border-blue-500 rounded-full font-bold bg-black z-10" style={{ fontSize: "64px" }}>
                             2
@@ -194,7 +195,7 @@ export default function StepTimeline() {
                 <motion.li
                     ref={(el) => { refs.current[2] = el }}
                     className='sm:absolute flex flex-col items-center'
-                    style={isMobile() ? {} : {
+                    style={isMobileView ? {} : {
                         left: `${positions[2]}%`,
                         top: `${yPositions[2]}%`,
                         transform: 'translateX(-50%)',
@@ -202,7 +203,7 @@ export default function StepTimeline() {
                     }}
                 >
                     {
-                    !isMobile() ? (<>
+                    !isMobileView ? (<>
                         <h4 className="font-semibold text-h5 mb-8 max-w-[240px]">{steps[2].title}</h4>
                         <div className="flex items-center justify-center mb-20 w-25 h-25 border-2 text-blue-500 border-blue-500 rounded-full font-bold bg-black z-10" style={{ fontSize: "64px" }}>
                             3

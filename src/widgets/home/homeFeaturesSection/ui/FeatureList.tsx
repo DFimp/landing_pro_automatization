@@ -2,9 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { links } from "@/widgets/home/homeFeaturesSection/ui/lib";
 import * as motion from "motion/react-client";
-import { isMobile } from "@/shared/utils/isMobile";
+import { detectMobile } from "@/shared/utils/detectMobile";
 
 export default function FeaturesList() {
+  const { isMobileView } = detectMobile()
   return (
     <ul className="sm:grid sm:grid-cols-2 flex flex-col sm:gap-8 gap-4 sm:mt-20 mt-5">
       {links.map((link) => (
@@ -20,8 +21,8 @@ export default function FeaturesList() {
                         sm:px-7.5 px-7 sm:py-5 py-3"
             href={link.link}
           >
-            {link.name}
-            <Image src="/cross.svg" alt="Перейти" width={isMobile() ? 14 : 30} height={isMobile() ? 14 : 30} />
+            {isMobileView ? link.nameMobile || link.name : link.name}
+            <Image src="/cross.svg" alt="Перейти" width={isMobileView ? 14 : 30} height={isMobileView ? 14 : 30} />
           </Link>
         </motion.li>
       ))}

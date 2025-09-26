@@ -1,3 +1,5 @@
+"use client"
+
 import { data } from "@/widgets/audit/DeliverablesSection/ui/lib";
 import { AnimatedListItem } from "@/shared/ui/animatedListItem/AnimatedListItem";
 

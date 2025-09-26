@@ -3,9 +3,10 @@
 import { useEffect, useRef } from "react";
 import { Card } from "@/shared/ui/Card/Card";
 import { steps } from "@/widgets/home/homeStepsSection/ui/lib";
-import { isMobile } from "@/shared/utils/isMobile";
+import { detectMobile } from "@/shared/utils/detectMobile";
 
 export default function WorkSteps() {
+    const { isMobileView } = detectMobile()
     const scrollRef = useRef<HTMLDivElement>(null);
     const isDragging = useRef(false);
     const startX = useRef(0);
@@ -61,8 +62,9 @@ export default function WorkSteps() {
                             content={step.content}
                             description={step.description}
                             result={step.result}
-                            isFirst={!isMobile() && index === 0}
-                            isLast={!isMobile() && index === steps.length - 1}
+                            isFirst={!isMobileView && index === 0}
+                            isLast={!isMobileView && index === steps.length - 1}
+                            
                         />
                     ))}
                     {/* Добавляем пустой элемент для отступа справа */}

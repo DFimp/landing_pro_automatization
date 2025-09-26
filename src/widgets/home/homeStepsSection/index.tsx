@@ -2,16 +2,17 @@
 
 import WorkSteps from "@/widgets/home/homeStepsSection/ui/WorkSteps";
 import {TitleArrow} from "@/shared/ui/titleArrow/TitleArrow";
-import { isMobile } from "@/shared/utils/isMobile";
+import { detectMobile } from "@/shared/utils/detectMobile";
 
 export function HomeStepsSection() {
+    const { isMobileView } = detectMobile()
     return (
         <section className="container">
             <TitleArrow
                 className='mt-20'
                 text="Как мы работаем?"
                 link="/"
-                variant={isMobile() ? 'primary' : 'outline'} />
+                variant={isMobileView ? 'primary' : 'outline'} />
             <WorkSteps />
         </section>
     );

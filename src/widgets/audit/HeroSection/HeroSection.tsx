@@ -1,3 +1,5 @@
+'use client'
+
 import StickyInfo from "@/shared/ui/stickyInfo/StickyInfo";
 
 export function HeroSection() {

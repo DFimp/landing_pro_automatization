@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React, {useState} from "react";
-import { isMobile } from "@/shared/utils/isMobile";
+import { detectMobile } from "@/shared/utils/detectMobile";
 
 interface CardProps {
     title?: string;
@@ -28,7 +28,7 @@ export const Card = ({
                          isLast = false, // Значение по умолчанию
                      }: CardProps) => {
     const [isExpanded, setIsExpanded] = useState(false);
-
+    const { isMobileView } = detectMobile()
     if (variant === 'expandable') {
         return (
             <li
@@ -53,8 +53,8 @@ export const Card = ({
                             <Image
                                 src="/arrow btn.svg"
                                 alt="Кнопка"
-                                width={isMobile() ? 34 : 55}
-                                height={isMobile() ? 34 : 55}
+                                width={isMobileView ? 34 : 55}
+                                height={isMobileView ? 34 : 55}
                             />
                         </button>
                     )}

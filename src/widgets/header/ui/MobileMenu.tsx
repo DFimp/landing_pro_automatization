@@ -34,7 +34,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({isOpen, setIsOpen, setConsultati
                                       />
                                   </button></div>
                                   <ul className="px-8 flex flex-col gap-[40px]">
-                                    { ServicesItems.map((link) => (<li className="text-[18px] uppercase">
+                                    { ServicesItems.map((link, index) => (<li key={index} className="text-[18px] uppercase">
                                         <Link
                                     href={link.link}
                                     className=""
@@ -43,7 +43,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({isOpen, setIsOpen, setConsultati
                                     {link.name}
                                 </Link>
                                     </li>))}
-                                    <li className="text-[18px] uppercase">
+                                    <li key={-1} className="text-[18px] uppercase">
                                         <p
                                     className=""
                                     onClick={() => {setIsOpen(false); setConsultationModalIsOpen(true)}}

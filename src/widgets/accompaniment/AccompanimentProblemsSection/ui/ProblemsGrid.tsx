@@ -3,9 +3,10 @@
 import Image from "next/image";
 import { problems } from "@/widgets/accompaniment/AccompanimentProblemsSection/ui/lib";
 import * as motion from "motion/react-client";
-import { isMobile } from "@/shared/utils/isMobile";
+import { detectMobile } from "@/shared/utils/detectMobile";
 
 export default function ProblemsGrid() {
+    const { isMobileView } = detectMobile()
     return (
         <div className='problems-grid container'>
             <ul className='flex flex-wrap justify-center gap-10'>
@@ -19,7 +20,7 @@ export default function ProblemsGrid() {
                         transition={{ duration: 0.5, delay: index * 0.2 }}
                         className="card border-1 rounded-[60px] px-10 sm:py-15 py-10 space-y-3 sm:max-w-90 sm:h-[650px]"
                     >
-                        <Image src={problem.image} alt="Проблема и ее решение" width={isMobile() ? 46 : 92} height={isMobile() ? 46 : 92} />
+                        <Image src={problem.image} alt="Проблема и ее решение" width={isMobileView ? 46 : 92} height={isMobileView ? 46 : 92} />
                         <h3 className="text-white font-medium sm:text-h5 text-[14px]">{problem.title}</h3>
                         <h4 className="text-white font-light sm:text-h5 text-[14px]">{problem.description}</h4>
                     </motion.li>

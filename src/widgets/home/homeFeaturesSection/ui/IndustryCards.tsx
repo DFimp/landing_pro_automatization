@@ -1,9 +1,11 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { isMobile } from "@/shared/utils/isMobile";
+import { detectMobile } from "@/shared/utils/detectMobile";
 
-const prefix = isMobile() ? "m_" : ""
+export default function IndustryCards() {
+const { isMobileView } = detectMobile()
+const prefix = isMobileView ? "m_" : ""
 const cards = [
     { path: `/${prefix}продажи.svg`, alt: "Продажи" },
     { path: `/${prefix}маркетинг.svg`, alt: "Маркетинг" },
@@ -20,21 +22,20 @@ const cards = [
 const firstRow = cards.slice(0, 5);
 const secondRow = cards.slice(5, 10);
 
-export default function IndustryCards() {
     return (
         <div className="space-y-6">
             {[firstRow, secondRow].map((row, rowIndex) => (
                 <motion.ul
                     key={rowIndex}
                     className="sm:grid sm:grid-cols-5 flex flex-col gap-4"
-                    initial={{ opacity: isMobile() ? 1 : 0, y: isMobile() ? 0 : 30 }}
+                    initial={{ opacity: isMobileView ? 1 : 0, y: isMobileView ? 0 : 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 1 }}
                     transition={{ duration: 0.6, delay: rowIndex * 0.3 }}
                 >
                     {row.map((card, index) => (
                         <li key={index}>
-                            <Image src={card.path} alt={card.alt} width={isMobile() ? 600 : 218} height={214} />
+                            <Image src={card.path} alt={card.alt} width={isMobileView ? 600 : 218} height={214} />
                         </li>
                     ))}
                 </motion.ul>

@@ -1,13 +1,15 @@
 import { solutions } from "@/widgets/home/homeServiceSection/ui/lib";
 import {AnimatedListItem} from "@/shared/ui/animatedListItem/AnimatedListItem";
-import { isMobile } from "@/shared/utils/isMobile";
+
+import { detectMobile } from '@/shared/utils/detectMobile'
 import { Card } from "@/shared/ui/Card/Card";
 import Image from "next/image";
 const ProcessList = () => {
+    const { isMobileView } = detectMobile()
     return (
         <section className="process-list">
             {
-                !isMobile()
+                !isMobileView
                 ? (
                     <div className='process-list__container container'>
                         <ul className='space-y-4'>
@@ -29,6 +31,7 @@ const ProcessList = () => {
                     <div>
                     {solutions.map((solution, index) => (
                     <div
+                        key={index}
                         className="my-5 px-6 py-8 flex flex-col gap-3 rounded-[64px] items-center"
                         style={{
                             boxShadow: "0 4px 20px #3760E780"

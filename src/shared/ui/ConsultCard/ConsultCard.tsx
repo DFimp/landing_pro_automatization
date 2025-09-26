@@ -7,7 +7,7 @@ import { useInView } from "react-intersection-observer";
 import React, { useEffect, useState } from "react";
 import "./ConsultCard.css";
 import ConsultationModal from "@/features/consultation/ConsultationModal";
-import { isMobile } from "@/shared/utils/isMobile";
+import { detectMobile } from "@/shared/utils/detectMobile";
 
 interface ConsultCardProps {
   className?: string;
@@ -20,6 +20,7 @@ const ConsultCard: React.FC<ConsultCardProps> = ({ className }) => {
     triggerOnce: true,
   });
 
+  const { isMobileView } = detectMobile()
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   useEffect(() => {
@@ -28,7 +29,7 @@ const ConsultCard: React.FC<ConsultCardProps> = ({ className }) => {
     }
   }, [inView, controls]);
 
-  return !isMobile() ? (
+  return !isMobileView ? (
     <motion.section
       ref={ref}
       initial={{ opacity: 0 }}

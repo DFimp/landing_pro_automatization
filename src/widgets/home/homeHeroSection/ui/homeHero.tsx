@@ -4,11 +4,11 @@ import Button from "@/shared/ui/button/Button";
 import Image from "next/image";
 import { useState } from "react";
 import ConsultationModal from "@/features/consultation/ConsultationModal";
-import { isMobile } from "@/shared/utils/isMobile";
+import { detectMobile } from "@/shared/utils/detectMobile";
 
 const HomeHero = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-
+  const { isMobileView } = detectMobile()
   return (
     <section className="hero">
       <div className="hero__container container sm:flex justify-between items-center">
@@ -20,11 +20,11 @@ const HomeHero = () => {
             бизнес-процессов.
           </h2>
           <div className="w-90">
-            { !isMobile() && <Button text="КОНСУЛЬТАЦИЯ" variant="secondary" onClick={() => setIsModalOpen(true)} />}
+            { !isMobileView && <Button text="КОНСУЛЬТАЦИЯ" variant="secondary" onClick={() => setIsModalOpen(true)} />}
           </div>
         </div>
 
-        <Image className="ml-auto" src="/laptop.png" alt="Laptop" width={isMobile() ? 240 : 580} height={isMobile() ? 210 : 464} />
+        <Image className="ml-auto" src="/laptop.png" alt="Laptop" width={isMobileView ? 240 : 580} height={isMobileView ? 210 : 464} />
       </div>
 
       <ConsultationModal
