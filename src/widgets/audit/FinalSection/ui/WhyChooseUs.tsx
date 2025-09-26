@@ -87,6 +87,17 @@ const WhyChooseUs = () => {
                                 }}
                                 priority
                             />
+                            <div
+                                style={{
+                                    backgroundColor: "#3760e7",
+                                    height: '100%', 
+                                    width: '50vw',
+                                    borderRadius: '20px',              
+                                }}
+                            > 
+                            
+                            </div>
+                                
                         </motion.div>
                     </div>
                 </div>
@@ -117,6 +128,18 @@ const WhyChooseUs = () => {
                                 }}
                                 priority
                             />
+                            <div
+                                style={{
+                                backgroundColor: "#3760e7",
+                                height: '100%', 
+                                width: '50vw',
+                                borderRadius: '20px',
+                                position: 'absolute',
+                                right: '0',
+                                zIndex: '-1'                                
+                                }}
+                            >        
+                            </div>
                         </motion.div>
 
                         <Card

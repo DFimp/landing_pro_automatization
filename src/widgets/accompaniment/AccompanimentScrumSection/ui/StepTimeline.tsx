@@ -80,10 +80,10 @@ export default function StepTimeline() {
     useEffect(() => {
         if (typeof window !== 'undefined') {
           const width = window.innerWidth;
-          const newTop = topSwitch(width);
+          const newTop = -0.2 * width + 370;
           setTop(newTop);
         }
-    }, [])
+    }, [window.innerWidth])
 
     const angle = useMemo(() => {
         if (coordinates.length >= 3) {
