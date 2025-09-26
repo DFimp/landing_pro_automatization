@@ -6,6 +6,8 @@ import Header from "@/widgets/header/Header";
 import Head from "next/head";
 import { Footer } from "@/widgets/footer";
 
+
+
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin", "cyrillic"],

@@ -55,10 +55,10 @@ export const metadata: Metadata = {
 
 export default function Audit() {
   return (
-    <main id="analytics" className="pb-20 pt-20">
+    <main id="analytics" className="sm:pb-20 sm:pt-20">
       <HeroSection />
       <StepsSection />
-      <ResultSection />
+      <ResultSection /> 
       <DeliverablesSection />
       <FinalSection />
     </main>

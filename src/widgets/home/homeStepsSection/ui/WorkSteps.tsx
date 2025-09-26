@@ -3,8 +3,10 @@
 import { useEffect, useRef } from "react";
 import { Card } from "@/shared/ui/Card/Card";
 import { steps } from "@/widgets/home/homeStepsSection/ui/lib";
+import { detectMobile } from "@/shared/utils/detectMobile";
 
 export default function WorkSteps() {
+    const { isMobileView } = detectMobile()
     const scrollRef = useRef<HTMLDivElement>(null);
     const isDragging = useRef(false);
     const startX = useRef(0);
@@ -51,17 +53,18 @@ export default function WorkSteps() {
                 ref={scrollRef}
                 className="overflow-hidden cursor-grab active:cursor-grabbing"
             >
-                <ul className="flex gap-4 snap-x snap-mandatory select-none">
+                <ul className="flex sm:flex-row flex-col gap-4 snap-x snap-mandatory select-none">
                     {steps.map((step, index) => (
                         <Card
                             variant='expandable'
-                            key={index}
+                            key={index + Number(isMobileView) * 100}
                             index={index}
                             content={step.content}
                             description={step.description}
                             result={step.result}
-                            isFirst={index === 0}
-                            isLast={index === steps.length - 1}
+                            isFirst={!isMobileView && index === 0}
+                            isLast={!isMobileView && index === steps.length - 1}
+                            
                         />
                     ))}
                     {/* Добавляем пустой элемент для отступа справа */}

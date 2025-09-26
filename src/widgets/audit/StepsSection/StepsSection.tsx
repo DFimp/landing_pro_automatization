@@ -1,3 +1,5 @@
+'use client'
+
 import AnalyticsSteps from "@/widgets/audit/StepsSection/ui/AnalyticSteps";
 
 export function StepsSection() {

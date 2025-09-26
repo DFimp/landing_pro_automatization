@@ -1,6 +1,9 @@
+"use client"
+
 import * as motion from "motion/react-client";
 import Image from "next/image";
 import { AnimatedListItemProps } from "@/shared/ui/animatedListItem/models";
+import { detectMobile } from "@/shared/utils/detectMobile";
 
 export const AnimatedListItem = ({
                                      index,
@@ -18,16 +21,16 @@ export const AnimatedListItem = ({
 
     const initialX = isLeft ? -100 : 160;
     const targetX = oneLevel ? 0 : (isLeft ? 0 : 150);
-
+    const { isMobileView } = detectMobile()
     return (
         <motion.li
-            key={index}
+            key={index + Number(isMobileView) * 10}
             initial={{
-                x: initialX,
-                opacity: 0,
+                x: isMobileView ? 0 : initialX,
+                opacity: isMobileView ? 1 : 0,
             }}
             whileInView={{
-                x: targetX,
+                x: isMobileView ? 0 : targetX,
                 opacity: 1,
             }}
             transition={{ delay: 0.8, duration: 0.8 }}
@@ -37,7 +40,7 @@ export const AnimatedListItem = ({
             }`}
         >
             {number && (
-                <h2 className="text-blue font-bold" style={{ fontSize: "64px" }}>
+                <h2 className="text-blue font-bold" style={{ fontSize: isMobileView ? "24px" : "64px" }}>
                     {number}
                 </h2>
             )}
@@ -45,9 +48,9 @@ export const AnimatedListItem = ({
             {imageSrc && <Image src={imageSrc} alt={title} width={150} height={150} />}
 
             <div className="content">
-                <h3 className="font-semibold text-h4">{title}</h3>
+                <h3 className="font-semibold sm:text-h4 text-[14px]">{title}</h3>
                 {description && (
-                    <p className={`font-normal text-h7 ${descriptionClassName}`}>
+                    <p className={`font-normal sm:text-h7 text-[14px] ${descriptionClassName}`}>
                         {description}
                     </p>
                 )}

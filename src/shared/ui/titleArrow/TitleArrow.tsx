@@ -1,13 +1,17 @@
+"use client"
+
 import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
 import { TittleArrowProps } from "@/shared/ui/titleArrow/models";
+import { detectMobile } from "@/shared/utils/detectMobile";
 
 export const TitleArrow: FC<TittleArrowProps> = ({
   text,
   variant = "primary",
   link,
   className = "",
+  bold = true
 }) => {
   // Определяем путь к изображению в зависимости от варианта
   const getArrowSrc = () => {
@@ -32,6 +36,7 @@ export const TitleArrow: FC<TittleArrowProps> = ({
 
   const arrowSrc = getArrowSrc();
   const arrowDimensions = getArrowDimensions();
+  const { isMobileView } = detectMobile()
 
   return (
     <div className={`${className}`}>
@@ -46,7 +51,7 @@ export const TitleArrow: FC<TittleArrowProps> = ({
           }`}
         >
           <h2
-            className={`text-h4 font-semibold
+            className={`sm:text-h4 text-[14px] ${bold ? 'font-semibold' : ''} text-base
                     ${variant === "outline" && "container"} 
                     ${variant === "secondary" ? "text-white" : ""}`}
           >
@@ -61,8 +66,8 @@ export const TitleArrow: FC<TittleArrowProps> = ({
             <Image
               src={arrowSrc}
               alt="Стрелочка перехода"
-              width={arrowDimensions.width}
-              height={arrowDimensions.height}
+              width={isMobileView ? 42 : arrowDimensions.width}
+              height={isMobileView ? 10 : arrowDimensions.height}
             />
           </Link>
         </div>

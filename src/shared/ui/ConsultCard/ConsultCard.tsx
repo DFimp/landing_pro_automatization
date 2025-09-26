@@ -7,6 +7,7 @@ import { useInView } from "react-intersection-observer";
 import React, { useEffect, useState } from "react";
 import "./ConsultCard.css";
 import ConsultationModal from "@/features/consultation/ConsultationModal";
+import { detectMobile } from "@/shared/utils/detectMobile";
 
 interface ConsultCardProps {
   className?: string;
@@ -19,6 +20,7 @@ const ConsultCard: React.FC<ConsultCardProps> = ({ className }) => {
     triggerOnce: true,
   });
 
+  const { isMobileView } = detectMobile()
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   useEffect(() => {
@@ -27,7 +29,7 @@ const ConsultCard: React.FC<ConsultCardProps> = ({ className }) => {
     }
   }, [inView, controls]);
 
-  return (
+  return !isMobileView ? (
     <motion.section
       ref={ref}
       initial={{ opacity: 0 }}
@@ -92,6 +94,59 @@ const ConsultCard: React.FC<ConsultCardProps> = ({ className }) => {
         />
       </div>
     </motion.section>
+  )
+  : (
+<div className="relative bg-[#3760E7] bg-cover bg-center min-h-[510px] py-[24px] px-5">
+  <Image
+          className="absolute right-0 z-2 -top-[1px]"
+          src="/Exclude.svg"
+          alt="card phone"
+          width={133}
+          height={201}
+        />
+    <p className="mb-2 leading-5 text-white font-semibold w-[246px] text-[16px]">
+      Освободим ваше время,<br/>за счет автоматизации процессов и аналитики  
+    </p>
+    <p className="text-white text-[14px]">
+      Возьмем на себя рутину, <br/> проконтролируем менеджеров и <br/> предоставим
+      отчеты для стратегических <br/> решений
+    </p>
+    <div className="flex justify-center mt-6 h-[280px]">
+      <Image
+          className="absolute -translate-x-[100px] translate-y-[20px]"
+          src="/phoneMobile_1.svg"
+          alt="card phone"
+          width={123}
+          height={178}
+        />
+        <Image
+          className="absolute "
+          src="/phoneMobile_2.svg"
+          alt="card phone"
+          width={123}
+          height={178}
+        />
+        <Image
+          className="absolute translate-x-[100px] -translate-y-[20px]"
+          src="/phoneMobile_3.svg"
+          alt="card phone"
+          width={123}
+          height={178}
+        />
+
+        <Button
+              text="КОНСУЛЬТАЦИЯ"
+              variant={"outline"}
+              onClick={() => setIsModalOpen(true)}
+              className="mt-auto"
+              fullWidth={true}
+            />
+    </div>
+    <ConsultationModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        />
+</div>
   );
 };
 
