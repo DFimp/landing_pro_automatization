@@ -2,8 +2,10 @@
 import React from "react";
 import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
 import { hiddenInIframe } from "@/shared/utils/hiddenInIframe";
+import { detectMobile } from '@/shared/utils/detectMobile';
 
 const ContactDuplicateWidgetPage = () => {
+  const { isMobileView } = detectMobile()
   const { isIframe } = hiddenInIframe();
   const handleScrollToInstruction = (e: any) => {
     e.preventDefault();
@@ -14,7 +16,7 @@ const ContactDuplicateWidgetPage = () => {
   };
 
   return (
-    <main className="pb-20 pt-20 bg-white">
+    <main className="sm:pb-20 sm:pt-20 bg-white">
       {/* Hero Section */}
       <section id={isIframe ? "hidden-in-iframe" : ""} className="container mx-auto px-4 pb-16 bg-white">
         <div className="text-center space-y-6">
@@ -213,12 +215,19 @@ const ContactDuplicateWidgetPage = () => {
                       amoCRM для подключения.
                     </p>
                   </div>
+                  { isMobileView && 
+                    <div className="mt-4">
+                        <button className="bg-gradient-to-r from-blue-600 to-violet-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            Установить виджет сейчас
+                        </button>
+                    </div> 
+                  }
                 </div>
-                <div className="mt-4">
-                  <button className="bg-gradient-to-r from-blue-600 to-violet-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 cursor-pointer">
-                    Установить виджет сейчас
-                  </button>
-                </div>
+                { !isMobileView && <div className="mt-4">
+                    <button className="bg-gradient-to-r from-blue-600 to-violet-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                        Установить виджет сейчас
+                    </button>
+                </div> }
               </div>
             </div>
 

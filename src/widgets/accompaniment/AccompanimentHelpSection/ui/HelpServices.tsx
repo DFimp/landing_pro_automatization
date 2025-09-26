@@ -39,8 +39,11 @@ HelpServices() {
                         className="relative w-[550px] sm:h-[515px] h-[302px] perspective cursor-pointer"
                     >
                         <motion.li
-                            className="relative w-full h-full"
-                            style={{ transformStyle: "preserve-3d" }}
+                            className="relative w-full h-full rounded-[60px] sm:rounded-3xl"
+                            style={{ 
+                                transformStyle: "preserve-3d",
+                                background: 'rgba(0, 0, 0, 0.3)' 
+                            }}
                             animate={{ rotateY: isFlipped ? 180 : 0 }}
                             transition={{ duration: 0.8 }}
                             onViewportEnter={() => {

@@ -12,13 +12,16 @@ export default function ProblemsGrid() {
             <ul className='flex flex-wrap justify-center gap-10'>
                 {problems.map((problem, index) => (
                     <motion.li
-                        style={{boxShadow: `0 0 15px rgba(55, 96, 231, 0.5)`}}
+                        style={{
+                            boxShadow: `0 0 15px rgba(55, 96, 231, 0.5)`,
+                            background: 'rgba(0, 0, 0, 0.3)'
+                        }}
                         key={index + Number(isMobileView) * 100}
                         initial={{ opacity: isMobileView ? 1 : 0, y: isMobileView ? 0 : 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.6 }}
                         transition={{ duration: 0.5, delay: index * 0.2 }}
-                        className="card border-1 rounded-[60px] px-10 sm:py-15 py-10 space-y-3 sm:max-w-90 sm:h-[650px]"
+                        className="card rounded-[60px] px-10 sm:py-15 py-10 space-y-3 sm:max-w-90 sm:h-[650px]"
                     >
                         <Image src={problem.image} alt="Проблема и ее решение" width={isMobileView ? 46 : 92} height={isMobileView ? 46 : 92} />
                         <h3 className="text-white font-medium sm:text-h5 text-[14px]">{problem.title}</h3>

@@ -13,9 +13,8 @@ interface MobileMenuProps {
 }
 
 const ServicesItems = [
-    { name: "ПОЛЬЗА ДЛЯ БИЗНЕСА", link: "/" },
     { name: "АУДИТ", link: "/audit" },
-    { name: "ВНЕДРЕНИЕ С НУЛЯ", link: "/integration" },
+    { name: "ВНЕДРЕНИЕ С НУЛЯ", link: "/" },
     { name: "СОПРОВОЖДЕНИЕ", link: "/accompaniment" },
     { name: "ВИДЖЕТЫ", link: "/widgets" },
 ];

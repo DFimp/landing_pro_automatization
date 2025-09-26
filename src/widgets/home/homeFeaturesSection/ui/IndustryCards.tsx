@@ -28,6 +28,9 @@ const secondRow = cards.slice(5, 10);
                 <motion.ul
                     key={rowIndex + Number(isMobileView) * 100}
                     className="sm:grid sm:grid-cols-5 flex flex-col gap-4"
+                    style={{
+                        marginBottom: 'calc(var(--spacing) * 4)'
+                    }}
                     initial={{ opacity: isMobileView ? 1 : 0, y: isMobileView ? 0 : 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 1 }}

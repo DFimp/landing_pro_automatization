@@ -5,8 +5,8 @@ export default function WidgetsClient() {
   const router = useRouter();
 
   return (
-    <main id="widgets" className="container pb-20 pt-20">
-      <section className="my-20 sm:grid sm:grid-cols-2 gap-8 flex flex-col">
+    <main id="widgets" className="container sm:pb-20 sm:pt-20">
+      <section className="sm:my-20 my-10 sm:grid sm:grid-cols-2 gap-8 flex flex-col">
         <div
           onClick={() => router.push("/widgets/telegram-notify")}
           className="cursor-pointer bg-white p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 hover:transform hover:scale-105 animate-fade-in-up"

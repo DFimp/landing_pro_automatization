@@ -15,7 +15,7 @@ export default function Page() {
     };
 
     return (
-        <main id="whatsapp-widget" className="pb-20 pt-20 bg-white">
+        <main id="whatsapp-widget" className="sm:pb-20 sm:pt-20 bg-white">
             {/* Hero Section */}
             <section id={isIframe ? "hidden-in-iframe" : ""} className="container mx-auto px-4 pb-16 bg-white">
                 <div className="text-center space-y-6">

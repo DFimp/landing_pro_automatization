@@ -9,7 +9,7 @@ export function HomeStepsSection() {
     return (
         <section className="container">
             <TitleArrow
-                className='mt-20'
+                className='sm:mt-20'
                 text="Как мы работаем?"
                 link="/"
                 key={Number(isMobileView)}

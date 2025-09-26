@@ -48,7 +48,7 @@ export default function WorkSteps() {
     }, []);
 
     return (
-        <div className="w-full overflow-hidden mb-20 mt-20">
+        <div className="w-full overflow-hidden mb-20 sm:mt-20 mt-10">
             <div
                 ref={scrollRef}
                 className="overflow-hidden cursor-grab active:cursor-grabbing"

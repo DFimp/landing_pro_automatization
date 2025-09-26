@@ -15,7 +15,7 @@ export default function TelegramWidget() {
     };
 
     return (
-        <main id="telegram-widget" className="pb-20 pt-20 bg-white">
+        <main id="telegram-widget" className="sm:pb-20 sm:pt-20 bg-white">
             {/* Hero Section */}
             <section id={isIframe ? "hidden-in-iframe" : ""} className="container mx-auto px-4 pb-16 bg-white">
                 <div className="text-center space-y-6">
