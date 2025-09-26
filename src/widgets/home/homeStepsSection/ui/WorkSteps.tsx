@@ -57,7 +57,7 @@ export default function WorkSteps() {
                     {steps.map((step, index) => (
                         <Card
                             variant='expandable'
-                            key={index}
+                            key={index + Number(isMobileView) * 100}
                             index={index}
                             content={step.content}
                             description={step.description}

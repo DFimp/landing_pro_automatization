@@ -1,3 +1,5 @@
+'use client'
+
 import Button from "@/shared/ui/button/Button";
 import { Tariff } from "@/widgets/accompaniment/AccompanimentTariffsSection/ui/models";
 import {tariffs} from "@/widgets/accompaniment/AccompanimentTariffsSection/ui/lib";

@@ -12,6 +12,7 @@ export function HomeStepsSection() {
                 className='mt-20'
                 text="Как мы работаем?"
                 link="/"
+                key={Number(isMobileView)}
                 variant={isMobileView ? 'primary' : 'outline'} />
             <WorkSteps />
         </section>

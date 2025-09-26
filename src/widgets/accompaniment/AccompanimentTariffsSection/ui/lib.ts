@@ -20,7 +20,7 @@ export const tariffs: Tariff[] = [
         ]
     },
     {
-        title: "Малый бизнес",
+        title: "Крупный бизнес",
         price: "70 000р",
         features: [
             "для компаний до 20 сотрудников",

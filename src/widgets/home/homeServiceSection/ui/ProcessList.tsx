@@ -1,8 +1,9 @@
+'use client'
+
 import { solutions } from "@/widgets/home/homeServiceSection/ui/lib";
 import {AnimatedListItem} from "@/shared/ui/animatedListItem/AnimatedListItem";
 
 import { detectMobile } from '@/shared/utils/detectMobile'
-import { Card } from "@/shared/ui/Card/Card";
 import Image from "next/image";
 const ProcessList = () => {
     const { isMobileView } = detectMobile()

@@ -114,6 +114,7 @@ export default function StepTimeline() {
     return (
         <div ref={containerRef} className="timeline-container relative w-full sm:h-[80vh] sm:max-h-[628px] text-white sm:mb-20 sm:mt-20 mt-10">
             <motion.div
+                key={1 + Number(isMobileView) * 100}
                 style={{
                     width: lineWidth,
                     rotate: isMobileView ? '90deg' : `${angle}deg`,
@@ -126,6 +127,7 @@ export default function StepTimeline() {
             <ul className='relative sm:h-full container'>
                 {/* Шаг 1 - появляется сразу */}
                 <motion.li
+                    key={2 + Number(isMobileView) * 100}
                     ref={(el) => { refs.current[0] = el }}
                     className='sm:absolute flex flex-col items-center'
                     style={isMobileView ? {} : {
@@ -160,6 +162,7 @@ export default function StepTimeline() {
 
                 {/* Шаг 2 - появляется при 1/3 */}
                 <motion.li
+                    key={3 + Number(isMobileView) * 100}
                     ref={(el) => { refs.current[1] = el }}
                     className='sm:absolute flex flex-col items-center'
                     style={isMobileView ? {} : {
@@ -193,6 +196,7 @@ export default function StepTimeline() {
 
                 {/* Шаг 3 - появляется при 2/3 */}
                 <motion.li
+                    key={4 + Number(isMobileView) * 100}
                     ref={(el) => { refs.current[2] = el }}
                     className='sm:absolute flex flex-col items-center'
                     style={isMobileView ? {} : {

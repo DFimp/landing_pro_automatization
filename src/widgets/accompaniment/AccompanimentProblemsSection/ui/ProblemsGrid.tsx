@@ -13,8 +13,8 @@ export default function ProblemsGrid() {
                 {problems.map((problem, index) => (
                     <motion.li
                         style={{boxShadow: `0 0 15px rgba(55, 96, 231, 0.5)`}}
-                        key={index}
-                        initial={{ opacity: 0, y: 50 }}
+                        key={index + Number(isMobileView) * 100}
+                        initial={{ opacity: isMobileView ? 1 : 0, y: isMobileView ? 0 : 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.6 }}
                         transition={{ duration: 0.5, delay: index * 0.2 }}
