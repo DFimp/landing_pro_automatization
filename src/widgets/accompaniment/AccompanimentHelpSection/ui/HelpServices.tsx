@@ -60,7 +60,7 @@ HelpServices() {
                             {/* Front */}
                             <div
                                 style={{ boxShadow: isMobileView ? '0 4px 4px #3760E780' : `0 0 15px rgba(55, 96, 231, 0.5)` }}
-                                className="absolute w-full h-full backface-hidden flex flex-col items-center justify-center text-center bg-transparent border sm:rounded-3xl rounded-[60px] px-20 py-15 space-y-3"
+                                className="absolute w-full h-full backface-hidden flex flex-col items-center justify-center text-center bg-transparent sm:rounded-3xl rounded-[60px] px-20 py-15 space-y-3"
                             >
                                 <Image src={service.image} alt="Помощь" width={isMobileView ? 115 : 230} height={isMobileView ? 115 : 230} />
                                 <h4 className='text-h4 font-bold text-white'>{service.title}</h4>
@@ -69,7 +69,7 @@ HelpServices() {
                             {/* Back */}
                             <div
                                 style={{ boxShadow: `0 0 15px rgba(55, 96, 231, 0.5)` }}
-                                className="absolute w-full h-full backface-hidden rotate-y-180 flex flex-col items-center justify-center text-center bg-transparent border sm:rounded-3xl rounded-[60px] sm:px-20 px-10 py-15 space-y-3"
+                                className="absolute w-full h-full backface-hidden rotate-y-180 flex flex-col items-center justify-center text-center bg-transparent sm:rounded-3xl rounded-[60px] sm:px-20 px-10 py-15 space-y-3"
                             >
                                 <Image src={service.backside.image} alt="Back" width={isMobileView ? 70 : 140} height={isMobileView ? 70 : 140} />
                                 <h4 className='sm:text-h5 sm:font-normal font-semibold text-white sm:mb-10'>{service.backside.title}</h4>
