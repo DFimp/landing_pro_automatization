@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+Disallow: /api/
+Disallow: /_next/
+Disallow: /widgets/auto-tasks/
+Disallow: /widgets/duplicate-contacts/
+Disallow: /widgets/duplicate-leads/
+Disallow: /widgets/lead-distribution/
+Disallow: /widgets/massive-leads/
+Disallow: /widgets/telegram-button/
+Disallow: /widgets/telegram-notify/
+Disallow: /widgets/time-zone/
+Disallow: /widgets/whatsapp-button/
+
+Sitemap: https://pro-automatization.ru/sitemap.xml
