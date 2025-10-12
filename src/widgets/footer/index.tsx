@@ -9,7 +9,7 @@ export const Footer = () => {
   const { isIframe } = hiddenInIframe();
   const { isMobileView } = detectMobile()
 
-  return ( 
+  return ( !isMobileView &&
     <footer id={isIframe ? "hidden-in-iframe" : ""} className="bg-[#1e1e1e]">
       <div className="max-w-[1200px] m-auto py-2 flex items-center justify-between sm:p-0 p-4">
         <Link href="/">
