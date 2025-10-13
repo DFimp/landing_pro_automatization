@@ -3,7 +3,6 @@ import React from 'react';
 import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
 import "./style.css";
 import { hiddenInIframe } from "@/shared/utils/hiddenInIframe";
-import Image from "next/image";
 
 export default function Page() {
     const { isIframe } = hiddenInIframe();

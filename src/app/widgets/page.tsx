@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import WidgetsClient from "./widgets-client";
 
 export const metadata: Metadata = {
-  title: "Виджеты для amoCRM - Автоматизация и интеграции",
+  title: "Виджеты для amoCRM",
   description: "Готовые виджеты для amoCRM: Telegram уведомления, автозадачи, объединение дублей, распределение лидов, определение часового пояса клиента. Увеличьте эффективность CRM на 35%.",
   keywords: [
     "виджеты amocrm",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://pro-automatization.ru/og-image.png",
         width: 1200,
         height: 630,
         alt: "Виджеты для amoCRM - Про Автоматизацию"
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Виджеты для amoCRM - Готовые решения",
     description: "8 готовых виджетов для автоматизации amoCRM: Telegram, автозадачи, распределение лидов",
-    images: ["/og-image.png"],
+    images: ["https://pro-automatization.ru/og-image.png"],
   },
 
   alternates: {
