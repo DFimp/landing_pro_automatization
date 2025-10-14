@@ -40,6 +40,8 @@ const aviailableValuesLabels = [
 
   const handleMouseUp = () => {
     setIsDragging(false);
+    document.removeEventListener('mousemove', handleMouseMove);
+    document.removeEventListener('mouseup', handleMouseUp);
   };
 
   const updateValue = (e) => {
@@ -69,11 +71,6 @@ const aviailableValuesLabels = [
       document.addEventListener('mousemove', handleMouseMove);
       document.addEventListener('mouseup', handleMouseUp);
     }
-    
-    return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('mouseup', handleMouseUp);
-    };
   }, [isDragging]);
 
   useEffect(() => {

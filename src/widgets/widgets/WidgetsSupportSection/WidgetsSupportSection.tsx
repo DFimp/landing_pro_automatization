@@ -9,6 +9,12 @@ import { detectMobile } from "@/shared/utils/detectMobile";
 export function WidgetsSupportSection() {
     const { isMobileView } = detectMobile()
 
+    const scrollToForm = () => {
+        const target = document.querySelector('#special_offer_calculator');
+        if (target) {
+            target.scrollIntoView({ block: 'center', behavior: 'smooth' });
+        }
+    }
     return (
         <>
         <div className='container sm:mt-[86px]! mt-[40px]!'>
@@ -77,7 +83,7 @@ export function WidgetsSupportSection() {
             <div className='container sm:bg-transparent bg-[#AFC1FF80]'>
             <div className="text-center  sm:pt-0 pt-[35px] sm:px-0 px-[22px] sm:pb-0 pb-[48px] sm:mt-0 mt-[59px]">
                 <h3 className="sm:text-[32px] text-[20px] font-semibold text-[#3760E7] sm:mb-[38px] mb-[19px]">2 часа сопровождения <span className="sm:inline block"></span>в месяц включено</h3>
-                <a href="#special_offer_calculator"><Button text="Увеличить количество часов"  className="px-[40px] sm:py-[20px] py-[9px] sm:w-auto w-full text-[20px]! rounded-full"></Button></a>
+                <Button onClick={scrollToForm} text="Увеличить количество часов"  className="px-[40px] sm:py-[20px] py-[9px] sm:w-auto w-full text-[20px]! rounded-full"></Button>
             </div>
         </div>
         </>
