@@ -1,13 +1,15 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface WidgetsListItemProps {
     title: string;
     variant: number;
     text: string;
+    link: string;
     className?: string
 }
 
-export function WidgetsListItem({ text, variant, title, className }: WidgetsListItemProps) {
+export function WidgetsListItem({ text, variant, title, className, link }: WidgetsListItemProps) {
     let cardClassName = ''
     let upperDecorationPath = ''
     let bottomDecorationPath = ''
@@ -30,6 +32,7 @@ export function WidgetsListItem({ text, variant, title, className }: WidgetsList
             break;            
     }
     return (
+        <Link href={link}>
         <div className={`h-full sm:px-[61px] sm:py-[52px] py-[40px] px-[35px] rounded-[40px] border border-[#3760E7] relative overflow-hidden ${cardClassName}`}>
             {[2,3].includes(variant) && <Image className="absolute left-0 top-0"
                         src={upperDecorationPath}
@@ -51,5 +54,6 @@ export function WidgetsListItem({ text, variant, title, className }: WidgetsList
                     />}
                     
         </div>
+        </Link>
     );
 }

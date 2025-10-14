@@ -28,17 +28,32 @@ export function BonusesList() {
                     const bonusRect = bonus.getBoundingClientRect()
                     ctx.beginPath();
                     ctx.strokeStyle = "white";
-                    const heightOffset = index < 2 ? bonusRect.height : 0
+                    const heightOffset = index < 2 ? bonusRect.height / 2 : 0
+                    let widhtOffset = 0
+                    switch (index) {
+                        case 0:
+                            widhtOffset = bonusRect.width
+                            break;
+                        case 1:
+                            widhtOffset = 0
+                            break;
+                        case 2:
+                            widhtOffset = bonusRect.width / 1.25
+                            break;
+                        case 3:
+                            widhtOffset = bonusRect.width / 3
+                            break;
+                    }
                     ctx.moveTo((circleRect.width / 2 + circleRect.x) - canvasRect.x, (circleRect.height / 2 + circleRect.y) - canvasRect.y);  
-                    ctx.lineTo((bonusRect.width / 2 + bonusRect.x) - canvasRect.x, (heightOffset + bonusRect.y) - canvasRect.y);
+                    ctx.lineTo((widhtOffset + bonusRect.x) - canvasRect.x, (heightOffset + bonusRect.y) - canvasRect.y);
                     ctx.stroke();
                 })
                 
             }
         }
-    }, [])
+    }, [isMobileView])
     return (
-        <div className='relative sm:h-[600px] flex flex-col gap-[20px] justify-center items-center'>
+        <div id="bonuses_list" className='relative sm:h-[600px] flex flex-col gap-[20px] justify-center items-center'>
             <BonusesListCircle></BonusesListCircle>
         {isMobileView ? (
             <>
@@ -52,8 +67,8 @@ export function BonusesList() {
         : (<>
         <canvas className="w-full h-full absolute"></canvas>
         <BonusesListItem className='bonus sm:absolute left-0 top-[58px]' text="Все наши виджеты бесплатно"></BonusesListItem>
-        <BonusesListItem className='bonus sm:absolute left-0 bottom-[98px]' text="Диагностика по проверенному чек-листу "></BonusesListItem>
         <BonusesListItem className='bonus sm:absolute right-0 top-[100px]' text="Дополнительные месяцы использования"></BonusesListItem>   
+        <BonusesListItem className='bonus sm:absolute left-0 bottom-[98px]' text="Диагностика по проверенному чек-листу "></BonusesListItem>
          <BonusesListItem className='bonus sm:absolute right-0 bottom-0' text="Персональный менеджер, поддержка и диагностика проблем<br/>в выделенном чате"></BonusesListItem></>)}     
         </div>
     );

@@ -1,8 +1,13 @@
 "use client"
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-export default function SpecialOfferUsersCounter() {
+interface SpecialOfferUsersCountProps {
+    setValue: (v:number) => void;
+    value: number
+}
+
+export default function SpecialOfferUsersCounter({ setValue, value}: SpecialOfferUsersCountProps) {
     const [count, setCount] = useState(10);
 
   const handleDecrement = () => {
@@ -14,6 +19,14 @@ export default function SpecialOfferUsersCounter() {
   const handleIncrement = () => {
     setCount(count + 1);
   };
+
+  useEffect(() => {
+      setValue(count)
+    }, [count])
+  
+    useEffect(() => {
+      setCount(value)
+    }, [value])
 
   return (
     <div className="flex flex-col">

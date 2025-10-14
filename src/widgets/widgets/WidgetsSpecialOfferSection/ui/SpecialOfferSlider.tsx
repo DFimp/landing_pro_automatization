@@ -23,7 +23,7 @@ const aviailableValuesLabels = [
 
   const getClosestValue = (percentage) => {
     return availableValues.reduce((prev, curr, index) => 
-      Math.abs(index * 25 - percentage) < Math.abs((index - 1) * 25 - percentage) ? curr : prev
+      Math.abs(index * 25 - percentage + 10) < Math.abs((index - 1) * 25 - percentage) ? curr : prev
     );
   };
 
@@ -101,7 +101,7 @@ const aviailableValuesLabels = [
 
             <div 
               className="absolute top-1/2 transform -translate-y-1/2 sm:w-6 sm:h-6 w-3 h-3 bg-[#3760E7] border-3 border-[#3760E7] rounded-full shadow-lg cursor-grab active:cursor-grabbing transition-all duration-150 ease-out hover:scale-105"
-              style={isMobileView ? { left: `calc(${33 * currentValueIndex}% - 8px)` } : { left: `calc(${25 * currentValueIndex}% - 8px)` }}
+              style={isMobileView ? { left: `calc(${33 * currentValueIndex}% - 4px)` } : { left: `calc(${25 * currentValueIndex}% - 10px)` }}
             />
             
             {availableValues.map((value, index) => (
@@ -109,15 +109,15 @@ const aviailableValuesLabels = [
               <div
                 key={index}
                 className={`absolute top-1/2 transform flex flex-col items-center`}
-                style={isMobileView ? { left: `calc(${33 * index}% - 8px)` } : { left: `calc(${25 * index}% - 32px)` }}
+                style={isMobileView ? { left: `calc(${33 * index}%)` } : { left: `calc(${25 * index}%)` }}
               >
                 <div className={`w-[3px] h-[18px] transition-colors duration-150 -translate-y-1/2 ${
                   currentValue >= value ? 'bg-[#3760E7]' : 'bg-[#AFC1FF]'
                 }`}></div>
-                <div className="mt-[13px] mb-[8px] leading-[1]">{value}</div>
+                <div className="mt-[13px] mb-[8px] leading-[1] absolute top-[8px]">{value}</div>
                 { isMobileView ?
-                    <></>
-                    : <div className="text-[#3760E7]">{aviailableValuesLabels[index]}</div>}
+                    currentValue === value && <div className="absolute text-[#3760E7] text-[12px] text-nowrap top-[56px]">{aviailableValuesLabels[index]}</div>
+                    : <div className="absolute text-[#3760E7] text-nowrap top-[56px]">{aviailableValuesLabels[index]}</div>}
                 </div>
 
             ))}

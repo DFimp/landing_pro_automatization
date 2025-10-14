@@ -1,13 +1,23 @@
 "use state"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-export default function SpecialOfferPlanSelect() {
-  const [selectedTariff, setSelectedTariff] = useState('Basic');
-  const tariffs = ['Basic', 'Standard', 'Premium', 'Enterprise'];
+interface SpecialOfferPlanProps {
+    setValue: (v:number) => void;
+    value: number
+}
+
+export default function SpecialOfferPlanSelect({ value, setValue }: SpecialOfferPlanProps) {
+  const tariffs = ['Базовый', 'Расширенный', 'Профессиональный'];
+  const [selectedTariff, setSelectedTariff] = useState(0);
+  
 
   const handleSelectChange = (event) => {
     setSelectedTariff(event.target.value);
   };
+
+  useEffect(() => {
+      setValue(selectedTariff)
+    }, [selectedTariff])
 
   return (
     <div className="flex flex-col">
@@ -20,8 +30,8 @@ export default function SpecialOfferPlanSelect() {
           onChange={handleSelectChange}
           className="h-[44px] w-full px-4 py-2 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 appearance-none"
         >
-          {tariffs.map((tariff) => (
-            <option key={tariff} value={tariff}>
+          {tariffs.map((tariff, index) => (
+            <option key={tariff} value={index}>
               {tariff}
             </option>
           ))}

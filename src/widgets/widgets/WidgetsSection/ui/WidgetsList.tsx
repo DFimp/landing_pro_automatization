@@ -6,24 +6,28 @@ export function WidgetsList() {
           text: `Получайте мгновенные уведомления в Telegram
                 и запускайте SalesBot одним нажатием. Полная автоматизация коммуникаций с клиентами прямо 
                 в мессенджере.`,
-          title: `Telegram Виджет для amoCRM`,  
+          title: `Telegram Виджет для amoCRM`,
+          link: '/widgets/telegram-notify',
           variant: 2
         },
         {
           text: `Автоматически создавайте задачи для сделок без активности. Настраиваемые статусы, типы задач
 и ответственные. Увеличьте конверсию на 35% благодаря своевременному контакту с клиентами.`,
-          title: `Автозадачи для amoCRM`,  
+          title: `Автозадачи для amoCRM`,
+          link: '/widgets/auto-tasks',
           variant: 1
         },
         {
           text: `Автоматическое склеивание дублированных сделок
 с сохранением всех важных данных. Экономьте время менеджеров и улучшайте качество вашей базы данных.`,
           title: `Объединение дублей сделок для amoCRM`,  
+          link: '/widgets/duplicate-leads',
           variant: 1
         },
         {
           text: `Автоматическое склеивание дублированных контактов с умными алгоритмами поиска. Экономьте время менеджеров и улучшайте качество вашей базы контактов.`,
           title: `Объединение дублей контактов amoCRM`,  
+          link: '/widgets/duplicate-contacts',
           variant: 3
         },
         {
@@ -31,30 +35,34 @@ export function WidgetsList() {
 не разбудите клиента в 6 утра или не позвоните 
 в полночь!`,
           title: `Виджет времени клиента для amoCRM`,  
+          link: '/widgets/time-zone',
           variant: 4
         },
         {
           text: `Автоматическое распределение новых сделок между менеджерами по процентам, максимальному количеству или равными долями. Учет контактов, компаний и активности менеджеров.`,
           title: `Умное распределение сделок для amoCRM`,  
+          link: '/widgets/lead-distribution',
           variant: 1
         },
         {
           text: `Превратите каждый номер телефона в прямую ссылку на чат с клиентом в Telegram. Больше никакого копирования номеров и поиска контактов!`,
           title: `Мгновенный переход в Telegram 
 из amoCRM`,  
+          link: '/widgets/telegram-button',
           variant: 2
         },
         {
           text: `Превратите каждый номер телефона в прямую ссылку на чат с клиентом в WhatsApp. Мгновенное общение с клиентами прямо из карточки сделки!`,
           title: `Мгновенный переход в WhatsApp
 из amoCRM`,  
+          link: '/widgets/whatsapp-button',
           variant: 1
         }
     ]
 
     return (
         <div className="grid sm:grid-cols-2 grid-cols-1 gap-[40px]">
-            { widgets.map((widget, index) => <WidgetsListItem key={index} text={widget.text} title={widget.title} variant={widget.variant}></WidgetsListItem>)}
+            { widgets.map((widget, index) => <WidgetsListItem key={index} link={widget.link} text={widget.text} title={widget.title} variant={widget.variant}></WidgetsListItem>)}
         </div>
     );
 }

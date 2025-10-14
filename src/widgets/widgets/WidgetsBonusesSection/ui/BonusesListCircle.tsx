@@ -8,7 +8,7 @@ export function BonusesListCircle(){
     return (
         <Image
         id="bonus_center"
-        className="max-w-none sm:-mt-0 -mt-[200px]"
+        className="z-3 max-w-none sm:-mt-0 -mt-[200px]"
             src="/BonusesListCircle.png"
             alt=""
             width={isMobileView ? 1000 : 582}
