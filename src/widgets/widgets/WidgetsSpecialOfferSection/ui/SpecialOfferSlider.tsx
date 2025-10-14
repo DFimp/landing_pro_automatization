@@ -39,9 +39,9 @@ const aviailableValuesLabels = [
   };
 
   const handleMouseUp = () => {
-    setIsDragging(false);
     document.removeEventListener('mousemove', handleMouseMove);
     document.removeEventListener('mouseup', handleMouseUp);
+    setIsDragging(false);
   };
 
   const updateValue = (e) => {
@@ -71,6 +71,11 @@ const aviailableValuesLabels = [
       document.addEventListener('mousemove', handleMouseMove);
       document.addEventListener('mouseup', handleMouseUp);
     }
+
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
+    };
   }, [isDragging]);
 
   useEffect(() => {
@@ -81,8 +86,14 @@ const aviailableValuesLabels = [
     setCurrentValue(value)
   }, [value])
 
+  useEffect(() => {
+    if (sliderRef.current) {
+      console.log("1")
+      document.getElementById("slider")?.addEventListener("mouseleave", handleMouseUp)
+    }
+  }, [sliderRef])
   return (
-        <div className="mb-8 w-full">
+        <div id="slider" draggable="false" className="mb-8 h-[20px] w-full">
           
           <div 
             ref={sliderRef}
@@ -97,24 +108,26 @@ const aviailableValuesLabels = [
             
 
             <div 
-              className="absolute top-1/2 transform -translate-y-1/2 sm:w-6 sm:h-6 w-3 h-3 bg-[#3760E7] border-3 border-[#3760E7] rounded-full shadow-lg cursor-grab active:cursor-grabbing transition-all duration-150 ease-out hover:scale-105"
+              draggable="false"
+              className="z-3 absolute top-1/2 transform -translate-y-1/2 sm:w-6 sm:h-6 w-3 h-3 bg-[#3760E7] border-3 border-[#3760E7] rounded-full shadow-lg cursor-grab active:cursor-grabbing transition-all duration-150 ease-out hover:scale-105"
               style={isMobileView ? { left: `calc(${33 * currentValueIndex}% - 4px)` } : { left: `calc(${25 * currentValueIndex}% - 10px)` }}
             />
             
             {availableValues.map((value, index) => (
             
               <div
+                draggable="false"
                 key={index}
-                className={`absolute top-1/2 transform flex flex-col items-center`}
+                className={` absolute top-1/2 transform flex flex-col items-center`}
                 style={isMobileView ? { left: `calc(${33 * index}%)` } : { left: `calc(${25 * index}%)` }}
               >
-                <div className={`w-[3px] h-[18px] transition-colors duration-150 -translate-y-1/2 ${
+                <div className={`select-none w-[3px] h-[18px] transition-colors duration-150 -translate-y-1/2 ${
                   currentValue >= value ? 'bg-[#3760E7]' : 'bg-[#AFC1FF]'
                 }`}></div>
-                <div className="mt-[13px] mb-[8px] leading-[1] absolute top-[8px]">{value}</div>
+                <div className="select-none mt-[13px] mb-[8px] leading-[1] absolute top-[8px]">{value}</div>
                 { isMobileView ?
-                    currentValue === value && <div className="absolute text-[#3760E7] text-[12px] text-nowrap top-[56px]">{aviailableValuesLabels[index]}</div>
-                    : <div className="absolute text-[#3760E7] text-nowrap top-[56px]">{aviailableValuesLabels[index]}</div>}
+                    currentValue === value && <div className="select-none absolute text-[#3760E7] text-[12px] text-nowrap top-[56px]">{aviailableValuesLabels[index]}</div>
+                    : <div className="select-none absolute text-[#3760E7] text-nowrap top-[56px]">{aviailableValuesLabels[index]}</div>}
                 </div>
 
             ))}

@@ -31,18 +31,6 @@ export default function SpecialOfferPlanSelect({ value, setValue }: SpecialOffer
         onClick={() => {setIsOpen(!isOpen)}}
       >
         {tariffs[selectedTariff]}
-        {/* <></>
-        <select
-          value={selectedTariff}
-          onChange={handleSelectChange}
-          className="h-[44px] w-full px-4 py-2 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 appearance-none"
-        >
-          {tariffs.map((tariff, index) => (
-            <option key={tariff} value={index}>
-              {tariff}
-            </option>
-          ))}
-        </select> */}
         
         <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
           <svg 
