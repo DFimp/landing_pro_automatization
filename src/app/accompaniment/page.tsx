@@ -9,7 +9,7 @@ import {
 } from "@/widgets/accompaniment";
 
 export const metadata: Metadata = {
-  title: "Сопровождение amoCRM - Техническая поддержка и обслуживание CRM",
+  title: "Сопровождение amoCRM",
   description: "Профессиональное сопровождение amoCRM: техническая поддержка, доработки, обслуживание CRM системы. Позаботимся о том, чтобы ваша амо СРМ работала как часы без сбоев.",
   keywords: [
     "сопровождение amocrm",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://pro-automatization.ru/og-image.png",
         width: 1200,
         height: 630,
         alt: "Сопровождение amoCRM - Про Автоматизацию"
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Сопровождение amoCRM - Техническая поддержка CRM",
     description: "Профессиональное сопровождение amoCRM: поддержка, доработки, обслуживание CRM системы",
-    images: ["/og-image.png"],
+    images: ["https://pro-automatization.ru/og-image.png"],
   },
 
   alternates: {

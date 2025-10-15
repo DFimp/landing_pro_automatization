@@ -3,9 +3,9 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import React from "react";
 import Header from "@/widgets/header/Header";
-import Head from "next/head";
 import { Footer } from "@/widgets/footer";
-
+import { Suspense } from "react";
+import { YandexMetrika, YandexScript } from "@/shared/scripts/YandexMetrika";
 
 
 const montserrat = Montserrat({
@@ -16,9 +16,12 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: {
     default: "Про Автоматизацию",
-    template: "%s | Про Автоматизацию -  Эксперт по amoCRM и автоматизации бизнеса"
+    template: "%s | Про Автоматизацию"
   },
   description: "Ваш эксперт по amoCRM: настройка, интеграции, автоматизация бизнес-процессов. Консультации по amoCRM, воронки продаж, CRM-системы. Полная автоматизация вашего бизнеса с amoCRM.",
+  other: {
+    "yandex-verification": "f5d8de67e31c5b38",
+  },
   keywords: [
     "amocrm", 
     "амо срм", 
@@ -46,7 +49,7 @@ export const metadata: Metadata = {
     siteName: "Про Автоматизацию",
     images: [
       {
-        url: "/og-image.png", 
+        url: "https://pro-automatization.ru/og-image.png", 
         width: 1200,
         height: 630,
         alt: "Про Автоматизацию - эксперт по amoCRM"
@@ -58,7 +61,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Про Автоматизацию - Эксперт по amoCRM",
     description: "Настройка amoCRM, интеграции, автоматизация бизнес-процессов",
-    images: ["/og-image.png"],
+    images: ["https://pro-automatization.ru/og-image.png"],
   },
   
   robots: {
@@ -86,6 +89,10 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className={`${montserrat.variable} antialiased`}>
+        <YandexScript />
+        <Suspense fallback={<></>}>
+          <YandexMetrika />
+        </Suspense>
         <Header />
         {children}
         <Footer />

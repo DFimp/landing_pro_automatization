@@ -1,6 +1,8 @@
 User-agent: *
 Allow: /
-
+Allow: /audit
+Allow: /widgets
+Allow: /accompaniment
 Disallow: /api/
 Disallow: /_next/
 Disallow: /widgets/auto-tasks/
@@ -14,3 +16,4 @@ Disallow: /widgets/time-zone/
 Disallow: /widgets/whatsapp-button/
 
 Sitemap: https://pro-automatization.ru/sitemap.xml
+Host: https://pro-automatization.ru

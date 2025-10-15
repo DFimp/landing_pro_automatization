@@ -191,7 +191,13 @@ export default function Page() {
                                 <div className="flex-1">
                                     <h3 className="text-2xl font-bold text-gray-900 mb-4">Настройка активности менеджеров</h3>
                                     <div className="text-gray-700 leading-relaxed space-y-4">
-                                        <p>Включите/выключите участие менеджеров в распределении:</p>
+                                        <div className='font-bold'>Важная настройка для работы виджета:</div>
+                                        <p>Для этого нажмите на "Аккаунт" в левом верхнем углу, где сможете включить/выключить участие менеджеров в распределении:</p>
+                                        <img 
+                                            className="rounded-xl"
+                                            src="/allocate_leads_active_panel.png"
+                                            alt="Активность менеджеров"
+                                        />
                                         <ul className="space-y-2 ml-4">
                                             <li className="flex items-start gap-2">
                                                 <span className="text-blue-600">•</span>

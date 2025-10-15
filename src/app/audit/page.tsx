@@ -8,7 +8,7 @@ import {
 } from "@/widgets/audit";
 
 export const metadata: Metadata = {
-  title: "Аудит amoCRM - Предпроектная подготовка и анализ CRM",
+  title: "Аудит amoCRM",
   description: "Комплексный аудит amoCRM и предпроектная подготовка. Анализируем текущее состояние CRM, выявляем проблемы, разрабатываем решения для автоматизации без рисков и лишних затрат.",
   keywords: [
     "аудит amocrm",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://pro-automatization.ru/og-image.png",
         width: 1200,
         height: 630,
         alt: "Аудит amoCRM - Про Автоматизацию"
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Аудит amoCRM - Профессиональный анализ CRM",
     description: "Комплексный аудит amoCRM: анализ настроек, выявление проблем, предпроектная подготовка",
-    images: ["/og-image.png"],
+    images: ["https://pro-automatization.ru/og-image.png"],
   },
 
   alternates: {

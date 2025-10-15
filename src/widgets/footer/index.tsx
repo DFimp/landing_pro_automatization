@@ -3,11 +3,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { hiddenInIframe } from "@/shared/utils/hiddenInIframe";
-import { detectMobile } from "@/shared/utils/detectMobile";
 
 export const Footer = () => {
   const { isIframe } = hiddenInIframe();
-  const { isMobileView } = detectMobile()
 
   return ( !isMobileView &&
     <footer id={isIframe ? "hidden-in-iframe" : ""} className="bg-[#1e1e1e]">
@@ -23,7 +21,7 @@ export const Footer = () => {
         </Link>
 
         <div className="text-h7 text-blue flex flex-col items-end gap-1">
-          <Link href={"/privacy"}>
+          <Link href={"/privacy-policy"}>
             Политика конфиденциальности
           </Link>
 
