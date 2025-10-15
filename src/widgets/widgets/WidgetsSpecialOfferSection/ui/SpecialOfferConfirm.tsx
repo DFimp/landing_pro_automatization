@@ -1,11 +1,10 @@
 import Button from "@/shared/ui/button/Button";
 
 interface SpecialOfferConfirmProps {
-    months: string,
     finalCost: number
 }
 
-export default function SpecialOfferConfirm({ months, finalCost }: SpecialOfferConfirmProps) {
+export default function SpecialOfferConfirm({ finalCost }: SpecialOfferConfirmProps) {
     
     return (
         <div className="w-full flex flex-col">
