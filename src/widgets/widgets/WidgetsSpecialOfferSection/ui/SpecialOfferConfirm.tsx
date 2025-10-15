@@ -1,6 +1,7 @@
 import Button from "@/shared/ui/button/Button";
 
 interface SpecialOfferConfirmProps {
+    months: string,
     finalCost: number
 }
 
