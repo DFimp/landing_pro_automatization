@@ -7,7 +7,7 @@ import { hiddenInIframe } from "@/shared/utils/hiddenInIframe";
 export const Footer = () => {
   const { isIframe } = hiddenInIframe();
 
-  return ( !isMobileView &&
+  return (
     <footer id={isIframe ? "hidden-in-iframe" : ""} className="bg-[#1e1e1e]">
       <div className="max-w-[1200px] m-auto py-2 flex items-center justify-between sm:p-0 p-4">
         <Link href="/">
@@ -21,11 +21,12 @@ export const Footer = () => {
         </Link>
 
         <div className="text-h7 text-blue flex flex-col items-end gap-1">
-          <Link href={"/privacy-policy"}>
-            Политика конфиденциальности
-          </Link>
+          <Link href={"/privacy-policy"}>Политика конфиденциальности</Link>
 
-          <Link href={"https://t.me/proavtomatization_support_bot"} target="_blank">
+          <Link
+            href={"https://t.me/proavtomatization_support_bot"}
+            target="_blank"
+          >
             Написать в поддержку
           </Link>
         </div>
