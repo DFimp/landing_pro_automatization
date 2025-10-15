@@ -13,13 +13,10 @@ export function BonusesList() {
         const circle = document.getElementById("bonus_center")
         const bonuses = document.querySelectorAll(".bonus")
         const container = document.getElementById("bonuses_list")
-        console.log(canvas, circle, bonuses)
         if (canvas && circle && bonuses && container) {
             const containerRect = container.getBoundingClientRect()
             const canvasRect = canvas.getBoundingClientRect()
             const circleRect = circle.getBoundingClientRect()
-            console.log(canvasRect)
-            console.log(circleRect)
             canvas.width = containerRect.width
             canvas.height = containerRect.height
             const ctx = canvas.getContext("2d");

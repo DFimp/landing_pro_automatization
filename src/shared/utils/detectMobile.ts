@@ -9,7 +9,6 @@ export function detectMobile() {
     } catch (e) {
       setIsMobileView(false);
     }
-    console.log('log ', isMobileView)
   }, []);
 
   return {

@@ -9,30 +9,30 @@ interface SpecialOfferSliderProps {
 
 export default function SpecialOfferSlider({ setValue, value }: SpecialOfferSliderProps) {
 const { isMobileView } = detectMobile()
-const availableValues = [6, 9, 12, 24];
+const availableValues = [6, 9, 12, 24] as const;
 const aviailableValuesLabels = [
     "+ 1 месяц",
     "+ 2 месяца",
     "+ 3 месяца",
     "+ 7 месяцев"
 ]
-  const [currentValue, setCurrentValue] = useState(availableValues[1]); // Start with 50
+  const [currentValue, setCurrentValue] = useState<6 | 9 | 12 | 24>(9);
   const [currentValueIndex, setValueIndex] = useState(1)
   const [isDragging, setIsDragging] = useState(false);
-  const sliderRef = useRef(null);
+  const sliderRef = useRef<HTMLDivElement>(null);
 
-  const getClosestValue = (percentage) => {
+  const getClosestValue = (percentage: number): 6 | 9 | 12 | 24 => {
     return availableValues.reduce((prev, curr, index) => 
       Math.abs(index * 25 - percentage + 10) < Math.abs((index - 1) * 25 - percentage) ? curr : prev
     );
   };
 
-  const handleMouseDown = (e) => {
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     setIsDragging(true);
     updateValue(e);
   };
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: MouseEvent) => {
     if (isDragging && sliderRef.current) {
       updateValue(e);
     }
@@ -44,7 +44,7 @@ const aviailableValuesLabels = [
     setIsDragging(false);
   };
 
-  const updateValue = (e) => {
+  const updateValue = (e: React.MouseEvent<HTMLDivElement> | MouseEvent) => {
     if (!sliderRef.current) return;
     
     const rect = sliderRef.current.getBoundingClientRect();
@@ -56,11 +56,10 @@ const aviailableValuesLabels = [
     const targetValue = getClosestValue(percentage);
     setCurrentValue(targetValue);
     const targetValueIndex = availableValues.indexOf(targetValue)
-    console.log(targetValueIndex)
     setValueIndex(targetValueIndex)
   };
 
-  const handleClick = (e) => {
+  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!isDragging) {
       updateValue(e);
     }
@@ -80,18 +79,18 @@ const aviailableValuesLabels = [
 
   useEffect(() => {
     setValue(currentValue)
-  }, [currentValue])
+  }, [currentValue, setValue])
 
   useEffect(() => {
-    setCurrentValue(value)
+    setCurrentValue(value as 6 | 9 | 12 | 24)
   }, [value])
 
   useEffect(() => {
     if (sliderRef.current) {
-      console.log("1")
       document.getElementById("slider")?.addEventListener("mouseleave", handleMouseUp)
     }
   }, [sliderRef])
+  
   return (
         <div id="slider" draggable="false" className="mb-8 h-[20px] w-full">
           

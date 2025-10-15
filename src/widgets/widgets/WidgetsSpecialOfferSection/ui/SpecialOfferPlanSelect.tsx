@@ -12,7 +12,7 @@ export default function SpecialOfferPlanSelect({ value, setValue }: SpecialOffer
   const [isOpen, setIsOpen] = useState(false)
   
 
-  const handleSelectTariff = (value) => {
+  const handleSelectTariff = (value: number) => {
     setSelectedTariff(value);
     setIsOpen(false)
   };
