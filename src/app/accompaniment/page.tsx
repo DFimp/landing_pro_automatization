@@ -49,6 +49,18 @@ export const metadata: Metadata = {
     images: ["https://pro-automatization.ru/og-image.png"],
   },
 
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
   alternates: {
     canonical: "https://pro-automatization.ru/accompaniment",
   },

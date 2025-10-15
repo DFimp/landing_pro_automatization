@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { WidgetsBonusesSection, WidgetsWidgetsSection, WidgetsSupportSection, WidgetsSpecialOfferSection } from "@/widgets/widgets";
+import { WidgetsList } from "@/widgets/widgets/WidgetsSection/ui/WidgetsList";
 
 export const metadata: Metadata = {
   title: "Виджеты для amoCRM",
@@ -37,8 +37,20 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Виджеты для amoCRM - Готовые решения",
-    description: "8 готовых виджетов для автоматизации amoCRM: Telegram, автозадачи, распределение лидов",
+    description: "Готовые виджеты для amoCRM",
     images: ["https://pro-automatization.ru/og-image.png"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 
   alternates: {
@@ -48,11 +60,10 @@ export const metadata: Metadata = {
 
 export default function Widgets() {
     return (
-        <main id="Widgets" className="overflow-hidden">
-            <WidgetsBonusesSection></WidgetsBonusesSection>
-            <WidgetsWidgetsSection></WidgetsWidgetsSection>
-            <WidgetsSupportSection></WidgetsSupportSection>
-            <WidgetsSpecialOfferSection></WidgetsSpecialOfferSection>
+        <main id="Widgets" className="overflow-hidden container">
+          <div className="my-10 sm:my-20">
+            <WidgetsList />
+          </div>
         </main>
     );
 }

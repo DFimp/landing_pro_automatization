@@ -6,6 +6,7 @@ const ServicesItems = [
     { name: "АУДИТ", link: "/audit" },
     { name: "ВНЕДРЕНИЕ С НУЛЯ", link: "/" },
     { name: "СОПРОВОЖДЕНИЕ", link: "/accompaniment" },
+    { name: "ЛИЦЕНЗИЯ", link: "/license" },
 ];
 
 const HeaderNav = () => {
