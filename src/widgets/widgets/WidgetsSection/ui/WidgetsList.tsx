@@ -57,6 +57,12 @@ export function WidgetsList() {
 из amoCRM`,  
           link: '/widgets/whatsapp-button',
           variant: 1
+        },
+        {
+          text: `Автоматизируйте создание сделок для всех ваших контактов одним нажатием. Забудьте о рутинной работе - виджет сделает всё за вас быстро и без ошибок.`,
+          title: `Массовое создание сделок для amoCRM`,  
+          link: '/widgets/massive-leads',
+          variant: 1
         }
     ]
 

@@ -14,16 +14,28 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL;
 interface FormData {
   name: string;
   phone: string;
+  monthsCount: number;
+  usersCount: number;
+  amoTariff: string;
+  selectedTariff: string;
 }
 
 interface FormErrors {
   name?: string;
   phone?: string;
+  monthsCount?: number;
+  usersCount?: number;
+  amoTariff?: string;
+  selectedTariff?: string;
 }
 
 interface ConsultationModalProps {
   isOpen: boolean;
   onClose: () => void;
+  selectedTariff?: string;
+  prefilledMonths?: number;
+  prefilledAmoTariff?: string;
+  prefilledUsers?: number;
 }
 
 interface AlertState {
@@ -35,10 +47,18 @@ interface AlertState {
 const ConsultationModal: React.FC<ConsultationModalProps> = ({ 
   isOpen, 
   onClose, 
+  selectedTariff = '',
+  prefilledMonths = 0,
+  prefilledAmoTariff = '',
+  prefilledUsers = 0
 }) => {
   const [formData, setFormData] = useState<FormData>({
     name: '',
-    phone: ''
+    phone: '',
+    monthsCount: 0,
+    usersCount: 0,
+    amoTariff: '',
+    selectedTariff: ''
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
@@ -85,7 +105,11 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({
       // Формируем данные для отправки
       const payload = {
         name: formData.name,
-        phoneNumber: formData.phone.replace(/\D/g, ''), // Очищаем номер от символов
+        phoneNumber: formData.phone.replace(/\D/g, ''),
+        monthsCount: prefilledMonths,
+        usersCount: prefilledUsers,
+        amoTariff: prefilledAmoTariff,
+        selectedTariff: selectedTariff
       };
 
       // Отправляем POST-запрос на бэкенд
@@ -95,7 +119,7 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({
       showAlert('success', 'Запрос принят! Наш эксперт свяжется с вами в ближайшее время.');
 
       // Очищаем форму и закрываем модальное окно
-      setFormData({ name: '', phone: '' });
+      setFormData({ name: '', phone: '', monthsCount: 0, usersCount: 0, amoTariff: '', selectedTariff: '' });
       setErrors({});
       onClose();
     } catch (error) {
@@ -116,7 +140,7 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({
   };
 
   const handleClose = (): void => {
-    setFormData({ name: '', phone: '' });
+    setFormData({ name: '', phone: '', monthsCount: 0, usersCount: 0, amoTariff: '', selectedTariff: '' });
     setErrors({});
     onClose();
   };
@@ -131,7 +155,7 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({
             </h2>
             <button
               onClick={handleClose}
-              className="text-gray-400 hover:text-gray-600 transition-colors p-1"
+              className="cursor-pointer text-gray-400 hover:text-gray-600 transition-colors p-1"
               disabled={isSubmitting}
             >
               <XIcon size={24} />

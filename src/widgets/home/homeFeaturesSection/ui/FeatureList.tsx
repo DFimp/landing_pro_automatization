@@ -17,15 +17,15 @@ export default function FeaturesList() {
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
-          <Link
+          <div
             className="sm:text-h5 text-[14px] font-medium flex
                         justify-between items-center
                         sm:px-7.5 px-7 sm:py-5 py-3"
-            href={link.link}
+            // href={link.link}
           >
             {isMobileView ? link.nameMobile || link.name : link.name}
             <Image src="/cross.svg" alt="Перейти" width={isMobileView ? 14 : 30} height={isMobileView ? 14 : 30} />
-          </Link>
+          </div>
         </motion.li>
       ))}
     </ul>

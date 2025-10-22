@@ -44,7 +44,7 @@ export function WidgetsSupportSection() {
                             width={30}
                             height={25}
                         />
-                        AnyDesc
+                        AnyDesk
                     </div>
                     <div>
                         Напишем и позвоним по телефону
@@ -58,7 +58,7 @@ export function WidgetsSupportSection() {
                         width={60}
                         height={50}
                     />
-                    AnyDesc
+                    AnyDesk
                 </SupportChips>
                 <SupportChips>
                     Разберем в

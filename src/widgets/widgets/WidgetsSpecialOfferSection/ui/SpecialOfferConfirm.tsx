@@ -1,10 +1,11 @@
 import Button from "@/shared/ui/button/Button";
 
 interface SpecialOfferConfirmProps {
-    finalCost: number
+    finalCost: number;
+    onOpenModal: () => void;
 }
 
-export default function SpecialOfferConfirm({ finalCost }: SpecialOfferConfirmProps) {
+export default function SpecialOfferConfirm({ finalCost, onOpenModal }: SpecialOfferConfirmProps) {
     
     return (
         <div className="w-full flex flex-col">
@@ -12,7 +13,7 @@ export default function SpecialOfferConfirm({ finalCost }: SpecialOfferConfirmPr
             <p className="sm:text-[20px] text-[16px]">Итого к оплате:</p>
             <p className="sm:text-[32px] text-[20px]">{finalCost.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} р</p>
         </div>
-        <Button text="Оформить" className="sm:py-[16px] py-[10px] sm:text-[20px]! text-[16px]!" fullWidth></Button>
+        <Button text="Оформить" onClick={onOpenModal} className="sm:py-[16px] py-[10px] sm:text-[20px]! text-[16px]!" fullWidth></Button>
         </div>
     )
 }
