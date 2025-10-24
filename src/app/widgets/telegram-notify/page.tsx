@@ -38,7 +38,7 @@ export default function TelegramWidget() {
                             <button className="bg-gradient-to-r from-blue-600 to-violet-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105 cursor-pointer">
                                 Установить виджет ⚡
                             </button>
-                        </a>
+                        </a>    
                         <a
                             href="#instruction"
                             className="text-blue-600 font-medium hover:text-violet-600 transition-colors cursor-pointer"
