@@ -23,7 +23,7 @@ export default function TelegramNotify() {
                         Полная автоматизация коммуникаций с клиентами прямо в мессенджере.
                     </p>
 
-                    <div className="flex items-center gap-6 mt-8">
+                    <div className="tg-cta">
                         <a
                             className="tg-btn-primary"
                             href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=26e34407-779d-4b47-bb48-b1ffaed3cc78"
@@ -100,7 +100,8 @@ export default function TelegramNotify() {
 
                     <div className="tg-preview-right">
                         <div className="tg-phone-wrap">
-                            <div className="tg-phone-glow" aria-hidden />
+                            <div className="tg-phone-blob" aria-hidden />
+
                             <Image
                                 src="/widgets/TelegramNotify/telephone.png"
                                 alt="Макет телефона"
@@ -109,8 +110,23 @@ export default function TelegramNotify() {
                                 className="tg-phone"
                                 priority
                             />
+
+                            <div className="tg-bubble">
+                                <div className="tg-bubble-inner">
+                                    <div className="tg-bubble-msg">
+                                        <strong>Оплачена сделка: Разработка сайта</strong><br />
+                                        Сумма: 850 000₽<br />
+                                        Клиент: Максим Технологов<br />
+                                        Телефон: <a href="tel:+79994567890">+7(999) 456-78-90</a>
+                                    </div>
+
+                                    <button type="button" className="tg-bubble-btn">Подтвердить</button>
+                                    <button type="button" className="tg-bubble-btn tg-bubble-btn--ghost">Назначить встречу</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
                 </div>
             </section>
 
@@ -149,32 +165,40 @@ export default function TelegramNotify() {
                         Реальные примеры того, как виджет<br />поможет вашему бизнесу
                     </p>
 
-                    <div className="tg-cases-body">
-                        <div className="tg-deco tg-deco--right" aria-hidden>AMO</div>
-                        <div className="tg-deco tg-deco--left" aria-hidden>AMO</div>
-
-                        <div className="tg-cases-grid">
+                    <div className="tg-cases-grid">
+                        <div className="tg-case">
+                            <div className="tg-case-decor" aria-hidden />
                             <div className="tg-case-card">
                                 <h4 className="tg-case-title">Быстрое реагирование<br />на горячие лиды</h4>
                                 <p className="tg-case-text">Мгновенно получайте уведомления о новых заявках и сразу связывайтесь с клиентом.</p>
                             </div>
+                        </div>
 
+                        <div className="tg-case">
+                            <div className="tg-case-decor" aria-hidden />
                             <div className="tg-case-card">
                                 <h4 className="tg-case-title">Контроль воронки продаж</h4>
                                 <p className="tg-case-text">Отслеживайте движение сделок по этапам. Автоматически отправляйте уведомления при переходе на новый этап.</p>
                             </div>
+                        </div>
 
+                        <div className="tg-case">
+                            <div className="tg-case-decor" aria-hidden />
                             <div className="tg-case-card">
                                 <h4 className="tg-case-title">Командная работа</h4>
                                 <p className="tg-case-text">Уведомляйте руководителя о крупных сделках, а коллег — о необходимости позвонить клиенту.</p>
                             </div>
+                        </div>
 
+                        <div className="tg-case">
+                            <div className="tg-case-decor" aria-hidden />
                             <div className="tg-case-card">
                                 <h4 className="tg-case-title">Предотвращение потерь</h4>
                                 <p className="tg-case-text">Получайте уведомления своевременно, когда клиент ещё находится на пути к покупке.</p>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </section>
 

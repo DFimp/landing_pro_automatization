@@ -40,7 +40,7 @@
 .tg-hero-title {
     margin-top: 28px;
     font-weight: 800;
-    color: #ffffff;
+    color: #fff;
     font-size: clamp(36px, 6vw, 72px);
     line-height: 1.05;
 }
@@ -92,14 +92,14 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--gap);
-    margin-top: -80px;
+    margin-top: 20px;
     padding-left: var(--gap);
     padding-right: var(--gap);
     margin-left: calc(-1 * var(--gap));
     margin-right: calc(-1 * var(--gap));
 }
 
-@media (min-width: 768px) {
+@media (min-width:768px) {
     .tg-features-grid {
         --gap: 32px;
         grid-template-columns: repeat(2, 1fr);
@@ -107,14 +107,14 @@
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width:1200px) {
     .tg-features-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
 .tg-feature-card {
-    background: #ffffff;
+    background: #fff;
     border-radius: 40px;
     padding: 40px;
     min-height: 240px;
@@ -164,7 +164,7 @@
     padding: 0 var(--gap);
 }
 
-@media (min-width: 1024px) {
+@media (min-width:1024px) {
     .tg-preview-grid {
         grid-template-columns: 1fr 1fr;
         gap: 48px;
@@ -177,7 +177,7 @@
 }
 
 .tg-h2 {
-    font-size: clamp(28px, 3.4vw, 40px);
+    font-size: clamp(24px, 3vw, 34px);
     font-weight: 800;
     color: #0f1427;
     margin-bottom: 12px;
@@ -202,23 +202,119 @@
     width: 100%;
 }
 
-.tg-phone-glow {
-    position: absolute;
-    right: -40px;
-    top: 40px;
-    width: 440px;
-    height: 440px;
-    filter: blur(60px);
-    z-index: 0;
-    background: radial-gradient(closest-side, rgba(92, 108, 255, .55), transparent 70%),
-        radial-gradient(closest-side, rgba(170, 112, 255, .45), transparent 70%);
-}
-
 .tg-phone {
     position: relative;
     z-index: 1;
     width: 100%;
     height: auto;
+}
+
+.tg-phone-blob {
+    position: absolute;
+    right: -10px;
+    top: 10%;
+    width: 520px;
+    height: 520px;
+    z-index: 0;
+    filter: blur(70px);
+    background:
+        radial-gradient(closest-side, rgba(104, 64, 255, .65), transparent 70%),
+        radial-gradient(closest-side, rgba(170, 112, 255, .55), transparent 72%);
+}
+
+.tg-bubble {
+    position: absolute;
+    left: 30%;
+    top: 36%;
+    transform: translate(-50%, -10%);
+    width: min(520px, 70%);
+    z-index: 2;
+    border-radius: 28px;
+    background: linear-gradient(180deg, #f7f9ff 0%, #eef3ff 100%);
+    box-shadow: 0 28px 80px rgba(79, 92, 255, .25), inset 0 0 0 1px rgba(255, 255, 255, .7);
+    padding: 18px;
+}
+
+.tg-bubble-inner {
+    border-radius: 22px;
+    background: #fff;
+    padding: 18px;
+    box-shadow: 0 1px 0 rgba(9, 17, 43, .04), inset 0 0 0 1px #e6ebff;
+}
+
+.tg-bubble-msg {
+    font-size: 14px;
+    line-height: 1.55;
+    color: #1e2340;
+    background: #fff;
+    border-radius: 16px;
+    padding: 14px 14px 12px;
+    box-shadow: inset 0 0 0 1px #edf1ff;
+    margin-bottom: 14px;
+}
+
+.tg-bubble-msg strong {
+    display: block;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.tg-bubble-msg a {
+    color: #2f5cf0;
+    text-decoration: none;
+}
+
+.tg-bubble-btn {
+    width: 100%;
+    height: 40px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #fff;
+    background: #4166ff;
+    box-shadow: 0 10px 22px rgba(65, 102, 255, .35);
+    border: none;
+    cursor: default;
+}
+
+.tg-bubble-btn+.tg-bubble-btn {
+    margin-top: 10px;
+}
+
+.tg-bubble-btn--ghost {
+    color: #2144e8;
+    background: #eaf0ff;
+    box-shadow: inset 0 0 0 1px #cfd9ff;
+}
+
+@media (min-width:1024px) {
+    .tg-phone-wrap {
+        transform: translateX(6%);
+        margin-bottom: -32px;
+    }
+}
+
+@media (max-width:640px) {
+    .tg-bubble {
+        left: 50%;
+        width: 92%;
+        top: 24%;
+        transform: translate(-50%, -6%);
+    }
+
+    .tg-h2 {
+        font-size: clamp(22px, 6.2vw, 18px);
+        line-height: 1.2;
+    }
+
+    .tg-preview-sub {
+        font-size: 13.5px;
+        line-height: 1.55;
+    }
+
+    .tg-phone {
+        left: 30%;
+    }
 }
 
 .tg-steps {
@@ -256,6 +352,12 @@
     place-items: center;
     margin-bottom: 32px;
     scroll-margin-top: 100px;
+}
+
+@media (max-width:640px) {
+    .tg-video {
+        height: 50vh;
+    }
 }
 
 .tg-play {
@@ -369,6 +471,7 @@
     padding: 56px 0 80px;
     overflow: hidden;
     background: #fff;
+    --gap: 28px;
 }
 
 .tg-cases .tg-container {
@@ -397,7 +500,7 @@
     --peek: clamp(60px, 8vw, 140px);
 }
 
-@media (min-width: 900px) {
+@media (min-width:900px) {
     .tg-cases-body {
         --gap: 28px;
     }
@@ -411,7 +514,7 @@
     gap: var(--gap);
 }
 
-@media (min-width: 900px) {
+@media (min-width:900px) {
     .tg-cases-grid {
         grid-template-columns: repeat(2, minmax(360px, 1fr));
         justify-content: center;
@@ -461,33 +564,33 @@
     right: calc(var(--peek) - (50vw - 35%));
     top: 0;
     bottom: 50%;
-    margin-bottom: calc(var(--gap) / 2);
+    margin-bottom: calc(var(--gap)/2);
 }
 
 .tg-deco--left {
     left: calc(var(--peek) - (50vw - 35%));
     top: 50%;
     bottom: 0;
-    margin-top: calc(var(--gap) / 2);
+    margin-top: calc(var(--gap)/2);
+}
+
+@media (max-width:900px) {
+    .tg-deco {
+        display: none;
+    }
 }
 
 .tg-prefooter {
     padding: 24px 0 72px;
 }
 
-@media (max-width: 768px) {
+@media (max-width:768px) {
     .tg-prefooter {
         padding: 16px 0 56px;
     }
 }
 
-@media (max-width: 900px) {
-    .tg-deco {
-        display: none;
-    }
-}
-
-@media (max-width: 768px) {
+@media (max-width:768px) {
     .tg-hero {
         padding: 56px 0 96px;
     }
@@ -516,5 +619,144 @@
     .tg-feature-card {
         border-radius: 28px;
         min-height: 200px;
+    }
+}
+
+@media (max-width:480px) {
+    .tg-hero {
+        padding: 28px 0 36px;
+        border-bottom-left-radius: 24px;
+        border-bottom-right-radius: 24px;
+    }
+
+    .tg-bleed-left {
+        padding-left: 0;
+    }
+
+    .tg-pill {
+        box-sizing: border-box;
+        justify-content: center;
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+
+    .tg-hero-title {
+        margin-top: 20px;
+        font-size: clamp(26px, 8.5vw, 34px);
+        line-height: 1.12;
+    }
+
+    .tg-hero-sub {
+        margin-top: 14px;
+        max-width: none;
+        font-size: 14.5px;
+        line-height: 1.55;
+        color: #e3e8ff;
+    }
+
+    .tg-cta{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 18px;
+  }
+
+    .tg-btn-primary,
+    .tg-btn-link {
+        width: 100%;
+        height: 48px;
+        border-radius: 999px;
+        font-size: 15px;
+        justify-content: center;
+    }
+
+    .tg-btn-link {
+        display: inline-flex;
+        align-items: center;
+        border: none;
+        padding-bottom: 0;
+        background: rgba(255, 255, 255, .14);
+        color: #fff;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, .18);
+        text-decoration: none;
+    }
+
+    .tg-btn-link:hover {
+        background: rgba(255, 255, 255, .18);
+        color: #fff;
+    }
+
+    .tg-container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .tg-cases-grid {
+        gap: 28px;
+    }
+
+    .tg-cases {
+        overflow: visible;
+    }
+
+    .tg-case {
+        position: relative;
+        --stripeH: clamp(64px, 20vw, 128px);
+    }
+
+    .tg-case-card {
+        position: relative;
+        z-index: 1;
+    }
+
+    .tg-case-decor {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: calc(-0.5 * var(--stripeH));
+        width: 112vw;
+        height: var(--stripeH);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .tg-case:nth-child(1) .tg-case-decor {
+        background-image: url("/widgets/TelegramNotify/amo.svg");
+    }
+
+    .tg-case:nth-child(2) .tg-case-decor {
+        background-image: url("/widgets/TelegramNotify/amo (1).svg");
+    }
+
+    .tg-case:nth-child(3) .tg-case-decor {
+        background-image: url("/widgets/TelegramNotify/amo (2).svg");
+    }
+
+    .tg-case:nth-child(4) .tg-case-decor {
+        background-image: url("/widgets/TelegramNotify/amo (3).svg");
+    }
+}
+
+@media (min-width: 641px) {
+    .tg-case-decor {
+        display: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .tg-case {
+        --stripeOverlap: calc(var(--stripeH) * 0.6);
+    }
+
+    .tg-case:nth-child(1) .tg-case-decor,
+    .tg-case:nth-child(3) .tg-case-decor {
+        z-index: 2;
+        pointer-events: none;
     }
 }
