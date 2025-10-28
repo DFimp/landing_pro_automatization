@@ -3,12 +3,137 @@ import './style.css';
 import React from 'react';
 import Image from 'next/image';
 import ConsultCard from '@/shared/ui/ConsultCard/ConsultCard';
+import SettingsCard from '@/shared/ui/settings/SettingsCard';
 
 export default function TelegramNotify() {
     const handleScrollToInstruction = (e: React.MouseEvent<HTMLAnchorElement>) => {
         e.preventDefault();
         document.querySelector('#instruction')?.scrollIntoView({ behavior: 'smooth' });
     };
+
+    const steps = [
+        {
+            title: 'Установка виджета в amoCRM',
+            content: (
+                <div>
+                    <p>Установите виджет в вашу amoCRM:</p>
+                    <ul className="sc-list">
+                        <li>amoCRM → Настройки → Виджеты</li>
+                        <li>Найдите «Telegram уведомления»</li>
+                        <li>Нажмите «Установить»</li>
+                    </ul>
+                    <div className="sc-note sc-note--blue">
+                        <div className="sc-note-title">Подсказка</div>
+                        Если у вас нет прав на установку — обратитесь к администратору аккаунта.
+                    </div>
+                </div>
+            ),
+        },
+        {
+            title: 'Получение Telegram ID',
+            content: (
+                <div>
+                    <p>Каждому сотруднику нужен свой Telegram ID:</p>
+                    <ul className="sc-list">
+                        <li>
+                            Откройте бота{' '}
+                            <a
+                                href="https://t.me/pro_automatization_telegram_bot"
+                                className="underline"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                @pro_automatization_telegram_bot
+                            </a>
+                        </li>
+                        <li>Нажмите «Запустить» или отправьте /start</li>
+                        <li>Скопируйте выданный ID</li>
+                    </ul>
+                    <div className="sc-note">
+                        <div className="sc-note-title">Пример</div>
+                        Ваш ID: <strong>123456789</strong>
+                    </div>
+                </div>
+            ),
+        },
+        {
+            title: 'Настройка пользователей',
+            content: (
+                <div>
+                    <p>Добавьте сотрудников в настройках виджета:</p>
+                    <ul className="sc-list">
+                        <li>Выберите пользователя amoCRM</li>
+                        <li>Укажите отображаемое ФИО</li>
+                        <li>Вставьте Telegram ID из шага выше</li>
+                        <li>Нажмите «Добавить», затем «Сохранить»</li>
+                    </ul>
+                </div>
+            ),
+        },
+        {
+            title: 'Настройка цифровой воронки',
+            content: (
+                <div>
+                    <p>Создайте правила отправки:</p>
+                    <ul className="sc-list">
+                        <li>Откройте «Настроить воронку»</li>
+                        <li>На нужном этапе добавьте триггер</li>
+                        <li>Выберите «Уведомления в Telegram от Про Автоматизацию»</li>
+                    </ul>
+                </div>
+            ),
+        },
+        {
+            title: 'Настройка параметров уведомления',
+            content: (
+                <div>
+                    <p>Определите текст и получателя:</p>
+                    <ul className="sc-list">
+                        <li>
+                            Текст поддерживает подстановки: <code>{'{name}'}</code>, <code>{'{price}'}</code>,{' '}
+                            <code>{'{responsableUserName}'}</code>, <code>{'{link}'}</code> и др.
+                        </li>
+                        <li>В поле «Кому» выберите сотрудника из списка</li>
+                        <li>Задайте дни/часы, когда можно отправлять сообщения</li>
+                    </ul>
+                    <div className="sc-note sc-note--green">
+                        <div className="sc-note-title">Идеи для кнопок SalesBot</div>
+                        «Отправить КП», «Назначить встречу», «Создать задачу», «Перевести этап».
+                    </div>
+                </div>
+            ),
+        },
+        {
+            title: 'Тестирование настроек',
+            content: (
+                <div>
+                    <p>Проверьте, что всё работает:</p>
+                    <ul className="sc-list">
+                        <li>Создайте тестовую сделку/переведите на нужный этап</li>
+                        <li>Убедитесь, что уведомление пришло в Telegram</li>
+                        <li>Нажмите кнопку SalesBot и проверьте автоматизацию</li>
+                    </ul>
+                    <div className="sc-note sc-note--red">
+                        <div className="sc-note-title">Если уведомления не приходят</div>
+                        Проверьте Telegram ID, запуск бота (/start), расписание времени и условие срабатывания.
+                    </div>
+                </div>
+            ),
+        },
+        {
+            title: 'Масштабирование на команду',
+            content: (
+                <div>
+                    <p>Настройте правила для всех ролей:</p>
+                    <ul className="sc-list">
+                        <li>Менеджеры — новые лиды и смены этапов</li>
+                        <li>Руководители — крупные сделки, потери</li>
+                        <li>Поддержка — возвраты и жалобы</li>
+                    </ul>
+                </div>
+            ),
+        },
+    ];
 
     return (
         <main className="bg-white">
@@ -19,8 +144,8 @@ export default function TelegramNotify() {
                     <h1 className="tg-hero-title">Готовы быть в курсе событий?</h1>
 
                     <p className="tg-hero-sub">
-                        Получайте мгновенные уведомления в Telegram и запускайте SalesBot одним нажатием.
-                        Полная автоматизация коммуникаций с клиентами прямо в мессенджере.
+                        Получайте мгновенные уведомления в Telegram и запускайте SalesBot одним нажатием. Полная автоматизация
+                        коммуникаций с клиентами прямо в мессенджере.
                     </p>
 
                     <div className="tg-cta">
@@ -46,7 +171,9 @@ export default function TelegramNotify() {
                             <Image src="/widgets/TelegramNotify/bell.png" alt="Иконка колокольчика" width={40} height={40} priority />
                         </div>
                         <h3 className="tg-feature-title">Мгновенные уведомления</h3>
-                        <p className="tg-feature-text">Получайте информацию о важных событиях сразу же, как только они происходят. Никаких задержек!</p>
+                        <p className="tg-feature-text">
+                            Получайте информацию о важных событиях сразу же, как только они происходят. Никаких задержек!
+                        </p>
                     </div>
 
                     <div className="tg-feature-card">
@@ -101,7 +228,6 @@ export default function TelegramNotify() {
                     <div className="tg-preview-right">
                         <div className="tg-phone-wrap">
                             <div className="tg-phone-blob" aria-hidden />
-
                             <Image
                                 src="/widgets/TelegramNotify/telephone.png"
                                 alt="Макет телефона"
@@ -110,53 +236,33 @@ export default function TelegramNotify() {
                                 className="tg-phone"
                                 priority
                             />
-
                             <div className="tg-bubble">
                                 <div className="tg-bubble-inner">
                                     <div className="tg-bubble-msg">
-                                        <strong>Оплачена сделка: Разработка сайта</strong><br />
-                                        Сумма: 850 000₽<br />
-                                        Клиент: Максим Технологов<br />
+                                        <strong>Оплачена сделка: Разработка сайта</strong>
+                                        <br />
+                                        Сумма: 850 000₽
+                                        <br />
+                                        Клиент: Максим Технологов
+                                        <br />
                                         Телефон: <a href="tel:+79994567890">+7(999) 456-78-90</a>
                                     </div>
-
                                     <button type="button" className="tg-bubble-btn">Подтвердить</button>
                                     <button type="button" className="tg-bubble-btn tg-bubble-btn--ghost">Назначить встречу</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </section>
 
-            <section className="tg-steps">
-                <div className="tg-container">
-                    <div className="tg-steps-inner">
-                        <h3 className="tg-steps-title">Пошаговая настройка виджета</h3>
-
-                        <div className="tg-video" id="instruction">
-                            <div className="tg-play" aria-hidden />
-                        </div>
-
-                        <div className="tg-steps-sub">Следуйте простым шагам для быстрой настройки:</div>
-
-                        <div className="tg-acc-list">
-                            {[
-                                'Установка виджета в amoCRM',
-                                'Получение Telegram ID',
-                                'Настройка пользователей',
-                                'Настройка цифровой воронки',
-                                'Настройка параметров уведомления',
-                                'Тестирование настроек',
-                                'Масштабирование на команду',
-                            ].map((title, i) => (
-                                <AccordionItem key={i} index={i + 1} title={title} />
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <SettingsCard
+                id="settings"
+                title="Пошаговая настройка виджета"
+                subtitle="Следуйте простым шагам для быстрой настройки:"
+                steps={steps}
+                showVideo
+            />
 
             <section className="tg-cases">
                 <div className="tg-container">
@@ -165,7 +271,8 @@ export default function TelegramNotify() {
                         Реальные примеры того, как виджет<br />поможет вашему бизнесу
                     </p>
 
-                    <div className="tg-cases-grid">
+                    <div className="tg-cases-grid tg-cases-grid--3cols">
+                        {/* 1 */}
                         <div className="tg-case">
                             <div className="tg-case-decor" aria-hidden />
                             <div className="tg-case-card">
@@ -174,6 +281,7 @@ export default function TelegramNotify() {
                             </div>
                         </div>
 
+                        {/* 2 */}
                         <div className="tg-case">
                             <div className="tg-case-decor" aria-hidden />
                             <div className="tg-case-card">
@@ -182,6 +290,17 @@ export default function TelegramNotify() {
                             </div>
                         </div>
 
+                        {/* 3 — AMO (левый) */}
+                        <div className="tg-case-amo tg-case-amo--left" aria-hidden>
+                            <span className="tg-case-amo__text">AMO</span>
+                        </div>
+
+                        {/* 4 — AMO (правый) */}
+                        <div className="tg-case-amo tg-case-amo--right" aria-hidden>
+                            <span className="tg-case-amo__text">AMO</span>
+                        </div>
+
+                        {/* 5 */}
                         <div className="tg-case">
                             <div className="tg-case-decor" aria-hidden />
                             <div className="tg-case-card">
@@ -190,6 +309,7 @@ export default function TelegramNotify() {
                             </div>
                         </div>
 
+                        {/* 6 */}
                         <div className="tg-case">
                             <div className="tg-case-decor" aria-hidden />
                             <div className="tg-case-card">
@@ -198,7 +318,6 @@ export default function TelegramNotify() {
                             </div>
                         </div>
                     </div>
-
                 </div>
             </section>
 
@@ -208,19 +327,5 @@ export default function TelegramNotify() {
                 </div>
             </section>
         </main>
-    );
-}
-
-function AccordionItem({ index, title }: { index: number; title: string }) {
-    const [open, setOpen] = React.useState(false);
-    return (
-        <div className={`tg-acc-item ${open ? 'open' : ''}`}>
-            <button className="tg-acc-btn" onClick={() => setOpen(v => !v)}>
-                <span className="tg-acc-num">{index}</span>
-                <span className="tg-acc-title">{title}</span>
-                <span className="tg-plus" aria-hidden />
-            </button>
-            <div className="tg-acc-content">Здесь будет подробная инструкция для шага «{title}».</div>
-        </div>
     );
 }

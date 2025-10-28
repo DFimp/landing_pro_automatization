@@ -1,9 +1,20 @@
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+:root {
+    --container-max: 1200px;
+    --container-pad: 16px;
+}
+
 .tg-container {
     width: 100%;
-    max-width: 1540px;
+    max-width: var(--container-max);
     margin: 0 auto;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: var(--container-pad);
+    padding-right: var(--container-pad);
 }
 
 .tg-hero {
@@ -32,17 +43,22 @@
 
 .tg-bleed-left {
     margin-left: calc(50% - 50vw);
-    padding-left: calc(50vw - 50% + 24px);
+    padding-left: calc(50vw - 50% + var(--container-pad));
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
 
 .tg-hero-title {
-    margin-top: 28px;
+    margin-top: 40px;
     font-weight: 800;
     color: #fff;
     font-size: clamp(36px, 6vw, 72px);
     line-height: 1.05;
+}
+
+.tg-cta {
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .tg-hero-sub {
@@ -78,6 +94,7 @@
     color: #cfd6ea;
     border-bottom: 1px solid rgba(207, 214, 234, .35);
     padding-bottom: 2px;
+    margin-left: 20px;
     font-size: 16px;
     transition: color .2s, border-color .2s;
 }
@@ -119,7 +136,6 @@
     padding: 40px;
     min-height: 240px;
     width: 100%;
-    max-width: none;
     box-shadow: 0 8px 28px rgba(15, 20, 39, .08), inset 0 0 0 2px #5f78ff;
 }
 
@@ -127,12 +143,6 @@
     width: 40px;
     height: 40px;
     margin-bottom: 10px;
-}
-
-.tg-feature-ico img {
-    width: 40px;
-    height: 40px;
-    display: block;
 }
 
 .tg-feature-title {
@@ -159,21 +169,17 @@
     gap: var(--gap);
     align-items: center;
     justify-items: center;
-    max-width: 1200px;
+    max-width: var(--container-max);
     margin: 0 auto;
-    padding: 0 var(--gap);
+    padding-left: var(--container-pad);
+    padding-right: var(--container-pad);
 }
 
 @media (min-width:1024px) {
     .tg-preview-grid {
         grid-template-columns: 1fr 1fr;
         gap: 48px;
-        justify-items: center;
     }
-}
-
-.tg-preview-left {
-    text-align: center;
 }
 
 .tg-h2 {
@@ -264,7 +270,8 @@
     text-decoration: none;
 }
 
-.tg-bubble-btn {
+.tg-bubble-btn,
+.tg-bubble-btn--ghost {
     width: 100%;
     height: 40px;
     border-radius: 12px;
@@ -274,17 +281,10 @@
     background: #4166ff;
     box-shadow: 0 10px 22px rgba(65, 102, 255, .35);
     border: none;
-    cursor: default;
 }
 
 .tg-bubble-btn+.tg-bubble-btn {
     margin-top: 10px;
-}
-
-.tg-bubble-btn--ghost {
-    color: #2144e8;
-    background: #eaf0ff;
-    box-shadow: inset 0 0 0 1px #cfd9ff;
 }
 
 @media (min-width:1024px) {
@@ -297,7 +297,7 @@
 @media (max-width:640px) {
     .tg-bubble {
         left: 50%;
-        width: 92%;
+        width: 100%;
         top: 24%;
         transform: translate(-50%, -6%);
     }
@@ -318,33 +318,37 @@
 }
 
 .tg-steps {
-    margin: 56px 0 0;
-}
-
-.tg-steps-inner {
     background:
         radial-gradient(1200px 600px at 0% 100%, rgba(108, 0, 255, .25), transparent 60%),
         radial-gradient(1000px 500px at 100% 0%, rgba(0, 102, 255, .25), transparent 60%),
         linear-gradient(180deg, #13162b 0%, #0f1427 100%);
+    padding: 64px 0 80px;
     color: #fff;
     border-radius: 28px;
-    padding: 40px 28px 48px;
 }
 
-@media (min-width:1024px) {
-    .tg-steps-inner {
-        padding: 48px 40px 56px;
-    }
+.tg-steps .tg-container {
+    max-width: var(--container-max);
+    padding-left: var(--container-pad);
+    padding-right: var(--container-pad);
+    margin: 0 auto;
+}
+
+.tg-steps-inner {
+    background: transparent;
+    padding: 0;
 }
 
 .tg-steps-title {
     font-size: clamp(22px, 2.8vw, 28px);
     font-weight: 700;
     margin-bottom: 20px;
+    color: #fff;
 }
 
 .tg-video {
     background: #fff;
+    border: 2px solid #fff;
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, .15);
     height: 260px;
@@ -386,14 +390,14 @@
 
 .tg-acc-list {
     display: grid;
-    gap: 12px;
+    gap: 14px;
     margin-top: 8px;
 }
 
 .tg-acc-item {
     background: rgba(255, 255, 255, .04);
+    border: 1.5px solid #ffffff;
     border-radius: 20px;
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08);
 }
 
 .tg-acc-btn {
@@ -407,10 +411,6 @@
 }
 
 .tg-acc-num {
-    width: auto;
-    height: auto;
-    background: transparent;
-    border-radius: 0;
     color: #e8ecff;
     font-size: 14px;
     font-weight: 600;
@@ -423,12 +423,12 @@
 
 .tg-plus {
     position: relative;
-    width: 16px;
-    height: 16px;
+    width: 22px;
+    height: 22px;
     display: grid;
     place-items: center;
-    border: none;
     background: transparent;
+    border: none;
 }
 
 .tg-plus:before,
@@ -475,9 +475,9 @@
 }
 
 .tg-cases .tg-container {
-    max-width: 1220px;
-    position: relative;
-    z-index: 1;
+    max-width: var(--container-max);
+    padding-left: var(--container-pad);
+    padding-right: var(--container-pad);
 }
 
 .tg-cases-title {
@@ -493,25 +493,13 @@
     margin-bottom: 20px;
 }
 
-.tg-cases-body {
-    position: relative;
-    isolation: isolate;
-    --gap: 24px;
-    --peek: clamp(60px, 8vw, 140px);
-}
-
-@media (min-width:900px) {
-    .tg-cases-body {
-        --gap: 28px;
-    }
-}
-
 .tg-cases-grid {
     position: relative;
     z-index: 1;
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--gap);
+    --caseH: 240px;
 }
 
 @media (min-width:900px) {
@@ -521,12 +509,24 @@
     }
 }
 
+@media (min-width: 900px) {
+  .tg-cases-grid--3cols {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
+
+@media (min-width:1200px) {
+    .tg-cases-grid { --caseH: 260px; }
+}
+
 .tg-case-card {
     background: #fff;
     border-radius: 22px;
     padding: 20px 22px;
+    padding-top: 40px;
+    padding-bottom: 60px;
     box-shadow: 0 10px 26px rgba(15, 20, 39, .06), inset 0 0 0 2px #5f78ff;
-    min-height: 150px;
+    min-height: var(--caseH);
 }
 
 .tg-case-title {
@@ -543,39 +543,76 @@
     line-height: 1.55;
 }
 
-.tg-deco {
+.tg-case-amo {
+    position: relative;
+    border-radius: 22px;
+    background: #4a63ff;
+    box-shadow: 0 10px 26px rgba(15, 20, 39, .06), inset 0 0 0 2px #5f78ff;
+    overflow: hidden;
+    display: none;
+    min-height: var(--caseH);
+}
+
+@media (min-width:900px) {
+    .tg-case-amo { display: block; }
+}
+
+.tg-case-amo__text {
     position: absolute;
-    z-index: 0;
-    width: 340px;
-    background: #3f5efb;
-    color: #fff;
     font-weight: 800;
-    font-size: 120px;
-    letter-spacing: 6px;
-    display: grid;
-    place-items: center;
-    border-radius: 18px;
-    opacity: .95;
-    pointer-events: none;
+    line-height: 1;
+    color: #fff;
+    letter-spacing: .06em;
+    font-size: clamp(140px, 18vw, 320px);
     user-select: none;
+    pointer-events: none;
 }
 
-.tg-deco--right {
-    right: calc(var(--peek) - (50vw - 35%));
-    top: 0;
-    bottom: 50%;
-    margin-bottom: calc(var(--gap)/2);
+.tg-case-amo--left  .tg-case-amo__text { left: -10%; bottom: -12%; }
+.tg-case-amo--right .tg-case-amo__text { right: -12%; top: -8%; }
+
+@media (max-width:640px) {
+    .tg-cases-grid {
+        gap: 28px;
+    }
+
+    .tg-cases {
+        overflow: visible;
+    }
+
+    .tg-case {
+        position: relative;
+        --stripeH: clamp(64px, 20vw, 128px);
+        --stripeOverlap: calc(var(--stripeH) * 0.6);
+    }
+
+    .tg-case-card {
+        position: relative;
+        z-index: 1;
+    }
+
+    .tg-case-decor {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: calc(-0.5 * var(--stripeH));
+        width: 100vw;
+        height: 100px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .tg-case--1 .tg-case-decor { background-image: url("/widgets/TelegramNotify/amo.svg"); }
+    .tg-case--2 .tg-case-decor { background-image: url("/widgets/TelegramNotify/amo (1).svg"); }
+    .tg-case--3 .tg-case-decor { background-image: url("/widgets/TelegramNotify/amo (2).svg"); }
+    .tg-case--4 .tg-case-decor { background-image: url("/widgets/TelegramNotify/amo (3).svg"); }
 }
 
-.tg-deco--left {
-    left: calc(var(--peek) - (50vw - 35%));
-    top: 50%;
-    bottom: 0;
-    margin-top: calc(var(--gap)/2);
-}
-
-@media (max-width:900px) {
-    .tg-deco {
+@media (min-width:641px) {
+    .tg-case-decor {
         display: none;
     }
 }
@@ -595,17 +632,9 @@
         padding: 56px 0 96px;
     }
 
-    .tg-container {
-        padding-left: 16px;
-        padding-right: 16px;
-    }
-
-    .tg-bleed-left {
-        padding-left: calc(50vw - 50% + 16px);
-    }
-
     .tg-preview {
         padding: 56px 0 24px;
+        margin-bottom: 60px;
     }
 
     .tg-preview-grid {
@@ -629,10 +658,6 @@
         border-bottom-right-radius: 24px;
     }
 
-    .tg-bleed-left {
-        padding-left: 0;
-    }
-
     .tg-pill {
         box-sizing: border-box;
         justify-content: center;
@@ -654,109 +679,79 @@
         color: #e3e8ff;
     }
 
-    .tg-cta{
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
-    margin-top: 18px;
-  }
+    .tg-cta {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 0px;
+    }
 
     .tg-btn-primary,
     .tg-btn-link {
         width: 100%;
-        height: 48px;
         border-radius: 999px;
         font-size: 15px;
         justify-content: center;
+        margin: 0px;
     }
 
     .tg-btn-link {
         display: inline-flex;
         align-items: center;
-        border: none;
-        padding-bottom: 0;
-        background: rgba(255, 255, 255, .14);
+        justify-content: center;
+        height: 44px;
+        padding: 0 22px;
+        background: #386bff;
         color: #fff;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, .18);
-        text-decoration: none;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 16px;
+        box-shadow: 0 8px 24px rgba(56, 107, 255, .35);
+        transition: transform .15s, box-shadow .2s, background .2s;
     }
 
     .tg-btn-link:hover {
         background: rgba(255, 255, 255, .18);
         color: #fff;
     }
+}
 
-    .tg-container {
-        padding-left: 16px;
-        padding-right: 16px;
-    }
+@media (min-width: 900px) {
+  .tg-case-amo {
+    width: min(1000px, calc(100% + 360px));
+    min-height: var(--caseH);
+  }
+
+  .tg-case-amo--left {
+    justify-self: start;
+    margin-left: 0px;
+  }
+
+  .tg-case-amo--right {
+    justify-self: end;
+    margin-right: 0px;
+  }
+
+  .tg-case-amo__text {
+    font-size: clamp(180px, 22vw, 420px);
+  }
 }
 
 @media (max-width: 640px) {
-
-    .tg-cases-grid {
-        gap: 28px;
-    }
-
-    .tg-cases {
-        overflow: visible;
-    }
-
-    .tg-case {
-        position: relative;
-        --stripeH: clamp(64px, 20vw, 128px);
-    }
-
-    .tg-case-card {
-        position: relative;
-        z-index: 1;
-    }
-
-    .tg-case-decor {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: calc(-0.5 * var(--stripeH));
-        width: 112vw;
-        height: var(--stripeH);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        pointer-events: none;
-        z-index: 0;
-    }
-
-    .tg-case:nth-child(1) .tg-case-decor {
-        background-image: url("/widgets/TelegramNotify/amo.svg");
-    }
-
-    .tg-case:nth-child(2) .tg-case-decor {
-        background-image: url("/widgets/TelegramNotify/amo (1).svg");
-    }
-
-    .tg-case:nth-child(3) .tg-case-decor {
-        background-image: url("/widgets/TelegramNotify/amo (2).svg");
-    }
-
-    .tg-case:nth-child(4) .tg-case-decor {
-        background-image: url("/widgets/TelegramNotify/amo (3).svg");
-    }
-}
-
-@media (min-width: 641px) {
-    .tg-case-decor {
-        display: none;
-    }
-}
-
-@media (max-width: 640px) {
-    .tg-case {
-        --stripeOverlap: calc(var(--stripeH) * 0.6);
-    }
-
-    .tg-case:nth-child(1) .tg-case-decor,
-    .tg-case:nth-child(3) .tg-case-decor {
-        z-index: 2;
-        pointer-events: none;
-    }
+  .tg-cases-grid > .tg-case:nth-child(1) .tg-case-decor {
+    background-image: url("/widgets/TelegramNotify/amo.svg");
+    z-index: 1;
+  }
+  .tg-cases-grid > .tg-case:nth-child(2) .tg-case-decor {
+    background-image: url("/widgets/TelegramNotify/amo (1).svg");
+    z-index: 2;
+  }
+  .tg-cases-grid > .tg-case:nth-child(5) .tg-case-decor {
+    background-image: url("/widgets/TelegramNotify/amo (2).svg");
+    z-index: 2;
+  }
+  .tg-cases-grid > .tg-case:nth-child(6) .tg-case-decor {
+    background-image: url("/widgets/TelegramNotify/amo (3).svg");
+    z-index: 1;
+  }
 }

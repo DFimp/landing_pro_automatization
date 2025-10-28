@@ -55,9 +55,17 @@
   height: 200px;
 }
 
-.tg-consult-mobile__phone--center { z-index: 2; }
-.tg-consult-mobile__phone--left   { z-index: 1; }
-.tg-consult-mobile__phone--right  { z-index: 3; }
+.tg-consult-mobile__phone--center {
+  z-index: 2;
+}
+
+.tg-consult-mobile__phone--left {
+  z-index: 1;
+}
+
+.tg-consult-mobile__phone--right {
+  z-index: 3;
+}
 
 .tg-consult-mobile__phone--left {
   left: 50%;
@@ -83,13 +91,38 @@
   font-weight: 800 !important;
   letter-spacing: .02em;
   border: none !important;
-  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .18);
+}
+
+@media (max-width: 640px) {
+  .tg-consult-mobile {
+    border-radius: 0;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    width: 100vw;
+    overflow: hidden;
+  }
 }
 
 @media (max-width: 360px) {
-  .tg-consult-mobile { min-height: 520px; }
-  .tg-consult-mobile__phones { height: 300px; }
-  .tg-consult-mobile__phone { width: 132px; height: 192px; }
-  .tg-consult-mobile__phone--left  { transform: translateX(-110%) translateY(14px); }
-  .tg-consult-mobile__phone--right { transform: translateX(6%) translateY(-10px); }
+  .tg-consult-mobile {
+    min-height: 520px;
+  }
+
+  .tg-consult-mobile__phones {
+    padding-top: 40px;
+  }
+
+  .tg-consult-mobile__phone {
+    width: 132px;
+    height: 192px;
+  }
+
+  .tg-consult-mobile__phone--left {
+    transform: translateX(-110%) translateY(14px);
+  }
+
+  .tg-consult-mobile__phone--right {
+    transform: translateX(6%) translateY(-10px);
+  }
 }
