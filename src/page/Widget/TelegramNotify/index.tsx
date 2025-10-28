@@ -4,12 +4,15 @@ import React from 'react';
 import Image from 'next/image';
 import ConsultCard from '@/shared/ui/ConsultCard/ConsultCard';
 import SettingsCard from '@/shared/ui/settings/SettingsCard';
+import { hiddenInIframe } from '@/shared/utils/hiddenInIframe';
 
 export default function TelegramNotify() {
     const handleScrollToInstruction = (e: React.MouseEvent<HTMLAnchorElement>) => {
         e.preventDefault();
         document.querySelector('#instruction')?.scrollIntoView({ behavior: 'smooth' });
     };
+
+    const { isIframe } = hiddenInIframe();
 
     const steps = [
         {
@@ -137,15 +140,15 @@ export default function TelegramNotify() {
 
     return (
         <main className="bg-white">
-            <section className="tg-hero">
+            <section className="tg-hero" id={isIframe ? 'hidden-in-iframe' : ''}>
                 <div className="tg-container">
                     <div className="tg-pill tg-bleed-left">Виджет Телеграм уведомления для amoCRM</div>
 
                     <h1 className="tg-hero-title">Готовы быть в курсе событий?</h1>
 
                     <p className="tg-hero-sub">
-                        Получайте мгновенные уведомления в Telegram и запускайте SalesBot одним нажатием. Полная автоматизация
-                        коммуникаций с клиентами прямо в мессенджере.
+                        Получайте мгновенные уведомления в Telegram и запускайте SalesBot<br /> одним нажатием. Полная автоматизация
+                        коммуникаций с клиентами<br /> прямо в мессенджере.
                     </p>
 
                     <div className="tg-cta">
@@ -164,7 +167,7 @@ export default function TelegramNotify() {
                 </div>
             </section>
 
-            <section className="tg-container">
+            <section className="tg-container" id={isIframe ? 'hidden-in-iframe' : ''}>
                 <div className="tg-features-grid">
                     <div className="tg-feature-card">
                         <div className="tg-feature-ico">
@@ -218,11 +221,11 @@ export default function TelegramNotify() {
                 </div>
             </section>
 
-            <section className="tg-preview">
+            <section className="tg-preview" id={isIframe ? 'hidden-in-iframe' : ''}>
                 <div className="tg-preview-grid">
                     <div className="tg-preview-left">
                         <h2 className="tg-h2">Как выглядят уведомления</h2>
-                        <p className="tg-preview-sub">Наглядный пример сообщений в Telegram</p>
+                        <p className="tg-preview-sub">Наглядный пример <br />сообщений в Telegram</p>
                     </div>
 
                     <div className="tg-preview-right">
@@ -239,7 +242,7 @@ export default function TelegramNotify() {
                             <div className="tg-bubble">
                                 <div className="tg-bubble-inner">
                                     <div className="tg-bubble-msg">
-                                        <strong>Оплачена сделка: Разработка сайта</strong>
+                                        Оплачена сделка: Разработка сайта
                                         <br />
                                         Сумма: 850 000₽
                                         <br />
@@ -264,7 +267,7 @@ export default function TelegramNotify() {
                 showVideo
             />
 
-            <section className="tg-cases">
+            <section className="tg-cases" id={isIframe ? 'hidden-in-iframe' : ''}>
                 <div className="tg-container">
                     <h3 className="tg-cases-title">Сценарии использования</h3>
                     <p className="tg-cases-sub">
@@ -272,7 +275,6 @@ export default function TelegramNotify() {
                     </p>
 
                     <div className="tg-cases-grid tg-cases-grid--3cols">
-                        {/* 1 */}
                         <div className="tg-case">
                             <div className="tg-case-decor" aria-hidden />
                             <div className="tg-case-card">
@@ -281,7 +283,6 @@ export default function TelegramNotify() {
                             </div>
                         </div>
 
-                        {/* 2 */}
                         <div className="tg-case">
                             <div className="tg-case-decor" aria-hidden />
                             <div className="tg-case-card">
@@ -290,17 +291,14 @@ export default function TelegramNotify() {
                             </div>
                         </div>
 
-                        {/* 3 — AMO (левый) */}
                         <div className="tg-case-amo tg-case-amo--left" aria-hidden>
                             <span className="tg-case-amo__text">AMO</span>
                         </div>
 
-                        {/* 4 — AMO (правый) */}
                         <div className="tg-case-amo tg-case-amo--right" aria-hidden>
                             <span className="tg-case-amo__text">AMO</span>
                         </div>
 
-                        {/* 5 */}
                         <div className="tg-case">
                             <div className="tg-case-decor" aria-hidden />
                             <div className="tg-case-card">
@@ -309,7 +307,6 @@ export default function TelegramNotify() {
                             </div>
                         </div>
 
-                        {/* 6 */}
                         <div className="tg-case">
                             <div className="tg-case-decor" aria-hidden />
                             <div className="tg-case-card">
@@ -321,7 +318,7 @@ export default function TelegramNotify() {
                 </div>
             </section>
 
-            <section className="tg-prefooter">
+            <section className="tg-prefooter" id={isIframe ? 'hidden-in-iframe' : ''}>
                 <div className="tg-container">
                     <ConsultCard />
                 </div>

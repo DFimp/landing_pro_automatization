@@ -73,7 +73,7 @@ export const Footer = () => {
             </div>
           </div>
 
-          <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-2 md:pl-4">
+          <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-3 md:pl-4">
             {cols.map((col, i) => (
               <div key={i}>
                 {col.title ? (

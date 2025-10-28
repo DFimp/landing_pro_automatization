@@ -26,13 +26,13 @@
 .sc__title{
   font-size:clamp(22px,2.8vw,28px);
   font-weight:800;
-  margin-bottom:18px;
+  margin-bottom:30px;
 }
 
 .sc__subtitle{
   font-size:18px;
   font-weight:700;
-  margin:12px 0 16px;
+  margin:30px 0 30px;
   color:#e9edff;
 }
 
@@ -61,7 +61,6 @@
   margin-left:4px;
 }
 
-/* Аккордеон */
 .sc__acc-list{ display:grid; gap:12px; margin-top:8px; }
 
 .sc__acc-item{
@@ -69,9 +68,10 @@
   border-radius:20px;
   border:1px solid rgba(255,255,255,.45);
   transition:border-color .2s, box-shadow .25s, background .25s;
+  max-width:100%;
+  margin-bottom: 30px;
 }
 
-/* Состояние: открыт — белая окантовка и лёгкое свечение */
 .sc__acc-item.open{
   border-color:#ffffff;
   box-shadow:
@@ -89,22 +89,31 @@
   padding:16px 18px;
   color:#e8ecff;
   text-align:left;
+  min-width:0;
 }
 
 .sc__num{
   display:grid; place-items:center;
   width:28px; height:28px; border-radius:50%;
+  box-shadow:none;
+  color:#e8ecff;
+  font-weight:800;
+  font-size:14px;
+  transition:all .25s ease;
+}
+
+.sc__acc-item.open .sc__num{
   background:#3a63ff;
   box-shadow:0 8px 18px rgba(58,99,255,.45);
   color:#fff;
-  font-weight:800;
-  font-size:14px;
 }
 
 .sc__acc-title{
   font-size:15px;
-  font-weight:700;
   color:#ffffff;
+  min-width:0;
+  overflow-wrap:anywhere;
+  word-break:break-word;
 }
 
 .sc__plus{
@@ -119,20 +128,19 @@
 .sc__plus::before{ width:16px; height:2px; }
 .sc__plus::after{ width:2px; height:16px; }
 
-/* При открытии превращаем «+» в «X» */
 .sc__acc-item.open .sc__plus{ transform:rotate(45deg); }
 
-/* Контент раскрытого пункта */
 .sc__acc-content{
   display:none;
   padding:0 18px 18px 60px;
   color:#e7ecff;
   font-size:14px;
   line-height:1.65;
+  overflow-wrap:anywhere;
+  word-break:break-word;
 }
 .sc__acc-item.open .sc__acc-content{ display:block; }
 
-/* Список внутри */
 .sc__acc-content .sc-list{
   display:grid; gap:6px; margin-top:10px;
 }
@@ -143,21 +151,34 @@
   content:"•"; position:absolute; left:0; top:0; color:#9eb2ff;
 }
 
-/* Подсказки */
 .sc__acc-content .sc-note{
-  background:#f6f8ff;
-  border:1px solid #e4e9ff;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.22);
   border-radius:12px;
   padding:12px;
   margin-top:12px;
-  color:#1a2240;
+  color:#fff;
 }
-.sc__acc-content .sc-note--blue{ background:#eaf1ff; border-color:#cfe0ff; }
-.sc__acc-content .sc-note--green{ background:#ecfbf2; border-color:#c0f0d7; }
-.sc__acc-content .sc-note--red{ background:#fdeeee; border-color:#f7c9c9; }
-.sc__acc-content .sc-note-title{ font-weight:700; margin-bottom:6px; }
 
-/* Кнопка внутри раскрытого блока (как на скрине) */
+.sc__acc-content .sc-note-title{
+  margin-bottom:6px; color:#fff;
+}
+
+.sc__acc-content .sc-note--blue{
+  background:rgba(58,99,255,0.08);
+ border-color:rgb(255, 255, 255);
+}
+
+.sc__acc-content .sc-note--green{
+  background:rgba(0,255,153,0.06);
+border-color:rgb(255, 255, 255);
+}
+
+.sc__acc-content .sc-note--red{
+  background:rgba(255,0,72,0.06);
+  border-color:rgb(255, 255, 255);
+}
+
 .sc__acc-content .sc-btn{
   margin-top:18px;
   display:inline-flex; align-items:center; justify-content:center;
@@ -170,4 +191,12 @@
 
 @media (max-width:640px){
   .sc__video{ height:50vh; }
+
+  .sc__acc-btn{ padding:14px 16px; gap:12px; }
+  .sc__acc-content{ padding:0 14px 14px 44px; }
+  .sc__acc-content, .sc__acc-content a{
+    overflow-wrap:anywhere;
+    word-break:break-word;
+    hyphens:auto;
+  }
 }
