@@ -292,11 +292,11 @@ export default function TelegramNotify() {
                         </div>
 
                         <div className="tg-case-amo tg-case-amo--left" aria-hidden>
-                            <span className="tg-case-amo__text">AMO</span>
+                            <span className="tg-case-amo__text">AMO CRM AMO CRM AMO CRM</span>
                         </div>
 
                         <div className="tg-case-amo tg-case-amo--right" aria-hidden>
-                            <span className="tg-case-amo__text">AMO</span>
+                            <span className="tg-case-amo__text">AMO CRM AMO CRM AMO CRM</span>
                         </div>
 
                         <div className="tg-case">
