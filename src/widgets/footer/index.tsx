@@ -101,6 +101,7 @@ export const Footer = () => {
           <div>ИП Горбань М.О. (ИНН 262609479757)</div>
           <div className="flex items-center gap-6">
             <Link href="/privacy-policy" className="hover:underline">Политика конфиденциальности</Link>
+            <Link href="/license" className="hover:underline">Лицензия</Link>
             <Link href="https://t.me/proavtomatization_support_bot" target="_blank" className="hover:underline">Написать в поддержку</Link>
           </div>
         </div>

@@ -24,14 +24,15 @@
 .sc__inner{ width:100%; }
 
 .sc__title{
-  font-size:clamp(22px,2.8vw,28px);
-  font-weight:800;
+  font-size:clamp(20px,2.8vw,28px);
   margin-bottom:30px;
+  text-align: center;
+  font-weight: 600;
 }
 
 .sc__subtitle{
-  font-size:18px;
-  font-weight:700;
+  font-size:20px;
+  font-weight:600;
   margin:30px 0 30px;
   color:#e9edff;
 }
@@ -109,7 +110,7 @@
 }
 
 .sc__acc-title{
-  font-size:15px;
+  font-size:14px;
   color:#ffffff;
   min-width:0;
   overflow-wrap:anywhere;
