@@ -155,14 +155,22 @@ export default function AutoTask() {
                         <div className="at-problem-card at-problem--sleep">
                             <h3 className="at-problem-title">Менеджеры «забывают» работать</h3>
                             <p className="at-problem-text">
+<<<<<<< HEAD
                                 Без напоминаний сотрудники могут неделями <span className="at-mark">не&nbsp;контактировать</span> с потенциальными клиентами.<br />
+=======
+                                Без напоминаний сотрудники могут неделями <span className="at-mark">не&nbsp;контактировать</span> с потенциальными клиентами.
+>>>>>>> 8f14928ff6647deeebeeaef825fe6b27e739ffb6
                                 Результат — потерянная прибыль.
                             </p>
                         </div>
                         <div className="at-problem-card at-problem--chart">
                             <h3 className="at-problem-title">Низкая конверсия воронки</h3>
                             <p className="at-problem-text">
+<<<<<<< HEAD
                                 Без системного подхода к работе со сделками ваша конверсия остаётся на уровне 3–5% вместо<br /> возможных
+=======
+                                Без системного подхода к работе со сделками ваша конверсия остаётся на уровне 3–5% вместо возможных
+>>>>>>> 8f14928ff6647deeebeeaef825fe6b27e739ffb6
                                 <span className="at-mark"> 15–20%</span>.
                             </p>
                         </div>

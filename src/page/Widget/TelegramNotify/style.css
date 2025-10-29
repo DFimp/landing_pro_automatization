@@ -43,7 +43,7 @@ body {
 
 .tg-bleed-left {
     margin-left: calc(50% - 50vw);
-    padding-left: calc(47vw - 50% + var(--container-pad));
+    padding-left: calc(49.5vw - 50% + var(--container-pad));
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
