@@ -280,19 +280,6 @@ body {
   overflow: hidden;
 }
 
-.at-problem-card::after {
-  content: "";
-  position: absolute;
-  right: 14px;
-  bottom: 12px;
-  width: 120px;
-  height: 84px;
-  opacity: .18;
-  background-repeat: no-repeat;
-  background-size: contain;
-  pointer-events: none;
-}
-
 .at-problem--money::after {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='120' viewBox='0 0 180 120'><g fill='none' stroke='%235f78ff' stroke-width='2'><rect x='4' y='20' rx='10' ry='10' width='120' height='80'/><circle cx='64' cy='60' r='14'/><path d='M20 40h24M100 40h16M24 80h24M92 80h24'/></g></svg>");
 }
@@ -689,4 +676,55 @@ body {
 
 #hidden-in-iframe {
   display: none !important;
+}
+
+.at-problem-card {
+  position: relative;
+  background-color: #fff;
+  border: 2px solid #5f78ff;
+  border-radius: 40px;
+  padding: 40px;
+  box-shadow: 0 6px 18px rgba(15, 20, 39, .05);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 101% 101%;
+  overflow: hidden;
+}
+
+.at-problem--sleep {
+  background-image: url("/widgets/AutoTask/back_yeys.png");
+}
+
+.at-problem--chart {
+  background-image: url("/widgets/AutoTask/back_analitic.png");
+}
+
+.at-problem--time {
+  background-image: url("/widgets/AutoTask/back_message.png");
+}
+
+.at-problem--money {
+  background-image: url("/widgets/AutoTask/back_dollars.png");
+}
+
+@media (max-width: 640px) {
+  .at-problem-card {
+    border-radius: 24px;
+    padding: 24px;
+    background-size: cover;
+    backdrop-filter: none;
+  }
+}
+
+.at-problem-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f1427;
+  margin-bottom: 8px;
+}
+
+.at-problem-text {
+  color: #3c4460;
+  font-size: 15px;
+  line-height: 1.6;
 }
