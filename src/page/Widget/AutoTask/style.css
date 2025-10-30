@@ -444,9 +444,9 @@ body {
   scroll-behavior: smooth;
 }
 
-.at-bleed-right{
+.at-bleed-right {
   margin-right: calc(50% - 50vw);
-  margin-left:  calc(50% - 50vw);
+  margin-left: calc(50% - 50vw);
   padding-right: calc(49vw - 50% + var(--container-pad));
   padding-left: calc(49vw - 50% + var(--container-pad));
   scroll-padding-left: var(--container-pad);
@@ -707,6 +707,26 @@ body {
 
 .at-problem--money {
   background-image: url("/widgets/AutoTask/back_dollars.png");
+}
+
+.at-problem--sleep,
+.at-problem--chart,
+.at-problem--time,
+.at-problem--money {
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 572px auto !important;
+}
+
+@media (max-width: 640px) {
+  .at-problem--sleep,
+  .at-problem--chart,
+  .at-problem--time,
+  .at-problem--money {
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto 208px !important;
+  }
 }
 
 @media (max-width: 640px) {
