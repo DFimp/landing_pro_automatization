@@ -167,60 +167,65 @@ export default function ComDupTrans() {
                     <p className="at-cases-sub">Умные алгоритмы для автоматического объединения дублей</p>
 
                     <div className="at-cases-grid">
-                        {/* 1. AMO (белый фон / синие буквы) */}
                         <div className="at-case-amo at-case-amo--left at-case-amo--white" aria-hidden>
                             <span className="at-case-amo__text">AMO CRM AMO CRM AMO CRM</span>
                         </div>
 
-                        {/* 2 */}
-                        <div className="at-case-card">
-                            <h4 className="at-case-title">Автоматическое объединение</h4>
-                            <p className="at-case-text">
-                                Мгновенно получайте уведомления о новых заявках и сразу связывайтесь с клиентом.
-                            </p>
+                        <div className="at-case">
+                            <div className="at-case-decor" aria-hidden />
+                            <div className="at-case-card">
+                                <h4 className="at-case-title">Автоматическое объединение</h4>
+                                <p className="at-case-text">
+                                    Мгновенно получайте уведомления о новых заявках и сразу связывайтесь с клиентом.
+                                </p>
+                            </div>
                         </div>
 
-                        {/* 3 */}
-                        <div className="at-case-card">
-                            <h4 className="at-case-title">Гибкие настройки</h4>
-                            <p className="at-case-text">
-                                Отслеживайте движение сделок по этапам. Автоматически отправляйте уведомления при переходе на новый этап.
-                            </p>
+                        <div className="at-case">
+                            <div className="at-case-decor" aria-hidden />
+                            <div className="at-case-card">
+                                <h4 className="at-case-title">Гибкие настройки</h4>
+                                <p className="at-case-text">
+                                    Отслеживайте движение сделок по этапам. Автоматически отправляйте уведомления при переходе на новый этап.
+                                </p>
+                            </div>
                         </div>
 
-                        {/* 4. AMO (синий фон / белые буквы) */}
                         <div className="at-case-amo at-case-amo--right" aria-hidden>
                             <span className="at-case-amo__text">AMO CRM AMO CRM AMO CRM</span>
                         </div>
 
-                        {/* 5. AMO (синий фон / белые буквы) */}
                         <div className="at-case-amo at-case-amo--left" aria-hidden>
                             <span className="at-case-amo__text">AMO CRM AMO CRM AMO CRM</span>
                         </div>
 
-                        {/* 6 */}
-                        <div className="at-case-card">
-                            <h4 className="at-case-title">Умные алгоритмы</h4>
-                            <p className="at-case-text">
-                                Уведомляйте руководителей о крупных сделках, а коллег — о необходимости позвонить клиенту.
-                            </p>
+                        <div className="at-case">
+                            <div className="at-case-decor" aria-hidden />
+                            <div className="at-case-card">
+                                <h4 className="at-case-title">Умные алгоритмы</h4>
+                                <p className="at-case-text">
+                                    Уведомляйте руководителей о крупных сделках, а коллег — о необходимости позвонить клиенту.
+                                </p>
+                            </div>
                         </div>
 
-                        {/* 7 */}
-                        <div className="at-case-card">
-                            <h4 className="at-case-title">Сохранение истории</h4>
-                            <p className="at-case-text">
-                                При объединении сохраняются все контакты, теги, компании и важные данные из всех сделок.
-                            </p>
+                        <div className="at-case">
+                            <div className="at-case-decor" aria-hidden />
+                            <div className="at-case-card">
+                                <h4 className="at-case-title">Сохранение истории</h4>
+                                <p className="at-case-text">
+                                    При объединении сохраняются все контакты, теги, компании и важные данные из всех сделок.
+                                </p>
+                            </div>
                         </div>
 
-                        {/* 8. AMO (белый фон / синие буквы) */}
                         <div className="at-case-amo at-case-amo--right at-case-amo--white" aria-hidden>
                             <span className="at-case-amo__text">AMO CRM AMO CRM AMO CRM</span>
                         </div>
                     </div>
                 </div>
             </section>
+
 
             <section id="instruction" className="sc-wrapper" aria-label="Пошаговая настройка виджета">
                 <SettingsCard
