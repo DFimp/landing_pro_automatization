@@ -96,53 +96,31 @@ export default function AutoTask() {
   ];
 
   const scrollerRef = useRef<HTMLDivElement>(null);
-  const drag = useRef({ down: false, startX: 0, startLeft: 0 });
-  const vel = useRef({ lastT: 0, lastLeft: 0, v: 0 });
-  const STEP = 470;
-
-  const isMobile = () =>
-    typeof window !== 'undefined' && window.matchMedia('(max-width: 640px)').matches;
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollStart = useRef(0);
 
   const onPointerDown = (e: React.PointerEvent) => {
-    if (isMobile()) return;
     const el = scrollerRef.current;
     if (!el) return;
-    (e.currentTarget as Element).setPointerCapture?.(e.pointerId);
-    drag.current = { down: true, startX: e.clientX, startLeft: el.scrollLeft };
-    vel.current = { lastT: performance.now(), lastLeft: el.scrollLeft, v: 0 };
+    isDragging.current = true;
+    startX.current = e.clientX;
+    scrollStart.current = el.scrollLeft;
     el.classList.add('dragging');
   };
 
   const onPointerMove = (e: React.PointerEvent) => {
-    if (isMobile()) return;
     const el = scrollerRef.current;
-    if (!el || !drag.current.down) return;
-    e.preventDefault();
-    const dx = e.clientX - drag.current.startX;
-    el.scrollLeft = drag.current.startLeft - dx;
-
-    const now = performance.now();
-    const dt = now - vel.current.lastT || 16;
-    const dl = el.scrollLeft - vel.current.lastLeft;
-    vel.current.v = dl / dt;
-    vel.current.lastT = now;
-    vel.current.lastLeft = el.scrollLeft;
+    if (!el || !isDragging.current) return;
+    const dx = e.clientX - startX.current;
+    el.scrollLeft = scrollStart.current - dx;
   };
 
-  const onPointerUp = (e: React.PointerEvent) => {
-    if (isMobile()) return;
+  const onPointerUp = () => {
     const el = scrollerRef.current;
     if (!el) return;
-    if (!drag.current.down) return;
-    drag.current.down = false;
+    isDragging.current = false;
     el.classList.remove('dragging');
-
-    const max = el.scrollWidth - el.clientWidth;
-    const momentumPx = vel.current.v * 520;
-    const projected = el.scrollLeft + momentumPx;
-    const target = Math.max(0, Math.min(Math.round(projected / STEP) * STEP, max));
-    el.scrollTo({ left: target, behavior: 'smooth' });
-    (e.currentTarget as Element).releasePointerCapture?.(e.pointerId);
   };
 
   return (
@@ -244,8 +222,9 @@ export default function AutoTask() {
               <h3 className="at-feature-title">Умное отслеживание</h3>
               <p className="at-feature-text">
                 Виджет мониторит все сделки на<br />
-                выбранных этапах каждые 5 минут. Если<br />
-                сделка долго без движения — автоматически<br />
+                выбранных этапах каждые<br />
+                5 минут. Если сделка долго без<br />
+                движения — автоматически<br />
                 создаётся задача.
               </p>
             </div>
@@ -256,9 +235,10 @@ export default function AutoTask() {
               </div>
               <h3 className="at-feature-title">Гибкая настройка</h3>
               <p className="at-feature-text">
-                Выберите статусы для отслеживания,<br />
-                тип задачи, ответственного и текст.<br />
-                Разные настройки для разных воронок<br />
+                Выберите статусы для<br />
+                отслеживания, тип задачи,<br />
+                ответственного и текст. Разные<br />
+                настройки для разных воронок<br />
                 и этапов.
               </p>
             </div>
@@ -269,9 +249,10 @@ export default function AutoTask() {
               </div>
               <h3 className="at-feature-title">Исключение системных сделок</h3>
               <p className="at-feature-text">
-                Специальное поле «Не проверять на задачи»<br />
-                позволяет исключить определённые сделки<br />
-                из автоматического контроля.
+                Специальное поле «Не проверять<br />
+                на задачи» позволяет исключить<br />
+                определённые сделки из<br />
+                автоматического контроля.
               </p>
             </div>
 
@@ -281,8 +262,9 @@ export default function AutoTask() {
               </div>
               <h3 className="at-feature-title">Контроль ответственности</h3>
               <p className="at-feature-text">
-                Задачи создаются для ответственного за<br />
-                сделку или назначаются конкретному<br />
+                Задачи создаются для<br />
+                ответственного за сделку или<br />
+                назначаются конкретному<br />
                 менеджеру по вашему выбору.
               </p>
             </div>
@@ -293,9 +275,11 @@ export default function AutoTask() {
               </div>
               <h3 className="at-feature-title">Постоянная работа</h3>
               <p className="at-feature-text">
-                Виджет работает 24/7 в фоновом режиме.<br />
-                Проверка каждые 5 минут гарантирует, что ни<br />
-                одна сделка не останется без внимания.
+                Виджет работает 24/7 в фоновом<br />
+                режиме. Проверка каждые 5<br />
+                минут гарантирует, что ни одна<br />
+                сделка не останется без<br />
+                внимания.
               </p>
             </div>
 
@@ -305,9 +289,10 @@ export default function AutoTask() {
               </div>
               <h3 className="at-feature-title">Рост продаж</h3>
               <p className="at-feature-text">
-                Своевременная работа с клиентами<br />
-                повышает конверсию. Клиенты получают<br />
-                внимание в нужный момент и чаще покупают.
+                Своевременная работа с<br />
+                клиентами повышает конверсию.<br />
+                Клиенты получают внимание в<br />
+                нужный момент и чаще покупают.
               </p>
             </div>
           </div>
@@ -365,7 +350,7 @@ export default function AutoTask() {
       <SettingsCard
         id="instruction"
         title="Пошаговая настройка виджета"
-        subtitle="5 простых шагов — и процесс под контролем"
+        subtitle="Следуйте простым шагам для быстрой настройки:"
         steps={steps}
         showVideo
       />
