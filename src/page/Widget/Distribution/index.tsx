@@ -63,39 +63,40 @@ export default function Distribution() {
     },
   ];
 
-  const caseItems: CaseItem[] = [
+const caseItems: CaseItem[] = [
   { type: 'stripe', side: 'left',  white: true,  text: 'AMO CRM AMO CRM AMO CRM' },
 
-  {
-    type: 'card',
+  { type: 'card',
     title: 'Автоматическое распределение',
     text: 'Новые сделки моментально распределяются по заданным правилам без участия менеджеров.',
+    mobileDecorUrl: '/widgets/CaseCard/amo.svg',
   },
 
-  {
-    type: 'card',
+  { type: 'card',
     title: 'Гибкие правила',
     text: 'Проценты, максимум по количеству, поровну — выбирайте схему под вашу команду.',
+    mobileDecorUrl: '/widgets/CaseCard/amo (1).svg',
   },
 
   { type: 'stripe', side: 'right', text: 'AMO CRM AMO CRM AMO CRM' },
 
   { type: 'stripe', side: 'left',  text: 'AMO CRM AMO CRM AMO CRM' },
 
-  {
-    type: 'card',
+  { type: 'card',
     title: 'Учёт загрузки',
     text: 'Система учитывает активность и текущую загрузку, чтобы не перегружать отдельных менеджеров.',
+    mobileDecorUrl: '/widgets/CaseCard/amo (2).svg',
   },
 
-  {
-    type: 'card',
+  { type: 'card',
     title: 'Прозрачность и контроль',
     text: 'Понятные правила и история распределений снимают вопросы в команде.',
+    mobileDecorUrl: '/widgets/CaseCard/amo (3).svg',
   },
 
   { type: 'stripe', side: 'right', white: true, text: 'AMO CRM AMO CRM AMO CRM' },
 ];
+
 
   return (
     <main className="bg-white">

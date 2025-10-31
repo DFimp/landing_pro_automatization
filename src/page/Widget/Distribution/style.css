@@ -26,7 +26,7 @@ body {
 }
 
 .dist-hero {
-  padding: 72px 0 120px;
+  padding: 72px 0 70px;
   background:
     radial-gradient(1200px 600px at 0% 100%, rgba(108, 0, 255, .25), transparent 60%),
     radial-gradient(1000px 500px at 100% 20%, rgba(0, 102, 255, .25), transparent 60%),
@@ -292,4 +292,8 @@ body {
   background: #4A6DFF;
   color: #fff;
   line-height: 1.1;
+}
+
+.ds-prefooter {
+  margin: 30px 30px 50px;
 }
