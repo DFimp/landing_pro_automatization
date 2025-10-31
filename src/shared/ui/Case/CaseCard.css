@@ -189,16 +189,16 @@
   }
 
   .at-cases-grid > .at-case:nth-child(2) .at-case-decor {
-    background-image: url("/widgets/ComDupTrans/amo.svg");
+    background-image: url("/widgets/CaseCard/amo.svg");
   }
   .at-cases-grid > .at-case:nth-child(3) .at-case-decor {
-    background-image: url("/widgets/ComDupTrans/amo (1).svg");
+    background-image: url("/widgets/CaseCard/amo (1).svg");
   }
   .at-cases-grid > .at-case:nth-child(6) .at-case-decor {
-    background-image: url("/widgets/ComDupTrans/amo (2).svg");
+    background-image: url("/widgets/CaseCard/amo (2).svg");
   }
   .at-cases-grid > .at-case:nth-child(7) .at-case-decor {
-    background-image: url("/widgets/ComDupTrans/amo (3).svg");
+    background-image: url("/widgets/CaseCard/amo (3).svg");
   }
 
   .at-cases-grid > .at-case:nth-child(2) .at-case-decor,
