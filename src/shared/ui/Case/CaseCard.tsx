@@ -1,5 +1,7 @@
 'use client';
 
+import './CaseCard.css';
+
 import React from 'react';
 import clsx from 'clsx';
 
@@ -21,7 +23,7 @@ export type CaseCardItem = {
 
 export type CaseItem = CaseStripeItem | CaseCardItem;
 
-interface CaseCardProps {
+export interface CaseCardProps {
   id?: string;
   className?: string;
   title: string;
@@ -54,9 +56,9 @@ const CaseCard: React.FC<CaseCardProps> = ({
                     'at-case-amo',
                     item.side === 'left' ? 'at-case-amo--left' : 'at-case-amo--right',
                     item.white && 'at-case-amo--white',
-                    item.hiddenDesktop && 'lg:hidden'
+                    item.hiddenDesktop && 'at-case-amo--hidden-desktop'
                   )}
-                  aria-hidden
+                  aria-hidden={true}
                 >
                   <span className="at-case-amo__text">
                     {item.text || defaultStripeText}
@@ -66,19 +68,22 @@ const CaseCard: React.FC<CaseCardProps> = ({
             }
 
             const layer = item.mobileDecorLayer || 'under';
-            const decorStyle =
-              item.mobileDecorUrl
-                ? { backgroundImage: `url("${item.mobileDecorUrl}")` }
-                : undefined;
+            const hasDecor = Boolean(item.mobileDecorUrl);
 
             return (
-              <div className="at-case" key={`card-${idx}`}>
-                <div
-                  className="at-case-decor"
-                  aria-hidden
-                  style={decorStyle}
-                  data-layer={layer}
-                />
+              <div
+                key={`card-${idx}`}
+                className={clsx('at-case', layer === 'over' && 'at-case--over')}
+              >
+                {hasDecor && (
+                  <div
+                    className="at-case-decor"
+                    aria-hidden={true}
+                    style={{ backgroundImage: `url("${item.mobileDecorUrl}")` }}
+                    data-layer={layer}
+                  />
+                )}
+
                 <div className="at-case-card">
                   <h4 className="at-case-title">{item.title}</h4>
                   <p className="at-case-text">{item.text}</p>
