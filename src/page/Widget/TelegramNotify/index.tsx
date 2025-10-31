@@ -265,6 +265,7 @@ export default function TelegramNotify() {
                 subtitle="Следуйте простым шагам для быстрой настройки:"
                 steps={steps}
                 showVideo
+                videoId='4098b9cd2b565c4cd067a39b67350e26'
             />
 
             <section className="tg-cases" id={isIframe ? 'hidden-in-iframe' : ''}>
