@@ -7,6 +7,7 @@ import ConsultCard from '@/shared/ui/ConsultCard/ConsultCard';
 import CaseCard from '@/shared/ui/Case/CaseCard';
 import type { CaseItem } from '@/shared/ui/Case/CaseCard';
 import ProblemsCard, { type ProblemItem } from '@/shared/ui/ProblemsCard/ProblemsCard';
+import FeaturesCard, { type FeatureItem } from '@/shared/ui/FeaturesCard/FeaturesCard';
 
 export default function TelegramButton() {
     const { isIframe } = hiddenInIframe();
@@ -288,6 +289,39 @@ export default function TelegramButton() {
         },
     ];
 
+    const features: FeatureItem[] = [
+        {
+            iconUrl: '/widgets/BackAll/gear.png',
+            title: 'Один клик из amoCRM',
+            text: <>Кнопка рядом с номером сразу открывает чат в Telegram без копирования и лишних действий.</>,
+        },
+        {
+            iconUrl: '/widgets/BackAll/burger.png',
+            title: 'Умная нормализация номера',
+            text: <>Автоконвертация форматов (+371, 8…, 00…) и удаление пробелов/скобок перед открытием чата.</>,
+        },
+        {
+            iconUrl: '/widgets/BackAll/shield.png',
+            title: 'Безопасно для данных',
+            text: <>Номера не отправляются на сторонние сервисы — всё происходит локально в браузере.</>,
+        },
+        {
+            iconUrl: '/widgets/BackAll/tag.png',
+            title: 'Работает в карточке и списках',
+            text: <>Кнопка доступна как в карточке, так и в списках сделок/контактов для быстрого доступа.</>,
+        },
+        {
+            iconUrl: '/widgets/BackAll/boxes.png',
+            title: 'Поддержка веб/десктоп/мобайл',
+            text: <>Открытие в Web Telegram, Desktop-клиенте или мобильном приложении — что удобнее.</>,
+        },
+        {
+            iconUrl: '/widgets/BackAll/magnifier.png',
+            title: 'Логи и диагностика',
+            text: <>Помогает быстро понять, почему номер не открылся в Telegram (невалидный формат и т.п.).</>,
+        },
+    ];
+
     return (
         <main className="bg-white">
             <section className="dist-hero" id={isIframe ? 'hidden-in-iframe' : ''}>
@@ -338,6 +372,12 @@ export default function TelegramButton() {
                     videoId='b9b542ff41657b10b50987b118fe3920'
                 />
             </section>
+
+            <FeaturesCard
+                title="Дополнительные возможности"
+                subtitle="Уникальные функции для максимальной скорости и удобства"
+                items={features}
+            />
 
             <section className="ds-prefooter" id={isIframe ? 'hidden-in-iframe' : ''}>
                 <div className="ds-container">
