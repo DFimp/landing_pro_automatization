@@ -6,8 +6,8 @@
 }
 
 .at-cases-title {
-  font-size: clamp(26px, 4vw, 48px);
-  font-weight: 800;
+  font-size: clamp(26px, 4vw, 64px);
+  font-weight: 600;
   color: #3667ff;
   margin-bottom: 8px;
 }
@@ -45,22 +45,24 @@
   background: #fff;
   border: 1px solid #5f78ff;
   border-radius: 22px;
-  padding: 28px;
+  padding: 35px;
   box-shadow: 0 8px 24px rgba(15, 20, 39, .06);
   min-height: 230px;
+  width: 410px; 
+  max-width: 100%;
 }
 
 .at-case-title {
   font-weight: 700;
   color: #0f1427;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.35;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 .at-case-text {
   color: #3c4460;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.6;
 }
 
@@ -79,6 +81,11 @@
   .at-case-amo,
   .tg-case-amo {
     display: block;
+  }
+
+  .at-cases-grid {
+    grid-template-columns: repeat(2, minmax(410px, 1fr));
+    justify-content: center;
   }
 }
 
@@ -143,7 +150,8 @@
 
   .at-cases-grid {
     transform: translateX(-348px);
-    width: calc(100% + 200px);
+    width: calc(100% + 365px);
+    grid-template-columns: repeat(4, minmax(410px, 1fr));
   }
 
   .at-cases-grid>*:nth-child(n+5) {
@@ -153,8 +161,13 @@
 
 @media (max-width:640px) {
   .at-case-card {
-    min-height: 160px;
+    min-height: 180px;
+    width: 100%;
   }
+
+  .at-case-title {
+    margin-bottom: 10px;
+}
 
   .at-cases {
     overflow: visible;
