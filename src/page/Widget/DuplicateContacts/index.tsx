@@ -154,14 +154,14 @@ export default function DuplicateContacts() {
             type: 'card',
             title: 'Автоматическое объединение',
             text: <>Мгновенно получайте уведомления о новых заявках и сразу связывайтесь с клиентом</>,
-            mobileDecorUrl: '/widgets/ComDupTrans/amo.svg',
+            mobileDecorUrl: '/widgets/BackAll/amo.svg',
         },
 
         {
             type: 'card',
             title: 'Гибкие настройки',
             text: <>Отслеживайте движение сделок по этапам. Автоматически отправляйте уведомления при переходе на новый этап</>,
-            mobileDecorUrl: '/widgets/ComDupTrans/amo (1).svg',
+            mobileDecorUrl: '/widgets/BackAll/amo (1).svg',
         },
 
         { type: 'stripe', side: 'right', text: 'AMO CRM AMO CRM AMO CRM' },
@@ -171,14 +171,14 @@ export default function DuplicateContacts() {
             type: 'card',
             title: 'Умные алгоритмы',
             text: <>Уведомляйте руководителей о крупных сделках, а коллег — о необходимости позвонить клиенту</>,
-            mobileDecorUrl: '/widgets/ComDupTrans/amo (2).svg',
+            mobileDecorUrl: '/widgets/BackAll/amo (2).svg',
         },
 
         {
             type: 'card',
             title: 'Сохранение истории',
             text: <>При объединении сохраняются все контакты, теги, компании и важные данные из всех сделок</>,
-            mobileDecorUrl: '/widgets/ComDupTrans/amo (3).svg',
+            mobileDecorUrl: '/widgets/BackAll/amo (3).svg',
         },
 
         { type: 'stripe', side: 'right', white: true, text: 'AMO CRM AMO CRM AMO CRM' },
@@ -279,7 +279,7 @@ export default function DuplicateContacts() {
                     <div className="at-more-grid">
                         <article className="at-more-card">
                             <div className="at-more-ico" aria-hidden>
-                                <img src="/widgets/ComDupTrans/gear.png" alt="" />
+                                <img src="/widgets/BackAll/gear.png" alt="" />
                             </div>
                             <h3 className="at-more-title">Умное объединение данных</h3>
                             <p className="at-more-text">
@@ -290,7 +290,7 @@ export default function DuplicateContacts() {
 
                         <article className="at-more-card">
                             <div className="at-more-ico" aria-hidden>
-                                <img src="/widgets/ComDupTrans/burger.png" alt="" />
+                                <img src="/widgets/BackAll/burger.png" alt="" />
                             </div>
                             <h3 className="at-more-title">Гибкая настройка приоритетов</h3>
                             <p className="at-more-text">
@@ -301,7 +301,7 @@ export default function DuplicateContacts() {
 
                         <article className="at-more-card">
                             <div className="at-more-ico" aria-hidden>
-                                <img src="/widgets/ComDupTrans/shield.png" alt="" />
+                                <img src="/widgets/BackAll/shield.png" alt="" />
                             </div>
                             <h3 className="at-more-title">Безопасность данных</h3>
                             <p className="at-more-text">
@@ -312,7 +312,7 @@ export default function DuplicateContacts() {
 
                         <article className="at-more-card">
                             <div className="at-more-ico" aria-hidden>
-                                <img src="/widgets/ComDupTrans/tag.png" alt="" />
+                                <img src="/widgets/BackAll/tag.png" alt="" />
                             </div>
                             <h3 className="at-more-title">Автоматические теги</h3>
                             <p className="at-more-text">
@@ -323,7 +323,7 @@ export default function DuplicateContacts() {
 
                         <article className="at-more-card">
                             <div className="at-more-ico" aria-hidden>
-                                <img src="/widgets/ComDupTrans/boxes.png" alt="" />
+                                <img src="/widgets/BackAll/boxes.png" alt="" />
                             </div>
                             <h3 className="at-more-title">Работа с блоками</h3>
                             <p className="at-more-text">
@@ -334,7 +334,7 @@ export default function DuplicateContacts() {
 
                         <article className="at-more-card">
                             <div className="at-more-ico" aria-hidden>
-                                <img src="/widgets/ComDupTrans/magnifier.png" alt="" />
+                                <img src="/widgets/BackAll/magnifier.png" alt="" />
                             </div>
                             <h3 className="at-more-title">Точное обнаружение дублей</h3>
                             <p className="at-more-text">
