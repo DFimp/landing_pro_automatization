@@ -220,19 +220,19 @@ body {
 }
 
 .at-problem--sleep {
-  background-image: url("/widgets/ComDupTrans/back_basket.png");
+  background-image: url("/widgets/BackAll/back_basket.png");
 }
 
 .at-problem--chart {
-  background-image: url("/widgets/ComDupTrans/back_chart.png");
+  background-image: url("/widgets/BackAll/back_chart.png");
 }
 
 .at-problem--time {
-  background-image: url("/widgets/ComDupTrans/back_watch.png");
+  background-image: url("/widgets/BackAll/back_watch.png");
 }
 
 .at-problem--money {
-  background-image: url("/widgets/ComDupTrans/back_web.png");
+  background-image: url("/widgets/BackAll/back_web.png");
 }
 
 .at-problem--sleep,
