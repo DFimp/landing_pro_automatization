@@ -291,34 +291,34 @@ export default function TelegramButton() {
 
     const features: FeatureItem[] = [
         {
-            iconUrl: '/widgets/BackAll/gear.png',
-            title: 'Один клик из amoCRM',
-            text: <>Кнопка рядом с номером сразу открывает чат в Telegram без копирования и лишних действий.</>,
+            iconUrl: '/widgets/TelegramButton/group.png',
+            title: 'Поддержка всех номеров',
+            text: <>Работает с российскими и международными номерами в любом формате записи</>,
         },
         {
-            iconUrl: '/widgets/BackAll/burger.png',
-            title: 'Умная нормализация номера',
-            text: <>Автоконвертация форматов (+371, 8…, 00…) и удаление пробелов/скобок перед открытием чата.</>,
+            iconUrl: '/widgets/TelegramButton/sort.png',
+            title: 'Автоматическое форматирование',
+            text: <>Виджет сам приводит номер к нужному формату для Telegram, исключая ошибки</>,
         },
         {
-            iconUrl: '/widgets/BackAll/shield.png',
-            title: 'Безопасно для данных',
-            text: <>Номера не отправляются на сторонние сервисы — всё происходит локально в браузере.</>,
+            iconUrl: '/widgets/TelegramButton/deadline.png',
+            title: 'Мгновенная работа',
+            text: <>Никаких задержек - кнопка работает сразу после клика по номеру телефона</>,
         },
         {
-            iconUrl: '/widgets/BackAll/tag.png',
-            title: 'Работает в карточке и списках',
-            text: <>Кнопка доступна как в карточке, так и в списках сделок/контактов для быстрого доступа.</>,
+            iconUrl: '/widgets/TelegramButton/mobile.png',
+            title: 'Веб и мобильные версии',
+            text: <>Корректно открывает Telegram Web в браузере или мобильное приложение на устройстве</>,
         },
         {
-            iconUrl: '/widgets/BackAll/boxes.png',
-            title: 'Поддержка веб/десктоп/мобайл',
-            text: <>Открытие в Web Telegram, Desktop-клиенте или мобильном приложении — что удобнее.</>,
+            iconUrl: '/widgets/TelegramButton/target.png',
+            title: 'Точное попадание',
+            text: <>Всегда открывает чат именно с нужным контактом, даже если номер записан в нестандартном формате</>,
         },
         {
-            iconUrl: '/widgets/BackAll/magnifier.png',
-            title: 'Логи и диагностика',
-            text: <>Помогает быстро понять, почему номер не открылся в Telegram (невалидный формат и т.п.).</>,
+            iconUrl: '/widgets/TelegramButton/free.png',
+            title: 'Полностью бесплатно',
+            text: <>Никаких подписок, ограничений по количеству использований или скрытых платежей</>,
         },
     ];
 

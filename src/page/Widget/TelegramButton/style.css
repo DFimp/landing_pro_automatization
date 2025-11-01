@@ -17,6 +17,14 @@ body {
   display: none !important;
 }
 
+.at-container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-left: var(--container-pad);
+  padding-right: var(--container-pad);
+}
+
 .dist-hero {
   padding: 72px 0 70px;
   background:
@@ -174,4 +182,8 @@ body {
     font-size: 16px;
     line-height: 44px;
   }
+}
+
+.ds-prefooter {
+  margin: 30px 30px 50px;
 }
