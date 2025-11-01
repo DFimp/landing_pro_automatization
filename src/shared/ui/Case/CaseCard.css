@@ -1,0 +1,226 @@
+.at-cases {
+  position: relative;
+  padding: 40px 0 28px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.at-cases-title {
+  font-size: clamp(26px, 4vw, 64px);
+  font-weight: 600;
+  color: #3667ff;
+  margin-bottom: 8px;
+}
+
+.at-cases-sub {
+  color: #5a6180;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.at-cases-grid {
+  --gap: 24px;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+@media (min-width:900px) {
+  .at-cases-grid {
+    grid-template-columns: repeat(2, minmax(320px, 1fr));
+  }
+}
+
+@media (min-width:1200px) {
+  .at-cases-grid {
+    grid-template-columns: repeat(4, minmax(220px, 1fr));
+  }
+}
+
+.at-case-card {
+  background: #fff;
+  border: 1px solid #5f78ff;
+  border-radius: 22px;
+  padding: 35px;
+  box-shadow: 0 8px 24px rgba(15, 20, 39, .06);
+  min-height: 230px;
+  width: 410px; 
+  max-width: 100%;
+}
+
+.at-case-title {
+  font-weight: 700;
+  color: #0f1427;
+  font-size: 18px;
+  line-height: 1.35;
+  margin-bottom: 30px;
+}
+
+.at-case-text {
+  color: #3c4460;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.at-case-amo,
+.tg-case-amo {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  background: #4a63ff;
+  box-shadow: 0 10px 26px rgba(15, 20, 39, .06), inset 0 0 0 1px #5f78ff;
+  min-height: 200px;
+  display: none;
+}
+
+@media (min-width:900px) {
+  .at-case-amo,
+  .tg-case-amo {
+    display: block;
+  }
+
+  .at-cases-grid {
+    grid-template-columns: repeat(2, minmax(410px, 1fr));
+    justify-content: center;
+  }
+}
+
+.at-case-amo--white,
+.tg-case-amo--white {
+  background: #fff;
+}
+
+.at-case-amo--white .at-case-amo__text,
+.tg-case-amo--white .tg-case-amo__text {
+  color: #4a63ff;
+}
+
+.at-case-amo__text,
+.tg-case-amo__text {
+  position: absolute;
+  font-weight: 800;
+  line-height: 1;
+  color: #fff;
+  letter-spacing: .06em;
+  font-size: clamp(140px, 18vw, 320px);
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+  top: 50%;
+  left: 80px;
+  transform: translateY(-50%);
+}
+
+@media (min-width:900px) {
+  .at-case-amo__text,
+  .tg-case-amo__text {
+    font-size: 200px;
+  }
+}
+
+@media (min-width:900px) {
+  .at-case-amo,
+  .tg-case-amo {
+    width: min(2000px, calc(100vw + 360px));
+    min-height: 230px;
+  }
+
+  .at-case-amo--right,
+  .tg-case-amo--right {
+    justify-self: start;
+    margin-right: 0;
+  }
+
+  .at-case-amo--left,
+  .tg-case-amo--left {
+    justify-self: end;
+    margin-left: 0;
+    transform: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .at-cases {
+    overflow: visible;
+  }
+
+  .at-cases-grid {
+    transform: translateX(-348px);
+    width: calc(100% + 365px);
+    grid-template-columns: repeat(4, minmax(410px, 1fr));
+  }
+
+  .at-cases-grid>*:nth-child(n+5) {
+    transform: translateX(150px);
+  }
+}
+
+@media (max-width:640px) {
+  .at-case-card {
+    min-height: 180px;
+    width: 100%;
+  }
+
+  .at-case-title {
+    margin-bottom: 10px;
+}
+
+  .at-cases {
+    overflow: visible;
+  }
+
+  .at-cases-grid {
+    gap: 28px;
+  }
+
+  .at-case {
+    position: relative;
+  }
+
+  .at-case-card {
+    position: relative;
+    z-index: 1;
+    border-radius: 18px;
+    padding: 20px;
+  }
+
+  .at-case-decor {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -50px;
+    width: 100vw;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    pointer-events: none;
+  }
+
+  .at-cases-grid > .at-case:nth-child(2) .at-case-decor {
+    background-image: url("/widgets/CaseCard/amo.svg");
+  }
+  .at-cases-grid > .at-case:nth-child(3) .at-case-decor {
+    background-image: url("/widgets/CaseCard/amo (1).svg");
+  }
+  .at-cases-grid > .at-case:nth-child(6) .at-case-decor {
+    background-image: url("/widgets/CaseCard/amo (2).svg");
+  }
+  .at-cases-grid > .at-case:nth-child(7) .at-case-decor {
+    background-image: url("/widgets/CaseCard/amo (3).svg");
+  }
+
+  .at-cases-grid > .at-case:nth-child(2) .at-case-decor,
+  .at-cases-grid > .at-case:nth-child(7) .at-case-decor { z-index: 0; }
+  .at-cases-grid > .at-case:nth-child(2),
+  .at-cases-grid > .at-case:nth-child(7) { z-index: 1; }
+
+  .at-cases-grid > .at-case:nth-child(3),
+  .at-cases-grid > .at-case:nth-child(6) { z-index: 5; }
+  .at-cases-grid > .at-case:nth-child(3) .at-case-decor,
+  .at-cases-grid > .at-case:nth-child(6) .at-case-decor { z-index: 6; }
+}

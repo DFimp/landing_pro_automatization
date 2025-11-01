@@ -14,6 +14,7 @@ type SettingsCardProps = {
   subtitle?: string;
   steps: Step[];
   showVideo?: boolean;
+  videoId?: string;
   className?: string;
 };
 
@@ -23,6 +24,7 @@ export default function SettingsCard({
   subtitle,
   steps,
   showVideo = true,
+  videoId,
   className = '',
 }: SettingsCardProps) {
   return (
@@ -30,10 +32,14 @@ export default function SettingsCard({
       <div className="sc__inner sc-container">
         <h3 className="sc__title">{title}</h3>
 
-        {showVideo && (
-          <div className="sc__video" id="instruction">
-            <div className="sc__play" aria-hidden />
-          </div>
+        {showVideo && videoId && (
+          <iframe
+            src={`https://rutube.ru/play/embed/${videoId}`}
+            allow="autoplay; encrypted-media; fullscreen; picture-in-picture;"
+            loading="lazy"
+            allowFullScreen
+            className='sc__video'
+          />
         )}
 
         {subtitle ? <div className="sc__subtitle">{subtitle}</div> : null}

@@ -14,6 +14,7 @@ export const Footer = () => {
         { label: "Аудит", href: "/#audit" },
         { label: "Внедрение", href: "/#implementation" },
         { label: "Сопровождение", href: "/#support" },
+        { label: "Лицензия", href: "/license" },
       ],
     },
     {
@@ -75,7 +76,10 @@ export const Footer = () => {
 
           <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-3 md:pl-4">
             {cols.map((col, i) => (
-              <div key={i}>
+              <div
+                key={i}
+                className={i === 0 ? "pb-5 sm:pb-0" : ""}
+              >
                 {col.title ? (
                   <div className="mb-3 text-[16px] font-semibold text-white/95">{col.title}</div>
                 ) : (
@@ -100,9 +104,16 @@ export const Footer = () => {
         <div className="mx-auto max-w-[1200px] px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-[14px] text-[#4b4b4b]">
           <div>ИП Горбань М.О. (ИНН 262609479757)</div>
           <div className="flex items-center gap-6">
-            <Link href="/privacy-policy" className="hover:underline">Политика конфиденциальности</Link>
-            <Link href="/license" className="hover:underline">Лицензия</Link>
-            <Link href="https://t.me/proavtomatization_support_bot" target="_blank" className="hover:underline">Написать в поддержку</Link>
+            <Link href="/privacy-policy" className="hover:underline">
+              Политика конфиденциальности
+            </Link>
+            <Link
+              href="https://t.me/proavtomatization_support_bot"
+              target="_blank"
+              className="hover:underline"
+            >
+              Написать в поддержку
+            </Link>
           </div>
         </div>
       </div>
