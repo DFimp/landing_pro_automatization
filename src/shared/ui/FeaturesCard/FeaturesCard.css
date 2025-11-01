@@ -10,6 +10,17 @@
   gap: var(--gap);
 }
 
+.at-subtitle {
+    margin-bottom: 30px;
+}
+
+.at-section-title {
+  font-size: clamp(22px, 3.2vw, 32px);
+  font-weight: 700;
+  color: #0f1427;
+  margin-bottom: 8px;
+}
+
 @media (min-width:900px) {
   .at-more-grid {
     grid-template-columns: repeat(3, minmax(260px, 1fr));
@@ -52,8 +63,4 @@
     border-radius: 22px;
     padding: 40px;
   }
-}
-
-.at-subtitle {
-    margin-bottom: 30px;
 }
