@@ -1,7 +1,7 @@
-import ComDupTrans from '@/page/Widget/ComDupTrans';
+import DuplicateLeads from '@/page/Widget/DuplicateLeads';
 
 export default function Page() {
-  return <ComDupTrans />;
+  return <DuplicateLeads />;
 }
 
 // 'use client';

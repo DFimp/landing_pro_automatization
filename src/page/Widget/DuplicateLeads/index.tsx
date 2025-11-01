@@ -4,6 +4,7 @@ import React from 'react';
 import { hiddenInIframe } from '@/shared/utils/hiddenInIframe';
 import SettingsCard from '@/shared/ui/settings/SettingsCard';
 import ConsultCard from '@/shared/ui/ConsultCard/ConsultCard';
+import CaseCard, { type CaseItem } from '@/shared/ui/Case/CaseCard';
 
 export default function ComDupTrans() {
     const { isIframe } = hiddenInIframe();
@@ -15,24 +16,84 @@ export default function ComDupTrans() {
 
     const steps = [
         {
-            title: 'Установка виджета в amoCRM',
+            title: 'Установка виджета',
             content: (
                 <div>
-                    <p>Установите виджет в вашу amoCRM:</p>
+                    <p>Нажмите кнопку «Установить виджет» и следуйте инструкциям amoCRM для подключения.</p>
+                    <a
+                        href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=9036b829-2690-470d-9248-e7c4bb3f6699"
+                        target="_blank"
+                        rel="noopener"
+                        className="sc-btn"
+                    >
+                        Установить виджет сейчас
+                    </a>
+                </div>
+            ),
+        },
+        {
+            title: 'Основные настройки',
+            content: (
+                <div>
+                    <p>Выберите сущность объединения:</p>
                     <ul className="sc-list">
-                        <li>amoCRM → Настройки → Интеграции/Виджеты</li>
-                        <li>Найдите «Объединение дублей сделок»</li>
-                        <li>Нажмите «Установить» и подтвердите доступы</li>
+                        <li><strong>Основной контакт</strong> — объединение по первому контакту в сделке</li>
+                        <li><strong>Контакт</strong> — поиск дублей по всем контактам</li>
+                        <li><strong>Компания</strong> — объединение по компании</li>
+                        <li><strong>Компания или Основной контакт</strong> — универсальный режим</li>
                     </ul>
                 </div>
             ),
         },
         {
-            title: 'Настройка отслеживаемых статусов',
+            title: 'Приоритет объединения',
             content: (
                 <div>
-                    <p>Выберите воронки и этапы, в которых нужно искать и объединять дубли.</p>
-                    <p>Для каждого блока можно включать/выключать объединение.</p>
+                    <p>Выберите стратегию объединения:</p>
+                    <ul className="sc-list">
+                        <li><strong>В сторону старшей сделки</strong> — сохраняется самая старая сделка</li>
+                        <li><strong>По приоритету в блоке</strong> — учитывается настроенный приоритет этапов</li>
+                    </ul>
+                </div>
+            ),
+        },
+        {
+            title: 'Дополнительная проверка',
+            content: (
+                <div>
+                    <p>Укажите дополнительное поле для точной проверки дублей. Например, по номеру телефона или email.</p>
+
+                    <div className="sc-note sc-note--blue" style={{ marginTop: 12 }}>
+                        <div className="sc-note-title">Совет:</div>
+                        <div>Это поможет избежать ошибочного объединения разных клиентов с одинаковыми именами.</div>
+                    </div>
+                </div>
+            ),
+        },
+        {
+            title: 'Приоритетные поля',
+            content: (
+                <div>
+                    <p>Выберите поля, значения которых нужно брать из самой новой сделки при объединении.</p>
+                    <p>Например: "Ответственный", "Цена", "Название" и любые кастомные поля.</p>
+                </div>
+            ),
+        },
+        {
+            title: 'Настройка блоков',
+            content: (
+                <div>
+                    <p>Создайте блоки воронок с этапами. В каждом блоке можно:</p>
+                    <ul className="sc-list">
+                        <li>Задать приоритеты этапов (первый в блоке - самый приоритетный - последний в блоке - самый приоритетный)</li>
+                        <li>Включить/выключить объединение внутри блока</li>
+                        <li>Настроить несколько воронок в одном блоке</li>
+                    </ul>
+
+                    <div className="sc-note sc-note--red" style={{ marginTop: 12 }}>
+                        <div className="sc-note-title">Внимание:</div>
+                        <p>Если включена опция "Не склеивать внутри блока", дубли в этом блоке объединяться не будут.</p>
+                    </div>
                 </div>
             ),
         },
@@ -50,44 +111,51 @@ export default function ComDupTrans() {
             ),
         },
         {
-            title: 'Сохранение настроек',
+            title: 'Запуск объединения',
             content: (
                 <div>
-                    <p>Нажмите «Сохранить». При необходимости примените настройки к уже созданным сделкам.</p>
+                    <p>После настройки нажмите <strong>«Применить к существующим сделкам»</strong>, чтобы обработать уже созданные сделки.</p>
+                    <p>Новые сделки будут автоматически проверяться на дубли при создании.</p>
                 </div>
             ),
         },
+    ];
+
+    const caseItems: CaseItem[] = [
+        { type: 'stripe', side: 'left', white: true, text: 'AMO CRM AMO CRM AMO CRM' },
+
         {
-            title: 'Тестирование и мониторинг',
-            content: (
-                <div>
-                    <p>Создайте правило для автоматической отправки уведомлений:</p>
-                    <ul className="sc-list">
-                        <li>Зайдите в воронку и нажмите «Настроить воронку»</li>
-                        <li>Выберите нужный этап и нажмите «Добавить триггер»</li>
-                        <li>Найдите виджет «Уведомления в Telegram от Про Автоматизацию»</li>
-                        <li>Нажмите кнопку «Добавить»</li>
-                    </ul>
-
-                    <div className="sc-note sc-note--green" style={{ marginTop: 12 }}>
-                        <div className="sc-note-title">Настройте уведомления для всех сотрудников:</div>
-                        <ul className="sc-list">
-                            <li>Попросите каждого сотрудника получить свой Telegram ID у бота</li>
-                            <li>Создайте отдельные правила цифровой воронки для каждого менеджера</li>
-                        </ul>
-                    </div>
-
-                    <div className="sc-note" style={{ marginTop: 12 }}>
-                        <div className="sc-note-title">Примеры настроек для разных ролей:</div>
-                        <ul className="sc-list">
-                            <li>Менеджеры: уведомления о новых лидах и переходах этапов</li>
-                            <li>Руководители: уведомления о крупных сделках и потерянных клиентах</li>
-                            <li>Отдел поддержки: уведомления о возвратах и жалобах</li>
-                        </ul>
-                    </div>
-                </div>
-            ),
+            type: 'card',
+            title: 'Автоматическое объединение',
+            text: <>Мгновенно получайте уведомления о новых заявках и сразу связывайтесь с клиентом.</>,
+            mobileDecorUrl: '/widgets/ComDupTrans/amo.svg',
         },
+
+        {
+            type: 'card',
+            title: 'Гибкие настройки',
+            text: <>Отслеживайте движение сделок по этапам. Автоматически отправляйте уведомления при переходе на новый этап.</>,
+            mobileDecorUrl: '/widgets/ComDupTrans/amo (1).svg',
+        },
+
+        { type: 'stripe', side: 'right', text: 'AMO CRM AMO CRM AMO CRM' },
+        { type: 'stripe', side: 'left', text: 'AMO CRM AMO CRM AMO CRM' },
+
+        {
+            type: 'card',
+            title: 'Умные алгоритмы',
+            text: <>Уведомляйте руководителей о крупных сделках, а коллег — о необходимости позвонить клиенту.</>,
+            mobileDecorUrl: '/widgets/ComDupTrans/amo (2).svg',
+        },
+
+        {
+            type: 'card',
+            title: 'Сохранение истории',
+            text: <>При объединении сохраняются все контакты, теги, компании и важные данные из всех сделок.</>,
+            mobileDecorUrl: '/widgets/ComDupTrans/amo (3).svg',
+        },
+
+        { type: 'stripe', side: 'right', white: true, text: 'AMO CRM AMO CRM AMO CRM' },
     ];
 
     return (
@@ -161,70 +229,11 @@ export default function ComDupTrans() {
                 </div>
             </section>
 
-            <section className="at-cases" id={isIframe ? 'hidden-in-iframe' : ''}>
-                <div className="at-container">
-                    <h3 className="at-cases-title">Решение всех проблем</h3>
-                    <p className="at-cases-sub">Умные алгоритмы для автоматического объединения дублей</p>
-
-                    <div className="at-cases-grid">
-                        <div className="at-case-amo at-case-amo--left at-case-amo--white" aria-hidden>
-                            <span className="at-case-amo__text">AMO CRM AMO CRM AMO CRM</span>
-                        </div>
-
-                        <div className="at-case">
-                            <div className="at-case-decor" aria-hidden />
-                            <div className="at-case-card">
-                                <h4 className="at-case-title">Автоматическое объединение</h4>
-                                <p className="at-case-text">
-                                    Мгновенно получайте уведомления о новых заявках и сразу связывайтесь с клиентом.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="at-case">
-                            <div className="at-case-decor" aria-hidden />
-                            <div className="at-case-card">
-                                <h4 className="at-case-title">Гибкие настройки</h4>
-                                <p className="at-case-text">
-                                    Отслеживайте движение сделок по этапам. Автоматически отправляйте уведомления при переходе на новый этап.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="at-case-amo at-case-amo--right" aria-hidden>
-                            <span className="at-case-amo__text">AMO CRM AMO CRM AMO CRM</span>
-                        </div>
-
-                        <div className="at-case-amo at-case-amo--left" aria-hidden>
-                            <span className="at-case-amo__text">AMO CRM AMO CRM AMO CRM</span>
-                        </div>
-
-                        <div className="at-case">
-                            <div className="at-case-decor" aria-hidden />
-                            <div className="at-case-card">
-                                <h4 className="at-case-title">Умные алгоритмы</h4>
-                                <p className="at-case-text">
-                                    Уведомляйте руководителей о крупных сделках, а коллег — о необходимости позвонить клиенту.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="at-case">
-                            <div className="at-case-decor" aria-hidden />
-                            <div className="at-case-card">
-                                <h4 className="at-case-title">Сохранение истории</h4>
-                                <p className="at-case-text">
-                                    При объединении сохраняются все контакты, теги, компании и важные данные из всех сделок.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="at-case-amo at-case-amo--right at-case-amo--white" aria-hidden>
-                            <span className="at-case-amo__text">AMO CRM AMO CRM AMO CRM</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <CaseCard
+                title="Решение всех проблем"
+                subtitle="Умные алгоритмы для автоматического объединения дублей"
+                items={caseItems}
+            />
 
 
             <section id="instruction" className="sc-wrapper" aria-label="Пошаговая настройка виджета">
