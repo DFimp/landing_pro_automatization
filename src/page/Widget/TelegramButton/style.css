@@ -187,3 +187,113 @@ body {
 .ds-prefooter {
   margin: 30px 30px 50px;
 }
+
+.ds-demo{
+  position:relative;
+  padding:36px 0 52px;
+  overflow:hidden;
+  z-index:0;
+}
+
+.ds-demo .at-container{
+  position:relative;
+  z-index:2;
+}
+
+.ds-demo::before{
+  content:"";
+  position:absolute;
+  top:-140px;
+  bottom:-140px;
+  left:calc(50% - 60vw);
+  width:680px;
+  background:url("/widgets/TelegramButton/Subtract.png") no-repeat left center;
+  background-size:520px auto;
+  z-index:1;
+  pointer-events:none;
+}
+
+.ds-demo::after{
+  content:"";
+  position:absolute;
+  left:calc(50% - 55vw - 260px);
+  top:50%;
+  width:1020px;
+  height:820px;
+  transform:translateY(-50%);
+  z-index:0;
+  pointer-events:none;
+  filter:blur(70px);
+  background:
+    radial-gradient(closest-side at 58% 50%, rgba(60,14,224,0.85), transparent 70%),
+    radial-gradient(closest-side at 60% 52%, rgba(16, 0, 241, 0.822), transparent 90%);
+}
+
+.ds-demo-title{
+  margin:0 0 8px;
+  font-weight:700;
+  color:var(--ink);
+  font-size:clamp(22px,3.2vw,28px);
+}
+
+.ds-demo-sub{
+  margin:0 0 22px;
+  color:var(--muted);
+  font-size:15.5px;
+  line-height:1.55;
+}
+
+.ds-demo-screen{
+  width:100%;
+  aspect-ratio:16/9;
+  min-height:320px;
+  background:#d9d9d9;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#666;
+  font-size:14px;
+  text-align:center;
+  box-shadow:
+    0 1px 0 rgba(15,20,39,.06),
+    0 12px 36px rgba(15,20,39,.10);
+}
+
+.ds-demo + .ds-prefooter{ margin-top:24px; }
+
+@media (max-width:1200px){
+  .ds-demo::before{
+    width:600px;
+    background-size:480px auto;
+  }
+  .ds-demo::after{
+    left:calc(50% - 50vw - 300px);
+    width:920px; height:740px; filter:blur(60px);
+  }
+}
+@media (max-width:768px){
+  .ds-demo{ padding:28px 0 44px; }
+  .ds-demo::before{
+    top:-160px; bottom:-160px;
+    width:460px; background-size:400px auto;
+    left:calc(50% - 50vw - 20px);
+  }
+  .ds-demo::after{
+    left:calc(50% - 50vw - 340px);
+    width:820px; height:660px; filter:blur(55px);
+  }
+  .ds-demo-screen{ min-height:260px; }
+}
+@media (max-width:480px){
+  .ds-demo{ padding:24px 0 36px; }
+  .ds-demo::before{
+    width:380px; background-size:330px auto;
+    left:calc(50% - 50vw - 30px);
+  }
+  .ds-demo::after{
+    left:calc(50% - 50vw - 360px);
+    width:720px; height:580px; filter:blur(50px);
+  }
+  .ds-demo-sub{ margin-bottom:16px; font-size:14.5px; }
+}
