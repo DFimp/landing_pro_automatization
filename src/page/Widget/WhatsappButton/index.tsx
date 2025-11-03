@@ -130,34 +130,31 @@ export default function WhatsappButton() {
                 Копировать номер → Открыть WhatsApp → Найти контакт → Начать чат. До минуты на каждого клиента<span className="at-mark">вместо 1 секунды</span>
                 </>
             ),
-            bgUrl: '/widgets/WhatsappButton/back_wheel.png',
+            bgUrl: '/widgets/WhatsappButton/back_timer.png',
         },
         {
-            title: 'Ошибки в номерах',
+            title: 'Постоянные переключения',
             text: (
                 <>
-                    Опечатки при копировании приводят к тому, что сообщения не доходят до клиента
-                    или идут не тому человеку.
+                    Туда-сюда между amoCRM и WhatsApp сбивает концентрацию и замедляет работу менеджеров
                 </>
             ),
-            bgUrl: '/widgets/WhatsappButton/back_what.png',
+            bgUrl: '/widgets/WhatsappButton/back_switch.png',
         },
         {
-            title: 'Потеря концентрации',
+            title: 'Ошибки при вводе',
             text: (
                 <>
-                    <span className="at-mark">Постоянное</span> переключение между amoCRM и WhatsApp
-                    сбивает с рабочего ритма и снижает продуктивность.
+                    Опечатки в номере приводят к тому, что сообщения идут не тому человеку или вообще не доходят
                 </>
             ),
-            bgUrl: '/widgets/WhatsappButton/back_electricity.png',
+            bgUrl: '/widgets/WhatsappButton/back_cross.png',
         },
         {
             title: 'Упущенные продажи',
             text: (
                 <>
-                    <span className="at-mark">Пока менеджер ищет</span> контакт в WhatsApp, клиент может
-                    передумать или обратиться к конкурентам.
+                    <span className="at-mark">Клиенты не ждут</span> - пока вы ищете их в WhatsApp, они могут уйти к более быстрым конкурентам.
                 </>
             ),
             bgUrl: '/widgets/WhatsappButton/back_basket.png',
@@ -238,8 +235,8 @@ export default function WhatsappButton() {
             />
 
             <PreviewCard
-                title="Как это выглядит?"
-                subtitle="Виджет автоматически отображается прямо в карточке контакта"
+                title="Посмотрите, как это работает!"
+                subtitle="Просто и понятно - кликнул и уже в чате!"
                 videoUrl=""
                 imageUrl="/widgets/WhatsappButton/preview-example.png"
             />
