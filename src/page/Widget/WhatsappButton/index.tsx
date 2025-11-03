@@ -62,12 +62,11 @@ export default function WhatsappButton() {
 
                     <div className="sc-note sc-note--purple">
                         <div className="sc-note-title">Результат</div>
-                        Ваши менеджеры начнут работать в 10 раз быстрее и будут чаще связываться с клиентами!
+                        Ваши менеджеры будут связываться с клиентами мгновенно и закрывать больше сделок!
                     </div>
                 </div>
             ),
-        },
-
+        }
     ];
 
     const caseItems: CaseItem[] = [
@@ -127,7 +126,7 @@ export default function WhatsappButton() {
             title: 'Долгий процесс',
             text: (
                 <>
-                Копировать номер → Открыть WhatsApp → Найти контакт → Начать чат. До минуты на каждого клиента<span className="at-mark">вместо 1 секунды</span>
+                    Копировать номер → Открыть WhatsApp → Найти контакт → Начать чат. До минуты на каждого клиента<span className="at-mark">вместо 1 секунды</span>
                 </>
             ),
             bgUrl: '/widgets/WhatsappButton/back_timer.png',
