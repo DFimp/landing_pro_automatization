@@ -8,6 +8,7 @@ import CaseCard from '@/shared/ui/Case/CaseCard';
 import type { CaseItem } from '@/shared/ui/Case/CaseCard';
 import ProblemsCard, { type ProblemItem } from '@/shared/ui/ProblemsCard/ProblemsCard';
 import FeaturesCard, { type FeatureItem } from '@/shared/ui/FeaturesCard/FeaturesCard';
+import PreviewCard from '@/shared/ui/PreviewCard/PreviewCard';
 
 export default function TelegramButton() {
     const { isIframe } = hiddenInIframe();
@@ -241,16 +242,12 @@ export default function TelegramButton() {
                 items={caseItems}
             />
 
-            <section className="ds-demo">
-                <div className="at-container">
-                    <h2 className="ds-demo-title">Посмотрите, как это работает!</h2>
-                    <p className="ds-demo-sub">Просто и понятно - кликнул и уже в чате!</p>
-
-                    <div className="ds-demo-screen" role="img" aria-label="скрин программы">
-                        <span>скрин программы</span>
-                    </div>
-                </div>
-            </section>
+            <PreviewCard
+                title="Как это выглядит?"
+                subtitle="Виджет автоматически отображается прямо в карточке контакта"
+                videoUrl=""
+                imageUrl="/widgets/TelegramButton/preview-example.png"
+            />
 
             <section id="instruction" className="ds-how sc-wrapper" aria-label="Пошаговая настройка виджета">
                 <SettingsCard
