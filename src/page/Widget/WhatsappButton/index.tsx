@@ -53,11 +53,11 @@ export default function WhatsappButton() {
             title: 'Готово! Пользуйтесь',
             content: (
                 <div>
-                    <p>Теперь рядом с каждым номером телефона будет кнопка Telegram:</p>
+                    <p>Теперь рядом с каждым номером телефона будет кнопка WhatsApp:</p>
                     <ul className="sc-list">
                         <li>Кликните по номеру телефона в любой карточке</li>
-                        <li>Выберите кнопку «Написать в Telegram»</li>
-                        <li>Telegram откроется с чатом для этого номера</li>
+                        <li>Выберите кнопку «Написать в WhatsApp»</li>
+                        <li>WhatsApp откроется с чатом для этого номера</li>
                     </ul>
 
                     <div className="sc-note sc-note--purple">
@@ -124,18 +124,15 @@ export default function WhatsappButton() {
 
     const problems: ProblemItem[] = [
         {
-            // 1
             title: 'Долгий процесс',
             text: (
                 <>
-                    Копировать номер → Открыть Telegram → Найти контакт → Написать сообщение.
-                    <span className="at-mark"> Минимум 30–60 секунд </span> на каждого клиента.
+                Копировать номер → Открыть WhatsApp → Найти контакт → Начать чат. До минуты на каждого клиента<span className="at-mark">вместо 1 секунды</span>
                 </>
             ),
             bgUrl: '/widgets/WhatsappButton/back_wheel.png',
         },
         {
-            // 2
             title: 'Ошибки в номерах',
             text: (
                 <>
@@ -146,22 +143,20 @@ export default function WhatsappButton() {
             bgUrl: '/widgets/WhatsappButton/back_what.png',
         },
         {
-            // 3
             title: 'Потеря концентрации',
             text: (
                 <>
-                    <span className="at-mark">Постоянное</span> переключение между amoCRM и Telegram
+                    <span className="at-mark">Постоянное</span> переключение между amoCRM и WhatsApp
                     сбивает с рабочего ритма и снижает продуктивность.
                 </>
             ),
             bgUrl: '/widgets/WhatsappButton/back_electricity.png',
         },
         {
-            // 4
             title: 'Упущенные продажи',
             text: (
                 <>
-                    <span className="at-mark">Пока менеджер ищет</span> контакт в Telegram, клиент может
+                    <span className="at-mark">Пока менеджер ищет</span> контакт в WhatsApp, клиент может
                     передумать или обратиться к конкурентам.
                 </>
             ),
@@ -178,7 +173,7 @@ export default function WhatsappButton() {
         {
             iconUrl: '/widgets/WhatsappButton/sort.png',
             title: 'Автоматическое форматирование',
-            text: <>Виджет сам приводит номер к нужному формату для Telegram, исключая ошибки</>,
+            text: <>Виджет сам приводит номер к нужному формату для WhatsApp, исключая ошибки</>,
         },
         {
             iconUrl: '/widgets/WhatsappButton/deadline.png',
@@ -188,7 +183,7 @@ export default function WhatsappButton() {
         {
             iconUrl: '/widgets/WhatsappButton/mobile.png',
             title: 'Веб и мобильные версии',
-            text: <>Корректно открывает Telegram Web в браузере или мобильное приложение на устройстве</>,
+            text: <>Корректно открывает WhatsApp Web в браузере или мобильное приложение на устройстве</>,
         },
         {
             iconUrl: '/widgets/WhatsappButton/target.png',
@@ -206,12 +201,12 @@ export default function WhatsappButton() {
         <main className="bg-white">
             <section className="dist-hero" id={isIframe ? 'hidden-in-iframe' : ''}>
                 <div className="at-container">
-                    <div className="dist-pill dist-bleed-left">Мгновенный переход в Telegram из amoCRM</div>
+                    <div className="dist-pill dist-bleed-left">Мгновенный переход в WhatsApp из amoCRM</div>
 
-                    <h1 className="dist-hero-title">Написать в Telegram за 1 клик?</h1>
+                    <h1 className="dist-hero-title">Написать в WhatsApp за 1 клик?</h1>
 
                     <p className="dist-hero-sub">
-                        Превратите каждый номер телефона в прямую ссылку на чат с клиентом в Telegram. Больше никакого копирования номеров и поиска контактов!
+                        Превратите каждый номер телефона в прямую ссылку на чат с клиентом в WhatsApp. Больше никакого копирования номеров и поиска контактов!
                     </p>
 
                     <div className="dist-cta">
@@ -232,7 +227,7 @@ export default function WhatsappButton() {
 
             <ProblemsCard
                 title="Проблемы традиционного способа"
-                subtitle="Почему менеджеры теряют время и клиентов при работе с Telegram"
+                subtitle="Почему менеджеры теряют время и клиентов при работе с WhatsApp"
                 items={problems}
             />
 
