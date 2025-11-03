@@ -1,0 +1,136 @@
+.preview-section {
+    background: #fff;
+    padding: 64px 0;
+    text-align: center;
+}
+
+.preview-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0f1427;
+    margin-bottom: 6px;
+}
+
+.preview-subtitle {
+    color: #5a6180;
+    font-size: 16px;
+    margin-bottom: 24px;
+}
+
+.preview-frame {
+    border: 1px solid #d6daf3;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #f9fafc;
+    padding: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 680px;
+    margin: 0 auto 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.preview-placeholder {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+}
+
+.preview-image {
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.preview-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #715cff 0%, #8a63ff 100%);
+    color: white;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.preview-play:hover {
+    transform: translate(-50%, -50%) scale(1.08);
+    background: linear-gradient(135deg, #5d49e8 0%, #7e56ff 100%);
+}
+
+.preview-footer {
+    color: #8b8fa3;
+    font-size: 15px;
+    margin-top: 12px;
+}
+
+@media (max-width: 768px) {
+    .preview-section {
+        padding: 48px 16px;
+    }
+
+    .preview-title {
+        font-size: 20px;
+        margin-bottom: 4px;
+    }
+
+    .preview-subtitle {
+        font-size: 14px;
+        margin-bottom: 16px;
+    }
+
+    .preview-frame {
+        padding: 16px;
+        border-radius: 10px;
+        margin-bottom: 12px;
+    }
+
+    .preview-play {
+        width: 56px;
+        height: 56px;
+        font-size: 24px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .preview-footer {
+        font-size: 13px;
+        line-height: 1.5;
+        max-width: 320px;
+        margin: 10px auto 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .preview-title {
+        font-size: 18px;
+    }
+
+    .preview-subtitle {
+        font-size: 13px;
+    }
+
+    .preview-frame {
+        padding: 12px;
+    }
+
+    .preview-play {
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+    }
+
+    .preview-footer {
+        font-size: 12px;
+        max-width: 280px;
+    }
+}
