@@ -19,14 +19,21 @@ export default function TelegramButton() {
 
     const steps = [
         {
-            title: 'Установка и активация виджета',
+            title: 'Установка виджета',
             content: (
                 <div>
-                    <p>Установите виджет в вашу amoCRM и активируйте его в нужных воронках:</p>
+                    <p>Установите виджет в вашу amoCRM одним кликом:</p>
                     <ul className="sc-list">
-                        <li>Нажмите "Установить виджет" и следуйте инструкциям</li>
-                        <li>Виджет автоматически синхронизирует список ваших менеджеров</li>
+                        <li>Нажмите кнопку «Установить виджет»</li>
+                        <li>Авторизуйтесь в amoCRM, если потребуется</li>
+                        <li>Подтвердите установку виджета</li>
+                        <li>Виджет сразу начнёт работать во всех разделах amoCRM, где есть номера телефонов</li>
                     </ul>
+
+                    <div className="sc-note sc-note--green">
+                        <div className="sc-note-title">Важно</div>
+                        Виджет абсолютно бесплатный и не требует никаких дополнительных настроек.
+                    </div>
 
                     <div className="sc-cta" style={{ marginTop: 16 }}>
                         <a
@@ -48,17 +55,17 @@ export default function TelegramButton() {
                     <p>Теперь рядом с каждым номером телефона будет кнопка Telegram:</p>
                     <ul className="sc-list">
                         <li>Кликните по номеру телефона в любой карточке</li>
-                        <li>Выберите кнопку "Написать в Telegram"</li>
+                        <li>Выберите кнопку «Написать в Telegram»</li>
                         <li>Telegram откроется с чатом для этого номера</li>
                     </ul>
 
-                    <div className="sc-note sc-note--green">
-                        <div className="sc-note-title">Результат:</div>
-                        <div>Ваши менеджеры начнут работать в 10 раз быстрее и будут чаще связываться с клиентами!</div>
+                    <div className="sc-note sc-note--purple">
+                        <div className="sc-note-title">Результат</div>
+                        Ваши менеджеры начнут работать в 10 раз быстрее и будут чаще связываться с клиентами!
                     </div>
                 </div>
             ),
-        }
+        },
 
     ];
 
