@@ -237,7 +237,7 @@ export default function WhatsappButton() {
                 title="Посмотрите, как это работает!"
                 subtitle="Просто и понятно - кликнул и уже в чате!"
                 videoUrl=""
-                imageUrl="/widgets/WhatsappButton/preview-example.png"
+                imageUrl="/widgets/WhatsappButton/WhatsApp.png"
             />
 
             <section id="instruction" className="ds-how sc-wrapper" aria-label="Пошаговая настройка виджета">

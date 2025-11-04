@@ -192,3 +192,7 @@ body {
     position: relative;
     z-index: 2;
 }
+
+.preview-play {
+  display: none !important;
+}
