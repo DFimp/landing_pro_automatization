@@ -10,7 +10,7 @@ import ProblemsCard, { type ProblemItem } from '@/shared/ui/ProblemsCard/Problem
 import FeaturesCard, { type FeatureItem } from '@/shared/ui/FeaturesCard/FeaturesCard';
 import PreviewCard from '@/shared/ui/PreviewCard/PreviewCard';
 
-export default function СlosingBan() {
+export default function TimeZone() {
     const { isIframe } = hiddenInIframe();
 
     const handleScrollToInstruction = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -20,15 +20,14 @@ export default function СlosingBan() {
 
     const steps = [
         {
-            title: 'Установка виджета в amoCRM',
+            title: 'Установите виджет в amoCRM',
             content: (
                 <div>
-                    <p>Первым делом установите виджет в вашу amoCRM систему:</p>
+                    <p>Добавьте виджет в вашу CRM-систему:</p>
                     <ul className="sc-list">
-                        <li>Зайдите в amoCRM → Настройки → Виджеты</li>
-                        <li>Найдите виджет «Запрет закрытия задачи без результата» в каталоге</li>
-                        <li>Нажмите «Установить» и подтвердите установку</li>
-                        <li>Виджет автоматически создаст необходимое поле «Не проверять на задачи»</li>
+                        <li>Перейдите в amoCRM → amoМаркет → Виджеты</li>
+                        <li>Найдите «Время клиента» в каталоге</li>
+                        <li>Нажмите «Установить» и подтвердите</li>
                     </ul>
 
                     <div className="sc-cta" style={{ marginTop: 16 }}>
@@ -45,46 +44,42 @@ export default function СlosingBan() {
             ),
         },
         {
-            title: 'Настройка правил',
+            title: 'Готово! Пользуйтесь',
             content: (
                 <div>
-                    <p>Для установки правил закрытия задачи:</p>
+                    <p>Теперь виджет автоматически показывает:</p>
                     <ul className="sc-list">
-                        <li>Перейдите в расширенные настройки виджета</li>
-                        <li>Установите максимальное количество символов</li>
-                        <li>Нажмите на кнопку «Сохранить»</li>
-                    </ul>
-                </div>
-            ),
-        },
-        {
-            title: 'Тестирование и мониторинг',
-            content: (
-                <div>
-                    <p>Создайте тестовую задачу и проверьте работу виджета:</p>
-                    <ul className="sc-list">
-                        <li>Попробуйте закрыть без результата</li>
-                        <li>Убедитесь, что виджет блокирует закрытие</li>
+                        <li>Текущее время клиента</li>
+                        <li>Регион и город</li>
+                        <li>Мобильного оператора</li>
                     </ul>
 
-                    <div className="sc-note sc-note--red" style={{ marginTop: 12 }}>
-                        Если задача закрылась без результата, обратитесь в поддержку
+                    <div className="sc-note sc-note--green">
+                        <div className="sc-note-title">Автоматическая работа</div>
+                        После установки виджет работает автоматически — никаких дополнительных действий не требуется.
+                    </div>
+
+                    <div className="sc-note sc-note--yellow" style={{ marginTop: 12 }}>
+                        <div className="sc-note-title">Результат</div>
+                        Открывайте любую карточку контакта — сразу видна вся информация о времени клиента.
                     </div>
                 </div>
             ),
-        },
+        }
+
+
     ];
 
     return (
         <main className="bg-white">
             <section className="dist-hero" id={isIframe ? 'hidden-in-iframe' : ''}>
                 <div className="at-container">
-                    <div className="dist-pill dist-bleed-left">Запрет закрытия задач без результата для amoCRM</div>
+                    <div className="dist-pill dist-bleed-left">Виджет времени клиента для amoCRM</div>
 
-                    <h1 className="dist-hero-title">Нет задачам без результата!</h1>
+                    <h1 className="dist-hero-title">Звоните в правильное время!</h1>
 
                     <p className="dist-hero-sub">
-                        Виджет не даст закрыть задачу без описания результата. Полная прозрачность работы команды и контроль качества выполнения.
+                        Автоматически определяйте регион и текущее время клиента по номеру телефона. Никогда больше не разбудите клиента в 6 утра или не позвоните в полночь!
                     </p>
 
                     <div className="dist-cta">
@@ -105,8 +100,9 @@ export default function СlosingBan() {
 
             <PreviewCard
                 title="Как это выглядит?"
-                subtitle="После установки виджета при попытке закрыть задачу пустое поле с результатом подсвечивается красным, и кнопка закрытия не срабатывает. Можно задать минимальное количество символов для текста с результатом."
-                videoUrl="/widgets/ClosingBan/closing-ban.gif"
+                subtitle="Виджет автоматически отображается прямо в карточке контакта"
+                videoUrl="/widgets/TimeZone/closing-ban.gif"
+                imageUrl=""
             />
 
             <section id="instruction" className="ds-how sc-wrapper" aria-label="Пошаговая настройка виджета">
