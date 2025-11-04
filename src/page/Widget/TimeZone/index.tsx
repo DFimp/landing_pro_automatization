@@ -101,7 +101,7 @@ export default function TimeZone() {
             <PreviewCard
                 title="Как это выглядит?"
                 subtitle="Виджет автоматически отображается прямо в карточке контакта"
-                videoUrl="/widgets/TimeZone/time-zone-demo.mp4"
+                videoUrl="/widgets/TimeZone/time-zone-demo.gif"
                 imageUrl=""
             />
 
