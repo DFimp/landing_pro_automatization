@@ -245,8 +245,7 @@ export default function TelegramButton() {
             <PreviewCard
                 title="Как это выглядит?"
                 subtitle="Виджет автоматически отображается прямо в карточке контакта"
-                videoUrl=""
-                imageUrl="/widgets/TelegramButton/preview-example.png"
+                imageUrl="/widgets/TelegramButton/telegram.png"
             />
 
             <section id="instruction" className="ds-how sc-wrapper" aria-label="Пошаговая настройка виджета">

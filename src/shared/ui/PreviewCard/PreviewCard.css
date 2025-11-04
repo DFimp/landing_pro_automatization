@@ -237,3 +237,7 @@
     filter: blur(55px);
   }
 }
+
+.preview-image {
+  width: 100%;
+}
