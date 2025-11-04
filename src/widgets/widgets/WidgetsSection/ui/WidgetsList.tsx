@@ -63,6 +63,12 @@ export function WidgetsList() {
           title: `Массовое создание сделок для amoCRM`,  
           link: '/widgets/massive-leads',
           variant: 1
+        },
+        {
+          text: `Виджет не даст закрыть задачу без описания результата. Полная прозрачность работы команды и контроль качества выполнения.`,
+          title: `Запрет закрытия задач без результата`,  
+          link: '/widgets/closing-ban',
+          variant: 1
         }
     ]
 
