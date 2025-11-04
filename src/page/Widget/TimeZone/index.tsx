@@ -101,8 +101,8 @@ export default function TimeZone() {
             <PreviewCard
                 title="Как это выглядит?"
                 subtitle="Виджет автоматически отображается прямо в карточке контакта"
-                videoUrl=""
-                imageUrl="/widgets/TimeZone/preview-example.png"
+                videoUrl="/widgets/TimeZone/time-zone-demo.mp4"
+                imageUrl=""
             />
 
             <section id="instruction" className="ds-how sc-wrapper" aria-label="Пошаговая настройка виджета">
