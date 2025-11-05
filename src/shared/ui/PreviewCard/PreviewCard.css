@@ -242,6 +242,9 @@
   }
 }
 
+.preview-image {
+  width: 100%;
+}
 .preview-video {
   width: 100%;
 }
