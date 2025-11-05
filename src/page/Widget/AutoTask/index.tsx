@@ -5,6 +5,8 @@ import Image from 'next/image';
 import ConsultCard from '@/shared/ui/ConsultCard/ConsultCard';
 import SettingsCard from '@/shared/ui/settings/SettingsCard';
 import { hiddenInIframe } from '@/shared/utils/hiddenInIframe';
+import ProblemsCard, { type ProblemItem } from '@/shared/ui/ProblemsCard/ProblemsCard';
+import FeaturesCard, { type FeatureItem } from '@/shared/ui/FeaturesCard/FeaturesCard';
 
 export default function AutoTask() {
   const { isIframe } = hiddenInIframe();
@@ -95,6 +97,114 @@ export default function AutoTask() {
     },
   ];
 
+  const problems: ProblemItem[] = [
+    {
+      title: 'Сделки «висят» без движения',
+      text: (
+        <>
+          Менеджеры <span className="at-mark">забывают</span> связаться с клиентами, сделки теряются, а вы теряете
+          деньги. Особенно критично для дорогих продуктов.
+        </>
+      ),
+      bgUrl: '/widgets/AutoTask/back_dollars.png',
+    },
+    {
+      title: 'Менеджеры «забывают» работать',
+      text: (
+        <>
+          Без напоминаний сотрудники могут неделями{' '}
+          <span className="at-mark">не&nbsp;контактировать</span> с потенциальными клиентами. Результат — потерянная
+          прибыль.
+        </>
+      ),
+      bgUrl: '/widgets/AutoTask/back_message.png',
+    },
+    {
+      title: 'Низкая конверсия воронки',
+      text: (
+        <>
+          Без системного подхода к работе со сделками ваша конверсия остаётся на уровне 3–5% вместо возможных
+          <span className="at-mark"> 15–20%</span>.
+        </>
+      ),
+      bgUrl: '/widgets/AutoTask/back_analitic.png',
+    },
+    {
+      title: 'Ручной контроль отнимает время',
+      text: (
+        <>
+          Руководители тратят часы на проверку активности менеджеров <span className="at-mark">вместо развития</span>{' '}
+          бизнеса.
+        </>
+      ),
+      bgUrl: '/widgets/AutoTask/back_yeys.png',
+    },
+  ];
+
+
+  const features: FeatureItem[] = [
+    {
+      iconUrl: '/widgets/AutoTask/deployment.png',
+      title: 'Умное отслеживание',
+      text: (
+        <>
+          Виджет мониторит все сделки на выбранных этапах каждые 5 минут.
+          Если сделка долго без движения — автоматически создаётся задача.
+        </>
+      ),
+    },
+    {
+      iconUrl: '/widgets/AutoTask/letter_star.png',
+      title: 'Гибкая настройка',
+      text: (
+        <>
+          Выберите статусы для отслеживания, тип задачи, ответственного и текст.
+          Разные настройки для разных воронок и этапов.
+        </>
+      ),
+    },
+    {
+      iconUrl: '/widgets/AutoTask/lamp.png',
+      title: 'Исключение системных сделок',
+      text: (
+        <>
+          Специальное поле «Не проверять на задачи» позволяет исключить определённые
+          сделки из автоматического контроля.
+        </>
+      ),
+    },
+    {
+      iconUrl: '/widgets/AutoTask/control.png',
+      title: 'Контроль ответственности',
+      text: (
+        <>
+          Задачи создаются для ответственного за сделку или назначаются конкретному
+          менеджеру по вашему выбору.
+        </>
+      ),
+    },
+    {
+      iconUrl: '/widgets/AutoTask/deadline.png',
+      title: 'Постоянная работа',
+      text: (
+        <>
+          Виджет работает 24/7 в фоновом режиме. Проверка каждые 5 минут гарантирует,
+          что ни одна сделка не останется без внимания.
+        </>
+      ),
+    },
+    {
+      iconUrl: '/widgets/AutoTask/analytic.png',
+      title: 'Рост продаж',
+      text: (
+        <>
+          Своевременная работа с клиентами повышает конверсию. Клиенты получают
+          внимание в нужный момент и чаще покупают.
+        </>
+      ),
+    },
+  ];
+
   const scrollerRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
   const startX = useRef(0);
@@ -170,133 +280,18 @@ export default function AutoTask() {
         </div>
       </section>
 
-      <section className="at-problems" id={isIframe ? 'hidden-in-iframe' : ''}>
-        <div className="at-container">
-          <h2 className="at-section-title">Знакомые проблемы?</h2>
-          <div className="at-problems-grid">
-            <div className="at-problem-card at-problem--money">
-              <h3 className="at-problem-title">Сделки «висят» без движения</h3>
-              <p className="at-problem-text">
-                Менеджеры <span className="at-mark">забывают</span> связаться с клиентами, сделки теряются, а вы теряете
-                деньги. Особенно критично для дорогих продуктов.
-              </p>
-            </div>
-            <div className="at-problem-card at-problem--sleep">
-              <h3 className="at-problem-title">Менеджеры «забывают» работать</h3>
-              <p className="at-problem-text">
-                Без напоминаний сотрудники могут неделями{' '}
-                <span className="at-mark">не&nbsp;контактировать</span> с потенциальными клиентами. Результат —
-                потерянная прибыль.
-              </p>
-            </div>
-            <div className="at-problem-card at-problem--chart">
-              <h3 className="at-problem-title">Низкая конверсия воронки</h3>
-              <p className="at-problem-text">
-                Без системного подхода к работе со сделками ваша конверсия остаётся на уровне 3–5% вместо возможных
-                <span className="at-mark"> 15–20%</span>.
-              </p>
-            </div>
-            <div className="at-problem-card at-problem--time">
-              <h3 className="at-problem-title">Ручной контроль отнимает время</h3>
-              <p className="at-problem-text">
-                Руководители тратят часы на проверку активности менеджеров <span className="at-mark">вместо развития</span>{' '}
-                бизнеса.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ProblemsCard
+        title="Проблемы традиционного способа"
+        subtitle="Почему менеджеры теряют время и клиентов при работе с WhatsApp"
+        items={problems}
+      />
 
-      <section className="at-solution" id={isIframe ? 'hidden-in-iframe' : ''}>
-        <div className="at-container">
-          <h2 className="at-section-title">Решение: Автозадачи в сделках</h2>
-          <p style={{ color: '#3c4460', marginBottom: 20 }}>
-            Виджет автоматически следит за всеми сделками и создаёт задачи<br /> для «спящих» клиентов
-          </p>
-
-          <div className="at-features-grid">
-            <div className="at-feature-card">
-              <div className="at-feature-ico" aria-hidden>
-                <Image src="/widgets/AutoTask/deployment.png" alt="" width={40} height={40} />
-              </div>
-              <h3 className="at-feature-title">Умное отслеживание</h3>
-              <p className="at-feature-text">
-                Виджет мониторит все сделки на<br />
-                выбранных этапах каждые<br />
-                5 минут. Если сделка долго без<br />
-                движения — автоматически<br />
-                создаётся задача.
-              </p>
-            </div>
-
-            <div className="at-feature-card">
-              <div className="at-feature-ico" aria-hidden>
-                <Image src="/widgets/AutoTask/letter_star.png" alt="" width={40} height={40} />
-              </div>
-              <h3 className="at-feature-title">Гибкая настройка</h3>
-              <p className="at-feature-text">
-                Выберите статусы для<br />
-                отслеживания, тип задачи,<br />
-                ответственного и текст. Разные<br />
-                настройки для разных воронок<br />
-                и этапов.
-              </p>
-            </div>
-
-            <div className="at-feature-card">
-              <div className="at-feature-ico" aria-hidden>
-                <Image src="/widgets/AutoTask/lamp.png" alt="" width={40} height={40} />
-              </div>
-              <h3 className="at-feature-title">Исключение системных сделок</h3>
-              <p className="at-feature-text">
-                Специальное поле «Не проверять<br />
-                на задачи» позволяет исключить<br />
-                определённые сделки из<br />
-                автоматического контроля.
-              </p>
-            </div>
-
-            <div className="at-feature-card">
-              <div className="at-feature-ico" aria-hidden>
-                <Image src="/widgets/AutoTask/control.png" alt="" width={40} height={40} />
-              </div>
-              <h3 className="at-feature-title">Контроль ответственности</h3>
-              <p className="at-feature-text">
-                Задачи создаются для<br />
-                ответственного за сделку или<br />
-                назначаются конкретному<br />
-                менеджеру по вашему выбору.
-              </p>
-            </div>
-
-            <div className="at-feature-card">
-              <div className="at-feature-ico" aria-hidden>
-                <Image src="/widgets/AutoTask/deadline.png" alt="" width={40} height={40} />
-              </div>
-              <h3 className="at-feature-title">Постоянная работа</h3>
-              <p className="at-feature-text">
-                Виджет работает 24/7 в фоновом<br />
-                режиме. Проверка каждые 5<br />
-                минут гарантирует, что ни одна<br />
-                сделка не останется без<br />
-                внимания.
-              </p>
-            </div>
-
-            <div className="at-feature-card">
-              <div className="at-feature-ico" aria-hidden>
-                <Image src="/widgets/AutoTask/analytic.png" alt="" width={40} height={40} />
-              </div>
-              <h3 className="at-feature-title">Рост продаж</h3>
-              <p className="at-feature-text">
-                Своевременная работа с<br />
-                клиентами повышает конверсию.<br />
-                Клиенты получают внимание в<br />
-                нужный момент и чаще покупают.
-              </p>
-            </div>
-          </div>
-        </div>
+      <section className="at-solution">
+        <FeaturesCard
+          title="Решение: Автозадачи в сделках"
+          subtitle="Виджет автоматически следит за всеми сделками и создаёт задачи для «спящих» клиентов"
+          items={features}
+        />
       </section>
 
       <section className="at-how" id={isIframe ? 'hidden-in-iframe' : ''}>
