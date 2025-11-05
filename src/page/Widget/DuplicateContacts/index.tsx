@@ -27,7 +27,7 @@ export default function DuplicateContacts() {
                     </ul>
 
                     <a
-                        href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=9036b829-2690-470d-9248-e7c4bb3f6699"
+                        href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=e6a1837c-6178-4a0c-9fc0-3e5768595fa2"
                         target="_blank"
                         rel="noopener"
                         className="sc-btn"
@@ -199,7 +199,7 @@ export default function DuplicateContacts() {
                     <div className="tg-cta">
                         <a
                             className="tg-btn-primary"
-                            href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=9036b829-2690-470d-9248-e7c4bb3f6699"
+                            href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=e6a1837c-6178-4a0c-9fc0-3e5768595fa2"
                             target="_blank"
                             rel="noopener"
                         >
@@ -212,7 +212,7 @@ export default function DuplicateContacts() {
                 </div>
             </section>
 
-            <section className="at-problems">
+            <section className="at-problems" id={isIframe ? 'hidden-in-iframe' : ''}>
                 <div className="at-container">
                     <h2 className="at-section-title">Проблемы дублей в amoCRM</h2>
                     <p className="tg-hero-sub" style={{ color: '#5a6180', marginTop: 6 }}>
@@ -258,6 +258,7 @@ export default function DuplicateContacts() {
                 title="Решение всех проблем"
                 subtitle="Умные алгоритмы для автоматического объединения дублей"
                 items={caseItems}
+                id={isIframe ? 'hidden-in-iframe' : ''}
             />
 
 
@@ -271,7 +272,7 @@ export default function DuplicateContacts() {
                 />
             </section>
 
-            <section className="at-more">
+            <section className="at-more" id={isIframe ? 'hidden-in-iframe' : ''}>
                 <div className="at-container">
                     <h2 className="at-section-title">Дополнительные возможности</h2>
                     <p className="at-subtitle">Уникальные функции для максимальной эффективности</p>

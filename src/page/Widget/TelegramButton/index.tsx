@@ -38,7 +38,7 @@ export default function TelegramButton() {
 
                     <div className="sc-cta" style={{ marginTop: 16 }}>
                         <a
-                            href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=9bd50964-9b79-40a5-b786-59c079f7edc8"
+                            href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=26e34407-779d-4b47-bb48-b1ffaed3cc78"
                             target="_blank"
                             rel="noopener"
                             className="dist-btn-primary"
@@ -217,7 +217,7 @@ export default function TelegramButton() {
                     <div className="dist-cta">
                         <a
                             className="dist-btn-primary"
-                            href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=9bd50964-9b79-40a5-b786-59c079f7edc8"
+                            href='https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=26e34407-779d-4b47-bb48-b1ffaed3cc78'
                             target="_blank"
                             rel="noopener"
                         >
@@ -234,18 +234,21 @@ export default function TelegramButton() {
                 title="Проблемы традиционного способа"
                 subtitle="Почему менеджеры теряют время и клиентов при работе с Telegram"
                 items={problems}
+                id={isIframe ? 'hidden-in-iframe' : ''}
             />
 
             <CaseCard
                 title="Решение всех проблем"
                 subtitle="Умные алгоритмы для автоматического объединения дублей"
                 items={caseItems}
+                id={isIframe ? 'hidden-in-iframe' : ''}
             />
 
             <PreviewCard
                 title="Как это выглядит?"
                 subtitle="Виджет автоматически отображается прямо в карточке контакта"
                 imageUrl="/widgets/TelegramButton/telegram.png"
+                id={isIframe ? 'hidden-in-iframe' : ''}
             />
 
             <section id="instruction" className="ds-how sc-wrapper" aria-label="Пошаговая настройка виджета">
@@ -260,6 +263,7 @@ export default function TelegramButton() {
             </section>
 
             <FeaturesCard
+                id={isIframe ? 'hidden-in-iframe' : ''}
                 title="Дополнительные возможности"
                 subtitle="Уникальные функции для максимальной скорости и удобства"
                 items={features}

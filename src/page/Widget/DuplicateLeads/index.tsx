@@ -187,7 +187,7 @@ export default function DuplicateLeads() {
                 </div>
             </section>
 
-            <section className="at-problems">
+            <section className="at-problems" id={isIframe ? 'hidden-in-iframe' : ''}>
                 <div className="at-container">
                     <h2 className="at-section-title">Проблемы дублей в amoCRM</h2>
                     <p className="tg-hero-sub" style={{ color: '#5a6180', marginTop: 6 }}>
@@ -233,6 +233,7 @@ export default function DuplicateLeads() {
                 title="Решение всех проблем"
                 subtitle="Умные алгоритмы для автоматического объединения дублей"
                 items={caseItems}
+                id={isIframe ? 'hidden-in-iframe' : ''}
             />
 
 
@@ -246,7 +247,7 @@ export default function DuplicateLeads() {
                 />
             </section>
 
-            <section className="at-more">
+            <section className="at-more" id={isIframe ? 'hidden-in-iframe' : ''}>
                 <div className="at-container">
                     <h2 className="at-section-title">Дополнительные возможности</h2>
                     <p className="at-subtitle">Уникальные функции для максимальной эффективности</p>

@@ -270,7 +270,7 @@ export default function Distribution() {
         </div>
       </section>
 
-      <section className="dist-problems">
+      <section className="dist-problems" id={isIframe ? 'hidden-in-iframe' : ''}>
         <div className="at-container">
           <h2 className="at-section-title">Проблемы неравномерного распределения</h2>
           <p className="dist-subtitle">Ручное распределение сделок создаёт хаос и несправедливость</p>
@@ -312,6 +312,7 @@ export default function Distribution() {
         title="Решение всех проблем"
         subtitle="Умные алгоритмы для справедливого распределения сделок"
         items={caseItems}
+        id={isIframe ? 'hidden-in-iframe' : ''}
       />
 
       <section id="instruction" className="ds-how sc-wrapper" aria-label="Пошаговая настройка виджета">
