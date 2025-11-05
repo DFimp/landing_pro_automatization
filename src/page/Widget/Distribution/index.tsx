@@ -6,6 +6,7 @@ import SettingsCard from '@/shared/ui/settings/SettingsCard';
 import ConsultCard from '@/shared/ui/ConsultCard/ConsultCard';
 import CaseCard from '@/shared/ui/Case/CaseCard';
 import type { CaseItem } from '@/shared/ui/Case/CaseCard';
+import ProblemsCard, { type ProblemItem } from '@/shared/ui/ProblemsCard/ProblemsCard';
 
 export default function Distribution() {
   const { isIframe } = hiddenInIframe();
@@ -26,7 +27,7 @@ export default function Distribution() {
             <li>Виджет автоматически синхронизирует список ваших менеджеров</li>
           </ul>
 
-          {/* <div className="sc-cta" style={{ marginTop: 16 }}>
+          <div className="sc-cta" style={{ marginTop: 16 }}>
             <a
               href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=9bd50964-9b79-40a5-b786-59c079f7edc8"
               target="_blank"
@@ -35,7 +36,7 @@ export default function Distribution() {
             >
               Установить виджет сейчас
             </a>
-          </div> */}
+          </div>
         </div>
       ),
     },
@@ -240,6 +241,46 @@ export default function Distribution() {
     { type: 'stripe', side: 'right', white: true, text: 'AMO CRM AMO CRM AMO CRM' },
   ];
 
+  const problems: ProblemItem[] = [
+    {
+      title: 'Неравномерная нагрузка',
+      text: (
+        <>
+          Одни менеджеры <span className="at-mark">перегружены</span> сделками, другие{' '}
+          <span className="at-mark">простаивают</span>. Это снижает общую эффективность команды.
+        </>
+      ),
+      bgUrl: '/widgets/Distribution/back_load.png',
+    },
+    {
+      title: 'Потеря горячих лидов',
+      text: (
+        <>
+          Новые заявки попадают к занятым менеджерам и теряются в общем потоке — клиент уходит к конкурентам.
+        </>
+      ),
+      bgUrl: '/widgets/Distribution/back_leads.png',
+    },
+    {
+      title: 'Конфликты в команде',
+      text: (
+        <>
+          Споры о том, кому достались лучшие клиенты, снижают мотивацию и портят атмосферу в коллективе.
+        </>
+      ),
+      bgUrl: '/widgets/Distribution/back_team.png',
+    },
+    {
+      title: 'Снижение конверсии',
+      text: (
+        <>
+          Перегруженные менеджеры не успевают <span className="at-mark">качественно</span> обработать каждую сделку,
+          что ведёт к потере продаж.
+        </>
+      ),
+      bgUrl: '/widgets/Distribution/back_conv.png',
+    },
+  ];
 
   return (
     <main className="bg-white">
@@ -270,43 +311,12 @@ export default function Distribution() {
         </div>
       </section>
 
-      <section className="dist-problems" id={isIframe ? 'hidden-in-iframe' : ''}>
-        <div className="at-container">
-          <h2 className="at-section-title">Проблемы неравномерного распределения</h2>
-          <p className="dist-subtitle">Ручное распределение сделок создаёт хаос и несправедливость</p>
-
-          <div className="dist-problems-grid">
-            <article className="dist-problem-card dist-problem--load">
-              <h3 className="dist-problem-title">Неравномерная нагрузка</h3>
-              <p className="dist-problem-text">
-                Одни менеджеры <span className="dist-mark">перегружены</span> сделками, другие<br />
-                <span className="dist-mark"> простаивают</span>. Это снижает общую эффективность<br />команды.
-              </p>
-            </article>
-
-            <article className="dist-problem-card dist-problem--leads">
-              <h3 className="dist-problem-title">Потеря горячих лидов</h3>
-              <p className="dist-problem-text">
-                Новые заявки попадают к занятым менеджерам и<br />теряются в общем потоке, пока клиент уходит к<br />конкурентам.
-              </p>
-            </article>
-
-            <article className="dist-problem-card dist-problem--team">
-              <h3 className="dist-problem-title">Конфликты в команде</h3>
-              <p className="dist-problem-text">
-                Споры о том, кому достались лучшие клиенты,<br />снижают мотивацию и портят атмосферу в<br />коллективе.
-              </p>
-            </article>
-
-            <article className="dist-problem-card dist-problem--conv">
-              <h3 className="dist-problem-title">Снижение конверсии</h3>
-              <p className="dist-problem-text">
-                Перегруженные менеджеры не успевают<br /> <span className="dist-mark">качественно</span> обработать каждую сделку, что ведёт к<br />потере продаж.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
+      <ProblemsCard
+        title="Проблемы неравномерного распределения"
+        subtitle="Ручное распределение сделок создаёт хаос и несправедливость"
+        items={problems}
+        id={isIframe ? 'hidden-in-iframe' : ''}
+      />
 
       <CaseCard
         title="Решение всех проблем"
