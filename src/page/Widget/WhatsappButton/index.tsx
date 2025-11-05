@@ -10,7 +10,7 @@ import ProblemsCard, { type ProblemItem } from '@/shared/ui/ProblemsCard/Problem
 import FeaturesCard, { type FeatureItem } from '@/shared/ui/FeaturesCard/FeaturesCard';
 import PreviewCard from '@/shared/ui/PreviewCard/PreviewCard';
 
-export default function TelegramButton() {
+export default function WhatsappButton() {
     const { isIframe } = hiddenInIframe();
 
     const handleScrollToInstruction = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -53,21 +53,20 @@ export default function TelegramButton() {
             title: 'Готово! Пользуйтесь',
             content: (
                 <div>
-                    <p>Теперь рядом с каждым номером телефона будет кнопка Telegram:</p>
+                    <p>Теперь рядом с каждым номером телефона будет кнопка WhatsApp:</p>
                     <ul className="sc-list">
                         <li>Кликните по номеру телефона в любой карточке</li>
-                        <li>Выберите кнопку «Написать в Telegram»</li>
-                        <li>Telegram откроется с чатом для этого номера</li>
+                        <li>Выберите кнопку «Написать в WhatsApp»</li>
+                        <li>WhatsApp откроется с чатом для этого номера</li>
                     </ul>
 
                     <div className="sc-note sc-note--purple">
                         <div className="sc-note-title">Результат</div>
-                        Ваши менеджеры начнут работать в 10 раз быстрее и будут чаще связываться с клиентами!
+                        Ваши менеджеры будут связываться с клиентами мгновенно и закрывать больше сделок!
                     </div>
                 </div>
             ),
-        },
-
+        }
     ];
 
     const caseItems: CaseItem[] = [
@@ -124,79 +123,71 @@ export default function TelegramButton() {
 
     const problems: ProblemItem[] = [
         {
-            // 1
             title: 'Долгий процесс',
             text: (
                 <>
-                    Копировать номер → Открыть Telegram → Найти контакт → Написать сообщение.
-                    <span className="at-mark"> Минимум 30–60 секунд </span> на каждого клиента.
+                    Копировать номер → Открыть WhatsApp → Найти контакт → Начать чат. До минуты на каждого клиента<span className="at-mark">вместо 1 секунды</span>
                 </>
             ),
-            bgUrl: '/widgets/TelegramButton/back_wheel.png',
+            bgUrl: '/widgets/WhatsappButton/back_timer.png',
         },
         {
-            // 2
-            title: 'Ошибки в номерах',
+            title: 'Постоянные переключения',
             text: (
                 <>
-                    Опечатки при копировании приводят к тому, что сообщения не доходят до клиента
-                    или идут не тому человеку.
+                    Туда-сюда между amoCRM и WhatsApp сбивает концентрацию и замедляет работу менеджеров
                 </>
             ),
-            bgUrl: '/widgets/TelegramButton/back_what.png',
+            bgUrl: '/widgets/WhatsappButton/back_switch.png',
         },
         {
-            // 3
-            title: 'Потеря концентрации',
+            title: 'Ошибки при вводе',
             text: (
                 <>
-                    <span className="at-mark">Постоянное</span> переключение между amoCRM и Telegram
-                    сбивает с рабочего ритма и снижает продуктивность.
+                    Опечатки в номере приводят к тому, что сообщения идут не тому человеку или вообще не доходят
                 </>
             ),
-            bgUrl: '/widgets/TelegramButton/back_electricity.png',
+            bgUrl: '/widgets/WhatsappButton/back_cross.png',
         },
         {
-            // 4
             title: 'Упущенные продажи',
             text: (
                 <>
-                    <span className="at-mark">Пока менеджер ищет</span> контакт в Telegram, клиент может
-                    передумать или обратиться к конкурентам.
+                    <span className="at-mark">Клиенты не ждут</span> - пока вы ищете их в WhatsApp, они могут уйти к более быстрым конкурентам.
                 </>
             ),
-            bgUrl: '/widgets/TelegramButton/back_basket.png',
+            bgUrl: '/widgets/WhatsappButton/back_basket.png',
         },
     ];
 
     const features: FeatureItem[] = [
         {
-            iconUrl: '/widgets/TelegramButton/group.png',
+            iconUrl: '/widgets/WhatsappButton/group.png',
             title: 'Поддержка всех номеров',
             text: <>Работает с российскими и международными номерами в любом формате записи</>,
         },
         {
-            iconUrl: '/widgets/TelegramButton/sort.png',
+            iconUrl: '/widgets/WhatsappButton/sort.png',
             title: 'Автоматическое форматирование',
-            text: <>Виджет сам приводит номер к нужному формату для Telegram, исключая ошибки</>,
+            text: <>Виджет сам приводит номер к нужному формату для WhatsApp, исключая ошибки</>,
         },
         {
-            iconUrl: '/widgets/TelegramButton/deadline.png',
+            iconUrl: '/widgets/WhatsappButton/deadline.png',
             title: 'Мгновенная работа',
             text: <>Никаких задержек - кнопка работает сразу после клика по номеру телефона</>,
         },
         {
-            iconUrl: '/widgets/TelegramButton/mobile.png',
+            iconUrl: '/widgets/WhatsappButton/mobile.png',
             title: 'Веб и мобильные версии',
-            text: <>Корректно открывает Telegram Web в браузере или мобильное приложение на устройстве</>,
+            text: <>Корректно открывает WhatsApp Web в браузере или мобильное приложение на устройстве</>,
         },
         {
-            iconUrl: '/widgets/TelegramButton/target.png',
+            iconUrl: '/widgets/WhatsappButton/target.png',
             title: 'Точное попадание',
             text: <>Всегда открывает чат именно с нужным контактом, даже если номер записан в нестандартном формате</>,
         },
         {
-            iconUrl: '/widgets/TelegramButton/free.png',
+            iconUrl: '/widgets/WhatsappButton/free.png',
             title: 'Полностью бесплатно',
             text: <>Никаких подписок, ограничений по количеству использований или скрытых платежей</>,
         },
@@ -206,12 +197,12 @@ export default function TelegramButton() {
         <main className="bg-white">
             <section className="dist-hero" id={isIframe ? 'hidden-in-iframe' : ''}>
                 <div className="at-container">
-                    <div className="dist-pill dist-bleed-left">Мгновенный переход в Telegram из amoCRM</div>
+                    <div className="dist-pill dist-bleed-left">Мгновенный переход в WhatsApp из amoCRM</div>
 
-                    <h1 className="dist-hero-title">Написать в Telegram за 1 клик?</h1>
+                    <h1 className="dist-hero-title">Написать в WhatsApp за 1 клик?</h1>
 
                     <p className="dist-hero-sub">
-                        Превратите каждый номер телефона в прямую ссылку на чат с клиентом в Telegram. Больше никакого копирования номеров и поиска контактов!
+                        Превратите каждый номер телефона в прямую ссылку на чат с клиентом в WhatsApp. Больше никакого копирования номеров и поиска контактов!
                     </p>
 
                     <div className="dist-cta">
@@ -232,7 +223,7 @@ export default function TelegramButton() {
 
             <ProblemsCard
                 title="Проблемы традиционного способа"
-                subtitle="Почему менеджеры теряют время и клиентов при работе с Telegram"
+                subtitle="Почему менеджеры теряют время и клиентов при работе с WhatsApp"
                 items={problems}
             />
 
@@ -243,9 +234,10 @@ export default function TelegramButton() {
             />
 
             <PreviewCard
-                title="Как это выглядит?"
-                subtitle="Виджет автоматически отображается прямо в карточке контакта"
-                imageUrl="/widgets/TelegramButton/telegram.png"
+                title="Посмотрите, как это работает!"
+                subtitle="Просто и понятно - кликнул и уже в чате!"
+                videoUrl=""
+                imageUrl="/widgets/WhatsappButton/WhatsApp.png"
             />
 
             <section id="instruction" className="ds-how sc-wrapper" aria-label="Пошаговая настройка виджета">

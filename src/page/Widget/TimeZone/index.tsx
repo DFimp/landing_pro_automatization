@@ -74,7 +74,7 @@ export default function TimeZone() {
         <main className="bg-white">
             <section className="dist-hero" id={isIframe ? 'hidden-in-iframe' : ''}>
                 <div className="at-container">
-                    <div className="dist-pill dist-bleed-left">Виджет времени клиента для amoCRM</div>
+                    <div className="dist-pill dist-bleed-left">Время клиента для amoCRM</div>
 
                     <h1 className="dist-hero-title">Звоните в правильное время!</h1>
 
@@ -101,7 +101,7 @@ export default function TimeZone() {
             <PreviewCard
                 title="Как это выглядит?"
                 subtitle="Виджет автоматически отображается прямо в карточке контакта"
-                videoUrl="/widgets/TimeZone/closing-ban.gif"
+                videoUrl="/widgets/TimeZone/time-zone-demo.gif"
                 imageUrl=""
             />
 
@@ -112,7 +112,7 @@ export default function TimeZone() {
                     subtitle="Следуйте простым шагам для быстрой настройки:"
                     steps={steps}
                     showVideo
-                    videoId='b9b542ff41657b10b50987b118fe3920'
+                    // videoId='b9b542ff41657b10b50987b118fe3920'
                 />
             </section>
 

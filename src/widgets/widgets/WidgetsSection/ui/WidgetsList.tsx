@@ -6,7 +6,7 @@ export function WidgetsList() {
           text: `Получайте мгновенные уведомления в Telegram
                 и запускайте SalesBot одним нажатием. Полная автоматизация коммуникаций с клиентами прямо 
                 в мессенджере.`,
-          title: `Telegram Виджет для amoCRM`,
+          title: `Телеграм уведомления для amoCRM`,
           link: '/widgets/telegram-notify',
           variant: 2
         },
@@ -33,7 +33,7 @@ export function WidgetsList() {
           text: `Автоматически определяйте регион и текущее время клиента по номеру телефона. Никогда больше 
 не разбудите клиента в 6 утра или не позвоните 
 в полночь!`,
-          title: `Виджет времени клиента для amoCRM`,  
+          title: `Время клиента для amoCRM`,  
           link: '/widgets/time-zone',
           variant: 4
         },

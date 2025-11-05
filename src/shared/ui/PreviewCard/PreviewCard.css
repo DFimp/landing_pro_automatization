@@ -1,131 +1,131 @@
 .preview-section {
-    position: relative;
-    background: #fff;
-    padding: 64px 0;
-    text-align: left;
-    overflow: hidden;
-    z-index: 0;
+  position: relative;
+  background: #fff;
+  padding: 64px 0;
+  text-align: left;
+  overflow: hidden;
+  z-index: 0;
 }
 
 .preview-section .at-container {
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
 }
 
 .preview-section::before {
-    content: "";
-    position: absolute;
-    top: -140px;
-    bottom: -140px;
-    left: calc(50% - 60vw);
-    width: 680px;
-    background: url("/widgets/TelegramButton/Subtract.png") no-repeat left center;
-    background-size: 520px auto;
-    z-index: 1;
-    pointer-events: none;
+  content: "";
+  position: absolute;
+  top: -140px;
+  bottom: -140px;
+  left: calc(50% - 60vw);
+  width: 680px;
+  background: url("/widgets/TelegramButton/Subtract.png") no-repeat left center;
+  background-size: 520px auto;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .preview-section::after {
-    content: "";
-    position: absolute;
-    left: calc(50% - 55vw - 260px);
-    top: 50%;
-    width: 1020px;
-    height: 820px;
-    transform: translateY(-50%);
-    z-index: 0;
-    pointer-events: none;
-    filter: blur(70px);
-    background:
-        radial-gradient(closest-side at 58% 50%, rgba(60, 14, 224, 0.85), transparent 70%),
-        radial-gradient(closest-side at 60% 52%, rgba(16, 0, 241, 0.82), transparent 90%);
+  content: "";
+  position: absolute;
+  left: calc(50% - 55vw - 260px);
+  top: 50%;
+  width: 1020px;
+  height: 820px;
+  transform: translateY(-50%);
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(70px);
+  background:
+    radial-gradient(closest-side at 58% 50%, rgba(60, 14, 224, 0.85), transparent 70%),
+    radial-gradient(closest-side at 60% 52%, rgba(16, 0, 241, 0.82), transparent 90%);
 }
 
 .preview-title {
-    font-size: clamp(22px, 3.2vw, 32px);
-    font-weight: 700;
-    color: #0f1427;
-    margin-bottom: 6px;
+  font-size: clamp(22px, 3.2vw, 32px);
+  font-weight: 700;
+  color: #0f1427;
+  margin-bottom: 6px;
 }
 
 .preview-subtitle {
-    color: var(--muted, #5a6180);
-    margin: 4px 0 18px;
-    font-size: 16px;
-    line-height: 1.6;
+  color: var(--muted, #5a6180);
+  margin: 4px 0 18px;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .preview-frame {
-    border: 1px solid #d6daf3;
-    border-radius: 14px;
-    overflow: hidden;
-    background: #f9fafc;
-    padding: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-    height: 700px;
+  border: 1px solid #d6daf3;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #f9fafc;
+  padding: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  height: 700px;
 }
 
 .preview-placeholder {
-    position: relative;
-    display: inline-block;
-    max-width: 100%;
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
 }
 
 .preview-image {
-    border-radius: 10px;
-    width: 100%;
-    height: auto;
-    display: block;
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .preview-play {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #715cff 0%, #8a63ff 100%);
-    color: #fff;
-    font-size: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
-    transition: transform 0.25s ease, background 0.25s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #715cff 0%, #8a63ff 100%);
+  color: #fff;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: transform 0.25s ease, background 0.25s ease;
 }
 
 .preview-play:hover {
-    transform: translate(-50%, -50%) scale(1.08);
-    background: linear-gradient(135deg, #5d49e8 0%, #7e56ff 100%);
+  transform: translate(-50%, -50%) scale(1.08);
+  background: linear-gradient(135deg, #5d49e8 0%, #7e56ff 100%);
 }
 
 .preview-footer {
-    color: #8b8fa3;
-    font-size: 15px;
-    margin-top: 12px;
-    text-align: center;
+  color: #8b8fa3;
+  font-size: 15px;
+  margin-top: 12px;
+  text-align: center;
 }
 
 @media (max-width: 1200px) {
-    .preview-section::before {
-        left: calc(50% - 55vw);
-        width: 600px;
-        background-size: 480px auto;
-    }
+  .preview-section::before {
+    left: calc(50% - 55vw);
+    width: 600px;
+    background-size: 480px auto;
+  }
 
-    .preview-section::after {
-        left: calc(50% - 58vw - 220px);
-        width: 900px;
-        height: 720px;
-        filter: blur(60px);
-    }
+  .preview-section::after {
+    left: calc(50% - 58vw - 220px);
+    width: 900px;
+    height: 720px;
+    filter: blur(60px);
+  }
 }
 
 @media (max-width: 768px) {
@@ -139,6 +139,7 @@
     margin: 0 auto 8px;
     max-width: 92%;
   }
+
   .preview-subtitle {
     margin: 0 auto 18px;
     font-size: 15px;
@@ -165,7 +166,7 @@
     width: 56px;
     height: 56px;
     font-size: 24px;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.22);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
   }
 
   .preview-footer {
@@ -184,6 +185,7 @@
     width: 420px;
     background-size: 360px auto;
   }
+
   .preview-section::after {
     left: calc(50% - 78vw - 140px);
     width: 720px;
@@ -201,6 +203,7 @@
     font-size: clamp(20px, 7.5vw, 28px);
     margin-bottom: 6px;
   }
+
   .preview-subtitle {
     font-size: 14px;
     margin-bottom: 16px;
@@ -230,6 +233,7 @@
     width: 360px;
     background-size: 320px auto;
   }
+
   .preview-section::after {
     left: calc(50% - 90vw - 120px);
     width: 620px;
@@ -239,6 +243,9 @@
 }
 
 .preview-image {
+  width: 100%;
+}
+.preview-video {
   width: 100%;
 }
 
