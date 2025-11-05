@@ -112,7 +112,7 @@ export default function TimeZone() {
                     subtitle="Следуйте простым шагам для быстрой настройки:"
                     steps={steps}
                     showVideo
-                    videoId='b9b542ff41657b10b50987b118fe3920'
+                    // videoId='b9b542ff41657b10b50987b118fe3920'
                 />
             </section>
 
