@@ -20,8 +20,8 @@ export const Footer = () => {
     {
       title: "Виджеты",
       items: [
-        { label: "Телеграм виджет", href: "/widgets/telegram-notify" },
-        { label: "Автозадачи для amoCRM", href: "/widgets/auto-tasks" },
+        { label: "Телеграм уведомления", href: "/widgets/telegram-notify" },
+        { label: "Умное распределение сделок", href: "/widgets/lead-distribution" },
         { label: "Объединение дублей сделок", href: "/widgets/duplicate-leads" },
         { label: "Объединение дублей контактов", href: "/widgets/duplicate-contacts" },
       ],
@@ -29,10 +29,11 @@ export const Footer = () => {
     {
       title: "",
       items: [
-        { label: "Виджет времени клиента", href: "/widgets/time-zone" },
-        { label: "Умное распределение сделок", href: "/widgets/lead-distribution" },
+        { label: "Время клиента", href: "/widgets/time-zone" },
+        { label: "Автозадачи", href: "/widgets/auto-tasks" },
         { label: "Переход в Telegram", href: "/widgets/telegram-button" },
         { label: "Переход в WhatsApp", href: "/widgets/whatsapp-button" },
+        { label: "Массовое создание сделок", href: "/widgets/massive-leads" },
       ],
     },
   ];
