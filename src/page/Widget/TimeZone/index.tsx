@@ -103,6 +103,7 @@ export default function TimeZone() {
                 subtitle="Виджет автоматически отображается прямо в карточке контакта"
                 videoUrl="/widgets/TimeZone/time-zone-demo.gif"
                 imageUrl=""
+                id={isIframe ? 'hidden-in-iframe' : ''}
             />
 
             <section id="instruction" className="ds-how sc-wrapper" aria-label="Пошаговая настройка виджета">

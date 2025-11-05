@@ -234,18 +234,21 @@ export default function TelegramButton() {
                 title="Проблемы традиционного способа"
                 subtitle="Почему менеджеры теряют время и клиентов при работе с Telegram"
                 items={problems}
+                id={isIframe ? 'hidden-in-iframe' : ''}
             />
 
             <CaseCard
                 title="Решение всех проблем"
                 subtitle="Умные алгоритмы для автоматического объединения дублей"
                 items={caseItems}
+                id={isIframe ? 'hidden-in-iframe' : ''}
             />
 
             <PreviewCard
                 title="Как это выглядит?"
                 subtitle="Виджет автоматически отображается прямо в карточке контакта"
                 imageUrl="/widgets/TelegramButton/telegram.png"
+                id={isIframe ? 'hidden-in-iframe' : ''}
             />
 
             <section id="instruction" className="ds-how sc-wrapper" aria-label="Пошаговая настройка виджета">
@@ -260,6 +263,7 @@ export default function TelegramButton() {
             </section>
 
             <FeaturesCard
+                id={isIframe ? 'hidden-in-iframe' : ''}
                 title="Дополнительные возможности"
                 subtitle="Уникальные функции для максимальной скорости и удобства"
                 items={features}

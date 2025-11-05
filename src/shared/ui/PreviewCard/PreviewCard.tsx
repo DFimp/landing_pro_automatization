@@ -8,16 +8,17 @@ interface PreviewCardProps {
   subtitle: string;
   videoUrl?: string;   // mp4/webm или embed-ссылка YouTube/Vimeo
   imageUrl?: string;   // постер или GIF
+  id?: string
 }
 
-const PreviewCard: React.FC<PreviewCardProps> = ({ title, subtitle, videoUrl, imageUrl }) => {
+const PreviewCard: React.FC<PreviewCardProps> = ({ title, subtitle, videoUrl, imageUrl, id }) => {
   const isYouTubeOrVimeo = !!videoUrl && /(youtube\.com|youtu\.be|vimeo\.com)/i.test(videoUrl);
   const isGif = !!(videoUrl && videoUrl.toLowerCase().endsWith('.gif'));
   const isMp4 = !!(videoUrl && videoUrl.toLowerCase().endsWith('.mp4'));
   const isWebm = !!(videoUrl && videoUrl.toLowerCase().endsWith('.webm'));
 
   return (
-    <section className="preview-section">
+    <section id={id} className="preview-section">
       <div className="at-container">
         <h2 className="preview-title">{title}</h2>
         <p className="preview-subtitle">{subtitle}</p>

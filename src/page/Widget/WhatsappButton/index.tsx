@@ -225,12 +225,14 @@ export default function WhatsappButton() {
                 title="Проблемы традиционного способа"
                 subtitle="Почему менеджеры теряют время и клиентов при работе с WhatsApp"
                 items={problems}
+                id={isIframe ? 'hidden-in-iframe' : ''}
             />
 
             <CaseCard
                 title="Решение всех проблем"
                 subtitle="Умные алгоритмы для автоматического объединения дублей"
                 items={caseItems}
+                id={isIframe ? 'hidden-in-iframe' : ''}
             />
 
             <PreviewCard
@@ -238,6 +240,7 @@ export default function WhatsappButton() {
                 subtitle="Просто и понятно - кликнул и уже в чате!"
                 videoUrl=""
                 imageUrl="/widgets/WhatsappButton/WhatsApp.png"
+                id={isIframe ? 'hidden-in-iframe' : ''}
             />
 
             <section id="instruction" className="ds-how sc-wrapper" aria-label="Пошаговая настройка виджета">
@@ -255,6 +258,7 @@ export default function WhatsappButton() {
                 title="Дополнительные возможности"
                 subtitle="Уникальные функции для максимальной скорости и удобства"
                 items={features}
+                id={isIframe ? 'hidden-in-iframe' : ''}
             />
 
             <section className="ds-prefooter" id={isIframe ? 'hidden-in-iframe' : ''}>
