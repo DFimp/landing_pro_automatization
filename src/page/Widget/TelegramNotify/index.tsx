@@ -241,12 +241,6 @@ export default function TelegramNotify() {
                 </div>
             </section>
 
-            {/* <section className="at-features-overlap"><FeaturesCard
-                title=""
-                subtitle=""
-                items={features}
-            /></section> */}
-
             <section className="at-container" id={isIframe ? 'hidden-in-iframe' : ''}>
                 <div className="at-features-grid">
                     <div className="at-feature-card">
