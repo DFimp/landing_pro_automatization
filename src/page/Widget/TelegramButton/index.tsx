@@ -38,7 +38,7 @@ export default function TelegramButton() {
 
                     <div className="sc-cta" style={{ marginTop: 16 }}>
                         <a
-                            href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=9bd50964-9b79-40a5-b786-59c079f7edc8"
+                            href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=26e34407-779d-4b47-bb48-b1ffaed3cc78"
                             target="_blank"
                             rel="noopener"
                             className="dist-btn-primary"
@@ -217,7 +217,7 @@ export default function TelegramButton() {
                     <div className="dist-cta">
                         <a
                             className="dist-btn-primary"
-                            href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=9bd50964-9b79-40a5-b786-59c079f7edc8"
+                            href='https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=26e34407-779d-4b47-bb48-b1ffaed3cc78'
                             target="_blank"
                             rel="noopener"
                         >

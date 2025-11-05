@@ -85,7 +85,7 @@ export default function TimeZone() {
                     <div className="dist-cta">
                         <a
                             className="dist-btn-primary"
-                            href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=9bd50964-9b79-40a5-b786-59c079f7edc8"
+                            href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=25f94eb8-f182-4296-b86f-da4e26854b47"
                             target="_blank"
                             rel="noopener"
                         >
