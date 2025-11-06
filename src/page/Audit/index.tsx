@@ -8,7 +8,7 @@ import {
 
 export default function Audit() {
   return (
-    <main id="analytics" className="sm:pb-20 sm:pt-20">
+    <main className="sm:pb-20 sm:pt-20">
       <HeroSection />
       <StepsSection />
       <ResultSection /> 
