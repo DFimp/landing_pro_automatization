@@ -83,7 +83,7 @@ export default function TimeZone() {
       <section className="dist-hero" id={isIframe ? "hidden-in-iframe" : ""}>
         <div className="at-container">
           <div className="dist-pill dist-bleed-left">
-            Время клиента для amoCRM
+            Регион по телефону для amoCRM
           </div>
 
           <h1 className="dist-hero-title">Звоните в правильное время!</h1>

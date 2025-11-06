@@ -421,7 +421,7 @@ export default function Distribution() {
       <section className="dist-hero" id={isIframe ? "hidden-in-iframe" : ""}>
         <div className="at-container">
           <div className="dist-pill dist-bleed-left">
-            Умное распределение сделок для amoCRM
+            Распределение сделок для amoCRM
           </div>
 
           <h1 className="dist-hero-title">

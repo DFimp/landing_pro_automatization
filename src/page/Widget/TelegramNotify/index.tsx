@@ -296,7 +296,7 @@ export default function TelegramNotify() {
       <section className="at-hero" id={isIframe ? "hidden-in-iframe" : ""}>
         <div className="at-container">
           <div className="at-pill at-bleed-left">
-            Виджет Телеграм уведомления для amoCRM
+            Телеграм уведомления для amoCRM
           </div>
 
           <h1 className="at-hero-title">Готовы быть в курсе событий?</h1>

@@ -7,7 +7,7 @@ import {
 
 export default function License() {
   return (
-    <main id="Widgets" className="overflow-hidden">
+    <main className="overflow-hidden">
       <WidgetsBonusesSection></WidgetsBonusesSection>
       <WidgetsWidgetsSection></WidgetsWidgetsSection>
       <WidgetsSupportSection></WidgetsSupportSection>

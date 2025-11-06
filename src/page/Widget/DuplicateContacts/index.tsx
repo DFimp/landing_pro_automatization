@@ -377,7 +377,7 @@ export default function DuplicateContacts() {
       <section className="tg-hero" id={isIframe ? "hidden-in-iframe" : ""}>
         <div className="tg-container">
           <div className="tg-pill tg-bleed-left">
-            Объединение дублей контактов для amoCRM
+            Дубли контактов (объединение дублей контактов) для amoCRM
           </div>
 
           <h1 className="tg-hero-title">Избавиться от дублей контактов?</h1>

@@ -354,7 +354,7 @@ export default function DuplicateLeads() {
       <section className="tg-hero" id={isIframe ? "hidden-in-iframe" : ""}>
         <div className="tg-container">
           <div className="tg-pill tg-bleed-left">
-            Объединение дублей сделок для amoCRM
+            Дубли сделок (объединение дублей сделок) для amoCRM
           </div>
 
           <h1 className="tg-hero-title">Навести порядок в сделках?</h1>

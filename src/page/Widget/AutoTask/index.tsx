@@ -263,7 +263,7 @@ export default function AutoTask() {
     <main className="bg-white">
       <section className="at-hero" id={isIframe ? "hidden-in-iframe" : ""}>
         <div className="at-container">
-          <div className="at-pill at-bleed-left">Автозадачи для amoCRM</div>
+          <div className="at-pill at-bleed-left">Автозадачи в сделках для amoCRM</div>
 
           <h1 className="at-hero-title">Никогда не забывайте о сделках!</h1>
 
