@@ -227,7 +227,7 @@ export default function TelegramNotify() {
 
                     <div className="at-cta">
                         <a
-                            className="tg-btn-primary"
+                            className="at-btn-primary"
                             href='https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=c31be896-9148-4ec1-9d7a-2aba7b16906e'
                             target="_blank"
                             rel="noopener"
