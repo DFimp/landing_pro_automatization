@@ -1,75 +1,38 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import HeaderNav from "@/widgets/header/ui/HeaderNav";
-import Button from "@/shared/ui/button/Button";
 import Link from "next/link";
-import { useState } from "react";
-import ConsultationModal from "@/features/consultation/ConsultationModal";
-import { hiddenInIframe } from "@/shared/utils/hiddenInIframe";
+import HeaderActions from "./ui/HeaderActions";
+import MobileMenuWrapper from "./ui/MobileMenuWrapper";
 
-import MobileMenu from "./ui/MobileMenu";
-import {detectMobile} from '@/shared/utils/detectMobile'
+type HeaderProps = {
+  isIframe?: boolean;
+};
 
-const Header = () => {
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const { isIframe } = hiddenInIframe();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
-  const { isMobileView } = detectMobile()
+const Header = ({ isIframe = false }: HeaderProps) => {
+  if (isIframe) return null;
 
-  return !isMobileView ? (
-    <header id={isIframe ? "hidden-in-iframe" : ""}>
-      <div className="header__container container flex justify-between items-center">
-        <div className="header__logo">
-          <Link href="/">
-            <Image
-              className="cursor-pointer"
-              src="/logoAndText.png"
-              alt="Про автоматизацию"
-              width={260}
-              height={80}
-            />
-          </Link>
-        </div>
-
-        <div className="flex items-center gap-5">
-          <HeaderNav />
-
-          <div className="flex-shrink-0"> 
-            <Button className="text-h8 font-medium" text="КОНСУЛЬТАЦИЯ" onClick={() => setIsModalOpen(true)} />
-          </div>
-        </div>
+  return (
+    <header className="container flex justify-between items-center px-4 sm:px-0 !py-4 sm:!py-0 sticky sm:static top-0 sm:top-auto z-100 sm:z-auto bg-white sm:bg-transparent">
+      <div className="header__logo">
+        <Link href="/">
+          <Image
+            src="/logoAndText.png"
+            alt="Про автоматизацию"
+            width={195}
+            height={60}
+            className="sm:w-[260px] sm:h-[80px]"
+          />
+        </Link>
       </div>
 
-      <ConsultationModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
-    </header>
-  ) : (
-    <header className="sticky z-100 top-0 bg-white px-4 py-4 flex justify-between align-center" id={isIframe ? "hidden-in-iframe" : ""}>
-      <Link href="/">
-            <Image
-              className="cursor-pointer"
-              src="/logoAndText.png"
-              alt="Про автоматизацию"
-              width={195}
-              height={60}
-            />
-          </Link>
-      <button className="" onClick={() => setIsMobileMenuOpen(true)}>
-                          <Image
-                              src="/menu.svg"
-                              alt="Кнопка"
-                              width={20}
-                              height={20}
-                          />
-                      </button>
-                      <MobileMenu setConsultationModalIsOpen={setIsModalOpen} isOpen={isMobileMenuOpen} setIsOpen={setIsMobileMenuOpen}></MobileMenu>
-    <ConsultationModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
+      <div className="hidden sm:flex items-center gap-5">
+        <HeaderNav />
+        <HeaderActions />
+      </div>
+
+      <MobileMenuWrapper />
     </header>
   );
 };
