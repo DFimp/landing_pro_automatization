@@ -105,7 +105,7 @@ export const Footer = () => {
         <div className="mx-auto max-w-[1200px] px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-[14px] text-[#4b4b4b]">
           <div>ИП Горбань М.О. (ИНН 262609479757)</div>
           <div className="flex items-center gap-6">
-            <Link href="/privacy-policy" className="hover:underline">
+            <Link href="/privacy" className="hover:underline">
               Политика конфиденциальности
             </Link>
             <Link
