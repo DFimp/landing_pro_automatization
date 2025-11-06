@@ -1,8 +1,8 @@
-'use client'
+"use client";
 
 import { useState, useEffect } from "react";
 
-export function hiddenInIframe() {
+export function useHiddenInIframe() {
   const [isIframe, setIsIframe] = useState<boolean>(false);
 
   useEffect(() => {
@@ -15,5 +15,5 @@ export function hiddenInIframe() {
 
   return {
     isIframe,
-  }
+  };
 }

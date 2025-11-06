@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { SITE_URL, ROUTES, WIDGET_ROUTES } from '@/shared/constants/routes';
+import { SITE_URL, ROUTES, WIDGET_ROUTES, ARTICLES_ROUTES } from '@/shared/constants/routes';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date();
@@ -30,12 +30,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.9,
     },
-    {
-      url: `${SITE_URL}${ROUTES.ARTICLES}`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
+    // {
+    //   url: `${SITE_URL}${ROUTES.ARTICLES}`,
+    //   lastModified: currentDate,
+    //   changeFrequency: 'monthly',
+    //   priority: 0.9,
+    // },
     {
       url: `${SITE_URL}${ROUTES.LICENSE}`,
       lastModified: currentDate,
@@ -54,5 +54,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   );
 
-  return [...mainPages, ...widgetPages];
+  // Статьи
+  const articlesPages: MetadataRoute.Sitemap = Object.values(ARTICLES_ROUTES).map(
+    (route) => ({
+      url: `${SITE_URL}${route}`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })
+  );
+
+  return [...mainPages, ...widgetPages, ...articlesPages];
 }

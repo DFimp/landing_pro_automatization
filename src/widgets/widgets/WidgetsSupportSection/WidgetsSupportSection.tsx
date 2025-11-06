@@ -1,91 +1,63 @@
-"use client"
-
 import Button from "@/shared/ui/button/Button";
 import SupportChips from "./ui/SupportChips";
 import Image from "next/image";
-import { detectMobile } from "@/shared/utils/detectMobile";
-
 
 export function WidgetsSupportSection() {
-    const { isMobileView } = detectMobile()
-
-    const scrollToForm = () => {
-        const target = document.querySelector('#special_offer_calculator');
-        if (target) {
-            target.scrollIntoView({ block: 'center', behavior: 'smooth' });
-        }
-    }
-    return (
-        <>
-        <div className='container sm:mt-[86px]! mt-[40px]!'>
-            <h2 className="sm:text-[32px] text-[20px] font-semibold mb-[24px]">
-            Поддержка всегда на связи
-            </h2>
-            <p className="sm:text-[20px] text-[14px] font-normal mb-[35px]">
-                Мы предоставляем персональную поддержку по всем вопросам, связанным с amoCRM: от технических неполадок до оптимизации процессов. Отвечаем сотрудникам, помогаем улучшать работу и решаем любые задачи. 
-                <br/><br/>В тариф включено 2 часа сопровождения в месяц, при необходимости объём можно увеличить.
-            </p>
-           {isMobileView ? 
-                <div className="border border-[#3760E7] rounded-[20px] py-[21px] px-[16px] font-semibold">
-                    <div className="flex gap-[10px] mb-[6px]">
-                        Разберем в
-                        <Image
-                            src="/zoom_icon.svg"
-                            alt=""
-                            width={62}
-                            height={14}
-                        />
-                    </div>
-                    <div className="flex gap-[10px] mb-[6px]">
-                        Полключимся по
-                        <Image
-                            src="/anydesc_icon.svg"
-                            alt=""
-                            width={30}
-                            height={25}
-                        />
-                        AnyDesk
-                    </div>
-                    <div>
-                        Напишем и позвоним по телефону
-                    </div>
-                </div>
-            : <div className="flex gap-[44px] font-semibold text-[32px] mb-[48px]">
-                <SupportChips>
-                    <Image
-                        src="/anydesc_icon.svg"
-                        alt=""
-                        width={60}
-                        height={50}
-                    />
-                    AnyDesk
-                </SupportChips>
-                <SupportChips>
-                    Разберем в
-                    <Image
-                        src="/zoom_icon.svg"
-                        alt=""
-                        width={131}
-                        height={50}
-                    />
-                </SupportChips>
-                <SupportChips>
-                    <Image
-                        src="/messanger_icon.svg"
-                        alt=""
-                        width={45}
-                        height={45}
-                    />
-                    Напишем и позвоним
-                </SupportChips>
-            </div>}
-            </div>
-            <div className='container sm:bg-transparent bg-[#AFC1FF80]'>
-            <div className="text-center  sm:pt-0 pt-[35px] sm:px-0 px-[22px] sm:pb-0 pb-[48px] sm:mt-0 mt-[59px]">
-                <h3 className="sm:text-[32px] text-[20px] font-semibold text-[#3760E7] sm:mb-[38px] mb-[19px]">2 часа сопровождения <span className="sm:inline block"></span>в месяц включено</h3>
-                <Button onClick={scrollToForm} text="Увеличить количество часов"  className="px-[40px] sm:py-[20px] py-[9px] sm:w-auto w-full text-[20px]! rounded-full"></Button>
-            </div>
+  return (
+    <>
+      <div className="container sm:mt-[86px]! mt-[40px]!">
+        <h2 className="sm:text-[32px] text-[20px] font-semibold mb-[24px]">
+          Поддержка всегда на связи
+        </h2>
+        <p className="sm:text-[20px] text-[14px] font-normal mb-[35px]">
+          Мы предоставляем персональную поддержку по всем вопросам, связанным с
+          amoCRM: от технических неполадок до оптимизации процессов. Отвечаем
+          сотрудникам, помогаем улучшать работу и решаем любые задачи.
+          <br />
+          <br />В тариф включено 2 часа сопровождения в месяц, при необходимости
+          объём можно увеличить.
+        </p>
+        <div className="block sm:hidden border border-[#3760E7] rounded-[20px] py-[21px] px-[16px] font-semibold">
+          <div className="flex gap-[10px] mb-[6px]">
+            Разберем в
+            <Image src="/zoom_icon.svg" alt="" width={62} height={14} />
+          </div>
+          <div className="flex gap-[10px] mb-[6px]">
+            Полключимся по
+            <Image src="/anydesc_icon.svg" alt="" width={30} height={25} />
+            AnyDesk
+          </div>
+          <div>Напишем и позвоним по телефону</div>
         </div>
-        </>
-    );
+        <div className="hidden sm:flex gap-[44px] font-semibold text-[32px] mb-[48px]">
+          <SupportChips>
+            <Image src="/anydesc_icon.svg" alt="" width={60} height={50} />
+            AnyDesk
+          </SupportChips>
+          <SupportChips>
+            Разберем в
+            <Image src="/zoom_icon.svg" alt="" width={131} height={50} />
+          </SupportChips>
+          <SupportChips>
+            <Image src="/messanger_icon.svg" alt="" width={45} height={45} />
+            Напишем и позвоним
+          </SupportChips>
+        </div>
+      </div>
+      <div className="container sm:bg-transparent bg-[#AFC1FF80]">
+        <div className="text-center  sm:pt-0 pt-[35px] sm:px-0 px-[22px] sm:pb-0 pb-[48px] sm:mt-0 mt-[59px]">
+          <h5 className="sm:text-[32px] text-[20px] font-semibold text-[#3760E7] sm:mb-[38px] mb-[19px]">
+            2 часа сопровождения <span className="sm:inline block"></span>в
+            месяц включено
+          </h5>
+          <a href="#special_offer_calculator" className="block">
+            <Button
+              text="Увеличить количество часов"
+              className="px-[40px] sm:py-[20px] py-[9px] sm:w-auto w-full text-[20px]! rounded-full"
+            ></Button>
+          </a>
+        </div>
+      </div>
+    </>
+  );
 }

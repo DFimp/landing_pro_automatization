@@ -1,11 +1,5 @@
 import type { Metadata } from "next";
-import {
-  StepsSection,
-  FinalSection,
-  HeroSection,
-  ResultSection,
-  DeliverablesSection,
-} from "@/widgets/audit";
+import Audit from "@/page/Audit";
 
 export const metadata: Metadata = {
   title: "Аудит amoCRM",
@@ -65,14 +59,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Audit() {
-  return (
-    <main id="analytics" className="sm:pb-20 sm:pt-20">
-      <HeroSection />
-      <StepsSection />
-      <ResultSection /> 
-      <DeliverablesSection />
-      <FinalSection />
-    </main>
-  );
+export default function Page() {
+  return <Audit />;
 }

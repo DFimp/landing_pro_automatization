@@ -1,6 +1,10 @@
-import { ArticleConclusionSection, ArticleDescriptionSection, ArticleContentSection } from "@/widgets/article"
+import {
+  ArticleConclusionSection,
+  ArticleDescriptionSection,
+  ArticleContentSection,
+} from "@/widgets/article";
 
-export default function DuplicateContacts() {
+export default function ArticleDuplicateContacts() {
     return (
         <main id="duplicate_contacts" className="overflow-hidden">
             <ArticleDescriptionSection></ArticleDescriptionSection>

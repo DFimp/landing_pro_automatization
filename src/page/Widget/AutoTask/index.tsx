@@ -1,24 +1,32 @@
-'use client';
-import './style.css';
-import React, { useRef } from 'react';
-import Image from 'next/image';
-import ConsultCard from '@/shared/ui/ConsultCard/ConsultCard';
-import SettingsCard from '@/shared/ui/settings/SettingsCard';
-import { hiddenInIframe } from '@/shared/utils/hiddenInIframe';
-import ProblemsCard, { type ProblemItem } from '@/shared/ui/ProblemsCard/ProblemsCard';
-import FeaturesCard, { type FeatureItem } from '@/shared/ui/FeaturesCard/FeaturesCard';
+"use client";
+import "./style.css";
+import React, { useRef } from "react";
+import Image from "next/image";
+import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
+import SettingsCard from "@/shared/ui/settings/SettingsCard";
+import { useHiddenInIframe } from "@/shared/utils/useHiddenInIframe";
+import ProblemsCard, {
+  type ProblemItem,
+} from "@/shared/ui/ProblemsCard/ProblemsCard";
+import FeaturesCard, {
+  type FeatureItem,
+} from "@/shared/ui/FeaturesCard/FeaturesCard";
 
 export default function AutoTask() {
-  const { isIframe } = hiddenInIframe();
+  const { isIframe } = useHiddenInIframe();
 
-  const handleScrollToInstruction = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleScrollToInstruction = (
+    e: React.MouseEvent<HTMLAnchorElement>
+  ) => {
     e.preventDefault();
-    document.querySelector('#instruction')?.scrollIntoView({ behavior: 'smooth' });
+    document
+      .querySelector("#instruction")
+      ?.scrollIntoView({ behavior: "smooth" });
   };
 
   const steps = [
     {
-      title: 'Установка виджета в amoCRM',
+      title: "Установка виджета в amoCRM",
       content: (
         <div>
           <p>Установите виджет «Автозадачи в сделках» в вашу amoCRM:</p>
@@ -45,33 +53,39 @@ export default function AutoTask() {
       ),
     },
     {
-      title: 'Выбор воронок и статусов',
+      title: "Выбор воронок и статусов",
       content: (
         <div>
           <p>Укажите, где необходим контроль «спящих» сделок:</p>
           <ul className="sc-list">
             <li>Откройте настройки виджета</li>
             <li>В поле «Статусы» выберите воронку или конкретные этапы</li>
-            <li>Повторите для всех ключевых этапов (например, «Переговоры», «Принятие решения»)</li>
+            <li>
+              Повторите для всех ключевых этапов (например, «Переговоры»,
+              «Принятие решения»)
+            </li>
           </ul>
         </div>
       ),
     },
     {
-      title: 'Параметры создаваемых задач',
+      title: "Параметры создаваемых задач",
       content: (
         <div>
           <p>Настройте тип, текст и ответственного:</p>
           <ul className="sc-list">
             <li>Тип задачи (Звонок, Встреча, свой тип)</li>
             <li>Текст задачи с чётким действием</li>
-            <li>Кому назначать: ответственному за сделку или конкретному пользователю</li>
+            <li>
+              Кому назначать: ответственному за сделку или конкретному
+              пользователю
+            </li>
           </ul>
         </div>
       ),
     },
     {
-      title: 'Сохранение и запуск',
+      title: "Сохранение и запуск",
       content: (
         <div>
           <p>Проверьте параметры и сохраните:</p>
@@ -82,13 +96,14 @@ export default function AutoTask() {
           </ul>
           <div className="sc-note sc-note--green">
             <div className="sc-note-title">Готово</div>
-            Проверка выполняется каждые 5 минут — «спящие» сделки не останутся без внимания.
+            Проверка выполняется каждые 5 минут — «спящие» сделки не останутся
+            без внимания.
           </div>
         </div>
       ),
     },
     {
-      title: 'Тест и мониторинг',
+      title: "Тест и мониторинг",
       content: (
         <div>
           <p>Проверьте, что задачи создаются корректно:</p>
@@ -99,7 +114,8 @@ export default function AutoTask() {
           </ul>
           <div className="sc-note sc-note--red">
             <div className="sc-note-title">Если задачи не создаются</div>
-            Проверьте выбранные этапы, наличие подходящих сделок и интервал запуска.
+            Проверьте выбранные этапы, наличие подходящих сделок и интервал
+            запуска.
           </div>
         </div>
       ),
@@ -108,63 +124,64 @@ export default function AutoTask() {
 
   const problems: ProblemItem[] = [
     {
-      title: 'Сделки «висят» без движения',
+      title: "Сделки «висят» без движения",
       text: (
         <>
-          Менеджеры <span className="at-mark">забывают</span> связаться с клиентами, сделки теряются, а вы теряете
-          деньги. Особенно критично для дорогих продуктов.
+          Менеджеры <span className="at-mark">забывают</span> связаться с
+          клиентами, сделки теряются, а вы теряете деньги. Особенно критично для
+          дорогих продуктов.
         </>
       ),
-      bgUrl: '/widgets/AutoTask/back_dollars.png',
+      bgUrl: "/widgets/AutoTask/back_dollars.png",
     },
     {
-      title: 'Менеджеры «забывают» работать',
+      title: "Менеджеры «забывают» работать",
       text: (
         <>
-          Без напоминаний сотрудники могут неделями{' '}
-          <span className="at-mark">не&nbsp;контактировать</span> с потенциальными клиентами. Результат — потерянная
-          прибыль.
+          Без напоминаний сотрудники могут неделями{" "}
+          <span className="at-mark">не&nbsp;контактировать</span> с
+          потенциальными клиентами. Результат — потерянная прибыль.
         </>
       ),
-      bgUrl: '/widgets/AutoTask/back_message.png',
+      bgUrl: "/widgets/AutoTask/back_message.png",
     },
     {
-      title: 'Низкая конверсия воронки',
+      title: "Низкая конверсия воронки",
       text: (
         <>
-          Без системного подхода к работе со сделками ваша конверсия остаётся на уровне 3–5% вместо возможных
+          Без системного подхода к работе со сделками ваша конверсия остаётся на
+          уровне 3–5% вместо возможных
           <span className="at-mark"> 15–20%</span>.
         </>
       ),
-      bgUrl: '/widgets/AutoTask/back_analitic.png',
+      bgUrl: "/widgets/AutoTask/back_analitic.png",
     },
     {
-      title: 'Ручной контроль отнимает время',
+      title: "Ручной контроль отнимает время",
       text: (
         <>
-          Руководители тратят часы на проверку активности менеджеров <span className="at-mark">вместо развития</span>{' '}
-          бизнеса.
+          Руководители тратят часы на проверку активности менеджеров{" "}
+          <span className="at-mark">вместо развития</span> бизнеса.
         </>
       ),
-      bgUrl: '/widgets/AutoTask/back_yeys.png',
+      bgUrl: "/widgets/AutoTask/back_yeys.png",
     },
   ];
 
-
   const features: FeatureItem[] = [
     {
-      iconUrl: '/widgets/AutoTask/deployment.png',
-      title: 'Умное отслеживание',
+      iconUrl: "/widgets/AutoTask/deployment.png",
+      title: "Умное отслеживание",
       text: (
         <>
-          Виджет мониторит все сделки на выбранных этапах каждые 5 минут.
-          Если сделка долго без движения — автоматически создаётся задача.
+          Виджет мониторит все сделки на выбранных этапах каждые 5 минут. Если
+          сделка долго без движения — автоматически создаётся задача.
         </>
       ),
     },
     {
-      iconUrl: '/widgets/AutoTask/letter_star.png',
-      title: 'Гибкая настройка',
+      iconUrl: "/widgets/AutoTask/letter_star.png",
+      title: "Гибкая настройка",
       text: (
         <>
           Выберите статусы для отслеживания, тип задачи, ответственного и текст.
@@ -173,38 +190,38 @@ export default function AutoTask() {
       ),
     },
     {
-      iconUrl: '/widgets/AutoTask/lamp.png',
-      title: 'Исключение системных сделок',
+      iconUrl: "/widgets/AutoTask/lamp.png",
+      title: "Исключение системных сделок",
       text: (
         <>
-          Специальное поле «Не проверять на задачи» позволяет исключить определённые
-          сделки из автоматического контроля.
+          Специальное поле «Не проверять на задачи» позволяет исключить
+          определённые сделки из автоматического контроля.
         </>
       ),
     },
     {
-      iconUrl: '/widgets/AutoTask/control.png',
-      title: 'Контроль ответственности',
+      iconUrl: "/widgets/AutoTask/control.png",
+      title: "Контроль ответственности",
       text: (
         <>
-          Задачи создаются для ответственного за сделку или назначаются конкретному
-          менеджеру по вашему выбору.
+          Задачи создаются для ответственного за сделку или назначаются
+          конкретному менеджеру по вашему выбору.
         </>
       ),
     },
     {
-      iconUrl: '/widgets/AutoTask/deadline.png',
-      title: 'Постоянная работа',
+      iconUrl: "/widgets/AutoTask/deadline.png",
+      title: "Постоянная работа",
       text: (
         <>
-          Виджет работает 24/7 в фоновом режиме. Проверка каждые 5 минут гарантирует,
-          что ни одна сделка не останется без внимания.
+          Виджет работает 24/7 в фоновом режиме. Проверка каждые 5 минут
+          гарантирует, что ни одна сделка не останется без внимания.
         </>
       ),
     },
     {
-      iconUrl: '/widgets/AutoTask/analytic.png',
-      title: 'Рост продаж',
+      iconUrl: "/widgets/AutoTask/analytic.png",
+      title: "Рост продаж",
       text: (
         <>
           Своевременная работа с клиентами повышает конверсию. Клиенты получают
@@ -225,7 +242,7 @@ export default function AutoTask() {
     isDragging.current = true;
     startX.current = e.clientX;
     scrollStart.current = el.scrollLeft;
-    el.classList.add('dragging');
+    el.classList.add("dragging");
   };
 
   const onPointerMove = (e: React.PointerEvent) => {
@@ -239,23 +256,25 @@ export default function AutoTask() {
     const el = scrollerRef.current;
     if (!el) return;
     isDragging.current = false;
-    el.classList.remove('dragging');
+    el.classList.remove("dragging");
   };
 
   return (
     <main className="bg-white">
-      <section className="at-hero" id={isIframe ? 'hidden-in-iframe' : ''}>
+      <section className="at-hero" id={isIframe ? "hidden-in-iframe" : ""}>
         <div className="at-container">
-          <div className="at-pill at-bleed-left">Автозадачи для amoCRM</div>
+          <div className="at-pill at-bleed-left">Автозадачи в сделках для amoCRM</div>
 
           <h1 className="at-hero-title">Никогда не забывайте о сделках!</h1>
 
           <p className="at-hero-sub">
-            Автоматически создавайте задачи для сделок без активности.<br />
-            Настраиваемые статусы, типы задач и ответственные.<br />
-            Увеличьте конверсию на <span className="at-badge">35%</span> благодаря своевременному контакту
+            Автоматически создавайте задачи для сделок без активности.
             <br />
-            с клиентами.
+            Настраиваемые статусы, типы задач и ответственные.
+            <br />
+            Увеличьте конверсию на <span className="at-badge">35%</span>{" "}
+            благодаря своевременному контакту
+            <br />с клиентами.
           </p>
 
           <div className="at-cta">
@@ -267,7 +286,11 @@ export default function AutoTask() {
             >
               Установить виджет
             </a>
-            <a href="#instruction" onClick={handleScrollToInstruction} className="at-btn-link">
+            <a
+              href="#instruction"
+              onClick={handleScrollToInstruction}
+              className="at-btn-link"
+            >
               Смотреть инструкцию →
             </a>
           </div>
@@ -303,10 +326,12 @@ export default function AutoTask() {
         />
       </section>
 
-      <section className="at-how" id={isIframe ? 'hidden-in-iframe' : ''}>
+      <section className="at-how" id={isIframe ? "hidden-in-iframe" : ""}>
         <div className="at-container">
           <h2 className="at-how-title">Как это работает</h2>
-          <p className="at-how-sub">Простой алгоритм, который работает без вашего участия</p>
+          <p className="at-how-sub">
+            Простой алгоритм, который работает без вашего участия
+          </p>
 
           <div
             ref={scrollerRef}
@@ -319,24 +344,24 @@ export default function AutoTask() {
           >
             {[
               {
-                n: '1',
-                title: 'Настройка отслеживания',
-                text: 'Вы выбираете воронки и статусы, которые нужно контролировать. Например: «Переговоры», «Принятие решения».',
+                n: "1",
+                title: "Настройка отслеживания",
+                text: "Вы выбираете воронки и статусы, которые нужно контролировать. Например: «Переговоры», «Принятие решения».",
               },
               {
-                n: '2',
-                title: 'Автоматический мониторинг',
-                text: 'Каждые 5 минут виджет проверяет все сделки на выбранных этапах и ищет те, в которых давно не было активности.',
+                n: "2",
+                title: "Автоматический мониторинг",
+                text: "Каждые 5 минут виджет проверяет все сделки на выбранных этапах и ищет те, в которых давно не было активности.",
               },
               {
-                n: '3',
-                title: 'Создание задач',
-                text: 'Для «спящих» сделок автоматически создаётся задача с настроенным текстом и назначается ответственному менеджеру.',
+                n: "3",
+                title: "Создание задач",
+                text: "Для «спящих» сделок автоматически создаётся задача с настроенным текстом и назначается ответственному менеджеру.",
               },
               {
-                n: '4',
-                title: 'Менеджер получает уведомление',
-                text: 'Ответственный видит задачу в amoCRM и связывается с клиентом. Сделка возвращается в работу.',
+                n: "4",
+                title: "Менеджер получает уведомление",
+                text: "Ответственный видит задачу в amoCRM и связывается с клиентом. Сделка возвращается в работу.",
               },
             ].map((s) => (
               <div key={s.n} className="at-step-card at-snap">
@@ -359,7 +384,7 @@ export default function AutoTask() {
         showVideo
       />
 
-      <section className="at-prefooter" id={isIframe ? 'hidden-in-iframe' : ''}>
+      <section className="at-prefooter" id={isIframe ? "hidden-in-iframe" : ""}>
         <div className="at-container">
           <ConsultCard />
         </div>
