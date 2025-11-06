@@ -1,0 +1,58 @@
+import { MetadataRoute } from 'next';
+import { SITE_URL, ROUTES, WIDGET_ROUTES } from '@/shared/constants/routes';
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const currentDate = new Date();
+
+  // Основные страницы с их приоритетами
+  const mainPages: MetadataRoute.Sitemap = [
+    {
+      url: `${SITE_URL}${ROUTES.HOME}`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 1.0,
+    },
+    {
+      url: `${SITE_URL}${ROUTES.WIDGETS}`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}${ROUTES.AUDIT}`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}${ROUTES.ACCOMPANIMENT}`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}${ROUTES.ARTICLES}`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}${ROUTES.LICENSE}`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+  ];
+
+  // Страницы виджетов
+  const widgetPages: MetadataRoute.Sitemap = Object.values(WIDGET_ROUTES).map(
+    (route) => ({
+      url: `${SITE_URL}${route}`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    })
+  );
+
+  return [...mainPages, ...widgetPages];
+}
