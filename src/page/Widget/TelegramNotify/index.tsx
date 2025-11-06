@@ -30,7 +30,7 @@ export default function TelegramNotify() {
                         Если у вас нет прав на установку — обратитесь к администратору аккаунта.
                     </div>
                     <a
-                        href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=26e34407-779d-4b47-bb48-b1ffaed3cc78"
+                        href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=c31be896-9148-4ec1-9d7a-2aba7b16906e"
                         target="_blank"
                         rel="noopener"
                         className="sc-btn"
@@ -163,7 +163,7 @@ export default function TelegramNotify() {
                     <div className="tg-cta">
                         <a
                             className="tg-btn-primary"
-                            href='https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=26e34407-779d-4b47-bb48-b1ffaed3cc78'
+                            href='https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=c31be896-9148-4ec1-9d7a-2aba7b16906e'
                             target="_blank"
                             rel="noopener"
                         >

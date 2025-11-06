@@ -4,10 +4,9 @@ import Image from "next/image";
 import HeaderNav from "@/widgets/header/ui/HeaderNav";
 import Button from "@/shared/ui/button/Button";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ConsultationModal from "@/features/consultation/ConsultationModal";
 import { hiddenInIframe } from "@/shared/utils/hiddenInIframe";
-import { userAgent } from "next/server";
 
 import MobileMenu from "./ui/MobileMenu";
 import {detectMobile} from '@/shared/utils/detectMobile'

@@ -77,7 +77,7 @@ export const Footer = () => {
 
           <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-3 md:pl-4">
             {cols.map((col, i) => (
-              <div
+              <nav
                 key={i}
                 className={i === 0 ? "pb-5 sm:pb-0" : ""}
               >
@@ -95,7 +95,7 @@ export const Footer = () => {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </nav>
             ))}
           </div>
         </div>
