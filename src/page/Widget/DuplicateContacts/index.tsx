@@ -5,6 +5,8 @@ import { hiddenInIframe } from '@/shared/utils/hiddenInIframe';
 import SettingsCard from '@/shared/ui/settings/SettingsCard';
 import ConsultCard from '@/shared/ui/ConsultCard/ConsultCard';
 import CaseCard, { type CaseItem } from '@/shared/ui/Case/CaseCard';
+import ProblemsCard, { type ProblemItem } from '@/shared/ui/ProblemsCard/ProblemsCard';
+import FeaturesCard, { type FeatureItem } from '@/shared/ui/FeaturesCard/FeaturesCard';
 
 export default function DuplicateContacts() {
     const { isIframe } = hiddenInIframe();
@@ -184,6 +186,108 @@ export default function DuplicateContacts() {
         { type: 'stripe', side: 'right', white: true, text: 'AMO CRM AMO CRM AMO CRM' },
     ];
 
+    const problems: ProblemItem[] = [
+        {
+            title: 'Хаос в системе',
+            text: (
+                <>
+                    Одинаковые клиенты создают <span className="at-mark">несколько</span> сделок, что приводит к путанице и потере важной информации.
+                </>
+            ),
+            bgUrl: '/widgets/BackAll/back_web.png',
+        },
+        {
+            title: 'Потеря времени',
+            text: (
+                <>
+                    Менеджеры тратят драгоценное время на поиск и ручное объединение дублированных сделок.
+                </>
+            ),
+            bgUrl: '/widgets/BackAll/back_watch.png',
+        },
+        {
+            title: 'Неточная статистика',
+            text: (
+                <>
+                    Дубли искажают отчёты и аналитику, <span className="at-mark">мешая</span> принятию правильных управленческих решений.
+                </>
+            ),
+            bgUrl: '/widgets/BackAll/back_chart.png',
+        },
+        {
+            title: 'Упущенные продажи',
+            text: (
+                <>
+                    Из-за дублей можно <span className="at-mark">потерять</span> клиента или дважды обработать одну заявку, что снижает эффективность.
+                </>
+            ),
+            bgUrl: '/widgets/BackAll/back_basket.png',
+        },
+    ];
+
+    const features: FeatureItem[] = [
+        {
+            iconUrl: '/widgets/BackAll/gear.png',
+            title: 'Умное объединение данных',
+            text: (
+                <>
+                    При склеивании сохраняются все сделки, задачи, теги и кастомные поля из всех
+                    дублированных контактов. Приоритетные поля берутся из более нового контакта.
+                </>
+            ),
+        },
+        {
+            iconUrl: '/widgets/BackAll/burger.png',
+            title: 'Гибкая настройка приоритетов',
+            text: (
+                <>
+                    Выберите, какие поля должны сохраняться из более нового контакта, а какие — из
+                    более старого.
+                </>
+            ),
+        },
+        {
+            iconUrl: '/widgets/BackAll/shield.png',
+            title: 'Безопасность данных',
+            text: (
+                <>
+                    Виджет не удаляет данные, а корректно объединяет их. Все связанные сделки и
+                    компании сохраняются в основном контакте.
+                </>
+            ),
+        },
+        {
+            iconUrl: '/widgets/BackAll/tag.png',
+            title: 'Система исключений',
+            text: (
+                <>
+                    Настройте исключения по конкретным значениям полей, чтобы избежать ошибочного
+                    объединения разных людей.
+                </>
+            ),
+        },
+        {
+            iconUrl: '/widgets/BackAll/boxes.png',
+            title: 'Альтернативные условия',
+            text: (
+                <>
+                    Создавайте несколько наборов условий для поиска дублей — контакты объединятся, если
+                    подходят под любой из них.
+                </>
+            ),
+        },
+        {
+            iconUrl: '/widgets/BackAll/magnifier.png',
+            title: 'Точное обнаружение дублей',
+            text: (
+                <>
+                    Многоуровневый алгоритм поиска по телефонам, email, именам и дополнительным полям
+                    с исключением ложных совпадений.
+                </>
+            ),
+        },
+    ];
+
     return (
         <main className="bg-white">
             <section className="tg-hero" id={isIframe ? 'hidden-in-iframe' : ''}>
@@ -212,47 +316,12 @@ export default function DuplicateContacts() {
                 </div>
             </section>
 
-            <section className="at-problems" id={isIframe ? 'hidden-in-iframe' : ''}>
-                <div className="at-container">
-                    <h2 className="at-section-title">Проблемы дублей в amoCRM</h2>
-                    <p className="tg-hero-sub" style={{ color: '#5a6180', marginTop: 6 }}>
-                        Дубли в amoCRM создают хаос в работе отдела продаж
-                    </p>
-
-                    <div className="at-problems-grid" style={{ marginTop: 20 }}>
-                        <article className="at-problem-card at-problem--money">
-                            <h3 className="at-problem-title">Хаос в системе</h3>
-                            <p className="at-problem-text">
-                                Одинаковые клиенты создают <span className="at-mark">несколько</span> сделок, что
-                                приводит к путанице и потере важной информации.
-                            </p>
-                        </article>
-
-                        <article className="at-problem-card at-problem--time">
-                            <h3 className="at-problem-title">Потеря времени</h3>
-                            <p className="at-problem-text">
-                                Менеджеры тратят драгоценное время на поиск и ручное объединение дублированных сделок.
-                            </p>
-                        </article>
-
-                        <article className="at-problem-card at-problem--chart">
-                            <h3 className="at-problem-title">Неточная статистика</h3>
-                            <p className="at-problem-text">
-                                Дубли искажают отчёты и аналитику, <span className="at-mark">мешая</span> принятию
-                                правильных управленческих решений.
-                            </p>
-                        </article>
-
-                        <article className="at-problem-card at-problem--sleep">
-                            <h3 className="at-problem-title">Упущенные продажи</h3>
-                            <p className="at-problem-text">
-                                Из-за дублей можно <span className="at-mark">потерять</span> клиента или дважды
-                                обработать одну заявку, что снижает эффективность.
-                            </p>
-                        </article>
-                    </div>
-                </div>
-            </section>
+            <ProblemsCard
+                title="Проблемы дублей в amoCRM"
+                subtitle="Дубли в amoCRM создают хаос в работе отдела продаж"
+                items={problems}
+                id={isIframe ? 'hidden-in-iframe' : ''}
+            />
 
             <CaseCard
                 title="Решение всех проблем"
@@ -260,7 +329,6 @@ export default function DuplicateContacts() {
                 items={caseItems}
                 id={isIframe ? 'hidden-in-iframe' : ''}
             />
-
 
             <section id="instruction" className="sc-wrapper" aria-label="Пошаговая настройка виджета">
                 <SettingsCard
@@ -272,74 +340,12 @@ export default function DuplicateContacts() {
                 />
             </section>
 
-            <section className="at-more" id={isIframe ? 'hidden-in-iframe' : ''}>
-                <div className="at-container">
-                    <h2 className="at-section-title">Дополнительные возможности</h2>
-                    <p className="at-subtitle">Уникальные функции для максимальной эффективности</p>
-
-                    <div className="at-more-grid">
-                        <article className="at-more-card">
-                            <div className="at-more-ico" aria-hidden>
-                                <img src="/widgets/BackAll/gear.png" alt="" />
-                            </div>
-                            <h3 className="at-more-title">Умное объединение данных</h3>
-                            <p className="at-more-text">
-                                При склеивании сохраняются все сделки, задачи, теги и кастомные поля из всех дублированных контактов. Приоритетные поля берутся из более нового контакта
-                            </p>
-                        </article>
-
-                        <article className="at-more-card">
-                            <div className="at-more-ico" aria-hidden>
-                                <img src="/widgets/BackAll/burger.png" alt="" />
-                            </div>
-                            <h3 className="at-more-title">Гибкая настройка приоритетов</h3>
-                            <p className="at-more-text">
-                                Выберите, какие поля должны сохраняться из более нового контакта, а какие - из более старого
-                            </p>
-                        </article>
-
-                        <article className="at-more-card">
-                            <div className="at-more-ico" aria-hidden>
-                                <img src="/widgets/BackAll/shield.png" alt="" />
-                            </div>
-                            <h3 className="at-more-title">Безопасность данных</h3>
-                            <p className="at-more-text">
-                                Виджет не удаляет данные, а корректно объединяет их. Все связанные сделки и компании сохраняются в основном контакте
-                            </p>
-                        </article>
-
-                        <article className="at-more-card">
-                            <div className="at-more-ico" aria-hidden>
-                                <img src="/widgets/BackAll/tag.png" alt="" />
-                            </div>
-                            <h3 className="at-more-title">Система исключений</h3>
-                            <p className="at-more-text">
-                                Настройте исключения по конкретным значениям полей, чтобы избежать ошибочного объединения разных людей
-                            </p>
-                        </article>
-
-                        <article className="at-more-card">
-                            <div className="at-more-ico" aria-hidden>
-                                <img src="/widgets/BackAll/boxes.png" alt="" />
-                            </div>
-                            <h3 className="at-more-title">Альтернативные условия</h3>
-                            <p className="at-more-text">
-                                Создавайте несколько наборов условий для поиска дублей - контакты объединятся, если подходят под любой из них
-                            </p>
-                        </article>
-
-                        <article className="at-more-card">
-                            <div className="at-more-ico" aria-hidden>
-                                <img src="/widgets/BackAll/magnifier.png" alt="" />
-                            </div>
-                            <h3 className="at-more-title">Точное обнаружение дублей</h3>
-                            <p className="at-more-text">
-                                Многоуровневый алгоритм поиска по телефонам, email, именам и дополнительным полям с исключением ложных совпадений
-                            </p>
-                        </article>
-                    </div>
-                </div>
-            </section>
+            <FeaturesCard
+                title="Дополнительные возможности"
+                subtitle="Уникальные функции для максимальной скорости и удобства"
+                items={features}
+                id={isIframe ? 'hidden-in-iframe' : ''}
+            />
 
             <section className="at-prefooter" id={isIframe ? 'hidden-in-iframe' : ''}>
                 <div className="at-container">
