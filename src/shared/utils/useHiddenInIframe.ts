@@ -1,8 +1,19 @@
-import { useSearchParams } from "next/navigation";
+"use client";
 
-export const useHiddenInIframe = () => {
-  const searchParams = useSearchParams();
-  const isIframe = searchParams.get("embed") === "true";
+import { useState, useEffect } from "react";
 
-  return { isIframe };
-};
+export function useHiddenInIframe() {
+  const [isIframe, setIsIframe] = useState<boolean>(false);
+
+  useEffect(() => {
+    try {
+      setIsIframe(window.self !== window.top);
+    } catch (e) {
+      setIsIframe(true);
+    }
+  }, []);
+
+  return {
+    isIframe,
+  };
+}

@@ -5,12 +5,11 @@ import HeaderNav from "@/widgets/header/ui/HeaderNav";
 import Link from "next/link";
 import HeaderActions from "./ui/HeaderActions";
 import MobileMenuWrapper from "./ui/MobileMenuWrapper";
+import { useHiddenInIframe } from "@/shared/utils/useHiddenInIframe";
 
-type HeaderProps = {
-  isIframe?: boolean;
-};
+const Header = () => {
+const { isIframe } = useHiddenInIframe();
 
-const Header = ({ isIframe = false }: HeaderProps) => {
   if (isIframe) return null;
 
   return (
