@@ -33,7 +33,7 @@ export default function СlosingBan() {
 
                     <div className="sc-cta" style={{ marginTop: 16 }}>
                         <a
-                            href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=9bd50964-9b79-40a5-b786-59c079f7edc8"
+                            href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=05248753-81ac-40a2-94fb-e0b7c6d05092"
                             target="_blank"
                             rel="noopener"
                             className="dist-btn-primary"
@@ -90,7 +90,7 @@ export default function СlosingBan() {
                     <div className="dist-cta">
                         <a
                             className="dist-btn-primary"
-                            href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=9bd50964-9b79-40a5-b786-59c079f7edc8"
+                            href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=05248753-81ac-40a2-94fb-e0b7c6d05092"
                             target="_blank"
                             rel="noopener"
                         >
@@ -107,6 +107,7 @@ export default function СlosingBan() {
                 title="Как это выглядит?"
                 subtitle="После установки виджета при попытке закрыть задачу пустое поле с результатом подсвечивается красным, и кнопка закрытия не срабатывает. Можно задать минимальное количество символов для текста с результатом."
                 videoUrl="/widgets/ClosingBan/closing-ban.gif"
+                id={isIframe ? 'hidden-in-iframe' : ''}
             />
 
             <section id="instruction" className="ds-how sc-wrapper" aria-label="Пошаговая настройка виджета">
@@ -116,7 +117,7 @@ export default function СlosingBan() {
                     subtitle="Следуйте простым шагам для быстрой настройки:"
                     steps={steps}
                     showVideo
-                    videoId='b9b542ff41657b10b50987b118fe3920'
+                    // videoId='b9b542ff41657b10b50987b118fe3920'
                 />
             </section>
 
