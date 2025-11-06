@@ -24,6 +24,10 @@ export const WIDGET_ROUTES = {
   CLOSING_BAN: '/widgets/closing-ban',
 } as const;
 
+export const ARTICLES_ROUTES = {
+  DUPLICATE_CONTACTS: '/article/duplicate-contacts',
+}
+
 // Все виджеты одним списком (для удобства)
 export const ALL_WIDGET_ROUTES = Object.values(WIDGET_ROUTES);
 
@@ -31,4 +35,5 @@ export const ALL_WIDGET_ROUTES = Object.values(WIDGET_ROUTES);
 export const ALL_ROUTES = {
   ...ROUTES,
   ...WIDGET_ROUTES,
+  ...ARTICLES_ROUTES,
 } as const;

@@ -1,10 +1,5 @@
 import type { Metadata } from "next";
-import {
-  WidgetsBonusesSection,
-  WidgetsWidgetsSection,
-  WidgetsSupportSection,
-  WidgetsSpecialOfferSection,
-} from "@/widgets/widgets";
+import License from "@/page/License";
 
 export const metadata: Metadata = {
   title: "Лицензии amoCRM c бонусами",
@@ -63,13 +58,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Widgets() {
-  return (
-    <main id="Widgets" className="overflow-hidden">
-      <WidgetsBonusesSection></WidgetsBonusesSection>
-      <WidgetsWidgetsSection></WidgetsWidgetsSection>
-      <WidgetsSupportSection></WidgetsSupportSection>
-      <WidgetsSpecialOfferSection></WidgetsSpecialOfferSection>
-    </main>
-  );
+export default function Page() {
+  return <License />;
 }

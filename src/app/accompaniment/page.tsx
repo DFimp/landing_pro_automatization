@@ -1,12 +1,5 @@
 import type { Metadata } from "next";
-import "./style.css";
-import {
-    AccompanimentHeroSection,
-    AccompanimentScrumSection,
-    AccompanimentHelpSection,
-    AccompanimentProblemsSection,
-    AccompanimentTariffsSection,
-} from "@/widgets/accompaniment";
+import Accompaniment from "@/page/Accompaniment";
 
 export const metadata: Metadata = {
   title: "Сопровождение amoCRM",
@@ -66,14 +59,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Accompaniment() {
-    return (
-        <main id="accompaniment" className="sm:pb-20 pb-10 sm:pt-20 overflow-hidden">
-            <AccompanimentHeroSection />
-            <AccompanimentProblemsSection />
-            <AccompanimentHelpSection />
-            <AccompanimentScrumSection />
-            <AccompanimentTariffsSection />
-        </main>
-    );
+export default function Page() {
+    return <Accompaniment />;
 }
