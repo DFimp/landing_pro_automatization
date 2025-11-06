@@ -29,6 +29,15 @@ export default function TelegramNotify() {
                         <div className="sc-note-title">Подсказка</div>
                         Если у вас нет прав на установку — обратитесь к администратору аккаунта.
                     </div>
+                    <a
+                        href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=26e34407-779d-4b47-bb48-b1ffaed3cc78"
+                        target="_blank"
+                        rel="noopener"
+                        className="sc-btn"
+                        style={{ marginTop: 12 }}
+                    >
+                        Установить виджет сейчас
+                    </a>
                 </div>
             ),
         },
@@ -154,7 +163,7 @@ export default function TelegramNotify() {
                     <div className="tg-cta">
                         <a
                             className="tg-btn-primary"
-                            href='https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=c31be896-9148-4ec1-9d7a-2aba7b16906e'
+                            href='https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=26e34407-779d-4b47-bb48-b1ffaed3cc78'
                             target="_blank"
                             rel="noopener"
                         >

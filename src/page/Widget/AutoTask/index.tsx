@@ -30,6 +30,15 @@ export default function AutoTask() {
             <div className="sc-note-title">Подсказка</div>
             Если нет прав на установку — обратитесь к администратору аккаунта.
           </div>
+          <a
+            href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=ffb5b225-672a-4016-b868-6a98db446851"
+            target="_blank"
+            rel="noopener"
+            className="sc-btn"
+            style={{ marginTop: 12 }}
+          >
+            Установить виджет сейчас
+          </a>
         </div>
       ),
     },
