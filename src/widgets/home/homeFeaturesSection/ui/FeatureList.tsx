@@ -1,32 +1,29 @@
-'use client'
-
-import Link from "next/link";
 import Image from "next/image";
 import { links } from "@/widgets/home/homeFeaturesSection/ui/lib";
-import * as motion from "motion/react-client";
-import { detectMobile } from "@/shared/utils/detectMobile";
 
 export default function FeaturesList() {
-  const { isMobileView } = detectMobile()
   return (
     <ul className="sm:grid sm:grid-cols-2 flex flex-col sm:gap-8 gap-4 sm:mt-20 mt-5">
       {links.map((link) => (
-        <motion.li
-          key={link.name}
-          className="bg-[#D8E3FD] rounded-full"
-          whileHover={{ scale: 1.05 }}
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
-        >
+        <li key={link.name} className="bg-[#D8E3FD] rounded-full">
           <div
             className="sm:text-h5 text-[14px] font-medium flex
                         justify-between items-center
                         sm:px-7.5 px-7 sm:py-5 py-3"
-            // href={link.link}
           >
-            {isMobileView ? link.nameMobile || link.name : link.name}
-            <Image src="/cross.svg" alt="Перейти" width={isMobileView ? 14 : 30} height={isMobileView ? 14 : 30} />
+            <span className="hidden sm:inline">{link.name}</span>
+            <span className="inline sm:hidden">
+              {link.nameMobile || link.name}
+            </span>
+            <Image
+              src="/cross.svg"
+              alt="Перейти"
+              width={30}
+              height={30}
+              className="w-[14px] h-[14px] sm:w-[30px] sm:h-[30px]"
+            />
           </div>
-        </motion.li>
+        </li>
       ))}
     </ul>
   );

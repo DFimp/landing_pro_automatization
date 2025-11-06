@@ -1,5 +1,5 @@
-import HomeHero from "@/widgets/home/homeHeroSection/ui/homeHero";
+import HomeHero from "./ui/HomeHero";
 
 export function HomeHeroSection() {
-    return <HomeHero />;
+  return <HomeHero />;
 }

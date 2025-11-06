@@ -30,12 +30,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.9,
     },
-    {
-      url: `${SITE_URL}${ROUTES.ARTICLES}`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
+    // {
+    //   url: `${SITE_URL}${ROUTES.ARTICLES}`,
+    //   lastModified: currentDate,
+    //   changeFrequency: 'monthly',
+    //   priority: 0.9,
+    // },
     {
       url: `${SITE_URL}${ROUTES.LICENSE}`,
       lastModified: currentDate,

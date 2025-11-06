@@ -6,7 +6,7 @@ export const ROUTES = {
   AUDIT: '/audit',
   ACCOMPANIMENT: '/accompaniment',
   WIDGETS: '/widgets',
-  ARTICLES: '/articles',
+  // ARTICLES: '/articles',
   LICENSE: '/license',
 } as const;
 
@@ -25,7 +25,7 @@ export const WIDGET_ROUTES = {
 } as const;
 
 export const ARTICLES_ROUTES = {
-  DUPLICATE_CONTACTS: '/article/duplicate-contacts',
+  DUPLICATE_CONTACTS: '/articles/duplicate-contacts',
 }
 
 // Все виджеты одним списком (для удобства)
