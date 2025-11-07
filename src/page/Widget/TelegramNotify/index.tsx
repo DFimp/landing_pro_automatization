@@ -15,7 +15,7 @@ export default function TelegramNotify({
   const isIframe = searchParams.embed === "true";
 
   return (
-    <main className="at-white">
+    <main className="bg-transparent">
       {!isIframe && (
         <>
           <section className="at-hero">

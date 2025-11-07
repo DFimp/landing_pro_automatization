@@ -1,295 +1,88 @@
-'use client';
-import './style.css';
-import React from 'react';
-import { hiddenInIframe } from '@/shared/utils/hiddenInIframe';
-import SettingsCard from '@/shared/ui/settings/SettingsCard';
-import ConsultCard from '@/shared/ui/ConsultCard/ConsultCard';
-import ProblemsCard, { type ProblemItem } from '@/shared/ui/ProblemsCard/ProblemsCard';
-import FeaturesCard, { type FeatureItem } from '@/shared/ui/FeaturesCard/FeaturesCard';
+import "./style.css";
+import React from "react";
+import SettingsCard from "@/shared/ui/settings/SettingsCard";
+import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
+import ProblemsCard from "@/shared/ui/ProblemsCard/ProblemsCard";
+import FeaturesCard from "@/shared/ui/FeaturesCard/FeaturesCard";
+import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
+import { STEPS, PROBLEMS, FEATURES } from "./constants";
 
-export default function MassiveLeads() {
-    const { isIframe } = hiddenInIframe();
+export default function MassiveLeads({
+  searchParams,
+}: {
+  searchParams: { embed?: string };
+}) {
+  const isIframe = searchParams.embed === "true";
 
-    const handleScrollToInstruction = (e: React.MouseEvent<HTMLAnchorElement>) => {
-        e.preventDefault();
-        document.querySelector('#instruction')?.scrollIntoView({ behavior: 'smooth' });
-    };
+  return (
+    <main className="bg-transparent">
+      {!isIframe && (
+        <>
+          <section className="dist-hero">
+            <div className="at-container">
+              <div className="dist-pill dist-bleed-left">
+                Массовое создание сделок для amoCRM
+              </div>
 
-    const steps = [
-        {
-            title: 'Установка виджета в amoCRM',
-            content: (
-                <div>
-                    <p>Установите виджет «Массовое создание сделок» в вашу amoCRM систему:</p>
-                    <ul className="sc-list">
-                        <li>Зайдите в amoCRM → Настройки → Виджеты</li>
-                        <li>Найдите «Массовое создание сделок» в каталоге</li>
-                        <li>Нажмите «Установить» и подтвердите установку</li>
-                    </ul>
+              <h1 className="dist-hero-title">
+                Создавайте сотни сделок за секунды!
+              </h1>
 
-                    <div className="sc-cta" style={{ marginTop: 16 }}>
-                        <a
-                            href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=48c94f76-e88e-4cb5-ad9c-a8a8c53e5a64"
-                            target="_blank"
-                            rel="noopener"
-                            className="dist-btn-primary"
-                        >
-                            Установить виджет сейчас
-                        </a>
-                    </div>
-                </div>
-            ),
-        },
-        {
-            title: 'Запуск виджета',
-            content: (
-                <div>
-                    <p>Начните создание сделок в списке контактов:</p>
-                    <ul className="sc-list">
-                        <li>Перейдите в amoCRM → Списки → Контакты</li>
-                        <li>Выберите контакты одним из способов:</li>
-                    </ul>
+              <p className="dist-hero-sub">
+                Автоматизируйте создание сделок для всех ваших контактов одним
+                нажатием. Забудьте о рутинной работе — виджет сделает всё за вас
+                быстро и без ошибок.
+              </p>
 
-                    <div style={{ marginTop: 8 }}>
-                        <div className="sc-note sc-note--blue">
-                            <div className="sc-note-title">Способ 1: По фильтру</div>
-                            Укажите нужные фильтры — виджет сам найдёт контакты и создаст для них сделки.
-                        </div>
-                        <div className="sc-note sc-note--green" style={{ marginTop: 10 }}>
-                            <div className="sc-note-title">Способ 2: Конкретные контакты</div>
-                            Отметьте галочками контакты в списке — сделки создадутся для выбранных.
-                        </div>
-                    </div>
+              <div className="dist-cta">
+                <a
+                  className="dist-btn-primary"
+                  href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=48c94f76-e88e-4cb5-ad9c-a8a8c53e5a64"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Установить виджет
+                </a>
+                <ScrollToInstructionLink />
+              </div>
+            </div>
+          </section>
 
-                    <ul className="sc-list" style={{ marginTop: 10 }}>
-                        <li>В левом верхнем углу активируется кнопка «Создать сделки»</li>
-                        <li>Наведитесь на неё (выезжает панель) и нажмите — откроется форма виджета</li>
-                    </ul>
-                </div>
-            ),
-        },
-        {
-            title: 'Заполнение основных данных',
-            content: (
-                <div>
-                    <p>Настройте параметры будущих сделок:</p>
+          <FeaturesCard
+            title="Почему наш виджет незаменим?"
+            subtitle="Мощные функции для максимальной эффективности продаж"
+            items={FEATURES}
+          />
 
-                    <div className="sc-note sc-note--blue">
-                        <div className="sc-note-title">Название сделки</div>
-                        Укажите понятное общее название (например: «Новогодняя акция 2025», «Лиды с выставки RetailTech»,
-                        «Реактивация — май 2025», «Партнёрские лиды CompanyX»).
-                    </div>
+          <ProblemsCard
+            title="Когда виджет особенно полезен?"
+            subtitle="Реальные сценарии использования в бизнесе"
+            items={PROBLEMS}
+          />
+        </>
+      )}
 
-                    <div className="sc-note sc-note--green" style={{ marginTop: 10 }}>
-                        <div className="sc-note-title">Воронка и этап</div>
-                        В поле «Статус» выберите нужную воронку и этап — все сделки будут созданы именно там.
-                    </div>
+      <section
+        id="instruction"
+        className="ds-how sc-wrapper"
+        aria-label="Пошаговая настройка виджета"
+      >
+        <SettingsCard
+          id="settings-distribution"
+          title="Как настроить виджет за 3 минуты"
+          subtitle="Следуйте простым шагам для быстрой настройки:"
+          steps={STEPS}
+          showVideo
+        />
+      </section>
 
-                    <div className="sc-note sc-note--blue" style={{ marginTop: 10 }}>
-                        <div className="sc-note-title">Теги для сегментации</div>
-                        Добавьте теги (если их нет — создадутся автоматически). Примеры: <code>холодный лид, реклама, москва</code>,{' '}
-                        <code>выставка, горячий, b2b</code>, <code>реактивация, vip, повторная продажа</code>.
-                    </div>
-                </div>
-            ),
-        },
-        {
-            title: 'Запуск создания сделок',
-            content: (
-                <div>
-                    <p>Проверьте параметры и запустите процесс:</p>
-                    <ul className="sc-list">
-                        <li>Проверьте выбранные контакты, статус и теги</li>
-                        <li>Убедитесь, что количество сделок соответствует ожиданиям</li>
-                        <li>Нажмите «Создать» и дождитесь завершения</li>
-                    </ul>
-
-                    <div className="sc-note sc-note--blue">
-                        <div className="sc-note-title">Прогресс</div>
-                        Во время работы виджета отображается прогресс-бар выполнения операции.
-                    </div>
-
-                    <div className="sc-note sc-note--green" style={{ marginTop: 10 }}>
-                        <div className="sc-note-title">Время выполнения</div>
-                        Пример: создание ~100 сделок занимает 1–2 минуты. Не закрывайте страницу до завершения.
-                    </div>
-                </div>
-            ),
-        },
-        {
-            title: 'Контроль результатов',
-            content: (
-                <div>
-                    <p>Проверьте созданные сделки и продолжайте работу:</p>
-                    <ul className="sc-list">
-                        <li>Перейдите в выбранную воронку и убедитесь, что сделки созданы на нужном этапе</li>
-                        <li>Используйте добавленные теги для быстрой фильтрации и сегментации</li>
-                    </ul>
-
-                    <div className="sc-note sc-note--green">
-                        <div className="sc-note-title">Готово!</div>
-                        Вы создали множество сделок одновременно — можно сосредоточиться на продажах.
-                    </div>
-                </div>
-            ),
-        },
-    ];
-
-    const problems: ProblemItem[] = [
-        {
-            title: 'Запуск новой рекламной кампании',
-            text: (
-                <>
-                    У вас есть база из 500 потенциальных клиентов из новой рекламы?
-                    Создайте для всех сделки за 2 минуты вместо 5 часов ручной работы.
-                </>
-            ),
-            bgUrl: '/widgets/WhatsappButton/back_timer.png',
-        },
-        {
-            title: 'Участие в выставке или событии',
-            text: (
-                <>
-                    Собрали 200 контактов на выставке? Мгновенно создайте сделки с тегом
-                    «Выставка 2025» и начинайте отработку, пока интерес клиентов горячий.
-                </>
-            ),
-            bgUrl: '/widgets/WhatsappButton/back_switch.png',
-        },
-        {
-            title: 'Email-маркетинг кампании',
-            text: (
-                <>
-                    Планируете отправить предложение всем клиентам из определённого сегмента?
-                    Создайте сделки заранее и отслеживайте конверсию каждого письма.
-                </>
-            ),
-            bgUrl: '/widgets/WhatsappButton/back_cross.png',
-        },
-        {
-            title: 'Реактивация старых клиентов',
-            text: (
-                <>
-                    Хотите вернуть клиентов, которые не покупали больше года?
-                    Создайте сделки для всех неактивных контактов с тегом «Реактивация».
-                </>
-            ),
-            bgUrl: '/widgets/WhatsappButton/back_basket.png',
-        },
-        {
-            title: 'Сезонные акции и распродажи',
-            text: (
-                <>
-                    Новогодняя распродажа для всех VIP-клиентов?
-                    Создайте персональные сделки для каждого и предложите индивидуальные условия.
-                </>
-            ),
-            bgUrl: '/widgets/WhatsappButton/back_timer.png',
-        },
-        {
-            title: 'Работа с партнёрскими базами',
-            text: (
-                <>
-                    Получили список потенциальных клиентов от партнёра?
-                    Быстро создайте сделки с соответствующими тегами и нужной воронкой.
-                </>
-            ),
-            bgUrl: '/widgets/WhatsappButton/back_switch.png',
-        },
-    ];
-
-    const features: FeatureItem[] = [
-        {
-            iconUrl: '/widgets/WhatsappButton/group.png',
-            title: 'Массовое создание за секунды',
-            text: <>Создавайте сделки для сотен контактов одновременно. То, что раньше занимало часы, теперь делается за минуты!</>,
-        },
-        {
-            iconUrl: '/widgets/WhatsappButton/sort.png',
-            title: 'Умная фильтрация контактов',
-            text: <>Выбирайте контакты по любым критериям или загружайте готовый список. Точное попадание в целевую аудиторию!</>,
-        },
-        {
-            iconUrl: '/widgets/WhatsappButton/free.png',
-            title: 'Автоматическое добавление тегов',
-            text: <>Создавайте новые теги и автоматически применяйте их ко всем новым сделкам. Идеальная сегментация с самого начала!</>,
-        },
-        {
-            iconUrl: '/widgets/WhatsappButton/target.png',
-            title: 'Выбор воронки и этапа',
-            text: <>Размещайте сделки точно в нужную воронку и этап. Никакой путаницы — всё структурировано с первого дня!</>,
-        },
-        {
-            iconUrl: '/widgets/WhatsappButton/deadline.png',
-            title: 'Отслеживание прогресса',
-            text: <>Видите статус каждой операции в реальном времени. Полный контроль над процессом создания сделок!</>,
-        },
-        {
-            iconUrl: '/widgets/WhatsappButton/mobile.png',
-            title: 'Простота использования',
-            text: <>Интуитивный интерфейс без сложных настроек. Освоите за 5 минут, сэкономите час!</>,
-        },
-    ];
-
-    return (
-        <main className="bg-white">
-            <section className="dist-hero" id={isIframe ? 'hidden-in-iframe' : ''}>
-                <div className="at-container">
-                    <div className="dist-pill dist-bleed-left">Массовое создание сделок для amoCRM</div>
-
-                    <h1 className="dist-hero-title">Создавайте сотни сделок за секунды!</h1>
-
-                    <p className="dist-hero-sub">
-                        Автоматизируйте создание сделок для всех ваших контактов одним нажатием.
-                        Забудьте о рутинной работе — виджет сделает всё за вас быстро и без ошибок.
-                    </p>
-
-                    <div className="dist-cta">
-                        <a
-                            className="dist-btn-primary"
-                            href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=48c94f76-e88e-4cb5-ad9c-a8a8c53e5a64"
-                            target="_blank"
-                            rel="noopener"
-                        >
-                            Установить виджет
-                        </a>
-                        <a href="#instruction" onClick={handleScrollToInstruction} className="dist-btn-link">
-                            Смотреть инструкцию →
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <FeaturesCard
-                title="Почему наш виджет незаменим?"
-                subtitle="Мощные функции для максимальной эффективности продаж"
-                items={features}
-                id={isIframe ? 'hidden-in-iframe' : ''}
-            />
-
-            <ProblemsCard
-                title="Когда виджет особенно полезен?"
-                subtitle="Реальные сценарии использования в бизнесе"
-                items={problems}
-                id={isIframe ? 'hidden-in-iframe' : ''}
-            />
-
-            <section id="instruction" className="ds-how sc-wrapper" aria-label="Пошаговая настройка виджета">
-                <SettingsCard
-                    id="settings-distribution"
-                    title="Как настроить виджет за 3 минуты"
-                    subtitle="Следуйте простым шагам для быстрой настройки:"
-                    steps={steps}
-                    showVideo
-                // videoId='b9b542ff41657b10b50987b118fe3920'
-                />
-            </section>
-
-            <section className="ds-prefooter" id={isIframe ? 'hidden-in-iframe' : ''}>
-                <div className="ds-container">
-                    <ConsultCard />
-                </div>
-            </section>
-        </main>
-    );
+      {!isIframe && (
+        <section className="ds-prefooter">
+          <div className="ds-container">
+            <ConsultCard />
+          </div>
+        </section>
+      )}
+    </main>
+  );
 }

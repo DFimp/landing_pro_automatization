@@ -16,7 +16,7 @@ export default function DuplicateContacts({
   const isIframe = searchParams.embed === "true";
 
   return (
-    <main className="bg-white">
+    <main className="bg-transparent">
       {!isIframe && (
         <>
           <section className="tg-hero">

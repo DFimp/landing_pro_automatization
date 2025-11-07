@@ -14,7 +14,7 @@ export default function СlosingBan({
   const isIframe = searchParams.embed === "true";
 
   return (
-    <main className="bg-white">
+    <main className="bg-transparent">
       {!isIframe && (
         <>
           <section className="dist-hero">
