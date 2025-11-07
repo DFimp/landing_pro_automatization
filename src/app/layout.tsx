@@ -93,9 +93,13 @@ export default function RootLayout({
         <Suspense fallback={<></>}>
           <YandexMetrika />
         </Suspense>
-        <Header />
+        <Suspense fallback={<div className="h-20" />}>
+          <Header />
+        </Suspense>
         {children}
-        <Footer />
+        <Suspense fallback={null}>
+          <Footer />
+        </Suspense>
       </body>
     </html>
   );
