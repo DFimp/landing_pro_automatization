@@ -14,55 +14,20 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://pro-automatization.ru'),
+  
   title: {
-    default: "Про Автоматизацию",
+    default: "Про Автоматизацию — интеграция и автоматизация amoCRM",
     template: "%s | Про Автоматизацию"
   },
-  description: "Ваш эксперт по amoCRM: настройка, интеграции, автоматизация бизнес-процессов. Консультации по amoCRM, воронки продаж, CRM-системы. Полная автоматизация вашего бизнеса с amoCRM.",
+
   other: {
     "yandex-verification": "f5d8de67e31c5b38",
   },
-  keywords: [
-    "amocrm", 
-    "амо срм", 
-    "настройка amocrm", 
-    "интеграция amocrm", 
-    "автоматизация бизнеса", 
-    "crm системы", 
-    "воронки продаж", 
-    "настройка crm", 
-    "консультант amocrm",
-    "эксперт amocrm",
-    "внедрение amocrm",
-    "обучение amocrm"
-  ],
+
   authors: [{ name: "Про Автоматизацию" }],
   creator: "Про Автоматизацию",
   publisher: "Про Автоматизацию",
-
-  openGraph: {
-    type: "website",
-    locale: "ru_RU",
-    url: "https://pro-automatization.ru/",
-    title: "Про Автоматизацию - Эксперт по amoCRM и автоматизации бизнеса",
-    description: "Настройка amoCRM, интеграции, автоматизация. Консультации и полное внедрение CRM-системы для вашего бизнеса.",
-    siteName: "Про Автоматизацию",
-    images: [
-      {
-        url: "https://pro-automatization.ru/og-image.png", 
-        width: 1200,
-        height: 630,
-        alt: "Про Автоматизацию - эксперт по amoCRM"
-      }
-    ],
-  },
-  
-  twitter: {
-    card: "summary_large_image",
-    title: "Про Автоматизацию - Эксперт по amoCRM",
-    description: "Настройка amoCRM, интеграции, автоматизация бизнес-процессов",
-    images: ["https://pro-automatization.ru/og-image.png"],
-  },
   
   robots: {
     index: true,
@@ -74,10 +39,6 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-  },
-
-  alternates: {
-    canonical: "https://pro-automatization.ru/",
   },
 };
 

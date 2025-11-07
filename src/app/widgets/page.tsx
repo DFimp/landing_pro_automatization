@@ -2,28 +2,18 @@ import type { Metadata } from "next";
 import WidgetsPage from "@/page/Widget/WidgetsPage";
 
 export const metadata: Metadata = {
-  title: "Виджеты для amoCRM",
+  title: "Виджеты для amoCRM - готовые решения от Про Автоматизацию",
   description:
-    "Готовые виджеты для amoCRM: Telegram уведомления, автозадачи, объединение дублей, распределение лидов, определение часового пояса клиента. Увеличьте эффективность CRM на 35%.",
-  keywords: [
-    "виджеты amocrm",
-    "виджеты амо срм",
-    "telegram виджет amocrm",
-    "автозадачи amocrm",
-    "дубли сделок amocrm",
-    "распределение лидов amocrm",
-    "часовой пояс клиента amocrm",
-    "whatsapp amocrm",
-    "автоматизация amocrm",
-    "интеграция telegram amocrm",
-    "crm виджеты",
-    "расширения amocrm",
-  ],
+    "Готовые виджеты для amoCRM: Telegram уведомления, распределение лидов, объединение дублей, автозадачи, определение часового пояса клиента и многое другое.",
+
+  alternates: {
+    canonical: "https://pro-automatization.ru/widgets",
+  },
 
   openGraph: {
-    title: "Виджеты для amoCRM - Готовые решения для автоматизации",
+    title: "Виджеты для amoCRM - готовые решения от Про Автоматизацию",
     description:
-      "8 готовых виджетов для amoCRM: Telegram интеграция, автозадачи, объединение дублей, умное распределение лидов. Увеличьте конверсию на 35%.",
+      "Готовые виджеты для amoCRM: Telegram уведомления, распределение лидов, объединение дублей, автозадачи, определение часового пояса клиента и многое другое.",
     url: "https://pro-automatization.ru/widgets",
     type: "website",
     images: [
@@ -41,22 +31,6 @@ export const metadata: Metadata = {
     title: "Виджеты для amoCRM - Готовые решения",
     description: "Готовые виджеты для amoCRM",
     images: ["https://pro-automatization.ru/og-image.png"],
-  },
-
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-
-  alternates: {
-    canonical: "https://pro-automatization.ru/widgets",
   },
 };
 

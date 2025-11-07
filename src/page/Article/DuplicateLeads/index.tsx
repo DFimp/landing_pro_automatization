@@ -4,7 +4,7 @@ import {
   ArticleContentSection,
 } from "@/widgets/article";
 
-export default function ArticleDuplicateContacts() {
+export default function ArticleDuplicateLeads() {
     return (
         <main id="duplicate_contacts" className="overflow-hidden">
             <ArticleDescriptionSection></ArticleDescriptionSection>

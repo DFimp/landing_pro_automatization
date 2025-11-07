@@ -25,7 +25,7 @@ export const WIDGET_ROUTES = {
 } as const;
 
 export const ARTICLES_ROUTES = {
-  DUPLICATE_CONTACTS: '/articles/duplicate-contacts',
+  DUPLICATE_CONTACTS: '/articles/duplicate-leads',
 }
 
 // Все виджеты одним списком (для удобства)

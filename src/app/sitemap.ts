@@ -21,13 +21,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${SITE_URL}${ROUTES.AUDIT}`,
       lastModified: currentDate,
-      changeFrequency: 'monthly',
+      changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${SITE_URL}${ROUTES.ACCOMPANIMENT}`,
       lastModified: currentDate,
-      changeFrequency: 'monthly',
+      changeFrequency: 'weekly',
       priority: 0.9,
     },
     // {
@@ -39,7 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${SITE_URL}${ROUTES.LICENSE}`,
       lastModified: currentDate,
-      changeFrequency: 'monthly',
+      changeFrequency: 'weekly',
       priority: 0.9,
     },
   ];

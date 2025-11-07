@@ -7,6 +7,7 @@ import ProblemsCard from "@/shared/ui/ProblemsCard/ProblemsCard";
 import FeaturesCard from "@/shared/ui/FeaturesCard/FeaturesCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
 import { STEPS, FEATURES, PROBLEMS, CASE_ITEMS } from "./constants";
+import Link from "next/link";
 
 export default function DuplicateLeads({
   searchParams,
@@ -42,6 +43,13 @@ export default function DuplicateLeads({
                 >
                   Установить виджет
                 </a>
+                <Link
+                  className="article-btn-link"
+                  href="/articles/duplicate-leads"
+                  target="_blank"
+                >
+                  Статья
+                </Link>
                 <ScrollToInstructionLink />
               </div>
             </div>

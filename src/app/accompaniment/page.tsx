@@ -2,26 +2,15 @@ import type { Metadata } from "next";
 import Accompaniment from "@/page/Accompaniment";
 
 export const metadata: Metadata = {
-  title: "Сопровождение amoCRM",
+  title: "Сопровождение amoCRM - техническая поддержка",
   description: "Профессиональное сопровождение amoCRM: техническая поддержка, доработки, обслуживание CRM системы. Позаботимся о том, чтобы ваша амо СРМ работала как часы без сбоев.",
-  keywords: [
-    "сопровождение amocrm",
-    "сопровождение амо срм", 
-    "техническая поддержка amocrm",
-    "обслуживание amocrm",
-    "поддержка crm системы",
-    "доработка amocrm",
-    "техническое сопровождение crm",
-    "администрирование amocrm",
-    "maintenance amocrm",
-    "support amocrm",
-    "crm поддержка",
-    "обновление amocrm",
-    "мониторинг amocrm"
-  ],
+  
+  alternates: {
+    canonical: "https://pro-automatization.ru/accompaniment",
+  },
   
   openGraph: {
-    title: "Сопровождение amoCRM - Профессиональная техническая поддержка",
+    title: "Сопровождение amoCRM - техническая поддержка",
     description: "Полное техническое сопровождение amoCRM: поддержка, доработки, обслуживание. Ваша CRM система будет работать стабильно и эффективно.",
     url: "https://pro-automatization.ru/accompaniment",
     type: "website",
@@ -40,22 +29,6 @@ export const metadata: Metadata = {
     title: "Сопровождение amoCRM - Техническая поддержка CRM",
     description: "Профессиональное сопровождение amoCRM: поддержка, доработки, обслуживание CRM системы",
     images: ["https://pro-automatization.ru/og-image.png"],
-  },
-
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-
-  alternates: {
-    canonical: "https://pro-automatization.ru/accompaniment",
   },
 };
 
