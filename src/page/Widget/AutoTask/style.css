@@ -108,20 +108,6 @@ body {
   box-shadow: 0 12px 28px rgba(56, 107, 255, .4);
 }
 
-.at-btn-link {
-  color: #cfd6ea;
-  border-bottom: 1px solid rgba(207, 214, 234, .35);
-  padding-bottom: 2px;
-  font-size: 16px;
-  transition: color .2s, border-color .2s;
-  margin-left: 0;
-}
-
-.at-btn-link:hover {
-  color: #fff;
-  border-color: rgba(255, 255, 255, .6);
-}
-
 .at-stats {
   margin-top: 28px;
   display: grid;
@@ -428,31 +414,12 @@ body {
     margin-bottom: 0;
   }
 
-  .at-btn-primary,
-  .at-btn-link {
+  .at-btn-primary{
     width: 100%;
     border-radius: 999px;
     font-size: 15px;
     justify-content: center;
     margin: 0;
-  }
-
-  .at-btn-link {
-    display: inline-flex;
-    align-items: center;
-    height: 44px;
-    padding: 0 22px;
-    background: #386bff;
-    color: #fff;
-    font-weight: 600;
-    font-size: 0;
-    box-shadow: 0 8px 24px rgba(56, 107, 255, .35);
-  }
-
-  .at-btn-link::before {
-    content: "Смотреть инструкцию";
-    font-size: 16px;
-    line-height: 44px;
   }
 }
 

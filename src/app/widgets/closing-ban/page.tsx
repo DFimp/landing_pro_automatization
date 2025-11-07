@@ -1,5 +1,9 @@
-import СlosingBan from '@/page/Widget/СlosingBan';
+import СlosingBan from "@/page/Widget/СlosingBan";
 
-export default function Page() {
-  return <СlosingBan />;
+export default function Page({
+  searchParams,
+}: {
+  searchParams: { embed?: string };
+}) {
+  return <СlosingBan searchParams={searchParams} />;
 }
