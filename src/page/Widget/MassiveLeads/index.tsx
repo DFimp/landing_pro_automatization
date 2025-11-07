@@ -2,11 +2,12 @@ import "./style.css";
 import React from "react";
 import SettingsCard from "@/shared/ui/settings/SettingsCard";
 import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
-import PreviewCard from "@/shared/ui/PreviewCard/PreviewCard";
+import ProblemsCard from "@/shared/ui/ProblemsCard/ProblemsCard";
+import FeaturesCard from "@/shared/ui/FeaturesCard/FeaturesCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
-import { STEPS } from "./constants";
+import { STEPS, PROBLEMS, FEATURES } from "./constants";
 
-export default function TimeZone({
+export default function MassiveLeads({
   searchParams,
 }: {
   searchParams: { embed?: string };
@@ -20,21 +21,23 @@ export default function TimeZone({
           <section className="dist-hero">
             <div className="at-container">
               <div className="dist-pill dist-bleed-left">
-                Регион по телефону для amoCRM
+                Массовое создание сделок для amoCRM
               </div>
 
-              <h1 className="dist-hero-title">Звоните в правильное время!</h1>
+              <h1 className="dist-hero-title">
+                Создавайте сотни сделок за секунды!
+              </h1>
 
               <p className="dist-hero-sub">
-                Автоматически определяйте регион и текущее время клиента по
-                номеру телефона. Никогда больше не разбудите клиента в 6 утра
-                или не позвоните в полночь!
+                Автоматизируйте создание сделок для всех ваших контактов одним
+                нажатием. Забудьте о рутинной работе — виджет сделает всё за вас
+                быстро и без ошибок.
               </p>
 
               <div className="dist-cta">
                 <a
                   className="dist-btn-primary"
-                  href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=25f94eb8-f182-4296-b86f-da4e26854b47"
+                  href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=48c94f76-e88e-4cb5-ad9c-a8a8c53e5a64"
                   target="_blank"
                   rel="noopener"
                 >
@@ -45,11 +48,16 @@ export default function TimeZone({
             </div>
           </section>
 
-          <PreviewCard
-            title="Как это выглядит?"
-            subtitle="Виджет автоматически отображается прямо в карточке контакта"
-            videoUrl="/widgets/TimeZone/time-zone-demo.gif"
-            imageUrl=""
+          <FeaturesCard
+            title="Почему наш виджет незаменим?"
+            subtitle="Мощные функции для максимальной эффективности продаж"
+            items={FEATURES}
+          />
+
+          <ProblemsCard
+            title="Когда виджет особенно полезен?"
+            subtitle="Реальные сценарии использования в бизнесе"
+            items={PROBLEMS}
           />
         </>
       )}

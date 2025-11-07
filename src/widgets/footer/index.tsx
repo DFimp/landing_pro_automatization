@@ -48,7 +48,7 @@ export const Footer = () => {
   ];
 
   return (
-    <footer id={isIframe ? "hidden-in-iframe" : ""} className="pt-6">
+    <footer id={isIframe ? "hidden-in-iframe" : ""}>
       <div
         className="w-full rounded-b-[24px] text-white
     bg-[radial-gradient(1200px_600px_at_0%_100%,rgba(108,0,255,.22),transparent_60%),radial-gradient(1000px_500px_at_100%_0%,rgba(0,102,255,.22),transparent_60%),linear-gradient(180deg,#1a1530_0%,#0f1427_100%)]"

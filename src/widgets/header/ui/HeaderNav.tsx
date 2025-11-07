@@ -8,7 +8,6 @@ const ServicesItems = [
   { name: "АУДИТ", link: "/audit" },
   { name: "ВНЕДРЕНИЕ С НУЛЯ", link: "/" },
   { name: "СОПРОВОЖДЕНИЕ", link: "/accompaniment" },
-  { name: "ЛИЦЕНЗИЯ", link: "/license" },
 ];
 
 const HeaderNav = () => {
@@ -26,6 +25,14 @@ const HeaderNav = () => {
           isOpen={isDropdownOpen}
           setIsOpen={setDropdownOpen}
         />
+        <li>
+          <Link
+            href="/license"
+            className="font-medium text-h8 hover:text-blue transition-colors duration-300"
+          >
+            ЛИЦЕНЗИЯ
+          </Link>
+        </li>
         <li>
           <Link
             href="/widgets"

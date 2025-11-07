@@ -189,7 +189,12 @@ body {
     margin: 30px 30px 50px;
 }
 
-.ds-demo .at-container {
-    position: relative;
-    z-index: 2;
+.preview-play {
+  display: none !important;
+}
+
+.at-section-title,
+.ds-how {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

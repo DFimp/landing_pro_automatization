@@ -1,24 +1,22 @@
-'use client';
+import "./CaseCard.css";
 
-import './CaseCard.css';
-
-import React from 'react';
-import clsx from 'clsx';
+import React from "react";
+import clsx from "clsx";
 
 export type CaseStripeItem = {
-  type: 'stripe';
-  side: 'left' | 'right';
+  type: "stripe";
+  side: "left" | "right";
   white?: boolean;
   text?: string;
   hiddenDesktop?: boolean;
 };
 
 export type CaseCardItem = {
-  type: 'card';
+  type: "card";
   title: string;
   text: React.ReactNode;
   mobileDecorUrl?: string;
-  mobileDecorLayer?: 'under' | 'over';
+  mobileDecorLayer?: "under" | "over";
 };
 
 export type CaseItem = CaseStripeItem | CaseCardItem;
@@ -38,25 +36,27 @@ const CaseCard: React.FC<CaseCardProps> = ({
   title,
   subtitle,
   items,
-  defaultStripeText = 'AMO CRM AMO CRM AMO CRM',
+  defaultStripeText = "AMO CRM AMO CRM AMO CRM",
 }) => {
   return (
-    <section className={clsx('at-cases', className)} id={id}>
+    <section className={clsx("at-cases", className)} id={id}>
       <div className="at-container">
         <h3 className="at-cases-title">{title}</h3>
         {subtitle ? <p className="at-cases-sub">{subtitle}</p> : null}
 
         <div className="at-cases-grid">
           {items.map((item, idx) => {
-            if (item.type === 'stripe') {
+            if (item.type === "stripe") {
               return (
                 <div
                   key={`stripe-${idx}`}
                   className={clsx(
-                    'at-case-amo',
-                    item.side === 'left' ? 'at-case-amo--left' : 'at-case-amo--right',
-                    item.white && 'at-case-amo--white',
-                    item.hiddenDesktop && 'at-case-amo--hidden-desktop'
+                    "at-case-amo",
+                    item.side === "left"
+                      ? "at-case-amo--left"
+                      : "at-case-amo--right",
+                    item.white && "at-case-amo--white",
+                    item.hiddenDesktop && "at-case-amo--hidden-desktop"
                   )}
                   aria-hidden={true}
                 >
@@ -67,13 +67,13 @@ const CaseCard: React.FC<CaseCardProps> = ({
               );
             }
 
-            const layer = item.mobileDecorLayer || 'under';
+            const layer = item.mobileDecorLayer || "under";
             const hasDecor = Boolean(item.mobileDecorUrl);
 
             return (
               <div
                 key={`card-${idx}`}
-                className={clsx('at-case', layer === 'over' && 'at-case--over')}
+                className={clsx("at-case", layer === "over" && "at-case--over")}
               >
                 {hasDecor && (
                   <div

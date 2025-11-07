@@ -72,6 +72,10 @@ body {
 
 .tg-cta {
   margin: 40px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 20px;
 }
 
 .tg-btn-primary {
