@@ -1,19 +1,13 @@
-"use client"
-
 import Image from "next/image";
-import Link from "next/link";
 import { FC } from "react";
 import { TittleArrowProps } from "@/shared/ui/titleArrow/models";
-import { detectMobile } from "@/shared/utils/detectMobile";
 
 export const TitleArrow: FC<TittleArrowProps> = ({
   text,
   variant = "primary",
-  link,
   className = "",
-  bold = true
+  bold = true,
 }) => {
-  // Определяем путь к изображению в зависимости от варианта
   const getArrowSrc = () => {
     switch (variant) {
       case "primary":
@@ -27,7 +21,6 @@ export const TitleArrow: FC<TittleArrowProps> = ({
     }
   };
 
-  // Определяем размеры изображения в зависимости от варианта
   const getArrowDimensions = () => {
     return variant === "outline"
       ? { width: 1323, height: 30 }
@@ -36,7 +29,6 @@ export const TitleArrow: FC<TittleArrowProps> = ({
 
   const arrowSrc = getArrowSrc();
   const arrowDimensions = getArrowDimensions();
-  const { isMobileView } = detectMobile()
 
   return (
     <div className={`${className}`}>
@@ -51,25 +43,27 @@ export const TitleArrow: FC<TittleArrowProps> = ({
           }`}
         >
           <h2
-            className={`sm:text-h4 text-[14px] ${bold ? 'font-semibold' : ''} text-base
-                    ${variant === "outline" && "container"} 
-                    ${variant === "secondary" ? "text-white" : ""}`}
+            className={`sm:text-h4 text-[14px] ${
+              bold ? "font-semibold" : ""
+            } text-base
+            ${variant === "outline" && "container"} 
+            ${variant === "secondary" ? "text-white" : ""}`}
           >
             {text}
           </h2>
 
-          <Link
-            href={link}
-            passHref
+          <div
             className={variant === "outline" ? "absolute left-0 top-15" : ""}
           >
             <Image
+              className="w-[42px] h-[10px] sm:w-auto sm:h-auto"
               src={arrowSrc}
-              alt="Стрелочка перехода"
-              width={isMobileView ? 42 : arrowDimensions.width}
-              height={isMobileView ? 10 : arrowDimensions.height}
+              alt="Arrow"
+              width={arrowDimensions.width}
+              height={arrowDimensions.height}
+              priority
             />
-          </Link>
+          </div>
         </div>
       </div>
     </div>

@@ -41,7 +41,7 @@ const WhyChooseUs = () => {
             <div className="sm:text-center container overflow">
                 {
                     isMobileView
-                    ? <TitleArrow text='Почему выбирают нас?' link='/' className='mb-6'/>
+                    ? <TitleArrow text='Почему выбирают нас?' className='mb-6'/>
                     : <h2 className="font-bold text-h2 mb-6">Почему выбирают нас?</h2>
                 }
                 <div className="mx-auto max-w-3xl px-4 sm:mb-20">

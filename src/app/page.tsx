@@ -1,21 +1,5 @@
-import {
-    HomeConsultSection,
-    HomeHeroSection,
-    HomeServicesSection,
-    HomeContainerSection,
-    HomeFeaturesSection,
-    HomeStepsSection,
-} from "@/widgets/home";
+import Home from "@/page/Home";
 
-export default function Home() {
-    return (
-        <main id="home" className="sm:pb-20 sm:pt-20 space-y-10">
-            <HomeHeroSection />
-            <HomeServicesSection />
-            <HomeContainerSection />
-            <HomeFeaturesSection />
-            <HomeStepsSection />
-            <HomeConsultSection />
-        </main>
-    );
+export default function Page() {
+  return <Home />;
 }
