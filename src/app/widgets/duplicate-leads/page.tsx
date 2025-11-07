@@ -1,9 +1,10 @@
 import DuplicateLeads from "@/page/Widget/DuplicateLeads";
 
-export default function Page({
+export default async function Page({
   searchParams,
 }: {
-  searchParams: { embed?: string };
+  searchParams: Promise<{ embed?: string }>;
 }) {
-  return <DuplicateLeads searchParams={searchParams} />;
+  const params = await searchParams;
+  return <DuplicateLeads searchParams={params} />;
 }

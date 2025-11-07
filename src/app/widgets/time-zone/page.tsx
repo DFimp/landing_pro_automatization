@@ -1,9 +1,10 @@
 import TimeZone from "@/page/Widget/TimeZone";
 
-export default function Page({
+export default async function Page({
   searchParams,
 }: {
-  searchParams: { embed?: string };
+  searchParams: Promise<{ embed?: string }>;
 }) {
-  return <TimeZone searchParams={searchParams} />;
+  const params = await searchParams;
+  return <TimeZone searchParams={params} />;
 }

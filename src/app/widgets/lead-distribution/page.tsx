@@ -1,9 +1,10 @@
 import Distribution from "@/page/Widget/Distribution";
 
-export default function Page({
+export default async function Page({
   searchParams,
 }: {
-  searchParams: { embed?: string };
+  searchParams: Promise<{ embed?: string }>;
 }) {
-  return <Distribution searchParams={searchParams} />;
+  const params = await searchParams;
+  return <Distribution searchParams={params} />;
 }

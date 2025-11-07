@@ -1,9 +1,10 @@
 import TelegramWidget from "@/page/Widget/TelegramNotify";
 
-export default function Page({
+export default async function Page({
   searchParams,
 }: {
-  searchParams: { embed?: string };
+  searchParams: Promise<{ embed?: string }>;
 }) {
-  return <TelegramWidget searchParams={searchParams} />;
+  const params = await searchParams;
+  return <TelegramWidget searchParams={params} />;
 }

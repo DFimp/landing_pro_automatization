@@ -1,9 +1,10 @@
 import MassiveLeads from "@/page/Widget/MassiveLeads";
 
-export default function Page({
+export default async function Page({
   searchParams,
 }: {
-  searchParams: { embed?: string };
+  searchParams: Promise<{ embed?: string }>;
 }) {
-  return <MassiveLeads searchParams={searchParams} />;
+  const params = await searchParams;
+  return <MassiveLeads searchParams={params} />;
 }

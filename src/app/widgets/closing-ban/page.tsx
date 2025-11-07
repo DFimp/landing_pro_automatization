@@ -1,9 +1,10 @@
 import СlosingBan from "@/page/Widget/СlosingBan";
 
-export default function Page({
+export default async function Page({
   searchParams,
 }: {
-  searchParams: { embed?: string };
+  searchParams: Promise<{ embed?: string }>;
 }) {
-  return <СlosingBan searchParams={searchParams} />;
+  const params = await searchParams;
+  return <СlosingBan searchParams={params} />;
 }

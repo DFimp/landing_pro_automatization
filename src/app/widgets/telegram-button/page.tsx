@@ -1,9 +1,10 @@
 import TelegramButton from "@/page/Widget/TelegramButton";
 
-export default function Page({
+export default async function Page({
   searchParams,
 }: {
-  searchParams: { embed?: string };
+  searchParams: Promise<{ embed?: string }>;
 }) {
-  return <TelegramButton searchParams={searchParams} />;
+  const params = await searchParams;
+  return <TelegramButton searchParams={params} />;
 }

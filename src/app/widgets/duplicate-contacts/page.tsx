@@ -1,9 +1,10 @@
 import DuplicateContacts from "@/page/Widget/DuplicateContacts";
 
-export default function Page({
+export default async function Page({
   searchParams,
 }: {
-  searchParams: { embed?: string };
+  searchParams: Promise<{ embed?: string }>;
 }) {
-  return <DuplicateContacts searchParams={searchParams} />;
+  const params = await searchParams;
+  return <DuplicateContacts searchParams={params} />;
 }

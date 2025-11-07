@@ -1,9 +1,10 @@
 import WhatsappButton from "@/page/Widget/WhatsappButton";
 
-export default function Page({
+export default async function Page({
   searchParams,
 }: {
-  searchParams: { embed?: string };
+  searchParams: Promise<{ embed?: string }>;
 }) {
-  return <WhatsappButton searchParams={searchParams} />;
+  const params = await searchParams;
+  return <WhatsappButton searchParams={params} />;
 }
