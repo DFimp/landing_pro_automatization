@@ -61,19 +61,13 @@ export default function DuplicateContacts({
         </>
       )}
 
-      <section
+      <SettingsCard
         id="instruction"
-        className="sc-wrapper"
-        aria-label="Пошаговая настройка виджета"
-      >
-        <SettingsCard
-          id="settings-dup"
-          title="Пошаговая настройка виджета"
-          subtitle="Следуйте простым шагам для быстрой настройки:"
-          steps={STEPS}
-          showVideo
-        />
-      </section>
+        title="Пошаговая настройка виджета"
+        subtitle="Следуйте простым шагам для быстрой настройки:"
+        steps={STEPS}
+        showVideo
+      />
 
       {!isIframe && (
         <>

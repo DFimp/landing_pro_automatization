@@ -203,7 +203,7 @@ export default function TelegramNotify({
       )}
 
       <SettingsCard
-        id="settings"
+        id="instruction"
         title="Пошаговая настройка виджета"
         subtitle="Следуйте простым шагам для быстрой настройки:"
         steps={STEPS}

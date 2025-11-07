@@ -71,19 +71,13 @@ export default function WhatsappButton({
         </>
       )}
 
-      <section
+      <SettingsCard
         id="instruction"
-        className="ds-how sc-wrapper"
-        aria-label="Пошаговая настройка виджета"
-      >
-        <SettingsCard
-          id="settings-distribution"
-          title="Как настроить виджет за 3 минуты"
-          subtitle="Следуйте простым шагам для быстрой настройки:"
-          steps={STEPS}
-          showVideo
-        />
-      </section>
+        title="Как настроить виджет за 3 минуты"
+        subtitle="Следуйте простым шагам для быстрой настройки:"
+        steps={STEPS}
+        showVideo
+      />
 
       {!isIframe && (
         <>
