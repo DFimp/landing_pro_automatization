@@ -21,7 +21,7 @@ export default function MassiveLeads({
           <section className="dist-hero">
             <div className="at-container">
               <div className="dist-pill dist-bleed-left">
-                Массовое создание сделок для amoCRM
+                Массовое создание сделок в amoCRM
               </div>
 
               <h1 className="dist-hero-title">

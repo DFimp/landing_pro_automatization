@@ -22,7 +22,7 @@ export default function DuplicateContacts({
           <section className="tg-hero">
             <div className="tg-container">
               <div className="tg-pill tg-bleed-left">
-                Дубли контактов (объединение дублей контактов) для amoCRM
+                Дубли контактов (объединение дублей контактов) в amoCRM
               </div>
 
               <h1 className="tg-hero-title">Избавиться от дублей контактов?</h1>

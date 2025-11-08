@@ -23,7 +23,7 @@ export default function DuplicateLeads({
           <section className="tg-hero">
             <div className="tg-container">
               <div className="tg-pill tg-bleed-left">
-                Дубли сделок (объединение дублей сделок) для amoCRM
+                Дубли сделок (объединение дублей сделок) в amoCRM
               </div>
 
               <h1 className="tg-hero-title">Навести порядок в сделках?</h1>

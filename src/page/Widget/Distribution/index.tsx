@@ -21,7 +21,7 @@ export default function Distribution({
           <section className="dist-hero">
             <div className="at-container">
               <div className="dist-pill dist-bleed-left">
-                Распределение сделок для amoCRM
+                Распределение сделок в amoCRM
               </div>
 
               <h1 className="dist-hero-title">
