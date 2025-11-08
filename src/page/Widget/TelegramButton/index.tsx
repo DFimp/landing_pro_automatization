@@ -22,13 +22,13 @@ export default function TelegramButton({
         <>
           <section className="dist-hero">
             <div className="at-container">
-              <div className="dist-pill dist-bleed-left">
+              <h1 className="dist-pill dist-bleed-left">
                 Мгновенный переход в Telegram из amoCRM
-              </div>
-
-              <h1 className="dist-hero-title">
-                Написать в Telegram за 1 клик?
               </h1>
+
+              <h2 className="dist-hero-title">
+                Написать в Telegram за 1 клик?
+              </h2>
 
               <p className="dist-hero-sub">
                 Превратите каждый номер телефона в прямую ссылку на чат с

@@ -21,11 +21,11 @@ export default function AutoTask({
         <>
           <section className="at-hero">
             <div className="at-container">
-              <div className="at-pill at-bleed-left">
+              <h1 className="at-pill at-bleed-left">
                 Автозадачи в сделках для amoCRM
-              </div>
+              </h1>
 
-              <h1 className="at-hero-title">Никогда не забывайте о сделках!</h1>
+              <h2 className="at-hero-title">Никогда не забывайте о сделках!</h2>
 
               <p className="at-hero-sub">
                 Автоматически создавайте задачи для сделок без активности.

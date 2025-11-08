@@ -19,11 +19,11 @@ export default function TimeZone({
         <>
           <section className="dist-hero">
             <div className="at-container">
-              <div className="dist-pill dist-bleed-left">
+              <h1 className="dist-pill dist-bleed-left">
                 Регион по телефону для amoCRM
-              </div>
+              </h1>
 
-              <h1 className="dist-hero-title">Звоните в правильное время!</h1>
+              <h2 className="dist-hero-title">Звоните в правильное время!</h2>
 
               <p className="dist-hero-sub">
                 Автоматически определяйте регион и текущее время клиента по

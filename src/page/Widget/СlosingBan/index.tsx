@@ -19,11 +19,11 @@ export default function СlosingBan({
         <>
           <section className="dist-hero">
             <div className="at-container">
-              <div className="dist-pill dist-bleed-left">
+              <h1 className="dist-pill dist-bleed-left">
                 Запрет закрытия задач без результата для amoCRM
-              </div>
+              </h1>
 
-              <h1 className="dist-hero-title">Нет задачам без результата!</h1>
+              <h2 className="dist-hero-title">Нет задачам без результата!</h2>
 
               <p className="dist-hero-sub">
                 Виджет не даст закрыть задачу без описания результата. Полная

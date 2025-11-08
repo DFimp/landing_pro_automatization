@@ -20,11 +20,11 @@ export default function TelegramNotify({
         <>
           <section className="at-hero">
             <div className="at-container">
-              <div className="at-pill at-bleed-left">
+              <h1 className="at-pill at-bleed-left">
                 Телеграм уведомления для amoCRM
-              </div>
+              </h1>
 
-              <h1 className="at-hero-title">Готовы быть в курсе событий?</h1>
+              <h2 className="at-hero-title">Готовы быть в курсе событий?</h2>
 
               <p className="at-hero-sub">
                 Получайте мгновенные уведомления в Telegram и запускайте

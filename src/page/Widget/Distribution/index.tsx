@@ -20,13 +20,13 @@ export default function Distribution({
         <>
           <section className="dist-hero">
             <div className="at-container">
-              <div className="dist-pill dist-bleed-left">
+              <h1 className="dist-pill dist-bleed-left">
                 Распределение сделок в amoCRM
-              </div>
-
-              <h1 className="dist-hero-title">
-                Справедливо распределить нагрузку?
               </h1>
+
+              <h2 className="dist-hero-title">
+                Справедливо распределить нагрузку?
+              </h2>
 
               <p className="dist-hero-sub">
                 Автоматическое распределение новых сделок между менеджерами по

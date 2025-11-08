@@ -20,13 +20,13 @@ export default function MassiveLeads({
         <>
           <section className="dist-hero">
             <div className="at-container">
-              <div className="dist-pill dist-bleed-left">
+              <h1 className="dist-pill dist-bleed-left">
                 Массовое создание сделок в amoCRM
-              </div>
-
-              <h1 className="dist-hero-title">
-                Создавайте сотни сделок за секунды!
               </h1>
+
+              <h2 className="dist-hero-title">
+                Создавайте сотни сделок за секунды!
+              </h2>
 
               <p className="dist-hero-sub">
                 Автоматизируйте создание сделок для всех ваших контактов одним
