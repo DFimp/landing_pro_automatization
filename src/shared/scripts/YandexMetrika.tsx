@@ -9,9 +9,13 @@ export function YandexMetrika() {
 
   useEffect(() => {
     try {
-      const url = `${pathname}?${searchParams}`;
-      // @ts-ignore
-      ym(104625972, "hit", url);
+      const timer = setTimeout(() => {
+        const url = `${pathname}?${searchParams}`;
+        // @ts-ignore
+        ym(104625972, "hit", url);
+      }, 2000)
+
+      return () => clearTimeout(timer)
     } catch (err) {}
   }, [pathname, searchParams]);
 

@@ -60,12 +60,14 @@ export const Footer = () => {
             <div className="-ml-2 sm:-ml-3">
               <Link href="/">
                 <Image
-                  src="/widgets/footer/footer_logo.png"
+                  src="/widgets/footer/footer_logo.webp"
                   alt="Про Автоматизацию"
                   width={210}
                   height={60}
                   className="block w-[210px] h-auto"
                   priority
+                  quality={85}
+                  fetchPriority="high"
                 />
               </Link>
             </div>

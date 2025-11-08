@@ -11,6 +11,7 @@ import { YandexMetrika, YandexScript } from "@/shared/scripts/YandexMetrika";
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin", "cyrillic"],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -41,6 +42,8 @@ export const metadata: Metadata = {
     },
   },
 };
+
+export const revalidate = 86400;
 
 export default function RootLayout({
   children,

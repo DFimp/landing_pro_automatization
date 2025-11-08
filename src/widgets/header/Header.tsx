@@ -17,7 +17,7 @@ const { isIframe } = useHiddenInIframe();
       <div className="header__logo">
         <Link href="/">
           <Image
-            src="/logoAndText.png"
+            src="/widgets/header/header_logo.webp"
             alt="Про автоматизацию"
             width={195}
             height={60}
