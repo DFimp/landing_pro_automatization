@@ -65,7 +65,7 @@ export default function TelegramButton({
           <PreviewCard
             title="Как это выглядит?"
             subtitle="Виджет автоматически отображается прямо в карточке контакта"
-            imageUrl="/widgets/TelegramButton/telegram.png"
+            imageUrl="/widgets/TelegramButton/Telegram.png"
           />
         </>
       )}

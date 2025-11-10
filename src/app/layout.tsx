@@ -22,6 +22,15 @@ export const metadata: Metadata = {
     template: "%s | Про Автоматизацию"
   },
 
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: '108x108' },
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: '/apple-icon.png',
+  },
+
   other: {
     "yandex-verification": "f5d8de67e31c5b38",
   },
