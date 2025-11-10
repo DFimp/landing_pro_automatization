@@ -67,6 +67,7 @@ export default function DuplicateContacts({
         subtitle="Следуйте простым шагам для быстрой настройки:"
         steps={STEPS}
         showVideo
+        videoId="587c58e4cffc051492375d0622e56822"
       />
 
       {!isIframe && (

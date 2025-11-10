@@ -76,6 +76,7 @@ export default function TelegramButton({
         subtitle="Следуйте простым шагам для быстрой настройки:"
         steps={STEPS}
         showVideo
+        videoId="c784467a56b528b34b435a328ceb097e"
       />
 
       {!isIframe && (

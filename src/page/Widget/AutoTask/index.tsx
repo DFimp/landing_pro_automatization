@@ -91,6 +91,7 @@ export default function AutoTask({
         subtitle="Следуйте простым шагам для быстрой настройки:"
         steps={STEPS}
         showVideo
+        videoId="68a9811758740029cb2c7a3e3d885869"
       />
 
       {!isIframe && (

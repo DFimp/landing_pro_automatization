@@ -60,6 +60,7 @@ export default function TimeZone({
         subtitle="Следуйте простым шагам для быстрой настройки:"
         steps={STEPS}
         showVideo
+        videoId="d7b3dd2910f7129214500d477d347a93"
       />
 
       {!isIframe && (

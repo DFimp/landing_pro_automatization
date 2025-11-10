@@ -77,6 +77,7 @@ export default function WhatsappButton({
         subtitle="Следуйте простым шагам для быстрой настройки:"
         steps={STEPS}
         showVideo
+        videoId="c23a5b096d984804fae92f3314449d67"
       />
 
       {!isIframe && (

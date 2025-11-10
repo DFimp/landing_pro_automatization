@@ -75,6 +75,7 @@ export default function DuplicateLeads({
         subtitle="Следуйте простым шагам для быстрой настройки:"
         steps={STEPS}
         showVideo
+        videoId="a0134e2bd2cac580d5d312b60d0874fb"
       />
 
       {!isIframe && (
