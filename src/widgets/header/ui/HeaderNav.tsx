@@ -35,6 +35,14 @@ const HeaderNav = () => {
         </li>
         <li>
           <Link
+            href="/cases"
+            className="font-medium text-h8 hover:text-blue transition-colors duration-300"
+          >
+            КЕЙСЫ
+          </Link>
+        </li>
+        <li>
+          <Link
             href="/widgets"
             className="font-medium text-h8 hover:text-blue transition-colors duration-300"
           >
