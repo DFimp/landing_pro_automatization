@@ -52,7 +52,6 @@ function TagBadge({ children, left = "18px" }: { children: string; left?: string
         fontSize: 12,
         letterSpacing: ".02em",
         whiteSpace: "nowrap",
-        borderRadius: 8,
       }}
     >
       {children}
@@ -83,11 +82,7 @@ function Pill({
   className?: string;
 }) {
   const radius =
-    shape.type === "left"
-      ? "0 75px 75px 0"
-      : shape.type === "right"
-      ? "75px 0 0 75px"
-      : "75px";
+    shape.type === "left" ? "0 75px 75px 0" : shape.type === "right" ? "75px 0 0 75px" : "75px";
 
   const ml = shape.type === "left" ? `-${shape.amount}vw` : "0px";
   const mr = shape.type === "right" ? `-${shape.amount}vw` : "0px";
@@ -108,6 +103,7 @@ function Pill({
         padding: `${padY}px ${padX}px`,
         marginLeft: ml,
         marginRight: mr,
+        overflow: "visible",
       }}
     >
       <TagBadge left={badgeLeft}>{tag}</TagBadge>
@@ -121,6 +117,7 @@ function Pill({
             lineHeight: 1.6,
             margin: 0,
             textAlign: "left",
+            wordBreak: "break-word",
           }}
         >
           {text}
@@ -134,7 +131,10 @@ export function TestimonialsSection() {
   const overshoot = 40;
 
   return (
-    <section style={{ paddingTop: 16, paddingBottom: 8, marginTop: 32, marginBottom: 32 }}>
+    <section
+      className="testimonials"
+      style={{ paddingTop: 16, paddingBottom: 8, marginTop: 32, marginBottom: 32, overflow: "visible" }}
+    >
       <div
         className="at-container"
         style={{
@@ -158,10 +158,7 @@ export function TestimonialsSection() {
         </h2>
 
         <div className="relative mb-6" style={{ height: 28 }}>
-          <span
-            className="absolute left-0 right-0"
-            style={{ top: 14, height: 2, background: "#0F1427" }}
-          />
+          <span className="absolute left-0 right-0" style={{ top: 14, height: 2, background: "#0F1427" }} />
           <span
             className="absolute"
             style={{
@@ -179,13 +176,7 @@ export function TestimonialsSection() {
 
       <div
         className="at-container"
-        style={{
-          width: "100%",
-          maxWidth: "1200px",
-          margin: "0 auto",
-          paddingLeft: "16px",
-          paddingRight: "16px",
-        }}
+        style={{ width: "100%", maxWidth: "1200px", margin: "0 auto", paddingLeft: "16px", paddingRight: "16px" }}
       >
         <Pill
           tag={ITEMS[0].tag}
@@ -247,7 +238,9 @@ export function TestimonialsSection() {
 
       <style jsx>{`
         @media (max-width: 768px) {
-          /* базово: все плашки — без уводов */
+          .testimonials,
+          .testimonials :global(.at-container) { overflow: visible; }
+
           .pill {
             margin-left: 0 !important;
             margin-right: 0 !important;
@@ -256,36 +249,17 @@ export function TestimonialsSection() {
             width: 100% !important;
             max-width: 100% !important;
           }
+          .badge { left: 16px !important; top: -12px !important; font-size: 11px !important; }
+          .pill-text { font-size: 14px !important; line-height: 1.55 !important; text-align: left !important; }
+          .author { text-align: left !important; font-size: 13px !important; }
+          .pair { grid-template-columns: 1fr !important; gap: 16px !important; }
+        }
+      `}</style>
 
-          .badge {
-            left: 16px !important;
-            top: -12px !important;
-            font-size: 11px !important;
-          }
-
-          .pill-text {
-            font-size: 14px !important;
-            line-height: 1.55 !important;
-            text-align: left !important;
-          }
-
-          .author {
-            text-align: left !important;
-            font-size: 13px !important;
-          }
-
-          .pair {
-            grid-template-columns: 1fr !important;
-            gap: 16px !important;
-          }
-
-          /* уводим только первые две на мобильных */
-          .pill.pill--left {
-            margin-left: -5vw !important;
-          }
-          .pill.pill--right {
-            margin-right: -5vw !important;
-          }
+      <style jsx global>{`
+        @media (max-width: 768px) {
+          .testimonials .pill.pill--left  { margin-left:  -5vw !important; }
+          .testimonials .pill.pill--right { margin-right: -5vw !important; }
         }
       `}</style>
     </section>
