@@ -144,7 +144,6 @@ export const CasesCard = memo(function CasesCard({
           border: "2px solid #0F1427",
           lineHeight: 1.1,
           whiteSpace: "nowrap",
-          borderRadius: 12,
         }}
       >
         {item.tag}
