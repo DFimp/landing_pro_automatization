@@ -85,10 +85,9 @@ export const Footer = () => {
               <div>
                 Телефон:{" "}
                 <a className="hover:underline" href="tel:+74951234567">
-                  +7 (495) 123-45-67
+                  +7 (865) 222-29-23
                 </a>
               </div>
-              <div>Ставропольский край, г. Ессентуки</div>
             </div>
           </div>
 
