@@ -70,6 +70,12 @@ export function WidgetsList() {
       link: "/widgets/whatsapp-button",
       variant: 3,
     },
+    {
+      text: `Полный контроль над удалением задач в amoCRM. Ограничьте удаление для менеджеров, настраивайте исключения по типам задач и защитите вашу воронку от случайных и намеренных потерь активности.`,
+      title: `Запрет удаления задач для amoCRM`,
+      link: "/widgets/delete-tasks-ban",
+      variant: 4,
+    },
   ];
 
   return (
@@ -81,7 +87,7 @@ export function WidgetsList() {
           text={widget.text}
           title={widget.title}
           variant={widget.variant}
-        ></WidgetsListItem>
+        />
       ))}
     </div>
   );
