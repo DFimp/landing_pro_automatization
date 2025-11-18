@@ -54,7 +54,7 @@ export const CASES: CasesItem[] = [
   },
   {
     tag: "МЕДИЦИНА",
-    title: "Убрали выездных врачей в amoCRM с трекингом на карте",
+    title: "Уберизация выездных бригад в amoCRM с трекингом на карте",
     text:
       "«Медиклиник» сократили время записи и число ошибок. Подключили виджеты и интеграции, внедрили сквозную аналитику, уведомления и отчёты.",
     author: "Руководитель проекта - Андрей Семёнов",
@@ -116,7 +116,9 @@ export const CasesCard = memo(function CasesCard({
 
   return (
     <article
-      className={["case-card relative text-white", className].filter(Boolean).join(" ")}
+      className={["case-card relative text-white", className]
+        .filter(Boolean)
+        .join(" ")}
       style={{
         width,
         maxWidth: 360,
@@ -144,16 +146,23 @@ export const CasesCard = memo(function CasesCard({
           border: "2px solid #0F1427",
           lineHeight: 1.1,
           whiteSpace: "nowrap",
+          zIndex: 3,
         }}
       >
         {item.tag}
       </div>
 
-      <h3 className="case-title font-semibold" style={{ marginTop: 12, fontSize: 22, lineHeight: 1.25 }}>
+      <h3
+        className="case-title font-semibold"
+        style={{ marginTop: 12, fontSize: 22, lineHeight: 1.25 }}
+      >
         {item.title}
       </h3>
 
-      <p className="case-text" style={{ marginTop: 10, fontSize: 16, lineHeight: 1.6, opacity: 0.98 }}>
+      <p
+        className="case-text"
+        style={{ marginTop: 10, fontSize: 16, lineHeight: 1.6, opacity: 0.98 }}
+      >
         {item.text}
       </p>
 
@@ -171,10 +180,21 @@ export const CasesCard = memo(function CasesCard({
       >
         <Avatar src={item.avatar} size={avatarSize} />
         <div className="flex flex-col">
-          <span className="case-role" style={{ fontSize: 16, lineHeight: 1.2, opacity: 0.9, marginBottom: 6 }}>
+          <span
+            className="case-role"
+            style={{
+              fontSize: 16,
+              lineHeight: 1.2,
+              opacity: 0.9,
+              marginBottom: 6,
+            }}
+          >
             {role}
           </span>
-          <span className="case-name font-semibold" style={{ fontSize: 18, lineHeight: 1.2 }}>
+          <span
+            className="case-name font-semibold"
+            style={{ fontSize: 18, lineHeight: 1.2 }}
+          >
             {name}
           </span>
         </div>
@@ -227,42 +247,145 @@ export const CasesCard = memo(function CasesCard({
   );
 });
 
-export function CasesGrid({ items = CASES }: { items?: CasesItem[] }) {
+export function CasesGrid() {
+  const [case1, case2, case3, case4, case5, case6] = CASES;
+
   return (
-    <section
-      className="cases-grid at-container"
-      style={{
-        width: "100%",
-        maxWidth: "1200px",
-        margin: "0 auto",
-        padding: "16px",
-        display: "grid",
-        gridTemplateColumns: "repeat(3, 360px)",
-        columnGap: 40,
-        rowGap: 40,
-        justifyContent: "space-between",
-      }}
-    >
-      {items.map((it) => (
-        <CasesCard key={it.title} item={it} />
-      ))}
+    <section className="cases-grid">
+      {/* ВЕРХНИЙ РЯД — стрелка вправо */}
+      <div className="cases-row cases-row--right">
+        <div className="cases-row__grid">
+          <CasesCard item={case1} className="case-card--under" />
+          {/* 2-я карточка: z-index 2 */}
+          <CasesCard
+            item={case2}
+            className="case-card--on-top"
+            style={{ zIndex: 2 }}
+          />
+          <CasesCard item={case3} className="case-card--under" />
+        </div>
+      </div>
+
+      {/* НИЖНИЙ РЯД — стрелка влево */}
+      <div className="cases-row cases-row--left">
+        <div className="cases-row__grid">
+          <CasesCard item={case4} className="case-card--under" />
+          {/* 5-я карточка: z-index 2 */}
+          <CasesCard
+            item={case5}
+            className="case-card--on-top"
+            style={{ zIndex: 2 }}
+          />
+          <CasesCard item={case6} className="case-card--under" />
+        </div>
+      </div>
 
       <style jsx>{`
+        .cases-grid {
+          width: 100%;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 16px;
+          display: flex;
+          flex-direction: column;
+          gap: 40px;
+        }
+
+        .cases-row {
+          position: relative;
+        }
+
+        .cases-row__grid {
+          display: grid;
+          grid-template-columns: repeat(3, 360px);
+          column-gap: 40px;
+          row-gap: 40px;
+          justify-content: space-between;
+          align-items: flex-start;
+        }
+
+        /* Линия — top не меняем */
+        .cases-row::before {
+          content: "";
+          position: absolute;
+          top: 50px;
+          height: 3px;
+          background: #000;
+          z-index: 1;
+        }
+
+        .cases-row--right::before {
+          left: 16px;
+          right: 40px;
+        }
+
+        .cases-row--left::before {
+          left: 20px;
+          right: 16px;
+        }
+
+        /* Стрелка вправо */
+        .cases-row--right::after {
+          content: "";
+          position: absolute;
+          top: 51px;
+          right: 40px;
+          width: 22px;
+          height: 22px;
+          border-top: 3px solid #000;
+          border-right: 3px solid #000;
+          transform: translateY(-50%) rotate(45deg);
+          z-index: 1;
+        }
+
+        /* Стрелка влево */
+        .cases-row--left::after {
+          content: "";
+          position: absolute;
+          top: 51px;
+          left: 20px;
+          width: 22px;
+          height: 22px;
+          border-top: 3px solid #000;
+          border-left: 3px solid #000;
+          transform: translateY(-50%) rotate(-45deg);
+          z-index: 1;
+        }
+
+        /* Крайние карточки под линией, центральные — над линией */
+        .case-card--under {
+          position: relative;
+          z-index: 0;
+        }
+
+        .case-card--on-top {
+          position: relative;
+          /* z-index ставим только инлайном у 2 и 5 карточки */
+        }
+
         @media (max-width: 1200px) {
-          .cases-grid {
-            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-            column-gap: 24px !important;
-            row-gap: 24px !important;
-            justify-content: stretch !important;
+          .cases-row__grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            column-gap: 24px;
+            row-gap: 24px;
+            justify-content: stretch;
           }
         }
+
         @media (max-width: 768px) {
           .cases-grid {
-            grid-template-columns: 1fr !important;
-            column-gap: 16px !important;
-            row-gap: 16px !important;
-            padding-left: 16px !important;
-            padding-right: 16px !important;
+            gap: 16px;
+          }
+
+          .cases-row__grid {
+            grid-template-columns: 1fr;
+            column-gap: 16px;
+            row-gap: 16px;
+          }
+
+          .cases-row::before,
+          .cases-row::after {
+            display: none;
           }
         }
       `}</style>
