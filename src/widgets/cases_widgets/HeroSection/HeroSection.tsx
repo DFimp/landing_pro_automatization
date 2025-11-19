@@ -12,11 +12,11 @@ export function HeroSection() {
       style={{ marginTop: 48, marginBottom: 48 }}
     >
       <div className="sm:text-left">
-        <h1 className="text-blue font-extrabold leading-[1.05] text-[36px] sm:text-h1">
+        <h1 className="text-blue font-semibold leading-[1.05] text-[36px] sm:text-h1">
           Кейсы
         </h1>
 
-        <div className="mt-1 uppercase font-extrabold text-blue text-[18px] sm:text-[28px] leading-[1.15]">
+        <div className="mt-1 font-extrabold text-blue text-[18px] sm:text-[43px] leading-[1.15]">
           внедрений amoCRM
         </div>
 
@@ -30,9 +30,10 @@ export function HeroSection() {
         aria-label="логотипы клиентов"
         className="
           grid justify-items-center items-center
-          grid-cols-2 gap-4
+          grid-cols-4 gap-4
           mt-4
           sm:mt-0 sm:auto-cols-max sm:grid-flow-col sm:grid-cols-none sm:gap-7
+          sm:self-center
           grayscale opacity-90
         "
       >
