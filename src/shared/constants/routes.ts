@@ -8,6 +8,7 @@ export const ROUTES = {
   WIDGETS: '/widgets',
   // ARTICLES: '/articles',
   LICENSE: '/license',
+  CASES: '/cases',
 } as const;
 
 // Страницы виджетов
