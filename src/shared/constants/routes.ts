@@ -22,6 +22,7 @@ export const WIDGET_ROUTES = {
   TIME_ZONE: '/widgets/time-zone',
   WHATSAPP_BUTTON: '/widgets/whatsapp-button',
   CLOSING_BAN: '/widgets/closing-ban',
+  DELETE_TASKS_BAN: '/widgets/delete-tasks-ban',
 } as const;
 
 export const ARTICLES_ROUTES = {

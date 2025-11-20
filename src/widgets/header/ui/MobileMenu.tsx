@@ -12,6 +12,7 @@ const ServicesItems = [
   { name: "ВНЕДРЕНИЕ С НУЛЯ", link: "/" },
   { name: "СОПРОВОЖДЕНИЕ", link: "/accompaniment" },
   { name: "ЛИЦЕНЗИЯ", link: "/license" },
+  { name: "КЕЙСЫ", link: "/cases" },
   { name: "ВИДЖЕТЫ", link: "/widgets" },
 ];
 

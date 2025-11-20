@@ -15,6 +15,7 @@ export const Footer = () => {
         { label: "Внедрение", href: "/#implementation" },
         { label: "Сопровождение", href: "/#support" },
         { label: "Лицензия", href: "/license" },
+        { label: "Кейсы", href: "/cases" },
       ],
     },
     {
