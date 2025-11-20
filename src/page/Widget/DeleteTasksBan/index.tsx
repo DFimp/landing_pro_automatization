@@ -38,7 +38,7 @@ export default function DeleteTasksBan({
               <div className="tg-cta">
                 <a
                   className="tg-btn-primary"
-                  href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=DELETE_TASKS_BAN_CLIENT_ID"
+                  href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=2a208537-35b9-4b8c-805c-e698198f00e9"
                   target="_blank"
                   rel="noopener"
                 >
@@ -69,7 +69,6 @@ export default function DeleteTasksBan({
         subtitle="Следуйте простым шагам, чтобы настроить запрет удаления задач:"
         steps={STEPS}
         showVideo
-        videoId="DELETE_TASKS_BAN_VIDEO_ID"
       />
 
       {!isIframe && (

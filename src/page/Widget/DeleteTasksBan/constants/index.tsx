@@ -18,7 +18,7 @@ export const STEPS = [
                     «Параметры», «Инструкция», «Техническая поддержка» и «Задачи исключения».
                 </p>
                 <a
-                    href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=YOUR_DELETE_TASKS_BAN_CLIENT_ID"
+                    href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=2a208537-35b9-4b8c-805c-e698198f00e9"
                     target="_blank"
                     rel="noopener"
                     className="sc-btn"
