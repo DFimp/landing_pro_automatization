@@ -1,4 +1,5 @@
-"use client";
+import { CSSProperties } from "react";
+import styles from "./index.module.css";
 
 type Testimonial = {
   tag: string;
@@ -41,19 +42,8 @@ const ITEMS: Testimonial[] = [
 function TagBadge({ children, left = "50px" }: { children: string; left?: string }) {
   return (
     <div
-      className="badge font-extrabold select-none"
-      style={{
-        position: "absolute",
-        top: -14,
-        left,
-        background: "#0F1427",
-        color: "#fff",
-        padding: "0px 2px",
-        fontSize: 18,
-        letterSpacing: ".02em",
-        whiteSpace: "nowrap",
-        fontWeight: 500,
-      }}
+      className={styles.badge}
+      style={{ left }}
     >
       {children}
     </div>
@@ -88,7 +78,7 @@ function Pill({
   const ml = shape.type === "left" ? `-${shape.amount}vw` : "0px";
   const mr = shape.type === "right" ? `-${shape.amount}vw` : "0px";
 
-  const contentWrapStyle: React.CSSProperties = {
+  const contentWrapStyle: CSSProperties = {
     maxWidth: 1150,
     marginLeft: contentAlign === "right" ? "auto" : 0,
     marginRight: contentAlign === "left" ? "auto" : 0,
@@ -97,30 +87,18 @@ function Pill({
 
   return (
     <div
-      className={`pill relative ${className ?? ""}`}
+      className={`${styles.pill} ${className ? styles[className] : ""}`}
       style={{
-        background: "#eef3ff",
         borderRadius: radius,
         padding: `${padY}px ${padX}px`,
         marginLeft: ml,
         marginRight: mr,
-        overflow: "visible",
       }}
     >
       <TagBadge left={badgeLeft}>{tag}</TagBadge>
 
-      <div className="content-wrap" style={contentWrapStyle}>
-        <p
-          className="pill-text"
-          style={{
-            color: "#0f1427",
-            fontSize: 16,
-            lineHeight: 1.6,
-            margin: 0,
-            textAlign: "left",
-            wordBreak: "break-word",
-          }}
-        >
+      <div className={styles.contentWrap} style={contentWrapStyle}>
+        <p className={styles.pillText}>
           {text}
         </p>
       </div>
@@ -132,137 +110,58 @@ export function TestimonialsSection() {
   const overshoot = 40;
 
   return (
-    <section
-      className="testimonials"
-      style={{ paddingTop: 16, paddingBottom: 8, marginTop: 32, marginBottom: 32, overflow: "visible" }}
-    >
-      <div
-        className="at-container"
-        style={{
-          width: "100%",
-          maxWidth: "1200px",
-          margin: "0 auto",
-          paddingLeft: "16px",
-          paddingRight: "16px",
-        }}
-      >
-        <h2
-          style={{
-            fontSize: 32,
-            fontWeight: 800,
-            lineHeight: 1.2,
-            marginBottom: 12,
-            color: "#0f1427",
-          }}
-        >
+    <section className={styles.testimonials}>
+      <div className={styles.container}>
+        <h2 className={styles.title}>
           Отзывы наших клиентов
         </h2>
 
-        <div className="relative mb-6" style={{ height: 28 }}>
-          <span className="absolute left-0 right-0" style={{ top: 14, height: 2, background: "#0F1427" }} />
-          <span
-            className="absolute"
-            style={{
-              right: 0,
-              top: 7,
-              width: 14,
-              height: 14,
-              borderTop: "2px solid #0F1427",
-              borderRight: "2px solid #0F1427",
-              transform: "rotate(45deg)",
-            }}
-          />
+        <div className={styles.decorLine}>
+          <span className={styles.decorLineBar} />
+          <span className={styles.decorLineArrow} />
         </div>
       </div>
 
-      <div
-        className="at-container"
-        style={{ width: "100%", maxWidth: "1200px", margin: "0 auto", paddingLeft: "16px", paddingRight: "16px" }}
-      >
+      <div className={styles.container}>
         <Pill
           tag={ITEMS[0].tag}
           text={ITEMS[0].text}
           shape={{ type: "left", amount: overshoot }}
           contentAlign="right"
           badgeLeft="40vw"
-          className="pill--left"
+          className="pillLeft"
         />
-        <div className="author" style={{ marginTop: 10, textAlign: "right", color: "#0f1427", opacity: 0.8, fontSize: 14 }}>
+        <div className={`${styles.author} ${styles.authorRight}`}>
           — {ITEMS[0].author}
         </div>
       </div>
 
-      <div
-        className="at-container"
-        style={{
-          width: "100%",
-          maxWidth: "1200px",
-          margin: "24px auto 0",
-          paddingLeft: "16px",
-          paddingRight: "16px",
-        }}
-      >
+      <div className={`${styles.container} ${styles.containerSpaced}`}>
         <Pill
           tag={ITEMS[1].tag}
           text={ITEMS[1].text}
           shape={{ type: "right", amount: overshoot }}
           contentAlign="left"
           badgeLeft="30vw"
-          className="pill--right"
+          className="pillRight"
         />
-        <div className="author" style={{ marginTop: 10, textAlign: "right", color: "#0f1427", opacity: 0.8, fontSize: 14 }}>
+        <div className={`${styles.author} ${styles.authorRight}`}>
           — {ITEMS[1].author}
         </div>
       </div>
 
-      <div
-        className="at-container"
-        style={{
-          width: "100%",
-          maxWidth: "1200px",
-          margin: "24px auto 0",
-          paddingLeft: "16px",
-          paddingRight: "16px",
-        }}
-      >
-        <div className="pair" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
+      <div className={`${styles.container} ${styles.containerSpaced}`}>
+        <div className={styles.pair}>
           {[ITEMS[2], ITEMS[3]].map((it, i) => (
             <div key={it.tag + i}>
               <Pill tag={it.tag} text={it.text} shape={{ type: "full" }} />
-              <div className="author" style={{ marginTop: 10, textAlign: "right", color: "#0f1427", opacity: 0.8, fontSize: 14 }}>
+              <div className={`${styles.author} ${styles.authorRight}`}>
                 — {it.author}
               </div>
             </div>
           ))}
         </div>
       </div>
-
-      <style jsx>{`
-        @media (max-width: 768px) {
-          .testimonials,
-          .testimonials :global(.at-container) { overflow: visible; }
-
-          .pill {
-            margin-left: 0 !important;
-            margin-right: 0 !important;
-            border-radius: 24px !important;
-            padding: 16px !important;
-            width: 100% !important;
-            max-width: 100% !important;
-          }
-          .badge { left: 16px !important; top: -12px !important; font-size: 11px !important; }
-          .pill-text { font-size: 14px !important; line-height: 1.55 !important; text-align: left !important; }
-          .author { text-align: left !important; font-size: 13px !important; }
-          .pair { grid-template-columns: 1fr !important; gap: 16px !important; }
-        }
-      `}</style>
-
-      <style jsx global>{`
-        @media (max-width: 768px) {
-          .testimonials .pill.pill--left  { margin-left:  -5vw !important; }
-          .testimonials .pill.pill--right { margin-right: -5vw !important; }
-        }
-      `}</style>
     </section>
   );
 }
