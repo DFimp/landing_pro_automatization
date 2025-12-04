@@ -76,6 +76,12 @@ export function WidgetsList() {
       link: "/widgets/delete-tasks-ban",
       variant: 4,
     },
+    {
+      text: `Мгновенно выделяйте группы сделок, контактов и компаний с помощью Shift и протягивания мышкой. Ускорьте массовое изменение ответственных, статусов, запуск автоматизаций и другие групповый действия в amoCRM.`,
+      title: `Групповое выделение (Shift-выбор) для amoCRM`,
+      link: "/widgets/shift-select",
+      variant: 1,
+    },
   ];
 
   return (
