@@ -24,7 +24,7 @@ export const STEPS = [
 
                 <div style={{ marginTop: 16 }}>
                     <a
-                        href="" // TODO: добавить ссылку на установку виджета
+                        href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=d466e907-bb7e-468b-8420-b9f165221627"
                         target="_blank"
                         rel="noopener"
                         className="dist-btn-primary"

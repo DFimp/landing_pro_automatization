@@ -24,6 +24,7 @@ export const WIDGET_ROUTES = {
   WHATSAPP_BUTTON: '/widgets/whatsapp-button',
   CLOSING_BAN: '/widgets/closing-ban',
   DELETE_TASKS_BAN: '/widgets/delete-tasks-ban',
+  SHIFT_SELECT: '/widgets/shift-select',
 } as const;
 
 export const ARTICLES_ROUTES = {
