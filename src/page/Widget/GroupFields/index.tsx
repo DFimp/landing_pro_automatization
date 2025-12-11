@@ -45,14 +45,6 @@ export default function GroupFields({
                                     Установить виджет
                                 </a>
 
-                                <Link
-                                    className="article-btn-link"
-                                    href="/articles/group-fields"
-                                    target="_blank"
-                                >
-                                    Статья
-                                </Link>
-
                                 <ScrollToInstructionLink />
                             </div>
                         </div>
