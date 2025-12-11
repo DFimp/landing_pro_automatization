@@ -82,6 +82,12 @@ export function WidgetsList() {
       link: "/widgets/shift-select",
       variant: 1,
     },
+    {
+      text: `Автоматически группируйте поля в карточке сделки по логической структуре. Удобная навигация, свертываемые группы и аккуратный внешний вид, даже при большом числе полей.`,
+      title: `Группировка полей для amoCRM`,
+      link: "/widgets/group-fields",
+      variant: 2,
+    },
   ];
 
   return (

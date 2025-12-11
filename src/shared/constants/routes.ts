@@ -25,6 +25,7 @@ export const WIDGET_ROUTES = {
   CLOSING_BAN: '/widgets/closing-ban',
   DELETE_TASKS_BAN: '/widgets/delete-tasks-ban',
   SHIFT_SELECT: '/widgets/shift-select',
+  GROUP_FIELDS: '/widgets/group-fields',
 } as const;
 
 export const ARTICLES_ROUTES = {
