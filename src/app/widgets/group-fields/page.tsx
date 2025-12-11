@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import GroupFields from "@/page/Widget/GroupFields";
 
 export const metadata: Metadata = {
-    title: "Группировка полей в карточке сделки в amoCRM",
+    title: "Группировка полей для amoCRM",
     description:
         "Виджет автоматически группирует поля в карточке сделки amoCRM по логическим блокам. Удобная структура, сворачиваемые группы и ускорение работы менеджеров.",
 

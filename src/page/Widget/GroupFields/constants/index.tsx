@@ -11,7 +11,7 @@ export const STEPS = [
                     стандартной инструкции amoCRM для подключения.
                 </p>
                 <a
-                    href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=YOUR_GROUP_FIELDS_WIDGET_ID"
+                    href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=b54cc436-b04d-438c-b80f-e8ca06f9265b"
                     target="_blank"
                     rel="noopener"
                     className="sc-btn"

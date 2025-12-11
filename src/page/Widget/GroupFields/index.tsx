@@ -6,7 +6,6 @@ import CaseCard from "@/shared/ui/Case/CaseCard";
 import ProblemsCard from "@/shared/ui/ProblemsCard/ProblemsCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
 import { STEPS, PROBLEMS, CASE_ITEMS } from "./constants";
-import Link from "next/link";
 
 export default function GroupFields({
     searchParams,
@@ -38,7 +37,7 @@ export default function GroupFields({
                             <div className="tg-cta">
                                 <a
                                     className="tg-btn-primary"
-                                    href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=YOUR_WIDGET_ID"
+                                    href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=b54cc436-b04d-438c-b80f-e8ca06f9265b"
                                     target="_blank"
                                     rel="noopener"
                                 >
