@@ -82,6 +82,12 @@ export function WidgetsList() {
       link: "/widgets/shift-select",
       variant: 1,
     },
+    {
+      text: `Автоматически переносит длинные названия пользовательских полей в карточках amoCRM. Убирает многоточия, предотвращает наложения и делает интерфейс аккуратным и читаемым.`,
+      title: `Перенос длинных названий полей для amoCRM`,
+      link: "/widgets/transfer-fields",
+      variant: 2,
+    },
   ];
 
   return (
