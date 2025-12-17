@@ -26,6 +26,7 @@ export const WIDGET_ROUTES = {
   DELETE_TASKS_BAN: '/widgets/delete-tasks-ban',
   SHIFT_SELECT: '/widgets/shift-select',
   GROUP_FIELDS: '/widgets/group-fields',
+  GOOGLE_SHEETS: '/widgets/google-sheets',
 } as const;
 
 export const ARTICLES_ROUTES = {
