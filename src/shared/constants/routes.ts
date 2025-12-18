@@ -6,7 +6,7 @@ export const ROUTES = {
   AUDIT: '/audit',
   ACCOMPANIMENT: '/accompaniment',
   WIDGETS: '/widgets',
-  // ARTICLES: '/articles',
+  ARTICLES: '/articles',
   LICENSE: '/license',
   CASES: '/cases',
 } as const;
@@ -35,6 +35,9 @@ export const ARTICLES_ROUTES = {
 
 // Все виджеты одним списком (для удобства)
 export const ALL_WIDGET_ROUTES = Object.values(WIDGET_ROUTES);
+
+// Все статьи одним списком (на будущее)
+export const ALL_ARTICLES_ROUTES = Object.values(ARTICLES_ROUTES);
 
 // Все пути одним списком
 export const ALL_ROUTES = {

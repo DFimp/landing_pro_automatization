@@ -25,6 +25,7 @@ const HeaderNav = () => {
           isOpen={isDropdownOpen}
           setIsOpen={setDropdownOpen}
         />
+
         <li>
           <Link
             href="/license"
@@ -33,6 +34,7 @@ const HeaderNav = () => {
             ЛИЦЕНЗИЯ
           </Link>
         </li>
+
         <li>
           <Link
             href="/cases"
@@ -41,12 +43,22 @@ const HeaderNav = () => {
             КЕЙСЫ
           </Link>
         </li>
+
         <li>
           <Link
             href="/widgets"
             className="font-medium text-h8 hover:text-blue transition-colors duration-300"
           >
             ВИДЖЕТЫ
+          </Link>
+        </li>
+
+        <li>
+          <Link
+            href="/articles"
+            className="font-medium text-h8 hover:text-blue transition-colors duration-300"
+          >
+            СТАТЬИ
           </Link>
         </li>
       </ul>
