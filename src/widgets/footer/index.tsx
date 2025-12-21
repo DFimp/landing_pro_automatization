@@ -24,26 +24,10 @@ export const Footer = () => {
 
   const WIDGETS: WidgetItem[] = useMemo(
     () => [
-      {
-        label: "Телеграм уведомления",
-        href: "/widgets/telegram-notify",
-        aliases: ["telegram", "уведомления", "тг", "tg", "бот"],
-      },
-      {
-        label: "Распределение сделок",
-        href: "/widgets/lead-distribution",
-        aliases: ["распределение", "сделки", "лиды", "менеджеры", "lead distribution"],
-      },
-      {
-        label: "Дубли сделок (объединение дублей сделок)",
-        href: "/widgets/duplicate-leads",
-        aliases: ["дубли", "сделки", "объединение", "склейка", "duplicate leads"],
-      },
-      {
-        label: "Дубли контактов (объединение дублей контактов)",
-        href: "/widgets/duplicate-contacts",
-        aliases: ["дубли", "контакты", "объединение", "склейка", "duplicate contacts"],
-      },
+      { label: "Телеграм уведомления", href: "/widgets/telegram-notify", aliases: ["telegram", "уведомления", "тг", "tg", "бот"] },
+      { label: "Распределение сделок", href: "/widgets/lead-distribution", aliases: ["распределение", "сделки", "лиды", "менеджеры", "lead distribution"] },
+      { label: "Дубли сделок (объединение дублей сделок)", href: "/widgets/duplicate-leads", aliases: ["дубли", "сделки", "объединение", "склейка", "duplicate leads"] },
+      { label: "Дубли контактов (объединение дублей контактов)", href: "/widgets/duplicate-contacts", aliases: ["дубли", "контакты", "объединение", "склейка", "duplicate contacts"] },
       { label: "Регион по телефону", href: "/widgets/time-zone", aliases: ["время", "часовой пояс", "регион", "телефон"] },
       { label: "Автозадачи в сделках", href: "/widgets/auto-tasks", aliases: ["автозадачи", "задачи"] },
       { label: "Массовое создание сделок", href: "/widgets/massive-leads", aliases: ["массовое", "создание сделок"] },
@@ -204,8 +188,32 @@ export const Footer = () => {
             </nav>
 
             <div>
-              <div className="mb-3 text-[16px] font-semibold text-white/95">Виджеты</div>
-              <div className="w-full max-w-[520px]">
+              <Link
+                href="/widgets"
+                className="mb-3 inline-flex items-center gap-2
+             text-[16px] font-semibold text-white/95
+             hover:text-white transition"
+              >
+                Виджеты
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="opacity-90"
+                >
+                  <path
+                    d="M9 18L15 12L9 6"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </Link>
+
+              <div className="w-full">
                 <div className="relative">
                   <input
                     value={query}
@@ -319,24 +327,34 @@ export const Footer = () => {
                 </div>
 
                 <div className="mt-3 grid grid-cols-2 gap-2">
-                  {popularWidgets.map((w, idx) => (
-                    <Link
-                      key={w.href}
-                      href={w.href}
-                      className={`px-3 py-2 rounded-[12px] bg-white/6 border border-white/12 text-[14px] text-[#e9ecff] hover:text-white hover:bg-white/10 transition
-        ${idx >= 2 ? "col-span-2" : "col-span-1"}`}
-                    >
-                      {w.label}
-                    </Link>
-                  ))}
-                </div>
+                  <Link
+                    href="/widgets/telegram-notify"
+                    className="px-3 py-2 rounded-[12px] bg-white/6 border border-white/12 text-[14px] text-[#e9ecff] hover:text-white hover:bg-white/10 transition"
+                  >
+                    Телеграм уведомления
+                  </Link>
 
-                <Link
-                  href="/widgets"
-                  className="inline-flex mt-4 items-center gap-2 text-[14px] text-white hover:opacity-80 transition"
-                >
-                  Все виджеты <span aria-hidden="true">→</span>
-                </Link>
+                  <Link
+                    href="/widgets/duplicate-leads"
+                    className="px-3 py-2 rounded-[12px] bg-white/6 border border-white/12 text-[14px] text-[#e9ecff] hover:text-white hover:bg-white/10 transition"
+                  >
+                    Дубли сделок
+                  </Link>
+
+                  <Link
+                    href="/widgets/lead-distribution"
+                    className="px-3 py-2 rounded-[12px] bg-white/6 border border-white/12 text-[14px] text-[#e9ecff] hover:text-white hover:bg-white/10 transition"
+                  >
+                    Распределение сделок
+                  </Link>
+
+                  <Link
+                    href="/widgets/duplicate-contacts"
+                    className="px-3 py-2 rounded-[12px] bg-white/6 border border-white/12 text-[14px] text-[#e9ecff] hover:text-white hover:bg-white/10 transition"
+                  >
+                    Дубли контактов
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

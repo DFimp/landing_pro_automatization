@@ -34,3 +34,7 @@ body {
     --color-light-blue: #E2E2E2;
     --color-light-blue2: #E2E2E2;
 }
+
+html {
+  scroll-behavior: smooth;
+}
