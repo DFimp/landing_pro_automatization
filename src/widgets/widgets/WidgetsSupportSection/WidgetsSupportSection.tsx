@@ -50,12 +50,6 @@ export function WidgetsSupportSection() {
             2 часа сопровождения <span className="sm:inline block"></span>в
             месяц включено
           </h5>
-          <a href="#special_offer_calculator" className="block">
-            <Button
-              text="Увеличить количество часов"
-              className="px-[40px] sm:py-[20px] py-[9px] sm:w-auto w-full text-[20px]! rounded-full"
-            ></Button>
-          </a>
         </div>
       </div>
     </>

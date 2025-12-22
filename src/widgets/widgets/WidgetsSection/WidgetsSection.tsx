@@ -1,4 +1,4 @@
-import { WidgetsList } from "./ui/WidgetsList";
+import { WidgetsListShort } from "./ui/WidgetsListShort";
 import Image from "next/image";
 
 export function WidgetsWidgetsSection() {
@@ -8,6 +8,7 @@ export function WidgetsWidgetsSection() {
         <h2 className="text-white sm:text-[32px] text-[16px] font-semibold">
           Получите виджеты бесплатно. Настроим тоже мы
         </h2>
+
         <Image
           src="/arrow_white.svg"
           alt=""
@@ -17,9 +18,8 @@ export function WidgetsWidgetsSection() {
           priority
         />
       </div>
-      <div className="">
-        <WidgetsList></WidgetsList>
-      </div>
+
+      <WidgetsListShort />
     </div>
   );
 }
