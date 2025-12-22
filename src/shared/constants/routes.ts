@@ -28,6 +28,7 @@ export const WIDGET_ROUTES = {
   GROUP_FIELDS: '/widgets/group-fields',
   TRANSFER_FIELDS: '/widgets/transfer-fields',
   DELETE_NOTES_BAN: '/widgets/delete-notes-ban',
+  SETTING_FEED: '/widgets/setting-feed',
   GOOGLE_SHEETS: '/widgets/google-sheets',
 } as const;
 
