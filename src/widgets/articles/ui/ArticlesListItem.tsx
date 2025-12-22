@@ -1,0 +1,78 @@
+import Image from "next/image";
+import Link from "next/link";
+
+interface ArticlesListItemProps {
+  title: string;
+  variant: number;
+  text: string;
+  link: string;
+  className?: string;
+}
+
+export function ArticlesListItem({
+  text,
+  variant,
+  title,
+  className,
+  link,
+}: ArticlesListItemProps) {
+  let cardClassName = "";
+  let upperDecorationPath = "";
+  let bottomDecorationPath = "";
+
+  switch (variant) {
+    case 1:
+      cardClassName = "bg-white";
+      break;
+    case 2:
+      cardClassName = "bg-white";
+      upperDecorationPath = "/widgets_list_decoration_1.svg";
+      bottomDecorationPath = "/widgets_list_decoration_2.svg";
+      break;
+    case 3:
+      cardClassName = "bg-[#3760E7] text-white";
+      upperDecorationPath = "/widgets_list_decoration_3.svg";
+      break;
+    case 4:
+      cardClassName = "bg-[#3760E7] text-white";
+      bottomDecorationPath = "/widgets_list_decoration_4.svg";
+      break;
+    default:
+      cardClassName = "bg-white";
+      break;
+  }
+
+  return (
+    <Link href={link}>
+      <div
+        className={`h-full sm:px-[61px] sm:py-[52px] py-[40px] px-[35px] rounded-[40px] border border-[#3760E7] relative overflow-hidden ${cardClassName} ${className ?? ""}`}
+      >
+        {[2, 3].includes(variant) && upperDecorationPath && (
+          <Image
+            className="absolute left-0 top-0"
+            src={upperDecorationPath}
+            alt=""
+            width={variant === 3 ? 9999 : 310}
+            height={9999}
+          />
+        )}
+
+        <h3 className="sm:font-[20px] font-[16px] font-semibold sm:pb-[20px] pb-[10px]">
+          {title}
+        </h3>
+
+        <p className="sm:font-[16px] font-[14px] leading-[1.5]">{text}</p>
+
+        {[2, 4].includes(variant) && bottomDecorationPath && (
+          <Image
+            className="absolute right-0 bottom-0"
+            src={bottomDecorationPath}
+            alt=""
+            width={310}
+            height={9999}
+          />
+        )}
+      </div>
+    </Link>
+  );
+}

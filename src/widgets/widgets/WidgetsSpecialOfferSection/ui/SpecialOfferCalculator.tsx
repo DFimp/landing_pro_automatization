@@ -1,63 +1,129 @@
-'use client'
-import SpecialOfferSlider from "./SpecialOfferSlider";
-import SpecialOfferPlanSelect from "./SpecialOfferPlanSelect";
-import SpecialOfferUsersCounter from "./SpecialOfferUsersCounter";
-import SpecialOfferConfirm from "./SpecialOfferConfirm";
-import SpecialOfferProfit from "./SpecialOfferProfit";
-import { useState, useEffect } from "react";
+"use client";
+
+import { useEffect, useMemo, useState } from "react";
 import ConsultationModal from "@/features/consultation/ConsultationModal";
 
+import SpecialOfferSlider from "./SpecialOfferSlider";
+import SpecialOfferPlanSelect, { TariffIndex } from "./SpecialOfferPlanSelect";
+import SpecialOfferUsersCounter from "./SpecialOfferUsersCounter";
+import SpecialOfferProfit from "./SpecialOfferProfit";
+import SpecialOfferConfirm from "./SpecialOfferConfirm";
+
+type MonthsOption = 5 | 7 | 9 | 17;
+
 export default function SpecialOfferCalculator() {
+  const [monthsCount, setMonthsCount] = useState<MonthsOption>(7);
+  const [tariff, setTariff] = useState<TariffIndex>(0);
+  const [usersCount, setUsersCount] = useState(10);
 
-  const [monthsCount, setMonthsCount] = useState<6 | 9 | 12 | 24>(9)
-  const [tariff, setTariff] = useState(0)
-  const [usersCount, setUsersCount] = useState(10)
+  const tariffsCosts = [599, 1199, 1699] as const;
+  const tariffsNames = ["Базовый", "Расширенный", "Профессиональный", "Архивный"] as const;
 
-  const tariffsCosts = [599, 1199, 1699]
-  const tariffsNames = ['Базовый', 'Расширенный', 'Профессиональный']
-  const bonusMonths = {
-        6: 1,
-        9: 2,
-        12: 3,
-        24: 7 
-    }
+  const bonusMonths: Record<MonthsOption, number> = {
+    5: 1,
+    7: 2,
+    9: 3,
+    17: 7,
+  };
 
-  const [profit, setProfit] = useState(0)
-  const [finalCost, setFinalCost] = useState(0)
+  const [archivedPrice, setArchivedPrice] = useState<number>(0);
+
+  const pricePerUser = useMemo(() => {
+    if (tariff === 3) return archivedPrice;
+    return tariffsCosts[tariff];
+  }, [tariff, archivedPrice]);
+
+  const [profit, setProfit] = useState(0);
+  const [finalCost, setFinalCost] = useState(0);
+  const [fullCost, setFullCost] = useState(0);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
 
   useEffect(() => {
-    setProfit(tariffsCosts[tariff] * usersCount * bonusMonths[monthsCount])
-    setFinalCost(tariffsCosts[tariff] * usersCount * (monthsCount - bonusMonths[monthsCount]))
-  }, [monthsCount, tariff, usersCount])
+    const bonus = bonusMonths[monthsCount];
+
+    const safePrice = Number.isFinite(pricePerUser) ? pricePerUser : 0;
+    const safeUsers = Number.isFinite(usersCount) ? usersCount : 0;
+
+    const paidMonths = monthsCount;
+    const totalMonths = monthsCount + bonus;
+
+    const full = safePrice * safeUsers * totalMonths;
+    const pay = safePrice * safeUsers * paidMonths;
+    const save = full - pay;
+
+    setFullCost(Math.max(0, Math.round(full)));
+    setFinalCost(Math.max(0, Math.round(pay)));
+    setProfit(Math.max(0, Math.round(save)));
+  }, [monthsCount, usersCount, pricePerUser]);
+
   return (
     <>
-      <div id="special_offer_calculator" className="border border-[#3760E7] rounded-[20px] max-w-[580px] w-full overflow-hidden">
-        <div className="sm:border-b sm:border-[#D9D9D9] flex flex-col justify-center items-center p-[47px] pb-[27px]">
-          <SpecialOfferSlider value={monthsCount} setValue={setMonthsCount}></SpecialOfferSlider>
-          <p className="mt-[85px] text-[#969696] text-center">Чем длинее срок - тем больше месяцев в подарок</p>
+      <div
+        id="special_offer_calculator"
+        className="
+          border border-[#3760E7] rounded-[20px]
+          w-full
+          max-w-[820px]  /* ✅ было 580, делаем уже/аккуратнее */
+          overflow-hidden
+          bg-white
+        "
+      >
+        <div className="sm:border-b sm:border-[#D9D9D9] flex flex-col justify-center items-center p-[36px] sm:p-[47px] pb-[27px]">
+          <SpecialOfferSlider value={monthsCount} setValue={setMonthsCount} />
+          <p className="mt-[85px] text-[#969696] text-center">
+            Чем длинее срок - тем больше месяцев в подарок
+          </p>
         </div>
-        <div className="flex sm:flex-row flex-col">
-          <div className="sm:border-r sm:border-[#D9D9D9] flex-grow-1 flex flex-col gap-[23px] sm:pl-[47px] pl-[26px] pt-[15px] sm:pr-[27px] pr-[26px] pb-[24px] sm:max-w-[50%]">
-            <SpecialOfferPlanSelect value={tariff} setValue={setTariff}></SpecialOfferPlanSelect>
-            <SpecialOfferUsersCounter value={usersCount} setValue={setUsersCount}></SpecialOfferUsersCounter>
+
+        <div className="flex flex-col sm:flex-row">
+          <div className="sm:w-1/2 sm:border-r sm:border-[#D9D9D9] flex flex-col gap-[23px] pl-[26px] pr-[26px] sm:pl-[44px] sm:pr-[32px] pt-[15px] pb-[24px]">
+            <SpecialOfferPlanSelect value={tariff} setValue={setTariff} />
+
+            {tariff === 3 && (
+              <div className="flex flex-col gap-2">
+                <label className="sm:text-[18px] text-[16px] font-medium">
+                  Цена за пользователя
+                </label>
+
+                <input
+                  type="number"
+                  inputMode="numeric"
+                  min={0}
+                  value={archivedPrice === 0 ? "" : archivedPrice}
+                  onChange={(e) => {
+                    const v = Number(e.target.value);
+                    setArchivedPrice(Number.isFinite(v) ? v : 0);
+                  }}
+                  placeholder="Например: 599"
+                  className="w-full h-[44px] rounded-[12px] border border-[#D9D9D9] px-4 outline-none focus:border-[#3760E7] transition"
+                />
+
+                <p className="text-[13px] text-[#969696] leading-snug">
+                  Введите цену за пользовтаеля по вашему тарифу в amoCRM
+                </p>
+              </div>
+            )}
+
+            <SpecialOfferUsersCounter value={usersCount} setValue={setUsersCount} />
           </div>
-          <div className="flex-grow-1 sm:pr-[47px] pr-[26px] pt-[15px] sm:pl-[27px] pl-[26px] sm:pb-[24px] sm:max-w-[50%]">
-            <SpecialOfferProfit profit={profit} months={monthsCount}></SpecialOfferProfit>
+
+          <div className="sm:w-1/2 pl-[26px] pr-[26px] sm:pl-[32px] sm:pr-[44px] pt-[15px] pb-[24px]">
+            <SpecialOfferProfit profit={profit} months={monthsCount} />
           </div>
         </div>
-        <div className="sm:px-[44px] px-[26px] pb-[27px] pt-[11px] sm:border-t sm:border-[#D9D9D9]">
-          <SpecialOfferConfirm finalCost={finalCost} onOpenModal={handleOpenModal}></SpecialOfferConfirm>
+
+        <div className="sm:px-[44px] px-[26px] pb-[27px] pt-[14px] sm:border-t sm:border-[#D9D9D9]">
+          <SpecialOfferConfirm
+            finalCost={finalCost}
+            fullCost={fullCost}
+            onOpenModal={handleOpenModal}
+          />
         </div>
       </div>
+
       <ConsultationModal
         isOpen={isModalOpen}
         onClose={handleCloseModal}

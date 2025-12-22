@@ -12,10 +12,22 @@
   color: white;
   background: #3760e7;
   box-shadow: 0 32px 48px rgba(55, 96, 231, 0.25);
+
+  width: var(--case-width, 360px);
+  max-width: var(--case-max-width, 360px);
+  height: var(--case-height, 675px);
+
+  border-radius: var(--case-radius, 60px);
+  padding: var(--case-padding, 44px);
+  padding-top: var(--case-padding-top, 90px);
+  overflow: visible;
 }
 
 .caseBadge {
   position: absolute;
+  top: calc(var(--case-padding-top, 90px) - 52px);
+  left: var(--case-padding, 44px);
+
   background: #0f1427;
   color: #fff;
   padding: 1px 10px;
@@ -24,8 +36,8 @@
   border: 2px solid #0f1427;
   line-height: 1.1;
   white-space: nowrap;
-  z-index: 3;
   font-weight: 500;
+  z-index: 10;
 }
 
 .caseTitle {
@@ -44,6 +56,8 @@
 
 .caseFooter {
   position: absolute;
+  left: var(--case-padding, 44px);
+  right: var(--case-padding, 44px);
   bottom: 36px;
   display: flex;
   align-items: center;
@@ -88,7 +102,7 @@
   top: 50px;
   height: 3px;
   background: #000;
-  z-index: 1;
+  z-index: 2;
 }
 
 .casesRowRight::before {
@@ -106,7 +120,8 @@
   border-top: 3px solid #000;
   border-right: 3px solid #000;
   transform: translateY(-50%) rotate(45deg);
-  z-index: 1;
+
+  z-index: 2;
 }
 
 .casesRowLeft::before {
@@ -124,7 +139,8 @@
   border-top: 3px solid #000;
   border-left: 3px solid #000;
   transform: translateY(-50%) rotate(-45deg);
-  z-index: 1;
+
+  z-index: 2;
 }
 
 .casesRowGrid {
@@ -136,13 +152,14 @@
   align-items: flex-start;
 }
 
-.caseCardUnder {
+.badgeTopMost {
   position: relative;
-  z-index: 0;
+  z-index: 999999;
+  isolation: isolate;
 }
 
-.caseCardOnTop {
-  position: relative;
+.badgeTopMost .caseBadge {
+  z-index: 9999999;
 }
 
 @media (max-width: 1024px) {
@@ -216,4 +233,9 @@
   .casesRow::after {
     display: none;
   }
+}
+
+.caseAboveLine {
+  position: relative;
+  z-index: 5;
 }
