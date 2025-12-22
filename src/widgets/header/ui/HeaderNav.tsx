@@ -54,10 +54,7 @@ const HeaderNav = () => {
         </li>
 
         <li>
-          <Link
-            href="/articles"
-            className="font-medium text-h8 hover:text-blue transition-colors duration-300"
-          >
+          <Link href="/articles" className="font-medium text-h8 hover:text-blue transition-colors">
             СТАТЬИ
           </Link>
         </li>

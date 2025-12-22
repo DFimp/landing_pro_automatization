@@ -62,14 +62,11 @@ export function BonusesList() {
   }, [isMobileView]);
 
   const handleAnchorClick = () => {
-    // ✅ ВАЖНО: поставь сюда нужный id цели
-    // Если раньше у тебя был special_offer_calculator — оставь его
     const TARGET_ID = "special_offer_calculator";
 
     const el = document.getElementById(TARGET_ID);
     if (!el) return;
 
-    // Скроллим к элементу, затем делаем отступ ~200px вверх
     const y =
       el.getBoundingClientRect().top + window.pageYOffset - 200;
 
@@ -128,8 +125,7 @@ export function BonusesList() {
         </>
       )}
 
-      {/* ✅ КНОПКА (опущена ниже) + рабочее якорение */}
-      <div className="mt-40 sm:mt-52 relative z-10 flex justify-center">
+      <div className="mt-10 sm:mt-52 relative z-10 flex justify-center">
         <button
           type="button"
           onClick={handleAnchorClick}

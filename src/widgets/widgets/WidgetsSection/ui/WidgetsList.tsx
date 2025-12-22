@@ -1,8 +1,8 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useMemo, useState } from "react";
 import { WidgetsListItem } from "./WidgetsListItem";
+import { SearchWithGroups, SearchableItem } from "@/shared/ui/SearchWithGroups/SearchWithGroups";
 
 type Widget = {
   title: string;
@@ -12,13 +12,15 @@ type Widget = {
   tags: string[];
 };
 
+type WidgetSearchItem = Widget &
+  SearchableItem & {
+};
+
 function normalize(s: string) {
-  return s.trim().toLowerCase();
+  return (s ?? "").trim().toLowerCase();
 }
 
 export function WidgetsList() {
-  const router = useRouter();
-
   const widgets: Widget[] = [
     {
       text: `Получайте мгновенные уведомления в Telegram
@@ -27,7 +29,7 @@ export function WidgetsList() {
       title: `Телеграм уведомления для amoCRM`,
       link: "/widgets/telegram-notify",
       variant: 2,
-      tags: ["Соц сети", "Telegram", "Уведомления"],
+      tags: ["Соц сети", "Telegram", "тг", "телеграм", "Уведомления"],
     },
     {
       text: `Автоматическое распределение новых сделок между менеджерами по процентам, максимальному количеству или равными долями. Учет контактов, компаний и активности менеджеров.`,
@@ -87,14 +89,14 @@ export function WidgetsList() {
       title: `Мгновенный переход в Telegram из amoCRM`,
       link: "/widgets/telegram-button",
       variant: 1,
-      tags: ["Соц сети", "Telegram"],
+      tags: ["Соц сети", "Telegram", "тг", "телеграм"],
     },
     {
       text: `Превратите каждый номер телефона в прямую ссылку на чат с клиентом в WhatsApp. Мгновенное общение с клиентами прямо из карточки сделки!`,
       title: `Мгновенный переход в WhatsApp из amoCRM`,
       link: "/widgets/whatsapp-button",
       variant: 3,
-      tags: ["Соц сети", "WhatsApp"],
+      tags: ["Соц сети", "WhatsApp", "Ватсап", "Продажи"],
     },
     {
       text: `Полный контроль над удалением задач в amoCRM. Ограничьте удаление для менеджеров, настраивайте исключения по типам задач и защитите вашу воронку от случайных и намеренных потерь активности.`,
@@ -124,168 +126,55 @@ export function WidgetsList() {
     []
   );
 
+  const items: WidgetSearchItem[] = useMemo(
+    () =>
+      widgets.map((w) => ({
+        key: w.link,
+        title: w.title,
+        text: w.text,
+        tags: w.tags,
+        link: w.link,
+        variant: w.variant,
+      })),
+    [widgets]
+  );
+
   const [query, setQuery] = useState("");
-  const [selectedGroup, setSelectedGroup] = useState<string>("Все");
-
-  const [isOpen, setIsOpen] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const blurTimeout = useRef<number | null>(null);
-
-  const suggestions = useMemo(() => {
-    const q = normalize(query);
-    if (!q) return [];
-    return widgets
-      .filter((w) => normalize(w.title).includes(q))
-      .slice(0, 6);
-  }, [query, widgets]);
+  const [selectedGroup, setSelectedGroup] = useState(groups[0] ?? "Все");
 
   const filtered = useMemo(() => {
     const q = normalize(query);
+    const g = normalize(selectedGroup);
 
-    return widgets.filter((w) => {
+    return items.filter((it) => {
+      const title = normalize(it.title);
+      const text = normalize(it.text ?? "");
+      const tags = (it.tags ?? []).map(normalize);
+
       const matchesQuery =
-        !q ||
-        normalize(w.title).includes(q) ||
-        normalize(w.text).includes(q) ||
-        w.tags.some((t) => normalize(t).includes(q));
+        !q || title.includes(q) || text.includes(q) || tags.some((t) => t.includes(q));
 
-      const matchesGroup =
-        selectedGroup === "Все" ||
-        w.tags.some((t) => normalize(t) === normalize(selectedGroup));
+      const matchesGroup = g === normalize("Все") || tags.some((t) => t === g);
 
       return matchesQuery && matchesGroup;
     });
-  }, [query, selectedGroup, widgets]);
-
-  const pickSuggestion = (w: Widget) => {
-    setQuery(w.title);
-    setIsOpen(false);
-    setActiveIndex(0);
-  };
+  }, [items, query, selectedGroup]);
 
   return (
     <div>
-      <div className="mb-10">
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-4 items-start">
-          <div className="relative max-w-[640px]">
-            <input
-              value={query}
-              onChange={(e) => {
-                const v = e.target.value;
-                setQuery(v);
-                setIsOpen(Boolean(v.trim()));
-                setActiveIndex(0);
-              }}
-              onFocus={() => query.trim() && setIsOpen(true)}
-              onBlur={() => {
-                blurTimeout.current = window.setTimeout(() => {
-                  setIsOpen(false);
-                  setActiveIndex(0);
-                }, 120);
-              }}
-              onKeyDown={(e) => {
-                if (e.key === "ArrowDown") {
-                  e.preventDefault();
-                  setIsOpen(true);
-                  setActiveIndex((x) => Math.min(x + 1, Math.max(0, suggestions.length - 1)));
-                }
-                if (e.key === "ArrowUp") {
-                  e.preventDefault();
-                  setActiveIndex((x) => Math.max(x - 1, 0));
-                }
-                if (e.key === "Enter") {
-                  e.preventDefault();
-                  if (isOpen && suggestions[activeIndex]) {
-                    pickSuggestion(suggestions[activeIndex]);
-                  }
-                }
-                if (e.key === "Escape") {
-                  setIsOpen(false);
-                  setActiveIndex(0);
-                }
-              }}
-              placeholder="Поиск по виджетам..."
-              className="w-full h-[44px] rounded-[12px] bg-white/5 border border-[#3760E7]/30 px-4 pr-[52px] text-[14px] outline-none focus:border-[#3760E7]/60 transition"
-            />
+      <SearchWithGroups
+        items={items}
+        groups={groups}
+        queryPlaceholder="Поиск по виджетам..."
+        query={query}
+        selectedGroup={selectedGroup}
+        onQueryChange={setQuery}
+        onGroupChange={setSelectedGroup}
+      />
 
-            <button
-              type="button"
-              onMouseDown={(e) => e.preventDefault()}
-              onClick={() => setIsOpen(Boolean(query.trim()))}
-              aria-label="Найти"
-              className="absolute right-[4px] top-[4px] bottom-[4px] w-[36px] rounded-[10px] bg-[#3760E7] text-white hover:opacity-90 transition flex items-center justify-center"
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M10.5 18.5C14.6421 18.5 18 15.1421 18 11C18 6.85786 14.6421 3.5 10.5 3.5C6.35786 3.5 3 6.85786 3 11C3 15.1421 6.35786 18.5 10.5 18.5Z"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M21 21L16.65 16.65"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
+      <div className="mt-4 text-[14px] text-black/60">Найдено: {filtered.length}</div>
 
-            {isOpen && suggestions.length > 0 && (
-              <div
-                onMouseDown={() => {
-                  if (blurTimeout.current) window.clearTimeout(blurTimeout.current);
-                }}
-                className="absolute z-50 mt-2 w-full rounded-[14px] bg-white border border-[#3760E7]/20 overflow-hidden shadow-[0_12px_50px_rgba(0,0,0,0.12)]"
-              >
-                <ul className="py-1">
-                  {suggestions.map((w, idx) => (
-                    <li key={w.link}>
-                      <button
-                        type="button"
-                        onClick={() => pickSuggestion(w)}
-                        className={`w-full text-left px-4 py-2 text-[14px] transition ${idx === activeIndex
-                            ? "bg-[#3760E7]/10 text-black"
-                            : "text-black/80 hover:bg-black/5"
-                          }`}
-                      >
-                        {w.title}
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
-
-          <div className="flex flex-wrap gap-2">
-            {groups.map((g) => {
-              const active = g === selectedGroup;
-              return (
-                <button
-                  key={g}
-                  type="button"
-                  onClick={() => setSelectedGroup(g)}
-                  className={`px-3 py-2 rounded-[12px] text-[14px] border transition ${active
-                      ? "bg-[#3760E7] text-white border-[#3760E7]"
-                      : "bg-white text-black/80 border-black/10 hover:bg-black/5"
-                    }`}
-                >
-                  {g}
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
-        <div className="mt-4 text-[14px] text-black/60">
-          Найдено: {filtered.length}
-        </div>
-      </div>
-
-      <div className="grid sm:grid-cols-2 grid-cols-1 gap-[40px]">
+      <div className="mt-10 grid sm:grid-cols-2 grid-cols-1 gap-[40px] min-h-[300px]">
         {filtered.map((widget) => (
           <WidgetsListItem
             key={widget.link}

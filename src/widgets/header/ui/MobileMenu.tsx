@@ -14,6 +14,7 @@ const ServicesItems = [
   { name: "ЛИЦЕНЗИЯ", link: "/license" },
   { name: "КЕЙСЫ", link: "/cases" },
   { name: "ВИДЖЕТЫ", link: "/widgets" },
+  { name: "СТАТЬИ", link: "/articles" },
 ];
 
 const MobileMenu: React.FC<MobileMenuProps> = ({
