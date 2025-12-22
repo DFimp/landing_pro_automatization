@@ -27,6 +27,7 @@ export const WIDGET_ROUTES = {
   SHIFT_SELECT: '/widgets/shift-select',
   GROUP_FIELDS: '/widgets/group-fields',
   TRANSFER_FIELDS: '/widgets/transfer-fields',
+  DELETE_NOTES_BAN: '/widgets/delete-notes-ban',
   GOOGLE_SHEETS: '/widgets/google-sheets',
 } as const;
 
