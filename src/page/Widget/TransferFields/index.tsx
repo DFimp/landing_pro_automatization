@@ -1,0 +1,76 @@
+import "./style.css";
+import React from "react";
+import SettingsCard from "@/shared/ui/settings/SettingsCard";
+import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
+import PreviewCard from "@/shared/ui/PreviewCard/PreviewCard";
+import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
+import { STEPS } from "./constants";
+
+export default function TransferFields({
+    searchParams,
+}: {
+    searchParams: { embed?: string };
+}) {
+    const isIframe = searchParams.embed === "true";
+
+    return (
+        <main className="bg-transparent">
+            {!isIframe && (
+                <>
+                    <section className="dist-hero">
+                        <div className="at-container">
+                            <h1 className="dist-pill dist-bleed-left">
+                                Перенос длинных названий полей в amoCRM
+                            </h1>
+
+                            <h2 className="dist-hero-title">
+                                Длинные названия полей без обрезки и наложений
+                            </h2>
+
+                            <p className="dist-hero-sub">
+                                Виджет автоматически переносит длинные названия полей в
+                                карточках amoCRM, убирает многоточия и делает текст полностью
+                                читаемым. Больше никаких наложений строк и “обрубленных”
+                                заголовков в важных пользовательских полях.
+                            </p>
+
+                            <div className="dist-cta">
+                                <a
+                                    className="dist-btn-primary"
+                                    href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=d466e907-bb7e-468b-8420-b9f165221627"
+                                    target="_blank"
+                                    rel="noopener"
+                                >
+                                    Установить виджет
+                                </a>
+                                <ScrollToInstructionLink />
+                            </div>
+                        </div>
+                    </section>
+
+                    <PreviewCard
+                        title="Как это работает?"
+                        subtitle="После установки виджета в карточках сделок, контактов и компаний длинные названия полей перестают обрезаться многоточием. Текст аккуратно переносится на новые строки, высота строки подстраивается автоматически, а интерфейс остаётся аккуратным и читаемым."
+                        // videoUrl="/widgets/TransferFields/transfer-fields.gif"
+                    />
+                </>
+            )}
+
+            <SettingsCard
+                id="instruction"
+                title="Как начать пользоваться за 1 минуту"
+                subtitle="Следуйте простым шагам, чтобы включить автоматический перенос длинных названий полей в amoCRM:"
+                steps={STEPS}
+                showVideo
+            />
+
+            {!isIframe && (
+                <section className="ds-prefooter">
+                    <div className="ds-container">
+                        <ConsultCard />
+                    </div>
+                </section>
+            )}
+        </main>
+    );
+}
