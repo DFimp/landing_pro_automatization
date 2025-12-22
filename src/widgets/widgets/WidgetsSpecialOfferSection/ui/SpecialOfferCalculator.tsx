@@ -47,9 +47,12 @@ export default function SpecialOfferCalculator() {
     const safePrice = Number.isFinite(pricePerUser) ? pricePerUser : 0;
     const safeUsers = Number.isFinite(usersCount) ? usersCount : 0;
 
-    const full = safePrice * safeUsers * monthsCount;
-    const pay = safePrice * safeUsers * (monthsCount - bonus);
-    const save = safePrice * safeUsers * bonus;
+    const paidMonths = monthsCount;
+    const totalMonths = monthsCount + bonus;
+
+    const full = safePrice * safeUsers * totalMonths;
+    const pay = safePrice * safeUsers * paidMonths;
+    const save = full - pay;
 
     setFullCost(Math.max(0, Math.round(full)));
     setFinalCost(Math.max(0, Math.round(pay)));
@@ -75,7 +78,6 @@ export default function SpecialOfferCalculator() {
           </p>
         </div>
 
-        {/* ✅ делаем 2 равные колонки и чтобы занимали всю ширину */}
         <div className="flex flex-col sm:flex-row">
           <div className="sm:w-1/2 sm:border-r sm:border-[#D9D9D9] flex flex-col gap-[23px] pl-[26px] pr-[26px] sm:pl-[44px] sm:pr-[32px] pt-[15px] pb-[24px]">
             <SpecialOfferPlanSelect value={tariff} setValue={setTariff} />
