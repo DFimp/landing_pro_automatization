@@ -6,7 +6,7 @@ export const ROUTES = {
   AUDIT: '/audit',
   ACCOMPANIMENT: '/accompaniment',
   WIDGETS: '/widgets',
-  // ARTICLES: '/articles',
+  ARTICLES: '/articles',
   LICENSE: '/license',
   CASES: '/cases',
 } as const;
@@ -26,6 +26,8 @@ export const WIDGET_ROUTES = {
   DELETE_TASKS_BAN: '/widgets/delete-tasks-ban',
   SHIFT_SELECT: '/widgets/shift-select',
   GROUP_FIELDS: '/widgets/group-fields',
+  TRANSFER_FIELDS: '/widgets/transfer-fields',
+  DELETE_NOTES_BAN: '/widgets/delete-notes-ban',
   GOOGLE_SHEETS: '/widgets/google-sheets',
 } as const;
 
@@ -35,6 +37,9 @@ export const ARTICLES_ROUTES = {
 
 // Все виджеты одним списком (для удобства)
 export const ALL_WIDGET_ROUTES = Object.values(WIDGET_ROUTES);
+
+// Все статьи одним списком (на будущее)
+export const ALL_ARTICLES_ROUTES = Object.values(ARTICLES_ROUTES);
 
 // Все пути одним списком
 export const ALL_ROUTES = {

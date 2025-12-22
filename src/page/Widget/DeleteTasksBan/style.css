@@ -206,3 +206,7 @@ body {
 .at-prefooter {
   margin-bottom: 60px;
 }
+
+.at-case-card {
+    height: 100%;
+}
