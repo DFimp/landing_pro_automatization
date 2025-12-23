@@ -7,14 +7,14 @@ export const metadata: Metadata = {
         "Виджет для фильтрации ленты событий в сделке amoCRM. Быстро переключайтесь между задачами, примечаниями, письмами, звонками и чатами. Скрытие пустых дат и автоприменение при догрузке.",
 
     alternates: {
-        canonical: "https://pro-automatization.ru/widgets/settings-feed",
+        canonical: "https://pro-automatization.ru/widgets/setting-feed",
     },
 
     openGraph: {
         title: "Фильтр ленты событий в сделке amoCRM",
         description:
             "Смотрите только нужные события в сделке: задачи, звонки, письма или чаты. Без лишнего шума, с автоматической догрузкой и скрытием пустых дат.",
-        url: "https://pro-automatization.ru/widgets/settings-feed",
+        url: "https://pro-automatization.ru/widgets//setting-feed",
         type: "website",
         images: [
             {

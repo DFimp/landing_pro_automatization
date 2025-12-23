@@ -37,7 +37,7 @@ export const Footer = () => {
       { label: "Запрет удаления задач", href: "/widgets/delete-tasks-ban", aliases: ["запрет", "удаления", "задач"] },
       { label: "Групповое выделение (Shift-выбор)", href: "/widgets/shift-select", aliases: ["shift", "выделение", "групповое"] },
       { label: "Группировка полей", href: "/widgets/group-fields", aliases: ["группировка", "поля"] },
-      { label: "Фильтр ленты событий в сделке", href: "/widgets/settings-feed", aliases: ["лента", "фильтр", "события"] },
+      { label: "Фильтр ленты событий в сделке", href: "/widgets/setting-feed", aliases: ["лента", "фильтр", "события"] },
     ],
     []
   );

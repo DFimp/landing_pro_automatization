@@ -37,7 +37,7 @@ export default function TransferFields({
                             <div className="dist-cta">
                                 <a
                                     className="dist-btn-primary"
-                                    href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=d466e907-bb7e-468b-8420-b9f165221627"
+                                    href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=d56233ed-70ac-4f3c-bc18-ddd2ebe3ae6c"
                                     target="_blank"
                                     rel="noopener"
                                 >

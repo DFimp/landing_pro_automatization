@@ -16,7 +16,7 @@ export const STEPS = [
 
                 <div className="sc-cta" style={{ marginTop: 16 }}>
                     <a
-                        href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=48c94f76-e88e-4cb5-ad9c-a8a8c53e5a64"
+                        href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=6738863c-0c64-46c6-81fb-d2403c5a60b7"
                         target="_blank"
                         rel="noopener"
                         className="dist-btn-primary"
