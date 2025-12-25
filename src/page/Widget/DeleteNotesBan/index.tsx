@@ -38,7 +38,7 @@ export default function DeleteNotesBan({
                             <div className="tg-cta">
                                 <a
                                     className="tg-btn-primary"
-                                    href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=2a208537-35b9-4b8c-805c-e698198f00e9"
+                                    href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=0be96111-a8e0-4e5c-9a7b-554336deec05"
                                     target="_blank"
                                     rel="noopener"
                                 >
