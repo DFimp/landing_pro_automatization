@@ -21,7 +21,7 @@ const HomeHero = () => {
 
       <Image
         className="ml-auto w-[240px] h-[210px] sm:w-[580px] sm:h-[464px]"
-        src="/laptop.png"
+        src="/laptop.webp"
         alt="Laptop"
         width={580}
         height={464}

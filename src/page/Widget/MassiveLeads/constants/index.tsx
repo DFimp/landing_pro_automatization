@@ -147,7 +147,7 @@ export const PROBLEMS: ProblemItem[] = [
         для всех сделки за 2 минуты вместо 5 часов ручной работы.
       </>
     ),
-    bgUrl: "/widgets/WhatsappButton/back_timer.png",
+    bgUrl: "/widgets/WhatsappButton/back_timer.webp",
   },
   {
     title: "Участие в выставке или событии",
@@ -157,7 +157,7 @@ export const PROBLEMS: ProblemItem[] = [
         «Выставка 2025» и начинайте отработку, пока интерес клиентов горячий.
       </>
     ),
-    bgUrl: "/widgets/WhatsappButton/back_switch.png",
+    bgUrl: "/widgets/WhatsappButton/back_switch.webp",
   },
   {
     title: "Email-маркетинг кампании",
@@ -168,7 +168,7 @@ export const PROBLEMS: ProblemItem[] = [
         письма.
       </>
     ),
-    bgUrl: "/widgets/WhatsappButton/back_cross.png",
+    bgUrl: "/widgets/WhatsappButton/back_cross.webp",
   },
   {
     title: "Реактивация старых клиентов",
@@ -178,7 +178,7 @@ export const PROBLEMS: ProblemItem[] = [
         сделки для всех неактивных контактов с тегом «Реактивация».
       </>
     ),
-    bgUrl: "/widgets/WhatsappButton/back_basket.png",
+    bgUrl: "/widgets/WhatsappButton/back_basket.webp",
   },
   {
     title: "Сезонные акции и распродажи",
@@ -188,7 +188,7 @@ export const PROBLEMS: ProblemItem[] = [
         сделки для каждого и предложите индивидуальные условия.
       </>
     ),
-    bgUrl: "/widgets/WhatsappButton/back_timer.png",
+    bgUrl: "/widgets/WhatsappButton/back_timer.webp",
   },
   {
     title: "Работа с партнёрскими базами",
@@ -198,13 +198,13 @@ export const PROBLEMS: ProblemItem[] = [
         сделки с соответствующими тегами и нужной воронкой.
       </>
     ),
-    bgUrl: "/widgets/WhatsappButton/back_switch.png",
+    bgUrl: "/widgets/WhatsappButton/back_switch.webp",
   },
 ];
 
 export const FEATURES: FeatureItem[] = [
   {
-    iconUrl: "/widgets/WhatsappButton/group.png",
+    iconUrl: "/widgets/WhatsappButton/group.webp",
     title: "Массовое создание за секунды",
     text: (
       <>
@@ -214,7 +214,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/WhatsappButton/sort.png",
+    iconUrl: "/widgets/WhatsappButton/sort.webp",
     title: "Умная фильтрация контактов",
     text: (
       <>
@@ -224,7 +224,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/WhatsappButton/free.png",
+    iconUrl: "/widgets/WhatsappButton/free.webp",
     title: "Автоматическое добавление тегов",
     text: (
       <>
@@ -234,7 +234,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/WhatsappButton/target.png",
+    iconUrl: "/widgets/WhatsappButton/target.webp",
     title: "Выбор воронки и этапа",
     text: (
       <>
@@ -244,7 +244,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/WhatsappButton/deadline.png",
+    iconUrl: "/widgets/WhatsappButton/deadline.webp",
     title: "Отслеживание прогресса",
     text: (
       <>
@@ -254,7 +254,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/WhatsappButton/mobile.png",
+    iconUrl: "/widgets/WhatsappButton/mobile.webp",
     title: "Простота использования",
     text: (
       <>

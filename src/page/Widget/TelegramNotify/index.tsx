@@ -53,7 +53,7 @@ export default function TelegramNotify({
               <div className="at-feature-card">
                 <div className="at-feature-ico">
                   <Image
-                    src="/widgets/TelegramNotify/bell.png"
+                    src="/widgets/TelegramNotify/bell.webp"
                     alt="Иконка колокольчика"
                     width={40}
                     height={40}
@@ -70,10 +70,11 @@ export default function TelegramNotify({
               <div className="at-feature-card">
                 <div className="at-feature-ico">
                   <Image
-                    src="/widgets/TelegramNotify/letter_star.png"
+                    src="/widgets/TelegramNotify/letter_star.webp"
                     alt="Иконка письма"
                     width={40}
                     height={40}
+                    priority
                   />
                 </div>
                 <h3 className="at-feature-title">Умные триггеры</h3>
@@ -86,10 +87,11 @@ export default function TelegramNotify({
               <div className="at-feature-card">
                 <div className="at-feature-ico">
                   <Image
-                    src="/widgets/TelegramNotify/cursor.png"
+                    src="/widgets/TelegramNotify/cursor.webp"
                     alt="Иконка курсора"
                     width={40}
                     height={40}
+                    priority
                   />
                 </div>
                 <h3 className="at-feature-title">
@@ -104,10 +106,11 @@ export default function TelegramNotify({
               <div className="at-feature-card">
                 <div className="at-feature-ico">
                   <Image
-                    src="/widgets/TelegramNotify/clock.png"
+                    src="/widgets/TelegramNotify/clock.webp"
                     alt="Иконка часов"
                     width={40}
                     height={40}
+                    priority
                   />
                 </div>
                 <h3 className="at-feature-title">Контроль времени отправки</h3>
@@ -120,10 +123,11 @@ export default function TelegramNotify({
               <div className="at-feature-card">
                 <div className="at-feature-ico">
                   <Image
-                    src="/widgets/TelegramNotify/letter_cist.png"
+                    src="/widgets/TelegramNotify/letter_cist.webp"
                     alt="Иконка письма с кистью"
                     width={40}
                     height={40}
+                    priority
                   />
                 </div>
                 <h3 className="at-feature-title">Автоочистка сообщений</h3>
@@ -136,10 +140,11 @@ export default function TelegramNotify({
               <div className="at-feature-card">
                 <div className="at-feature-ico">
                   <Image
-                    src="/widgets/TelegramNotify/pyramid.png"
+                    src="/widgets/TelegramNotify/pyramid.webp"
                     alt="Иконка пирамидки со стрелкой"
                     width={40}
                     height={40}
+                    priority
                   />
                 </div>
                 <h3 className="at-feature-title">Полная информация о сделке</h3>
@@ -165,7 +170,7 @@ export default function TelegramNotify({
                 <div className="at-phone-wrap">
                   <div className="at-phone-blob" aria-hidden />
                   <Image
-                    src="/widgets/TelegramNotify/telephone.png"
+                    src="/widgets/TelegramNotify/telephone.webp"
                     alt="Макет телефона"
                     width={540}
                     height={760}

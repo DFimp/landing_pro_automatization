@@ -126,7 +126,7 @@ export const PROBLEMS: ProblemItem[] = [
                 чтобы найти нужное поле. Это замедляет работу и раздражает сотрудников.
             </>
         ),
-        bgUrl: "/widgets/BackAll/back_web.png",
+        bgUrl: "/widgets/BackAll/back_web.webp",
     },
     {
         title: "Хаос в расположении информации",
@@ -138,7 +138,7 @@ export const PROBLEMS: ProblemItem[] = [
                 понятной структуры.
             </>
         ),
-        bgUrl: "/widgets/BackAll/back_watch.png",
+        bgUrl: "/widgets/BackAll/back_watch.webp",
     },
     {
         title: "Скрытые и технические поля мешают работе",
@@ -149,7 +149,7 @@ export const PROBLEMS: ProblemItem[] = [
                 фокусироваться на важном.
             </>
         ),
-        bgUrl: "/widgets/BackAll/back_chart.png",
+        bgUrl: "/widgets/BackAll/back_chart.webp",
     },
     {
         title: "Потеря времени и концентрации",
@@ -160,7 +160,7 @@ export const PROBLEMS: ProblemItem[] = [
                 или пропустить ключевую информацию о клиенте.
             </>
         ),
-        bgUrl: "/widgets/BackAll/back_basket.png",
+        bgUrl: "/widgets/BackAll/back_basket.webp",
     },
 ];
 

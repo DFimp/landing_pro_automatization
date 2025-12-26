@@ -40,7 +40,7 @@ export const STEPS = [
           </p>
 
           <img
-            src="/widgets/Distribution/allocate_leads_active_panel.png"
+            src="/widgets/Distribution/allocate_leads_active_panel.webp"
             alt="Активность менеджеров"
             style={{
               display: "block",
@@ -360,7 +360,7 @@ export const PROBLEMS: ProblemItem[] = [
           эффективность команды.
         </>
       ),
-      bgUrl: "/widgets/Distribution/back_load.png",
+      bgUrl: "/widgets/Distribution/back_question.webp",
     },
     {
       title: "Потеря горячих лидов",
@@ -370,7 +370,7 @@ export const PROBLEMS: ProblemItem[] = [
           клиент уходит к конкурентам.
         </>
       ),
-      bgUrl: "/widgets/Distribution/back_leads.png",
+      bgUrl: "/widgets/Distribution/back_basket.webp",
     },
     {
       title: "Конфликты в команде",
@@ -380,7 +380,7 @@ export const PROBLEMS: ProblemItem[] = [
           атмосферу в коллективе.
         </>
       ),
-      bgUrl: "/widgets/Distribution/back_team.png",
+      bgUrl: "/widgets/Distribution/back_lightning.webp",
     },
     {
       title: "Снижение конверсии",
@@ -391,6 +391,6 @@ export const PROBLEMS: ProblemItem[] = [
           что ведёт к потере продаж.
         </>
       ),
-      bgUrl: "/widgets/Distribution/back_conv.png",
+      bgUrl: "/widgets/Distribution/back_settings.webp",
     },
   ];

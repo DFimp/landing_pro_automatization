@@ -109,7 +109,7 @@ export const PROBLEMS: ProblemItem[] = [
           дорогих продуктов.
         </>
       ),
-      bgUrl: "/widgets/AutoTask/back_dollars.png",
+      bgUrl: "/widgets/AutoTask/back_dollars.webp",
     },
     {
       title: "Менеджеры «забывают» работать",
@@ -120,7 +120,7 @@ export const PROBLEMS: ProblemItem[] = [
           потенциальными клиентами. Результат — потерянная прибыль.
         </>
       ),
-      bgUrl: "/widgets/AutoTask/back_message.png",
+      bgUrl: "/widgets/AutoTask/back_message.webp",
     },
     {
       title: "Низкая конверсия воронки",
@@ -131,7 +131,7 @@ export const PROBLEMS: ProblemItem[] = [
           <span className="at-mark"> 15–20%</span>.
         </>
       ),
-      bgUrl: "/widgets/AutoTask/back_analitic.png",
+      bgUrl: "/widgets/AutoTask/back_analitic.webp",
     },
     {
       title: "Ручной контроль отнимает время",
@@ -141,13 +141,13 @@ export const PROBLEMS: ProblemItem[] = [
           <span className="at-mark">вместо развития</span> бизнеса.
         </>
       ),
-      bgUrl: "/widgets/AutoTask/back_yeys.png",
+      bgUrl: "/widgets/AutoTask/back_yeys.webp",
     },
   ];
 
 export const FEATURES: FeatureItem[] = [
     {
-      iconUrl: "/widgets/AutoTask/deployment.png",
+      iconUrl: "/widgets/AutoTask/deployment.webp",
       title: "Умное отслеживание",
       text: (
         <>
@@ -157,7 +157,7 @@ export const FEATURES: FeatureItem[] = [
       ),
     },
     {
-      iconUrl: "/widgets/AutoTask/letter_star.png",
+      iconUrl: "/widgets/AutoTask/letter_star.webp",
       title: "Гибкая настройка",
       text: (
         <>
@@ -167,7 +167,7 @@ export const FEATURES: FeatureItem[] = [
       ),
     },
     {
-      iconUrl: "/widgets/AutoTask/lamp.png",
+      iconUrl: "/widgets/AutoTask/lamp.webp",
       title: "Исключение системных сделок",
       text: (
         <>
@@ -177,7 +177,7 @@ export const FEATURES: FeatureItem[] = [
       ),
     },
     {
-      iconUrl: "/widgets/AutoTask/control.png",
+      iconUrl: "/widgets/AutoTask/control.webp",
       title: "Контроль ответственности",
       text: (
         <>
@@ -187,7 +187,7 @@ export const FEATURES: FeatureItem[] = [
       ),
     },
     {
-      iconUrl: "/widgets/AutoTask/deadline.png",
+      iconUrl: "/widgets/AutoTask/deadline.webp",
       title: "Постоянная работа",
       text: (
         <>
@@ -197,7 +197,7 @@ export const FEATURES: FeatureItem[] = [
       ),
     },
     {
-      iconUrl: "/widgets/AutoTask/analytic.png",
+      iconUrl: "/widgets/AutoTask/analytic.webp",
       title: "Рост продаж",
       text: (
         <>
