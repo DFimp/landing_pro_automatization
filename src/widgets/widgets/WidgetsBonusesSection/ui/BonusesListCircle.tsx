@@ -10,7 +10,7 @@ export function BonusesListCircle(){
         id="bonus_center"
         className="z-3 max-w-none sm:-mt-0 -mt-[200px]"
             src="/BonusesListCircle.png"
-            alt=""
+            alt="круг про автоматизацию"
             width={isMobileView ? 1000 : 582}
             height={isMobileView ? 800 : 582}
         />

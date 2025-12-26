@@ -28,7 +28,7 @@ export default function ArticleThirdCase() {
         <ArticleImageWrapper>
             <Image
                 src="/article_case_3_image_1.png"
-                alt=""
+                alt="настройка блоков"
                 width={1097}
                 height={0}
             ></Image>
@@ -41,7 +41,7 @@ export default function ArticleThirdCase() {
         <ArticleImageWrapper>
             <Image
                 src="/article_case_3_image_2.png"
-                alt=""
+                alt="не склеивание внутри блока"
                 width={414}
                 height={0}
             ></Image>
@@ -76,7 +76,7 @@ export default function ArticleThirdCase() {
         <ArticleImageWrapper>
             <Image
                 src="/article_case_3_image_3.png"
-                alt=""
+                alt="урезанноене склеивание внутри блока"
                 width={414}
                 height={0}
             ></Image>

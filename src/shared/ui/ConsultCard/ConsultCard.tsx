@@ -90,7 +90,7 @@ const ConsultCard: React.FC<ConsultCardProps> = ({ className }) => {
           <Image
             className="tg-consult-mobile__rays"
             src="/Exclude.svg"
-            alt=""
+            alt="exclude"
             width={133}
             height={201}
             priority
@@ -110,21 +110,21 @@ const ConsultCard: React.FC<ConsultCardProps> = ({ className }) => {
             <Image
               className="tg-consult-mobile__phone tg-consult-mobile__phone--left"
               src="/phoneMobile_1.svg"
-              alt=""
+              alt="phoneMobile_1"
               width={123}
               height={178}
             />
             <Image
               className="tg-consult-mobile__phone tg-consult-mobile__phone--center"
               src="/phoneMobile_2.svg"
-              alt=""
+              alt="phoneMobile_2"
               width={123}
               height={178}
             />
             <Image
               className="tg-consult-mobile__phone tg-consult-mobile__phone--right"
               src="/phoneMobile_3.svg"
-              alt=""
+              alt="phoneMobile_3"
               width={123}
               height={178}
             />

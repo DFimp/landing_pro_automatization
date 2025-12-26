@@ -29,7 +29,7 @@ export default function ArticleSecondCase() {
         <ArticleImageWrapper>
             <Image
                     src="/article_case_2_image_1.png"
-                    alt=""
+                    alt="клиент с двумя разными услугами"
                     width={1097}
                     height={100}
                 ></Image>
@@ -63,7 +63,7 @@ export default function ArticleSecondCase() {
         <ArticleImageWrapper>
             <Image
                     src="/article_case_2_image_2.png"
-                    alt=""
+                    alt="основные настройки контакта"
                     width={735}
                     height={0}
                 ></Image>

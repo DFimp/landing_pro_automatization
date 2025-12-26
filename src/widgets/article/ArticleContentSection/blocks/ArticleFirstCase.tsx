@@ -22,13 +22,13 @@ export default function ArticleFirstCase() {
         <ArticleImageWrapper>
             <Image
                 src="/article_case_1_image_1.png"
-                alt=""
+                alt="заявка из телеграм бота"
                 width={462}
                 height={0}
             ></Image>
             <Image
                 src="/article_case_1_image_2.png"
-                alt=""
+                alt="клиент позвонил на номер"
                 width={462}
                 height={0}
             ></Image>

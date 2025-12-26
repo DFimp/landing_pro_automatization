@@ -20,26 +20,26 @@ export function WidgetsSupportSection() {
         <div className="block sm:hidden border border-[#3760E7] rounded-[20px] py-[21px] px-[16px] font-semibold">
           <div className="flex gap-[10px] mb-[6px]">
             Разберем в
-            <Image src="/zoom_icon.svg" alt="" width={62} height={14} />
+            <Image src="/zoom_icon.svg" alt="иконка зума" width={62} height={14} />
           </div>
           <div className="flex gap-[10px] mb-[6px]">
             Полключимся по
-            <Image src="/anydesc_icon.svg" alt="" width={30} height={25} />
+            <Image src="/anydesc_icon.svg" alt="иконка anydesс" width={30} height={25} />
             AnyDesk
           </div>
           <div>Напишем и позвоним по телефону</div>
         </div>
         <div className="hidden sm:flex gap-[44px] font-semibold text-[32px] mb-[48px]">
           <SupportChips>
-            <Image src="/anydesc_icon.svg" alt="" width={60} height={50} />
+            <Image src="/anydesc_icon.svg" alt="иконка anydesс" width={60} height={50} />
             AnyDesk
           </SupportChips>
           <SupportChips>
             Разберем в
-            <Image src="/zoom_icon.svg" alt="" width={131} height={50} />
+            <Image src="/zoom_icon.svg" alt="иконка зума" width={131} height={50} />
           </SupportChips>
           <SupportChips>
-            <Image src="/messanger_icon.svg" alt="" width={45} height={45} />
+            <Image src="/messanger_icon.svg" alt="иконка мессенджера" width={45} height={45} />
             Напишем и позвоним
           </SupportChips>
         </div>
