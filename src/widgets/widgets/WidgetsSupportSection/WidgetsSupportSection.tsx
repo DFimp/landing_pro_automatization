@@ -24,22 +24,22 @@ export function WidgetsSupportSection() {
           </div>
           <div className="flex gap-[10px] mb-[6px]">
             Полключимся по
-            <Image src="/anydesc_icon.svg" alt="иконка anydesс" width={30} height={25} />
+            <Image src="/licenses/anydesc_icon.svg" alt="иконка anydesс" width={30} height={25} />
             AnyDesk
           </div>
           <div>Напишем и позвоним по телефону</div>
         </div>
         <div className="hidden sm:flex gap-[44px] font-semibold text-[32px] mb-[48px]">
           <SupportChips>
-            <Image src="/anydesc_icon.svg" alt="иконка anydesс" width={60} height={50} />
+            <Image src="/licenses/anydesc_icon.svg" alt="иконка anydesс" width={60} height={50} />
             AnyDesk
           </SupportChips>
           <SupportChips>
             Разберем в
-            <Image src="/zoom_icon.svg" alt="иконка зума" width={131} height={50} />
+            <Image src="/licenses/zoom_icon.svg" alt="иконка зума" width={131} height={50} />
           </SupportChips>
           <SupportChips>
-            <Image src="/messanger_icon.svg" alt="иконка мессенджера" width={45} height={45} />
+            <Image src="/licenses/messanger_icon.svg" alt="иконка мессенджера" width={45} height={45} />
             Напишем и позвоним
           </SupportChips>
         </div>

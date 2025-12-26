@@ -11,13 +11,13 @@ export const TitleArrow: FC<TittleArrowProps> = ({
   const getArrowSrc = () => {
     switch (variant) {
       case "primary":
-        return "/arrow.svg";
+        return "/services/Audit/arrow.svg";
       case "secondary":
-        return "/arrow_white.svg";
+        return "/services/Audit/arrow_white.svg";
       case "outline":
-        return "/big arrow.svg";
+        return "/services/Audit/big arrow.svg";
       default:
-        return "/arrow.svg";
+        return "/services/Audit/arrow.svg";
     }
   };
 

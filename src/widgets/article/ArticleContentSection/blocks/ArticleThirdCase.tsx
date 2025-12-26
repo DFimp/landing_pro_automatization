@@ -27,7 +27,7 @@ export default function ArticleThirdCase() {
         </p>
         <ArticleImageWrapper>
             <Image
-                src="/article_case_3_image_1.webp"
+                src="/articles/WorkDuplicatingTransactions/case3/article_case_3_image_1.webp"
                 alt="настройка блоков"
                 width={1097}
                 height={0}
@@ -40,7 +40,7 @@ export default function ArticleThirdCase() {
         </p>
         <ArticleImageWrapper>
             <Image
-                src="/article_case_3_image_2.webp"
+                src="/articles/WorkDuplicatingTransactions/case3/article_case_3_image_2.webp"
                 alt="не склеивание внутри блока"
                 width={414}
                 height={0}
@@ -75,7 +75,7 @@ export default function ArticleThirdCase() {
         </p>)}
         <ArticleImageWrapper>
             <Image
-                src="/article_case_3_image_3.webp"
+                src="/articles/WorkDuplicatingTransactions/case3/article_case_3_image_3.webp"
                 alt="урезанноене склеивание внутри блока"
                 width={414}
                 height={0}

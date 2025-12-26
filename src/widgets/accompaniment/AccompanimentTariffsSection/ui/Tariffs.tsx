@@ -42,7 +42,7 @@ export default function Tariffs() {
                             {index === 0 && (
                                 <div className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none">
                                     <Image
-                                        src="/ribbon.svg"
+                                        src="/services/Escort/ribbon.svg"
                                         alt='Выгода'
                                         width={1000}
                                         height={1000}
