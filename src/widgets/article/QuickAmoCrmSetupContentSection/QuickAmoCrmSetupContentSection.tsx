@@ -79,9 +79,7 @@ export default function QuickAmoCrmSetupContentSection() {
         <ArticleBlockWrapper>
           <ArticleSubtitle title="Шаг 2. Создайте воронку продаж" />
 
-          <p>
-            <strong>Одна воронка = один путь клиента.</strong>
-          </p>
+          <h3>Одна воронка = один путь клиента.</h3>
 
           <h3>Минимальный вариант:</h3>
           <ArticleList
