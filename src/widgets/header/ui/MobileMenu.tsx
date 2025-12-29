@@ -27,7 +27,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
       <div className="absolute left-0 top-0 right-0 w-full h-screen bg-white">
         <div className="px-8 py-4 flex justify-end h-[92px]">
           <button className="" onClick={() => setIsOpen(false)}>
-            <Image src="/close.svg" alt="Кнопка" width={20} height={20} />
+            <Image src="/decor/close.svg" alt="Кнопка" width={20} height={20} />
           </button>
         </div>
         <ul className="px-8 flex flex-col gap-[40px]">

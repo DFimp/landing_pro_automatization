@@ -108,7 +108,7 @@ const WhyChooseUs = () => {
                             transition={{ duration: 0.8 }}
                         >
                             <Image
-                                src="/amo.svg"
+                                src="/decor/amo.svg"
                                 alt="AMO"
                                 fill
                                 style={{
@@ -138,7 +138,7 @@ const WhyChooseUs = () => {
                             transition={{ duration: 0.8 }}
                         >
                             <Image
-                                src="/crm.svg"
+                                src="/decor/crm.svg"
                                 alt="CRM"
                                 fill
                                 style={{

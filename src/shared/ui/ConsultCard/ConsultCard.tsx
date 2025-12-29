@@ -56,28 +56,28 @@ const ConsultCard: React.FC<ConsultCardProps> = ({ className }) => {
 
           <Image
             className="absolute bottom-[-50px] right-[-45px] z-3"
-            src="/phoneBigbg.svg"
+            src="/decor/phoneBigbg.svg"
             alt="card phone"
             width={218}
             height={318}
           />
           <Image
             className="absolute bottom-[-40px] right-[-38px] z-4"
-            src="/phoneBig.svg"
+            src="/decor/phoneBig.svg"
             alt="card phone"
             width={205}
             height={296}
           />
           <Image
             className="absolute bottom-0 right-[92px] z-2"
-            src="/phoneMedium.svg"
+            src="/decor/phoneMedium.svg"
             alt="card phone"
             width={206}
             height={222}
           />
           <Image
             className="absolute w-[192px] h-[213px] bottom-[-35px] right-[250px] z-1"
-            src="/phoneSmall.png"
+            src="/decor/phoneSmall.webp"
             alt="card phone"
             width={192}
             height={179}
@@ -89,7 +89,7 @@ const ConsultCard: React.FC<ConsultCardProps> = ({ className }) => {
         <div className="tg-consult-mobile">
           <Image
             className="tg-consult-mobile__rays"
-            src="/Exclude.svg"
+            src="/decor/Exclude.svg"
             alt="exclude"
             width={133}
             height={201}
@@ -109,21 +109,21 @@ const ConsultCard: React.FC<ConsultCardProps> = ({ className }) => {
           <div className="tg-consult-mobile__phones" aria-hidden>
             <Image
               className="tg-consult-mobile__phone tg-consult-mobile__phone--left"
-              src="/phoneMobile_1.svg"
+              src="/decor/phoneMobile_1.svg"
               alt="phoneMobile_1"
               width={123}
               height={178}
             />
             <Image
               className="tg-consult-mobile__phone tg-consult-mobile__phone--center"
-              src="/phoneMobile_2.svg"
+              src="/decor/phoneMobile_2.svg"
               alt="phoneMobile_2"
               width={123}
               height={178}
             />
             <Image
               className="tg-consult-mobile__phone tg-consult-mobile__phone--right"
-              src="/phoneMobile_3.svg"
+              src="/decor/phoneMobile_3.svg"
               alt="phoneMobile_3"
               width={123}
               height={178}

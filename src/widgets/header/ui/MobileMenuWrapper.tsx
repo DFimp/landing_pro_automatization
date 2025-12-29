@@ -12,7 +12,7 @@ const MobileMenuWrapper = () => {
   return (
     <>
       <button className="sm:hidden" onClick={() => setIsMobileMenuOpen(true)}>
-        <Image src="/menu.svg" alt="Кнопка" width={20} height={20} />
+        <Image src="/decor/menu.svg" alt="Кнопка" width={20} height={20} />
       </button>
       
       <MobileMenu
