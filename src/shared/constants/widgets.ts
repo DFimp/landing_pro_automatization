@@ -1,0 +1,147 @@
+import { widgetRoute } from "./routes";
+
+export const WIDGETS = [
+    {
+        key: "auto-tasks",
+        title: "Автозадачи",
+        route: widgetRoute("auto-tasks"),
+        aliases: ["задачи", "авто", "автоматизация", "сделки", "робот", "autotasks"],
+        showInFooter: true,
+        showInSearch: true,
+    },
+    {
+        key: "duplicate-contacts",
+        title: "Дубликаты контактов",
+        route: widgetRoute("duplicate-contacts"),
+        aliases: ["дубли", "контакты", "объединение", "склейка", "duplicate contacts"],
+        showInFooter: true,
+        showInSearch: true,
+    },
+    {
+        key: "duplicate-leads",
+        title: "Дубликаты лидов",
+        route: widgetRoute("duplicate-leads"),
+        aliases: ["дубли", "лиды", "сделки", "объединение", "склейка", "duplicate leads"],
+        showInFooter: true,
+        showInSearch: true,
+    },
+    {
+        key: "lead-distribution",
+        title: "Распределение лидов",
+        route: widgetRoute("lead-distribution"),
+        aliases: ["распределение", "лиды", "сделки", "менеджеры", "очередь", "назначение"],
+        showInFooter: true,
+        showInSearch: true,
+    },
+    {
+        key: "massive-leads",
+        title: "Массовые лиды",
+        route: widgetRoute("massive-leads"),
+        aliases: ["массовое", "создание", "пакетно", "импорт", "лиды", "сделки"],
+        showInFooter: true,
+        showInSearch: true,
+    },
+    {
+        key: "telegram-button",
+        title: "Кнопка Telegram",
+        route: widgetRoute("telegram-button"),
+        aliases: ["telegram", "телеграм", "тг", "tg", "кнопка", "переход", "чат"],
+        showInFooter: true,
+        showInSearch: true,
+    },
+    {
+        key: "telegram-notify",
+        title: "Уведомления Telegram",
+        route: widgetRoute("telegram-notify"),
+        aliases: ["telegram", "телеграм", "тг", "tg", "уведомления", "бот", "оповещения", "notify"],
+        showInFooter: true,
+        showInSearch: true,
+    },
+    {
+        key: "time-zone",
+        title: "Часовые пояса",
+        route: widgetRoute("time-zone"),
+        aliases: ["время", "часовой пояс", "таймзона", "регион", "телефон", "timezone", "utc"],
+        showInFooter: true,
+        showInSearch: true,
+    },
+    {
+        key: "whatsapp-button",
+        title: "Кнопка WhatsApp",
+        route: widgetRoute("whatsapp-button"),
+        aliases: ["whatsapp", "ватсап", "вацап", "wa", "wapp", "кнопка", "переход", "чат"],
+        showInFooter: true,
+        showInSearch: true,
+    },
+    {
+        key: "closing-ban",
+        title: "Запрет закрытия",
+        route: widgetRoute("closing-ban"),
+        aliases: ["запрет", "закрытие", "задачи", "результат", "обязательное поле", "контроль"],
+        showInFooter: true,
+        showInSearch: true,
+    },
+    {
+        key: "delete-tasks-ban",
+        title: "Запрет удаления задач",
+        route: widgetRoute("delete-tasks-ban"),
+        aliases: ["запрет", "удаление", "задачи", "контроль", "защита"],
+        showInFooter: true,
+        showInSearch: true,
+    },
+    {
+        key: "shift-select",
+        title: "Выбор смены",
+        route: widgetRoute("shift-select"),
+        aliases: ["shift", "выделение", "групповое", "множественный выбор", "выбор строк"],
+        showInFooter: true,
+        showInSearch: true,
+    },
+    {
+        key: "group-fields",
+        title: "Группировка полей",
+        route: widgetRoute("group-fields"),
+        aliases: ["группировка", "поля", "карточка", "интерфейс", "структура"],
+        showInFooter: true,
+        showInSearch: true,
+    },
+    {
+        key: "transfer-fields",
+        title: "Перенос полей",
+        route: widgetRoute("transfer-fields"),
+        aliases: ["перенос", "копирование", "поля", "миграция", "передача значений"],
+        showInFooter: true,
+        showInSearch: true,
+    },
+    {
+        key: "delete-notes-ban",
+        title: "Запрет удаления заметок",
+        route: widgetRoute("delete-notes-ban"),
+        aliases: ["запрет", "удаление", "заметки", "комментарии", "история", "контроль"],
+        showInFooter: true,
+        showInSearch: true,
+    },
+    {
+        key: "setting-feed",
+        title: "Настройка ленты",
+        route: widgetRoute("setting-feed"),
+        aliases: ["лента", "события", "фильтр", "активности", "timeline", "feed"],
+        showInFooter: true,
+        showInSearch: true,
+    },
+    {
+        key: "google-sheets",
+        title: "Google Sheets",
+        route: widgetRoute("google-sheets"),
+        aliases: ["гугл таблицы", "google", "sheets", "таблицы", "экспорт", "импорт", "csv"],
+        showInFooter: true,
+        showInSearch: true,
+    },
+] as const;
+
+export const FOOTER_WIDGETS = WIDGETS.filter((w) => w.showInFooter);
+export const SEARCH_WIDGETS = WIDGETS.filter((w) => w.showInSearch);
+export const ALL_WIDGET_ROUTES = WIDGETS.map((w) => w.route);
+
+export type Widget = typeof WIDGETS[number];
+export type WidgetKey = Widget["key"];
