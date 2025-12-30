@@ -54,7 +54,7 @@ export default function TelegramNotify({
                 <div className="at-feature-ico">
                   <Image
                     src="/widgets/TelegramNotify/bell.webp"
-                    alt="Иконка колокольчика"
+                    alt="иконка колокольчика"
                     width={40}
                     height={40}
                     priority
@@ -71,7 +71,7 @@ export default function TelegramNotify({
                 <div className="at-feature-ico">
                   <Image
                     src="/widgets/TelegramNotify/letter_star.webp"
-                    alt="Иконка письма"
+                    alt="иконка письма"
                     width={40}
                     height={40}
                     priority
@@ -88,7 +88,7 @@ export default function TelegramNotify({
                 <div className="at-feature-ico">
                   <Image
                     src="/widgets/TelegramNotify/cursor.webp"
-                    alt="Иконка курсора"
+                    alt="иконка курсора"
                     width={40}
                     height={40}
                     priority
@@ -107,7 +107,7 @@ export default function TelegramNotify({
                 <div className="at-feature-ico">
                   <Image
                     src="/widgets/TelegramNotify/clock.webp"
-                    alt="Иконка часов"
+                    alt="иконка часов"
                     width={40}
                     height={40}
                     priority
@@ -124,7 +124,7 @@ export default function TelegramNotify({
                 <div className="at-feature-ico">
                   <Image
                     src="/widgets/TelegramNotify/letter_cist.webp"
-                    alt="Иконка письма с кистью"
+                    alt="иконка письма с кистью"
                     width={40}
                     height={40}
                     priority
@@ -141,7 +141,7 @@ export default function TelegramNotify({
                 <div className="at-feature-ico">
                   <Image
                     src="/widgets/TelegramNotify/pyramid.webp"
-                    alt="Иконка пирамидки со стрелкой"
+                    alt="иконка пирамидки со стрелкой"
                     width={40}
                     height={40}
                     priority
@@ -171,7 +171,7 @@ export default function TelegramNotify({
                   <div className="at-phone-blob" aria-hidden />
                   <Image
                     src="/widgets/TelegramNotify/telephone.webp"
-                    alt="Макет телефона"
+                    alt="макет телефона"
                     width={540}
                     height={760}
                     className="at-phone"

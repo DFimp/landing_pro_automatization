@@ -66,7 +66,7 @@ const WhyChooseUs = () => {
                             <WhyChooseUsSlideIn direction="right">
                                 <Image
                                     src="/decor/amo.svg"
-                                    alt="AMO"
+                                    alt="amo"
                                     fill
                                     style={{ objectFit: "cover" }}
                                     priority
@@ -84,7 +84,7 @@ const WhyChooseUs = () => {
                             <WhyChooseUsSlideIn direction="left">
                                 <Image
                                     src="/decor/crm.svg"
-                                    alt="CRM"
+                                    alt="crm"
                                     fill
                                     style={{ objectFit: "cover" }}
                                     priority

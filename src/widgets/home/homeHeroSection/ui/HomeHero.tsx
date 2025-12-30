@@ -22,7 +22,7 @@ const HomeHero = () => {
       <Image
         className="ml-auto w-[240px] h-[210px] sm:w-[580px] sm:h-[464px]"
         src="/decor/laptop.webp"
-        alt="Laptop"
+        alt="ноутбук"
         width={580}
         height={464}
         priority

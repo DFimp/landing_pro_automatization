@@ -24,14 +24,14 @@ export function WidgetsSupportSection() {
           </div>
           <div className="flex gap-[10px] mb-[6px]">
             Полключимся по
-            <Image src="/licenses/anydesc_icon.svg" alt="иконка anydesс" width={30} height={25} />
+            <Image src="/licenses/anydesc_icon.svg" alt="иконка решений" width={30} height={25} />
             AnyDesk
           </div>
           <div>Напишем и позвоним по телефону</div>
         </div>
         <div className="hidden sm:flex gap-[44px] font-semibold text-[32px] mb-[48px]">
           <SupportChips>
-            <Image src="/licenses/anydesc_icon.svg" alt="иконка anydesс" width={60} height={50} />
+            <Image src="/licenses/anydesc_icon.svg" alt="иконка решений" width={60} height={50} />
             AnyDesk
           </SupportChips>
           <SupportChips>

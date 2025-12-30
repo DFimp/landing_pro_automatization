@@ -41,7 +41,7 @@ export const STEPS = [
 
           <img
             src="/widgets/Distribution/allocate_leads_active_panel.webp"
-            alt="Активность менеджеров"
+            alt="активность менеджеров"
             style={{
               display: "block",
               height: "auto",

@@ -52,7 +52,7 @@ export const Card = ({
                         <button className="absolute sm:bottom-10 bottom-6 sm:right-8 right-6">
                             <Image
                                 src="/services/Audit/arrow btn.svg"
-                                alt="Кнопка"
+                                alt="кнопка"
                                 width={isMobileView ? 34 : 55}
                                 height={isMobileView ? 34 : 55}
                             />
@@ -97,7 +97,7 @@ export const Card = ({
                 <button className="absolute bottom-10 right-8">
                     <Image
                         src="/services/Audit/arrow btn.svg"
-                        alt="Кнопка"
+                        alt="кнопка"
                         width={55}
                         height={55}
                     />

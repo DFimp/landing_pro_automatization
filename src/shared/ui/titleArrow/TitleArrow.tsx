@@ -58,7 +58,7 @@ export const TitleArrow: FC<TittleArrowProps> = ({
             <Image
               className="w-[42px] h-[10px] sm:w-auto sm:h-auto"
               src={arrowSrc}
-              alt="Arrow"
+              alt="стрелка"
               width={arrowDimensions.width}
               height={arrowDimensions.height}
               priority

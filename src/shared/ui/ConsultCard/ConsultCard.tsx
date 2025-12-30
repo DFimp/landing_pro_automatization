@@ -36,28 +36,28 @@ export default function ConsultCard({ className }: ConsultCardProps) {
             <Image
               className="absolute bottom-[-50px] right-[-45px] z-3"
               src="/decor/phoneBigbg.svg"
-              alt="card phone"
+              alt="карточка телефона"
               width={218}
               height={318}
             />
             <Image
               className="absolute bottom-[-40px] right-[-38px] z-4"
               src="/decor/phoneBig.svg"
-              alt="card phone"
+              alt="карточка телефона"
               width={205}
               height={296}
             />
             <Image
               className="absolute bottom-0 right-[92px] z-2"
               src="/decor/phoneMedium.svg"
-              alt="card phone"
+              alt="карточка телефона"
               width={206}
               height={222}
             />
             <Image
               className="absolute w-[192px] h-[213px] bottom-[-35px] right-[250px] z-1"
               src="/decor/phoneSmall.webp"
-              alt="card phone"
+              alt="карточка телефона"
               width={192}
               height={179}
             />
@@ -71,7 +71,7 @@ export default function ConsultCard({ className }: ConsultCardProps) {
           <Image
             className="tg-consult-mobile__rays"
             src="/decor/Exclude.svg"
-            alt="exclude"
+            alt="исключение"
             width={133}
             height={201}
             priority
@@ -91,21 +91,21 @@ export default function ConsultCard({ className }: ConsultCardProps) {
             <Image
               className="tg-consult-mobile__phone tg-consult-mobile__phone--left"
               src="/decor/phoneMobile_1.svg"
-              alt="phoneMobile_1"
+              alt="мобильный телефон 1"
               width={123}
               height={178}
             />
             <Image
               className="tg-consult-mobile__phone tg-consult-mobile__phone--center"
               src="/decor/phoneMobile_2.svg"
-              alt="phoneMobile_2"
+              alt="мобильный телефон 2"
               width={123}
               height={178}
             />
             <Image
               className="tg-consult-mobile__phone tg-consult-mobile__phone--right"
               src="/decor/phoneMobile_3.svg"
-              alt="phoneMobile_3"
+              alt="мобильный телефон 3"
               width={123}
               height={178}
             />

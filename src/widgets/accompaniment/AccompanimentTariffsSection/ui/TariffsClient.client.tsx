@@ -35,7 +35,7 @@ export default function TariffsClient({ tariffs }: { tariffs: Tariff[] }) {
                                     <div className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none">
                                         <Image
                                             src="/services/Escort/ribbon.svg"
-                                            alt="Выгода"
+                                            alt="выгода"
                                             width={1000}
                                             height={1000}
                                             className="object-cover absolute top-0 right-0"

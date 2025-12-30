@@ -17,7 +17,7 @@ export default function FeaturesList() {
             </span>
             <Image
               src="/decor/cross.svg"
-              alt="Перейти"
+              alt="перейти"
               width={30}
               height={30}
               className="w-[14px] h-[14px] sm:w-[30px] sm:h-[30px]"

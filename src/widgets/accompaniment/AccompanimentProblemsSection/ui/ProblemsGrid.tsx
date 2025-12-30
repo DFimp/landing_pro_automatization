@@ -17,7 +17,7 @@ export default function ProblemsGrid() {
             >
               <Image
                 src={problem.image}
-                alt="Проблема и ее решение"
+                alt="проблема и ее решение"
                 width={92}
                 height={92}
                 className="w-[46px] h-[46px] sm:w-[92px] sm:h-[92px]"

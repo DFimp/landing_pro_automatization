@@ -139,7 +139,7 @@ export const Footer = () => {
               <Link href="/">
                 <Image
                   src="/widgets/footer/footer_logo.webp"
-                  alt="Про Автоматизацию"
+                  alt="про автоматизацию"
                   width={210}
                   height={60}
                   className="block w-[210px] h-auto"
