@@ -143,5 +143,12 @@ export const FOOTER_WIDGETS = WIDGETS.filter((w) => w.showInFooter);
 export const SEARCH_WIDGETS = WIDGETS.filter((w) => w.showInSearch);
 export const ALL_WIDGET_ROUTES = WIDGETS.map((w) => w.route);
 
+export const POPULAR_WIDGET_KEYS = [
+  "telegram-notify",
+  "lead-distribution",
+  "duplicate-leads",
+  "duplicate-contacts",
+] as const satisfies readonly WidgetKey[];
+
 export type Widget = typeof WIDGETS[number];
 export type WidgetKey = Widget["key"];

@@ -5,7 +5,11 @@ import Image from "next/image";
 import { useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useHiddenInIframe } from "@/shared/utils/useHiddenInIframe";
-import { WIDGETS, type WidgetKey } from "@/shared/constants/widgets";
+import {
+  WIDGETS,
+  POPULAR_WIDGET_KEYS,
+  type WidgetKey,
+} from "@/shared/constants/widgets";
 
 type FooterLink = { label: string; href: string };
 
@@ -33,17 +37,6 @@ export const Footer = () => {
     }));
   }, []);
 
-  const POPULAR_WIDGET_KEYS = useMemo(
-    () =>
-      [
-        "telegram-notify",
-        "lead-distribution",
-        "duplicate-leads",
-        "duplicate-contacts",
-      ] as const satisfies readonly WidgetKey[],
-    []
-  );
-
   const popularWidgets: FooterLink[] = useMemo(() => {
     const byKey = Object.fromEntries(WIDGETS.map((w) => [w.key, w])) as Record<
       WidgetKey,
@@ -54,7 +47,7 @@ export const Footer = () => {
       label: byKey[key].title,
       href: byKey[key].route,
     }));
-  }, [POPULAR_WIDGET_KEYS]);
+  }, []);
 
   const cols = useMemo(
     () => [
@@ -84,7 +77,7 @@ export const Footer = () => {
     const q = normalize(query);
     if (!q) return [];
 
-    const scored = widgetsForSearch
+    return widgetsForSearch
       .map((w) => {
         const hay = normalize(w.label);
         const inTitle = hay.includes(q);
@@ -102,8 +95,6 @@ export const Footer = () => {
       .sort((a, b) => b.score - a.score)
       .slice(0, 6)
       .map((x) => x.w);
-
-    return scored;
   }, [query, widgetsForSearch]);
 
   const closeDropdown = () => {
@@ -195,8 +186,8 @@ export const Footer = () => {
               <Link
                 href="/widgets"
                 className="mb-3 inline-flex items-center gap-2
-             text-[16px] font-semibold text-white/95
-             hover:text-white transition"
+                text-[16px] font-semibold text-white/95
+                hover:text-white transition"
               >
                 Виджеты
                 <svg
@@ -314,11 +305,10 @@ export const Footer = () => {
                             <button
                               type="button"
                               onClick={() => pickWidget(w)}
-                              className={`w-full text-left px-4 py-2 text-[14px] transition ${
-                                idx === activeIndex
+                              className={`w-full text-left px-4 py-2 text-[14px] transition ${idx === activeIndex
                                   ? "bg-white/10 text-white"
                                   : "text-[#e9ecff] hover:bg-white/8 hover:text-white"
-                              }`}
+                                }`}
                             >
                               {w.label}
                             </button>
