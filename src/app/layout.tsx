@@ -24,11 +24,11 @@ export const metadata: Metadata = {
 
   icons: {
     icon: [
-      { url: '/decor/favicon.ico', sizes: '108x108' },
-      { url: '/decor/icon-192.webp', sizes: '192x192', type: 'image/webp' },
-      { url: '/decor/icon-512.webp', sizes: '512x512', type: 'image/webp' },
+      { url: '/favicon.ico', sizes: '108x108' },
+      { url: '/icon-192.webp', sizes: '192x192', type: 'image/webp' },
+      { url: '/icon-512.webp', sizes: '512x512', type: 'image/webp' },
     ],
-    apple: '/decor/apple-icon.webp',
+    apple: '/apple-icon.webp',
   },
 
   other: {
