@@ -11,13 +11,13 @@ export const TitleArrow: FC<TittleArrowProps> = ({
   const getArrowSrc = () => {
     switch (variant) {
       case "primary":
-        return "/arrow.svg";
+        return "/services/Audit/arrow.svg";
       case "secondary":
-        return "/arrow_white.svg";
+        return "/services/Audit/arrow_white.svg";
       case "outline":
-        return "/big arrow.svg";
+        return "/services/Audit/big arrow.svg";
       default:
-        return "/arrow.svg";
+        return "/services/Audit/arrow.svg";
     }
   };
 
@@ -58,7 +58,7 @@ export const TitleArrow: FC<TittleArrowProps> = ({
             <Image
               className="w-[42px] h-[10px] sm:w-auto sm:h-auto"
               src={arrowSrc}
-              alt="Arrow"
+              alt="стрелка"
               width={arrowDimensions.width}
               height={arrowDimensions.height}
               priority

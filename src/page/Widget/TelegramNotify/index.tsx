@@ -53,8 +53,8 @@ export default function TelegramNotify({
               <div className="at-feature-card">
                 <div className="at-feature-ico">
                   <Image
-                    src="/widgets/TelegramNotify/bell.png"
-                    alt="Иконка колокольчика"
+                    src="/widgets/TelegramNotify/bell.webp"
+                    alt="иконка колокольчика"
                     width={40}
                     height={40}
                     priority
@@ -70,10 +70,11 @@ export default function TelegramNotify({
               <div className="at-feature-card">
                 <div className="at-feature-ico">
                   <Image
-                    src="/widgets/TelegramNotify/letter_star.png"
-                    alt="Иконка письма"
+                    src="/widgets/TelegramNotify/letter_star.webp"
+                    alt="иконка письма"
                     width={40}
                     height={40}
+                    priority
                   />
                 </div>
                 <h3 className="at-feature-title">Умные триггеры</h3>
@@ -86,10 +87,11 @@ export default function TelegramNotify({
               <div className="at-feature-card">
                 <div className="at-feature-ico">
                   <Image
-                    src="/widgets/TelegramNotify/cursor.png"
-                    alt="Иконка курсора"
+                    src="/widgets/TelegramNotify/cursor.webp"
+                    alt="иконка курсора"
                     width={40}
                     height={40}
+                    priority
                   />
                 </div>
                 <h3 className="at-feature-title">
@@ -104,10 +106,11 @@ export default function TelegramNotify({
               <div className="at-feature-card">
                 <div className="at-feature-ico">
                   <Image
-                    src="/widgets/TelegramNotify/clock.png"
-                    alt="Иконка часов"
+                    src="/widgets/TelegramNotify/clock.webp"
+                    alt="иконка часов"
                     width={40}
                     height={40}
+                    priority
                   />
                 </div>
                 <h3 className="at-feature-title">Контроль времени отправки</h3>
@@ -120,10 +123,11 @@ export default function TelegramNotify({
               <div className="at-feature-card">
                 <div className="at-feature-ico">
                   <Image
-                    src="/widgets/TelegramNotify/letter_cist.png"
-                    alt="Иконка письма с кистью"
+                    src="/widgets/TelegramNotify/letter_cist.webp"
+                    alt="иконка письма с кистью"
                     width={40}
                     height={40}
+                    priority
                   />
                 </div>
                 <h3 className="at-feature-title">Автоочистка сообщений</h3>
@@ -136,10 +140,11 @@ export default function TelegramNotify({
               <div className="at-feature-card">
                 <div className="at-feature-ico">
                   <Image
-                    src="/widgets/TelegramNotify/pyramid.png"
-                    alt="Иконка пирамидки со стрелкой"
+                    src="/widgets/TelegramNotify/pyramid.webp"
+                    alt="иконка пирамидки со стрелкой"
                     width={40}
                     height={40}
+                    priority
                   />
                 </div>
                 <h3 className="at-feature-title">Полная информация о сделке</h3>
@@ -165,8 +170,8 @@ export default function TelegramNotify({
                 <div className="at-phone-wrap">
                   <div className="at-phone-blob" aria-hidden />
                   <Image
-                    src="/widgets/TelegramNotify/telephone.png"
-                    alt="Макет телефона"
+                    src="/widgets/TelegramNotify/telephone.webp"
+                    alt="макет телефона"
                     width={540}
                     height={760}
                     className="at-phone"

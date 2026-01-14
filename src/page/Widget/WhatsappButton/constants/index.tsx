@@ -136,7 +136,7 @@ export const PROBLEMS: ProblemItem[] = [
         <span className="at-mark">вместо 1 секунды</span>
       </>
     ),
-    bgUrl: "/widgets/WhatsappButton/back_timer.png",
+    bgUrl: "/widgets/WhatsappButton/back_timer.webp",
   },
   {
     title: "Постоянные переключения",
@@ -146,7 +146,7 @@ export const PROBLEMS: ProblemItem[] = [
         работу менеджеров
       </>
     ),
-    bgUrl: "/widgets/WhatsappButton/back_switch.png",
+    bgUrl: "/widgets/WhatsappButton/back_switch.webp",
   },
   {
     title: "Ошибки при вводе",
@@ -156,7 +156,7 @@ export const PROBLEMS: ProblemItem[] = [
         или вообще не доходят
       </>
     ),
-    bgUrl: "/widgets/WhatsappButton/back_cross.png",
+    bgUrl: "/widgets/WhatsappButton/back_cross.webp",
   },
   {
     title: "Упущенные продажи",
@@ -166,13 +166,13 @@ export const PROBLEMS: ProblemItem[] = [
         WhatsApp, они могут уйти к более быстрым конкурентам.
       </>
     ),
-    bgUrl: "/widgets/WhatsappButton/back_basket.png",
+    bgUrl: "/widgets/WhatsappButton/back_basket.webp",
   },
 ];
 
 export const FEATURES: FeatureItem[] = [
   {
-    iconUrl: "/widgets/WhatsappButton/group.png",
+    iconUrl: "/widgets/WhatsappButton/group.webp",
     title: "Поддержка всех номеров",
     text: (
       <>
@@ -182,7 +182,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/WhatsappButton/sort.png",
+    iconUrl: "/widgets/WhatsappButton/sort.webp",
     title: "Автоматическое форматирование",
     text: (
       <>
@@ -192,7 +192,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/WhatsappButton/deadline.png",
+    iconUrl: "/widgets/WhatsappButton/deadline.webp",
     title: "Мгновенная работа",
     text: (
       <>
@@ -202,7 +202,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/WhatsappButton/mobile.png",
+    iconUrl: "/widgets/WhatsappButton/mobile.webp",
     title: "Веб и мобильные версии",
     text: (
       <>
@@ -212,7 +212,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/WhatsappButton/target.png",
+    iconUrl: "/widgets/WhatsappButton/target.webp",
     title: "Точное попадание",
     text: (
       <>
@@ -222,7 +222,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/WhatsappButton/free.png",
+    iconUrl: "/widgets/WhatsappButton/free.webp",
     title: "Полностью бесплатно",
     text: (
       <>

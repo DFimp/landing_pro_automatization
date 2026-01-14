@@ -1,6 +1,6 @@
 export const services = [
     {
-        img: "/service1.svg",
+        img: "/services/Audit/service1.svg",
         title: "Сбор информации",
         items: [
             "Изучаем ваш бизнес и цели.",
@@ -9,7 +9,7 @@ export const services = [
         ]
     },
     {
-        img: "/service2.svg",
+        img: "/services/Audit/service2.svg",
         title: "Поиск проблем",
         items: [
             "Определяем слабые места в работе.",
@@ -18,7 +18,7 @@ export const services = [
         ]
     },
     {
-        img: "/service3.svg",
+        img: "/services/Audit/service3.svg",
         title: "Разработка решений",
         items: [
             "Готовим техническое задание (ТЗ).",
@@ -27,7 +27,7 @@ export const services = [
         ]
     },
     {
-        img: "/service4.svg",
+        img: "/services/Audit/service4.svg",
         title: "План действий",
         items: [
             "Создаём пошаговый план работ.",

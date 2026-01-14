@@ -16,7 +16,7 @@ export default function AmoCrmHelpsSellArticle() {
                 />
 
                 <div className={styles.content}>
-                    <h1>amoCRM: почему эта CRM реально помогает бизнесу продавать больше</h1>
+                    <h1>AmoCRM: почему эта CRM реально помогает бизнесу продавать больше</h1>
 
                     <AmoCrmHelpsSellMoreContentSection />
                 </div>

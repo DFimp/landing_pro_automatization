@@ -140,7 +140,7 @@ export const STEPS = [
 
 export const FEATURES: FeatureItem[] = [
   {
-    iconUrl: "/widgets/TelegramNotify/bell.png",
+    iconUrl: "/widgets/TelegramNotify/bell.webp",
     title: "Мгновенные уведомления",
     text: (
       <>
@@ -150,7 +150,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/TelegramNotify/letter_star.png",
+    iconUrl: "/widgets/TelegramNotify/letter_star.webp",
     title: "Умные триггеры",
     text: (
       <>
@@ -160,7 +160,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/TelegramNotify/cursor.png",
+    iconUrl: "/widgets/TelegramNotify/cursor.webp",
     title: "Запуск SalesBot одним кликом",
     text: (
       <>
@@ -170,7 +170,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/TelegramNotify/clock.png",
+    iconUrl: "/widgets/TelegramNotify/clock.webp",
     title: "Контроль времени отправки",
     text: (
       <>
@@ -180,7 +180,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/TelegramNotify/letter_cist.png",
+    iconUrl: "/widgets/TelegramNotify/letter_cist.webp",
     title: "Автоочистка сообщений",
     text: (
       <>
@@ -190,7 +190,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/TelegramNotify/pyramid.png",
+    iconUrl: "/widgets/TelegramNotify/pyramid.webp",
     title: "Полная информация о сделке",
     text: (
       <>

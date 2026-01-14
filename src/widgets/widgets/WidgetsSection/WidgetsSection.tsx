@@ -11,7 +11,7 @@ export function WidgetsWidgetsSection() {
 
         <Image
           src="/arrow_white.svg"
-          alt=""
+          alt="белая стрелка вправо"
           width={113}
           height={30}
           className="w-[42px] h-auto sm:w-[113px]"

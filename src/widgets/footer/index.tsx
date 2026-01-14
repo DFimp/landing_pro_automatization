@@ -5,13 +5,19 @@ import Image from "next/image";
 import { useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useHiddenInIframe } from "@/shared/utils/useHiddenInIframe";
+import {
+  WIDGETS,
+  POPULAR_WIDGET_KEYS,
+  type WidgetKey,
+} from "@/shared/constants/widgets";
 
 type FooterLink = { label: string; href: string };
 
 type WidgetItem = {
+  key: WidgetKey;
   label: string;
   href: string;
-  aliases?: string[];
+  aliases?: readonly string[];
 };
 
 function normalize(s: string) {
@@ -22,35 +28,26 @@ export const Footer = () => {
   const { isIframe } = useHiddenInIframe();
   const router = useRouter();
 
-  const WIDGETS: WidgetItem[] = useMemo(
-    () => [
-      { label: "Телеграм уведомления", href: "/widgets/telegram-notify", aliases: ["telegram", "уведомления", "тг", "tg", "бот"] },
-      { label: "Распределение сделок", href: "/widgets/lead-distribution", aliases: ["распределение", "сделки", "лиды", "менеджеры", "lead distribution"] },
-      { label: "Дубли сделок (объединение дублей сделок)", href: "/widgets/duplicate-leads", aliases: ["дубли", "сделки", "объединение", "склейка", "duplicate leads"] },
-      { label: "Дубли контактов (объединение дублей контактов)", href: "/widgets/duplicate-contacts", aliases: ["дубли", "контакты", "объединение", "склейка", "duplicate contacts"] },
-      { label: "Регион по телефону", href: "/widgets/time-zone", aliases: ["время", "часовой пояс", "регион", "телефон"] },
-      { label: "Автозадачи в сделках", href: "/widgets/auto-tasks", aliases: ["автозадачи", "задачи"] },
-      { label: "Массовое создание сделок", href: "/widgets/massive-leads", aliases: ["массовое", "создание сделок"] },
-      { label: "Мгновенный переход в Telegram", href: "/widgets/telegram-button", aliases: ["переход", "telegram", "кнопка", "тг", "телеграм"] },
-      { label: "Мгновенный переход в WhatsApp", href: "/widgets/whatsapp-button", aliases: ["переход", "whatsapp", "кнопка", "ватсап"] },
-      { label: "Запрет закрытия задач без результата", href: "/widgets/closing-ban", aliases: ["запрет", "закрытия", "результат"] },
-      { label: "Запрет удаления задач", href: "/widgets/delete-tasks-ban", aliases: ["запрет", "удаления", "задач"] },
-      { label: "Групповое выделение (Shift-выбор)", href: "/widgets/shift-select", aliases: ["shift", "выделение", "групповое"] },
-      { label: "Группировка полей", href: "/widgets/group-fields", aliases: ["группировка", "поля"] },
-      { label: "Фильтр ленты событий в сделке", href: "/widgets/setting-feed", aliases: ["лента", "фильтр", "события"] },
-    ],
-    []
-  );
+  const widgetsForSearch: WidgetItem[] = useMemo(() => {
+    return WIDGETS.map((w) => ({
+      key: w.key,
+      label: w.title,
+      href: w.route,
+      aliases: w.aliases,
+    }));
+  }, []);
 
-  const popularWidgets: FooterLink[] = useMemo(
-    () => [
-      { label: "Телеграм уведомления", href: "/widgets/telegram-notify" },
-      { label: "Распределение сделок", href: "/widgets/lead-distribution" },
-      { label: "Дубли сделок (объединение дублей сделок)", href: "/widgets/duplicate-leads" },
-      { label: "Дубли контактов (объединение дублей контактов)", href: "/widgets/duplicate-contacts" },
-    ],
-    []
-  );
+  const popularWidgets: FooterLink[] = useMemo(() => {
+    const byKey = Object.fromEntries(WIDGETS.map((w) => [w.key, w])) as Record<
+      WidgetKey,
+      (typeof WIDGETS)[number]
+    >;
+
+    return POPULAR_WIDGET_KEYS.map((key) => ({
+      label: byKey[key].title,
+      href: byKey[key].route,
+    }));
+  }, []);
 
   const cols = useMemo(
     () => [
@@ -80,7 +77,7 @@ export const Footer = () => {
     const q = normalize(query);
     if (!q) return [];
 
-    const scored = WIDGETS
+    return widgetsForSearch
       .map((w) => {
         const hay = normalize(w.label);
         const inTitle = hay.includes(q);
@@ -98,9 +95,7 @@ export const Footer = () => {
       .sort((a, b) => b.score - a.score)
       .slice(0, 6)
       .map((x) => x.w);
-
-    return scored;
-  }, [query, WIDGETS]);
+  }, [query, widgetsForSearch]);
 
   const closeDropdown = () => {
     setIsOpen(false);
@@ -120,11 +115,12 @@ export const Footer = () => {
     }
 
     const q = normalize(query);
-    const exact = WIDGETS.find((w) => normalize(w.label) === q);
+    const exact = widgetsForSearch.find((w) => normalize(w.label) === q);
     if (exact) {
       router.push(exact.href);
       return;
     }
+
     const trimmed = query.trim();
     if (trimmed) router.push(`/widgets?search=${encodeURIComponent(trimmed)}`);
   };
@@ -143,7 +139,7 @@ export const Footer = () => {
               <Link href="/">
                 <Image
                   src="/widgets/footer/footer_logo.webp"
-                  alt="Про Автоматизацию"
+                  alt="про автоматизацию"
                   width={210}
                   height={60}
                   className="block w-[210px] h-auto"
@@ -171,7 +167,6 @@ export const Footer = () => {
           </div>
 
           <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-[1fr_3fr] md:pl-4 gap-10">
-            {/* Услуги */}
             <nav>
               <div className="mb-3 text-[16px] font-semibold text-white/95">
                 {cols[0].title}
@@ -191,8 +186,8 @@ export const Footer = () => {
               <Link
                 href="/widgets"
                 className="mb-3 inline-flex items-center gap-2
-             text-[16px] font-semibold text-white/95
-             hover:text-white transition"
+                text-[16px] font-semibold text-white/95
+                hover:text-white transition"
               >
                 Виджеты
                 <svg
@@ -240,7 +235,9 @@ export const Footer = () => {
                       if (e.key === "ArrowDown") {
                         e.preventDefault();
                         setIsOpen(true);
-                        setActiveIndex((x) => Math.min(x + 1, Math.max(0, suggestions.length - 1)));
+                        setActiveIndex((x) =>
+                          Math.min(x + 1, Math.max(0, suggestions.length - 1))
+                        );
                       }
                       if (e.key === "ArrowUp") {
                         e.preventDefault();
@@ -309,8 +306,8 @@ export const Footer = () => {
                               type="button"
                               onClick={() => pickWidget(w)}
                               className={`w-full text-left px-4 py-2 text-[14px] transition ${idx === activeIndex
-                                ? "bg-white/10 text-white"
-                                : "text-[#e9ecff] hover:bg-white/8 hover:text-white"
+                                  ? "bg-white/10 text-white"
+                                  : "text-[#e9ecff] hover:bg-white/8 hover:text-white"
                                 }`}
                             >
                               {w.label}
@@ -327,33 +324,15 @@ export const Footer = () => {
                 </div>
 
                 <div className="mt-3 grid grid-cols-2 gap-2">
-                  <Link
-                    href="/widgets/telegram-notify"
-                    className="px-3 py-2 rounded-[12px] bg-white/6 border border-white/12 text-[14px] text-[#e9ecff] hover:text-white hover:bg-white/10 transition"
-                  >
-                    Телеграм уведомления
-                  </Link>
-
-                  <Link
-                    href="/widgets/duplicate-leads"
-                    className="px-3 py-2 rounded-[12px] bg-white/6 border border-white/12 text-[14px] text-[#e9ecff] hover:text-white hover:bg-white/10 transition"
-                  >
-                    Дубли сделок
-                  </Link>
-
-                  <Link
-                    href="/widgets/lead-distribution"
-                    className="px-3 py-2 rounded-[12px] bg-white/6 border border-white/12 text-[14px] text-[#e9ecff] hover:text-white hover:bg-white/10 transition"
-                  >
-                    Распределение сделок
-                  </Link>
-
-                  <Link
-                    href="/widgets/duplicate-contacts"
-                    className="px-3 py-2 rounded-[12px] bg-white/6 border border-white/12 text-[14px] text-[#e9ecff] hover:text-white hover:bg-white/10 transition"
-                  >
-                    Дубли контактов
-                  </Link>
+                  {popularWidgets.map((w) => (
+                    <Link
+                      key={w.href}
+                      href={w.href}
+                      className="px-3 py-2 rounded-[12px] bg-white/6 border border-white/12 text-[14px] text-[#e9ecff] hover:text-white hover:bg-white/10 transition"
+                    >
+                      {w.label}
+                    </Link>
+                  ))}
                 </div>
               </div>
             </div>
