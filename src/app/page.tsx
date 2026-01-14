@@ -3,33 +3,47 @@ import Home from "@/page/Home";
 
 
 export const metadata: Metadata = {
-  title: "Про Автоматизацию — интеграция и автоматизация amoCRM",
-  description: "Ваш эксперт по amoCRM: настройка, интеграции, автоматизация бизнес-процессов. Консультации по amoCRM, воронки продаж, CRM-системы. Полная автоматизация вашего бизнеса с amoCRM.",
+  title: "Про Автоматизацию — разработка виджетов и автоматизация amoCRM",
+  description: "Эксперт по amoCRM: разработка кастомных виджетов, настройка воронок продаж, интеграции с 1С, WhatsApp, телефонией. Автоматизация бизнес-процессов под ключ.",
+
+  keywords: [
+    "про автоматизацию",
+    "про автоматизация amocrm",
+    "pro-automatization",
+    "разработка виджетов amocrm",
+    "виджеты для amocrm",
+    "автоматизация amocrm",
+    "интеграция amocrm",
+    "настройка amocrm",
+    "внедрение amocrm",
+    "роботы amocrm",
+    "триггеры amocrm",
+  ],
 
   openGraph: {
     type: "website",
     locale: "ru_RU",
     url: "https://pro-automatization.ru/",
-    title: "Про Автоматизацию — интеграция и автоматизация amoCRM",
-    description: "Настройка amoCRM, интеграции, автоматизация. Консультации и полное внедрение CRM-системы для вашего бизнеса.",
+    title: "Про Автоматизацию — разработка виджетов и автоматизация amoCRM",
+    description: "Эксперт по amoCRM: кастомные виджеты, автоматизация продаж, интеграции. Внедрение и настройка CRM под ключ.",
     siteName: "Про Автоматизацию",
     images: [
       {
-        url: "https://pro-automatization.ru/og-image.png", 
+        url: "https://pro-automatization.ru/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Про Автоматизацию - эксперт по amoCRM"
+        alt: "Про Автоматизацию - разработка виджетов и автоматизация amoCRM"
       }
     ],
   },
-  
+
   twitter: {
     card: "summary_large_image",
-    title: "Про Автоматизацию - Эксперт по amoCRM",
-    description: "Настройка amoCRM, интеграции, автоматизация бизнес-процессов",
+    title: "Про Автоматизацию — разработка виджетов amoCRM",
+    description: "Кастомные виджеты, автоматизация продаж, интеграции с amoCRM",
     images: ["https://pro-automatization.ru/og-image.png"],
   },
-  
+
   alternates: {
     canonical: "https://pro-automatization.ru/",
   },

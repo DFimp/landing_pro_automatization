@@ -6,6 +6,7 @@ import Header from "@/widgets/header/Header";
 import { Footer } from "@/widgets/footer";
 import { Suspense } from "react";
 import { YandexMetrika, YandexScript } from "@/shared/scripts/YandexMetrika";
+import { GoogleAnalytics, GoogleAnalyticsScript } from "@/shared/scripts/GoogleAnalytics";
 
 
 const montserrat = Montserrat({
@@ -16,11 +17,25 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://pro-automatization.ru'),
-  
+
   title: {
     default: "Про Автоматизацию — интеграция и автоматизация amoCRM",
     template: "%s | Про Автоматизацию"
   },
+
+  description: "Эксперт по amoCRM: разработка виджетов, автоматизация бизнес-процессов, интеграции. Настройка CRM под ключ, консультации и внедрение amoCRM для вашего бизнеса.",
+
+  keywords: [
+    "про автоматизацию",
+    "amoCRM",
+    "amocrm",
+    "amo crm",
+    "автоматизация amoCRM",
+    "виджеты amoCRM",
+    "интеграция amoCRM",
+    "настройка amoCRM",
+    "внедрение CRM",
+  ],
 
   icons: {
     icon: [
@@ -38,7 +53,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Про Автоматизацию" }],
   creator: "Про Автоматизацию",
   publisher: "Про Автоматизацию",
-  
+
   robots: {
     index: true,
     follow: true,
@@ -49,6 +64,12 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+  },
+
+  openGraph: {
+    type: 'website',
+    locale: 'ru_RU',
+    siteName: 'Про Автоматизацию',
   },
 };
 
@@ -63,8 +84,10 @@ export default function RootLayout({
     <html lang="ru">
       <body className={`${montserrat.variable} antialiased`}>
         <YandexScript />
+        <GoogleAnalyticsScript />
         <Suspense fallback={<></>}>
           <YandexMetrika />
+          <GoogleAnalytics />
         </Suspense>
         <Suspense fallback={<div className="h-20" />}>
           <Header />
