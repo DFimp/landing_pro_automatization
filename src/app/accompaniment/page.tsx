@@ -1,36 +1,14 @@
 import type { Metadata } from "next";
 import Accompaniment from "@/page/Accompaniment";
+import { createSEOMetadata, CORE_KEYWORDS } from "@/shared/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Сопровождение amoCRM - техническая поддержка",
-  description: "Профессиональное сопровождение amoCRM: техническая поддержка, доработки, обслуживание CRM системы. Позаботимся о том, чтобы ваша амо СРМ работала как часы без сбоев.",
-  
-  alternates: {
-    canonical: "https://pro-automatization.ru/accompaniment",
-  },
-  
-  openGraph: {
-    title: "Сопровождение amoCRM - техническая поддержка",
-    description: "Полное техническое сопровождение amoCRM: поддержка, доработки, обслуживание. Ваша CRM система будет работать стабильно и эффективно.",
-    url: "https://pro-automatization.ru/accompaniment",
-    type: "website",
-    images: [
-      {
-        url: "https://pro-automatization.ru/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Сопровождение amoCRM - Про Автоматизацию"
-      }
-    ],
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "Сопровождение amoCRM - Техническая поддержка CRM",
-    description: "Профессиональное сопровождение amoCRM: поддержка, доработки, обслуживание CRM системы",
-    images: ["https://pro-automatization.ru/og-image.png"],
-  },
-};
+export const metadata: Metadata = createSEOMetadata({
+  title: "Сопровождение amoCRM — техподдержка и консультации | Про Автоматизацию",
+  description: "Профессиональное сопровождение amoCRM: техподдержка, консультации, доработки. Быстрое решение проблем. От 10 000₽/мес.",
+  keywords: ["сопровождение amocrm", "техподдержка amocrm", "консультации amocrm", ...CORE_KEYWORDS.setup],
+  canonical: "/accompaniment",
+  ogType: "website",
+});
 
 export const revalidate = 86400;
 
