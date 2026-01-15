@@ -7,6 +7,8 @@ import ProblemsCard from "@/shared/ui/ProblemsCard/ProblemsCard";
 import FeaturesCard from "@/shared/ui/FeaturesCard/FeaturesCard";
 import PreviewCard from "@/shared/ui/PreviewCard/PreviewCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
+import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
+import { ServiceSchemaTag } from "@/shared/lib/seo";
 import { STEPS, CASE_ITEMS, PROBLEMS, FEATURES } from "./constants";
 
 export default function TelegramButton({
@@ -17,14 +19,31 @@ export default function TelegramButton({
   const isIframe = searchParams.embed === "true";
 
   return (
-    <main className="bg-transparent">
-      {!isIframe && (
-        <>
-          <section className="dist-hero">
-            <div className="at-container">
-              <h1 className="dist-pill dist-bleed-left">
-                Мгновенный переход в Telegram из amoCRM
-              </h1>
+    <>
+      <ServiceSchemaTag
+        data={{
+          serviceType: "Разработка виджетов amoCRM",
+          name: "Кнопка Telegram для amoCRM",
+          description: "Виджет добавляет кнопку быстрого перехода в Telegram-чат клиента прямо из CRM",
+          provider: { name: "Про Автоматизацию" },
+          areaServed: { name: "Россия" },
+        }}
+      />
+      <main className="bg-transparent">
+        {!isIframe && (
+          <>
+            <section className="dist-hero">
+              <div className="at-container">
+                <Breadcrumbs
+                  items={[
+                    { name: "Главная", href: "/" },
+                    { name: "Виджеты", href: "/widgets" },
+                    { name: "Кнопка Telegram", href: "/widgets/telegram-button" },
+                  ]}
+                />
+                <h1 className="dist-pill dist-bleed-left">
+                  Мгновенный переход в Telegram из amoCRM
+                </h1>
 
               <h2 className="dist-hero-title">
                 Написать в Telegram за 1 клик?
@@ -94,6 +113,7 @@ export default function TelegramButton({
           </section>
         </>
       )}
-    </main>
+      </main>
+    </>
   );
 }

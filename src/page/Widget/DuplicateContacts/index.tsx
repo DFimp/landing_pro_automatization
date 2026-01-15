@@ -6,6 +6,8 @@ import CaseCard from "@/shared/ui/Case/CaseCard";
 import ProblemsCard from "@/shared/ui/ProblemsCard/ProblemsCard";
 import FeaturesCard from "@/shared/ui/FeaturesCard/FeaturesCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
+import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
+import { ServiceSchemaTag } from "@/shared/lib/seo";
 import { STEPS, CASE_ITEMS, PROBLEMS, FEATURES } from "./constants";
 
 export default function DuplicateContacts({
@@ -16,14 +18,31 @@ export default function DuplicateContacts({
   const isIframe = searchParams.embed === "true";
 
   return (
-    <main className="bg-transparent">
-      {!isIframe && (
-        <>
-          <section className="tg-hero">
-            <div className="tg-container">
-              <h1 className="tg-pill tg-bleed-left">
-                Дубли контактов (объединение дублей контактов) в amoCRM
-              </h1>
+    <>
+      <ServiceSchemaTag
+        data={{
+          serviceType: "Разработка виджетов amoCRM",
+          name: "Дубли контактов для amoCRM",
+          description: "Виджет находит и объединяет дублированные контакты в amoCRM с умными алгоритмами поиска",
+          provider: { name: "Про Автоматизацию" },
+          areaServed: { name: "Россия" },
+        }}
+      />
+      <main className="bg-transparent">
+        {!isIframe && (
+          <>
+            <section className="tg-hero">
+              <div className="tg-container">
+                <Breadcrumbs
+                  items={[
+                    { name: "Главная", href: "/" },
+                    { name: "Виджеты", href: "/widgets" },
+                    { name: "Дубли контактов", href: "/widgets/duplicate-contacts" },
+                  ]}
+                />
+                <h1 className="tg-pill tg-bleed-left">
+                  Дубли контактов (объединение дублей контактов) в amoCRM
+                </h1>
 
               <h2 className="tg-hero-title">Избавиться от дублей контактов?</h2>
 
@@ -85,6 +104,7 @@ export default function DuplicateContacts({
           </section>
         </>
       )}
-    </main>
+      </main>
+    </>
   );
 }

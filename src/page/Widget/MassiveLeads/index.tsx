@@ -5,6 +5,8 @@ import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
 import ProblemsCard from "@/shared/ui/ProblemsCard/ProblemsCard";
 import FeaturesCard from "@/shared/ui/FeaturesCard/FeaturesCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
+import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
+import { ServiceSchemaTag } from "@/shared/lib/seo";
 import { STEPS, PROBLEMS, FEATURES } from "./constants";
 
 export default function MassiveLeads({
@@ -15,14 +17,31 @@ export default function MassiveLeads({
   const isIframe = searchParams.embed === "true";
 
   return (
-    <main className="bg-transparent">
-      {!isIframe && (
-        <>
-          <section className="dist-hero">
-            <div className="at-container">
-              <h1 className="dist-pill dist-bleed-left">
-                Массовое создание сделок в amoCRM
-              </h1>
+    <>
+      <ServiceSchemaTag
+        data={{
+          serviceType: "Разработка виджетов amoCRM",
+          name: "Массовое создание для amoCRM",
+          description: "Виджет позволяет создавать сотни сделок за минуту с импортом из Excel и массовыми операциями",
+          provider: { name: "Про Автоматизацию" },
+          areaServed: { name: "Россия" },
+        }}
+      />
+      <main className="bg-transparent">
+        {!isIframe && (
+          <>
+            <section className="dist-hero">
+              <div className="at-container">
+                <Breadcrumbs
+                  items={[
+                    { name: "Главная", href: "/" },
+                    { name: "Виджеты", href: "/widgets" },
+                    { name: "Массовое создание", href: "/widgets/massive-leads" },
+                  ]}
+                />
+                <h1 className="dist-pill dist-bleed-left">
+                  Массовое создание сделок в amoCRM
+                </h1>
 
               <h2 className="dist-hero-title">
                 Создавайте сотни сделок за секунды!
@@ -77,6 +96,7 @@ export default function MassiveLeads({
           </div>
         </section>
       )}
-    </main>
+      </main>
+    </>
   );
 }
