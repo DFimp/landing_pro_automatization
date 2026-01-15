@@ -6,6 +6,8 @@ import ProblemsCard from "@/shared/ui/ProblemsCard/ProblemsCard";
 import FeaturesCard from "@/shared/ui/FeaturesCard/FeaturesCard";
 import HowItWorksScroll from "./ui/HowItWorksScroll";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
+import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
+import { ServiceSchemaTag } from "@/shared/lib/seo";
 import { STEPS, PROBLEMS, FEATURES } from "./constants";
 
 export default function AutoTask({
@@ -16,14 +18,31 @@ export default function AutoTask({
   const isIframe = searchParams.embed === "true";
 
   return (
-    <main className="bg-transparent">
-      {!isIframe && (
-        <>
-          <section className="at-hero">
-            <div className="at-container">
-              <h1 className="at-pill at-bleed-left">
-                Автозадачи в сделках для amoCRM
-              </h1>
+    <>
+      <ServiceSchemaTag
+        data={{
+          serviceType: "Разработка виджетов amoCRM",
+          name: "Автозадачи в сделках для amoCRM",
+          description: "Виджет для автоматического создания задач в сделках без активности с настраиваемыми статусами и ответственными",
+          provider: { name: "Про Автоматизацию" },
+          areaServed: { name: "Россия" },
+        }}
+      />
+      <main className="bg-transparent">
+        {!isIframe && (
+          <>
+            <section className="at-hero">
+              <div className="at-container">
+                <Breadcrumbs
+                  items={[
+                    { name: "Главная", href: "/" },
+                    { name: "Виджеты", href: "/widgets" },
+                    { name: "Автозадачи", href: "/widgets/auto-task" },
+                  ]}
+                />
+                <h1 className="at-pill at-bleed-left">
+                  Автозадачи в сделках для amoCRM
+                </h1>
 
               <h2 className="at-hero-title">Никогда не забывайте о сделках!</h2>
 
@@ -101,6 +120,7 @@ export default function AutoTask({
           </div>
         </section>
       )}
-    </main>
+      </main>
+    </>
   );
 }

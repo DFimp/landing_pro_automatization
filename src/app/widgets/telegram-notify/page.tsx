@@ -1,36 +1,20 @@
 import type { Metadata } from "next";
 import TelegramWidget from "@/page/Widget/TelegramNotify";
+import { createSEOMetadata, CORE_KEYWORDS } from "@/shared/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Telegram уведомления для amoCRM - мгновенные оповещения о сделках",
-  description: "Виджет отправляет мгновенные уведомления о событиях amoCRM в Telegram. Запуск SalesBot одним кликом, умные триггеры, контроль времени отправки. Полная автоматизация коммуникаций.",
-  
-  alternates: {
-    canonical: "https://pro-automatization.ru/widgets/telegram-notify",
-  },
-
-  openGraph: {
-    title: "Будьте в курсе событий amoCRM через Telegram",
-    description: "Получайте мгновенные уведомления в Telegram и запускайте SalesBot одним нажатием. Полная автоматизация коммуникаций с клиентами прямо в мессенджере.",
-    url: "https://pro-automatization.ru/widgets/telegram-notify",
-    type: "website",
-    images: [
-      {
-        url: "https://pro-automatization.ru/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Telegram уведомления для amoCRM - Про Автоматизацию"
-      }
-    ],
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "Уведомления amoCRM в Telegram - контроль сделок в реальном времени",
-    description: "Мгновенные уведомления о событиях в amoCRM. Запуск SalesBot из Telegram, умные триггеры, автоматизация.",
-    images: ["https://pro-automatization.ru/og-image.png"],
-  },
-};
+export const metadata: Metadata = createSEOMetadata({
+  title: "Telegram уведомления для amoCRM — контроль сделок в реальном времени",
+  description: "Виджет отправляет мгновенные уведомления о событиях amoCRM в Telegram. Запуск SalesBot одним кликом, умные триггеры. От 990₽.",
+  keywords: [
+    'telegram уведомления amocrm',
+    'телеграм интеграция amocrm',
+    'уведомления сделок telegram',
+    'salesbot amocrm',
+    ...CORE_KEYWORDS.widgets,
+  ],
+  canonical: "/widgets/telegram-notify",
+  ogType: "website",
+});
 
 export default async function Page({
   searchParams,

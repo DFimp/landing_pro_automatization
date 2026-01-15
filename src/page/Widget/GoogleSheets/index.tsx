@@ -1,3 +1,6 @@
+import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
+import { ServiceSchemaTag } from "@/shared/lib/seo";
+
 export default function Googleheets({
   searchParams,
 }: {
@@ -6,10 +9,29 @@ export default function Googleheets({
   const isIframe = searchParams.embed === "true";
 
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
-      <h1 className="text-4xl font-bold mb-4">
-        ProAutomatization amoCRM for Googlesheets
-      </h1>
+    <>
+      <ServiceSchemaTag
+        data={{
+          serviceType: "Разработка виджетов amoCRM",
+          name: "Google Таблицы для amoCRM",
+          description: "Виджет для автоматической выгрузки данных из amoCRM в Google Таблицы и Google Документы",
+          provider: { name: "Про Автоматизацию" },
+          areaServed: { name: "Россия" },
+        }}
+      />
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
+        {!isIframe && (
+          <Breadcrumbs
+            items={[
+              { name: "Главная", href: "/" },
+              { name: "Виджеты", href: "/widgets" },
+              { name: "Google Таблицы", href: "/widgets/google-sheets" },
+            ]}
+          />
+        )}
+        <h1 className="text-4xl font-bold mb-4">
+          ProAutomatization amoCRM for Googlesheets
+        </h1>
       
       <p className="text-xl text-gray-600 mb-8">
         Виджет для автоматической выгрузки данных из amoCRM в Google Таблицы и Google Документы.
@@ -54,6 +76,7 @@ export default function Googleheets({
           <li>Получите данные в Google Таблицу</li>
         </ol>
       </section>
-    </div>
+      </div>
+    </>
   )
 }

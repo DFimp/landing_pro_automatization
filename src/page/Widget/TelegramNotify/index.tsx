@@ -5,6 +5,8 @@ import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
 import SettingsCard from "@/shared/ui/settings/SettingsCard";
 import CaseCard from "@/shared/ui/Case/CaseCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
+import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
+import { ServiceSchemaTag } from "@/shared/lib/seo";
 import { STEPS, CASE_ITEMS } from "./constants";
 
 export default function TelegramNotify({
@@ -15,14 +17,31 @@ export default function TelegramNotify({
   const isIframe = searchParams.embed === "true";
 
   return (
-    <main className="bg-transparent">
-      {!isIframe && (
-        <>
-          <section className="at-hero">
-            <div className="at-container">
-              <h1 className="at-pill at-bleed-left">
-                Телеграм уведомления для amoCRM
-              </h1>
+    <>
+      <ServiceSchemaTag
+        data={{
+          serviceType: "Разработка виджетов amoCRM",
+          name: "Telegram уведомления для amoCRM",
+          description: "Виджет для мгновенных уведомлений о событиях amoCRM в Telegram с запуском SalesBot одним кликом",
+          provider: { name: "Про Автоматизацию" },
+          areaServed: { name: "Россия" },
+        }}
+      />
+      <main className="bg-transparent">
+        {!isIframe && (
+          <>
+            <section className="at-hero">
+              <div className="at-container">
+                <Breadcrumbs
+                  items={[
+                    { name: "Главная", href: "/" },
+                    { name: "Виджеты", href: "/widgets" },
+                    { name: "Telegram уведомления", href: "/widgets/telegram-notify" },
+                  ]}
+                />
+                <h1 className="at-pill at-bleed-left">
+                  Телеграм уведомления для amoCRM
+                </h1>
 
               <h2 className="at-hero-title">Готовы быть в курсе событий?</h2>
 
@@ -226,6 +245,7 @@ export default function TelegramNotify({
           </section>
         </>
       )}
-    </main>
+      </main>
+    </>
   );
 }

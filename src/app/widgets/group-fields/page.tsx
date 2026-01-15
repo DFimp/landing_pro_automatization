@@ -1,39 +1,20 @@
 import type { Metadata } from "next";
 import GroupFields from "@/page/Widget/GroupFields";
+import { createSEOMetadata, CORE_KEYWORDS } from "@/shared/lib/seo";
 
-export const metadata: Metadata = {
-    title: "Группировка полей для amoCRM",
-    description:
-        "Виджет автоматически группирует поля в карточке сделки amoCRM по логическим блокам. Удобная структура, сворачиваемые группы и ускорение работы менеджеров.",
-
-    alternates: {
-        canonical: "https://pro-automatization.ru/widgets/group-fields",
-    },
-
-    openGraph: {
-        title: "Наведите порядок в полях сделки amoCRM за 5 минут",
-        description:
-            "Группировка полей в карточке сделки: логические блоки, подгруппы, скрытие служебных полей и удобная навигация для менеджеров.",
-        url: "https://pro-automatization.ru/widgets/group-fields",
-        type: "website",
-        images: [
-            {
-                url: "https://pro-automatization.ru/og-image.png",
-                width: 1200,
-                height: 630,
-                alt: "Группировка полей в карточке сделки amoCRM - Про Автоматизацию",
-            },
-        ],
-    },
-
-    twitter: {
-        card: "summary_large_image",
-        title: "Группировка полей в amoCRM — удобная карточка сделки",
-        description:
-            "Структурируйте поля в карточке сделки amoCRM по группам и подгруппам. Меньше прокрутки — больше фокуса на клиенте.",
-        images: ["https://pro-automatization.ru/og-image.png"],
-    },
-};
+export const metadata: Metadata = createSEOMetadata({
+    title: "Группировка полей в amoCRM — удобная организация",
+    description: "Виджет группирует поля в карточках для удобства. Скрытие блоков, улучшенный интерфейс, повышение продуктивности. От 990₽.",
+    keywords: [
+        'группировка полей amocrm',
+        'организация полей amocrm',
+        'настройка карточек amocrm',
+        'интерфейс amocrm',
+        ...CORE_KEYWORDS.widgets,
+    ],
+    canonical: "/widgets/group-fields",
+    ogType: "website",
+});
 
 export default async function Page({
     searchParams,

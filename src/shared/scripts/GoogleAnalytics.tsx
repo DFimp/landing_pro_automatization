@@ -31,11 +31,6 @@ export function GoogleAnalytics() {
 }
 
 export function GoogleAnalyticsScript() {
-  // Не загружаем GA в dev режиме
-  if (process.env.NODE_ENV === 'development') {
-    return null;
-  }
-
   return (
     <>
       <Script
