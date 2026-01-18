@@ -3,9 +3,7 @@ import Script from "next/script";
 import { useEffect } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 
-// Получите свой GA_ID на https://analytics.google.com/
-// Замените на свой ID формата G-XXXXXXXXXX
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-XXXXXXXXXX';
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-VDSM5DYZX5';
 
 declare global {
   interface Window {

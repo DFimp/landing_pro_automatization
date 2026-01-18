@@ -1,4 +1,4 @@
-import { widgetRoute } from "./routes";
+const widgetRoute = (slug: string) => `/widgets/${slug}`;
 
 export const WIDGETS = [
     {
@@ -141,7 +141,6 @@ export const WIDGETS = [
 
 export const FOOTER_WIDGETS = WIDGETS.filter((w) => w.showInFooter);
 export const SEARCH_WIDGETS = WIDGETS.filter((w) => w.showInSearch);
-export const ALL_WIDGET_ROUTES = WIDGETS.map((w) => w.route);
 
 export const POPULAR_WIDGET_KEYS = [
   "telegram-notify",
