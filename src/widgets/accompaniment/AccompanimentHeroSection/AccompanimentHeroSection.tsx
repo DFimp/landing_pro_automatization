@@ -4,9 +4,9 @@ export const AccompanimentHeroSection = () => {
   return (
     <section>
       <div className="container flex flex-col gap-5 sm:gap-20">
-        <h2 className="mt-4 sm:mt-0 sm:text-h2 text-white sm:font-bold text-2xl font-semibold">
+        <h1 className="mt-4 sm:mt-0 sm:text-h2 text-white sm:font-bold text-2xl font-semibold">
           Сопровождение
-        </h2>
+        </h1>
 
         <p className="sm:text-h4 text-[14px] text-white font-normal sm:mb-20 mb-7">
           <span className="font-bold">Позаботимся</span> о том, чтобы amoCRM{" "}

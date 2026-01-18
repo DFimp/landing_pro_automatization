@@ -67,7 +67,7 @@ export default function HelpServices() {
               >
                 <Image
                   src={service.image}
-                  alt="Помощь"
+                  alt="помощь"
                   width={isMobileView ? 115 : 230}
                   height={isMobileView ? 115 : 230}
                 />
@@ -83,7 +83,7 @@ export default function HelpServices() {
               >
                 <Image
                   src={service.backside.image}
-                  alt="Back"
+                  alt="назад"
                   width={isMobileView ? 70 : 140}
                   height={isMobileView ? 70 : 140}
                 />

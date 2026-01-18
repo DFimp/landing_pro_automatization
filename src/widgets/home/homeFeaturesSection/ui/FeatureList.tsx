@@ -16,8 +16,8 @@ export default function FeaturesList() {
               {link.nameMobile || link.name}
             </span>
             <Image
-              src="/cross.svg"
-              alt="Перейти"
+              src="/decor/cross.svg"
+              alt="перейти"
               width={30}
               height={30}
               className="w-[14px] h-[14px] sm:w-[30px] sm:h-[30px]"

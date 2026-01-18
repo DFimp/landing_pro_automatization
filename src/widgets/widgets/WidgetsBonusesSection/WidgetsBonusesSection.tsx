@@ -6,7 +6,7 @@ export function WidgetsBonusesSection() {
     <div className="relative sm:h-[1106px] h-[1300px] overflow-hidden">
       <Image
         src="/widgets_background.png"
-        alt="Фон секции бонусов"
+        alt="фон секции бонусов"
         fill
         priority
         className="object-cover"

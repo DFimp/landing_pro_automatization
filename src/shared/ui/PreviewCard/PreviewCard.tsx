@@ -38,7 +38,7 @@ const PreviewCard: React.FC<PreviewCardProps> = ({ title, subtitle, videoUrl, im
                 />
               </div>
             ) : isGif ? (
-              <img src={videoUrl} alt="Превью" className="preview-image" />
+              <img src={videoUrl} alt="превью" className="preview-image" />
             ) : isMp4 || isWebm ? (
               <video
                 className="preview-video"
@@ -55,7 +55,7 @@ const PreviewCard: React.FC<PreviewCardProps> = ({ title, subtitle, videoUrl, im
               </video>
             ) : (
               <div className="preview-placeholder">
-                <img src={imageUrl} alt="Превью" className="preview-image" />
+                <img src={imageUrl} alt="превью" className="preview-image" />
                 <div className="preview-play">▶</div>
               </div>
             )}
