@@ -7,16 +7,16 @@ export default function IndustryCards() {
 const { isMobileView } = detectMobile()
 const prefix = isMobileView ? "m_" : ""
 const cards = [
-    { path: `/${prefix}продажи.svg`, alt: "Продажи" },
-    { path: `/${prefix}маркетинг.svg`, alt: "Маркетинг" },
-    { path: `/${prefix}услуги.svg`, alt: "Услуги" },
-    { path: `/${prefix}финансы.svg`, alt: "Финансы" },
-    { path: `/${prefix}туризм.svg`, alt: "Туризм" },
-    { path: `/${prefix}мед.svg`, alt: "Медицина" },
-    { path: `/${prefix}недвижимость.svg`, alt: "Недвижимость" },
-    { path: `/${prefix}обслуживание.svg`, alt: "Обслуживание" },
-    { path: `/${prefix}аналитика.svg`, alt: "Аналитика" },
-    { path: `/${prefix}производственные.svg`, alt: "Производственные" },
+    { path: `/services/ImplementationFromScratch/${prefix}продажи.svg`, alt: "Продажи" },
+    { path: `/services/ImplementationFromScratch/${prefix}маркетинг.svg`, alt: "Маркетинг" },
+    { path: `/services/ImplementationFromScratch/${prefix}услуги.svg`, alt: "Услуги" },
+    { path: `/services/ImplementationFromScratch/${prefix}финансы.svg`, alt: "Финансы" },
+    { path: `/services/ImplementationFromScratch/${prefix}туризм.svg`, alt: "Туризм" },
+    { path: `/services/ImplementationFromScratch/${prefix}мед.svg`, alt: "Медицина" },
+    { path: `/services/ImplementationFromScratch/${prefix}недвижимость.svg`, alt: "Недвижимость" },
+    { path: `/services/ImplementationFromScratch/${prefix}обслуживание.svg`, alt: "Обслуживание" },
+    { path: `/services/ImplementationFromScratch/${prefix}аналитика.svg`, alt: "Аналитика" },
+    { path: `/services/ImplementationFromScratch/${prefix}производственные.svg`, alt: "Производственные" },
 ];
 
 const firstRow = cards.slice(0, 5);

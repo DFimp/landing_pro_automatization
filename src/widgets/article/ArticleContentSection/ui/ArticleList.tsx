@@ -10,8 +10,8 @@ export default function ArticleList({ items }: ArticleListProps) {
         { items.map(
             (item, index) => <div key={index} className="flex sm:gap-[12px] gap-[16px] items-center leading-[1]">
                 <Image
-                    src="/list_marker.svg"
-                    alt=""
+                    src="/decor/list_marker.svg"
+                    alt="пункт-кружок списка"
                     width={14}
                     height={14}
                 />

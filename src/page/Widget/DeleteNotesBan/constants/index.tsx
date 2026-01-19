@@ -216,7 +216,7 @@ export const PROBLEMS: ProblemItem[] = [
                 и вы теряете важные детали по клиенту.
             </>
         ),
-        bgUrl: "/widgets/BackAll/back_web.png",
+        bgUrl: "/widgets/BackAll/back_web.webp",
     },
     {
         title: "«Переписывание» истории общения",
@@ -226,7 +226,7 @@ export const PROBLEMS: ProblemItem[] = [
                 <span className="at-mark">сложно</span> понять, что было на самом деле и когда это произошло.
             </>
         ),
-        bgUrl: "/widgets/BackAll/back_watch.png",
+        bgUrl: "/widgets/BackAll/back_watch.webp",
     },
     {
         title: "Споры между менеджером и руководителем",
@@ -236,7 +236,7 @@ export const PROBLEMS: ProblemItem[] = [
                 <span className="at-mark">спорные ситуации</span>: что обещали клиенту, кто говорил, кто виноват.
             </>
         ),
-        bgUrl: "/widgets/BackAll/back_chart.png",
+        bgUrl: "/widgets/BackAll/back_chart.webp",
     },
     {
         title: "Потеря качества базы и аналитики",
@@ -246,13 +246,13 @@ export const PROBLEMS: ProblemItem[] = [
                 <span className="at-mark">искажается</span> аналитика по работе отдела продаж.
             </>
         ),
-        bgUrl: "/widgets/BackAll/back_basket.png",
+        bgUrl: "/widgets/BackAll/back_basket.webp",
     },
 ];
 
 export const FEATURES: FeatureItem[] = [
     {
-        iconUrl: "/widgets/BackAll/gear.png",
+        iconUrl: "/widgets/BackAll/gear.webp",
         title: "Глобальный запрет действий с примечаниями",
         text: (
             <>
@@ -262,7 +262,7 @@ export const FEATURES: FeatureItem[] = [
         ),
     },
     {
-        iconUrl: "/widgets/BackAll/shield.png",
+        iconUrl: "/widgets/BackAll/shield.webp",
         title: "Сохранение истории коммуникаций",
         text: (
             <>
@@ -272,7 +272,7 @@ export const FEATURES: FeatureItem[] = [
         ),
     },
     {
-        iconUrl: "/widgets/BackAll/tag.png",
+        iconUrl: "/widgets/BackAll/tag.webp",
         title: "Разграничение по ролям",
         text: (
             <>
@@ -282,7 +282,7 @@ export const FEATURES: FeatureItem[] = [
         ),
     },
     {
-        iconUrl: "/widgets/BackAll/magnifier.png",
+        iconUrl: "/widgets/BackAll/magnifier.webp",
         title: "Визуальная индикация ограничений",
         text: (
             <>
@@ -292,7 +292,7 @@ export const FEATURES: FeatureItem[] = [
         ),
     },
     {
-        iconUrl: "/widgets/BackAll/burger.png",
+        iconUrl: "/widgets/BackAll/burger.webp",
         title: "Работа без ломки интерфейса",
         text: (
             <>
@@ -302,7 +302,7 @@ export const FEATURES: FeatureItem[] = [
         ),
     },
     {
-        iconUrl: "/widgets/BackAll/shield.png",
+        iconUrl: "/widgets/BackAll/shield.webp",
         title: "Безопасность и контроль данных",
         text: (
             <>

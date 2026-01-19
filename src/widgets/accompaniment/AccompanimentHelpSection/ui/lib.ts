@@ -1,9 +1,9 @@
 export const services = [
     {
-        image: '/help1.svg',
+        image: '/services/Escort/help1.svg',
         title: 'Техническая поддержка',
         backside: {
-            image: '/help01.svg',
+            image: '/services/Escort/help01.svg',
             title: "Техническая поддержка",
             fixes: [
                 "Устранение ошибок в работе системы.",
@@ -13,10 +13,10 @@ export const services = [
         }
     },
     {
-        image: '/help2.svg',
+        image: '/services/Escort/help2.svg',
         title: 'Доработка и кастомизация',
         backside: {
-            image: '/help02.svg',
+            image: '/services/Escort/help02.svg',
             title: "Доработка и кастомизация",
             fixes: [
                 "Настройка CRM под уникальные бизнес-процессы.",
@@ -26,10 +26,10 @@ export const services = [
         }
     },
     {
-        image: '/help3.svg',
+        image: '/services/Escort/help3.svg',
         title: 'Автоматизация процессов',
         backside: {
-            image: '/help03.svg',
+            image: '/services/Escort/help03.svg',
             title: "Автоматизация процессов",
             fixes: [
                 "Настройка воронок продаж и автозадач.",
@@ -39,10 +39,10 @@ export const services = [
         }
     },
     {
-        image: '/help4.svg',
+        image: '/services/Escort/help4.svg',
         title: 'Обучение сотрудников',
         backside: {
-            image: '/help04.svg',
+            image: '/services/Escort/help04.svg',
             title: "Обучение сотрудников",
             fixes: [
                 "Проведение тренингов по использованию системы.",
@@ -52,10 +52,10 @@ export const services = [
         }
     },
     {
-        image: '/help5.svg',
+        image: '/services/Escort/help5.svg',
         title: 'Мониторинг и оптимизация',
         backside: {
-            image: '/help05.svg',
+            image: '/services/Escort/help05.svg',
             title: "Мониторинг и оптимизация",
             fixes: [
                 "Выявление узких мест в работе CRM.",

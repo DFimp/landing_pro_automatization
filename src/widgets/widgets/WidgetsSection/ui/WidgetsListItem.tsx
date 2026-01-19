@@ -25,16 +25,16 @@ export function WidgetsListItem({
       break;
     case 2:
       cardClassName = "bg-white";
-      upperDecorationPath = "/widgets_list_decoration_1.svg";
-      bottomDecorationPath = "/widgets_list_decoration_2.svg";
+      upperDecorationPath = "/decor/widgets_list_decoration_1.svg";
+      bottomDecorationPath = "/decor/widgets_list_decoration_2.svg";
       break;
     case 3:
       cardClassName = "bg-[#3760E7] text-white";
-      upperDecorationPath = "/widgets_list_decoration_3.svg";
+      upperDecorationPath = "/decor/widgets_list_decoration_3.svg";
       break;
     case 4:
       cardClassName = "bg-[#3760E7] text-white";
-      bottomDecorationPath = "/widgets_list_decoration_4.svg";
+      bottomDecorationPath = "/decor/widgets_list_decoration_4.svg";
       break;
   }
   return (

@@ -1,12 +1,24 @@
 import { ArticleDescriptionSection } from "@/widgets/article/ArticleDescriptionSection/ArticleDescriptionSection";
 import AmoCrmHelpsSellMoreContentSection from "@/widgets/article/AmoCrmHelpsSellMoreContentSection/AmoCrmHelpsSellMoreContentSection";
 import { ArticleConclusionSection } from "@/widgets/article/ArticleConclusionSection/ArticleConclusionSection";
+import { ArticleSchemaTag } from "@/shared/lib/seo";
+import { ARTICLES_DATA } from "@/shared/constants/articles";
 
 import styles from "./AmoCrmHelpsSell.module.css";
+
+const article = ARTICLES_DATA['helps-sell'];
 
 export default function AmoCrmHelpsSellArticle() {
     return (
         <>
+            <ArticleSchemaTag
+                data={{
+                    headline: article.title,
+                    description: article.description,
+                    datePublished: article.publishedTime,
+                    dateModified: article.modifiedTime,
+                }}
+            />
             <div className={styles.wrapper}>
                 <ArticleDescriptionSection
                     category="CRM"
@@ -16,7 +28,7 @@ export default function AmoCrmHelpsSellArticle() {
                 />
 
                 <div className={styles.content}>
-                    <h1>amoCRM: почему эта CRM реально помогает бизнесу продавать больше</h1>
+                    <h1>AmoCRM: почему эта CRM реально помогает бизнесу продавать больше</h1>
 
                     <AmoCrmHelpsSellMoreContentSection />
                 </div>

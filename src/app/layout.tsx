@@ -6,7 +6,12 @@ import Header from "@/widgets/header/Header";
 import { Footer } from "@/widgets/footer";
 import { Suspense } from "react";
 import { YandexMetrika, YandexScript } from "@/shared/scripts/YandexMetrika";
-
+import { GoogleAnalytics, GoogleAnalyticsScript } from "@/shared/scripts/GoogleAnalytics";
+import { 
+  SiteNavigationSchemaTag, 
+  WebSiteSchemaTag,
+  SITE_NAVIGATION 
+} from '@/shared/lib/seo';
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -16,7 +21,7 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://pro-automatization.ru'),
-  
+
   title: {
     default: "Про Автоматизацию — интеграция и автоматизация amoCRM",
     template: "%s | Про Автоматизацию"
@@ -25,10 +30,10 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: '108x108' },
-      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
+      { url: '/icon-192.webp', sizes: '192x192', type: 'image/webp' },
+      { url: '/icon-512.webp', sizes: '512x512', type: 'image/webp' },
     ],
-    apple: '/apple-icon.png',
+    apple: '/apple-icon.webp',
   },
 
   other: {
@@ -38,7 +43,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Про Автоматизацию" }],
   creator: "Про Автоматизацию",
   publisher: "Про Автоматизацию",
-  
+
   robots: {
     index: true,
     follow: true,
@@ -61,10 +66,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
+      <head>
+        <WebSiteSchemaTag />
+        <SiteNavigationSchemaTag items={SITE_NAVIGATION} />
+      </head>
       <body className={`${montserrat.variable} antialiased`}>
         <YandexScript />
+        <GoogleAnalyticsScript />
         <Suspense fallback={<></>}>
           <YandexMetrika />
+          <GoogleAnalytics />
         </Suspense>
         <Suspense fallback={<div className="h-20" />}>
           <Header />
