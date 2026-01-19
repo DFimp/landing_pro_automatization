@@ -49,6 +49,32 @@ export interface SiteNavigationItem {
   url: string;
 }
 
+export interface ProductSchema {
+  name: string;
+  description: string;
+  brand?: {
+    name: string;
+  };
+  offers?: {
+    price?: string;
+    priceCurrency?: string;
+    availability?: string;
+  };
+}
+
+export interface CollectionPageSchema {
+  name: string;
+  description: string;
+  url: string;
+}
+
+export interface ItemListItem {
+  name: string;
+  url: string;
+  description?: string;
+  image?: string;
+}
+
 // ==================== КОМПОНЕНТЫ СХЕМ ====================
 
 /**
@@ -233,6 +259,79 @@ export function WebSiteSchemaTag() {
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />
+  );
+}
+
+/**
+ * Схема продукта - используется на странице лицензий
+ */
+export function ProductSchemaTag({ data }: { data: ProductSchema }) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: data.name,
+    description: data.description,
+    ...(data.brand && {
+      brand: {
+        '@type': 'Organization',
+        name: data.brand.name,
+      },
+    }),
+    ...(data.offers && {
+      offers: {
+        '@type': 'Offer',
+        ...data.offers,
+      },
+    }),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+/**
+ * Схема коллекции - используется на страницах списков (статьи, кейсы)
+ */
+export function CollectionPageSchemaTag({ data, items }: { data: CollectionPageSchema; items: ItemListItem[] }) {
+  const collectionSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: data.name,
+    description: data.description,
+    url: data.url,
+  };
+
+  const itemListSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'Thing',
+        name: item.name,
+        url: item.url,
+        ...(item.description && { description: item.description }),
+        ...(item.image && { image: item.image }),
+      },
+    })),
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+      />
+    </>
   );
 }
 

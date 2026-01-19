@@ -177,7 +177,6 @@ export interface WidgetData {
   link: string;
   variant: number;
   tags: string[];
-  price: string;
   keywords: string[];
 }
 
@@ -190,7 +189,6 @@ export const WIDGETS_DATA: Record<string, WidgetData> = {
     link: '/widgets/telegram-notify',
     variant: 2,
     tags: ['Соц сети', 'Telegram', 'тг', 'телеграм', 'Уведомления'],
-    price: 'От 990₽',
     keywords: [
       'telegram уведомления amocrm',
       'телеграм интеграция amocrm',
@@ -207,7 +205,6 @@ export const WIDGETS_DATA: Record<string, WidgetData> = {
     link: '/widgets/lead-distribution',
     variant: 1,
     tags: ['Продажи', 'Распределение'],
-    price: 'От 2990₽',
     keywords: [
       'распределение сделок amocrm',
       'распределение лидов amocrm',
@@ -224,7 +221,6 @@ export const WIDGETS_DATA: Record<string, WidgetData> = {
     link: '/widgets/duplicate-leads',
     variant: 1,
     tags: ['База', 'Дубли', 'Качество данных'],
-    price: 'От 1990₽',
     keywords: [
       'дубли сделок amocrm',
       'объединение дублей amocrm',
@@ -241,7 +237,6 @@ export const WIDGETS_DATA: Record<string, WidgetData> = {
     link: '/widgets/duplicate-contacts',
     variant: 3,
     tags: ['База', 'Дубли', 'Контакты', 'Качество данных'],
-    price: 'От 1990₽',
     keywords: [
       'дубли контактов amocrm',
       'объединение контактов amocrm',
@@ -258,7 +253,6 @@ export const WIDGETS_DATA: Record<string, WidgetData> = {
     link: '/widgets/time-zone',
     variant: 4,
     tags: ['Телефония', 'Продажи'],
-    price: 'От 490₽',
     keywords: [
       'часовые пояса amocrm',
       'время клиента amocrm',
@@ -275,7 +269,6 @@ export const WIDGETS_DATA: Record<string, WidgetData> = {
     link: '/widgets/auto-tasks',
     variant: 1,
     tags: ['Задачи', 'Контроль', 'Продажи'],
-    price: 'От 990₽',
     keywords: [
       'автозадачи amocrm',
       'автоматические задачи amocrm',
@@ -292,7 +285,6 @@ export const WIDGETS_DATA: Record<string, WidgetData> = {
     link: '/widgets/massive-leads',
     variant: 2,
     tags: ['Продажи', 'Автоматизация'],
-    price: 'От 1490₽',
     keywords: [
       'массовое создание сделок amocrm',
       'импорт сделок amocrm',
@@ -309,7 +301,6 @@ export const WIDGETS_DATA: Record<string, WidgetData> = {
     link: '/widgets/closing-ban',
     variant: 1,
     tags: ['Задачи', 'Контроль'],
-    price: 'От 990₽',
     keywords: [
       'запрет закрытия сделок amocrm',
       'блокировка закрытия amocrm',
@@ -326,7 +317,6 @@ export const WIDGETS_DATA: Record<string, WidgetData> = {
     link: '/widgets/telegram-button',
     variant: 1,
     tags: ['Соц сети', 'Telegram', 'тг', 'телеграм'],
-    price: 'От 490₽',
     keywords: [
       'кнопка telegram amocrm',
       'telegram чат amocrm',
@@ -343,7 +333,6 @@ export const WIDGETS_DATA: Record<string, WidgetData> = {
     link: '/widgets/whatsapp-button',
     variant: 3,
     tags: ['Соц сети', 'WhatsApp', 'Ватсап', 'Продажи'],
-    price: 'От 490₽',
     keywords: [
       'кнопка whatsapp amocrm',
       'whatsapp чат amocrm',
@@ -360,7 +349,6 @@ export const WIDGETS_DATA: Record<string, WidgetData> = {
     link: '/widgets/delete-tasks-ban',
     variant: 4,
     tags: ['Задачи', 'Контроль'],
-    price: 'От 490₽',
     keywords: [
       'запрет удаления задач amocrm',
       'защита задач amocrm',
@@ -377,7 +365,6 @@ export const WIDGETS_DATA: Record<string, WidgetData> = {
     link: '/widgets/shift-select',
     variant: 1,
     tags: ['Интерфейс', 'Ускорение работы'],
-    price: 'От 490₽',
     keywords: [
       'множественный выбор amocrm',
       'массовый выбор amocrm',
@@ -394,7 +381,6 @@ export const WIDGETS_DATA: Record<string, WidgetData> = {
     link: '/widgets/group-fields',
     variant: 2,
     tags: ['Интерфейс', 'Карточка сделки'],
-    price: 'От 990₽',
     keywords: [
       'группировка полей amocrm',
       'организация полей amocrm',
@@ -411,7 +397,6 @@ export const WIDGETS_DATA: Record<string, WidgetData> = {
     link: '/widgets/transfer-fields',
     variant: 1,
     tags: ['Интерфейс', 'Карточка сделки'],
-    price: 'От 990₽',
     keywords: [
       'перенос полей amocrm',
       'копирование данных amocrm',
@@ -428,7 +413,6 @@ export const WIDGETS_DATA: Record<string, WidgetData> = {
     link: '/widgets/setting-feed',
     variant: 1,
     tags: ['Интерфейс', 'Карточка сделки'],
-    price: 'От 490₽',
     keywords: [
       'настройка ленты amocrm',
       'кастомизация ленты amocrm',
@@ -445,7 +429,6 @@ export const WIDGETS_DATA: Record<string, WidgetData> = {
     link: '/widgets/delete-notes-ban',
     variant: 3,
     tags: ['Интерфейс', 'Карточка сделки'],
-    price: 'От 490₽',
     keywords: [
       'запрет удаления примечаний amocrm',
       'защита примечаний amocrm',
@@ -462,7 +445,6 @@ export const WIDGETS_DATA: Record<string, WidgetData> = {
     link: '/widgets/google-sheets',
     variant: 2,
     tags: ['Интеграции', 'Google'],
-    price: 'От 1990₽',
     keywords: [
       'google таблицы amocrm',
       'экспорт amocrm google sheets',
@@ -479,7 +461,6 @@ export const WIDGETS_DATA: Record<string, WidgetData> = {
     link: '/widgets/google-docs',
     variant: 1,
     tags: ['Интеграции', 'Google'],
-    price: 'От 1990₽',
     keywords: [
       'google документы amocrm',
       'автогенерация документов amocrm',
