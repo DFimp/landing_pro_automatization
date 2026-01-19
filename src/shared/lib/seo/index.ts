@@ -5,6 +5,8 @@ export {
   FAQSchemaTag,
   SiteNavigationSchemaTag,
   WebSiteSchemaTag,
+  CollectionPageSchemaTag,
+  ProductSchemaTag,
   SITE_NAVIGATION,
   ORGANIZATION_DATA,
 } from './schema';
