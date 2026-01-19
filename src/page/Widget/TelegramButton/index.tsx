@@ -7,12 +7,11 @@ import ProblemsCard from "@/shared/ui/ProblemsCard/ProblemsCard";
 import FeaturesCard from "@/shared/ui/FeaturesCard/FeaturesCard";
 import PreviewCard from "@/shared/ui/PreviewCard/PreviewCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
-import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
 import { WIDGETS_DATA } from "@/shared/constants/widgets";
 import { STEPS, CASE_ITEMS, PROBLEMS, FEATURES } from "./constants";
 
-const widget = WIDGETS_DATA['telegram-button'];
+const widget = WIDGETS_DATA["telegram-button"];
 
 export default function TelegramButton({
   searchParams,
@@ -28,8 +27,6 @@ export default function TelegramButton({
           serviceType: "Разработка виджетов amoCRM",
           name: widget.title,
           description: widget.description,
-          provider: { name: "Про Автоматизацию" },
-          areaServed: { name: "Россия" },
         }}
       />
       <main className="bg-transparent">
@@ -37,85 +34,78 @@ export default function TelegramButton({
           <>
             <section className="dist-hero">
               <div className="at-container">
-                <Breadcrumbs
-                  items={[
-                    { name: "Главная", href: "/" },
-                    { name: "Виджеты", href: "/widgets" },
-                    { name: "Кнопка Telegram", href: "/widgets/telegram-button" },
-                  ]}
-                />
                 <h1 className="dist-pill dist-bleed-left">
                   Мгновенный переход в Telegram из amoCRM
                 </h1>
 
-              <h2 className="dist-hero-title">
-                Написать в Telegram за 1 клик?
-              </h2>
+                <h2 className="dist-hero-title">
+                  Написать в Telegram за 1 клик?
+                </h2>
 
-              <p className="dist-hero-sub">
-                Превратите каждый номер телефона в прямую ссылку на чат с
-                клиентом в Telegram. Больше никакого копирования номеров и
-                поиска контактов!
-              </p>
+                <p className="dist-hero-sub">
+                  Превратите каждый номер телефона в прямую ссылку на чат с
+                  клиентом в Telegram. Больше никакого копирования номеров и
+                  поиска контактов!
+                </p>
 
-              <div className="dist-cta">
-                <a
-                  className="dist-btn-primary"
-                  href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=26e34407-779d-4b47-bb48-b1ffaed3cc78"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  Установить виджет
-                </a>
-                <ScrollToInstructionLink />
+                <div className="dist-cta">
+                  <a
+                    className="dist-btn-primary"
+                    href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=26e34407-779d-4b47-bb48-b1ffaed3cc78"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Установить виджет
+                  </a>
+                  <ScrollToInstructionLink />
+                </div>
               </div>
-            </div>
-          </section>
+            </section>
 
-          <ProblemsCard
-            title="Проблемы традиционного способа"
-            subtitle="Почему менеджеры теряют время и клиентов при работе с Telegram"
-            items={PROBLEMS}
-          />
+            <ProblemsCard
+              title="Проблемы традиционного способа"
+              subtitle="Почему менеджеры теряют время и клиентов при работе с Telegram"
+              items={PROBLEMS}
+            />
 
-          <CaseCard
-            title="Решение всех проблем"
-            subtitle="Умные алгоритмы для автоматического объединения дублей"
-            items={CASE_ITEMS}
-          />
+            <CaseCard
+              title="Решение всех проблем"
+              subtitle="Умные алгоритмы для автоматического объединения дублей"
+              items={CASE_ITEMS}
+            />
 
-          <PreviewCard
-            title="Как это выглядит?"
-            subtitle="Виджет автоматически отображается прямо в карточке контакта"
-            imageUrl="/widgets/TelegramButton/Telegram.png"
-          />
-        </>
-      )}
+            <PreviewCard
+              title="Как это выглядит?"
+              subtitle="Виджет автоматически отображается прямо в карточке контакта"
+              imageUrl="/widgets/TelegramButton/Telegram.png"
+            />
+          </>
+        )}
 
-      <SettingsCard
-        id="instruction"
-        title="Как настроить виджет за 3 минуты"
-        subtitle="Следуйте простым шагам для быстрой настройки:"
-        steps={STEPS}
-        showVideo
-        videoId="c784467a56b528b34b435a328ceb097e"
-      />
+        <SettingsCard
+          id="instruction"
+          title="Как настроить виджет за 3 минуты"
+          subtitle="Следуйте простым шагам для быстрой настройки:"
+          steps={STEPS}
+          showVideo
+          videoId="c784467a56b528b34b435a328ceb097e"
+        />
 
-      {!isIframe && (
-        <>
-          <FeaturesCard
-            title="Дополнительные возможности"
-            subtitle="Уникальные функции для максимальной скорости и удобства"
-            items={FEATURES}
-          />
+        {!isIframe && (
+          <>
+            <FeaturesCard
+              title="Дополнительные возможности"
+              subtitle="Уникальные функции для максимальной скорости и удобства"
+              items={FEATURES}
+            />
 
-          <section className="ds-prefooter">
-            <div className="ds-container">
-              <ConsultCard />
-            </div>
-          </section>
-        </>
-      )}
+            <section className="ds-prefooter">
+              <div className="ds-container">
+                <ConsultCard />
+              </div>
+            </section>
+          </>
+        )}
       </main>
     </>
   );

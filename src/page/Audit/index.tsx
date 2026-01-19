@@ -15,8 +15,6 @@ export default function Audit() {
           serviceType: "Консалтинг и аудит amoCRM",
           name: "Аудит amoCRM",
           description: "Полный аудит настройки amoCRM: воронки, интеграции, автоматизация. Выявим ошибки и дадим рекомендации.",
-          provider: { name: "Про Автоматизацию" },
-          areaServed: { name: "Россия" },
         }}
       />
       <main className="sm:pb-20 sm:pt-20">
