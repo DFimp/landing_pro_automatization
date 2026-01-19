@@ -24,7 +24,6 @@ export default function TimeZone({
           serviceType: "Разработка виджетов amoCRM",
           name: widget.title,
           description: widget.description,
-          provider: { name: "Про Автоматизацию" },
           areaServed: { name: "Россия" },
         }}
       />

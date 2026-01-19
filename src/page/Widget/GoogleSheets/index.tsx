@@ -17,7 +17,6 @@ export default function Googleheets({
           serviceType: "Разработка виджетов amoCRM",
           name: widget.title,
           description: widget.description,
-          provider: { name: "Про Автоматизацию" },
           areaServed: { name: "Россия" },
         }}
       />
