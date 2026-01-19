@@ -1,17 +1,14 @@
 import type { Metadata } from "next";
 import AutoTask from "@/page/Widget/AutoTask";
-import { createSEOMetadata, CORE_KEYWORDS } from "@/shared/lib/seo";
+import { createSEOMetadata } from "@/shared/lib/seo";
+import { WIDGETS_DATA } from "@/shared/constants/widgets";
+
+const widget = WIDGETS_DATA['auto-tasks'];
 
 export const metadata: Metadata = createSEOMetadata({
-  title: "Автозадачи в amoCRM — автоматический контроль сделок",
-  description: "Виджет автоматически создает задачи для сделок без активности в amoCRM. Увеличьте конверсию на 35%. Настройка за 5 минут. От 990₽.",
-  keywords: [
-    'автозадачи amocrm',
-    'автоматические задачи amocrm',
-    'контроль сделок amocrm',
-    'напоминания amocrm',
-    ...CORE_KEYWORDS.widgets,
-  ],
+  title: widget.title,
+  description: widget.description,
+  keywords: widget.keywords,
   canonical: "/widgets/auto-tasks",
   ogType: "website",
 });

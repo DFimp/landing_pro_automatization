@@ -1,16 +1,14 @@
 import type { Metadata } from "next";
 import DuplicateLeads from "@/page/Widget/DuplicateLeads";
-import { createSEOMetadata, CORE_KEYWORDS } from "@/shared/lib/seo";
+import { createSEOMetadata } from "@/shared/lib/seo";
+import { WIDGETS_DATA } from "@/shared/constants/widgets";
+
+const widget = WIDGETS_DATA['duplicate-leads'];
 
 export const metadata: Metadata = createSEOMetadata({
-  title: "Дубли сделок для amoCRM — автоматическое объединение | Про Автоматизацию",
-  description: "Виджет автоматически находит и объединяет дубли сделок в amoCRM. Гибкие настройки приоритетов, работа с воронками. От 1990₽.",
-  keywords: [
-    "дубли сделок amocrm",
-    "объединение дублей amocrm",
-    "склеивание сделок amocrm",
-    ...CORE_KEYWORDS.widgets,
-  ],
+  title: widget.title,
+  description: widget.description,
+  keywords: widget.keywords,
   canonical: "/widgets/duplicate-leads",
   ogType: "website",
 });

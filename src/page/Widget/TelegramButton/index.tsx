@@ -9,7 +9,10 @@ import PreviewCard from "@/shared/ui/PreviewCard/PreviewCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
 import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
+import { WIDGETS_DATA } from "@/shared/constants/widgets";
 import { STEPS, CASE_ITEMS, PROBLEMS, FEATURES } from "./constants";
+
+const widget = WIDGETS_DATA['telegram-button'];
 
 export default function TelegramButton({
   searchParams,
@@ -23,8 +26,8 @@ export default function TelegramButton({
       <ServiceSchemaTag
         data={{
           serviceType: "Разработка виджетов amoCRM",
-          name: "Кнопка Telegram для amoCRM",
-          description: "Виджет добавляет кнопку быстрого перехода в Telegram-чат клиента прямо из CRM",
+          name: widget.title,
+          description: widget.description,
           provider: { name: "Про Автоматизацию" },
           areaServed: { name: "Россия" },
         }}

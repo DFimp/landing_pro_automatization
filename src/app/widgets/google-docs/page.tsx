@@ -1,17 +1,14 @@
 import type { Metadata } from "next";
 import GoogleDocs from "@/page/Widget/GoogleDocs";
-import { createSEOMetadata, CORE_KEYWORDS } from "@/shared/lib/seo";
+import { createSEOMetadata } from "@/shared/lib/seo";
+import { WIDGETS_DATA } from "@/shared/constants/widgets";
+
+const widget = WIDGETS_DATA['google-docs'];
 
 export const metadata: Metadata = createSEOMetadata({
-  title: "Google Документы для amoCRM — автогенерация договоров",
-  description: "Виджет автоматически создает документы из шаблонов Google Docs. Договоры, счета, акты за секунду. От 1990₽.",
-  keywords: [
-    'google документы amocrm',
-    'автогенерация документов amocrm',
-    'шаблоны google docs amocrm',
-    'создание договоров amocrm',
-    ...CORE_KEYWORDS.widgets,
-  ],
+  title: widget.title,
+  description: widget.description,
+  keywords: widget.keywords,
   canonical: "/widgets/google-docs",
   ogType: "website",
 });

@@ -7,7 +7,10 @@ import CaseCard from "@/shared/ui/Case/CaseCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
 import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
+import { WIDGETS_DATA } from "@/shared/constants/widgets";
 import { STEPS, CASE_ITEMS } from "./constants";
+
+const widget = WIDGETS_DATA['telegram-notify'];
 
 export default function TelegramNotify({
   searchParams,
@@ -21,8 +24,8 @@ export default function TelegramNotify({
       <ServiceSchemaTag
         data={{
           serviceType: "Разработка виджетов amoCRM",
-          name: "Telegram уведомления для amoCRM",
-          description: "Виджет для мгновенных уведомлений о событиях amoCRM в Telegram с запуском SalesBot одним кликом",
+          name: widget.title,
+          description: widget.description,
           provider: { name: "Про Автоматизацию" },
           areaServed: { name: "Россия" },
         }}

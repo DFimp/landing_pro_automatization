@@ -1,5 +1,8 @@
 import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
+import { WIDGETS_DATA } from "@/shared/constants/widgets";
+
+const widget = WIDGETS_DATA['google-docs'];
 
 export default function GoogleDocs({
   searchParams,
@@ -13,8 +16,8 @@ export default function GoogleDocs({
       <ServiceSchemaTag
         data={{
           serviceType: "Разработка виджетов amoCRM",
-          name: "Google Документы для amoCRM",
-          description: "Виджет автоматически создает документы из шаблонов Google Docs для быстрой генерации договоров и актов",
+          name: widget.title,
+          description: widget.description,
           provider: { name: "Про Автоматизацию" },
           areaServed: { name: "Россия" },
         }}

@@ -1,17 +1,14 @@
 import type { Metadata } from "next";
 import GroupFields from "@/page/Widget/GroupFields";
-import { createSEOMetadata, CORE_KEYWORDS } from "@/shared/lib/seo";
+import { createSEOMetadata } from "@/shared/lib/seo";
+import { WIDGETS_DATA } from "@/shared/constants/widgets";
+
+const widget = WIDGETS_DATA['group-fields'];
 
 export const metadata: Metadata = createSEOMetadata({
-    title: "Группировка полей в amoCRM — удобная организация",
-    description: "Виджет группирует поля в карточках для удобства. Скрытие блоков, улучшенный интерфейс, повышение продуктивности. От 990₽.",
-    keywords: [
-        'группировка полей amocrm',
-        'организация полей amocrm',
-        'настройка карточек amocrm',
-        'интерфейс amocrm',
-        ...CORE_KEYWORDS.widgets,
-    ],
+    title: widget.title,
+    description: widget.description,
+    keywords: widget.keywords,
     canonical: "/widgets/group-fields",
     ogType: "website",
 });

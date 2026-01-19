@@ -6,7 +6,10 @@ import PreviewCard from "@/shared/ui/PreviewCard/PreviewCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
 import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
+import { WIDGETS_DATA } from "@/shared/constants/widgets";
 import { STEPS } from "./constants";
+
+const widget = WIDGETS_DATA['closing-ban'];
 
 export default function СlosingBan({
   searchParams,
@@ -20,8 +23,8 @@ export default function СlosingBan({
       <ServiceSchemaTag
         data={{
           serviceType: "Разработка виджетов amoCRM",
-          name: "Запрет закрытия для amoCRM",
-          description: "Виджет блокирует закрытие сделок при невыполнении условий и контролирует обязательные поля",
+          name: widget.title,
+          description: widget.description,
           provider: { name: "Про Автоматизацию" },
           areaServed: { name: "Россия" },
         }}

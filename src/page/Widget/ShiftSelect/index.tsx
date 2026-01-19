@@ -6,7 +6,10 @@ import PreviewCard from "@/shared/ui/PreviewCard/PreviewCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
 import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
+import { WIDGETS_DATA } from "@/shared/constants/widgets";
 import { STEPS } from "./constants";
+
+const widget = WIDGETS_DATA['shift-select'];
 
 export default function ShiftSelect({
     searchParams,
@@ -20,8 +23,8 @@ export default function ShiftSelect({
             <ServiceSchemaTag
                 data={{
                     serviceType: "Разработка виджетов amoCRM",
-                    name: "Множественный выбор для amoCRM",
-                    description: "Виджет добавляет множественный выбор через Shift для ускорения массовых операций в 10 раз",
+                    name: widget.title,
+                    description: widget.description,
                     provider: { name: "Про Автоматизацию" },
                     areaServed: { name: "Россия" },
                 }}

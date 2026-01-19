@@ -8,7 +8,10 @@ import HowItWorksScroll from "./ui/HowItWorksScroll";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
 import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
+import { WIDGETS_DATA } from "@/shared/constants/widgets";
 import { STEPS, PROBLEMS, FEATURES } from "./constants";
+
+const widget = WIDGETS_DATA['auto-tasks'];
 
 export default function AutoTask({
   searchParams,
@@ -22,8 +25,8 @@ export default function AutoTask({
       <ServiceSchemaTag
         data={{
           serviceType: "Разработка виджетов amoCRM",
-          name: "Автозадачи в сделках для amoCRM",
-          description: "Виджет для автоматического создания задач в сделках без активности с настраиваемыми статусами и ответственными",
+          name: widget.title,
+          description: widget.description,
           provider: { name: "Про Автоматизацию" },
           areaServed: { name: "Россия" },
         }}

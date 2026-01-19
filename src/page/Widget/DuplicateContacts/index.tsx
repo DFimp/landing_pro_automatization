@@ -8,7 +8,10 @@ import FeaturesCard from "@/shared/ui/FeaturesCard/FeaturesCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
 import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
+import { WIDGETS_DATA } from "@/shared/constants/widgets";
 import { STEPS, CASE_ITEMS, PROBLEMS, FEATURES } from "./constants";
+
+const widget = WIDGETS_DATA['duplicate-contacts'];
 
 export default function DuplicateContacts({
   searchParams,
@@ -22,8 +25,8 @@ export default function DuplicateContacts({
       <ServiceSchemaTag
         data={{
           serviceType: "Разработка виджетов amoCRM",
-          name: "Дубли контактов для amoCRM",
-          description: "Виджет находит и объединяет дублированные контакты в amoCRM с умными алгоритмами поиска",
+          name: widget.title,
+          description: widget.description,
           provider: { name: "Про Автоматизацию" },
           areaServed: { name: "Россия" },
         }}

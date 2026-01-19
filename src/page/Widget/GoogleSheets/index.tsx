@@ -1,5 +1,8 @@
 import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
+import { WIDGETS_DATA } from "@/shared/constants/widgets";
+
+const widget = WIDGETS_DATA['google-sheets'];
 
 export default function Googleheets({
   searchParams,
@@ -13,8 +16,8 @@ export default function Googleheets({
       <ServiceSchemaTag
         data={{
           serviceType: "Разработка виджетов amoCRM",
-          name: "Google Таблицы для amoCRM",
-          description: "Виджет для автоматической выгрузки данных из amoCRM в Google Таблицы и Google Документы",
+          name: widget.title,
+          description: widget.description,
           provider: { name: "Про Автоматизацию" },
           areaServed: { name: "Россия" },
         }}

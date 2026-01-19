@@ -6,7 +6,10 @@ import PreviewCard from "@/shared/ui/PreviewCard/PreviewCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
 import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
+import { WIDGETS_DATA } from "@/shared/constants/widgets";
 import { STEPS } from "./constants";
+
+const widget = WIDGETS_DATA['transfer-fields'];
 
 export default function TransferFields({
     searchParams,
@@ -20,8 +23,8 @@ export default function TransferFields({
             <ServiceSchemaTag
                 data={{
                     serviceType: "Разработка виджетов amoCRM",
-                    name: "Перенос полей для amoCRM",
-                    description: "Виджет переносит данные между сделками, контактами и компаниями с автоматизацией заполнения",
+                    name: widget.title,
+                    description: widget.description,
                     provider: { name: "Про Автоматизацию" },
                     areaServed: { name: "Россия" },
                 }}

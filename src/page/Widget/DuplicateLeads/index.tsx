@@ -10,6 +10,9 @@ import { STEPS, FEATURES, PROBLEMS, CASE_ITEMS } from "./constants";
 import Link from "next/link";
 import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
+import { WIDGETS_DATA } from "@/shared/constants/widgets";
+
+const widget = WIDGETS_DATA['duplicate-leads'];
 
 export default function DuplicateLeads({
   searchParams,
@@ -23,9 +26,8 @@ export default function DuplicateLeads({
       <ServiceSchemaTag
         data={{
           serviceType: "Разработка виджетов amoCRM",
-          name: "Дубли сделок для amoCRM",
-          description:
-            "Виджет для автоматического поиска и объединения дублированных сделок в amoCRM с сохранением всех важных данных",
+          name: widget.title,
+          description: widget.description,
           provider: { name: "Про Автоматизацию" },
           areaServed: { name: "Россия" },
         }}
