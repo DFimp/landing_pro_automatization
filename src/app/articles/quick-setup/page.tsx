@@ -1,11 +1,19 @@
 import type { Metadata } from "next";
 import QuickAmoCrmSetupArticle from "@/page/Article/QuickAmoCrmSetup";
+import { createSEOMetadata } from "@/shared/lib/seo";
+import { ARTICLES_DATA } from "@/shared/constants/articles";
 
-export const metadata: Metadata = {
-    title: "Быстрая настройка amoCRM: чеклист для новичков за 1 день",
-    description:
-        "Пошаговый чеклист быстрой настройки amoCRM для новичков: воронка продаж, источники заявок, автоматизация, задачи и аналитика без лишних ошибок.",
-};
+const article = ARTICLES_DATA['quick-setup'];
+
+export const metadata: Metadata = createSEOMetadata({
+    title: article.title,
+    description: article.description,
+    keywords: article.keywords,
+    canonical: "/articles/quick-setup",
+    ogType: "article",
+    publishedTime: article.publishedTime,
+    modifiedTime: article.modifiedTime,
+});
 
 export default function Page() {
     return <QuickAmoCrmSetupArticle />;

@@ -1,9 +1,9 @@
-import clsx from "clsx";
 import { TitleH2 } from "./TitleH2";
 import { TitleH3 } from "./TitleH3";
 import { privacyPolicy } from "../model/const";
 import { Point } from "./Point";
 import { Fragment } from "react";
+import { phone } from "@/shared/constants";
 
 type PrivacySection = {
   title: string;
@@ -487,10 +487,10 @@ export default function PrivacyPage() {
               <p>
                 <strong>Контактный телефон:</strong>{" "}
                 <a
-                  href="tel:+74951234567"
+                  href={`tel:${phone.href}`}
                   className="text-blue hover:text-blue2 underline"
                 >
-                  +7 (495) 123-45-67
+                  {phone.display}
                 </a>
               </p>
               <p>

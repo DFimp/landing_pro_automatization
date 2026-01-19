@@ -5,7 +5,12 @@ import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
 import SettingsCard from "@/shared/ui/settings/SettingsCard";
 import CaseCard from "@/shared/ui/Case/CaseCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
+import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
+import { ServiceSchemaTag } from "@/shared/lib/seo";
+import { WIDGETS_DATA, phone } from "@/shared/constants";
 import { STEPS, CASE_ITEMS } from "./constants";
+
+const widget = WIDGETS_DATA['telegram-notify'];
 
 export default function TelegramNotify({
   searchParams,
@@ -15,14 +20,31 @@ export default function TelegramNotify({
   const isIframe = searchParams.embed === "true";
 
   return (
-    <main className="bg-transparent">
-      {!isIframe && (
-        <>
-          <section className="at-hero">
-            <div className="at-container">
-              <h1 className="at-pill at-bleed-left">
-                Телеграм уведомления для amoCRM
-              </h1>
+    <>
+      <ServiceSchemaTag
+        data={{
+          serviceType: "Разработка виджетов amoCRM",
+          name: widget.title,
+          description: widget.description,
+          provider: { name: "Про Автоматизацию" },
+          areaServed: { name: "Россия" },
+        }}
+      />
+      <main className="bg-transparent">
+        {!isIframe && (
+          <>
+            <section className="at-hero">
+              <div className="at-container">
+                <Breadcrumbs
+                  items={[
+                    { name: "Главная", href: "/" },
+                    { name: "Виджеты", href: "/widgets" },
+                    { name: "Telegram уведомления", href: "/widgets/telegram-notify" },
+                  ]}
+                />
+                <h1 className="at-pill at-bleed-left">
+                  Телеграм уведомления для amoCRM
+                </h1>
 
               <h2 className="at-hero-title">Готовы быть в курсе событий?</h2>
 
@@ -187,7 +209,7 @@ export default function TelegramNotify({
                         Клиент: Максим Технологов
                         <br />
                         Телефон:{" "}
-                        <a href="tel:+79994567890">+7(999) 456-78-90</a>
+                        <a href={`tel:${phone.href}`}>{phone.display}</a>
                       </div>
                       <button type="button" className="at-bubble-btn">
                         Подтвердить
@@ -231,6 +253,7 @@ export default function TelegramNotify({
           </section>
         </>
       )}
-    </main>
+      </main>
+    </>
   );
 }

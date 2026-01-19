@@ -1,0 +1,78 @@
+/**
+ * Единый источник данных для всех статей
+ * Используется для:
+ * - Списка статей
+ * - SEO метаданных (page.tsx)
+ * - Schema.org разметки (ArticleSchemaTag)
+ * - Breadcrumbs навигации
+ */
+
+export interface ArticleData {
+  slug: string;
+  title: string;
+  shortName: string; // Для breadcrumbs
+  description: string;
+  link: string;
+  keywords: string[];
+  publishedTime: string;
+  modifiedTime: string;
+  readTime: string; // "7 минут", "10 минут" и т.д.
+}
+
+export const ARTICLES_DATA: Record<string, ArticleData> = {
+  'duplicate-leads': {
+    slug: 'duplicate-leads',
+    title: 'Как работать с дублями сделок в amoCRM - 3 кейса на практике',
+    shortName: 'Как работать с дублями сделок',
+    description: 'Разбираем на реальных кейсах, как правильно объединять дубли сделок в amoCRM. Узнайте, как не потерять клиентов, сэкономить время менеджеров и навести порядок в базе CRM.',
+    link: '/articles/duplicate-leads',
+    keywords: [
+      'дубли сделок amocrm',
+      'объединение дублей amocrm',
+      'работа с дублями amocrm',
+      'склеивание сделок amocrm',
+      'кейсы amocrm',
+    ],
+    publishedTime: '2025-10-01T00:00:00Z',
+    modifiedTime: '2026-01-15T00:00:00Z',
+    readTime: '7 минут',
+  },
+
+  'helps-sell': {
+    slug: 'helps-sell',
+    title: 'amoCRM: почему эта CRM реально помогает бизнесу продавать больше',
+    shortName: 'Почему amoCRM помогает продавать',
+    description: 'Разбираем, чем amoCRM действительно помогает бизнесу продавать больше: воронка продаж, автоматизация, интеграции, ошибки внедрения и роль интегратора.',
+    link: '/articles/helps-sell',
+    keywords: [
+      'amocrm для бизнеса',
+      'crm для продаж',
+      'воронка продаж amocrm',
+      'внедрение amocrm',
+      'автоматизация продаж',
+    ],
+    publishedTime: '2025-11-15T00:00:00Z',
+    modifiedTime: '2026-01-15T00:00:00Z',
+    readTime: '10 минут',
+  },
+
+  'quick-setup': {
+    slug: 'quick-setup',
+    title: 'Быстрая настройка amoCRM: чеклист для новичков за 1 день',
+    shortName: 'Быстрая настройка amoCRM',
+    description: 'Пошаговый чеклист быстрой настройки amoCRM для новичков: воронка продаж, источники заявок, автоматизация, задачи и аналитика без лишних ошибок.',
+    link: '/articles/quick-setup',
+    keywords: [
+      'настройка amocrm',
+      'настройка amocrm с нуля',
+      'как настроить amocrm',
+      'чеклист настройки amocrm',
+      'воронка продаж amocrm',
+    ],
+    publishedTime: '2025-12-01T00:00:00Z',
+    modifiedTime: '2026-01-15T00:00:00Z',
+    readTime: '12 минут',
+  },
+};
+
+export const ARTICLES_LIST = Object.values(ARTICLES_DATA);

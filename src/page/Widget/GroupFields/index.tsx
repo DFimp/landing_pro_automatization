@@ -5,7 +5,12 @@ import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
 import CaseCard from "@/shared/ui/Case/CaseCard";
 import ProblemsCard from "@/shared/ui/ProblemsCard/ProblemsCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
+import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
+import { ServiceSchemaTag } from "@/shared/lib/seo";
+import { WIDGETS_DATA } from "@/shared/constants/widgets";
 import { STEPS, PROBLEMS, CASE_ITEMS } from "./constants";
+
+const widget = WIDGETS_DATA['group-fields'];
 
 export default function GroupFields({
     searchParams,
@@ -15,14 +20,31 @@ export default function GroupFields({
     const isIframe = searchParams.embed === "true";
 
     return (
-        <main className="bg-transparent">
-            {!isIframe && (
-                <>
-                    <section className="tg-hero">
-                        <div className="tg-container">
-                            <h1 className="tg-pill tg-bleed-left">
-                                Группировка полей в карточке сделки в amoCRM
-                            </h1>
+        <>
+            <ServiceSchemaTag
+                data={{
+                    serviceType: "Разработка виджетов amoCRM",
+                    name: widget.title,
+                    description: widget.description,
+                    provider: { name: "Про Автоматизацию" },
+                    areaServed: { name: "Россия" },
+                }}
+            />
+            <main className="bg-transparent">
+                {!isIframe && (
+                    <>
+                        <section className="tg-hero">
+                            <div className="tg-container">
+                                <Breadcrumbs
+                                    items={[
+                                        { name: "Главная", href: "/" },
+                                        { name: "Виджеты", href: "/widgets" },
+                                        { name: "Группировка полей", href: "/widgets/group-fields" },
+                                    ]}
+                                />
+                                <h1 className="tg-pill tg-bleed-left">
+                                    Группировка полей в карточке сделки в amoCRM
+                                </h1>
 
                             <h2 className="tg-hero-title">
                                 Наведи порядок в полях и ускорь работу менеджеров
@@ -78,6 +100,7 @@ export default function GroupFields({
                     </div>
                 </section>
             )}
-        </main>
+            </main>
+        </>
     );
 }

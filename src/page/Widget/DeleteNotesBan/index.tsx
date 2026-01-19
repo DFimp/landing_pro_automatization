@@ -6,7 +6,12 @@ import CaseCard from "@/shared/ui/Case/CaseCard";
 import ProblemsCard from "@/shared/ui/ProblemsCard/ProblemsCard";
 import FeaturesCard from "@/shared/ui/FeaturesCard/FeaturesCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
+import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
+import { ServiceSchemaTag } from "@/shared/lib/seo";
+import { WIDGETS_DATA } from "@/shared/constants/widgets";
 import { STEPS, CASE_ITEMS, PROBLEMS, FEATURES } from "./constants";
+
+const widget = WIDGETS_DATA['delete-notes-ban'];
 
 export default function DeleteNotesBan({
     searchParams,
@@ -16,14 +21,31 @@ export default function DeleteNotesBan({
     const isIframe = searchParams.embed === "true";
 
     return (
-        <main className="bg-transparent">
-            {!isIframe && (
-                <>
-                    <section className="tg-hero">
-                        <div className="tg-container">
-                            <h1 className="tg-pill tg-bleed-left">
-                                Запрет удаления и редактирования примечаний в amoCRM
-                            </h1>
+        <>
+            <ServiceSchemaTag
+                data={{
+                    serviceType: "Разработка виджетов amoCRM",
+                    name: widget.title,
+                    description: widget.description,
+                    provider: { name: "Про Автоматизацию" },
+                    areaServed: { name: "Россия" },
+                }}
+            />
+            <main className="bg-transparent">
+                {!isIframe && (
+                    <>
+                        <section className="tg-hero">
+                            <div className="tg-container">
+                                <Breadcrumbs
+                                    items={[
+                                        { name: "Главная", href: "/" },
+                                        { name: "Виджеты", href: "/widgets" },
+                                        { name: "Запрет удаления примечаний", href: "/widgets/delete-notes-ban" },
+                                    ]}
+                                />
+                                <h1 className="tg-pill tg-bleed-left">
+                                    Запрет удаления и редактирования примечаний в amoCRM
+                                </h1>
 
                             <h2 className="tg-hero-title">
                                 Сохраните историю коммуникаций и договорённостей с клиентом
@@ -86,6 +108,7 @@ export default function DeleteNotesBan({
                     </section>
                 </>
             )}
-        </main>
+            </main>
+        </>
     );
 }

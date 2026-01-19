@@ -8,6 +8,11 @@ import FeaturesCard from "@/shared/ui/FeaturesCard/FeaturesCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
 import { STEPS, FEATURES, PROBLEMS, CASE_ITEMS } from "./constants";
 import Link from "next/link";
+import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
+import { ServiceSchemaTag } from "@/shared/lib/seo";
+import { WIDGETS_DATA } from "@/shared/constants/widgets";
+
+const widget = WIDGETS_DATA['duplicate-leads'];
 
 export default function DuplicateLeads({
   searchParams,
@@ -17,14 +22,31 @@ export default function DuplicateLeads({
   const isIframe = searchParams.embed === "true";
 
   return (
-    <main className="bg-transparent">
-      {!isIframe && (
-        <>
-          <section className="tg-hero">
-            <div className="tg-container">
-              <h1 className="tg-pill tg-bleed-left">
-                Дубли сделок (объединение дублей сделок) в amoCRM
-              </h1>
+    <>
+      <ServiceSchemaTag
+        data={{
+          serviceType: "Разработка виджетов amoCRM",
+          name: widget.title,
+          description: widget.description,
+          provider: { name: "Про Автоматизацию" },
+          areaServed: { name: "Россия" },
+        }}
+      />
+      <main className="bg-transparent">
+        {!isIframe && (
+          <>
+            <section className="tg-hero">
+              <div className="tg-container">
+                <Breadcrumbs
+                  items={[
+                    { name: "Главная", href: "/" },
+                    { name: "Виджеты", href: "/widgets" },
+                    { name: "Дубли сделок", href: "/widgets/duplicate-leads" },
+                  ]}
+                />
+                <h1 className="tg-pill tg-bleed-left">
+                  Дубли сделок (объединение дублей сделок) в amoCRM
+                </h1>
 
               <h2 className="tg-hero-title">Навести порядок в сделках?</h2>
 
@@ -93,6 +115,7 @@ export default function DuplicateLeads({
           </section>
         </>
       )}
-    </main>
+      </main>
+    </>
   );
 }

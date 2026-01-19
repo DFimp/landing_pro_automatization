@@ -1,12 +1,30 @@
 import { ArticleDescriptionSection } from "@/widgets/article/ArticleDescriptionSection/ArticleDescriptionSection";
 import AmoCrmHelpsSellMoreContentSection from "@/widgets/article/AmoCrmHelpsSellMoreContentSection/AmoCrmHelpsSellMoreContentSection";
 import { ArticleConclusionSection } from "@/widgets/article/ArticleConclusionSection/ArticleConclusionSection";
+import { ArticleSchemaTag } from "@/shared/lib/seo";
+import { ARTICLES_DATA } from "@/shared/constants/articles";
+import { SITE_URL } from "@/shared/constants/routes";
 
 import styles from "./AmoCrmHelpsSell.module.css";
+
+const article = ARTICLES_DATA['helps-sell'];
 
 export default function AmoCrmHelpsSellArticle() {
     return (
         <>
+            <ArticleSchemaTag
+                data={{
+                    headline: article.title,
+                    description: article.description,
+                    datePublished: article.publishedTime,
+                    dateModified: article.modifiedTime,
+                    author: { name: "Про Автоматизацию" },
+                    publisher: {
+                        name: "Про Автоматизацию",
+                        logo: { url: `${SITE_URL}/logo.png` },
+                    },
+                }}
+            />
             <div className={styles.wrapper}>
                 <ArticleDescriptionSection
                     category="CRM"

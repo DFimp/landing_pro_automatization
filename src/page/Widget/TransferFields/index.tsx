@@ -4,7 +4,12 @@ import SettingsCard from "@/shared/ui/settings/SettingsCard";
 import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
 import PreviewCard from "@/shared/ui/PreviewCard/PreviewCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
+import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
+import { ServiceSchemaTag } from "@/shared/lib/seo";
+import { WIDGETS_DATA } from "@/shared/constants/widgets";
 import { STEPS } from "./constants";
+
+const widget = WIDGETS_DATA['transfer-fields'];
 
 export default function TransferFields({
     searchParams,
@@ -14,14 +19,31 @@ export default function TransferFields({
     const isIframe = searchParams.embed === "true";
 
     return (
-        <main className="bg-transparent">
-            {!isIframe && (
-                <>
-                    <section className="dist-hero">
-                        <div className="at-container">
-                            <h1 className="dist-pill dist-bleed-left">
-                                Перенос длинных названий полей в amoCRM
-                            </h1>
+        <>
+            <ServiceSchemaTag
+                data={{
+                    serviceType: "Разработка виджетов amoCRM",
+                    name: widget.title,
+                    description: widget.description,
+                    provider: { name: "Про Автоматизацию" },
+                    areaServed: { name: "Россия" },
+                }}
+            />
+            <main className="bg-transparent">
+                {!isIframe && (
+                    <>
+                        <section className="dist-hero">
+                            <div className="at-container">
+                                <Breadcrumbs
+                                    items={[
+                                        { name: "Главная", href: "/" },
+                                        { name: "Виджеты", href: "/widgets" },
+                                        { name: "Перенос полей", href: "/widgets/transfer-fields" },
+                                    ]}
+                                />
+                                <h1 className="dist-pill dist-bleed-left">
+                                    Перенос длинных названий полей в amoCRM
+                                </h1>
 
                             <h2 className="dist-hero-title">
                                 Длинные названия полей без обрезки и наложений
@@ -71,6 +93,7 @@ export default function TransferFields({
                     </div>
                 </section>
             )}
-        </main>
+            </main>
+        </>
     );
 }

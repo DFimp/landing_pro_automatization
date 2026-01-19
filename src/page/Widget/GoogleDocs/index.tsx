@@ -1,3 +1,9 @@
+import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
+import { ServiceSchemaTag } from "@/shared/lib/seo";
+import { WIDGETS_DATA } from "@/shared/constants/widgets";
+
+const widget = WIDGETS_DATA['google-docs'];
+
 export default function GoogleDocs({
   searchParams,
 }: {
@@ -6,10 +12,28 @@ export default function GoogleDocs({
   const isIframe = searchParams.embed === "true";
 
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
-      <h1 className="text-4xl font-bold mb-4">
-        ProAutomatization amoCRM for Google Docs
-      </h1>
+    <>
+      <ServiceSchemaTag
+        data={{
+          serviceType: "Разработка виджетов amoCRM",
+          name: widget.title,
+          description: widget.description,
+          provider: { name: "Про Автоматизацию" },
+          areaServed: { name: "Россия" },
+        }}
+      />
+      <main className="bg-transparent">
+        <div className="container mx-auto px-4 py-12 max-w-4xl">
+          <Breadcrumbs
+            items={[
+              { name: "Главная", href: "/" },
+              { name: "Виджеты", href: "/widgets" },
+              { name: "Google Документы", href: "/widgets/google-docs" },
+            ]}
+          />
+          <h1 className="text-4xl font-bold mb-4">
+            ProAutomatization amoCRM for Google Docs
+          </h1>
       
       <p className="text-xl text-gray-600 mb-8">
         Виджет для автоматической генерации документов в Google Документы на основе данных из amoCRM.
@@ -54,6 +78,8 @@ export default function GoogleDocs({
           <li>Генерируйте документы в один клик</li>
         </ol>
       </section>
-    </div>
+        </div>
+      </main>
+    </>
   );
 }

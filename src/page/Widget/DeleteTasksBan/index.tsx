@@ -6,7 +6,12 @@ import CaseCard from "@/shared/ui/Case/CaseCard";
 import ProblemsCard from "@/shared/ui/ProblemsCard/ProblemsCard";
 import FeaturesCard from "@/shared/ui/FeaturesCard/FeaturesCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
+import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
+import { ServiceSchemaTag } from "@/shared/lib/seo";
+import { WIDGETS_DATA } from "@/shared/constants/widgets";
 import { STEPS, CASE_ITEMS, PROBLEMS, FEATURES } from "./constants";
+
+const widget = WIDGETS_DATA['delete-tasks-ban'];
 
 export default function DeleteTasksBan({
   searchParams,
@@ -16,14 +21,31 @@ export default function DeleteTasksBan({
   const isIframe = searchParams.embed === "true";
 
   return (
-    <main className="bg-transparent">
-      {!isIframe && (
-        <>
-          <section className="tg-hero">
-            <div className="tg-container">
-              <h1 className="tg-pill tg-bleed-left">
-                Запрет удаления задач в amoCRM
-              </h1>
+    <>
+      <ServiceSchemaTag
+        data={{
+          serviceType: "Разработка виджетов amoCRM",
+          name: widget.title,
+          description: widget.description,
+          provider: { name: "Про Автоматизацию" },
+          areaServed: { name: "Россия" },
+        }}
+      />
+      <main className="bg-transparent">
+        {!isIframe && (
+          <>
+            <section className="tg-hero">
+              <div className="tg-container">
+                <Breadcrumbs
+                  items={[
+                    { name: "Главная", href: "/" },
+                    { name: "Виджеты", href: "/widgets" },
+                    { name: "Запрет удаления задач", href: "/widgets/delete-tasks-ban" },
+                  ]}
+                />
+                <h1 className="tg-pill tg-bleed-left">
+                  Запрет удаления задач в amoCRM
+                </h1>
 
               <h2 className="tg-hero-title">
                 Перестаньте терять задачи и историю работы с клиентами
@@ -86,6 +108,7 @@ export default function DeleteTasksBan({
           </section>
         </>
       )}
-    </main>
+      </main>
+    </>
   );
 }

@@ -8,8 +8,9 @@ import { useHiddenInIframe } from "@/shared/utils/useHiddenInIframe";
 import {
   WIDGETS,
   POPULAR_WIDGET_KEYS,
+  phone,
   type WidgetKey,
-} from "@/shared/constants/widgets";
+} from "@/shared/constants";
 
 type FooterLink = { label: string; href: string };
 
@@ -159,8 +160,8 @@ export const Footer = () => {
               </div>
               <div>
                 Телефон:{" "}
-                <a className="hover:underline" href="tel:+78652222923">
-                  +7 (865) 222-29-23
+                <a className="hover:underline" href={`tel:${phone.href}`}>
+                  {phone.display}
                 </a>
               </div>
             </div>

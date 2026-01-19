@@ -1,27 +1,29 @@
+import { WIDGETS } from "./widgets";
+
 export const SITE_URL = 'https://pro-automatization.ru';
 
 // Основные страницы
 export const ROUTES = {
-  HOME: '/',
-  AUDIT: '/audit',
-  ACCOMPANIMENT: '/accompaniment',
-  WIDGETS: '/widgets',
-  ARTICLES: '/articles',
-  LICENSE: '/license',
-  CASES: '/cases',
+  HOME: { path: '/', name: 'Главная' },
+  AUDIT: { path: '/audit', name: 'Аудит amoCRM' },
+  ACCOMPANIMENT: { path: '/accompaniment', name: 'Сопровождение' },
+  WIDGETS: { path: '/widgets', name: 'Виджеты amoCRM' },
+  ARTICLES: { path: '/articles', name: 'Статьи' },
+  LICENSE: { path: '/license', name: 'Лицензии amoCRM' },
+  CASES: { path: '/cases', name: 'Кейсы' },
 } as const;
 
-export const widgetRoute = (slug: string) => `/widgets/${slug}`;
+export const WIDGET_ROUTES = WIDGETS.map((w) => w.route);
 
 export const ARTICLES_ROUTES = {
-  DUPLICATE_CONTACTS: '/articles/duplicate-leads',
-}
-
-// Все статьи одним списком (на будущее)
-export const ALL_ARTICLES_ROUTES = Object.values(ARTICLES_ROUTES);
+  DUPLICATE_CONTACTS: { path: '/articles/duplicate-leads', name: 'Дубликаты контактов' },
+  HELPS_SELL: { path: '/articles/helps-sell', name: 'Как CRM помогает продавать' },
+  QUICK_SETUP: { path: '/articles/quick-setup', name: 'Быстрая настройка amoCRM' },
+} as const;
 
 // Все пути одним списком
 export const ALL_ROUTES = {
   ...ROUTES,
   ...ARTICLES_ROUTES,
+  ...Object.fromEntries(WIDGETS.map(w => [w.key.toUpperCase(), w.route]))
 } as const;

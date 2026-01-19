@@ -7,7 +7,12 @@ import ProblemsCard from "@/shared/ui/ProblemsCard/ProblemsCard";
 import FeaturesCard from "@/shared/ui/FeaturesCard/FeaturesCard";
 import PreviewCard from "@/shared/ui/PreviewCard/PreviewCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
+import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
+import { ServiceSchemaTag } from "@/shared/lib/seo";
+import { WIDGETS_DATA } from "@/shared/constants/widgets";
 import { STEPS, CASE_ITEMS, PROBLEMS, FEATURES } from "./constants";
+
+const widget = WIDGETS_DATA['whatsapp-button'];
 
 export default function WhatsappButton({
   searchParams,
@@ -17,7 +22,17 @@ export default function WhatsappButton({
   const isIframe = searchParams.embed === "true";
 
   return (
-    <main className="bg-transparent">
+    <>
+      <ServiceSchemaTag
+        data={{
+          serviceType: "Разработка виджетов amoCRM",
+          name: widget.title,
+          description: widget.description,
+          provider: { name: "Про Автоматизацию" },
+          areaServed: { name: "Россия" },
+        }}
+      />
+      <main className="bg-transparent">
       {!isIframe && (
         <>
           <section className="dist-hero">
@@ -96,5 +111,6 @@ export default function WhatsappButton({
         </>
       )}
     </main>
+    </>
   );
 }

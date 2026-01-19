@@ -5,7 +5,12 @@ import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
 import CaseCard from "@/shared/ui/Case/CaseCard";
 import ProblemsCard from "@/shared/ui/ProblemsCard/ProblemsCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
+import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
+import { ServiceSchemaTag } from "@/shared/lib/seo";
+import { WIDGETS_DATA } from "@/shared/constants/widgets";
 import { STEPS, CASE_ITEMS, PROBLEMS } from "./constants";
+
+const widget = WIDGETS_DATA['lead-distribution'];
 
 export default function Distribution({
   searchParams,
@@ -15,14 +20,31 @@ export default function Distribution({
   const isIframe = searchParams.embed === "true";
 
   return (
-    <main className="bg-transparent">
-      {!isIframe && (
-        <>
-          <section className="dist-hero">
-            <div className="at-container">
-              <h1 className="dist-pill dist-bleed-left">
-                Распределение сделок в amoCRM
-              </h1>
+    <>
+      <ServiceSchemaTag
+        data={{
+          serviceType: "Разработка виджетов amoCRM",
+          name: widget.title,
+          description: widget.description,
+          provider: { name: "Про Автоматизацию" },
+          areaServed: { name: "Россия" },
+        }}
+      />
+      <main className="bg-transparent">
+        {!isIframe && (
+          <>
+            <section className="dist-hero">
+              <div className="at-container">
+                <Breadcrumbs
+                  items={[
+                    { name: "Главная", href: "/" },
+                    { name: "Виджеты", href: "/widgets" },
+                    { name: "Распределение сделок", href: "/widgets/lead-distribution" },
+                  ]}
+                />
+                <h1 className="dist-pill dist-bleed-left">
+                  Распределение сделок в amoCRM
+                </h1>
 
               <h2 className="dist-hero-title">
                 Справедливо распределить нагрузку?
@@ -78,6 +100,7 @@ export default function Distribution({
           </div>
         </section>
       )}
-    </main>
+      </main>
+    </>
   );
 }
