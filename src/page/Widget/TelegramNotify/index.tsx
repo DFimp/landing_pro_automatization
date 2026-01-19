@@ -7,7 +7,7 @@ import CaseCard from "@/shared/ui/Case/CaseCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
 import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
-import { WIDGETS_DATA } from "@/shared/constants/widgets";
+import { WIDGETS_DATA, phone } from "@/shared/constants";
 import { STEPS, CASE_ITEMS } from "./constants";
 
 const widget = WIDGETS_DATA['telegram-notify'];
@@ -209,7 +209,7 @@ export default function TelegramNotify({
                         Клиент: Максим Технологов
                         <br />
                         Телефон:{" "}
-                        <a href="tel:+79994567890">+7(999) 456-78-90</a>
+                        <a href={`tel:${phone.href}`}>{phone.display}</a>
                       </div>
                       <button type="button" className="at-bubble-btn">
                         Подтвердить

@@ -1,5 +1,5 @@
 import React from 'react';
-import { SITE_URL } from '@/shared/constants/routes';
+import { SITE_URL, phone } from '@/shared/constants';
 
 // Типы для Schema.org
 
@@ -185,7 +185,7 @@ export const ORGANIZATION_DATA: OrganizationSchema = {
     addressLocality: 'Москва',
   },
   contactPoint: {
-    telephone: '+7-865-222-29-23',
+    telephone: phone.schema,
     contactType: 'sales',
     availableLanguage: 'Russian',
   },
