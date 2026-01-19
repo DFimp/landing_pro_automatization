@@ -3,7 +3,6 @@ import AmoCrmHelpsSellMoreContentSection from "@/widgets/article/AmoCrmHelpsSell
 import { ArticleConclusionSection } from "@/widgets/article/ArticleConclusionSection/ArticleConclusionSection";
 import { ArticleSchemaTag } from "@/shared/lib/seo";
 import { ARTICLES_DATA } from "@/shared/constants/articles";
-import { SITE_URL } from "@/shared/constants/routes";
 
 import styles from "./AmoCrmHelpsSell.module.css";
 
@@ -18,11 +17,6 @@ export default function AmoCrmHelpsSellArticle() {
                     description: article.description,
                     datePublished: article.publishedTime,
                     dateModified: article.modifiedTime,
-                    author: { name: "Про Автоматизацию" },
-                    publisher: {
-                        name: "Про Автоматизацию",
-                        logo: { url: `${SITE_URL}/logo.png` },
-                    },
                 }}
             />
             <div className={styles.wrapper}>

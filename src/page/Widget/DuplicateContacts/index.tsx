@@ -10,7 +10,7 @@ import { ServiceSchemaTag } from "@/shared/lib/seo";
 import { WIDGETS_DATA } from "@/shared/constants/widgets";
 import { STEPS, CASE_ITEMS, PROBLEMS, FEATURES } from "./constants";
 
-const widget = WIDGETS_DATA['duplicate-contacts'];
+const widget = WIDGETS_DATA["duplicate-contacts"];
 
 export default function DuplicateContacts({
   searchParams,
@@ -26,7 +26,6 @@ export default function DuplicateContacts({
           serviceType: "Разработка виджетов amoCRM",
           name: widget.title,
           description: widget.description,
-          areaServed: { name: "Россия" },
         }}
       />
       <main className="bg-transparent">
@@ -38,66 +37,68 @@ export default function DuplicateContacts({
                   Дубли контактов (объединение дублей контактов) в amoCRM
                 </h1>
 
-              <h2 className="tg-hero-title">Избавиться от дублей контактов?</h2>
+                <h2 className="tg-hero-title">
+                  Избавиться от дублей контактов?
+                </h2>
 
-              <p className="tg-hero-sub">
-                Автоматическое склеивание дублированных контактов с умными
-                алгоритмами поиска. Экономьте время менеджеров и улучшайте
-                качество вашей базы контактов.
-              </p>
+                <p className="tg-hero-sub">
+                  Автоматическое склеивание дублированных контактов с умными
+                  алгоритмами поиска. Экономьте время менеджеров и улучшайте
+                  качество вашей базы контактов.
+                </p>
 
-              <div className="tg-cta">
-                <a
-                  className="tg-btn-primary"
-                  href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=e6a1837c-6178-4a0c-9fc0-3e5768595fa2"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  Установить виджет
-                </a>
-                <ScrollToInstructionLink />
+                <div className="tg-cta">
+                  <a
+                    className="tg-btn-primary"
+                    href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=e6a1837c-6178-4a0c-9fc0-3e5768595fa2"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Установить виджет
+                  </a>
+                  <ScrollToInstructionLink />
+                </div>
               </div>
-            </div>
-          </section>
+            </section>
 
-          <ProblemsCard
-            title="Проблемы дублей в amoCRM"
-            subtitle="Дубли в amoCRM создают хаос в работе отдела продаж"
-            items={PROBLEMS}
-          />
+            <ProblemsCard
+              title="Проблемы дублей в amoCRM"
+              subtitle="Дубли в amoCRM создают хаос в работе отдела продаж"
+              items={PROBLEMS}
+            />
 
-          <CaseCard
-            title="Решение всех проблем"
-            subtitle="Умные алгоритмы для автоматического объединения дублей"
-            items={CASE_ITEMS}
-          />
-        </>
-      )}
+            <CaseCard
+              title="Решение всех проблем"
+              subtitle="Умные алгоритмы для автоматического объединения дублей"
+              items={CASE_ITEMS}
+            />
+          </>
+        )}
 
-      <SettingsCard
-        id="instruction"
-        title="Пошаговая настройка виджета"
-        subtitle="Следуйте простым шагам для быстрой настройки:"
-        steps={STEPS}
-        showVideo
-        videoId="587c58e4cffc051492375d0622e56822"
-      />
+        <SettingsCard
+          id="instruction"
+          title="Пошаговая настройка виджета"
+          subtitle="Следуйте простым шагам для быстрой настройки:"
+          steps={STEPS}
+          showVideo
+          videoId="587c58e4cffc051492375d0622e56822"
+        />
 
-      {!isIframe && (
-        <>
-          <FeaturesCard
-            title="Дополнительные возможности"
-            subtitle="Уникальные функции для максимальной скорости и удобства"
-            items={FEATURES}
-          />
+        {!isIframe && (
+          <>
+            <FeaturesCard
+              title="Дополнительные возможности"
+              subtitle="Уникальные функции для максимальной скорости и удобства"
+              items={FEATURES}
+            />
 
-          <section className="at-prefooter">
-            <div className="at-container">
-              <ConsultCard />
-            </div>
-          </section>
-        </>
-      )}
+            <section className="at-prefooter">
+              <div className="at-container">
+                <ConsultCard />
+              </div>
+            </section>
+          </>
+        )}
       </main>
     </>
   );

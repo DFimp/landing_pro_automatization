@@ -470,4 +470,8 @@ export const WIDGETS_DATA: Record<string, WidgetData> = {
   },
 };
 
-export const WIDGETS_LIST = Object.values(WIDGETS_DATA);
+const HIDDEN_WIDGETS = ['google-sheets', 'google-docs'] as const;
+
+export const WIDGETS_LIST = Object.values(WIDGETS_DATA).filter(
+  (w) => !HIDDEN_WIDGETS.includes(w.slug as any)
+);

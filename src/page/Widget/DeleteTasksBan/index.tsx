@@ -10,7 +10,7 @@ import { ServiceSchemaTag } from "@/shared/lib/seo";
 import { WIDGETS_DATA } from "@/shared/constants/widgets";
 import { STEPS, CASE_ITEMS, PROBLEMS, FEATURES } from "./constants";
 
-const widget = WIDGETS_DATA['delete-tasks-ban'];
+const widget = WIDGETS_DATA["delete-tasks-ban"];
 
 export default function DeleteTasksBan({
   searchParams,
@@ -26,7 +26,6 @@ export default function DeleteTasksBan({
           serviceType: "Разработка виджетов amoCRM",
           name: widget.title,
           description: widget.description,
-          areaServed: { name: "Россия" },
         }}
       />
       <main className="bg-transparent">
@@ -38,67 +37,67 @@ export default function DeleteTasksBan({
                   Запрет удаления задач в amoCRM
                 </h1>
 
-              <h2 className="tg-hero-title">
-                Перестаньте терять задачи и историю работы с клиентами
-              </h2>
+                <h2 className="tg-hero-title">
+                  Перестаньте терять задачи и историю работы с клиентами
+                </h2>
 
-              <p className="tg-hero-sub">
-                Виджет блокирует удаление и изменение задач для выбранных
-                менеджеров, с гибкими исключениями по типам задач. Сохраните
-                честную аналитику и полную историю коммуникаций в amoCRM.
-              </p>
+                <p className="tg-hero-sub">
+                  Виджет блокирует удаление и изменение задач для выбранных
+                  менеджеров, с гибкими исключениями по типам задач. Сохраните
+                  честную аналитику и полную историю коммуникаций в amoCRM.
+                </p>
 
-              <div className="tg-cta">
-                <a
-                  className="tg-btn-primary"
-                  href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=2a208537-35b9-4b8c-805c-e698198f00e9"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  Установить виджет
-                </a>
-                <ScrollToInstructionLink />
+                <div className="tg-cta">
+                  <a
+                    className="tg-btn-primary"
+                    href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=2a208537-35b9-4b8c-805c-e698198f00e9"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Установить виджет
+                  </a>
+                  <ScrollToInstructionLink />
+                </div>
               </div>
-            </div>
-          </section>
+            </section>
 
-          <ProblemsCard
-            title="Проблемы с удалением задач в amoCRM"
-            subtitle="Когда задачи можно удалить, вы теряете контроль над процессом"
-            items={PROBLEMS}
-          />
+            <ProblemsCard
+              title="Проблемы с удалением задач в amoCRM"
+              subtitle="Когда задачи можно удалить, вы теряете контроль над процессом"
+              items={PROBLEMS}
+            />
 
-          <CaseCard
-            title="Как виджет решает эти проблемы"
-            subtitle="Жёсткий контроль задач без потери гибкости для руководителей"
-            items={CASE_ITEMS}
-          />
-        </>
-      )}
+            <CaseCard
+              title="Как виджет решает эти проблемы"
+              subtitle="Жёсткий контроль задач без потери гибкости для руководителей"
+              items={CASE_ITEMS}
+            />
+          </>
+        )}
 
-      <SettingsCard
-        id="instruction"
-        title="Пошаговая настройка виджета"
-        subtitle="Следуйте простым шагам, чтобы настроить запрет удаления задач:"
-        steps={STEPS}
-        showVideo
-      />
+        <SettingsCard
+          id="instruction"
+          title="Пошаговая настройка виджета"
+          subtitle="Следуйте простым шагам, чтобы настроить запрет удаления задач:"
+          steps={STEPS}
+          showVideo
+        />
 
-      {!isIframe && (
-        <>
-          <FeaturesCard
-            title="Возможности виджета"
-            subtitle="Инструменты для защиты задач и прозрачной аналитики"
-            items={FEATURES}
-          />
+        {!isIframe && (
+          <>
+            <FeaturesCard
+              title="Возможности виджета"
+              subtitle="Инструменты для защиты задач и прозрачной аналитики"
+              items={FEATURES}
+            />
 
-          <section className="at-prefooter">
-            <div className="at-container">
-              <ConsultCard />
-            </div>
-          </section>
-        </>
-      )}
+            <section className="at-prefooter">
+              <div className="at-container">
+                <ConsultCard />
+              </div>
+            </section>
+          </>
+        )}
       </main>
     </>
   );
