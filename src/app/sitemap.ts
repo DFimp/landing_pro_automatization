@@ -51,7 +51,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   // Страницы виджетов
-  const widgetPages: MetadataRoute.Sitemap = Object.values(WIDGET_ROUTES).map(
+  const widgetPages: MetadataRoute.Sitemap = WIDGET_ROUTES.map(
     (route) => ({
       url: `${SITE_URL}${route}`,
       lastModified: currentDate,

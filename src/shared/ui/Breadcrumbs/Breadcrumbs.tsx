@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { SITE_URL } from '@/shared/constants/routes';
 
 export interface BreadcrumbItem {
   name: string;
@@ -18,7 +19,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
       '@type': 'ListItem',
       position: index + 1,
       name: item.name,
-      item: `https://pro-automatization.ru${item.href}`,
+      item: `${SITE_URL}${item.href}`,
     })),
   };
 

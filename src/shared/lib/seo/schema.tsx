@@ -185,7 +185,7 @@ export const ORGANIZATION_DATA: OrganizationSchema = {
     addressLocality: 'Москва',
   },
   contactPoint: {
-    telephone: '+7-XXX-XXX-XX-XX',
+    telephone: '+7-865-222-29-23',
     contactType: 'sales',
     availableLanguage: 'Russian',
   },

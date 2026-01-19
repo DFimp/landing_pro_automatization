@@ -17,7 +17,7 @@ export const WIDGET_ROUTES = WIDGETS.map((w) => w.route);
 
 export const ARTICLES_ROUTES = {
   DUPLICATE_CONTACTS: '/articles/duplicate-leads',
-  HELPS_SELL: '/articles/hepls-sell',
+  HELPS_SELL: '/articles/helps-sell',
   QUICK_SETUP: '/articles/quick-setup',
 }
 
@@ -25,5 +25,5 @@ export const ARTICLES_ROUTES = {
 export const ALL_ROUTES = {
   ...ROUTES,
   ...ARTICLES_ROUTES,
-  ...WIDGET_ROUTES,
+  ...Object.fromEntries(WIDGETS.map(w => [w.key.toUpperCase(), w.route]))
 } as const;
