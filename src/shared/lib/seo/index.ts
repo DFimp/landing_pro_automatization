@@ -3,6 +3,9 @@ export {
   ServiceSchemaTag,
   ArticleSchemaTag,
   FAQSchemaTag,
+  SiteNavigationSchemaTag,
+  WebSiteSchemaTag,
+  SITE_NAVIGATION,
   ORGANIZATION_DATA,
 } from './schema';
 

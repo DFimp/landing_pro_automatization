@@ -7,49 +7,49 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Основные страницы с их приоритетами
   const mainPages: MetadataRoute.Sitemap = [
     {
-      url: `${SITE_URL}${ROUTES.HOME}`,
+      url: `${SITE_URL}${ROUTES.HOME.path}`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 1.0,
     },
     {
-      url: `${SITE_URL}${ROUTES.WIDGETS}`,
+      url: `${SITE_URL}${ROUTES.WIDGETS.path}`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: `${SITE_URL}${ROUTES.AUDIT}`,
+      url: `${SITE_URL}${ROUTES.AUDIT.path}`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: `${SITE_URL}${ROUTES.ACCOMPANIMENT}`,
+      url: `${SITE_URL}${ROUTES.ACCOMPANIMENT.path}`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: `${SITE_URL}${ROUTES.ARTICLES}`,
+      url: `${SITE_URL}${ROUTES.ARTICLES.path}`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
-      url: `${SITE_URL}${ROUTES.LICENSE}`,
+      url: `${SITE_URL}${ROUTES.LICENSE.path}`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: `${SITE_URL}${ROUTES.CASES}`,
+      url: `${SITE_URL}${ROUTES.CASES.path}`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
   ];
-
+  
   // Страницы виджетов
   const widgetPages: MetadataRoute.Sitemap = WIDGET_ROUTES.map(
     (route) => ({
@@ -63,10 +63,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Статьи
   const articlesPages: MetadataRoute.Sitemap = Object.values(ARTICLES_ROUTES).map(
     (route) => ({
-      url: `${SITE_URL}${route}`,
+      url: `${SITE_URL}${route.path}`,
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
-      priority: 0.7,
+      priority: 0.8,
     })
   );
 

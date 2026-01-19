@@ -7,7 +7,11 @@ import { Footer } from "@/widgets/footer";
 import { Suspense } from "react";
 import { YandexMetrika, YandexScript } from "@/shared/scripts/YandexMetrika";
 import { GoogleAnalytics, GoogleAnalyticsScript } from "@/shared/scripts/GoogleAnalytics";
-
+import { 
+  SiteNavigationSchemaTag, 
+  WebSiteSchemaTag,
+  SITE_NAVIGATION 
+} from '@/shared/lib/seo';
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -62,6 +66,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
+      <head>
+        <WebSiteSchemaTag />
+        <SiteNavigationSchemaTag items={SITE_NAVIGATION} />
+      </head>
       <body className={`${montserrat.variable} antialiased`}>
         <YandexScript />
         <GoogleAnalyticsScript />

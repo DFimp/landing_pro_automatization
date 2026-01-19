@@ -1,7 +1,7 @@
 import React from 'react';
 import { SITE_URL, phone } from '@/shared/constants';
 
-// Типы для Schema.org
+// ==================== ТИПЫ ====================
 
 export interface OrganizationSchema {
   name: string;
@@ -27,12 +27,7 @@ export interface ServiceSchema {
   serviceType: string;
   name: string;
   description: string;
-  provider: {
-    name: string;
-  };
-  areaServed: {
-    name: string;
-  };
+  url?: string;
 }
 
 export interface ArticleSchema {
@@ -40,16 +35,8 @@ export interface ArticleSchema {
   description: string;
   datePublished: string;
   dateModified: string;
-  author: {
-    name: string;
-  };
-  publisher: {
-    name: string;
-    logo: {
-      url: string;
-    };
-  };
   image?: string;
+  url?: string;
 }
 
 export interface FAQItem {
@@ -57,30 +44,47 @@ export interface FAQItem {
   answer: string;
 }
 
-// Компоненты для встраивания Schema.org
+export interface SiteNavigationItem {
+  name: string;
+  url: string;
+}
 
+// ==================== КОМПОНЕНТЫ СХЕМ ====================
+
+/**
+ * Схема организации - используется на главной странице
+ */
 export function OrganizationSchemaTag({ data }: { data: OrganizationSchema }) {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
+    '@id': `${data.url}/#organization`,
     name: data.name,
     ...(data.alternateName && { alternateName: data.alternateName }),
     url: data.url,
-    logo: data.logo,
+    logo: {
+      '@type': 'ImageObject',
+      url: data.logo,
+    },
     description: data.description,
     ...(data.address && {
       address: {
         '@type': 'PostalAddress',
-        ...data.address,
+        addressCountry: data.address.addressCountry,
+        ...(data.address.addressLocality && { addressLocality: data.address.addressLocality }),
+        ...(data.address.streetAddress && { streetAddress: data.address.streetAddress }),
+        ...(data.address.postalCode && { postalCode: data.address.postalCode }),
       },
     }),
     ...(data.contactPoint && {
       contactPoint: {
         '@type': 'ContactPoint',
-        ...data.contactPoint,
+        telephone: data.contactPoint.telephone,
+        contactType: data.contactPoint.contactType,
+        availableLanguage: data.contactPoint.availableLanguage,
       },
     }),
-    ...(data.sameAs && { sameAs: data.sameAs }),
+    ...(data.sameAs && data.sameAs.length > 0 && { sameAs: data.sameAs }),
   };
 
   return (
@@ -91,6 +95,9 @@ export function OrganizationSchemaTag({ data }: { data: OrganizationSchema }) {
   );
 }
 
+/**
+ * Схема услуги - используется на страницах услуг (аудит, сопровождение и т.д.)
+ */
 export function ServiceSchemaTag({ data }: { data: ServiceSchema }) {
   const schema = {
     '@context': 'https://schema.org',
@@ -98,13 +105,15 @@ export function ServiceSchemaTag({ data }: { data: ServiceSchema }) {
     serviceType: data.serviceType,
     name: data.name,
     description: data.description,
+    ...(data.url && { url: data.url }),
     provider: {
       '@type': 'Organization',
-      name: data.provider.name,
+      '@id': `${SITE_URL}/#organization`,
+      name: ORGANIZATION_DATA.name,
     },
     areaServed: {
       '@type': 'Country',
-      name: data.areaServed.name,
+      name: 'Россия',
     },
   };
 
@@ -116,6 +125,9 @@ export function ServiceSchemaTag({ data }: { data: ServiceSchema }) {
   );
 }
 
+/**
+ * Схема статьи - используется на страницах статей
+ */
 export function ArticleSchemaTag({ data }: { data: ArticleSchema }) {
   const schema = {
     '@context': 'https://schema.org',
@@ -126,14 +138,16 @@ export function ArticleSchemaTag({ data }: { data: ArticleSchema }) {
     dateModified: data.dateModified,
     author: {
       '@type': 'Organization',
-      name: data.author.name,
+      '@id': `${SITE_URL}/#organization`,
+      name: ORGANIZATION_DATA.name,
     },
     publisher: {
       '@type': 'Organization',
-      name: data.publisher.name,
+      '@id': `${SITE_URL}/#organization`,
+      name: ORGANIZATION_DATA.name,
       logo: {
         '@type': 'ImageObject',
-        url: data.publisher.logo.url,
+        url: ORGANIZATION_DATA.logo,
       },
     },
     ...(data.image && {
@@ -149,6 +163,9 @@ export function ArticleSchemaTag({ data }: { data: ArticleSchema }) {
   );
 }
 
+/**
+ * Схема FAQ - используется на страницах с часто задаваемыми вопросами
+ */
 export function FAQSchemaTag({ items }: { items: FAQItem[] }) {
   const schema = {
     '@context': 'https://schema.org',
@@ -171,7 +188,55 @@ export function FAQSchemaTag({ items }: { items: FAQItem[] }) {
   );
 }
 
-// Готовые константы для сайта
+/**
+ * Схема навигации сайта - используется в layout для sitelinks
+ */
+export function SiteNavigationSchemaTag({ items }: { items: SiteNavigationItem[] }) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'SiteNavigationElement',
+      position: index + 1,
+      name: item.name,
+      url: item.url,
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+/**
+ * Схема веб-сайта - используется в layout
+ */
+export function WebSiteSchemaTag() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${SITE_URL}/#website`,
+    name: ORGANIZATION_DATA.name,
+    url: SITE_URL,
+    description: ORGANIZATION_DATA.description,
+    publisher: {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/#organization`,
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+// ==================== КОНСТАНТЫ ====================
 
 export const ORGANIZATION_DATA: OrganizationSchema = {
   name: 'Про Автоматизацию',
@@ -195,3 +260,16 @@ export const ORGANIZATION_DATA: OrganizationSchema = {
     // 'https://vk.com/...',
   ],
 };
+
+/**
+ * Основные страницы для навигационной схемы (sitelinks)
+ * Используется в layout.tsx
+ */
+export const SITE_NAVIGATION: SiteNavigationItem[] = [
+  { name: 'Виджеты amoCRM', url: `${SITE_URL}/widgets` },
+  { name: 'Аудит amoCRM', url: `${SITE_URL}/audit` },
+  { name: 'Сопровождение', url: `${SITE_URL}/accompaniment` },
+  { name: 'Статьи', url: `${SITE_URL}/articles` },
+  { name: 'Кейсы', url: `${SITE_URL}/cases` },
+  { name: 'Лицензии amoCRM', url: `${SITE_URL}/license` },
+];
