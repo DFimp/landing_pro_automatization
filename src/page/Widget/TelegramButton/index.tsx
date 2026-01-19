@@ -7,7 +7,6 @@ import ProblemsCard from "@/shared/ui/ProblemsCard/ProblemsCard";
 import FeaturesCard from "@/shared/ui/FeaturesCard/FeaturesCard";
 import PreviewCard from "@/shared/ui/PreviewCard/PreviewCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
-import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
 import { WIDGETS_DATA } from "@/shared/constants/widgets";
 import { STEPS, CASE_ITEMS, PROBLEMS, FEATURES } from "./constants";
@@ -37,13 +36,6 @@ export default function TelegramButton({
           <>
             <section className="dist-hero">
               <div className="at-container">
-                <Breadcrumbs
-                  items={[
-                    { name: "Главная", href: "/" },
-                    { name: "Виджеты", href: "/widgets" },
-                    { name: "Кнопка Telegram", href: "/widgets/telegram-button" },
-                  ]}
-                />
                 <h1 className="dist-pill dist-bleed-left">
                   Мгновенный переход в Telegram из amoCRM
                 </h1>

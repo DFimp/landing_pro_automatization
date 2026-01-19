@@ -1,4 +1,3 @@
-import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
 import { WIDGETS_DATA } from "@/shared/constants/widgets";
 
@@ -24,13 +23,6 @@ export default function GoogleDocs({
       />
       <main className="bg-transparent">
         <div className="container mx-auto px-4 py-12 max-w-4xl">
-          <Breadcrumbs
-            items={[
-              { name: "Главная", href: "/" },
-              { name: "Виджеты", href: "/widgets" },
-              { name: "Google Документы", href: "/widgets/google-docs" },
-            ]}
-          />
           <h1 className="text-4xl font-bold mb-4">
             ProAutomatization amoCRM for Google Docs
           </h1>

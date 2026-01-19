@@ -6,7 +6,6 @@ import ProblemsCard from "@/shared/ui/ProblemsCard/ProblemsCard";
 import FeaturesCard from "@/shared/ui/FeaturesCard/FeaturesCard";
 import HowItWorksScroll from "./ui/HowItWorksScroll";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
-import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
 import { WIDGETS_DATA } from "@/shared/constants/widgets";
 import { STEPS, PROBLEMS, FEATURES } from "./constants";
@@ -36,13 +35,6 @@ export default function AutoTask({
           <>
             <section className="at-hero">
               <div className="at-container">
-                <Breadcrumbs
-                  items={[
-                    { name: "Главная", href: "/" },
-                    { name: "Виджеты", href: "/widgets" },
-                    { name: "Автозадачи", href: "/widgets/auto-task" },
-                  ]}
-                />
                 <h1 className="at-pill at-bleed-left">
                   Автозадачи в сделках для amoCRM
                 </h1>

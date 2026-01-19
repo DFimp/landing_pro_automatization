@@ -5,7 +5,6 @@ import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
 import CaseCard from "@/shared/ui/Case/CaseCard";
 import ProblemsCard from "@/shared/ui/ProblemsCard/ProblemsCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
-import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
 import { WIDGETS_DATA } from "@/shared/constants/widgets";
 import { STEPS, PROBLEMS, CASE_ITEMS } from "./constants";
@@ -35,13 +34,6 @@ export default function GroupFields({
                     <>
                         <section className="tg-hero">
                             <div className="tg-container">
-                                <Breadcrumbs
-                                    items={[
-                                        { name: "Главная", href: "/" },
-                                        { name: "Виджеты", href: "/widgets" },
-                                        { name: "Группировка полей", href: "/widgets/group-fields" },
-                                    ]}
-                                />
                                 <h1 className="tg-pill tg-bleed-left">
                                     Группировка полей в карточке сделки в amoCRM
                                 </h1>

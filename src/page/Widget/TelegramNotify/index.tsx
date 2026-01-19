@@ -5,7 +5,6 @@ import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
 import SettingsCard from "@/shared/ui/settings/SettingsCard";
 import CaseCard from "@/shared/ui/Case/CaseCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
-import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
 import { WIDGETS_DATA, phone } from "@/shared/constants";
 import { STEPS, CASE_ITEMS } from "./constants";
@@ -35,13 +34,6 @@ export default function TelegramNotify({
           <>
             <section className="at-hero">
               <div className="at-container">
-                <Breadcrumbs
-                  items={[
-                    { name: "Главная", href: "/" },
-                    { name: "Виджеты", href: "/widgets" },
-                    { name: "Telegram уведомления", href: "/widgets/telegram-notify" },
-                  ]}
-                />
                 <h1 className="at-pill at-bleed-left">
                   Телеграм уведомления для amoCRM
                 </h1>

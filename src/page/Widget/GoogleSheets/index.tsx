@@ -1,4 +1,3 @@
-import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
 import { WIDGETS_DATA } from "@/shared/constants/widgets";
 
@@ -23,15 +22,6 @@ export default function Googleheets({
         }}
       />
       <div className="container mx-auto px-4 py-12 max-w-4xl">
-        {!isIframe && (
-          <Breadcrumbs
-            items={[
-              { name: "Главная", href: "/" },
-              { name: "Виджеты", href: "/widgets" },
-              { name: "Google Таблицы", href: "/widgets/google-sheets" },
-            ]}
-          />
-        )}
         <h1 className="text-4xl font-bold mb-4">
           ProAutomatization amoCRM for Googlesheets
         </h1>
