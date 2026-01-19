@@ -1,17 +1,14 @@
 import type { Metadata } from "next";
 import СlosingBan from "@/page/Widget/СlosingBan";
-import { createSEOMetadata, CORE_KEYWORDS } from "@/shared/lib/seo";
+import { createSEOMetadata } from "@/shared/lib/seo";
+import { WIDGETS_DATA } from "@/shared/constants/widgets";
+
+const widget = WIDGETS_DATA['closing-ban'];
 
 export const metadata: Metadata = createSEOMetadata({
-  title: "Запрет закрытия сделок в amoCRM — контроль качества",
-  description: "Виджет блокирует закрытие сделок при невыполнении условий. Обязательные поля, контроль процесса. От 990₽.",
-  keywords: [
-    'запрет закрытия сделок amocrm',
-    'блокировка закрытия amocrm',
-    'контроль сделок amocrm',
-    'обязательные поля amocrm',
-    ...CORE_KEYWORDS.widgets,
-  ],
+  title: widget.title,
+  description: widget.description,
+  keywords: widget.keywords,
   canonical: "/widgets/closing-ban",
   ogType: "website",
 });

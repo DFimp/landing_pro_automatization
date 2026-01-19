@@ -1,21 +1,18 @@
 import type { Metadata } from "next";
 import ArticleDuplicateLeads from "@/page/Article/DuplicateLeads";
 import { createSEOMetadata } from "@/shared/lib/seo";
+import { ARTICLES_DATA } from "@/shared/constants/articles";
+
+const article = ARTICLES_DATA['duplicate-leads'];
 
 export const metadata: Metadata = createSEOMetadata({
-  title: "Как работать с дублями сделок в amoCRM — 3 кейса на практике",
-  description: "Разбираем на реальных кейсах, как правильно объединять дубли сделок в amoCRM. Не потерять клиентов, сэкономить время менеджеров. Читать 7 минут.",
-  keywords: [
-    "дубли сделок amocrm",
-    "объединение дублей amocrm",
-    "работа с дублями amocrm",
-    "склеивание сделок amocrm",
-    "кейсы amocrm",
-  ],
+  title: article.title,
+  description: article.description,
+  keywords: article.keywords,
   canonical: "/articles/duplicate-leads",
   ogType: "article",
-  publishedTime: "2025-10-01T00:00:00Z",
-  modifiedTime: "2026-01-15T00:00:00Z",
+  publishedTime: article.publishedTime,
+  modifiedTime: article.modifiedTime,
 });
 
 export default function Page() {

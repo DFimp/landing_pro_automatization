@@ -1,17 +1,14 @@
 import type { Metadata } from "next";
 import Googleheets from "@/page/Widget/GoogleSheets";
-import { createSEOMetadata, CORE_KEYWORDS } from "@/shared/lib/seo";
+import { createSEOMetadata } from "@/shared/lib/seo";
+import { WIDGETS_DATA } from "@/shared/constants/widgets";
+
+const widget = WIDGETS_DATA['google-sheets'];
 
 export const metadata: Metadata = createSEOMetadata({
-  title: "Google Таблицы для amoCRM — синхронизация данных",
-  description: "Виджет экспортирует данные из amoCRM в Google Таблицы. Автообновление, гибкие настройки, отчеты в реальном времени. От 1990₽.",
-  keywords: [
-    'google таблицы amocrm',
-    'экспорт amocrm google sheets',
-    'синхронизация amocrm google',
-    'интеграция google sheets amocrm',
-    ...CORE_KEYWORDS.widgets,
-  ],
+  title: widget.title,
+  description: widget.description,
+  keywords: widget.keywords,
   canonical: "/widgets/google-sheets",
   ogType: "website",
 });

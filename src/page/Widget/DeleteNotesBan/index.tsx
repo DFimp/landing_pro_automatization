@@ -8,7 +8,10 @@ import FeaturesCard from "@/shared/ui/FeaturesCard/FeaturesCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
 import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
+import { WIDGETS_DATA } from "@/shared/constants/widgets";
 import { STEPS, CASE_ITEMS, PROBLEMS, FEATURES } from "./constants";
+
+const widget = WIDGETS_DATA['delete-notes-ban'];
 
 export default function DeleteNotesBan({
     searchParams,
@@ -22,8 +25,8 @@ export default function DeleteNotesBan({
             <ServiceSchemaTag
                 data={{
                     serviceType: "Разработка виджетов amoCRM",
-                    name: "Запрет удаления примечаний для amoCRM",
-                    description: "Виджет запрещает удаление примечаний для выбранных ролей и обеспечивает сохранность истории",
+                    name: widget.title,
+                    description: widget.description,
                     provider: { name: "Про Автоматизацию" },
                     areaServed: { name: "Россия" },
                 }}

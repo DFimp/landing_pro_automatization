@@ -1,17 +1,14 @@
 import type { Metadata } from "next";
 import FeedFilter from "@/page/Widget/SettingsFeed";
-import { createSEOMetadata, CORE_KEYWORDS } from "@/shared/lib/seo";
+import { createSEOMetadata } from "@/shared/lib/seo";
+import { WIDGETS_DATA } from "@/shared/constants/widgets";
+
+const widget = WIDGETS_DATA['setting-feed'];
 
 export const metadata: Metadata = createSEOMetadata({
-    title: "Настройка ленты в amoCRM — кастомизация интерфейса",
-    description: "Виджет позволяет настраивать отображение ленты событий. Фильтры, группировка, персонализация. От 490₽.",
-    keywords: [
-        'настройка ленты amocrm',
-        'кастомизация ленты amocrm',
-        'фильтры событий amocrm',
-        'интерфейс ленты amocrm',
-        ...CORE_KEYWORDS.widgets,
-    ],
+    title: widget.title,
+    description: widget.description,
+    keywords: widget.keywords,
     canonical: "/widgets/setting-feed",
     ogType: "website",
 });

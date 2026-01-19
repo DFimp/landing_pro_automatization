@@ -7,7 +7,10 @@ import ProblemsCard from "@/shared/ui/ProblemsCard/ProblemsCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
 import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
+import { WIDGETS_DATA } from "@/shared/constants/widgets";
 import { STEPS, PROBLEMS, CASE_ITEMS } from "./constants";
+
+const widget = WIDGETS_DATA['group-fields'];
 
 export default function GroupFields({
     searchParams,
@@ -21,8 +24,8 @@ export default function GroupFields({
             <ServiceSchemaTag
                 data={{
                     serviceType: "Разработка виджетов amoCRM",
-                    name: "Группировка полей в карточке сделки amoCRM",
-                    description: "Виджет для автоматической группировки полей в карточке сделки по логическим блокам с удобной навигацией",
+                    name: widget.title,
+                    description: widget.description,
                     provider: { name: "Про Автоматизацию" },
                     areaServed: { name: "Россия" },
                 }}

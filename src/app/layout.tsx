@@ -23,20 +23,6 @@ export const metadata: Metadata = {
     template: "%s | Про Автоматизацию"
   },
 
-  description: "Эксперт по amoCRM: разработка виджетов, автоматизация бизнес-процессов, интеграции. Настройка CRM под ключ, консультации и внедрение amoCRM для вашего бизнеса.",
-
-  keywords: [
-    "про автоматизацию",
-    "amoCRM",
-    "amocrm",
-    "amo crm",
-    "автоматизация amoCRM",
-    "виджеты amoCRM",
-    "интеграция amoCRM",
-    "настройка amoCRM",
-    "внедрение CRM",
-  ],
-
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: '108x108' },
@@ -64,12 +50,6 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-  },
-
-  openGraph: {
-    type: 'website',
-    locale: 'ru_RU',
-    siteName: 'Про Автоматизацию',
   },
 };
 

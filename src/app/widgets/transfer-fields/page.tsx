@@ -1,17 +1,14 @@
 import type { Metadata } from "next";
 import TransferFields from "@/page/Widget/TransferFields";
-import { createSEOMetadata, CORE_KEYWORDS } from "@/shared/lib/seo";
+import { createSEOMetadata } from "@/shared/lib/seo";
+import { WIDGETS_DATA } from "@/shared/constants/widgets";
+
+const widget = WIDGETS_DATA['transfer-fields'];
 
 export const metadata: Metadata = createSEOMetadata({
-    title: "Перенос полей в amoCRM — копирование данных между сущностями",
-    description: "Виджет переносит данные между сделками, контактами, компаниями. Автоматизация заполнения, экономия времени. От 990₽.",
-    keywords: [
-        'перенос полей amocrm',
-        'копирование данных amocrm',
-        'перенос данных amocrm',
-        'автозаполнение amocrm',
-        ...CORE_KEYWORDS.widgets,
-    ],
+    title: widget.title,
+    description: widget.description,
+    keywords: widget.keywords,
     canonical: "/widgets/transfer-fields",
     ogType: "website",
 });

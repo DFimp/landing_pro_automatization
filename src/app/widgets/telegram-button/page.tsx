@@ -1,17 +1,14 @@
 import type { Metadata } from "next";
 import TelegramButton from "@/page/Widget/TelegramButton";
-import { createSEOMetadata, CORE_KEYWORDS } from "@/shared/lib/seo";
+import { createSEOMetadata } from "@/shared/lib/seo";
+import { WIDGETS_DATA } from "@/shared/constants/widgets";
+
+const widget = WIDGETS_DATA['telegram-button'];
 
 export const metadata: Metadata = createSEOMetadata({
-  title: "Кнопка Telegram для amoCRM — быстрый переход в чат",
-  description: "Виджет добавляет кнопку быстрого перехода в Telegram-чат клиента. Мгновенная коммуникация прямо из CRM. От 490₽.",
-  keywords: [
-    'кнопка telegram amocrm',
-    'telegram чат amocrm',
-    'быстрый переход telegram',
-    'интеграция telegram amocrm',
-    ...CORE_KEYWORDS.widgets,
-  ],
+  title: widget.title,
+  description: widget.description,
+  keywords: widget.keywords,
   canonical: "/widgets/telegram-button",
   ogType: "website",
 });

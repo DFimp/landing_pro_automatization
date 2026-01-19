@@ -7,7 +7,10 @@ import ProblemsCard from "@/shared/ui/ProblemsCard/ProblemsCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
 import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
+import { WIDGETS_DATA } from "@/shared/constants/widgets";
 import { STEPS, CASE_ITEMS, PROBLEMS } from "./constants";
+
+const widget = WIDGETS_DATA['lead-distribution'];
 
 export default function Distribution({
   searchParams,
@@ -21,8 +24,8 @@ export default function Distribution({
       <ServiceSchemaTag
         data={{
           serviceType: "Разработка виджетов amoCRM",
-          name: "Распределение сделок в amoCRM",
-          description: "Виджет для автоматического распределения сделок между менеджерами по правилам с учетом нагрузки и приоритетов",
+          name: widget.title,
+          description: widget.description,
           provider: { name: "Про Автоматизацию" },
           areaServed: { name: "Россия" },
         }}

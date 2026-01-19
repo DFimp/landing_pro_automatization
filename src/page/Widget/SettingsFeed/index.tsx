@@ -7,7 +7,10 @@ import FeaturesCard from "@/shared/ui/FeaturesCard/FeaturesCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
 import { Breadcrumbs } from "@/shared/ui/Breadcrumbs";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
+import { WIDGETS_DATA } from "@/shared/constants/widgets";
 import { STEPS, PROBLEMS, FEATURES } from "./constants";
+
+const widget = WIDGETS_DATA['setting-feed'];
 
 export default function FeedFilter({
     searchParams,
@@ -21,8 +24,8 @@ export default function FeedFilter({
             <ServiceSchemaTag
                 data={{
                     serviceType: "Разработка виджетов amoCRM",
-                    name: "Настройка ленты для amoCRM",
-                    description: "Виджет позволяет настраивать отображение ленты событий с фильтрами и персонализацией",
+                    name: widget.title,
+                    description: widget.description,
                     provider: { name: "Про Автоматизацию" },
                     areaServed: { name: "Россия" },
                 }}
