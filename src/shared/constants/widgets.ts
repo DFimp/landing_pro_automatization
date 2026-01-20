@@ -141,6 +141,22 @@ export const WIDGETS = [
         showInFooter: true,
         showInSearch: true,
     },
+    {
+        key: "meet-calendar",
+        title: "Календарь записей/встреч",
+        route: widgetRoute("meet-calendar"),
+        aliases: [
+            "календарь",
+            "календарь встреч",
+            "календарь записей",
+            "meeting calendar",
+            "meet calendar",
+            "meet-calendar",
+            "meeting-calendar",
+        ],
+        showInFooter: true,
+        showInSearch: true,
+    },
 ] as const;
 
 export const FOOTER_WIDGETS = WIDGETS.filter((w) => w.showInFooter);
@@ -466,6 +482,22 @@ export const WIDGETS_DATA: Record<string, WidgetData> = {
       'автогенерация документов amocrm',
       'шаблоны google docs amocrm',
       'создание договоров amocrm',
+    ],
+  },
+
+  'meet-calendar': {
+    slug: 'meet-calendar',
+    title: 'Календарь записей/встреч для amoCRM',
+    shortName: 'Календарь встреч',
+    description: 'Виджет "Календарь записей/встреч" для amoCRM позволяет создавать встречи по триггерам и вручную, назначать ответственного, дату и время, описание и продолжительность.',
+    link: '/widgets/meet-calendar',
+    variant: 4,
+    tags: ['Календарь', 'Встречи', 'Автоматизация'],
+    keywords: [
+      'календарь встреч amocrm',
+      'календарь записей amocrm',
+      'встречи по триггеру amocrm',
+      'meeting calendar amocrm',
     ],
   },
 };
