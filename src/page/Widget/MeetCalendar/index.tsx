@@ -62,10 +62,12 @@ export default function MeetingCalendarPage({
               items={CASE_ITEMS}
             />
 
+            {/*
             <PreviewCard
               title="Посмотрите, как выглядит календарь"
               subtitle="Управляйте встречами прямо в amoCRM и не теряйте контекст сделок."
             />
+            */}
           </>
         )}
 
