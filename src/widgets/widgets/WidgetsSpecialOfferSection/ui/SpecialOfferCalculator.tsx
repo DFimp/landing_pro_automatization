@@ -13,7 +13,7 @@ type MonthsOption = 5 | 7 | 9 | 17;
 
 export default function SpecialOfferCalculator() {
   const [monthsCount, setMonthsCount] = useState<MonthsOption>(7);
-  const [tariff, setTariff] = useState<TariffIndex>(0);
+  const [tariff, setTariff] = useState<TariffIndex>(3);
   const [usersCount, setUsersCount] = useState(10);
 
   const tariffsCosts = [599, 1199, 1699] as const;
