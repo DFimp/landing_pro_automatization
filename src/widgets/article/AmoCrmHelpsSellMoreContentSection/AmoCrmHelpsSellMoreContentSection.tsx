@@ -6,26 +6,11 @@ import ArticleAccentBlock from "@/widgets/article/ArticleContentSection/ui/Artic
 import Reveal from "@/shared/ui/Reveal/Reveal";
 import styles from "@/page/Article/AmoCrmHelpsSell/AmoCrmHelpsSell.module.css";
 
-function ImagePlaceholder() {
+function ArticleImage({ src, alt }: { src: string; alt: string }) {
   return (
     <div className={styles.figure}>
-      <div className={styles.placeholder}>
-        <div className={styles.placeholderInner} />
-      </div>
-    </div>
-  );
-}
-
-function ImagePlaceholderRow() {
-  return (
-    <div className={styles.figure}>
-      <div className={styles.figureRow}>
-        <div className={styles.placeholder}>
-          <div className={styles.placeholderInner} />
-        </div>
-        <div className={styles.placeholder}>
-          <div className={styles.placeholderInner} />
-        </div>
+      <div className={styles.figureFrame}>
+        <img className={styles.figureImg} src={src} alt={alt} loading="lazy" />
       </div>
     </div>
   );
@@ -54,7 +39,10 @@ export default function AmoCrmHelpsSellMoreContentSection() {
       </Reveal>
 
       <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={80}>
-        <ImagePlaceholder />
+        <ArticleImage
+          src="/articles/AmoCRMHelpsSellMore/analytics-growth.png"
+          alt="CRM analytics growth chart"
+        />
       </Reveal>
 
       <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={120}>
@@ -91,7 +79,10 @@ export default function AmoCrmHelpsSellMoreContentSection() {
       </Reveal>
 
       <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={80}>
-        <ImagePlaceholder />
+        <ArticleImage
+          src="/articles/AmoCRMHelpsSellMore/business-segments.png"
+          alt="Business segments labels"
+        />
       </Reveal>
 
       <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={120}>
@@ -128,10 +119,6 @@ export default function AmoCrmHelpsSellMoreContentSection() {
         </ArticleBlockWrapper>
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={80}>
-        <ImagePlaceholderRow />
-      </Reveal>
-
       <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={120}>
         <ArticleBlockWrapper>
           <ArticleSubtitle title="Почему amoCRM идеально подходит для продаж и лидогенерации" />
@@ -164,7 +151,10 @@ export default function AmoCrmHelpsSellMoreContentSection() {
       </Reveal>
 
       <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={80}>
-        <ImagePlaceholder />
+        <ArticleImage
+          src="/articles/AmoCRMHelpsSellMore/omnichannel-leads.png"
+          alt="Omnichannel leads on mobile"
+        />
       </Reveal>
 
       <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={120}>
