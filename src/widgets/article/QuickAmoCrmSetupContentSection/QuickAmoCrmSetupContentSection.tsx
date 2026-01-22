@@ -54,7 +54,7 @@ export default function QuickAmoCrmSetupContentSection() {
 
       <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60}>
         <ArticleImage
-          src="/articles/QuickAmoCrmSetup/crm-goals-questions.png"
+          src="/articles/QuickAmoCrmSetup/crm-goals-questions.jpeg"
           alt="Questions for CRM goal"
         />
       </Reveal>
@@ -88,7 +88,7 @@ export default function QuickAmoCrmSetupContentSection() {
 
       <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60}>
         <ArticleImage
-          src="/articles/QuickAmoCrmSetup/sales-funnel.png"
+          src="/articles/QuickAmoCrmSetup/sales-funnel.jpeg"
           alt="Sales funnel stages"
         />
       </Reveal>
@@ -113,7 +113,7 @@ export default function QuickAmoCrmSetupContentSection() {
 
       <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60}>
         <ArticleImage
-          src="/articles/QuickAmoCrmSetup/lead-sources-connect.png"
+          src="/articles/QuickAmoCrmSetup/lead-sources-connect.jpeg"
           alt="Connect lead sources"
         />
       </Reveal>
@@ -135,7 +135,7 @@ export default function QuickAmoCrmSetupContentSection() {
 
       <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60}>
         <ArticleImage
-          src="/articles/QuickAmoCrmSetup/required-fields-form.png"
+          src="/articles/QuickAmoCrmSetup/required-fields-form.jpeg"
           alt="Required lead fields form"
         />
       </Reveal>
@@ -161,7 +161,7 @@ export default function QuickAmoCrmSetupContentSection() {
 
       <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60}>
         <ArticleImage
-          src="/articles/QuickAmoCrmSetup/basic-automation.png"
+          src="/articles/QuickAmoCrmSetup/basic-automation.jpeg"
           alt="Basic automation examples"
         />
       </Reveal>
@@ -191,7 +191,7 @@ export default function QuickAmoCrmSetupContentSection() {
 
       <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60}>
         <ArticleImage
-          src="/articles/QuickAmoCrmSetup/manager-tasks.png"
+          src="/articles/QuickAmoCrmSetup/manager-tasks.jpeg"
           alt="Tasks for sales managers"
         />
       </Reveal>
@@ -216,7 +216,7 @@ export default function QuickAmoCrmSetupContentSection() {
 
       <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60}>
         <ArticleImage
-          src="/articles/QuickAmoCrmSetup/crm-analytics.png"
+          src="/articles/QuickAmoCrmSetup/crm-analytics.jpeg"
           alt="CRM analytics dashboard"
         />
       </Reveal>
@@ -241,7 +241,7 @@ export default function QuickAmoCrmSetupContentSection() {
 
       <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60}>
         <ArticleImage
-          src="/articles/QuickAmoCrmSetup/testing-journey.png"
+          src="/articles/QuickAmoCrmSetup/testing-journey.jpeg"
           alt="Testing customer journey"
         />
       </Reveal>
@@ -263,7 +263,7 @@ export default function QuickAmoCrmSetupContentSection() {
 
       <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60}>
         <ArticleImage
-          src="/articles/QuickAmoCrmSetup/common-mistakes.png"
+          src="/articles/QuickAmoCrmSetup/common-mistakes.jpeg"
           alt="Common CRM setup mistakes"
         />
       </Reveal>
@@ -298,3 +298,5 @@ export default function QuickAmoCrmSetupContentSection() {
     </div>
   );
 }
+
+
