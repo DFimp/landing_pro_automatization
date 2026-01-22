@@ -36,22 +36,22 @@ export function HeroSection() {
         "
       >
         <img
-          src="/widgets/Cases/logos/t.webp"
+          src="/widgets/Cases/logos/t.jpeg"
           alt="логотип T-банка"
           className="h-[32px] sm:h-[60px] w-auto"
         />
         <img
-          src="/widgets/Cases/logos/consulting.webp"
+          src="/widgets/Cases/logos/consulting.jpeg"
           alt="логотип Consulting"
           className="h-[32px] sm:h-[60px] w-auto"
         />
         <img
-          src="/widgets/Cases/logos/rzd.webp"
+          src="/widgets/Cases/logos/rzd.jpeg"
           alt="логотип РЖД"
           className="h-[32px] sm:h-[60px] w-auto"
         />
         <img
-          src="/widgets/Cases/logos/smp.webp"
+          src="/widgets/Cases/logos/smp.jpeg"
           alt="логотипСМП"
           className="h-[32px] sm:h-[60px] w-auto"
         />
@@ -59,3 +59,4 @@ export function HeroSection() {
     </section>
   );
 }
+
