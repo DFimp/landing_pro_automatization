@@ -120,7 +120,7 @@ export const PROBLEMS: ProblemItem[] = [
                 письма. Найти нужное — как искать иголку в стоге сена.
             </>
         ),
-        bgUrl: "/widgets/WhatsappButton/back_timer.webp",
+        bgUrl: "/widgets/WhatsappButton/back_timer.jpeg",
     },
     {
         title: "Нужно быстро найти последнюю задачу",
@@ -130,7 +130,7 @@ export const PROBLEMS: ProblemItem[] = [
                 много шума — задача теряется среди событий.
             </>
         ),
-        bgUrl: "/widgets/WhatsappButton/back_switch.webp",
+        bgUrl: "/widgets/WhatsappButton/back_switch.jpeg",
     },
     {
         title: "Проверка коммуникаций перед звонком",
@@ -140,7 +140,7 @@ export const PROBLEMS: ProblemItem[] = [
                 Пролистывать всё вручную — долго и неудобно.
             </>
         ),
-        bgUrl: "/widgets/WhatsappButton/back_cross.webp",
+        bgUrl: "/widgets/WhatsappButton/back_cross.jpeg",
     },
     {
         title: "Контроль работы по сделке",
@@ -150,7 +150,7 @@ export const PROBLEMS: ProblemItem[] = [
                 оценить активность и качество ведения сделки.
             </>
         ),
-        bgUrl: "/widgets/WhatsappButton/back_basket.webp",
+        bgUrl: "/widgets/WhatsappButton/back_basket.jpeg",
     },
     {
         title: "Много системных событий",
@@ -160,7 +160,7 @@ export const PROBLEMS: ProblemItem[] = [
                 комментарии и договорённости становится сложно заметить.
             </>
         ),
-        bgUrl: "/widgets/WhatsappButton/back_timer.webp",
+        bgUrl: "/widgets/WhatsappButton/back_timer.jpeg",
     },
     {
         title: "Догрузка событий ломает фокус",
@@ -170,13 +170,13 @@ export const PROBLEMS: ProblemItem[] = [
                 смешивает всё. Фильтр должен применяться автоматически.
             </>
         ),
-        bgUrl: "/widgets/WhatsappButton/back_switch.webp",
+        bgUrl: "/widgets/WhatsappButton/back_switch.jpeg",
     },
 ];
 
 export const FEATURES: FeatureItem[] = [
     {
-        iconUrl: "/widgets/WhatsappButton/group.webp",
+        iconUrl: "/widgets/WhatsappButton/group.jpeg",
         title: "Фильтр по типам событий",
         text: (
             <>
@@ -186,7 +186,7 @@ export const FEATURES: FeatureItem[] = [
         ),
     },
     {
-        iconUrl: "/widgets/WhatsappButton/sort.webp",
+        iconUrl: "/widgets/WhatsappButton/sort.jpeg",
         title: "Мгновенное переключение",
         text: (
             <>
@@ -195,7 +195,7 @@ export const FEATURES: FeatureItem[] = [
         ),
     },
     {
-        iconUrl: "/widgets/WhatsappButton/free.webp",
+        iconUrl: "/widgets/WhatsappButton/free.jpeg",
         title: "Скрытие пустых дат",
         text: (
             <>
@@ -205,7 +205,7 @@ export const FEATURES: FeatureItem[] = [
         ),
     },
     {
-        iconUrl: "/widgets/WhatsappButton/target.webp",
+        iconUrl: "/widgets/WhatsappButton/target.jpeg",
         title: "Работает в карточке сделки",
         text: (
             <>
@@ -215,7 +215,7 @@ export const FEATURES: FeatureItem[] = [
         ),
     },
     {
-        iconUrl: "/widgets/WhatsappButton/deadline.webp",
+        iconUrl: "/widgets/WhatsappButton/deadline.jpeg",
         title: "Автоприменение при догрузке",
         text: (
             <>
@@ -225,7 +225,7 @@ export const FEATURES: FeatureItem[] = [
         ),
     },
     {
-        iconUrl: "/widgets/WhatsappButton/mobile.webp",
+        iconUrl: "/widgets/WhatsappButton/mobile.jpeg",
         title: "Простота и привычный UI",
         text: (
             <>
@@ -235,3 +235,4 @@ export const FEATURES: FeatureItem[] = [
         ),
     },
 ];
+

@@ -17,7 +17,7 @@ const { isIframe } = useHiddenInIframe();
       <div className="header__logo">
         <Link href="/">
           <Image
-            src="/widgets/header/header_logo.webp"
+            src="/widgets/header/header_logo.jpeg"
             alt="про автоматизацию"
             width={195}
             height={60}
@@ -37,3 +37,4 @@ const { isIframe } = useHiddenInIframe();
 };
 
 export default Header;
+

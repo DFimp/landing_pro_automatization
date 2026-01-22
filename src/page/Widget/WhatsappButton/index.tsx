@@ -78,7 +78,7 @@ export default function WhatsappButton({
               title="Посмотрите, как это работает!"
               subtitle="Просто и понятно - кликнул и уже в чате!"
               videoUrl=""
-              imageUrl="/widgets/WhatsappButton/WhatsApp.webp"
+              imageUrl="/widgets/WhatsappButton/WhatsApp.jpeg"
             />
           </>
         )}
@@ -111,3 +111,4 @@ export default function WhatsappButton({
     </>
   );
 }
+
