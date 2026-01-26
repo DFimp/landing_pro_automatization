@@ -1,4 +1,5 @@
 import SpecialOfferCalculator from "./ui/SpecialOfferCalculator";
+import LicenseBonusComparison from "./ui/LicenseBonusComparison";
 import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
 
 export function WidgetsSpecialOfferSection() {
@@ -29,6 +30,9 @@ export function WidgetsSpecialOfferSection() {
         <div className="flex justify-center mb-[68px]">
           <SpecialOfferCalculator />
         </div>
+
+        <LicenseBonusComparison />
+
       </section>
 
       <aside className="block sm:hidden mt-[31px] mb-[53px]">
