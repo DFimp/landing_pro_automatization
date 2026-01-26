@@ -15,7 +15,7 @@ const { isIframe } = useHiddenInIframe();
   return (
     <header className="container flex justify-between items-center px-4 sm:px-0 !py-4 sm:!py-0 sticky sm:static top-0 sm:top-auto z-100 sm:z-auto bg-white sm:bg-transparent">
       <div className="header__logo">
-        <Link href="/" className="mt-1 flex items-center gap-2 sm:gap-3">
+        <Link href="/" className="my-1 flex items-center gap-2 sm:gap-3">
           <Image
             src="/vector_logo.svg"
             alt="Логотип Про Автоматизацию"
