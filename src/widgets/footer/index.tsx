@@ -175,9 +175,15 @@ export const Footer = () => {
               <ul className="space-y-2 text-[14px] text-[#e9ecff]">
                 {cols[0].items.map((it) => (
                   <li key={it.label}>
-                    <Link href={it.href} className="hover:text-white transition-colors">
-                      {it.label}
-                    </Link>
+                    {it.href === "/cases" ? (
+                      <span className="text-white/40 cursor-not-allowed select-none">
+                        {it.label}
+                      </span>
+                    ) : (
+                      <Link href={it.href} className="hover:text-white transition-colors">
+                        {it.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

@@ -33,13 +33,19 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
         <ul className="px-8 flex flex-col gap-[40px]">
           {ServicesItems.map((link, index) => (
             <li key={index} className="text-[18px] uppercase">
-              <Link
-                href={link.link}
-                className=""
-                onNavigate={() => setIsOpen(false)}
-              >
-                {link.name}
-              </Link>
+              {link.link === "/cases" ? (
+                <span className="text-black/40 cursor-not-allowed select-none">
+                  {link.name}
+                </span>
+              ) : (
+                <Link
+                  href={link.link}
+                  className=""
+                  onNavigate={() => setIsOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              )}
             </li>
           ))}
           <li key={-1} className="text-[18px] uppercase">

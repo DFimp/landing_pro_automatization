@@ -36,12 +36,9 @@ const HeaderNav = () => {
         </li>
 
         <li>
-          <Link
-            href="/cases"
-            className="font-medium text-h8 hover:text-blue transition-colors duration-300"
-          >
+          <span className="font-medium text-h8 text-black/40 cursor-not-allowed select-none">
             КЕЙСЫ
-          </Link>
+          </span>
         </li>
 
         <li>
