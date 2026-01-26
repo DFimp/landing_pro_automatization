@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { detectMobile } from "@/shared/utils/detectMobile";
 
-type MonthsOption = 5 | 7 | 9 | 17;
+type MonthsOption = 6 | 9 | 12 | 24;
 
 interface SpecialOfferSliderProps {
   setValue: (v: MonthsOption) => void;
@@ -13,7 +13,7 @@ interface SpecialOfferSliderProps {
 export default function SpecialOfferSlider({ setValue, value }: SpecialOfferSliderProps) {
   const { isMobileView } = detectMobile();
 
-  const availableValues = [5, 7, 9, 17] as const;
+  const availableValues = [6, 9, 12, 24] as const;
   const availableValuesLabels = ["+ 1 месяц", "+ 2 месяца", "+ 3 месяца", "+ 7 месяцев"] as const;
 
   const [currentValue, setCurrentValue] = useState<MonthsOption>(value);
