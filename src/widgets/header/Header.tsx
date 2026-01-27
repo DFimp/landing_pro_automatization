@@ -19,12 +19,12 @@ const { isIframe } = useHiddenInIframe();
           <Image
             src="/vector_logo.svg"
             alt="Логотип Про Автоматизацию"
-            width={60}
-            height={81}
-            className="h-[56px] w-[42px] sm:h-[81px] sm:w-[60px]"
+            width={40}
+            height={55}
+            className="h-[48px] w-[36px] sm:h-[55px] sm:w-[40px]"
             priority
           />
-          <span className="font-medium uppercase leading-[1.05] text-h7 sm:text-h5">
+          <span className="font-medium uppercase leading-[1.05] text-h8 sm:text-h7">
             <span className="block">ПРО</span>
             <span className="block">АВТОМАТИЗАЦИЮ</span>
           </span>
