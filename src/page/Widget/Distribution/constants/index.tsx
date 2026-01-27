@@ -40,7 +40,7 @@ export const STEPS = [
           </p>
 
           <img
-            src="/widgets/Distribution/allocate_leads_active_panel.webp"
+            src="/widgets/Distribution/allocate_leads_active_panel.jpeg"
             alt="активность менеджеров"
             style={{
               display: "block",
@@ -167,6 +167,54 @@ export const STEPS = [
               целевого процента.
             </div>
           </div>
+        </div>
+      ),
+    },
+    {
+      title: "Логика распределения по процентам",
+      content: (
+        <div>
+          <p>
+            Каждому менеджеру задаётся процент от общего потока сделок. При
+            поступлении новой сделки виджет анализирует, кто из менеджеров на
+            данный момент получил меньше своей доли, и назначает сделку именно
+            ему. Это гарантирует, что со временем каждый менеджер получит ровно
+            столько сделок, сколько ему положено по проценту.
+          </p>
+          <p>
+            Пример: если менеджеру А назначено 80%, а менеджеру Б — 20%, то из
+            каждых 10 сделок А получит 8, а Б получит 2.
+          </p>
+          <div className="sc-note sc-note--blue">
+            <div className="sc-note-title">
+              <strong>Пример</strong>
+            </div>
+            <div>
+              Если менеджеру А назначено 80%, а менеджеру Б — 20%, то из каждых
+              10 сделок А получит 8, а Б получит 2.
+            </div>
+          </div>
+          <div className="sc-note sc-note--blue">
+            <div className="sc-note-title">
+              <strong>Пример с отключением активности</strong>
+            </div>
+            <div>
+              Допустим, у менеджера А — 80%, у менеджера Б — 20%. Если отключить
+              активность менеджера Б, все новые сделки начнёт получать менеджер
+              А. Когда Б снова станет активным (при условии, что сами проценты
+              не менялись), система увидит, что Б «отстаёт» от своей доли, и
+              начнёт направлять сделки преимущественно ему — пока соотношение не
+              выровняется до 80:20. После этого распределение продолжится в
+              обычном режиме.
+            </div>
+          </div>
+          <p style={{ marginTop: 12 }}>
+            Если изменить настройки — добавить или убрать менеджера из
+            распределения, либо изменить сами проценты — система обнулит
+            накопленные счётчики и начнёт считать с нуля. Это нужно, чтобы
+            старая статистика не влияла на новые правила распределения и новая
+            конфигурация сразу вступила в силу.
+          </p>
         </div>
       ),
     },
@@ -360,7 +408,7 @@ export const PROBLEMS: ProblemItem[] = [
           эффективность команды.
         </>
       ),
-      bgUrl: "/widgets/Distribution/back_question.webp",
+      bgUrl: "/widgets/Distribution/back_question.jpeg",
     },
     {
       title: "Потеря горячих лидов",
@@ -370,7 +418,7 @@ export const PROBLEMS: ProblemItem[] = [
           клиент уходит к конкурентам.
         </>
       ),
-      bgUrl: "/widgets/Distribution/back_basket.webp",
+      bgUrl: "/widgets/Distribution/back_basket.jpeg",
     },
     {
       title: "Конфликты в команде",
@@ -380,7 +428,7 @@ export const PROBLEMS: ProblemItem[] = [
           атмосферу в коллективе.
         </>
       ),
-      bgUrl: "/widgets/Distribution/back_lightning.webp",
+      bgUrl: "/widgets/Distribution/back_lightning.jpeg",
     },
     {
       title: "Снижение конверсии",
@@ -391,6 +439,7 @@ export const PROBLEMS: ProblemItem[] = [
           что ведёт к потере продаж.
         </>
       ),
-      bgUrl: "/widgets/Distribution/back_settings.webp",
+      bgUrl: "/widgets/Distribution/back_settings.jpeg",
     },
   ];
+

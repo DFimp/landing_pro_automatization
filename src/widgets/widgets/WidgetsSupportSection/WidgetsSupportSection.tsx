@@ -1,6 +1,7 @@
 import Button from "@/shared/ui/button/Button";
 import SupportChips from "./ui/SupportChips";
 import Image from "next/image";
+import LicenseBonusComparison from "@/widgets/widgets/WidgetsSpecialOfferSection/ui/LicenseBonusComparison";
 
 export function WidgetsSupportSection() {
   return (
@@ -46,6 +47,7 @@ export function WidgetsSupportSection() {
       </div>
       <div className="container sm:bg-transparent bg-[#AFC1FF80]">
         <div className="text-center  sm:pt-0 pt-[35px] sm:px-0 px-[22px] sm:pb-0 pb-[48px] sm:mt-0 mt-[59px]">
+          <LicenseBonusComparison />
           <h5 className="sm:text-[32px] text-[20px] font-semibold text-[#3760E7] sm:mb-[38px] mb-[19px]">
             2 часа сопровождения <span className="sm:inline block"></span>в
             месяц включено

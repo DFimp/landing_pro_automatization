@@ -29,6 +29,7 @@ export function WidgetsSpecialOfferSection() {
         <div className="flex justify-center mb-[68px]">
           <SpecialOfferCalculator />
         </div>
+
       </section>
 
       <aside className="block sm:hidden mt-[31px] mb-[53px]">

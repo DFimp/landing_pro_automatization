@@ -137,7 +137,7 @@ export const PROBLEMS: ProblemItem[] = [
         клиента.
       </>
     ),
-    bgUrl: "/widgets/TelegramButton/back_wheel.webp",
+    bgUrl: "/widgets/TelegramButton/back_wheel.jpeg",
   },
   {
     title: "Ошибки в номерах",
@@ -147,7 +147,7 @@ export const PROBLEMS: ProblemItem[] = [
         клиента или идут не тому человеку.
       </>
     ),
-    bgUrl: "/widgets/TelegramButton/back_what.webp",
+    bgUrl: "/widgets/TelegramButton/back_what.jpeg",
   },
   {
     title: "Потеря концентрации",
@@ -157,7 +157,7 @@ export const PROBLEMS: ProblemItem[] = [
         и Telegram сбивает с рабочего ритма и снижает продуктивность.
       </>
     ),
-    bgUrl: "/widgets/TelegramButton/back_electricity.webp",
+    bgUrl: "/widgets/TelegramButton/back_electricity.jpeg",
   },
   {
     title: "Упущенные продажи",
@@ -167,13 +167,13 @@ export const PROBLEMS: ProblemItem[] = [
         Telegram, клиент может передумать или обратиться к конкурентам.
       </>
     ),
-    bgUrl: "/widgets/TelegramButton/back_basket.webp",
+    bgUrl: "/widgets/TelegramButton/back_basket.jpeg",
   },
 ];
 
 export const FEATURES: FeatureItem[] = [
   {
-    iconUrl: "/widgets/TelegramButton/group.webp",
+    iconUrl: "/widgets/TelegramButton/group.jpeg",
     title: "Поддержка всех номеров",
     text: (
       <>
@@ -183,7 +183,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/TelegramButton/sort.webp",
+    iconUrl: "/widgets/TelegramButton/sort.jpeg",
     title: "Автоматическое форматирование",
     text: (
       <>
@@ -193,7 +193,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/TelegramButton/deadline.webp",
+    iconUrl: "/widgets/TelegramButton/deadline.jpeg",
     title: "Мгновенная работа",
     text: (
       <>
@@ -203,7 +203,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/TelegramButton/mobile.webp",
+    iconUrl: "/widgets/TelegramButton/mobile.jpeg",
     title: "Веб и мобильные версии",
     text: (
       <>
@@ -213,7 +213,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/TelegramButton/target.webp",
+    iconUrl: "/widgets/TelegramButton/target.jpeg",
     title: "Точное попадание",
     text: (
       <>
@@ -223,7 +223,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/TelegramButton/free.webp",
+    iconUrl: "/widgets/TelegramButton/free.jpeg",
     title: "Полностью бесплатно",
     text: (
       <>

@@ -1,4 +1,4 @@
-type MonthsOption = 5 | 7 | 9 | 17;
+type MonthsOption = 6 | 9 | 12 | 24;
 
 interface SpecialOfferProfitProps {
   months: MonthsOption;
@@ -7,10 +7,10 @@ interface SpecialOfferProfitProps {
 
 export default function SpecialOfferProfit({ months, profit }: SpecialOfferProfitProps) {
   const bonusMonths: Record<MonthsOption, string> = {
-    5: "+ 1 месяц",
-    7: "+ 2 месяца",
-    9: "+ 3 месяца",
-    17: "+ 7 месяцев",
+    6: "+ 1 месяц",
+    9: "+ 2 месяца",
+    12: "+ 3 месяца",
+    24: "+ 7 месяцев",
   };
 
   return (
