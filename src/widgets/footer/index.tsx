@@ -60,7 +60,7 @@ export const Footer = () => {
           { label: "Сопровождение", href: "/#support" },
           { label: "Лицензия", href: "/license" },
           { label: "Статьи", href: "/articles" },
-          { label: "Кейсы", href: "/cases" },
+//           { label: "Кейсы", href: "/cases" },
         ] as FooterLink[],
       },
     ],
@@ -175,15 +175,11 @@ export const Footer = () => {
               <ul className="space-y-2 text-[14px] text-[#e9ecff]">
                 {cols[0].items.map((it) => (
                   <li key={it.label}>
-                    {it.href === "/cases" ? (
-                      <span className="text-white/40 cursor-not-allowed select-none">
-                        {it.label}
-                      </span>
-                    ) : (
+                    {
                       <Link href={it.href} className="hover:text-white transition-colors">
                         {it.label}
                       </Link>
-                    )}
+                    }
                   </li>
                 ))}
               </ul>

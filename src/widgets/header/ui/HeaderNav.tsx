@@ -33,13 +33,16 @@ const HeaderNav = () => {
           >
             ЛИЦЕНЗИЯ
           </Link>
-        </li>
-
+        </li>{/*
         <li>
-          <span className="font-medium text-h8 text-black/40 cursor-not-allowed select-none">
+          <Link
+            href="/cases"
+            className="font-medium text-h8 hover:text-blue transition-colors duration-300"
+          >
             КЕЙСЫ
-          </span>
+          </Link>
         </li>
+        */}
 
         <li>
           <Link
