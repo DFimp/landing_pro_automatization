@@ -107,6 +107,7 @@ export const Footer = () => {
     setSelected(w);
     setQuery(w.label);
     closeDropdown();
+    router.push(w.href);
   };
 
   const go = () => {
@@ -307,7 +308,10 @@ export const Footer = () => {
                           <li key={w.href}>
                             <button
                               type="button"
-                              onClick={() => pickWidget(w)}
+                              onMouseDown={(e) => {
+                                e.preventDefault();
+                                pickWidget(w);
+                              }}
                               className={`w-full text-left px-4 py-2 text-[14px] transition ${idx === activeIndex
                                   ? "bg-white/10 text-white"
                                   : "text-[#e9ecff] hover:bg-white/8 hover:text-white"
