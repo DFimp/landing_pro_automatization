@@ -250,7 +250,7 @@ export const PROBLEMS: ProblemItem[] = [
         сделок, что приводит к путанице и потере важной информации.
       </>
     ),
-    bgUrl: "/widgets/BackAll/back_web.webp",
+    bgUrl: "/widgets/BackAll/back_web.jpeg",
   },
   {
     title: "Потеря времени",
@@ -260,7 +260,7 @@ export const PROBLEMS: ProblemItem[] = [
         дублированных сделок.
       </>
     ),
-    bgUrl: "/widgets/BackAll/back_watch.webp",
+    bgUrl: "/widgets/BackAll/back_watch.jpeg",
   },
   {
     title: "Неточная статистика",
@@ -271,7 +271,7 @@ export const PROBLEMS: ProblemItem[] = [
         управленческих решений.
       </>
     ),
-    bgUrl: "/widgets/BackAll/back_chart.webp",
+    bgUrl: "/widgets/BackAll/back_chart.jpeg",
   },
   {
     title: "Упущенные продажи",
@@ -281,13 +281,13 @@ export const PROBLEMS: ProblemItem[] = [
         или дважды обработать одну заявку, что снижает эффективность.
       </>
     ),
-    bgUrl: "/widgets/BackAll/back_basket.webp",
+    bgUrl: "/widgets/BackAll/back_basket.jpeg",
   },
 ];
 
 export const FEATURES: FeatureItem[] = [
   {
-    iconUrl: "/widgets/BackAll/gear.webp",
+    iconUrl: "/widgets/BackAll/gear.jpeg",
     title: "Умное объединение данных",
     text: (
       <>
@@ -298,7 +298,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/BackAll/burger.webp",
+    iconUrl: "/widgets/BackAll/burger.jpeg",
     title: "Гибкая настройка приоритетов",
     text: (
       <>
@@ -308,7 +308,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/BackAll/shield.webp",
+    iconUrl: "/widgets/BackAll/shield.jpeg",
     title: "Безопасность данных",
     text: (
       <>
@@ -318,7 +318,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/BackAll/tag.webp",
+    iconUrl: "/widgets/BackAll/tag.jpeg",
     title: "Система исключений",
     text: (
       <>
@@ -328,7 +328,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/BackAll/boxes.webp",
+    iconUrl: "/widgets/BackAll/boxes.jpeg",
     title: "Альтернативные условия",
     text: (
       <>
@@ -338,7 +338,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/BackAll/magnifier.webp",
+    iconUrl: "/widgets/BackAll/magnifier.jpeg",
     title: "Точное обнаружение дублей",
     text: (
       <>

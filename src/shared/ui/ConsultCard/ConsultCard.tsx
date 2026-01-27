@@ -56,7 +56,7 @@ export default function ConsultCard({ className }: ConsultCardProps) {
             />
             <Image
               className="absolute w-[192px] h-[213px] bottom-[-35px] right-[250px] z-1"
-              src="/decor/phoneSmall.webp"
+              src="/decor/phoneSmall.jpeg"
               alt="карточка телефона"
               width={192}
               height={179}
@@ -121,3 +121,4 @@ export default function ConsultCard({ className }: ConsultCardProps) {
     </>
   );
 }
+

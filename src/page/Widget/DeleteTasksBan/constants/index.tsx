@@ -249,7 +249,7 @@ export const PROBLEMS: ProblemItem[] = [
                 намеренно удалять задачи, и вы теряете историю работы с клиентом.
             </>
         ),
-        bgUrl: "/widgets/BackAll/back_web.webp",
+        bgUrl: "/widgets/BackAll/back_web.jpeg",
     },
     {
         title: "Потеря истории и контроля",
@@ -260,7 +260,7 @@ export const PROBLEMS: ProblemItem[] = [
                 отчётам.
             </>
         ),
-        bgUrl: "/widgets/BackAll/back_watch.webp",
+        bgUrl: "/widgets/BackAll/back_watch.jpeg",
     },
     {
         title: "Манипуляции показателями",
@@ -271,7 +271,7 @@ export const PROBLEMS: ProblemItem[] = [
                 отдела продаж.
             </>
         ),
-        bgUrl: "/widgets/BackAll/back_chart.webp",
+        bgUrl: "/widgets/BackAll/back_chart.jpeg",
     },
     {
         title: "Нет прозрачности в работе команды",
@@ -282,13 +282,13 @@ export const PROBLEMS: ProblemItem[] = [
                 эффективность менеджеров.
             </>
         ),
-        bgUrl: "/widgets/BackAll/back_basket.webp",
+        bgUrl: "/widgets/BackAll/back_basket.jpeg",
     },
 ];
 
 export const FEATURES: FeatureItem[] = [
     {
-        iconUrl: "/widgets/BackAll/gear.webp",
+        iconUrl: "/widgets/BackAll/gear.jpeg",
         title: "Глобальный запрет удаления задач",
         text: (
             <>
@@ -298,7 +298,7 @@ export const FEATURES: FeatureItem[] = [
         ),
     },
     {
-        iconUrl: "/widgets/BackAll/shield.webp",
+        iconUrl: "/widgets/BackAll/shield.jpeg",
         title: "Исключения по типам задач",
         text: (
             <>
@@ -309,7 +309,7 @@ export const FEATURES: FeatureItem[] = [
         ),
     },
     {
-        iconUrl: "/widgets/BackAll/tag.webp",
+        iconUrl: "/widgets/BackAll/tag.jpeg",
         title: "Защита задач других менеджеров",
         text: (
             <>
@@ -319,7 +319,7 @@ export const FEATURES: FeatureItem[] = [
         ),
     },
     {
-        iconUrl: "/widgets/BackAll/magnifier.webp",
+        iconUrl: "/widgets/BackAll/magnifier.jpeg",
         title: "Визуальное выделение ограничений",
         text: (
             <>
@@ -329,7 +329,7 @@ export const FEATURES: FeatureItem[] = [
         ),
     },
     {
-        iconUrl: "/widgets/BackAll/burger.webp",
+        iconUrl: "/widgets/BackAll/burger.jpeg",
         title: "Гибкая настройка по ролям",
         text: (
             <>
@@ -340,7 +340,7 @@ export const FEATURES: FeatureItem[] = [
         ),
     },
     {
-        iconUrl: "/widgets/BackAll/shield.webp",
+        iconUrl: "/widgets/BackAll/shield.jpeg",
         title: "Безопасность и совместимость",
         text: (
             <>
@@ -351,3 +351,4 @@ export const FEATURES: FeatureItem[] = [
         ),
     },
 ];
+

@@ -65,7 +65,7 @@ export default function TelegramNotify({
                 <div className="at-feature-card">
                   <div className="at-feature-ico">
                     <Image
-                      src="/widgets/TelegramNotify/bell.webp"
+                      src="/widgets/TelegramNotify/bell.jpeg"
                       alt="иконка колокольчика"
                       width={40}
                       height={40}
@@ -82,7 +82,7 @@ export default function TelegramNotify({
                 <div className="at-feature-card">
                   <div className="at-feature-ico">
                     <Image
-                      src="/widgets/TelegramNotify/letter_star.webp"
+                      src="/widgets/TelegramNotify/letter_star.jpeg"
                       alt="иконка письма"
                       width={40}
                       height={40}
@@ -99,7 +99,7 @@ export default function TelegramNotify({
                 <div className="at-feature-card">
                   <div className="at-feature-ico">
                     <Image
-                      src="/widgets/TelegramNotify/cursor.webp"
+                      src="/widgets/TelegramNotify/cursor.jpeg"
                       alt="иконка курсора"
                       width={40}
                       height={40}
@@ -118,7 +118,7 @@ export default function TelegramNotify({
                 <div className="at-feature-card">
                   <div className="at-feature-ico">
                     <Image
-                      src="/widgets/TelegramNotify/clock.webp"
+                      src="/widgets/TelegramNotify/clock.jpeg"
                       alt="иконка часов"
                       width={40}
                       height={40}
@@ -137,7 +137,7 @@ export default function TelegramNotify({
                 <div className="at-feature-card">
                   <div className="at-feature-ico">
                     <Image
-                      src="/widgets/TelegramNotify/letter_cist.webp"
+                      src="/widgets/TelegramNotify/letter_cist.jpeg"
                       alt="иконка письма с кистью"
                       width={40}
                       height={40}
@@ -154,7 +154,7 @@ export default function TelegramNotify({
                 <div className="at-feature-card">
                   <div className="at-feature-ico">
                     <Image
-                      src="/widgets/TelegramNotify/pyramid.webp"
+                      src="/widgets/TelegramNotify/pyramid.jpeg"
                       alt="иконка пирамидки со стрелкой"
                       width={40}
                       height={40}
@@ -186,7 +186,7 @@ export default function TelegramNotify({
                   <div className="at-phone-wrap">
                     <div className="at-phone-blob" aria-hidden />
                     <Image
-                      src="/widgets/TelegramNotify/telephone.webp"
+                      src="/widgets/TelegramNotify/telephone.png"
                       alt="макет телефона"
                       width={540}
                       height={760}
