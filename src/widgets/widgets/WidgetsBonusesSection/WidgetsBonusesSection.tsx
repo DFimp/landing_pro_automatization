@@ -3,7 +3,7 @@ import { BonusesList } from "./ui/BonusesList";
 
 export function WidgetsBonusesSection() {
   return (
-    <div className="relative sm:h-[1106px] h-[1300px] overflow-hidden">
+    <div className="relative sm:h-[1106px] h-auto pb-0 overflow-hidden">
       <Image
         src="/widgets_background.png"
         alt="фон секции бонусов"
