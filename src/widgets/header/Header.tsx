@@ -18,6 +18,8 @@ const Header = () => {
   const lastScrollY = useRef(0);
   const ticking = useRef(false);
   const accumulatedDelta = useRef(0);
+  const wasNearTop = useRef(true);
+  const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [isFloating, setIsFloating] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [headerHeight, setHeaderHeight] = useState(0);
@@ -51,29 +53,38 @@ const Header = () => {
       const currentY = window.scrollY;
       const delta = currentY - lastScrollY.current;
       const nearTop = currentY <= FLOAT_THRESHOLD;
-
       if (nearTop) {
         setIsFloating(false);
         setIsVisible(true);
         accumulatedDelta.current = 0;
-      } else {
-        setIsFloating(true);
-        if (delta < 0) {
-          accumulatedDelta.current += delta;
-        } else if (delta > 0) {
-          accumulatedDelta.current += delta;
+        if (hideTimer.current) {
+          clearTimeout(hideTimer.current);
+          hideTimer.current = null;
         }
-
+      } else if (delta > 0) {
+        if (accumulatedDelta.current < 0) accumulatedDelta.current = 0;
+        accumulatedDelta.current += delta;
+        if (accumulatedDelta.current >= SCROLL_DELTA) {
+          setIsFloating(false);
+          setIsVisible(false);
+          accumulatedDelta.current = 0;
+          if (hideTimer.current) {
+            clearTimeout(hideTimer.current);
+            hideTimer.current = null;
+          }
+        }
+      } else if (delta < 0) {
+        setIsFloating(true);
+        if (accumulatedDelta.current > 0) accumulatedDelta.current = 0;
+        accumulatedDelta.current += delta;
         if (accumulatedDelta.current <= -SCROLL_DELTA) {
           setIsVisible(true);
-          accumulatedDelta.current = 0;
-        } else if (accumulatedDelta.current >= SCROLL_DELTA) {
-          setIsVisible(false);
           accumulatedDelta.current = 0;
         }
       }
 
       lastScrollY.current = currentY;
+      wasNearTop.current = nearTop;
       ticking.current = false;
     };
 
@@ -93,9 +104,10 @@ const Header = () => {
       <header
         ref={headerRef}
         className={clsx(
-          "w-full transition-transform duration-200",
+          "w-full transition-transform",
+          isVisible ? "duration-200" : "duration-300",
           isFloating
-            ? "fixed left-0 right-0 top-0 z-100 bg-white/70 backdrop-blur-xl border border-white/60 shadow-[0_10px_30px_rgba(15,23,42,0.12)]"
+            ? "fixed left-0 right-0 top-0 z-100 bg-white/70 backdrop-blur-xl shadow-[0_10px_30px_rgba(15,23,42,0.12)]"
             : "relative bg-white sm:bg-transparent",
           isVisible ? "translate-y-0" : "-translate-y-full pointer-events-none"
         )}

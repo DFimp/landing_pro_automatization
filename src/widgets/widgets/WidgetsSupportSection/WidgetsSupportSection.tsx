@@ -21,7 +21,7 @@ export function WidgetsSupportSection() {
         <div className="block sm:hidden border border-[#3760E7] rounded-[20px] py-[21px] px-[16px] font-semibold">
           <div className="flex gap-[10px] mb-[6px]">
             Разберем в
-            <Image src="/zoom_icon.svg" alt="иконка зума" width={62} height={14} />
+            <Image src="/licenses/zoom_icon.svg" alt="иконка зума" width={62} height={14} />
           </div>
           <div className="flex gap-[10px] mb-[6px]">
             Полключимся по
