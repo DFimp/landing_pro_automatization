@@ -37,7 +37,7 @@ const FeaturesCard: React.FC<FeaturesCardProps> = ({
           {items.map((item, i) => (
             <article key={i} className={clsx('at-more-card', item.className)}>
               <div className="at-more-ico" aria-hidden>
-                <img src={item.iconUrl} alt="" />
+                <img src={item.iconUrl} alt={item.title || "Иконка функции"} />
               </div>
               <h3 className="at-more-title">{item.title}</h3>
               <p className="at-more-text">{item.text}</p>

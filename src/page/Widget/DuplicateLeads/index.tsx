@@ -58,7 +58,6 @@ export default function DuplicateLeads({
                   <Link
                     className="article-btn-link"
                     href="/articles/duplicate-leads"
-                    target="_blank"
                   >
                     Статья
                   </Link>

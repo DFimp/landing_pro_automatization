@@ -1,17 +1,28 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import React from "react";
+import React, { Suspense } from "react";
+import dynamic from 'next/dynamic';
 import Header from "@/widgets/header/Header";
 import { Footer } from "@/widgets/footer";
-import { Suspense } from "react";
-import { YandexMetrika, YandexScript } from "@/shared/scripts/YandexMetrika";
-import { GoogleAnalytics, GoogleAnalyticsScript } from "@/shared/scripts/GoogleAnalytics";
-import { 
-  SiteNavigationSchemaTag, 
+import { YandexScript } from "@/shared/scripts/YandexMetrika";
+import { GoogleAnalyticsScript } from "@/shared/scripts/GoogleAnalytics";
+import {
+  SiteNavigationSchemaTag,
   WebSiteSchemaTag,
-  SITE_NAVIGATION 
+  SITE_NAVIGATION
 } from '@/shared/lib/seo';
+import { WebVitals } from './web-vitals';
+
+const YandexMetrika = dynamic(
+  () => import('@/shared/scripts/YandexMetrika').then((mod) => mod.YandexMetrika),
+  { ssr: false }
+);
+
+const GoogleAnalytics = dynamic(
+  () => import('@/shared/scripts/GoogleAnalytics').then((mod) => mod.GoogleAnalytics),
+  { ssr: false }
+);
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -67,16 +78,19 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <head>
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://mc.yandex.ru" />
+        <link rel="dns-prefetch" href="https://mc.yandex.ru" />
         <WebSiteSchemaTag />
         <SiteNavigationSchemaTag items={SITE_NAVIGATION} />
       </head>
       <body className={`${montserrat.variable} antialiased`}>
         <YandexScript />
         <GoogleAnalyticsScript />
-        <Suspense fallback={<></>}>
-          <YandexMetrika />
-          <GoogleAnalytics />
-        </Suspense>
+        <WebVitals />
+        <YandexMetrika />
+        <GoogleAnalytics />
         <Suspense fallback={<div className="h-20" />}>
           <Header />
         </Suspense>
