@@ -468,6 +468,23 @@ export const WIDGETS_DATA: Record<string, WidgetData> = {
       'создание договоров amocrm',
     ],
   },
+
+  'copying-fields': {
+    slug: 'copying-fields',
+    title: 'Копирование полей для amoCRM',
+    shortName: 'Копирование полей',
+    description:
+      'Быстро копируйте и вставляйте пользовательские поля между сделками, контактами и компаниями. Сохраняйте структуру и порядок без ручной настройки.',
+    link: '/widgets/copying-fields',
+    variant: 4,
+    tags: ['Интерфейс', 'Поля'],
+    keywords: [
+      'копирование полей amocrm',
+      'перенос полей amocrm',
+      'вставка полей amocrm',
+      'массовое удаление полей amocrm',
+    ],
+  },
 };
 
 const HIDDEN_WIDGETS = ['google-sheets', 'google-docs'] as const;
