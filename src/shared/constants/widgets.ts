@@ -118,6 +118,23 @@ export const WIDGETS = [
         showInSearch: true,
     },
     {
+        key: "copying-fields",
+        title: "Копирование полей",
+        route: widgetRoute("copying-fields"),
+        aliases: [
+            "копирование",
+            "поля",
+            "копирование полей",
+            "копирование полей между аккаунтами",
+            "перенос полей",
+            "миграция полей",
+            "удаление полей",
+            "удаление полей списком",
+        ],
+        showInFooter: true,
+        showInSearch: true,
+    },
+    {
         key: "delete-notes-ban",
         title: "Запрет удаления заметок",
         route: widgetRoute("delete-notes-ban"),
@@ -471,7 +488,7 @@ export const WIDGETS_DATA: Record<string, WidgetData> = {
 
   'copying-fields': {
     slug: 'copying-fields',
-    title: 'Копирование полей для amoCRM',
+    title: 'Копирование полей между аккаунтами и удаление полей списком для amoCRM',
     shortName: 'Копирование полей',
     description:
       'Быстро копируйте и вставляйте пользовательские поля между сделками, контактами и компаниями. Сохраняйте структуру и порядок без ручной настройки.',

@@ -33,11 +33,11 @@ export default function CopyingFields({
             <section className="dist-hero">
               <div className="at-container">
                 <h1 className="dist-pill dist-bleed-left">
-                  Копирование полей в amoCRM без рутины
+                  Копирование полей между аккаунтами и удаление полей списком в amoCRM без рутины
                 </h1>
 
                 <h2 className="dist-hero-title">
-                  Переносите поля между сделками, контактами и компаниями
+                  Переносите поля между сделками, контактами и компаниями. Удаляйте поля списком
                 </h2>
 
                 <p className="dist-hero-sub">
