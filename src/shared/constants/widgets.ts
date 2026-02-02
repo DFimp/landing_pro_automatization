@@ -118,6 +118,23 @@ export const WIDGETS = [
         showInSearch: true,
     },
     {
+        key: "copying-fields",
+        title: "Копирование полей",
+        route: widgetRoute("copying-fields"),
+        aliases: [
+            "копирование",
+            "поля",
+            "копирование полей",
+            "копирование полей между аккаунтами",
+            "перенос полей",
+            "миграция полей",
+            "удаление полей",
+            "удаление полей списком",
+        ],
+        showInFooter: true,
+        showInSearch: true,
+    },
+    {
         key: "delete-notes-ban",
         title: "Запрет удаления заметок",
         route: widgetRoute("delete-notes-ban"),
@@ -466,6 +483,23 @@ export const WIDGETS_DATA: Record<string, WidgetData> = {
       'автогенерация документов amocrm',
       'шаблоны google docs amocrm',
       'создание договоров amocrm',
+    ],
+  },
+
+  'copying-fields': {
+    slug: 'copying-fields',
+    title: 'Копирование полей между аккаунтами и удаление полей списком для amoCRM',
+    shortName: 'Копирование полей',
+    description:
+      'Быстро копируйте и вставляйте пользовательские поля между сделками, контактами и компаниями. Сохраняйте структуру и порядок без ручной настройки.',
+    link: '/widgets/copying-fields',
+    variant: 4,
+    tags: ['Интерфейс', 'Поля'],
+    keywords: [
+      'копирование полей amocrm',
+      'перенос полей amocrm',
+      'вставка полей amocrm',
+      'массовое удаление полей amocrm',
     ],
   },
 };
