@@ -24,9 +24,8 @@ const Header = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [headerHeight, setHeaderHeight] = useState(0);
 
-  if (isIframe) return null;
-
   useEffect(() => {
+    if (isIframe) return;
     if (!headerRef.current || typeof ResizeObserver === "undefined") {
       return;
     }
@@ -40,9 +39,10 @@ const Header = () => {
     observer.observe(headerRef.current);
 
     return () => observer.disconnect();
-  }, []);
+  }, [isIframe]);
 
   useEffect(() => {
+    if (isIframe) return;
     if (typeof window === "undefined") return;
 
     lastScrollY.current = window.scrollY;
@@ -96,7 +96,9 @@ const Header = () => {
 
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [isIframe]);
+
+  if (isIframe) return null;
 
   return (
     <>
@@ -107,8 +109,8 @@ const Header = () => {
           "w-full transition-transform",
           isVisible ? "duration-200" : "duration-300",
           isFloating
-            ? "fixed left-0 right-0 top-0 z-100 bg-white/70 backdrop-blur-xl shadow-[0_10px_30px_rgba(15,23,42,0.12)]"
-            : "relative bg-white sm:bg-transparent",
+            ? "fixed left-0 right-0 top-0 z-[1500] bg-white/70 backdrop-blur-xl shadow-[0_10px_30px_rgba(15,23,42,0.12)]"
+            : "relative z-[1500] bg-white sm:bg-transparent",
           isVisible ? "translate-y-0" : "-translate-y-full pointer-events-none"
         )}
       >
