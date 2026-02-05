@@ -6,7 +6,7 @@ import SettingsCard from "@/shared/ui/settings/SettingsCard";
 import CaseCard from "@/shared/ui/Case/CaseCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
-import { WIDGETS_DATA, phone } from "@/shared/constants";
+import { WIDGETS_DATA, getWidgetInstallUrl, phone } from "@/shared/constants";
 import { STEPS, CASE_ITEMS } from "./constants";
 
 const widget = WIDGETS_DATA["telegram-notify"];
@@ -23,7 +23,7 @@ export default function TelegramNotify({
       <ServiceSchemaTag
         data={{
           serviceType: "Разработка виджетов amoCRM",
-          name: widget.title,
+          name: widget.seoTitle,
           description: widget.description,
         }}
       />
@@ -49,7 +49,7 @@ export default function TelegramNotify({
                 <div className="at-cta">
                   <a
                     className="at-btn-primary"
-                    href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=c31be896-9148-4ec1-9d7a-2aba7b16906e"
+                    href={getWidgetInstallUrl(widget.clientId!)}
                     target="_blank"
                     rel="noopener"
                   >

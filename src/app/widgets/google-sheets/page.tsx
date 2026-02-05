@@ -7,7 +7,7 @@ const widget = WIDGETS_DATA['google-sheets'];
 
 export const metadata: Metadata = {
   ...createSEOMetadata({
-    title: widget.title,
+    title: widget.seoTitle,
     description: widget.description,
     keywords: widget.keywords,
     canonical: "/widgets/google-sheets",

@@ -6,7 +6,7 @@ import CaseCard from "@/shared/ui/Case/CaseCard";
 import ProblemsCard from "@/shared/ui/ProblemsCard/ProblemsCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
-import { WIDGETS_DATA } from "@/shared/constants/widgets";
+import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 import { STEPS, CASE_ITEMS, PROBLEMS } from "./constants";
 
 const widget = WIDGETS_DATA["lead-distribution"];
@@ -23,7 +23,7 @@ export default function Distribution({
       <ServiceSchemaTag
         data={{
           serviceType: "Разработка виджетов amoCRM",
-          name: widget.title,
+          name: widget.seoTitle,
           description: widget.description,
         }}
       />
@@ -49,7 +49,7 @@ export default function Distribution({
                 <div className="dist-cta">
                   <a
                     className="dist-btn-primary"
-                    href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=9bd50964-9b79-40a5-b786-59c079f7edc8"
+                    href={getWidgetInstallUrl(widget.clientId!)}
                     target="_blank"
                     rel="noopener"
                   >

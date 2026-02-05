@@ -1,5 +1,8 @@
 import type { CaseItem } from "@/shared/ui/Case/CaseCard";
 import type { ProblemItem } from "@/shared/ui/ProblemsCard/ProblemsCard";
+import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
+
+const widget = WIDGETS_DATA["lead-distribution"];
 
 export const STEPS = [
     {
@@ -16,7 +19,7 @@ export const STEPS = [
 
           <div className="sc-cta" style={{ marginTop: 16 }}>
             <a
-              href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=9bd50964-9b79-40a5-b786-59c079f7edc8"
+              href={getWidgetInstallUrl(widget.clientId!)}
               target="_blank"
               rel="noopener"
               className="dist-btn-primary"

@@ -1,6 +1,9 @@
 import type { CaseItem } from "@/shared/ui/Case/CaseCard";
 import type { ProblemItem } from "@/shared/ui/ProblemsCard/ProblemsCard";
 import type { FeatureItem } from "@/shared/ui/FeaturesCard/FeaturesCard";
+import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
+
+const widget = WIDGETS_DATA["whatsapp-button"];
 
 export const STEPS = [
   {
@@ -26,7 +29,7 @@ export const STEPS = [
 
         <div className="sc-cta" style={{ marginTop: 16 }}>
           <a
-            href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=667e5134-9be1-4ee1-8e02-42eb25230f37"
+            href={getWidgetInstallUrl(widget.clientId!)}
             target="_blank"
             rel="noopener"
             className="dist-btn-primary"

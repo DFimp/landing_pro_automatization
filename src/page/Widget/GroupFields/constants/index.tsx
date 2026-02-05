@@ -1,5 +1,8 @@
 import type { CaseItem } from "@/shared/ui/Case/CaseCard";
 import type { ProblemItem } from "@/shared/ui/ProblemsCard/ProblemsCard";
+import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
+
+const widget = WIDGETS_DATA["group-fields"];
 
 export const STEPS = [
     {
@@ -11,7 +14,7 @@ export const STEPS = [
                     стандартной инструкции amoCRM для подключения.
                 </p>
                 <a
-                    href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=b54cc436-b04d-438c-b80f-e8ca06f9265b"
+                    href={getWidgetInstallUrl(widget.clientId!)}
                     target="_blank"
                     rel="noopener"
                     className="sc-btn"

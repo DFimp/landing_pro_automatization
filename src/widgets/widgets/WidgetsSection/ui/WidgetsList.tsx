@@ -23,9 +23,9 @@ function normalize(s: string) {
 
 export function WidgetsList() {
   const widgets: Widget[] = WIDGETS_LIST.map(w => ({
-    title: w.title,
+    title: w.seoTitle,
     text: w.description,
-    link: w.link,
+    link: w.route,
     variant: w.variant,
     tags: w.tags,
   }));

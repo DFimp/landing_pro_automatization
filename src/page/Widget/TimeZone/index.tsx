@@ -5,7 +5,7 @@ import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
 import PreviewCard from "@/shared/ui/PreviewCard/PreviewCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
-import { WIDGETS_DATA } from "@/shared/constants/widgets";
+import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 import { STEPS } from "./constants";
 
 const widget = WIDGETS_DATA["time-zone"];
@@ -22,7 +22,7 @@ export default function TimeZone({
       <ServiceSchemaTag
         data={{
           serviceType: "Разработка виджетов amoCRM",
-          name: widget.title,
+          name: widget.seoTitle,
           description: widget.description,
         }}
       />
@@ -46,7 +46,7 @@ export default function TimeZone({
                 <div className="dist-cta">
                   <a
                     className="dist-btn-primary"
-                    href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=25f94eb8-f182-4296-b86f-da4e26854b47"
+                    href={getWidgetInstallUrl(widget.clientId!)}
                     target="_blank"
                     rel="noopener"
                   >

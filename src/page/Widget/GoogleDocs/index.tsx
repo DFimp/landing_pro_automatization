@@ -15,7 +15,7 @@ export default function GoogleDocs({
       <ServiceSchemaTag
         data={{
           serviceType: "Разработка виджетов amoCRM",
-          name: widget.title,
+          name: widget.seoTitle,
           description: widget.description,
         }}
       />

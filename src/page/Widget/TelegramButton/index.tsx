@@ -8,7 +8,7 @@ import FeaturesCard from "@/shared/ui/FeaturesCard/FeaturesCard";
 import PreviewCard from "@/shared/ui/PreviewCard/PreviewCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
-import { WIDGETS_DATA } from "@/shared/constants/widgets";
+import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 import { STEPS, CASE_ITEMS, PROBLEMS, FEATURES } from "./constants";
 
 const widget = WIDGETS_DATA["telegram-button"];
@@ -25,7 +25,7 @@ export default function TelegramButton({
       <ServiceSchemaTag
         data={{
           serviceType: "Разработка виджетов amoCRM",
-          name: widget.title,
+          name: widget.seoTitle,
           description: widget.description,
         }}
       />
@@ -51,7 +51,7 @@ export default function TelegramButton({
                 <div className="dist-cta">
                   <a
                     className="dist-btn-primary"
-                    href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=26e34407-779d-4b47-bb48-b1ffaed3cc78"
+                    href={getWidgetInstallUrl(widget.clientId!)}
                     target="_blank"
                     rel="noopener"
                   >
