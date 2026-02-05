@@ -1,5 +1,8 @@
 import type { CaseItem } from "@/shared/ui/Case/CaseCard";
 import type { FeatureItem } from "@/shared/ui/FeaturesCard/FeaturesCard";
+import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
+
+const widget = WIDGETS_DATA["telegram-notify"];
 
 export const STEPS = [
   {
@@ -18,7 +21,7 @@ export const STEPS = [
           аккаунта.
         </div>
         <a
-          href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=c31be896-9148-4ec1-9d7a-2aba7b16906e"
+          href={getWidgetInstallUrl(widget.clientId!)}
           target="_blank"
           rel="noopener"
           className="sc-btn"

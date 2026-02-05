@@ -1,5 +1,8 @@
 ﻿import type { ProblemItem } from "@/shared/ui/ProblemsCard/ProblemsCard";
 import type { FeatureItem } from "@/shared/ui/FeaturesCard/FeaturesCard";
+import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
+
+const widget = WIDGETS_DATA["copying-fields"];
 
 export const STEPS = [
   {
@@ -17,7 +20,7 @@ export const STEPS = [
 
         <div className="sc-cta" style={{ marginTop: 16 }}>
           <a
-            href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=29fb59ab-297e-4a2e-a441-e6dda149240f"
+            href={getWidgetInstallUrl(widget.clientId!)}
             target="_blank"
             rel="noopener"
             className="dist-btn-primary"

@@ -7,7 +7,7 @@ import ProblemsCard from "@/shared/ui/ProblemsCard/ProblemsCard";
 import FeaturesCard from "@/shared/ui/FeaturesCard/FeaturesCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
-import { WIDGETS_DATA } from "@/shared/constants/widgets";
+import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 import { STEPS, CASE_ITEMS, PROBLEMS, FEATURES } from "./constants";
 
 const widget = WIDGETS_DATA["delete-tasks-ban"];
@@ -24,7 +24,7 @@ export default function DeleteTasksBan({
       <ServiceSchemaTag
         data={{
           serviceType: "Разработка виджетов amoCRM",
-          name: widget.title,
+          name: widget.seoTitle,
           description: widget.description,
         }}
       />
@@ -50,7 +50,7 @@ export default function DeleteTasksBan({
                 <div className="tg-cta">
                   <a
                     className="tg-btn-primary"
-                    href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=2a208537-35b9-4b8c-805c-e698198f00e9"
+                    href={getWidgetInstallUrl(widget.clientId!)}
                     target="_blank"
                     rel="noopener"
                   >

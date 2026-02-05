@@ -51,7 +51,7 @@ export function ArticlesListItem({
           <Image
             className="absolute left-0 top-0"
             src={upperDecorationPath}
-            alt=""
+            alt="Декоративный элемент"
             width={variant === 3 ? 9999 : 310}
             height={9999}
           />
@@ -67,7 +67,7 @@ export function ArticlesListItem({
           <Image
             className="absolute right-0 bottom-0"
             src={bottomDecorationPath}
-            alt=""
+            alt="Декоративный элемент"
             width={310}
             height={9999}
           />

@@ -1,6 +1,9 @@
 import type { CaseItem } from "@/shared/ui/Case/CaseCard";
 import type { ProblemItem } from "@/shared/ui/ProblemsCard/ProblemsCard";
 import type { FeatureItem } from "@/shared/ui/FeaturesCard/FeaturesCard";
+import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
+
+const widget = WIDGETS_DATA["delete-notes-ban"];
 
 export const STEPS = [
     {
@@ -18,7 +21,7 @@ export const STEPS = [
                     «Параметры», «Инструкция», «Техническая поддержка».
                 </p>
                 <a
-                    href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=0be96111-a8e0-4e5c-9a7b-554336deec05"
+                    href={getWidgetInstallUrl(widget.clientId!)}
                     target="_blank"
                     rel="noopener"
                     className="sc-btn"

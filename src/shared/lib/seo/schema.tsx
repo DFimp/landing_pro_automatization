@@ -37,6 +37,8 @@ export interface ArticleSchema {
   dateModified: string;
   image?: string;
   url?: string;
+  wordCount?: number;
+  articleSection?: string;
 }
 
 export interface FAQItem {
@@ -179,6 +181,13 @@ export function ArticleSchemaTag({ data }: { data: ArticleSchema }) {
     ...(data.image && {
       image: data.image,
     }),
+    ...(data.wordCount && { wordCount: data.wordCount }),
+    articleSection: data.articleSection || 'CRM автоматизация',
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', 'h2', '.article-intro'],
+    },
+    inLanguage: 'ru-RU',
   };
 
   return (
@@ -354,9 +363,7 @@ export const ORGANIZATION_DATA: OrganizationSchema = {
     availableLanguage: 'Russian',
   },
   sameAs: [
-    // Добавьте ссылки на социальные сети
-    // 'https://t.me/...',
-    // 'https://vk.com/...',
+    'https://t.me/proavtomatization_support_bot',
   ],
 };
 

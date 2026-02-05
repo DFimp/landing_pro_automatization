@@ -1,6 +1,9 @@
 import type { CaseItem } from "@/shared/ui/Case/CaseCard";
 import type { ProblemItem } from "@/shared/ui/ProblemsCard/ProblemsCard";
 import type { FeatureItem } from "@/shared/ui/FeaturesCard/FeaturesCard";
+import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
+
+const widget = WIDGETS_DATA["duplicate-leads"];
 
 export const STEPS = [
   {
@@ -12,7 +15,7 @@ export const STEPS = [
           подключения.
         </p>
         <a
-          href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=9036b829-2690-470d-9248-e7c4bb3f6699"
+          href={getWidgetInstallUrl(widget.clientId!)}
           target="_blank"
           rel="noopener"
           className="sc-btn"

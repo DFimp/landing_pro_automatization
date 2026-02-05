@@ -7,7 +7,7 @@ import FeaturesCard from "@/shared/ui/FeaturesCard/FeaturesCard";
 import HowItWorksScroll from "./ui/HowItWorksScroll";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
-import { WIDGETS_DATA } from "@/shared/constants/widgets";
+import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 import { STEPS, PROBLEMS, FEATURES } from "./constants";
 
 const widget = WIDGETS_DATA["auto-tasks"];
@@ -24,7 +24,7 @@ export default function AutoTask({
       <ServiceSchemaTag
         data={{
           serviceType: "Разработка виджетов amoCRM",
-          name: widget.title,
+          name: widget.seoTitle,
           description: widget.description,
         }}
       />
@@ -56,7 +56,7 @@ export default function AutoTask({
                 <div className="at-cta">
                   <a
                     className="at-btn-primary"
-                    href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=ffb5b225-672a-4016-b868-6a98db446851"
+                    href={getWidgetInstallUrl(widget.clientId!)}
                     target="_blank"
                     rel="noopener"
                   >
