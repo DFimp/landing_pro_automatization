@@ -1,4 +1,4 @@
-// ============================================
+﻿// ============================================
 // WIDGETS - для навигации, footer, search
 // ============================================
 
@@ -131,6 +131,14 @@ export const WIDGETS = [
             "удаление полей",
             "удаление полей списком",
         ],
+        showInFooter: true,
+        showInSearch: true,
+    },
+    {
+        key: "hiding-data",
+        title: "Скрытие данных",
+        route: widgetRoute("hiding-data"),
+        aliases: ["скрытие", "данные", "поля", "воронки", "этапы", "теги", "доступ", "ограничение", "visibility", "hide data"],
         showInFooter: true,
         showInSearch: true,
     },
@@ -502,6 +510,26 @@ export const WIDGETS_DATA: Record<string, WidgetData> = {
       'массовое удаление полей amocrm',
     ],
   },
+
+  'hiding-data': {
+    slug: 'hiding-data',
+    title: 'Скрытие данных в amoCRM',
+    shortName: 'Скрытие данных',
+    description:
+      'Скрывайте пункты меню, воронки и этапы, поля в карточках и блоки по тегам. Гибкие режимы (без ограничений, белый и чёрный список), настройки для каждого пользователя и быстрые изменения без ручной правки интерфейса.',
+    link: '/widgets/hiding-data',
+    variant: 1,
+    tags: ['Интерфейс', 'Доступ', 'Безопасность'],
+    keywords: [
+      'скрытие данных amocrm',
+      'ограничение видимости amocrm',
+      'скрыть поля amocrm',
+      'скрыть воронки amocrm',
+      'скрыть этапы amocrm',
+      'скрыть меню amocrm',
+      'скрыть теги amocrm',
+    ],
+  },
 };
 
 const HIDDEN_WIDGETS = ['google-sheets', 'google-docs'] as const;
@@ -509,3 +537,5 @@ const HIDDEN_WIDGETS = ['google-sheets', 'google-docs'] as const;
 export const WIDGETS_LIST = Object.values(WIDGETS_DATA).filter(
   (w) => !HIDDEN_WIDGETS.includes(w.slug as any)
 );
+
+
