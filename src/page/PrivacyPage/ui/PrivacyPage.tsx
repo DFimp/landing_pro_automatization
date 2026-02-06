@@ -68,7 +68,7 @@ export default function PrivacyPage() {
                   <strong>Email:</strong> info@pro-automatization.ru
                 </p>
                 <p>
-                  <strong>Телефон:</strong> +7 (495) 123-45-67
+                  <strong>Телефон:</strong> {phone.display}
                 </p>
                 <p>
                   <strong>Сайт:</strong> https://pro-automatization.ru
