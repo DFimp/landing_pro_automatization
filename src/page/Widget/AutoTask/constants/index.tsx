@@ -1,5 +1,8 @@
 import { type ProblemItem } from "@/shared/ui/ProblemsCard/ProblemsCard";
 import { type FeatureItem } from "@/shared/ui/FeaturesCard/FeaturesCard";
+import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
+
+const widget = WIDGETS_DATA["auto-tasks"];
 
 export const STEPS = [
     {
@@ -18,7 +21,7 @@ export const STEPS = [
             Если нет прав на установку — обратитесь к администратору аккаунта.
           </div>
           <a
-            href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=ffb5b225-672a-4016-b868-6a98db446851"
+            href={getWidgetInstallUrl(widget.clientId!)}
             target="_blank"
             rel="noopener"
             className="sc-btn"

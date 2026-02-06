@@ -17,6 +17,8 @@ export interface ArticleData {
   publishedTime: string;
   modifiedTime: string;
   readTime: string; // "7 минут", "10 минут" и т.д.
+  wordCount?: number;
+  articleSection?: string;
 }
 
 export const ARTICLES_DATA: Record<string, ArticleData> = {
@@ -36,6 +38,8 @@ export const ARTICLES_DATA: Record<string, ArticleData> = {
     publishedTime: '2025-10-01T00:00:00Z',
     modifiedTime: '2026-01-15T00:00:00Z',
     readTime: '7 минут',
+    wordCount: 1250,
+    articleSection: 'Автоматизация CRM',
   },
 
   'helps-sell': {
@@ -54,6 +58,8 @@ export const ARTICLES_DATA: Record<string, ArticleData> = {
     publishedTime: '2025-11-15T00:00:00Z',
     modifiedTime: '2026-01-15T00:00:00Z',
     readTime: '10 минут',
+    wordCount: 1800,
+    articleSection: 'CRM для бизнеса',
   },
 
   'quick-setup': {
@@ -72,6 +78,8 @@ export const ARTICLES_DATA: Record<string, ArticleData> = {
     publishedTime: '2025-12-01T00:00:00Z',
     modifiedTime: '2026-01-15T00:00:00Z',
     readTime: '12 минут',
+    wordCount: 2100,
+    articleSection: 'Настройка CRM',
   },
 };
 

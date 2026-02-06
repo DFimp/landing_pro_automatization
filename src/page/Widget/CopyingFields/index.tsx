@@ -6,7 +6,7 @@ import ProblemsCard from "@/shared/ui/ProblemsCard/ProblemsCard";
 import FeaturesCard from "@/shared/ui/FeaturesCard/FeaturesCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
-import { WIDGETS_DATA } from "@/shared/constants/widgets";
+import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 import { STEPS, PROBLEMS, FEATURES } from "./constants";
 
 const widget = WIDGETS_DATA["copying-fields"];
@@ -23,7 +23,7 @@ export default function CopyingFields({
       <ServiceSchemaTag
         data={{
           serviceType: "Разработка виджетов amoCRM",
-          name: widget.title,
+          name: widget.seoTitle,
           description: widget.description,
         }}
       />
@@ -49,7 +49,7 @@ export default function CopyingFields({
                 <div className="dist-cta">
                   <a
                     className="dist-btn-primary"
-                    href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=29fb59ab-297e-4a2e-a441-e6dda149240f"
+                    href={getWidgetInstallUrl(widget.clientId!)}
                     target="_blank"
                     rel="noopener"
                   >

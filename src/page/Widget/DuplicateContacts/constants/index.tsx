@@ -1,6 +1,9 @@
 import type { CaseItem } from "@/shared/ui/Case/CaseCard";
 import type { ProblemItem } from "@/shared/ui/ProblemsCard/ProblemsCard";
 import type { FeatureItem } from "@/shared/ui/FeaturesCard/FeaturesCard";
+import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
+
+const widget = WIDGETS_DATA["duplicate-contacts"];
 
 export const STEPS = [
   {
@@ -14,7 +17,7 @@ export const STEPS = [
           <li>Нажмите «Установить» и подтвердите доступы</li>
         </ul>
         <a
-          href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=e6a1837c-6178-4a0c-9fc0-3e5768595fa2"
+          href={getWidgetInstallUrl(widget.clientId!)}
           target="_blank"
           rel="noopener"
           className="sc-btn"

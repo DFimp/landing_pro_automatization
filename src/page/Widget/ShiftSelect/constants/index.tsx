@@ -1,3 +1,7 @@
+import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
+
+const widget = WIDGETS_DATA["shift-select"];
+
 export const STEPS = [
     {
         title: "Установка виджета в amoCRM",
@@ -24,7 +28,7 @@ export const STEPS = [
 
                 <div style={{ marginTop: 16 }}>
                     <a
-                        href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=d466e907-bb7e-468b-8420-b9f165221627"
+                        href={getWidgetInstallUrl(widget.clientId!)}
                         target="_blank"
                         rel="noopener"
                         className="dist-btn-primary"

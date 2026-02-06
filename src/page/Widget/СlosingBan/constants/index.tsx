@@ -1,3 +1,7 @@
+import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
+
+const widget = WIDGETS_DATA["closing-ban"];
+
 export const STEPS = [
   {
     title: "Установка виджета в amoCRM",
@@ -18,7 +22,7 @@ export const STEPS = [
 
         <div className="sc-cta" style={{ marginTop: 16 }}>
           <a
-            href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=05248753-81ac-40a2-94fb-e0b7c6d05092"
+            href={getWidgetInstallUrl(widget.clientId!)}
             target="_blank"
             rel="noopener"
             className="dist-btn-primary"
