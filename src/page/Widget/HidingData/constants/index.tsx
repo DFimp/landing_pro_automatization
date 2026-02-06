@@ -1,5 +1,8 @@
 ﻿import type { CaseItem } from "@/shared/ui/Case/CaseCard";
 import type { ProblemItem } from "@/shared/ui/ProblemsCard/ProblemsCard";
+import { WIDGETS, getWidgetInstallUrl } from "@/shared/constants/widgets";
+
+const widget = WIDGETS.find((w) => w.key === "hiding-data")!;
 
 export const STEPS = [
   {
@@ -15,7 +18,7 @@ export const STEPS = [
           полям карточек и логике скрытия по тегам.
         </p>
         <a
-          href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=REPLACE_ME"
+          href={getWidgetInstallUrl(widget.clientId!)}
           target="_blank"
           rel="noopener"
           className="sc-btn"

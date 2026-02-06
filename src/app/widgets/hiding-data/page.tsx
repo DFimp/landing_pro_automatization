@@ -1,9 +1,9 @@
 ﻿import type { Metadata } from "next";
 import HidingData from "@/page/Widget/HidingData";
 import { createSEOMetadata } from "@/shared/lib/seo";
-import { WIDGETS_DATA } from "@/shared/constants/widgets";
+import { WIDGETS } from "@/shared/constants/widgets";
 
-const widget = WIDGETS_DATA['hiding-data'];
+const widget = WIDGETS.find((w) => w.key === 'hiding-data')!;
 
 export const metadata: Metadata = createSEOMetadata({
     title: widget.title,

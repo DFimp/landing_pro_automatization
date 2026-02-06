@@ -387,7 +387,7 @@ export const WIDGETS: Widget[] = [
     ],
     showInFooter: true,
     showInSearch: true,
-    clientId: '', 
+    clientId: '05b6ae88-d0fb-4fce-b17a-6a38cfaeb4a8', 
   },
   {
     key: 'google-sheets',

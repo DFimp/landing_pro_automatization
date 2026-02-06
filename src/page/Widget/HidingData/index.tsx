@@ -6,10 +6,10 @@ import CaseCard from "@/shared/ui/Case/CaseCard";
 import ProblemsCard from "@/shared/ui/ProblemsCard/ProblemsCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
-import { WIDGETS_DATA } from "@/shared/constants/widgets";
+import { WIDGETS, getWidgetInstallUrl } from "@/shared/constants/widgets";
 import { STEPS, PROBLEMS, CASE_ITEMS } from "./constants";
 
-const widget = WIDGETS_DATA["hiding-data"];
+const widget = WIDGETS.find((w) => w.key === "hiding-data")!;
 
 export default function HidingData({
   searchParams,
@@ -48,7 +48,7 @@ export default function HidingData({
                 <div className="tg-cta">
                   <a
                     className="tg-btn-primary"
-                    href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=REPLACE_ME"
+                    href={getWidgetInstallUrl(widget.clientId!)}
                     target="_blank"
                     rel="noopener"
                   >
