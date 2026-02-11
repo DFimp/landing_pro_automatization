@@ -1,4 +1,4 @@
-// ============================================
+﻿// ============================================
 // WIDGETS - единый источник данных для всех виджетов
 // ============================================
 
@@ -426,6 +426,35 @@ export const WIDGETS: Widget[] = [
     showInFooter: true,
     showInSearch: true,
     hidden: true,
+  },
+  {
+    key: 'color_deals',
+    title: 'Окраска сделок',
+    seoTitle: 'Окраска сделок для amoCRM',
+    description:
+      'Автоматически выделяйте сделки цветом по правилам: бюджет, этап, теги, пользовательские поля и другие условия.',
+    route: widgetRoute('color_deals'),
+    variant: 2,
+    tags: ['Продажи', 'Сделки', 'Воронка', 'Автоматизация'],
+    aliases: [
+      'окраска сделок',
+      'раскраска сделок',
+      'цвет сделок',
+      'lead coloring',
+      'leads coloring',
+      'color deals',
+      'color leads',
+    ],
+    keywords: [
+      'окраска сделок amocrm',
+      'раскраска сделок amocrm',
+      'цветные сделки amocrm',
+      'правила окраски сделок amocrm',
+      'автоматическая окраска сделок amocrm',
+      'leads coloring amocrm',
+    ],
+    showInFooter: true,
+    showInSearch: true,
   },
 ];
 
