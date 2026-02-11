@@ -11,6 +11,10 @@ body {
     font-family: var(--font-montserrat), sans-serif;
 }
 
+body[data-modal-open="true"] header {
+  z-index: 0 !important;
+}
+
 #hidden-in-iframe {
   display: none;
 }

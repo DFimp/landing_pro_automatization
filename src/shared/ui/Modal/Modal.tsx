@@ -22,9 +22,11 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
     const { body } = document;
     const prevOverflow = body.style.overflow;
     const prevPaddingRight = body.style.paddingRight;
+    const prevModalOpen = body.dataset.modalOpen;
     const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
 
     body.style.overflow = "hidden";
+    body.dataset.modalOpen = "true";
     if (scrollBarWidth > 0) {
       body.style.paddingRight = `${scrollBarWidth}px`;
     }
@@ -32,13 +34,21 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
     return () => {
       body.style.overflow = prevOverflow;
       body.style.paddingRight = prevPaddingRight;
+      if (typeof prevModalOpen === "undefined") {
+        delete body.dataset.modalOpen;
+      } else {
+        body.dataset.modalOpen = prevModalOpen;
+      }
     };
   }, [isOpen]);
 
   if (!isOpen || !mounted) return null;
 
   return createPortal(
-    <div className="fixed inset-0 z-[200] flex items-center justify-center">
+    <div
+      className="fixed inset-0 z-[3000] flex items-center justify-center"
+      style={{ zIndex: 2147483647 }}
+    >
       <div
         className="absolute inset-0 bg-black/50 transition-opacity"
         onClick={onClose}
