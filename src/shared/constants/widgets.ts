@@ -1,4 +1,4 @@
-// ============================================
+﻿// ============================================
 // WIDGETS - единый источник данных для всех виджетов
 // ============================================
 
@@ -426,6 +426,27 @@ export const WIDGETS: Widget[] = [
     showInFooter: true,
     showInSearch: true,
     hidden: true,
+  },
+  {
+    key: 'docs-flow',
+    title: 'Документы (Google)',
+    seoTitle: 'Документооборот Google Docs для amoCRM',
+    description: 'Автоматически создавайте документы из шаблонов Google Docs на основе данных из amoCRM. Генерация в карточке сделки, по триггерам Digital Pipeline и из Salesbot.',
+    route: widgetRoute('docs-flow'),
+    variant: 1,
+    tags: ['Интеграции', 'Google', 'Документы'],
+    aliases: ['docs-flow', 'doc flow', 'документооборот', 'google docs', 'документы', 'шаблоны', 'договор', 'кп', 'счет', 'акт'],
+    keywords: [
+      'документооборот google docs amocrm',
+      'google docs генерация документов amocrm',
+      'шаблоны google docs amocrm',
+      'digital pipeline документ amocrm',
+      'salesbot документ amocrm',
+      'создание договоров amocrm',
+    ],
+    showInFooter: true,
+    showInSearch: true,
+    hidden: false,
   },
 ];
 
