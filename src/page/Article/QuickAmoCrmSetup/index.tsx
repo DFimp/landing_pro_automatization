@@ -6,34 +6,34 @@ import { ARTICLES_DATA } from "@/shared/constants/articles";
 
 import styles from "./QuickAmoCrmSetup.module.css";
 
-const article = ARTICLES_DATA['quick-setup'];
+const article = ARTICLES_DATA["amocrm-quick-setup"];
 
 export default function QuickAmoCrmSetupArticle() {
-    return (
-        <>
-            <ArticleSchemaTag
-                data={{
-                    headline: article.title,
-                    description: article.description,
-                    datePublished: article.publishedTime,
-                    dateModified: article.modifiedTime,
-                }}
-            />
-            <div className={styles.wrapper}>
-                <ArticleDescriptionSection
-                    category="CRM"
-                    tag="#СТАТЬИ"
-                    date="24.12.2025"
-                    readTime="6 минут"
-                />
+  return (
+    <>
+      <ArticleSchemaTag
+        data={{
+          headline: article.title,
+          description: article.description,
+          datePublished: article.publishedTime,
+          dateModified: article.modifiedTime,
+        }}
+      />
+      <div className={styles.wrapper}>
+        <ArticleDescriptionSection
+          category="CRM"
+          tag="#СТАТЬИ"
+          date="24.12.2025"
+          readTime="6 минут"
+        />
 
-                <div className={styles.content}>
-                    <h1>Быстрая настройка amoCRM: чеклист для новичков за 1 день</h1>
-                    <QuickAmoCrmSetupMoreContentSection />
-                </div>
-            </div>
+        <div className={styles.content}>
+          <h1>Быстрая настройка amoCRM: чеклист для новичков за 1 день</h1>
+          <QuickAmoCrmSetupMoreContentSection />
+        </div>
+      </div>
 
-            <ArticleConclusionSection />
-        </>
-    );
+      <ArticleConclusionSection />
+    </>
+  );
 }

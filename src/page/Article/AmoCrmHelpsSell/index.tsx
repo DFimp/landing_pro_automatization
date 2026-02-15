@@ -6,35 +6,37 @@ import { ARTICLES_DATA } from "@/shared/constants/articles";
 
 import styles from "./AmoCrmHelpsSell.module.css";
 
-const article = ARTICLES_DATA['helps-sell'];
+const article = ARTICLES_DATA["amocrm-helps-sell"];
 
 export default function AmoCrmHelpsSellArticle() {
-    return (
-        <>
-            <ArticleSchemaTag
-                data={{
-                    headline: article.title,
-                    description: article.description,
-                    datePublished: article.publishedTime,
-                    dateModified: article.modifiedTime,
-                }}
-            />
-            <div className={styles.wrapper}>
-                <ArticleDescriptionSection
-                    category="CRM"
-                    tag="#СТАТЬИ"
-                    date="24.12.2025"
-                    readTime="6 минут"
-                />
+  return (
+    <>
+      <ArticleSchemaTag
+        data={{
+          headline: article.title,
+          description: article.description,
+          datePublished: article.publishedTime,
+          dateModified: article.modifiedTime,
+        }}
+      />
+      <div className={styles.wrapper}>
+        <ArticleDescriptionSection
+          category="CRM"
+          tag="#СТАТЬИ"
+          date="24.12.2025"
+          readTime="6 минут"
+        />
 
-                <div className={styles.content}>
-                    <h1>AmoCRM: почему эта CRM реально помогает бизнесу продавать больше</h1>
+        <div className={styles.content}>
+          <h1>
+            AmoCRM: почему эта CRM реально помогает бизнесу продавать больше
+          </h1>
 
-                    <AmoCrmHelpsSellMoreContentSection />
-                </div>
-            </div>
+          <AmoCrmHelpsSellMoreContentSection />
+        </div>
+      </div>
 
-            <ArticleConclusionSection />
-        </>
-    );
+      <ArticleConclusionSection />
+    </>
+  );
 }
