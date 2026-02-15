@@ -168,6 +168,10 @@ body {
   justify-items: stretch;
 }
 
+.df-step-grid--tiles > *:nth-child(3) {
+  grid-column: 1 / -1;
+}
+
 .df-step-media {
   width: 100%;
   max-width: 980px;
