@@ -1,12 +1,16 @@
 import { Card } from "@/shared/ui/Card/Card";
 import { steps } from "@/widgets/home/homeStepsSection/ui/lib";
-import WorkStepsDrag from "./WorkStepsDrag.client";
+import WorkStepsScrollStory from "./WorkStepsScrollStory.client";
 
 export default function WorkSteps() {
   return (
-    <div className="w-full overflow-hidden mb-20 sm:mt-20 mt-10">
-      <WorkStepsDrag>
-        <ul className="flex sm:flex-row flex-col gap-4 snap-x snap-mandatory select-none">
+    <div className="w-full mb-20 sm:mt-20 mt-10">
+      <div className="hidden sm:block">
+        <WorkStepsScrollStory steps={steps} />
+      </div>
+
+      <div className="sm:hidden">
+        <ul className="flex flex-col gap-4 select-none">
           {steps.map((step, index) => (
             <Card
               variant="expandable"
@@ -19,9 +23,8 @@ export default function WorkSteps() {
               isLast={index === steps.length - 1}
             />
           ))}
-          <div className="shrink-0 min-w-[175px]" />
         </ul>
-      </WorkStepsDrag>
+      </div>
     </div>
   );
 }
