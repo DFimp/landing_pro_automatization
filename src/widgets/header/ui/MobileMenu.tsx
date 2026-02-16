@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import styles from "../styles/MobileMenu.module.scss";
 
 interface MobileMenuProps {
   setConsultationModalIsOpen: (open: boolean) => void;
@@ -23,21 +23,23 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
   setConsultationModalIsOpen,
 }) => {
   return (
-    isOpen && (
-      <div className="absolute left-0 top-0 right-0 w-full h-screen bg-white">
-        <div className="px-8 py-4 flex justify-end h-[92px]">
-          <button className="" onClick={() => setIsOpen(false)}>
-            <Image src="/decor/close.svg" alt="кнопка" width={20} height={20} />
-          </button>
-        </div>
-        <ul className="px-8 flex flex-col gap-[40px]">
+    <div
+      className={`${styles.root} ${isOpen ? styles.open : ""}`}
+      aria-hidden={!isOpen}
+    >
+      <button
+        type="button"
+        className={styles.backdrop}
+        aria-label="Закрыть меню"
+        onClick={() => setIsOpen(false)}
+        tabIndex={isOpen ? 0 : -1}
+      />
+
+      <nav className={`${styles.panel} flex flex-col`} aria-label="Мобильное меню">
+        <ul className="px-8 pt-10 flex flex-col gap-[40px] flex-1 overflow-y-auto pb-10">
           {ServicesItems.map((link, index) => (
             <li key={index} className="text-[18px] uppercase">
-              <Link
-                href={link.link}
-                className=""
-                onNavigate={() => setIsOpen(false)}
-              >
+              <Link href={link.link} className="" onNavigate={() => setIsOpen(false)}>
                 {link.name}
               </Link>
             </li>
@@ -49,13 +51,21 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
                 setIsOpen(false);
                 setConsultationModalIsOpen(true);
               }}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  setIsOpen(false);
+                  setConsultationModalIsOpen(true);
+                }
+              }}
             >
               КОНСУЛЬТАЦИЯ
             </p>
           </li>
         </ul>
-      </div>
-    )
+      </nav>
+    </div>
   );
 };
 
