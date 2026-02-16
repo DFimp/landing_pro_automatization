@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
+import { lockBodyScroll } from "@/shared/utils/lockBodyScroll";
 
 interface ModalProps {
   isOpen: boolean;
@@ -18,28 +19,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
 
   useEffect(() => {
     if (!isOpen) return;
-
-    const { body } = document;
-    const prevOverflow = body.style.overflow;
-    const prevPaddingRight = body.style.paddingRight;
-    const prevModalOpen = body.dataset.modalOpen;
-    const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
-
-    body.style.overflow = "hidden";
-    body.dataset.modalOpen = "true";
-    if (scrollBarWidth > 0) {
-      body.style.paddingRight = `${scrollBarWidth}px`;
-    }
-
-    return () => {
-      body.style.overflow = prevOverflow;
-      body.style.paddingRight = prevPaddingRight;
-      if (typeof prevModalOpen === "undefined") {
-        delete body.dataset.modalOpen;
-      } else {
-        body.dataset.modalOpen = prevModalOpen;
-      }
-    };
+    return lockBodyScroll();
   }, [isOpen]);
 
   if (!isOpen || !mounted) return null;
