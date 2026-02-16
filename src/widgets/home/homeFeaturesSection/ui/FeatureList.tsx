@@ -1,11 +1,25 @@
 import Image from "next/image";
 import { links } from "@/widgets/home/homeFeaturesSection/ui/lib";
+import ScrollReveal from "@/shared/ui/scrollReveal/ScrollReveal";
 
 export default function FeaturesList() {
   return (
-    <ul className="sm:grid sm:grid-cols-2 flex flex-col sm:gap-8 gap-4 sm:mt-20 mt-5">
-      {links.map((link) => (
-        <li key={link.name} className="bg-[#D8E3FD] rounded-full">
+    <ScrollReveal
+      as="ul"
+      className="sm:grid sm:grid-cols-2 flex flex-col sm:gap-8 gap-4 sm:mt-20 mt-5"
+      staggerChildren
+      variant="bubble"
+      durationMs={750}
+      delayMs={80}
+      staggerMs={90}
+    >
+      {links.map((link, index) => (
+        <li
+          key={link.name}
+          data-sr-item
+          style={{ ["--i" as any]: index }}
+          className="bg-[#D8E3FD] rounded-full"
+        >
           <div
             className="sm:text-h5 text-[14px] font-medium flex
                         justify-between items-center
@@ -25,6 +39,6 @@ export default function FeaturesList() {
           </div>
         </li>
       ))}
-    </ul>
+    </ScrollReveal>
   );
 }

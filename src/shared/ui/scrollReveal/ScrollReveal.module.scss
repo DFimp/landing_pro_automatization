@@ -1,0 +1,187 @@
+.reveal {
+  --sr-duration: 700ms;
+  --sr-delay: 0ms;
+  --sr-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --sr-x-from: 0px;
+  --sr-y-from: 18px;
+  --sr-x-to: 0px;
+  --sr-y-to: 0px;
+  --sr-scale-from: 1;
+  --sr-blur: 0px;
+  --sr-perspective: 0px;
+  --sr-rx-from: 0deg;
+  --sr-ry-from: 0deg;
+  --sr-rz-from: 0deg;
+
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+.tilt {
+  --sr-perspective: 900px;
+  --sr-y-from: 10px;
+  --sr-scale-from: 0.985;
+  --sr-rx-from: 10deg;
+  --sr-ry-from: -8deg;
+  --sr-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wipe {
+  --sr-y-from: 10px;
+  --sr-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wipeX {
+  --sr-x-from: -120px;
+  --sr-y-from: 0px;
+  --sr-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bubble {
+  --sr-x-from: 0px;
+  --sr-y-from: 0px;
+  --sr-scale-from: 0.22;
+  --sr-blur: 0px;
+  --sr-ease: cubic-bezier(0.2, 1.35, 0.3, 1);
+}
+
+.stagger {
+  --sr-stagger: 90ms;
+}
+
+.stagger [data-sr-item] {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: sr-reveal var(--sr-duration) var(--sr-ease) both;
+    animation-delay: var(--sr-delay);
+    animation-timeline: view();
+    /* Start slightly earlier and stretch over a longer scroll distance */
+    animation-range: entry 5% exit 22%;
+  }
+
+  .wipe {
+    overflow: clip;
+  }
+
+  .wipe.reveal {
+    animation-name: sr-wipe;
+  }
+
+  .wipeX.reveal {
+    animation-name: sr-wipe-x;
+  }
+
+  .bubble.reveal {
+    animation-name: sr-pop;
+  }
+
+  .stagger [data-sr-item] {
+    animation: sr-reveal var(--sr-duration) var(--sr-ease) both;
+    animation-timeline: view();
+    animation-range: entry 5% exit 22%;
+    animation-delay: calc(var(--sr-delay) + (var(--i, 0) * var(--sr-stagger)));
+  }
+
+  .wipe.stagger [data-sr-item] {
+    animation-name: sr-wipe;
+  }
+
+  .wipeX.stagger [data-sr-item] {
+    animation-name: sr-wipe-x;
+  }
+
+  .bubble.stagger [data-sr-item] {
+    animation-name: sr-pop;
+    transform-origin: center;
+  }
+
+  @keyframes sr-reveal {
+    from {
+      opacity: 0;
+      transform: perspective(var(--sr-perspective))
+        translate3d(var(--sr-x-from), var(--sr-y-from), 0)
+        rotateX(var(--sr-rx-from))
+        rotateY(var(--sr-ry-from))
+        rotateZ(var(--sr-rz-from))
+        scale(var(--sr-scale-from));
+      filter: blur(var(--sr-blur)) saturate(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: perspective(var(--sr-perspective))
+        translate3d(var(--sr-x-to), var(--sr-y-to), 0)
+        rotateX(0deg)
+        rotateY(0deg)
+        rotateZ(0deg)
+        scale(1);
+      filter: blur(0);
+    }
+  }
+
+  @keyframes sr-pop {
+    0% {
+      opacity: 0;
+      transform: translate3d(var(--sr-x-from), var(--sr-y-from), 0)
+        scale(var(--sr-scale-from));
+      filter: blur(var(--sr-blur)) saturate(0.98);
+    }
+    60% {
+      opacity: 1;
+      transform: translate3d(var(--sr-x-to), var(--sr-y-to), 0) scale(1.06);
+      filter: blur(0);
+    }
+    100% {
+      opacity: 1;
+      transform: translate3d(var(--sr-x-to), var(--sr-y-to), 0) scale(1);
+      filter: blur(0);
+    }
+  }
+
+  @keyframes sr-wipe {
+    from {
+      opacity: 0;
+      clip-path: inset(0 0 100% 0);
+      transform: translate3d(var(--sr-x-from), var(--sr-y-from), 0)
+        scale(var(--sr-scale-from));
+      filter: blur(var(--sr-blur)) saturate(0.98);
+    }
+    to {
+      opacity: 1;
+      clip-path: inset(0 0 0 0);
+      transform: translate3d(var(--sr-x-to), var(--sr-y-to), 0) scale(1);
+      filter: blur(0);
+    }
+  }
+
+  @keyframes sr-wipe-x {
+    from {
+      opacity: 0;
+      clip-path: inset(0 100% 0 0);
+      transform: translate3d(var(--sr-x-from), 0, 0) scale(var(--sr-scale-from));
+      filter: blur(var(--sr-blur)) saturate(0.98);
+    }
+    to {
+      opacity: 1;
+      clip-path: inset(0 0 0 0);
+      transform: translate3d(var(--sr-x-to), 0, 0) scale(1);
+      filter: blur(0);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .stagger [data-sr-item] {
+    animation: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+}
