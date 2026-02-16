@@ -55,8 +55,8 @@ export default function ConsultCard({ className }: ConsultCardProps) {
               height={222}
             />
             <Image
-              className="absolute w-[192px] h-[213px] bottom-[-35px] right-[250px] z-1"
-              src="/decor/phoneSmall.jpeg"
+              className="absolute top-[390px] w-[192px] bottom-[0px] right-[250px] z-1"
+              src="/decor/phoneSmall.png"
               alt="карточка телефона"
               width={192}
               height={179}
