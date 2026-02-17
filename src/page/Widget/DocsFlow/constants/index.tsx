@@ -52,9 +52,9 @@ export const PROBLEMS: ProblemItem[] = [
     title: "Контроль доступа",
     text: (
       <>
-        Ограничьте, кто может{" "}
-        <span className="at-mark">формировать</span> документы и кто может{" "}
-        <span className="at-mark">просматривать</span> вкладку «Документы».
+        Настройте права доступа:{" "}
+        кто может <span className="at-mark">формировать</span> документы и шаблоны, а кто — только{" "}
+        <span className="at-mark">просматривать</span>
       </>
     ),
     bgUrl: "/widgets/BackAll/back_basket.jpeg",
@@ -79,6 +79,32 @@ export const STEPS = [
           <Img
             src="/widgets/DocsFlow/settings_google_authorize_banner.jpeg"
             alt="Авторизация Google в настройках виджета"
+            className="df-step-media--md"
+          />
+        </div>
+      </div>
+    ),
+  },
+  {
+    title: "Настройте доступ",
+    content: (
+      <div>
+        <p>
+          Управляйте доступом к вкладке «Документы (Google)» в карточке сделки — 
+          определите, кто может формировать документы, а кто только просматривать их.
+        </p>
+        <p className="sc-note sc-note--green">
+          По умолчанию оба списка пусты — доступ закрыт для всех, включая администратора. Чтобы начать работу, добавьте себя в нужный список.
+        </p>
+        <div className="df-step-grid">
+          <Img
+            src="/widgets/DocsFlow/access_settings_permissions.jpeg"
+            alt="Настройки доступа: кто может формировать и кто может просматривать"
+            className="df-step-media--md"
+          />
+          <Img
+            src="/widgets/DocsFlow/lead_card_no_access.jpeg"
+            alt="Настройки доступа: кто может формировать и кто может просматривать"
             className="df-step-media--md"
           />
         </div>
@@ -155,29 +181,6 @@ export const STEPS = [
     ),
   },
   {
-    title: "Настройте доступ",
-    content: (
-      <div>
-        <p>
-          Управляйте доступом к вкладке «Документы (Google)» в карточке сделки — 
-          определите, кто может формировать документы, а кто только просматривать их
-        </p>
-        <div className="df-step-grid">
-          <Img
-            src="/widgets/DocsFlow/access_settings_permissions.jpeg"
-            alt="Настройки доступа: кто может формировать и кто может просматривать"
-            className="df-step-media--md"
-          />
-          <Img
-            src="/widgets/DocsFlow/lead_card_no_access.jpeg"
-            alt="Настройки доступа: кто может формировать и кто может просматривать"
-            className="df-step-media--md"
-          />
-        </div>
-      </div>
-    ),
-  },
-  {
     title: "Сформируйте документ вручную из сделки",
     content: (
       <div>
@@ -196,6 +199,11 @@ export const STEPS = [
         <div className="df-step-grid">
           <Img
             src="/widgets/DocsFlow/lead_card_generate_template.jpeg"
+            alt="Формирование документа во вкладке «Документы» в карточке сделки"
+            className="df-step-media--sm"
+          />
+          <Img
+            src="/widgets/DocsFlow/lead_card_with_generate_template.jpeg"
             alt="Формирование документа во вкладке «Документы» в карточке сделки"
             className="df-step-media--sm"
           />
