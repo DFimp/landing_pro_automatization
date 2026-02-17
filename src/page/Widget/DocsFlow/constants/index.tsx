@@ -28,7 +28,7 @@ export const PROBLEMS: ProblemItem[] = [
     bgUrl: "/widgets/BackAll/back_web.jpeg",
   },
   {
-    title: "Автоматизация воронки (Digital Pipeline)",
+    title: "Автоматизация воронки",
     text: (
       <>
         Настройте триггер: выберите шаблон, поле для ссылки и момент запуска.
@@ -212,7 +212,7 @@ export const STEPS = [
     ),
   },
   {
-    title: "Настройте автоматическую генерацию (Digital Pipeline)",
+    title: "Настройте автоматическую генерацию",
     content: (
       <div>
         <ul className="sc-list">
@@ -233,7 +233,7 @@ export const STEPS = [
         <div className="df-step-grid">
           <Img
             src="/widgets/DocsFlow/digital_pipeline_step_settings.jpeg"
-            alt="Настройка шага Digital Pipeline для генерации документа"
+            alt="Настройка шага для генерации документа"
             className="df-step-media--md"
           />
         </div>
