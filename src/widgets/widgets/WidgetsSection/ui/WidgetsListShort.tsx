@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { WidgetsListItem } from "./WidgetsListItem";
+import ScrollReveal from "@/shared/ui/scrollReveal/ScrollReveal";
 
 export function WidgetsListShort() {
   const widgets = [
@@ -35,14 +36,22 @@ export function WidgetsListShort() {
   return (
     <div>
       <div className="grid sm:grid-cols-2 grid-cols-1 gap-[40px]">
-        {widgets.map((widget) => (
-          <WidgetsListItem
+        {widgets.map((widget, index) => (
+          <ScrollReveal
             key={widget.link}
-            link={widget.link}
-            text={widget.text}
-            title={widget.title}
-            variant={widget.variant}
-          />
+            yFrom={0}
+            xFrom={index % 2 === 0 ? -140 : 140}
+            durationMs={600}
+            delayMs={index * 140}
+            amount={0.35}
+          >
+            <WidgetsListItem
+              link={widget.link}
+              text={widget.text}
+              title={widget.title}
+              variant={widget.variant}
+            />
+          </ScrollReveal>
         ))}
       </div>
 

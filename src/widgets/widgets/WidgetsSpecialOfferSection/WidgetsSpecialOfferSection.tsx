@@ -8,32 +8,55 @@ export function WidgetsSpecialOfferSection() {
       <ScrollReveal
         as="section"
         className="container mt-[50px] sm:mt-[90px]"
-        variant="wipe"
-        yFrom={10}
-        durationMs={650}
+        staggerChildren
+        variant="bubble"
+        durationMs={750}
+        delayMs={80}
+        staggerMs={90}
+        amount={0.25}
       >
-        <h2 className="sm:text-[32px] text-[20px] font-semibold sm:mb-[56px] mb-[23px]">
+        <h2
+          data-sr-item
+          style={{ ["--i" as any]: 0 }}
+          className="sm:text-[32px] text-[20px] font-semibold sm:mb-[56px] mb-[23px]"
+        >
           Дополнительные бесплатные месяцы использования
         </h2>
 
         <div className="flex flex-col sm:flex-row gap-[20px] sm:gap-[40px] justify-between mb-[42px]">
-          <div className="sm:max-w-[49%] grow border border-[#3760E7] pr-[19px] pl-[28px] py-[35px] font-[400] sm:text-[20px] text-[14px] leading-[1] rounded-[20px]">
+          <div
+            data-sr-item
+            style={{ ["--i" as any]: 1 }}
+            className="sm:max-w-[49%] grow border border-[#3760E7] pr-[19px] pl-[28px] py-[35px] font-[400] sm:text-[20px] text-[14px] leading-[1] rounded-[20px]"
+          >
             Продлевая лицензии через{" "}
             <span className="text-[#3760E7]">«Про Автоматизацию»</span>, вы
             получаете бонусные месяцы использования amoCRM.
           </div>
 
-          <div className="flex items-center sm:max-w-[49%] grow border border-[#3760E7] pr-[19px] pl-[28px] py-[35px] font-[400] sm:text-[20px] text-[14px] leading-[1] rounded-[20px]">
-            За ту же стоимость вы сможете дольше работать в системе и сэкономить
-            на продлении.
+          <div
+            data-sr-item
+            style={{ ["--i" as any]: 2 }}
+            className="flex items-center sm:max-w-[49%] grow border border-[#3760E7] pr-[19px] pl-[28px] py-[35px] font-[400] sm:text-[20px] text-[14px] leading-[1] rounded-[20px]"
+          >
+            За ту же стоимость вы сможете дольше работать в системе и
+            сэкономить на продлении.
           </div>
         </div>
 
-        <p className="block sm:hidden text-[20px] font-semibold text-center mb-[50px]">
+        <p
+          data-sr-item
+          style={{ ["--i" as any]: 3 }}
+          className="block sm:hidden text-[20px] font-semibold text-center mb-[50px]"
+        >
           Посчитаем?
         </p>
 
-        <div className="flex justify-center mb-[68px]">
+        <div
+          data-sr-item
+          style={{ ["--i" as any]: 4 }}
+          className="flex justify-center mb-[68px]"
+        >
           <SpecialOfferCalculator />
         </div>
       </ScrollReveal>

@@ -2,7 +2,15 @@ import clsx from "clsx";
 import type { CSSProperties, ElementType, ReactNode } from "react";
 import styles from "./ScrollReveal.module.scss";
 
-type ScrollRevealVariant = "lift" | "tilt" | "wipe" | "wipeX" | "bubble";
+type ScrollRevealVariant =
+  | "lift"
+  | "tilt"
+  | "wipe"
+  | "wipeX"
+  | "bubble"
+  | "slideInLeft"
+  | "slideInRight"
+  | "slideInLeftPulse";
 
 type ScrollRevealProps<T extends ElementType> = {
   as?: T;
@@ -67,6 +75,9 @@ export default function ScrollReveal<T extends ElementType = "div">({
         variant === "wipe" && styles.wipe,
         variant === "wipeX" && styles.wipeX,
         variant === "bubble" && styles.bubble,
+        variant === "slideInLeft" && styles.slideInLeft,
+        variant === "slideInRight" && styles.slideInRight,
+        variant === "slideInLeftPulse" && styles.slideInLeftPulse,
         className
       )}
       style={{ ...revealVars, ...style }}

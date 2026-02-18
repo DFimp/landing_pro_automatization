@@ -20,7 +20,7 @@ export default function License() {
           },
         }}
       />
-      <main className="overflow-hidden">
+      <main className="overflow-x-hidden">
         <WidgetsBonusesSection></WidgetsBonusesSection>
         <WidgetsWidgetsSection></WidgetsWidgetsSection>
         <WidgetsSupportSection></WidgetsSupportSection>
