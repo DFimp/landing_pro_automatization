@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import DropdownMenu from "./DropdownMenu";
 import clsx from "clsx";
+import navFlipStyles from "../styles/NavFlip.module.scss";
 
 const ServicesItems = [
   { name: "АУДИТ", link: "/audit" },
@@ -33,9 +34,17 @@ const HeaderNav = ({ isFloating = false }: { isFloating?: boolean }) => {
         <li>
           <Link
             href="/license"
-            className="font-medium text-h8 hover:text-blue transition-colors duration-300"
+            className={clsx(
+              "font-medium text-h8 transition-colors duration-300",
+              navFlipStyles.link
+            )}
           >
-            ЛИЦЕНЗИЯ
+            <span className={navFlipStyles.inner}>
+              <span className={navFlipStyles.front}>ЛИЦЕНЗИЯ</span>
+              <span className={navFlipStyles.top} aria-hidden="true">
+                ЛИЦЕНЗИЯ
+              </span>
+            </span>
           </Link>
         </li>{/*
         <li>
@@ -51,15 +60,34 @@ const HeaderNav = ({ isFloating = false }: { isFloating?: boolean }) => {
         <li>
           <Link
             href="/widgets"
-            className="font-medium text-h8 hover:text-blue transition-colors duration-300"
+            className={clsx(
+              "font-medium text-h8 transition-colors duration-300",
+              navFlipStyles.link
+            )}
           >
-            ВИДЖЕТЫ
+            <span className={navFlipStyles.inner}>
+              <span className={navFlipStyles.front}>ВИДЖЕТЫ</span>
+              <span className={navFlipStyles.top} aria-hidden="true">
+                ВИДЖЕТЫ
+              </span>
+            </span>
           </Link>
         </li>
 
         <li>
-          <Link href="/articles" className="font-medium text-h8 hover:text-blue transition-colors">
-            СТАТЬИ
+          <Link
+            href="/articles"
+            className={clsx(
+              "font-medium text-h8 transition-colors duration-300",
+              navFlipStyles.link
+            )}
+          >
+            <span className={navFlipStyles.inner}>
+              <span className={navFlipStyles.front}>СТАТЬИ</span>
+              <span className={navFlipStyles.top} aria-hidden="true">
+                СТАТЬИ
+              </span>
+            </span>
           </Link>
         </li>
       </ul>
