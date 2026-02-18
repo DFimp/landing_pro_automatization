@@ -1,10 +1,17 @@
-import SpecialOfferCalculator from "./ui/SpecialOfferCalculator";
+import ScrollReveal from "@/shared/ui/scrollReveal/ScrollReveal";
 import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
+import SpecialOfferCalculator from "./ui/SpecialOfferCalculator";
 
 export function WidgetsSpecialOfferSection() {
   return (
     <>
-      <section className="container mt-[50px] sm:mt-[90px]">
+      <ScrollReveal
+        as="section"
+        className="container mt-[50px] sm:mt-[90px]"
+        variant="wipe"
+        yFrom={10}
+        durationMs={650}
+      >
         <h2 className="sm:text-[32px] text-[20px] font-semibold sm:mb-[56px] mb-[23px]">
           Дополнительные бесплатные месяцы использования
         </h2>
@@ -29,8 +36,7 @@ export function WidgetsSpecialOfferSection() {
         <div className="flex justify-center mb-[68px]">
           <SpecialOfferCalculator />
         </div>
-
-      </section>
+      </ScrollReveal>
 
       <aside className="block sm:hidden mt-[31px] mb-[53px]">
         <ConsultCard />
@@ -38,3 +44,4 @@ export function WidgetsSpecialOfferSection() {
     </>
   );
 }
+
