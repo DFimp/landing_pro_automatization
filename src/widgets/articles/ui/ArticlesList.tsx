@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { ArticlesListItem } from "./ArticlesListItem";
+import ScrollReveal from "@/shared/ui/scrollReveal/ScrollReveal";
 import {
   SearchWithGroups,
   SearchableItem,
@@ -102,14 +103,22 @@ export function ArticlesList() {
       </div>
 
       <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[40px] min-h-[300px]">
-        {filtered.map((article) => (
-          <ArticlesListItem
+        {filtered.map((article, index) => (
+          <ScrollReveal
             key={article.link}
-            title={article.title}
-            text={article.text}
-            link={article.link}
-            variant={article.variant}
-          />
+            variant="bubbleSoft"
+            durationMs={700}
+            delayMs={index % 3 === 0 ? 0 : 60}
+            amount={0.35}
+            className="h-full"
+          >
+            <ArticlesListItem
+              title={article.title}
+              text={article.text}
+              link={article.link}
+              variant={article.variant}
+            />
+          </ScrollReveal>
         ))}
       </div>
     </div>

@@ -42,6 +42,14 @@
   --sr-ease: cubic-bezier(0.2, 1.35, 0.3, 1);
 }
 
+.bubbleSoft {
+  --sr-x-from: 0px;
+  --sr-y-from: 10px;
+  --sr-scale-from: 0.96;
+  --sr-blur: 0px;
+  --sr-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 .slideInLeft {
   --sr-duration: 650ms;
   --sr-delay: 0ms;
@@ -112,6 +120,10 @@
   animation-name: sr-pop;
 }
 
+.bubbleSoft.reveal[data-sr-revealed="true"] {
+  animation-name: sr-pop-soft;
+}
+
 .slideInLeftPulse.reveal[data-sr-revealed="true"] {
   animation-name: sr-reveal, sr-pulse-grow;
   animation-duration: var(--sr-duration), 1200ms;
@@ -148,6 +160,11 @@
   transform-origin: center;
 }
 
+.bubbleSoft.stagger[data-sr-revealed="true"] [data-sr-item] {
+  animation-name: sr-pop-soft;
+  transform-origin: center;
+}
+
 @keyframes sr-reveal {
   from {
     opacity: 0;
@@ -181,6 +198,25 @@
   60% {
     opacity: 1;
     transform: translate3d(var(--sr-x-to), var(--sr-y-to), 0) scale(1.06);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(var(--sr-x-to), var(--sr-y-to), 0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes sr-pop-soft {
+  0% {
+    opacity: 0;
+    transform: translate3d(var(--sr-x-from), var(--sr-y-from), 0)
+      scale(var(--sr-scale-from));
+    filter: blur(var(--sr-blur)) saturate(0.98);
+  }
+  62% {
+    opacity: 1;
+    transform: translate3d(var(--sr-x-to), var(--sr-y-to), 0) scale(1.02);
     filter: blur(0);
   }
   100% {

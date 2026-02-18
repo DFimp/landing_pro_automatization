@@ -17,7 +17,7 @@ export default function ArticlesPage() {
           description: article.description,
         }))}
       />
-      <main id="Articles" className="overflow-hidden container">
+      <main id="Articles" className="overflow-x-hidden container">
         <div className="my-10 sm:my-20">
           <ArticlesList />
         </div>

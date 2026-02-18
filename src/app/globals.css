@@ -69,3 +69,135 @@ html {
 .jelly-hover:hover {
   animation: jelly 650ms cubic-bezier(0.22, 1, 0.36, 1);
 }
+
+@keyframes widget-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.widget-card {
+  position: relative;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  isolation: isolate;
+  transition:
+    transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 320ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, box-shadow;
+}
+
+.widget-card__inner {
+  position: relative;
+  z-index: 1;
+  transform: translate3d(0, 0, 0);
+  transform-origin: center;
+  will-change: transform;
+}
+
+.widget-card::after {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 420ms cubic-bezier(0.22, 1, 0.36, 1);
+  background-image: radial-gradient(
+      circle at 20% 15%,
+      rgba(175, 193, 255, 0.22),
+      transparent 58%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(55, 96, 231, 0.22),
+      transparent 60%
+    );
+  filter: blur(10px) saturate(1.05);
+}
+
+.widget-card__inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition:
+    opacity 420ms cubic-bezier(0.22, 1, 0.36, 1);
+  background-image: linear-gradient(
+      120deg,
+      rgba(55, 96, 231, 0.0),
+      rgba(55, 96, 231, 0.14),
+      rgba(175, 193, 255, 0.16),
+      rgba(119, 15, 235, 0.12),
+      rgba(55, 96, 231, 0.0)
+    ),
+    radial-gradient(circle at 15% 20%, rgba(175, 193, 255, 0.14), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(55, 96, 231, 0.14), transparent 60%);
+  background-size: 240% 240%;
+  background-position: 0% 50%;
+  filter: saturate(1.12);
+  animation: widget-shimmer 2.6s ease-in-out infinite;
+  animation-play-state: paused;
+  will-change: opacity, background-position;
+}
+
+.widget-card__inner.text-white::before {
+  background-image: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.0),
+      rgba(255, 255, 255, 0.16),
+      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0.12),
+      rgba(255, 255, 255, 0.0)
+    ),
+    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.12), transparent 58%),
+    radial-gradient(circle at 86% 82%, rgba(255, 255, 255, 0.1), transparent 62%);
+  filter: none;
+  mix-blend-mode: normal;
+}
+
+.widget-card:hover,
+.widget-card:focus-within {
+  transform: translate3d(0, -2px, 0);
+  box-shadow: 0 14px 44px rgba(55, 96, 231, 0.16);
+}
+
+.widget-card:hover::after,
+.widget-card:focus-within::after {
+  opacity: 1;
+}
+
+.widget-card:hover .widget-card__inner::before,
+.widget-card:focus-within .widget-card__inner::before {
+  opacity: 1;
+  animation-play-state: running;
+}
+
+.widget-card:focus-within {
+  outline: 2px solid rgba(55, 96, 231, 0.35);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .widget-card,
+  .widget-card::after,
+  .widget-card__inner::before {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .widget-card:hover,
+  .widget-card:focus-within {
+    transform: none;
+  }
+}

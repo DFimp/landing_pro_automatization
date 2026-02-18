@@ -8,6 +8,7 @@ type ScrollRevealVariant =
   | "wipe"
   | "wipeX"
   | "bubble"
+  | "bubbleSoft"
   | "slideInLeft"
   | "slideInRight"
   | "slideInLeftPulse";
@@ -75,6 +76,7 @@ export default function ScrollReveal<T extends ElementType = "div">({
         variant === "wipe" && styles.wipe,
         variant === "wipeX" && styles.wipeX,
         variant === "bubble" && styles.bubble,
+        variant === "bubbleSoft" && styles.bubbleSoft,
         variant === "slideInLeft" && styles.slideInLeft,
         variant === "slideInRight" && styles.slideInRight,
         variant === "slideInLeftPulse" && styles.slideInLeftPulse,
