@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import DropdownMenu from "./DropdownMenu";
+import clsx from "clsx";
 
 const ServicesItems = [
   { name: "АУДИТ", link: "/audit" },
@@ -10,13 +11,16 @@ const ServicesItems = [
   { name: "СОПРОВОЖДЕНИЕ", link: "/accompaniment" },
 ];
 
-const HeaderNav = () => {
+const HeaderNav = ({ isFloating = false }: { isFloating?: boolean }) => {
   const [isDropdownOpen, setDropdownOpen] = useState<boolean>(false);
 
   return (
     <nav>
       <ul
-        className="flex justify-between gap-5 bg-white py-4"
+        className={clsx(
+          "flex justify-between gap-5 py-4 transition-colors duration-200",
+          isFloating ? "bg-transparent" : "bg-white"
+        )}
         onMouseLeave={() => setDropdownOpen(false)}
       >
         <DropdownMenu
@@ -33,8 +37,7 @@ const HeaderNav = () => {
           >
             ЛИЦЕНЗИЯ
           </Link>
-        </li>
-
+        </li>{/*
         <li>
           <Link
             href="/cases"
@@ -43,6 +46,7 @@ const HeaderNav = () => {
             КЕЙСЫ
           </Link>
         </li>
+        */}
 
         <li>
           <Link

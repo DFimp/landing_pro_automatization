@@ -6,7 +6,7 @@ import CaseCard from "@/shared/ui/Case/CaseCard";
 import ProblemsCard from "@/shared/ui/ProblemsCard/ProblemsCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
-import { WIDGETS_DATA } from "@/shared/constants/widgets";
+import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 import { STEPS, PROBLEMS, CASE_ITEMS } from "./constants";
 
 const widget = WIDGETS_DATA["group-fields"];
@@ -23,7 +23,7 @@ export default function GroupFields({
       <ServiceSchemaTag
         data={{
           serviceType: "Разработка виджетов amoCRM",
-          name: widget.title,
+          name: widget.seoTitle,
           description: widget.description,
         }}
       />
@@ -49,7 +49,7 @@ export default function GroupFields({
                 <div className="tg-cta">
                   <a
                     className="tg-btn-primary"
-                    href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=b54cc436-b04d-438c-b80f-e8ca06f9265b"
+                    href={getWidgetInstallUrl(widget.clientId!)}
                     target="_blank"
                     rel="noopener"
                   >

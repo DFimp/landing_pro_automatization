@@ -1,3 +1,7 @@
+import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
+
+const widget = WIDGETS_DATA["time-zone"];
+
 export const STEPS = [
   {
     title: "Установите виджет в amoCRM",
@@ -12,7 +16,7 @@ export const STEPS = [
 
         <div className="sc-cta" style={{ marginTop: 16 }}>
           <a
-            href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=25f94eb8-f182-4296-b86f-da4e26854b47"
+            href={getWidgetInstallUrl(widget.clientId!)}
             target="_blank"
             rel="noopener"
             className="dist-btn-primary"

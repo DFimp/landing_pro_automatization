@@ -1,5 +1,8 @@
 import { type ProblemItem } from "@/shared/ui/ProblemsCard/ProblemsCard";
 import { type FeatureItem } from "@/shared/ui/FeaturesCard/FeaturesCard";
+import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
+
+const widget = WIDGETS_DATA["auto-tasks"];
 
 export const STEPS = [
     {
@@ -18,7 +21,7 @@ export const STEPS = [
             Если нет прав на установку — обратитесь к администратору аккаунта.
           </div>
           <a
-            href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=ffb5b225-672a-4016-b868-6a98db446851"
+            href={getWidgetInstallUrl(widget.clientId!)}
             target="_blank"
             rel="noopener"
             className="sc-btn"
@@ -109,7 +112,7 @@ export const PROBLEMS: ProblemItem[] = [
           дорогих продуктов.
         </>
       ),
-      bgUrl: "/widgets/AutoTask/back_dollars.webp",
+      bgUrl: "/widgets/AutoTask/back_dollars.jpeg",
     },
     {
       title: "Менеджеры «забывают» работать",
@@ -120,7 +123,7 @@ export const PROBLEMS: ProblemItem[] = [
           потенциальными клиентами. Результат — потерянная прибыль.
         </>
       ),
-      bgUrl: "/widgets/AutoTask/back_message.webp",
+      bgUrl: "/widgets/AutoTask/back_message.jpeg",
     },
     {
       title: "Низкая конверсия воронки",
@@ -131,7 +134,7 @@ export const PROBLEMS: ProblemItem[] = [
           <span className="at-mark"> 15–20%</span>.
         </>
       ),
-      bgUrl: "/widgets/AutoTask/back_analitic.webp",
+      bgUrl: "/widgets/AutoTask/back_analitic.jpeg",
     },
     {
       title: "Ручной контроль отнимает время",
@@ -141,13 +144,13 @@ export const PROBLEMS: ProblemItem[] = [
           <span className="at-mark">вместо развития</span> бизнеса.
         </>
       ),
-      bgUrl: "/widgets/AutoTask/back_yeys.webp",
+      bgUrl: "/widgets/AutoTask/back_yeys.jpeg",
     },
   ];
 
 export const FEATURES: FeatureItem[] = [
     {
-      iconUrl: "/widgets/AutoTask/deployment.webp",
+      iconUrl: "/widgets/AutoTask/deployment.jpeg",
       title: "Умное отслеживание",
       text: (
         <>
@@ -157,7 +160,7 @@ export const FEATURES: FeatureItem[] = [
       ),
     },
     {
-      iconUrl: "/widgets/AutoTask/letter_star.webp",
+      iconUrl: "/widgets/AutoTask/letter_star.jpeg",
       title: "Гибкая настройка",
       text: (
         <>
@@ -167,7 +170,7 @@ export const FEATURES: FeatureItem[] = [
       ),
     },
     {
-      iconUrl: "/widgets/AutoTask/lamp.webp",
+      iconUrl: "/widgets/AutoTask/lamp.jpeg",
       title: "Исключение системных сделок",
       text: (
         <>
@@ -177,7 +180,7 @@ export const FEATURES: FeatureItem[] = [
       ),
     },
     {
-      iconUrl: "/widgets/AutoTask/control.webp",
+      iconUrl: "/widgets/AutoTask/control.jpeg",
       title: "Контроль ответственности",
       text: (
         <>
@@ -187,7 +190,7 @@ export const FEATURES: FeatureItem[] = [
       ),
     },
     {
-      iconUrl: "/widgets/AutoTask/deadline.webp",
+      iconUrl: "/widgets/AutoTask/deadline.jpeg",
       title: "Постоянная работа",
       text: (
         <>
@@ -197,7 +200,7 @@ export const FEATURES: FeatureItem[] = [
       ),
     },
     {
-      iconUrl: "/widgets/AutoTask/analytic.webp",
+      iconUrl: "/widgets/AutoTask/analytic.jpeg",
       title: "Рост продаж",
       text: (
         <>

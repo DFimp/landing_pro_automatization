@@ -8,7 +8,7 @@ import FeaturesCard from "@/shared/ui/FeaturesCard/FeaturesCard";
 import PreviewCard from "@/shared/ui/PreviewCard/PreviewCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
-import { WIDGETS_DATA } from "@/shared/constants/widgets";
+import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 import { STEPS, CASE_ITEMS, PROBLEMS, FEATURES } from "./constants";
 
 const widget = WIDGETS_DATA["whatsapp-button"];
@@ -25,7 +25,7 @@ export default function WhatsappButton({
       <ServiceSchemaTag
         data={{
           serviceType: "Разработка виджетов amoCRM",
-          name: widget.title,
+          name: widget.seoTitle,
           description: widget.description,
         }}
       />
@@ -51,7 +51,7 @@ export default function WhatsappButton({
                 <div className="dist-cta">
                   <a
                     className="dist-btn-primary"
-                    href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=667e5134-9be1-4ee1-8e02-42eb25230f37"
+                    href={getWidgetInstallUrl(widget.clientId!)}
                     target="_blank"
                     rel="noopener"
                   >
@@ -78,7 +78,7 @@ export default function WhatsappButton({
               title="Посмотрите, как это работает!"
               subtitle="Просто и понятно - кликнул и уже в чате!"
               videoUrl=""
-              imageUrl="/widgets/WhatsappButton/WhatsApp.webp"
+              imageUrl="/widgets/WhatsappButton/WhatsApp.jpeg"
             />
           </>
         )}
@@ -111,3 +111,4 @@ export default function WhatsappButton({
     </>
   );
 }
+

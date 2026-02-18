@@ -1,6 +1,9 @@
 import type { CaseItem } from "@/shared/ui/Case/CaseCard";
 import type { ProblemItem } from "@/shared/ui/ProblemsCard/ProblemsCard";
 import type { FeatureItem } from "@/shared/ui/FeaturesCard/FeaturesCard";
+import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
+
+const widget = WIDGETS_DATA["duplicate-leads"];
 
 export const STEPS = [
   {
@@ -12,7 +15,7 @@ export const STEPS = [
           подключения.
         </p>
         <a
-          href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=9036b829-2690-470d-9248-e7c4bb3f6699"
+          href={getWidgetInstallUrl(widget.clientId!)}
           target="_blank"
           rel="noopener"
           className="sc-btn"
@@ -153,7 +156,7 @@ export const STEPS = [
 
 export const FEATURES: FeatureItem[] = [
   {
-    iconUrl: "/widgets/BackAll/gear.webp",
+    iconUrl: "/widgets/BackAll/gear.jpeg",
     title: "Умное объединение данных",
     text: (
       <>
@@ -164,7 +167,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/BackAll/burger.webp",
+    iconUrl: "/widgets/BackAll/burger.jpeg",
     title: "Гибкая настройка приоритетов",
     text: (
       <>
@@ -174,7 +177,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/BackAll/shield.webp",
+    iconUrl: "/widgets/BackAll/shield.jpeg",
     title: "Безопасность данных",
     text: (
       <>
@@ -184,7 +187,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/BackAll/tag.webp",
+    iconUrl: "/widgets/BackAll/tag.jpeg",
     title: "Автоматические теги",
     text: (
       <>
@@ -194,7 +197,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/BackAll/boxes.webp",
+    iconUrl: "/widgets/BackAll/boxes.jpeg",
     title: "Работа с блоками",
     text: (
       <>
@@ -204,7 +207,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/BackAll/magnifier.webp",
+    iconUrl: "/widgets/BackAll/magnifier.jpeg",
     title: "Точное обнаружение дублей",
     text: (
       <>
@@ -224,7 +227,7 @@ export const PROBLEMS: ProblemItem[] = [
         сделок, что приводит к путанице и потере важной информации.
       </>
     ),
-    bgUrl: "/widgets/BackAll/back_web.webp",
+    bgUrl: "/widgets/BackAll/back_web.jpeg",
   },
   {
     title: "Потеря времени",
@@ -234,7 +237,7 @@ export const PROBLEMS: ProblemItem[] = [
         дублированных сделок.
       </>
     ),
-    bgUrl: "/widgets/BackAll/back_watch.webp",
+    bgUrl: "/widgets/BackAll/back_watch.jpeg",
   },
   {
     title: "Неточная статистика",
@@ -245,7 +248,7 @@ export const PROBLEMS: ProblemItem[] = [
         управленческих решений.
       </>
     ),
-    bgUrl: "/widgets/BackAll/back_chart.webp",
+    bgUrl: "/widgets/BackAll/back_chart.jpeg",
   },
   {
     title: "Упущенные продажи",
@@ -255,7 +258,7 @@ export const PROBLEMS: ProblemItem[] = [
         или дважды обработать одну заявку, что снижает эффективность.
       </>
     ),
-    bgUrl: "/widgets/BackAll/back_basket.webp",
+    bgUrl: "/widgets/BackAll/back_basket.jpeg",
   },
 ];
 

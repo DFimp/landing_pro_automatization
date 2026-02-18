@@ -36,10 +36,10 @@ export const Card = ({
                 className={`
                     snap-start shrink-0 bg-black text-white rounded-4xl px-10 py-10
                     flex flex-col justify-start relative cursor-pointer
-                    transition-all duration-500 ease-in-out min-w-[360px] will-change-transform
+                    transition-all duration-500 ease-in-out sm:min-w-[360px] sm:w-[360px] w-full will-change-transform
                     ${isExpanded ? "max-h-[800px]" : "sm:max-h-[270px] max-h-[160px]"}
-                    ${isFirst ? "ml-[175px]" : ""}
-                    ${isLast ? "mr-[15px]" : ""}
+                    ${isFirst ? "sm:ml-[175px]" : ""}
+                    ${isLast ? "sm:mr-[15px]" : ""}
                 `}
             >
                 <div className='card__header'>

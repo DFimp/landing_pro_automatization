@@ -5,7 +5,6 @@ import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
 import CaseCard from "@/shared/ui/Case/CaseCard";
 import ProblemsCard from "@/shared/ui/ProblemsCard/ProblemsCard";
 import FeaturesCard from "@/shared/ui/FeaturesCard/FeaturesCard";
-import PreviewCard from "@/shared/ui/PreviewCard/PreviewCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
 import { WIDGETS_DATA } from "@/shared/constants/widgets";
@@ -24,8 +23,8 @@ export default function MeetingCalendarPage({
     <>
       <ServiceSchemaTag
         data={{
-          serviceType: "Виджет календаря встреч для amoCRM",
-          name: widget.title,
+          serviceType: "Разработка виджетов amoCRM",
+          name: widget.seoTitle,
           description: widget.description,
         }}
       />

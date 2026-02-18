@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { detectMobile } from "@/shared/utils/detectMobile";
 
-type MonthsOption = 5 | 7 | 9 | 17;
+type MonthsOption = 6 | 9 | 12 | 24;
 
 interface SpecialOfferSliderProps {
   setValue: (v: MonthsOption) => void;
@@ -13,7 +13,7 @@ interface SpecialOfferSliderProps {
 export default function SpecialOfferSlider({ setValue, value }: SpecialOfferSliderProps) {
   const { isMobileView } = detectMobile();
 
-  const availableValues = [5, 7, 9, 17] as const;
+  const availableValues = [6, 9, 12, 24] as const;
   const availableValuesLabels = ["+ 1 месяц", "+ 2 месяца", "+ 3 месяца", "+ 7 месяцев"] as const;
 
   const [currentValue, setCurrentValue] = useState<MonthsOption>(value);
@@ -94,7 +94,7 @@ export default function SpecialOfferSlider({ setValue, value }: SpecialOfferSlid
   }, []);
 
   const fillWidth = `${STEP * currentValueIndex}%`;
-  const knobLeft = `calc(${STEP * currentValueIndex}% - ${isMobileView ? "4px" : "10px"})`;
+  const knobLeft = `${STEP * currentValueIndex}%`;
 
   return (
     <div id="slider" draggable="false" className="mb-8 h-[20px] w-full">
@@ -113,19 +113,11 @@ export default function SpecialOfferSlider({ setValue, value }: SpecialOfferSlid
         {/* knob */}
         <div
           draggable="false"
-          className="z-3 absolute top-1/2 -translate-y-1/2 sm:w-6 sm:h-6 w-3 h-3 bg-[#3760E7] border-3 border-[#3760E7] rounded-full shadow-lg cursor-grab active:cursor-grabbing transition-all duration-150 ease-out hover:scale-105"
+          className="z-3 absolute top-1/2 -translate-y-1/2 -translate-x-1/2 sm:w-6 sm:h-6 w-3 h-3 bg-[#3760E7] border-3 border-[#3760E7] rounded-full shadow-lg cursor-grab active:cursor-grabbing transition-all duration-150 ease-out hover:scale-105"
           style={{ left: knobLeft }}
         />
 
         {availableValues.map((val, index) => {
-          // чтобы крайние подписи не обрезались
-          const edgeTransform =
-            index === 0
-              ? "translateX(0%) translateY(-50%)"
-              : index === availableValues.length - 1
-              ? "translateX(-100%) translateY(-50%)"
-              : "translateX(-50%) translateY(-50%)";
-
           const labelTransform =
             index === 0
               ? "translateX(0%)"
@@ -140,7 +132,7 @@ export default function SpecialOfferSlider({ setValue, value }: SpecialOfferSlid
               className="absolute top-1/2 flex flex-col items-center"
               style={{
                 left: `${STEP * index}%`,
-                transform: edgeTransform,
+                transform: "translateX(-50%) translateY(-50%)",
               }}
             >
               {/* tick */}

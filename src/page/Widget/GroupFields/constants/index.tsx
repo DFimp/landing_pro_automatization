@@ -1,5 +1,8 @@
 import type { CaseItem } from "@/shared/ui/Case/CaseCard";
 import type { ProblemItem } from "@/shared/ui/ProblemsCard/ProblemsCard";
+import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
+
+const widget = WIDGETS_DATA["group-fields"];
 
 export const STEPS = [
     {
@@ -11,7 +14,7 @@ export const STEPS = [
                     стандартной инструкции amoCRM для подключения.
                 </p>
                 <a
-                    href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=b54cc436-b04d-438c-b80f-e8ca06f9265b"
+                    href={getWidgetInstallUrl(widget.clientId!)}
                     target="_blank"
                     rel="noopener"
                     className="sc-btn"
@@ -126,7 +129,7 @@ export const PROBLEMS: ProblemItem[] = [
                 чтобы найти нужное поле. Это замедляет работу и раздражает сотрудников.
             </>
         ),
-        bgUrl: "/widgets/BackAll/back_web.webp",
+        bgUrl: "/widgets/BackAll/back_web.jpeg",
     },
     {
         title: "Хаос в расположении информации",
@@ -138,7 +141,7 @@ export const PROBLEMS: ProblemItem[] = [
                 понятной структуры.
             </>
         ),
-        bgUrl: "/widgets/BackAll/back_watch.webp",
+        bgUrl: "/widgets/BackAll/back_watch.jpeg",
     },
     {
         title: "Скрытые и технические поля мешают работе",
@@ -149,7 +152,7 @@ export const PROBLEMS: ProblemItem[] = [
                 фокусироваться на важном.
             </>
         ),
-        bgUrl: "/widgets/BackAll/back_chart.webp",
+        bgUrl: "/widgets/BackAll/back_chart.jpeg",
     },
     {
         title: "Потеря времени и концентрации",
@@ -160,7 +163,7 @@ export const PROBLEMS: ProblemItem[] = [
                 или пропустить ключевую информацию о клиенте.
             </>
         ),
-        bgUrl: "/widgets/BackAll/back_basket.webp",
+        bgUrl: "/widgets/BackAll/back_basket.jpeg",
     },
 ];
 
@@ -232,3 +235,4 @@ export const CASE_ITEMS: CaseItem[] = [
         text: "AMO CRM AMO CRM AMO CRM",
     },
 ];
+

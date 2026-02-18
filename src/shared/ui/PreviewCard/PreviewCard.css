@@ -19,7 +19,7 @@
   bottom: -140px;
   left: calc(50% - 60vw);
   width: 680px;
-  background: url("/widgets/TelegramButton/Subtract.png") no-repeat left center;
+  background: url("/widgets/TelegramButton/subtract.webp") no-repeat left center;
   background-size: 520px auto;
   z-index: 1;
   pointer-events: none;

@@ -1,5 +1,8 @@
 import type { ProblemItem } from "@/shared/ui/ProblemsCard/ProblemsCard";
 import type { FeatureItem } from "@/shared/ui/FeaturesCard/FeaturesCard";
+import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
+
+const widget = WIDGETS_DATA["massive-leads"];
 
 export const STEPS = [
   {
@@ -17,7 +20,7 @@ export const STEPS = [
 
         <div className="sc-cta" style={{ marginTop: 16 }}>
           <a
-            href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=48c94f76-e88e-4cb5-ad9c-a8a8c53e5a64"
+            href={getWidgetInstallUrl(widget.clientId!)}
             target="_blank"
             rel="noopener"
             className="dist-btn-primary"
@@ -147,7 +150,7 @@ export const PROBLEMS: ProblemItem[] = [
         для всех сделки за 2 минуты вместо 5 часов ручной работы.
       </>
     ),
-    bgUrl: "/widgets/WhatsappButton/back_timer.webp",
+    bgUrl: "/widgets/WhatsappButton/back_timer.jpeg",
   },
   {
     title: "Участие в выставке или событии",
@@ -157,7 +160,7 @@ export const PROBLEMS: ProblemItem[] = [
         «Выставка 2025» и начинайте отработку, пока интерес клиентов горячий.
       </>
     ),
-    bgUrl: "/widgets/WhatsappButton/back_switch.webp",
+    bgUrl: "/widgets/WhatsappButton/back_switch.jpeg",
   },
   {
     title: "Email-маркетинг кампании",
@@ -168,7 +171,7 @@ export const PROBLEMS: ProblemItem[] = [
         письма.
       </>
     ),
-    bgUrl: "/widgets/WhatsappButton/back_cross.webp",
+    bgUrl: "/widgets/WhatsappButton/back_cross.jpeg",
   },
   {
     title: "Реактивация старых клиентов",
@@ -178,7 +181,7 @@ export const PROBLEMS: ProblemItem[] = [
         сделки для всех неактивных контактов с тегом «Реактивация».
       </>
     ),
-    bgUrl: "/widgets/WhatsappButton/back_basket.webp",
+    bgUrl: "/widgets/WhatsappButton/back_basket.jpeg",
   },
   {
     title: "Сезонные акции и распродажи",
@@ -188,7 +191,7 @@ export const PROBLEMS: ProblemItem[] = [
         сделки для каждого и предложите индивидуальные условия.
       </>
     ),
-    bgUrl: "/widgets/WhatsappButton/back_timer.webp",
+    bgUrl: "/widgets/WhatsappButton/back_timer.jpeg",
   },
   {
     title: "Работа с партнёрскими базами",
@@ -198,13 +201,13 @@ export const PROBLEMS: ProblemItem[] = [
         сделки с соответствующими тегами и нужной воронкой.
       </>
     ),
-    bgUrl: "/widgets/WhatsappButton/back_switch.webp",
+    bgUrl: "/widgets/WhatsappButton/back_switch.jpeg",
   },
 ];
 
 export const FEATURES: FeatureItem[] = [
   {
-    iconUrl: "/widgets/WhatsappButton/group.webp",
+    iconUrl: "/widgets/WhatsappButton/group.jpeg",
     title: "Массовое создание за секунды",
     text: (
       <>
@@ -214,7 +217,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/WhatsappButton/sort.webp",
+    iconUrl: "/widgets/WhatsappButton/sort.jpeg",
     title: "Умная фильтрация контактов",
     text: (
       <>
@@ -224,7 +227,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/WhatsappButton/free.webp",
+    iconUrl: "/widgets/WhatsappButton/free.jpeg",
     title: "Автоматическое добавление тегов",
     text: (
       <>
@@ -234,7 +237,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/WhatsappButton/target.webp",
+    iconUrl: "/widgets/WhatsappButton/target.jpeg",
     title: "Выбор воронки и этапа",
     text: (
       <>
@@ -244,7 +247,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/WhatsappButton/deadline.webp",
+    iconUrl: "/widgets/WhatsappButton/deadline.jpeg",
     title: "Отслеживание прогресса",
     text: (
       <>
@@ -254,7 +257,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/WhatsappButton/mobile.webp",
+    iconUrl: "/widgets/WhatsappButton/mobile.jpeg",
     title: "Простота использования",
     text: (
       <>
@@ -264,3 +267,4 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
 ];
+

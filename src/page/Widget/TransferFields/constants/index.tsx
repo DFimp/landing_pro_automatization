@@ -1,3 +1,7 @@
+import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
+
+const widget = WIDGETS_DATA["transfer-fields"];
+
 export const STEPS = [
     {
         title: "Установка виджета в amoCRM",
@@ -24,7 +28,7 @@ export const STEPS = [
 
                 <div style={{ marginTop: 16 }}>
                     <a
-                        href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=d56233ed-70ac-4f3c-bc18-ddd2ebe3ae6c"
+                        href={getWidgetInstallUrl(widget.clientId!)}
                         target="_blank"
                         rel="noopener"
                         className="dist-btn-primary"

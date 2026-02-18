@@ -1,3 +1,8 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
+
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -5,18 +10,54 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
-  if (!isOpen) return null;
+  const [mounted, setMounted] = useState(false);
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
-      <div 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const { body } = document;
+    const prevOverflow = body.style.overflow;
+    const prevPaddingRight = body.style.paddingRight;
+    const prevModalOpen = body.dataset.modalOpen;
+    const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+    body.style.overflow = "hidden";
+    body.dataset.modalOpen = "true";
+    if (scrollBarWidth > 0) {
+      body.style.paddingRight = `${scrollBarWidth}px`;
+    }
+
+    return () => {
+      body.style.overflow = prevOverflow;
+      body.style.paddingRight = prevPaddingRight;
+      if (typeof prevModalOpen === "undefined") {
+        delete body.dataset.modalOpen;
+      } else {
+        body.dataset.modalOpen = prevModalOpen;
+      }
+    };
+  }, [isOpen]);
+
+  if (!isOpen || !mounted) return null;
+
+  return createPortal(
+    <div
+      className="fixed inset-0 z-[3000] flex items-center justify-center"
+      style={{ zIndex: 2147483647 }}
+    >
+      <div
         className="absolute inset-0 bg-black/50 transition-opacity"
         onClick={onClose}
       />
       <div className="relative bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 transform transition-all">
         {children}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 

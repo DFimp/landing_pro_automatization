@@ -28,7 +28,7 @@ export default function ArticleSecondCase() {
         <ArticleList items={neededDuplicates}></ArticleList>
         <ArticleImageWrapper>
             <Image
-                    src="/articles/WorkDuplicatingTransactions/case2/article_case_2_image_1.webp"
+                    src="/articles/WorkDuplicatingTransactions/case2/article_case_2_image_1.jpeg"
                     alt="клиент с двумя разными услугами"
                     width={1097}
                     height={100}
@@ -62,7 +62,7 @@ export default function ArticleSecondCase() {
         </p>
         <ArticleImageWrapper>
             <Image
-                    src="/articles/WorkDuplicatingTransactions/case2/article_case_2_image_2.webp"
+                    src="/articles/WorkDuplicatingTransactions/case2/article_case_2_image_2.jpeg"
                     alt="основные настройки контакта"
                     width={735}
                     height={0}

@@ -5,13 +5,15 @@ import { WIDGETS_DATA } from "@/shared/constants/widgets";
 
 const widget = WIDGETS_DATA["meet-calendar"];
 
-export const metadata: Metadata = createSEOMetadata({
-  title: widget.title,
-  description: widget.description,
-  keywords: widget.keywords,
-  canonical: "/widgets/meet-calendar",
-  ogType: "website",
-});
+export const metadata: Metadata = {
+  ...createSEOMetadata({
+    title: widget.seoTitle,
+    description: widget.description,
+    keywords: widget.keywords,
+    canonical: "/widgets/meet-calendar",
+    ogType: "website",
+  }),
+};
 
 export default async function Page({
   searchParams,

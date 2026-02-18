@@ -1,5 +1,8 @@
 import type { CaseItem } from "@/shared/ui/Case/CaseCard";
 import type { FeatureItem } from "@/shared/ui/FeaturesCard/FeaturesCard";
+import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
+
+const widget = WIDGETS_DATA["telegram-notify"];
 
 export const STEPS = [
   {
@@ -18,7 +21,7 @@ export const STEPS = [
           аккаунта.
         </div>
         <a
-          href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=c31be896-9148-4ec1-9d7a-2aba7b16906e"
+          href={getWidgetInstallUrl(widget.clientId!)}
           target="_blank"
           rel="noopener"
           className="sc-btn"
@@ -67,6 +70,43 @@ export const STEPS = [
           <li>Вставьте Telegram ID из шага выше</li>
           <li>Нажмите «Добавить», затем «Сохранить»</li>
         </ul>
+      </div>
+    ),
+  },
+  {
+    title: "Отправка уведомлений в группу",
+    content: (
+      <div>
+        <p>
+          Если уведомления должны приходить в групповой чат, добавьте чат как получателя:
+        </p>
+        <ul className="sc-list">
+          <li>
+            Добавьте бота{" "}
+            <a
+              href="https://t.me/pro_automatization_telegram_bot"
+              className="underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @pro_automatization_telegram_bot
+            </a>{" "}
+            в нужную группу
+          </li>
+          <li>Напишите в группе команду /start</li>
+          <li>
+            Скопируйте ID группы — он начинается со знака минус (например{" "}
+            <code>-41243123</code>)
+          </li>
+          <li>
+            Добавьте этот ID (вместе с минусом) в настройках как пользователя и в поле
+            «Пользователь» выберите «Чат» (см. пункт №3)
+          </li>
+        </ul>
+        <div className="sc-note">
+          <div className="sc-note-title">Пример</div>
+          ID группы: <strong>-41243123</strong>
+        </div>
       </div>
     ),
   },
@@ -140,7 +180,7 @@ export const STEPS = [
 
 export const FEATURES: FeatureItem[] = [
   {
-    iconUrl: "/widgets/TelegramNotify/bell.webp",
+    iconUrl: "/widgets/TelegramNotify/bell.jpeg",
     title: "Мгновенные уведомления",
     text: (
       <>
@@ -150,7 +190,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/TelegramNotify/letter_star.webp",
+    iconUrl: "/widgets/TelegramNotify/letter_star.jpeg",
     title: "Умные триггеры",
     text: (
       <>
@@ -160,7 +200,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/TelegramNotify/cursor.webp",
+    iconUrl: "/widgets/TelegramNotify/cursor.jpeg",
     title: "Запуск SalesBot одним кликом",
     text: (
       <>
@@ -170,7 +210,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/TelegramNotify/clock.webp",
+    iconUrl: "/widgets/TelegramNotify/clock.jpeg",
     title: "Контроль времени отправки",
     text: (
       <>
@@ -180,7 +220,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/TelegramNotify/letter_cist.webp",
+    iconUrl: "/widgets/TelegramNotify/letter_cist.jpeg",
     title: "Автоочистка сообщений",
     text: (
       <>
@@ -190,7 +230,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/TelegramNotify/pyramid.webp",
+    iconUrl: "/widgets/TelegramNotify/pyramid.jpeg",
     title: "Полная информация о сделке",
     text: (
       <>

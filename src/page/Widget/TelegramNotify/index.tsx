@@ -6,7 +6,7 @@ import SettingsCard from "@/shared/ui/settings/SettingsCard";
 import CaseCard from "@/shared/ui/Case/CaseCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
-import { WIDGETS_DATA, phone } from "@/shared/constants";
+import { WIDGETS_DATA, getWidgetInstallUrl, phone } from "@/shared/constants";
 import { STEPS, CASE_ITEMS } from "./constants";
 
 const widget = WIDGETS_DATA["telegram-notify"];
@@ -23,7 +23,7 @@ export default function TelegramNotify({
       <ServiceSchemaTag
         data={{
           serviceType: "Разработка виджетов amoCRM",
-          name: widget.title,
+          name: widget.seoTitle,
           description: widget.description,
         }}
       />
@@ -49,7 +49,7 @@ export default function TelegramNotify({
                 <div className="at-cta">
                   <a
                     className="at-btn-primary"
-                    href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=c31be896-9148-4ec1-9d7a-2aba7b16906e"
+                    href={getWidgetInstallUrl(widget.clientId!)}
                     target="_blank"
                     rel="noopener"
                   >
@@ -65,7 +65,7 @@ export default function TelegramNotify({
                 <div className="at-feature-card">
                   <div className="at-feature-ico">
                     <Image
-                      src="/widgets/TelegramNotify/bell.webp"
+                      src="/widgets/TelegramNotify/bell.jpeg"
                       alt="иконка колокольчика"
                       width={40}
                       height={40}
@@ -82,7 +82,7 @@ export default function TelegramNotify({
                 <div className="at-feature-card">
                   <div className="at-feature-ico">
                     <Image
-                      src="/widgets/TelegramNotify/letter_star.webp"
+                      src="/widgets/TelegramNotify/letter_star.jpeg"
                       alt="иконка письма"
                       width={40}
                       height={40}
@@ -99,7 +99,7 @@ export default function TelegramNotify({
                 <div className="at-feature-card">
                   <div className="at-feature-ico">
                     <Image
-                      src="/widgets/TelegramNotify/cursor.webp"
+                      src="/widgets/TelegramNotify/cursor.jpeg"
                       alt="иконка курсора"
                       width={40}
                       height={40}
@@ -118,7 +118,7 @@ export default function TelegramNotify({
                 <div className="at-feature-card">
                   <div className="at-feature-ico">
                     <Image
-                      src="/widgets/TelegramNotify/clock.webp"
+                      src="/widgets/TelegramNotify/clock.jpeg"
                       alt="иконка часов"
                       width={40}
                       height={40}
@@ -137,7 +137,7 @@ export default function TelegramNotify({
                 <div className="at-feature-card">
                   <div className="at-feature-ico">
                     <Image
-                      src="/widgets/TelegramNotify/letter_cist.webp"
+                      src="/widgets/TelegramNotify/letter_cist.jpeg"
                       alt="иконка письма с кистью"
                       width={40}
                       height={40}
@@ -154,7 +154,7 @@ export default function TelegramNotify({
                 <div className="at-feature-card">
                   <div className="at-feature-ico">
                     <Image
-                      src="/widgets/TelegramNotify/pyramid.webp"
+                      src="/widgets/TelegramNotify/pyramid.jpeg"
                       alt="иконка пирамидки со стрелкой"
                       width={40}
                       height={40}
@@ -186,7 +186,7 @@ export default function TelegramNotify({
                   <div className="at-phone-wrap">
                     <div className="at-phone-blob" aria-hidden />
                     <Image
-                      src="/widgets/TelegramNotify/telephone.webp"
+                      src="/widgets/TelegramNotify/telephone.png"
                       alt="макет телефона"
                       width={540}
                       height={760}

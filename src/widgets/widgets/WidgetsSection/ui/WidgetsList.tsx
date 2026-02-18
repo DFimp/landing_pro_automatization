@@ -5,11 +5,13 @@ import { WidgetsListItem } from "./WidgetsListItem";
 import { SearchWithGroups, SearchableItem } from "@/shared/ui/SearchWithGroups/SearchWithGroups";
 import { WIDGETS_LIST } from "@/shared/constants";
 
+const VARIANT_PATTERN = [2, 1, 1, 3, 4, 1] as const;
+const getVariant = (index: number) => VARIANT_PATTERN[index % VARIANT_PATTERN.length];
+
 type Widget = {
   title: string;
   text: string;
   link: string;
-  variant: number;
   tags: string[];
 };
 
@@ -23,10 +25,9 @@ function normalize(s: string) {
 
 export function WidgetsList() {
   const widgets: Widget[] = WIDGETS_LIST.map(w => ({
-    title: w.title,
+    title: w.seoTitle,
     text: w.description,
-    link: w.link,
-    variant: w.variant,
+    link: w.route,
     tags: w.tags,
   }));
 
@@ -43,7 +44,6 @@ export function WidgetsList() {
         text: w.text,
         tags: w.tags,
         link: w.link,
-        variant: w.variant,
       })),
     [widgets]
   );
@@ -84,13 +84,13 @@ export function WidgetsList() {
       <div className="mt-4 text-[14px] text-black/60">Найдено: {filtered.length}</div>
 
       <div className="mt-10 grid sm:grid-cols-2 grid-cols-1 gap-[40px] min-h-[300px]">
-        {filtered.map((widget) => (
+        {filtered.map((widget, index) => (
           <WidgetsListItem
             key={widget.link}
             link={widget.link}
             text={widget.text}
             title={widget.title}
-            variant={widget.variant}
+            variant={getVariant(index)}
           />
         ))}
       </div>

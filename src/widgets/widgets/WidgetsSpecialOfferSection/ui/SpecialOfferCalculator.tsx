@@ -9,21 +9,21 @@ import SpecialOfferUsersCounter from "./SpecialOfferUsersCounter";
 import SpecialOfferProfit from "./SpecialOfferProfit";
 import SpecialOfferConfirm from "./SpecialOfferConfirm";
 
-type MonthsOption = 5 | 7 | 9 | 17;
+type MonthsOption = 6 | 9 | 12 | 24;
 
 export default function SpecialOfferCalculator() {
-  const [monthsCount, setMonthsCount] = useState<MonthsOption>(7);
-  const [tariff, setTariff] = useState<TariffIndex>(0);
+  const [monthsCount, setMonthsCount] = useState<MonthsOption>(9);
+  const [tariff, setTariff] = useState<TariffIndex>(3);
   const [usersCount, setUsersCount] = useState(10);
 
   const tariffsCosts = [599, 1199, 1699] as const;
   const tariffsNames = ["Базовый", "Расширенный", "Профессиональный", "Архивный"] as const;
 
-  const bonusMonths: Record<MonthsOption, number> = {
-    5: 1,
-    7: 2,
-    9: 3,
-    17: 7,
+    const bonusMonths: Record<MonthsOption, number> = {
+    6: 1,
+    9: 2,
+    12: 3,
+    24: 7,
   };
 
   const [archivedPrice, setArchivedPrice] = useState<number>(0);

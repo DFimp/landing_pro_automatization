@@ -21,7 +21,7 @@ const HomeHero = () => {
 
       <Image
         className="ml-auto w-[240px] h-[210px] sm:w-[580px] sm:h-[464px]"
-        src="/decor/laptop.webp"
+        src="/decor/laptop.jpeg"
         alt="ноутбук"
         width={580}
         height={464}
@@ -32,3 +32,4 @@ const HomeHero = () => {
 };
 
 export default HomeHero;
+

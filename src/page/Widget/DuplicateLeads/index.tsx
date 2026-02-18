@@ -9,7 +9,7 @@ import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollT
 import { STEPS, FEATURES, PROBLEMS, CASE_ITEMS } from "./constants";
 import Link from "next/link";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
-import { WIDGETS_DATA } from "@/shared/constants/widgets";
+import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 
 const widget = WIDGETS_DATA["duplicate-leads"];
 
@@ -25,7 +25,7 @@ export default function DuplicateLeads({
       <ServiceSchemaTag
         data={{
           serviceType: "Разработка виджетов amoCRM",
-          name: widget.title,
+          name: widget.seoTitle,
           description: widget.description,
         }}
       />
@@ -49,7 +49,7 @@ export default function DuplicateLeads({
                 <div className="tg-cta">
                   <a
                     className="tg-btn-primary"
-                    href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=9036b829-2690-470d-9248-e7c4bb3f6699"
+                    href={getWidgetInstallUrl(widget.clientId!)}
                     target="_blank"
                     rel="noopener"
                   >
@@ -58,7 +58,6 @@ export default function DuplicateLeads({
                   <Link
                     className="article-btn-link"
                     href="/articles/duplicate-leads"
-                    target="_blank"
                   >
                     Статья
                   </Link>

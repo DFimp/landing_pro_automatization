@@ -105,11 +105,11 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({
       // Формируем данные для отправки
       const payload = {
         name: formData.name,
-        phoneNumber: formData.phone.replace(/\D/g, ''),
-        monthsCount: prefilledMonths,
-        usersCount: prefilledUsers,
-        amoTariff: prefilledAmoTariff,
-        selectedTariff: selectedTariff
+        phone_number: formData.phone.replace(/\D/g, ''),
+        months_count: prefilledMonths,
+        users_count: prefilledUsers,
+        amo_tariff: prefilledAmoTariff,
+        selected_tariff: selectedTariff
       };
 
       // Отправляем POST-запрос на бэкенд

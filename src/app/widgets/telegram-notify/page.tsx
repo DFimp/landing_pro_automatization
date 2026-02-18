@@ -6,7 +6,7 @@ import { WIDGETS_DATA } from "@/shared/constants/widgets";
 const widget = WIDGETS_DATA['telegram-notify'];
 
 export const metadata: Metadata = createSEOMetadata({
-  title: widget.title,
+  title: widget.seoTitle,
   description: widget.description,
   keywords: widget.keywords,
   canonical: "/widgets/telegram-notify",

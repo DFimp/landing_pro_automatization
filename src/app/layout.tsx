@@ -1,17 +1,16 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import React from "react";
+import React, { Suspense } from "react";
 import Header from "@/widgets/header/Header";
 import { Footer } from "@/widgets/footer";
-import { Suspense } from "react";
-import { YandexMetrika, YandexScript } from "@/shared/scripts/YandexMetrika";
-import { GoogleAnalytics, GoogleAnalyticsScript } from "@/shared/scripts/GoogleAnalytics";
-import { 
-  SiteNavigationSchemaTag, 
+import { Analytics } from "@/shared/scripts/Analytics";
+import {
+  SiteNavigationSchemaTag,
   WebSiteSchemaTag,
-  SITE_NAVIGATION 
+  SITE_NAVIGATION
 } from '@/shared/lib/seo';
+import { WebVitals } from './web-vitals';
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -67,16 +66,16 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <head>
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://mc.yandex.ru" />
+        <link rel="dns-prefetch" href="https://mc.yandex.ru" />
         <WebSiteSchemaTag />
         <SiteNavigationSchemaTag items={SITE_NAVIGATION} />
       </head>
       <body className={`${montserrat.variable} antialiased`}>
-        <YandexScript />
-        <GoogleAnalyticsScript />
-        <Suspense fallback={<></>}>
-          <YandexMetrika />
-          <GoogleAnalytics />
-        </Suspense>
+        <Analytics />
+        <WebVitals />
         <Suspense fallback={<div className="h-20" />}>
           <Header />
         </Suspense>
