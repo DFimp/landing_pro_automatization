@@ -74,6 +74,43 @@ export const STEPS = [
     ),
   },
   {
+    title: "Отправка уведомлений в группу",
+    content: (
+      <div>
+        <p>
+          Если уведомления должны приходить в групповой чат, добавьте чат как получателя:
+        </p>
+        <ul className="sc-list">
+          <li>
+            Добавьте бота{" "}
+            <a
+              href="https://t.me/pro_automatization_telegram_bot"
+              className="underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @pro_automatization_telegram_bot
+            </a>{" "}
+            в нужную группу
+          </li>
+          <li>Напишите в группе команду /start</li>
+          <li>
+            Скопируйте ID группы — он начинается со знака минус (например{" "}
+            <code>-41243123</code>)
+          </li>
+          <li>
+            Добавьте этот ID (вместе с минусом) в настройках как пользователя и в поле
+            «Пользователь» выберите «Чат» (см. пункт №3)
+          </li>
+        </ul>
+        <div className="sc-note">
+          <div className="sc-note-title">Пример</div>
+          ID группы: <strong>-41243123</strong>
+        </div>
+      </div>
+    ),
+  },
+  {
     title: "Настройка цифровой воронки",
     content: (
       <div>
