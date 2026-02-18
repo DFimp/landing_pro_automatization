@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import DocsFlow from "@/page/Widget/DocsFlow";
+import MeetCalendar from "@/page/Widget/MeetCalendar";
 import { createSEOMetadata } from "@/shared/lib/seo";
 import { WIDGETS_DATA } from "@/shared/constants/widgets";
 
-const widget = WIDGETS_DATA["docs-flow"];
+const widget = WIDGETS_DATA["meet-calendar"];
 
 export const metadata: Metadata = {
   ...createSEOMetadata({
     title: widget.seoTitle,
     description: widget.description,
     keywords: widget.keywords,
-    canonical: "/widgets/docs-flow",
+    canonical: "/widgets/meet-calendar",
     ogType: "website",
   }),
 };
@@ -21,6 +21,5 @@ export default async function Page({
   searchParams: Promise<{ embed?: string }>;
 }) {
   const params = await searchParams;
-  return <DocsFlow searchParams={params} />;
+  return <MeetCalendar searchParams={params} />;
 }
-

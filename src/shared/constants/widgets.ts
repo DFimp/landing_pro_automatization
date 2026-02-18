@@ -129,6 +129,24 @@ export const WIDGETS: Widget[] = [
     clientId: "e27fe468-e09b-4b17-8786-48e01614e951"
   },
   {
+    key: 'meet-calendar',
+    title: 'Календарь встреч',
+    seoTitle: 'Календарь встреч для amoCRM',
+    description: 'Создавайте встречи по триггерам и вручную. Назначайте ответственных, дату и время.',
+    route: widgetRoute('meet-calendar'),
+    tags: ['Календарь', 'Встречи', 'Автоматизация'],
+    aliases: ['календарь', 'встречи', 'meet', 'calendar', 'записи'],
+    keywords: [
+      'календарь встреч amocrm',
+      'календарь записей amocrm',
+      'встречи по триггеру amocrm',
+      'meeting calendar amocrm',
+    ],
+    showInFooter: true,
+    showInSearch: true,
+    hidden: false,
+  },
+  {
     key: 'time-zone',
     title: 'Часовые пояса',
     seoTitle: 'Регион по телефону для amoCRM',
