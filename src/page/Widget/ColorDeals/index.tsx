@@ -9,7 +9,7 @@ import { ServiceSchemaTag } from "@/shared/lib/seo";
 import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 import { FEATURES, PROBLEMS, STEPS } from "./constants";
 
-const widget = WIDGETS_DATA["color_deals"];
+const widget = WIDGETS_DATA["color-leads"];
 
 export default function ColorDeals({
   searchParams,
@@ -33,16 +33,18 @@ export default function ColorDeals({
           <>
             <section className="dist-hero">
               <div className="at-container">
-                <h1 className="dist-pill dist-bleed-left">Окраска сделок для amoCRM</h1>
+                <h1 className="dist-pill dist-bleed-left">
+                  Окраска сделок для amoCRM
+                </h1>
 
                 <h2 className="dist-hero-title">
                   Автоматически выделяйте сделки цветом по правилам
                 </h2>
 
                 <p className="dist-hero-sub">
-                  Настройте условия (бюджет, этап, теги, пользовательские поля и другие признаки) и
-                  подсветите сделки в воронке и в списке. Команда быстрее видит приоритеты и меньше
-                  пропускает важное.
+                  Настройте условия (бюджет, этап, теги, пользовательские поля и
+                  другие признаки) и подсветите сделки в воронке и в списке.
+                  Команда быстрее видит приоритеты и меньше пропускает важное.
                 </p>
 
                 <div className="dist-cta">
@@ -94,4 +96,3 @@ export default function ColorDeals({
     </>
   );
 }
-
