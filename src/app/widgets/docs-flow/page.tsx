@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     canonical: "/widgets/docs-flow",
     ogType: "website",
   }),
+  robots: { index: false, follow: true },
 };
 
 export default async function Page({
