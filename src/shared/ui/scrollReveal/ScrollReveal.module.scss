@@ -12,10 +12,6 @@
   --sr-rx-from: 0deg;
   --sr-ry-from: 0deg;
   --sr-rz-from: 0deg;
-
-  opacity: 1;
-  transform: none;
-  filter: none;
 }
 
 .tilt {
@@ -50,128 +46,139 @@
   --sr-stagger: 90ms;
 }
 
-.stagger [data-sr-item] {
+.reveal:not([data-sr-revealed="true"]) {
+  opacity: 0;
+  transform: perspective(var(--sr-perspective))
+    translate3d(var(--sr-x-from), var(--sr-y-from), 0)
+    rotateX(var(--sr-rx-from))
+    rotateY(var(--sr-ry-from))
+    rotateZ(var(--sr-rz-from))
+    scale(var(--sr-scale-from));
+  filter: blur(var(--sr-blur)) saturate(0.98);
+}
+
+.reveal[data-sr-revealed="true"] {
   opacity: 1;
   transform: none;
   filter: none;
+  animation: sr-reveal var(--sr-duration) var(--sr-ease) both;
+  animation-delay: var(--sr-delay);
 }
 
-@supports (animation-timeline: view()) {
-  .reveal {
-    animation: sr-reveal var(--sr-duration) var(--sr-ease) both;
-    animation-delay: var(--sr-delay);
-    animation-timeline: view();
-    /* Start slightly earlier and stretch over a longer scroll distance */
-    animation-range: entry 5% exit 22%;
-  }
+.wipe {
+  overflow: clip;
+}
 
-  .wipe {
-    overflow: clip;
-  }
+.wipe.reveal[data-sr-revealed="true"] {
+  animation-name: sr-wipe;
+}
 
-  .wipe.reveal {
-    animation-name: sr-wipe;
-  }
+.wipeX.reveal[data-sr-revealed="true"] {
+  animation-name: sr-wipe-x;
+}
 
-  .wipeX.reveal {
-    animation-name: sr-wipe-x;
-  }
+.bubble.reveal[data-sr-revealed="true"] {
+  animation-name: sr-pop;
+}
 
-  .bubble.reveal {
-    animation-name: sr-pop;
-  }
+.stagger [data-sr-item] {
+  opacity: 0;
+  transform: translate3d(var(--sr-x-from), var(--sr-y-from), 0)
+    scale(var(--sr-scale-from));
+  filter: blur(var(--sr-blur)) saturate(0.98);
+}
 
-  .stagger [data-sr-item] {
-    animation: sr-reveal var(--sr-duration) var(--sr-ease) both;
-    animation-timeline: view();
-    animation-range: entry 5% exit 22%;
-    animation-delay: calc(var(--sr-delay) + (var(--i, 0) * var(--sr-stagger)));
-  }
+.stagger[data-sr-revealed="true"] [data-sr-item] {
+  opacity: 1;
+  transform: none;
+  filter: none;
+  animation: sr-reveal var(--sr-duration) var(--sr-ease) both;
+  animation-delay: calc(var(--sr-delay) + (var(--i, 0) * var(--sr-stagger)));
+}
 
-  .wipe.stagger [data-sr-item] {
-    animation-name: sr-wipe;
-  }
+.wipe.stagger[data-sr-revealed="true"] [data-sr-item] {
+  animation-name: sr-wipe;
+}
 
-  .wipeX.stagger [data-sr-item] {
-    animation-name: sr-wipe-x;
-  }
+.wipeX.stagger[data-sr-revealed="true"] [data-sr-item] {
+  animation-name: sr-wipe-x;
+}
 
-  .bubble.stagger [data-sr-item] {
-    animation-name: sr-pop;
-    transform-origin: center;
-  }
+.bubble.stagger[data-sr-revealed="true"] [data-sr-item] {
+  animation-name: sr-pop;
+  transform-origin: center;
+}
 
-  @keyframes sr-reveal {
-    from {
-      opacity: 0;
-      transform: perspective(var(--sr-perspective))
-        translate3d(var(--sr-x-from), var(--sr-y-from), 0)
-        rotateX(var(--sr-rx-from))
-        rotateY(var(--sr-ry-from))
-        rotateZ(var(--sr-rz-from))
-        scale(var(--sr-scale-from));
-      filter: blur(var(--sr-blur)) saturate(0.98);
-    }
-    to {
-      opacity: 1;
-      transform: perspective(var(--sr-perspective))
-        translate3d(var(--sr-x-to), var(--sr-y-to), 0)
-        rotateX(0deg)
-        rotateY(0deg)
-        rotateZ(0deg)
-        scale(1);
-      filter: blur(0);
-    }
+@keyframes sr-reveal {
+  from {
+    opacity: 0;
+    transform: perspective(var(--sr-perspective))
+      translate3d(var(--sr-x-from), var(--sr-y-from), 0)
+      rotateX(var(--sr-rx-from))
+      rotateY(var(--sr-ry-from))
+      rotateZ(var(--sr-rz-from))
+      scale(var(--sr-scale-from));
+    filter: blur(var(--sr-blur)) saturate(0.98);
   }
-
-  @keyframes sr-pop {
-    0% {
-      opacity: 0;
-      transform: translate3d(var(--sr-x-from), var(--sr-y-from), 0)
-        scale(var(--sr-scale-from));
-      filter: blur(var(--sr-blur)) saturate(0.98);
-    }
-    60% {
-      opacity: 1;
-      transform: translate3d(var(--sr-x-to), var(--sr-y-to), 0) scale(1.06);
-      filter: blur(0);
-    }
-    100% {
-      opacity: 1;
-      transform: translate3d(var(--sr-x-to), var(--sr-y-to), 0) scale(1);
-      filter: blur(0);
-    }
+  to {
+    opacity: 1;
+    transform: perspective(var(--sr-perspective))
+      translate3d(var(--sr-x-to), var(--sr-y-to), 0)
+      rotateX(0deg)
+      rotateY(0deg)
+      rotateZ(0deg)
+      scale(1);
+    filter: blur(0);
   }
+}
 
-  @keyframes sr-wipe {
-    from {
-      opacity: 0;
-      clip-path: inset(0 0 100% 0);
-      transform: translate3d(var(--sr-x-from), var(--sr-y-from), 0)
-        scale(var(--sr-scale-from));
-      filter: blur(var(--sr-blur)) saturate(0.98);
-    }
-    to {
-      opacity: 1;
-      clip-path: inset(0 0 0 0);
-      transform: translate3d(var(--sr-x-to), var(--sr-y-to), 0) scale(1);
-      filter: blur(0);
-    }
+@keyframes sr-pop {
+  0% {
+    opacity: 0;
+    transform: translate3d(var(--sr-x-from), var(--sr-y-from), 0)
+      scale(var(--sr-scale-from));
+    filter: blur(var(--sr-blur)) saturate(0.98);
   }
+  60% {
+    opacity: 1;
+    transform: translate3d(var(--sr-x-to), var(--sr-y-to), 0) scale(1.06);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(var(--sr-x-to), var(--sr-y-to), 0) scale(1);
+    filter: blur(0);
+  }
+}
 
-  @keyframes sr-wipe-x {
-    from {
-      opacity: 0;
-      clip-path: inset(0 100% 0 0);
-      transform: translate3d(var(--sr-x-from), 0, 0) scale(var(--sr-scale-from));
-      filter: blur(var(--sr-blur)) saturate(0.98);
-    }
-    to {
-      opacity: 1;
-      clip-path: inset(0 0 0 0);
-      transform: translate3d(var(--sr-x-to), 0, 0) scale(1);
-      filter: blur(0);
-    }
+@keyframes sr-wipe {
+  from {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+    transform: translate3d(var(--sr-x-from), var(--sr-y-from), 0)
+      scale(var(--sr-scale-from));
+    filter: blur(var(--sr-blur)) saturate(0.98);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: translate3d(var(--sr-x-to), var(--sr-y-to), 0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes sr-wipe-x {
+  from {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+    transform: translate3d(var(--sr-x-from), 0, 0) scale(var(--sr-scale-from));
+    filter: blur(var(--sr-blur)) saturate(0.98);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: translate3d(var(--sr-x-to), 0, 0) scale(1);
+    filter: blur(0);
   }
 }
 

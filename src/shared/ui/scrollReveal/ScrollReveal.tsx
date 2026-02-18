@@ -12,6 +12,8 @@ type ScrollRevealProps<T extends ElementType> = {
   variant?: ScrollRevealVariant;
   staggerChildren?: boolean;
   staggerMs?: number;
+  once?: boolean;
+  amount?: number;
   xFrom?: number;
   yFrom?: number;
   xTo?: number;
@@ -30,6 +32,8 @@ export default function ScrollReveal<T extends ElementType = "div">({
   variant = "lift",
   staggerChildren = false,
   staggerMs,
+  once = true,
+  amount = 0.25,
   xFrom,
   yFrom,
   xTo,
@@ -66,6 +70,10 @@ export default function ScrollReveal<T extends ElementType = "div">({
         className
       )}
       style={{ ...revealVars, ...style }}
+      data-sr="true"
+      data-sr-once={once ? "true" : "false"}
+      data-sr-amount={`${amount}`}
+      data-sr-revealed="false"
     >
       {children}
     </Component>

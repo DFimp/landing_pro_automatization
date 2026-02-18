@@ -5,6 +5,7 @@ import React, { Suspense } from "react";
 import Header from "@/widgets/header/Header";
 import { Footer } from "@/widgets/footer";
 import { Analytics } from "@/shared/scripts/Analytics";
+import ScrollRevealObserver from "@/shared/ui/scrollReveal/ScrollRevealObserver.client";
 import {
   SiteNavigationSchemaTag,
   WebSiteSchemaTag,
@@ -76,6 +77,7 @@ export default function RootLayout({
       <body className={`${montserrat.variable} antialiased`}>
         <Analytics />
         <WebVitals />
+        <ScrollRevealObserver />
         <Suspense fallback={<div className="h-20" />}>
           <Header />
         </Suspense>
