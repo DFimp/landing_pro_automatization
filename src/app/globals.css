@@ -169,7 +169,7 @@ html {
 .widget-card:hover,
 .widget-card:focus-within {
   transform: translate3d(0, -2px, 0);
-  box-shadow: 0 14px 44px rgba(55, 96, 231, 0.16);
+  box-shadow: 0 20px 20px rgba(55, 96, 231, 0.16);
 }
 
 .widget-card:hover::after,
