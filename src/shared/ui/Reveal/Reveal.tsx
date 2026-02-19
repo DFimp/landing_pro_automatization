@@ -1,13 +1,17 @@
 "use client";
 
-import { ReactNode, useEffect, useRef, useState } from "react";
+import type { ElementType, ReactNode } from "react";
+import ScrollReveal from "@/shared/ui/scrollReveal/ScrollReveal";
 
 type RevealProps = {
   children: ReactNode;
-  className?: string;
-  shownClassName?: string;
+  className?: string; // legacy: kept for compatibility
+  shownClassName?: string; // legacy: kept for compatibility
   delayMs?: number;
   once?: boolean;
+  amount?: number;
+  variant?: Parameters<typeof ScrollReveal>[0]["variant"];
+  as?: ElementType;
 };
 
 export default function Reveal({
@@ -16,37 +20,20 @@ export default function Reveal({
   shownClassName = "",
   delayMs = 0,
   once = true,
+  amount,
+  variant = "typeFast",
+  as,
 }: RevealProps) {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const [shown, setShown] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setShown(true);
-          if (once) obs.disconnect();
-        } else if (!once) {
-          setShown(false);
-        }
-      },
-      { threshold: 0.15, rootMargin: "0px 0px -10% 0px" }
-    );
-
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, [once]);
-
   return (
-    <div
-      ref={ref}
-      className={`${className} ${shown ? shownClassName : ""}`}
-      style={{ transitionDelay: `${delayMs}ms` }}
+    <ScrollReveal
+      as={(as ?? "div") as ElementType}
+      variant={variant}
+      delayMs={delayMs}
+      once={once}
+      amount={amount}
+      className={[className, shownClassName].filter(Boolean).join(" ")}
     >
       {children}
-    </div>
+    </ScrollReveal>
   );
 }

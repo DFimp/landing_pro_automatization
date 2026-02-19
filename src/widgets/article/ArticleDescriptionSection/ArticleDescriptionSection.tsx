@@ -1,3 +1,5 @@
+import ScrollReveal from "@/shared/ui/scrollReveal/ScrollReveal";
+
 type ArticleDescriptionSectionProps = {
   category?: string;   // например: "CRM" или "РАЗРАБОТКА"
   tag?: string;        // например: "#СТАТЬИ"
@@ -12,7 +14,11 @@ export function ArticleDescriptionSection({
   readTime = "4 минуты",
 }: ArticleDescriptionSectionProps) {
   return (
-    <div className="container mt-[66px]! flex sm:flex-row flex-col gap-x-[60px] gap-y-[18px] sm:items-center mb-[60px]! flex-wrap">
+    <ScrollReveal
+      as="div"
+      variant="typeFast"
+      className="container mt-[66px]! flex sm:flex-row flex-col gap-x-[60px] gap-y-[18px] sm:items-center mb-[60px]! flex-wrap"
+    >
       <div className="flex sm:gap-x-[60px] gap-x-[40px] items-center">
         <div className="bg-[#D8E3FD] rounded-[10px] p-[10px] text-[14px] leading-[1]">
           {category}
@@ -26,6 +32,6 @@ export function ArticleDescriptionSection({
           Время на прочтение - {readTime}.
         </div>
       </div>
-    </div>
+    </ScrollReveal>
   );
 }

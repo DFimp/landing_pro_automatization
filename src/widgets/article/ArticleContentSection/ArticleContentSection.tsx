@@ -3,11 +3,18 @@ import ArticleFirstCase from "./blocks/ArticleFirstCase";
 import ArticleSecondCase from "./blocks/ArticleSecondCase";
 import ArticleThirdCase from "./blocks/ArticleThirdCase";
 import ArticleConclusion from "./blocks/ArticleConclusion";
+import ScrollReveal from "@/shared/ui/scrollReveal/ScrollReveal";
 
 export function ArticleContentSection() {
     return (
         <div className="container sm:mb-[60px]! mb-[40px]!">
-            <h1 className="font-bold sm:text-[48px] text-[20px] leading-[1.2] sm:mb-[40px] mb-[20px]">Как работать с дублями и почему<br/>это очень важно.</h1>
+            <ScrollReveal
+                as="h1"
+                variant="typeFast"
+                className="font-bold sm:text-[48px] text-[20px] leading-[1.2] sm:mb-[40px] mb-[20px]"
+            >
+                Как работать с дублями и почему<br/>это очень важно.
+            </ScrollReveal>
             <div className="flex flex-col sm:gap-[60px] gap-[40px]">
             <ArticleIntroducion></ArticleIntroducion>
             <ArticleFirstCase></ArticleFirstCase>

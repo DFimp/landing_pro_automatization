@@ -7,6 +7,7 @@ type ScrollRevealVariant =
   | "tilt"
   | "wipe"
   | "wipeX"
+  | "typeFast"
   | "dropZ"
   | "bubble"
   | "bubbleSoft"
@@ -77,6 +78,7 @@ export default function ScrollReveal<T extends ElementType = "div">({
         variant === "tilt" && styles.tilt,
         variant === "wipe" && styles.wipe,
         variant === "wipeX" && styles.wipeX,
+        variant === "typeFast" && styles.typeFast,
         variant === "dropZ" && styles.dropZ,
         variant === "bubble" && styles.bubble,
         variant === "bubbleSoft" && styles.bubbleSoft,

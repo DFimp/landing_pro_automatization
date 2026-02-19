@@ -3,6 +3,7 @@ import QuickAmoCrmSetupMoreContentSection from "@/widgets/article/QuickAmoCrmSet
 import { ArticleConclusionSection } from "@/widgets/article/ArticleConclusionSection/ArticleConclusionSection";
 import { ArticleSchemaTag } from "@/shared/lib/seo";
 import { ARTICLES_DATA } from "@/shared/constants/articles";
+import ScrollReveal from "@/shared/ui/scrollReveal/ScrollReveal";
 
 import styles from "./QuickAmoCrmSetup.module.css";
 
@@ -28,7 +29,9 @@ export default function QuickAmoCrmSetupArticle() {
         />
 
         <div className={styles.content}>
-          <h1>Быстрая настройка amoCRM: чеклист для новичков за 1 день</h1>
+          <ScrollReveal as="h1" variant="typeFast">
+            Быстрая настройка amoCRM: чеклист для новичков за 1 день
+          </ScrollReveal>
           <QuickAmoCrmSetupMoreContentSection />
         </div>
       </div>

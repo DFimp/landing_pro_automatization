@@ -38,7 +38,7 @@ export default function AmoCrmHelpsSellMoreContentSection() {
         </ArticleBlockWrapper>
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={80}>
+      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={80} variant="dropZ">
         <ArticleImage
           src="/articles/AmoCRMHelpsSellMore/analytics-growth.jpeg"
           alt="CRM analytics growth chart"
@@ -78,7 +78,7 @@ export default function AmoCrmHelpsSellMoreContentSection() {
         </ArticleBlockWrapper>
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={80}>
+      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={80} variant="dropZ">
         <ArticleImage
           src="/articles/AmoCRMHelpsSellMore/business-segments.jpeg"
           alt="Business segments labels"
@@ -150,7 +150,7 @@ export default function AmoCrmHelpsSellMoreContentSection() {
         </ArticleBlockWrapper>
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={80}>
+      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={80} variant="dropZ">
         <ArticleImage
           src="/articles/AmoCRMHelpsSellMore/omnichannel-leads.jpeg"
           alt="Omnichannel leads on mobile"
