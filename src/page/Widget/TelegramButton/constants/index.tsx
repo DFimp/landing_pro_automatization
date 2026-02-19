@@ -206,7 +206,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/TelegramButton/mobile.jpeg",
+    iconUrl: "/widgets/TelegramButton/lamp.jpeg",
     title: "Веб и мобильные версии",
     text: (
       <>
