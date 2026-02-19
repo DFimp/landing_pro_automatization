@@ -1,4 +1,5 @@
 import StickyInfo from "@/shared/ui/stickyInfo/StickyInfo";
+import ScrollReveal from "@/shared/ui/scrollReveal/ScrollReveal";
 
 export function HeroSection() {
   return (
@@ -7,10 +8,12 @@ export function HeroSection() {
         Аудит и предпроектная подготовка
       </h1>
 
-      <StickyInfo
-        className="max-w-[355px] sm:max-w-[760px]"
-        text="Начнём проект с надёжного фундамента"
-      />
+      <ScrollReveal as="div" variant="slideInLeft" amount={0.25} durationMs={750}>
+        <StickyInfo
+          className="max-w-[355px] sm:max-w-[760px]"
+          text="Начнём проект с надёжного фундамента"
+        />
+      </ScrollReveal>
 
       <div className="container">
         <h2 className=" font-normal sm:text-h5 max-w-135">
