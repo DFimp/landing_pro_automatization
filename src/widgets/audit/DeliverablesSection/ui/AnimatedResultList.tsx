@@ -12,10 +12,10 @@ export const AnimatedResultsList = () => {
           title={item.title}
           description={item.text}
           number={i + 1}
-          className={`bg-[#EBF0FD] py-4 ${
+          className={`bg-[#EBF0FD] rounded-4xl sm:py-6 py-4 ${
             i % 2 === 0
-              ? "rounded-r-full sm:px-66 px-10 sm:mr-[185px]"
-              : "rounded-l-full sm:ml-[175px] sm:px-22 px-10"
+              ? "sm:px-66 px-6 sm:mr-[185px]"
+              : "sm:ml-[175px] sm:px-22 px-6"
           }`}
         />
       ))}
