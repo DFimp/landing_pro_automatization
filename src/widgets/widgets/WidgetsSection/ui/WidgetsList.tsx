@@ -6,11 +6,13 @@ import { SearchWithGroups, SearchableItem } from "@/shared/ui/SearchWithGroups/S
 import { WIDGETS_LIST } from "@/shared/constants";
 import { WidgetsListItem } from "./WidgetsListItem";
 
+const VARIANT_PATTERN = [2, 1, 1, 3, 4, 1] as const;
+const getVariant = (index: number) => VARIANT_PATTERN[index % VARIANT_PATTERN.length];
+
 type Widget = {
   title: string;
   text: string;
   link: string;
-  variant: number;
   tags: string[];
 };
 
@@ -25,7 +27,6 @@ export function WidgetsList() {
     title: w.seoTitle,
     text: w.description,
     link: w.route,
-    variant: w.variant,
     tags: w.tags,
   }));
 
@@ -42,7 +43,6 @@ export function WidgetsList() {
         text: w.text,
         tags: w.tags,
         link: w.link,
-        variant: w.variant,
       })),
     [widgets]
   );
@@ -93,11 +93,12 @@ export function WidgetsList() {
             className="h-full"
           >
             <WidgetsListItem
-              link={widget.link}
-              text={widget.text}
-              title={widget.title}
-              variant={widget.variant}
-            />
+            key={widget.link}
+            link={widget.link}
+            text={widget.text}
+            title={widget.title}
+            variant={getVariant(index)}
+          />
           </ScrollReveal>
         ))}
       </div>
