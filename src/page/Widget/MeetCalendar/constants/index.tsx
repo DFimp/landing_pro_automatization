@@ -144,7 +144,7 @@ export const CASE_ITEMS: CaseItem[] = [
 
 export const FEATURES: FeatureItem[] = [
   {
-    iconUrl: "/widgets/TelegramButton/deadline.webp",
+    iconUrl: "/widgets/TelegramButton/deadline.jpeg",
     title: "Триггеры по этапам",
     text: (
       <>
@@ -153,7 +153,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/TelegramButton/sort.webp",
+    iconUrl: "/widgets/TelegramButton/sort.jpeg",
     title: "Гибкие поля",
     text: (
       <>
@@ -162,7 +162,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/TelegramButton/mobile.webp",
+    iconUrl: "/widgets/TelegramButton/lamp.jpeg",
     title: "Создание в один клик",
     text: (
       <>
@@ -171,7 +171,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/TelegramButton/target.webp",
+    iconUrl: "/widgets/TelegramButton/target.jpeg",
     title: "Ответственный и контроль",
     text: (
       <>
@@ -181,7 +181,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/TelegramButton/group.webp",
+    iconUrl: "/widgets/TelegramButton/group.jpeg",
     title: "Фильтр по менеджерам",
     text: (
       <>
@@ -190,7 +190,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    iconUrl: "/widgets/TelegramButton/free.webp",
+    iconUrl: "/widgets/TelegramButton/free.jpeg",
     title: "Меньше ошибок",
     text: (
       <>
