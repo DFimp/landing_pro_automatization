@@ -7,7 +7,7 @@ import ProblemsCard from "@/shared/ui/ProblemsCard/ProblemsCard";
 import FeaturesCard from "@/shared/ui/FeaturesCard/FeaturesCard";
 import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
-import { WIDGETS_DATA } from "@/shared/constants/widgets";
+import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 import { STEPS, CASE_ITEMS, PROBLEMS, FEATURES } from "./constants";
 
 const widget = WIDGETS_DATA["meet-calendar"];
@@ -44,6 +44,16 @@ export default function MeetingCalendarPage({
                 <p className="dist-hero-sub">{widget.description}</p>
 
                 <div className="dist-cta">
+                  {widget.clientId ? (
+                    <a
+                      className="dist-btn-primary"
+                      href={getWidgetInstallUrl(widget.clientId)}
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      Установить виджет
+                    </a>
+                  ) : null}
                   <ScrollToInstructionLink />
                 </div>
               </div>

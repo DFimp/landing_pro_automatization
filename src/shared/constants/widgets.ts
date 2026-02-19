@@ -190,6 +190,7 @@ export const WIDGETS: Widget[] = [
     showInFooter: true,
     showInSearch: true,
     hidden: false,
+    clientId: "6292aa61-5947-4291-a0f0-6819fccb07c0",
   },
   {
     key: 'time-zone',
@@ -478,8 +479,8 @@ export const WIDGETS: Widget[] = [
   },
   {
     key: "color-leads",
-    title: "Окраска сделок",
-    seoTitle: "Окраска сделок для amoCRM",
+    title: "Подкрашивание сделок (цветные сделки)",
+    seoTitle: "Подкрашивание сделок (цветные сделки) для amoCRM",
     description:
       "Автоматически выделяйте сделки цветом по правилам: бюджет, этап, теги, пользовательские поля и другие условия.",
     route: widgetRoute("color-leads"),
@@ -503,6 +504,8 @@ export const WIDGETS: Widget[] = [
     ],
     showInFooter: true,
     showInSearch: true,
+    hidden: false,
+    clientId: "689bf620-dffb-40c5-9f3f-7b87359fde27"
   },
 
   {
