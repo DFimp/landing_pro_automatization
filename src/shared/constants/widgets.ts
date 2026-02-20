@@ -507,6 +507,35 @@ export const WIDGETS: Widget[] = [
     hidden: false,
     clientId: "689bf620-dffb-40c5-9f3f-7b87359fde27"
   },
+  {
+    key: "t_bank",
+    title: "Т‑Банк (эквайринг)",
+    seoTitle: "Т‑Банк (Тинькофф) эквайринг для amoCRM",
+    description:
+      "Выставляйте счёт в amoCRM и получайте ссылку на оплату в Т‑Банке в поле сделки. Поддержка нескольких организаций и выбора расчетного счета.",
+    route: widgetRoute("t_bank"),
+    tags: ["Оплата", "Эквайринг", "Счета", "Т‑Банк", "Тинькофф"],
+    aliases: [
+      "tbank",
+      "t-bank",
+      "t bank",
+      "тинькофф",
+      "т-банк",
+      "эквайринг",
+      "оплата",
+      "счет",
+      "счёт",
+    ],
+    keywords: [
+      "т-банк amocrm",
+      "тинькофф эквайринг amocrm",
+      "ссылка на оплату amocrm",
+      "счет на оплату amocrm",
+      "эквайринг т-банк amocrm",
+    ],
+    showInFooter: true,
+    showInSearch: true,
+  },
 
   {
     key: "google-sheets",
