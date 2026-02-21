@@ -3,13 +3,13 @@ import TBank from "@/page/Widget/TBank";
 import { createSEOMetadata } from "@/shared/lib/seo";
 import { WIDGETS_DATA } from "@/shared/constants/widgets";
 
-const widget = WIDGETS_DATA["t_bank"];
+const widget = WIDGETS_DATA["t-bank"];
 
 export const metadata: Metadata = createSEOMetadata({
   title: widget.seoTitle,
   description: widget.description,
   keywords: widget.keywords,
-  canonical: "/widgets/t_bank",
+  canonical: "/widgets/t-bank",
   ogType: "website",
 });
 

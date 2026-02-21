@@ -9,7 +9,7 @@ import { ServiceSchemaTag } from "@/shared/lib/seo";
 import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 import { STEPS, PROBLEMS, CASE_ITEMS } from "./constants";
 
-const widget = WIDGETS_DATA["t_bank"];
+const widget = WIDGETS_DATA["t-bank"];
 
 export default function TBank({
   searchParams,

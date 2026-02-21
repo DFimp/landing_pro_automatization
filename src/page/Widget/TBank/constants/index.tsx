@@ -4,7 +4,7 @@ import type { ProblemItem } from "@/shared/ui/ProblemsCard/ProblemsCard";
 import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 
 const widget =
-  WIDGETS_DATA["t_bank"] ??
+  WIDGETS_DATA["t-bank"] ??
   ({
     clientId: undefined,
   } as const);
