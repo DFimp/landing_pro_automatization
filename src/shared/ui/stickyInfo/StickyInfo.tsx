@@ -12,7 +12,7 @@ export default function StickyInfo({
   return (
     <div className="sticky-info w-full">
       <div className="flex items-stretch">
-        <div className={`flex-1 ${left ? "bg-blue" : ""}`}></div>
+        <div className={`flex-1 ${left ? "bg-blue -mr-px" : ""}`}></div>
         <div className="container" style={{ padding: "0" }}>
           <div
             className={`bg-blue text-white sm:text-h4 text-[14px] font-normal py-3 sm:py-5 whitespace-normal 
@@ -26,7 +26,7 @@ export default function StickyInfo({
             <div dangerouslySetInnerHTML={{ __html: text }}></div>
           </div>
         </div>
-        <div className={`flex-1 ${!left ? "bg-blue" : ""}`}></div>
+        <div className={`flex-1 ${!left ? "bg-blue -ml-px" : ""}`}></div>
       </div>
     </div>
   );
