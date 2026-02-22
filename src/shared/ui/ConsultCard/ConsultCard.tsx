@@ -52,6 +52,7 @@ export default function ConsultCard({ className }: ConsultCardProps) {
             <ScrollReveal
               as="div"
               className="absolute bottom-0 right-[92px] z-2"
+              style={{ bottom: "-20px" }}
               variant="dropZ"
               amount={0.35}
               delayMs={820}
