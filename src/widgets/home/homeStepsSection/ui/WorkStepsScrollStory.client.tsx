@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { useMotionValueEvent, useScroll, useTransform } from "motion/react";
+import { animate, useMotionValue, useMotionValueEvent, useScroll } from "motion/react";
 import * as motion from "motion/react-client";
 import { Card } from "@/shared/ui/Card/Card";
 
@@ -26,15 +26,10 @@ export default function WorkStepsScrollStory({ steps }: Props) {
 
   const [xStops, setXStops] = useState<number[]>(() => steps.map(() => 0));
   const [activeIndex, setActiveIndex] = useState(0);
-
-  const inputRange = useMemo(() => {
-    const n = Math.max(1, steps.length);
-    if (n === 1) return [0];
-    return Array.from({ length: n }, (_, i) => i / (n - 1));
-  }, [steps.length]);
+  const activeIndexRef = useRef(0);
 
   const sectionHeightVh = useMemo(() => {
-    return clamp(steps.length * 10, 130, 220);
+    return clamp(steps.length * 12 + 80, 190, 320);
   }, [steps.length]);
 
   const { scrollYProgress } = useScroll({
@@ -42,13 +37,39 @@ export default function WorkStepsScrollStory({ steps }: Props) {
     offset: ["start 0.22", "end 0.22"],
   });
 
-  const x = useTransform(scrollYProgress, inputRange, xStops);
+  const x = useMotionValue(0);
 
   useMotionValueEvent(scrollYProgress, "change", (v) => {
     const n = Math.max(1, steps.length);
-    const idx = Math.round(v * (n - 1));
-    setActiveIndex(clamp(idx, 0, n - 1));
+
+    const leadIn = 0.28;
+    const leadOut = 0.12;
+    const middleSpan = Math.max(0.01, 1 - leadIn - leadOut);
+    const p = clamp((v - leadIn) / middleSpan, 0, 1);
+
+    const switchBias = 0.25;
+    const idx =
+      v < leadIn
+        ? 0
+        : v > 1 - leadOut
+          ? n - 1
+          : clamp(Math.floor(p * n - switchBias), 0, n - 1);
+    if (idx !== activeIndexRef.current) {
+      activeIndexRef.current = idx;
+      setActiveIndex(idx);
+    }
   });
+
+  useEffect(() => {
+    const target = xStops[activeIndex] ?? 0;
+    const controls = animate(x, target, {
+      type: "spring",
+      stiffness: 240,
+      damping: 34,
+      mass: 0.8,
+    });
+    return () => controls.stop();
+  }, [activeIndex, x, xStops]);
 
   useEffect(() => {
     const measure = () => {
@@ -87,7 +108,7 @@ export default function WorkStepsScrollStory({ steps }: Props) {
       className="relative"
       style={{ height: `${sectionHeightVh}vh` }}
     >
-      <div className="sticky top-[clamp(140px,22vh,260px)]">
+      <div className="sticky top-[clamp(70px,10vh,140px)]">
         <div ref={viewportRef} className="overflow-hidden">
           <motion.ul
             ref={trackRef}
