@@ -9,6 +9,7 @@ import MobileMenuToggle from "./ui/MobileMenuToggle";
 import { useHiddenInIframe } from "@/shared/utils/useHiddenInIframe";
 import clsx from "clsx";
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
   const { isIframe } = useHiddenInIframe();
@@ -16,6 +17,32 @@ const Header = () => {
   const [isFloating] = useState(true);
   const [headerHeight, setHeaderHeight] = useState(92);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isHydrated, setIsHydrated] = useState(false);
+  const [isMenuAlignedRight, setIsMenuAlignedRight] = useState(false);
+  const pathname = usePathname();
+  const isMenuOpen = isHydrated && isMobileMenuOpen;
+
+  useEffect(() => {
+    setIsHydrated(true);
+  }, []);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      setIsMenuAlignedRight(true);
+      return;
+    }
+
+    if (!isMenuAlignedRight) return;
+    const timeoutId = window.setTimeout(() => {
+      setIsMenuAlignedRight(false);
+    }, 500);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [isMenuOpen, isMenuAlignedRight]);
+
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
     if (isIframe) return;
@@ -35,7 +62,6 @@ const Header = () => {
   }, [isIframe]);
 
   if (isIframe) return null;
-
   return (
     <div style={{ ["--header-height" as any]: `${headerHeight}px` }}>
       <div aria-hidden="true" style={{ height: headerHeight }} />
@@ -47,13 +73,14 @@ const Header = () => {
       >
         <div
           className={clsx(
-            "ml-auto max-w-[100vw] min-w-0 transition-[width,max-width] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] sm:ml-0",
-            isMobileMenuOpen ? "w-[80vw] min-w-[260px] max-w-[520px]" : "w-full",
+            "max-w-[100vw] min-w-0 transition-[width,max-width] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] sm:ml-0",
+            isMenuOpen ? "w-[80vw] min-w-[260px] max-w-[520px]" : "w-full",
             "sm:w-full sm:max-w-none",
+            isMenuAlignedRight && "ml-auto",
             isFloating
               ? clsx(
-                  clsx("bg-white", !isMobileMenuOpen && "sm:bg-white/70 sm:backdrop-blur-xl"),
-                  !isMobileMenuOpen && "shadow-[0_10px_30px_rgba(15,23,42,0.12)]"
+                  clsx("bg-white", !isMenuOpen && "sm:bg-white/70 sm:backdrop-blur-xl"),
+                  !isMenuOpen && "shadow-[0_10px_30px_rgba(15,23,42,0.12)]"
                 )
               : "bg-white sm:bg-transparent"
           )}
@@ -83,16 +110,16 @@ const Header = () => {
 
             <div className="sm:hidden">
               <MobileMenuToggle
-                isOpen={isMobileMenuOpen}
+                isOpen={isMenuOpen}
                 onClick={() => setIsMobileMenuOpen((open) => !open)}
-                ariaLabel={isMobileMenuOpen ? "Закрыть меню" : "Открыть меню"}
+                ariaLabel={isMenuOpen ? "Закрыть меню" : "Открыть меню"}
               />
             </div>
           </div>
         </div>
       </header>
 
-      <MobileMenuWrapper isOpen={isMobileMenuOpen} setIsOpen={setIsMobileMenuOpen} />
+      <MobileMenuWrapper isOpen={isMenuOpen} setIsOpen={setIsMobileMenuOpen} />
     </div>
   );
 };
