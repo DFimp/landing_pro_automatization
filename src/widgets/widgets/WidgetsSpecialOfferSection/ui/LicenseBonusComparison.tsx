@@ -3,7 +3,11 @@ import Image from "next/image";
 
 export default function LicenseBonusComparison() {
   return (
-    <div className="mt-[50px] sm:mt-[70px] mb-[68px]">
+    <div
+      id="license-bonus-amo"
+      className="mt-[40px] sm:mt-[70px] mb-[68px]"
+      style={{ scrollMarginTop: "calc(40vh - 300px)" }}
+    >
       <h3 className="text-center sm:text-[32px] text-[22px] font-semibold mb-[28px]">
         Лицензии amoCRM с бонусами
       </h3>

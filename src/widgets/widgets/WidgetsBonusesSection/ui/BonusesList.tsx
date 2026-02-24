@@ -12,20 +12,38 @@ export function BonusesList() {
       <BonusesListCircle />
 
       <div className="sm:hidden flex flex-col gap-[20px] justify-center items-center w-full">
-        <BonusesListItem className="text-center" text="Все наши виджеты бесплатно" />
-        <BonusesListItem className="text-center" text="Персональный менеджер" />
+        <a href="#license-bonus-amo" className="w-full">
+          <BonusesListItem className="text-center" text="Все наши виджеты бесплатно" />
+        </a>
+        <a href="#special_offer_block" className="w-full">
+          <BonusesListItem className="text-center" text="Персональный менеджер" />
+        </a>
         <BonusesListItem
           className="text-center"
           text="Дополнительные месяцы использования"
         />
-        <BonusesListItem
-          className="text-center"
-          text="Диагностика по проверенному чек-листу"
-        />
-        <BonusesListItem
-          className="text-center"
-          text="Специальный чат для решения проблем"
-        />
+        <a
+          href="https://t.me/proavtomatization_support_bot"
+          target="_blank"
+          rel="noreferrer"
+          className="w-full"
+        >
+          <BonusesListItem
+            className="text-center"
+            text="Диагностика по проверенному чек-листу"
+          />
+        </a>
+        <a
+          href="https://t.me/proavtomatization_support_bot"
+          target="_blank"
+          rel="noreferrer"
+          className="w-full"
+        >
+          <BonusesListItem
+            className="text-center"
+            text="Специальный чат для решения проблем"
+          />
+        </a>
       </div>
 
       <BonusesListDesktopInteractive />
@@ -36,4 +54,3 @@ export function BonusesList() {
     </div>
   );
 }
-

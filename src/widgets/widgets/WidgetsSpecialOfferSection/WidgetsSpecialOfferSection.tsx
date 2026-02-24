@@ -54,7 +54,11 @@ export function WidgetsSpecialOfferSection() {
 
         <div
           data-sr-item
-          style={{ ["--i" as any]: 4 }}
+          style={{
+            ["--i" as any]: 4,
+            scrollMarginTop: "calc(40vh + 100px)",
+          }}
+          id="special_offer_block"
           className="flex justify-center mb-[68px]"
         >
           <SpecialOfferCalculator />

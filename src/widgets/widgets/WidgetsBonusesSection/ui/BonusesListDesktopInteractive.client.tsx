@@ -32,25 +32,92 @@ export default function BonusesListDesktopInteractive() {
       <canvas className="w-full h-full absolute left-0 top-0" />
 
       {items.map((item, i) => (
-        <div
-          key={i}
-          className={[
-            "bonus",
-            item.pos,
-            "jelly-hover",
-            "will-change-transform",
-            "transition-transform duration-200",
-            activeIndex === i ? "scale-[1.03]" : "",
-          ].join(" ")}
-          tabIndex={0}
-          role="button"
-          onMouseEnter={() => setActiveIndex(i)}
-          onMouseLeave={() => setActiveIndex(null)}
-          onFocus={() => setActiveIndex(i)}
-          onBlur={() => setActiveIndex(null)}
-        >
-          <BonusesListItem className="text-center" text={item.text} />
-        </div>
+        i === 0 ? (
+          <a
+            key={i}
+            href="#license-bonus-amo"
+            className={[
+              "bonus",
+              item.pos,
+              "jelly-hover",
+              "will-change-transform",
+              "transition-transform duration-200",
+              activeIndex === i ? "scale-[1.03]" : "",
+            ].join(" ")}
+            tabIndex={0}
+            role="button"
+            onMouseEnter={() => setActiveIndex(i)}
+            onMouseLeave={() => setActiveIndex(null)}
+            onFocus={() => setActiveIndex(i)}
+            onBlur={() => setActiveIndex(null)}
+          >
+            <BonusesListItem className="text-center" text={item.text} />
+          </a>
+        ) : i === 1 ? (
+          <a
+            key={i}
+            href="#special_offer_block"
+            className={[
+              "bonus",
+              item.pos,
+              "jelly-hover",
+              "will-change-transform",
+              "transition-transform duration-200",
+              activeIndex === i ? "scale-[1.03]" : "",
+            ].join(" ")}
+            tabIndex={0}
+            role="button"
+            onMouseEnter={() => setActiveIndex(i)}
+            onMouseLeave={() => setActiveIndex(null)}
+            onFocus={() => setActiveIndex(i)}
+            onBlur={() => setActiveIndex(null)}
+          >
+            <BonusesListItem className="text-center" text={item.text} />
+          </a>
+        ) : i === 2 || i === 3 ? (
+          <a
+            key={i}
+            href="https://t.me/proavtomatization_support_bot"
+            target="_blank"
+            rel="noreferrer"
+            className={[
+              "bonus",
+              item.pos,
+              "jelly-hover",
+              "will-change-transform",
+              "transition-transform duration-200",
+              activeIndex === i ? "scale-[1.03]" : "",
+            ].join(" ")}
+            tabIndex={0}
+            role="button"
+            onMouseEnter={() => setActiveIndex(i)}
+            onMouseLeave={() => setActiveIndex(null)}
+            onFocus={() => setActiveIndex(i)}
+            onBlur={() => setActiveIndex(null)}
+          >
+            <BonusesListItem className="text-center" text={item.text} />
+          </a>
+        ) : (
+          <div
+            key={i}
+            className={[
+              "bonus",
+              item.pos,
+              "jelly-hover",
+              "will-change-transform",
+              "transition-transform duration-200",
+              activeIndex === i ? "scale-[1.03]" : "",
+            ].join(" ")}
+            tabIndex={0}
+            role="button"
+            onMouseEnter={() => setActiveIndex(i)}
+            onMouseLeave={() => setActiveIndex(null)}
+            onFocus={() => setActiveIndex(i)}
+            onBlur={() => setActiveIndex(null)}
+          >
+            <BonusesListItem className="text-center" text={item.text} />
+          </div>
+        )
       ))}
 
       <BonusesCanvas activeIndex={activeIndex} />
