@@ -224,3 +224,12 @@ h1[class*="-pill"][class*="-bleed-left"] {
     transform: none;
   }
 }
+
+@media (max-width: 640px) {
+  .at-prefooter,
+  .ds-prefooter,
+  .df-prefooter {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}

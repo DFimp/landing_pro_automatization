@@ -65,7 +65,7 @@ export function WidgetsSpecialOfferSection() {
         </div>
       </ScrollReveal>
 
-      <aside className="block sm:hidden mt-[31px] mb-[53px]">
+      <aside className="block sm:hidden mt-[31px] mb-0">
         <ConsultCard />
       </aside>
     </>
