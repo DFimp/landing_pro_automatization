@@ -15,13 +15,13 @@ export function BonusesList() {
         <a href="#license-bonus-amo" className="w-full">
           <BonusesListItem className="text-center" text="Все наши виджеты бесплатно" />
         </a>
+        
         <a href="#special_offer_block" className="w-full">
-          <BonusesListItem className="text-center" text="Персональный менеджер" />
+          <BonusesListItem
+            className="text-center"
+            text="Дополнительные месяцы использования"
+          />
         </a>
-        <BonusesListItem
-          className="text-center"
-          text="Дополнительные месяцы использования"
-        />
         <a
           href="https://t.me/proavtomatization_support_bot"
           target="_blank"
@@ -41,7 +41,7 @@ export function BonusesList() {
         >
           <BonusesListItem
             className="text-center"
-            text="Специальный чат для решения проблем"
+            text="Персональный менеджер, поддержка и диагностика проблем в выделенном чате"
           />
         </a>
       </div>
