@@ -87,7 +87,12 @@ export function lockBodyScroll() {
       body.dataset.modalOpen = saved.prevModalOpen;
     }
 
+    const prevScrollBehavior = html.style.scrollBehavior;
+    html.style.scrollBehavior = "auto";
     window.scrollTo(0, saved.scrollY);
+    requestAnimationFrame(() => {
+      html.style.scrollBehavior = prevScrollBehavior;
+    });
     saved = null;
   };
 }
