@@ -10,19 +10,10 @@ import { useHiddenInIframe } from "@/shared/utils/useHiddenInIframe";
 import clsx from "clsx";
 import { useEffect, useRef, useState } from "react";
 
-const SCROLL_DELTA = 6;
-const FLOAT_THRESHOLD = 8;
-
 const Header = () => {
   const { isIframe } = useHiddenInIframe();
   const headerRef = useRef<HTMLElement | null>(null);
-  const lastScrollY = useRef(0);
-  const ticking = useRef(false);
-  const accumulatedDelta = useRef(0);
-  const wasNearTop = useRef(true);
-  const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const [isFloating, setIsFloating] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
+  const [isFloating] = useState(true);
   const [headerHeight, setHeaderHeight] = useState(92);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -43,75 +34,15 @@ const Header = () => {
     return () => observer.disconnect();
   }, [isIframe]);
 
-  useEffect(() => {
-    if (isIframe) return;
-    if (typeof window === "undefined") return;
-
-    lastScrollY.current = window.scrollY;
-    setIsFloating(window.scrollY > FLOAT_THRESHOLD);
-    setIsVisible(true);
-
-    const updateOnScroll = () => {
-      const currentY = window.scrollY;
-      const delta = currentY - lastScrollY.current;
-      const nearTop = currentY <= FLOAT_THRESHOLD;
-      if (nearTop) {
-        setIsFloating(false);
-        setIsVisible(true);
-        accumulatedDelta.current = 0;
-        if (hideTimer.current) {
-          clearTimeout(hideTimer.current);
-          hideTimer.current = null;
-        }
-      } else if (delta > 0) {
-        if (accumulatedDelta.current < 0) accumulatedDelta.current = 0;
-        accumulatedDelta.current += delta;
-        if (accumulatedDelta.current >= SCROLL_DELTA) {
-          setIsFloating(false);
-          setIsVisible(false);
-          accumulatedDelta.current = 0;
-          if (hideTimer.current) {
-            clearTimeout(hideTimer.current);
-            hideTimer.current = null;
-          }
-        }
-      } else if (delta < 0) {
-        setIsFloating(true);
-        if (accumulatedDelta.current > 0) accumulatedDelta.current = 0;
-        accumulatedDelta.current += delta;
-        if (accumulatedDelta.current <= -SCROLL_DELTA) {
-          setIsVisible(true);
-          accumulatedDelta.current = 0;
-        }
-      }
-
-      lastScrollY.current = currentY;
-      wasNearTop.current = nearTop;
-      ticking.current = false;
-    };
-
-    const onScroll = () => {
-      if (ticking.current) return;
-      ticking.current = true;
-      window.requestAnimationFrame(updateOnScroll);
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [isIframe]);
-
   if (isIframe) return null;
 
   return (
     <div style={{ ["--header-height" as any]: `${headerHeight}px` }}>
-      <div aria-hidden="true" style={{ height: isFloating ? headerHeight : 0 }} />
+      <div aria-hidden="true" style={{ height: headerHeight }} />
       <header
         ref={headerRef}
         className={clsx(
-          "w-full transition-transform",
-          isVisible ? "duration-200" : "duration-300",
-          isFloating ? "fixed left-0 right-0 top-0 z-[1500]" : "relative z-[1500]",
-          isVisible ? "translate-y-0" : "-translate-y-full pointer-events-none"
+          "w-full fixed left-0 right-0 top-0 z-[1500]"
         )}
       >
         <div
