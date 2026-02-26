@@ -14,12 +14,14 @@ type Widget = {
   text: string;
   link: string;
   tags: string[];
+  searchText: string;
 };
 
 type WidgetSearchItem = Widget & SearchableItem;
 
 function normalize(s: string) {
-  return (s ?? "").trim().toLowerCase();
+  const value = (s ?? "").trim().toLowerCase();
+  return value.replace(/[\u2010\u2011\u2012\u2013\u2014\u2212\uFE63\uFF0D]/g, "-");
 }
 
 export function WidgetsList() {
@@ -28,6 +30,13 @@ export function WidgetsList() {
     text: w.description,
     link: w.route,
     tags: w.tags,
+    searchText: [
+      w.title,
+      w.seoTitle,
+      w.description,
+      ...(w.aliases ?? []),
+      ...(w.keywords ?? []),
+    ].join(" "),
   }));
 
   const groups = useMemo(
@@ -43,6 +52,7 @@ export function WidgetsList() {
         text: w.text,
         tags: w.tags,
         link: w.link,
+        searchText: w.searchText,
       })),
     [widgets]
   );
@@ -57,10 +67,15 @@ export function WidgetsList() {
     return items.filter((it) => {
       const title = normalize(it.title);
       const text = normalize(it.text ?? "");
+      const searchText = normalize(it.searchText ?? "");
       const tags = (it.tags ?? []).map(normalize);
 
       const matchesQuery =
-        !q || title.includes(q) || text.includes(q) || tags.some((t) => t.includes(q));
+        !q ||
+        title.includes(q) ||
+        text.includes(q) ||
+        searchText.includes(q) ||
+        tags.some((t) => t.includes(q));
 
       const matchesGroup = g === normalize("Все") || tags.some((t) => t === g);
 
