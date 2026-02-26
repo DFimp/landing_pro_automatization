@@ -1,4 +1,5 @@
 import Link from "next/link";
+import navFlipStyles from "../styles/NavFlip.module.scss";
 
 interface MenuItem {
   name: string;
@@ -21,10 +22,15 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
   return (
     <li className="relative" onMouseEnter={() => setIsOpen(true)}>
       <button
-        className="font-medium text-h8 hover:text-blue transition-colors duration-300 cursor-pointer"
+        className={`font-medium text-h8 transition-colors duration-300 cursor-pointer ${navFlipStyles.link}`}
         aria-expanded={isOpen}
       >
-        {title}
+        <span className={navFlipStyles.inner}>
+          <span className={navFlipStyles.front}>{title}</span>
+          <span className={navFlipStyles.top} aria-hidden="true">
+            {title}
+          </span>
+        </span>
       </button>
 
       {isOpen && (

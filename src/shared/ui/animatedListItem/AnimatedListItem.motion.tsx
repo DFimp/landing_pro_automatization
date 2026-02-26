@@ -1,7 +1,7 @@
 "use client";
 
-import * as motion from "motion/react-client";
 import React from "react";
+import ScrollReveal from "@/shared/ui/scrollReveal/ScrollReveal";
 
 type Props = {
     index: number;
@@ -22,15 +22,21 @@ export const AnimatedListItemMotion = ({
     const targetX = oneLevel ? 0 : isLeft ? 0 : 150;
 
     return (
-        <motion.li
+        <ScrollReveal
+            as="li"
             key={index}
-            initial={{ x: initialX, opacity: 0 }}
-            whileInView={{ x: targetX, opacity: 1 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
-            viewport={{ once: true, amount: oneLevel ? 0.8 : 1 }}
             className={className}
+            variant="tilt"
+            xFrom={initialX}
+            xTo={targetX}
+            yFrom={0}
+            yTo={0}
+            scaleFrom={0.99}
+            blurPx={0}
+            durationMs={650}
+            delayMs={index * 90}
         >
             {children}
-        </motion.li>
+        </ScrollReveal>
     );
 };

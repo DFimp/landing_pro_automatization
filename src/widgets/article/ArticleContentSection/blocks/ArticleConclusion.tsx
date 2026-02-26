@@ -1,6 +1,7 @@
 import ArticleSubtitle from "../ui/ArticleSubtitle";
 import ArticleBlockWrapper from "../ui/ArticleBlockWrapper";
 import ArticleList from "../ui/ArticleList";
+import ScrollReveal from "@/shared/ui/scrollReveal/ScrollReveal";
 
 export default function ArticleConclusion() {
     const optimalWorkflow = [
@@ -9,7 +10,8 @@ export default function ArticleConclusion() {
         "правильно настраивать блоки объединения, исключая этапы «Успешно реализовано» и «Закрыто и нереализовано»."
     ]
     return (
-        <ArticleBlockWrapper>
+        <ScrollReveal as="div" variant="typeFast">
+          <ArticleBlockWrapper>
             <ArticleSubtitle subtitle="Заключение"></ArticleSubtitle>
             <p>
                 Правильная работа с дублями сделок — это не мелочь, а ключевой фактор, который напрямую<br/>
@@ -24,6 +26,7 @@ export default function ArticleConclusion() {
                 Такой подход позволяет компании не терять ни одного клиента, поддерживать чистоту базы и<br/>
                 зарабатывать больше.
             </p>
-        </ArticleBlockWrapper>
+          </ArticleBlockWrapper>
+        </ScrollReveal>
     )
 }

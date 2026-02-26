@@ -1,0 +1,62 @@
+.toggle {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.icon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.line {
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  height: 2px;
+  background: #0f172a;
+  border-radius: 999px;
+  transition: transform 220ms ease, opacity 160ms ease;
+  transform-origin: center;
+}
+
+.line:nth-child(1) {
+  top: 5px;
+}
+
+.line:nth-child(2) {
+  top: 9px;
+}
+
+.line:nth-child(3) {
+  top: 13px;
+}
+
+.open {
+  .line:nth-child(1) {
+    transform: translateY(4px) rotate(45deg);
+  }
+
+  .line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .line:nth-child(3) {
+    transform: translateY(-4px) rotate(-45deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .line {
+    transition: none;
+  }
+}
+

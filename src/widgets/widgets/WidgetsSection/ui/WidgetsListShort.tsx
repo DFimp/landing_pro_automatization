@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { WidgetsListItem } from "./WidgetsListItem";
+import ScrollReveal from "@/shared/ui/scrollReveal/ScrollReveal";
 
 const VARIANT_PATTERN = [2, 1, 1, 3, 4, 1] as const;
 const getVariant = (index: number) => VARIANT_PATTERN[index % VARIANT_PATTERN.length];
@@ -35,13 +36,22 @@ export function WidgetsListShort() {
     <div>
       <div className="grid sm:grid-cols-2 grid-cols-1 gap-[40px]">
         {widgets.map((widget, index) => (
-          <WidgetsListItem
+          <ScrollReveal
+            key={widget.link}
+            yFrom={0}
+            xFrom={index % 2 === 0 ? -140 : 140}
+            durationMs={600}
+            delayMs={index * 140}
+            amount={0.35}
+          >
+            <WidgetsListItem
             key={widget.link}
             link={widget.link}
             text={widget.text}
             title={widget.title}
             variant={getVariant(index)}
           />
+          </ScrollReveal>
         ))}
       </div>
 

@@ -3,6 +3,7 @@ import AmoCrmHelpsSellMoreContentSection from "@/widgets/article/AmoCrmHelpsSell
 import { ArticleConclusionSection } from "@/widgets/article/ArticleConclusionSection/ArticleConclusionSection";
 import { ArticleSchemaTag } from "@/shared/lib/seo";
 import { ARTICLES_DATA } from "@/shared/constants/articles";
+import ScrollReveal from "@/shared/ui/scrollReveal/ScrollReveal";
 
 import styles from "./AmoCrmHelpsSell.module.css";
 
@@ -28,9 +29,9 @@ export default function AmoCrmHelpsSellArticle() {
         />
 
         <div className={styles.content}>
-          <h1>
+          <ScrollReveal as="h1" variant="typeFast">
             AmoCRM: почему эта CRM реально помогает бизнесу продавать больше
-          </h1>
+          </ScrollReveal>
 
           <AmoCrmHelpsSellMoreContentSection />
         </div>

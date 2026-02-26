@@ -4,8 +4,8 @@ import AnalyticsResultItemMotion from "./AnalyticsResultItemMotion.client";
 
 export default function AnalyticsResult() {
   return (
-    <div className="bg-black sm:rounded-4xl rounded-[60px] sm:py-20 py-10 sm:px-53">
-      <ul className="sm:container flex flex-col sm:grid sm:grid-cols-2 sm:gap-20 gap-8 px-5">
+    <div className="bg-black sm:rounded-4xl rounded-[60px] sm:py-20 py-10 sm:px-20 px-5">
+      <ul className="flex flex-col sm:grid sm:grid-cols-2 sm:gap-20 gap-8">
         {services.map((service, index) => (
           <AnalyticsResultItemMotion key={index} index={index}>
             <div className="flex sm:items-start items-center sm:gap-12 gap-4 sm:min-h-[200px]">

@@ -52,7 +52,7 @@ export default function QuickAmoCrmSetupContentSection() {
         </ArticleBlockWrapper>
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60}>
+      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60} variant="dropZ">
         <ArticleImage
           src="/articles/QuickAmoCrmSetup/crm-goals-questions.jpeg"
           alt="Questions for CRM goal"
@@ -86,7 +86,7 @@ export default function QuickAmoCrmSetupContentSection() {
         </ArticleBlockWrapper>
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60}>
+      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60} variant="dropZ">
         <ArticleImage
           src="/articles/QuickAmoCrmSetup/sales-funnel.jpeg"
           alt="Sales funnel stages"
@@ -111,7 +111,7 @@ export default function QuickAmoCrmSetupContentSection() {
         </ArticleBlockWrapper>
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60}>
+      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60} variant="dropZ">
         <ArticleImage
           src="/articles/QuickAmoCrmSetup/lead-sources-connect.jpeg"
           alt="Connect lead sources"
@@ -133,7 +133,7 @@ export default function QuickAmoCrmSetupContentSection() {
         </ArticleBlockWrapper>
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60}>
+      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60} variant="dropZ">
         <ArticleImage
           src="/articles/QuickAmoCrmSetup/required-fields-form.jpeg"
           alt="Required lead fields form"
@@ -159,7 +159,7 @@ export default function QuickAmoCrmSetupContentSection() {
         </ArticleBlockWrapper>
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60}>
+      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60} variant="dropZ">
         <ArticleImage
           src="/articles/QuickAmoCrmSetup/basic-automation.jpeg"
           alt="Basic automation examples"
@@ -189,7 +189,7 @@ export default function QuickAmoCrmSetupContentSection() {
         </ArticleBlockWrapper>
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60}>
+      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60} variant="dropZ">
         <ArticleImage
           src="/articles/QuickAmoCrmSetup/manager-tasks.jpeg"
           alt="Tasks for sales managers"
@@ -214,7 +214,7 @@ export default function QuickAmoCrmSetupContentSection() {
         </ArticleBlockWrapper>
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60}>
+      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60} variant="dropZ">
         <ArticleImage
           src="/articles/QuickAmoCrmSetup/crm-analytics.jpeg"
           alt="CRM analytics dashboard"
@@ -239,7 +239,7 @@ export default function QuickAmoCrmSetupContentSection() {
         </ArticleBlockWrapper>
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60}>
+      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60} variant="dropZ">
         <ArticleImage
           src="/articles/QuickAmoCrmSetup/testing-journey.jpeg"
           alt="Testing customer journey"
@@ -261,7 +261,7 @@ export default function QuickAmoCrmSetupContentSection() {
         </ArticleBlockWrapper>
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60}>
+      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60} variant="dropZ">
         <ArticleImage
           src="/articles/QuickAmoCrmSetup/common-mistakes.jpeg"
           alt="Common CRM setup mistakes"

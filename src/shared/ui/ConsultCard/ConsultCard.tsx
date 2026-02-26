@@ -2,6 +2,7 @@ import Image from "next/image";
 import "./ConsultCard.css";
 import ConsultCardModalClient from "./ConsultCardModal.client";
 import ConsultCardReveal from "./ConsultCardReveal.client";
+import ScrollReveal from "@/shared/ui/scrollReveal/ScrollReveal";
 
 interface ConsultCardProps {
   className?: string;
@@ -33,34 +34,66 @@ export default function ConsultCard({ className }: ConsultCardProps) {
               </div>
             </div>
 
-            <Image
-              className="absolute bottom-[-50px] right-[-45px] z-3"
-              src="/decor/phoneBigbg.svg"
-              alt="карточка телефона"
-              width={218}
-              height={318}
-            />
-            <Image
-              className="absolute bottom-[-40px] right-[-38px] z-4"
-              src="/decor/phoneBig.svg"
-              alt="карточка телефона"
-              width={205}
-              height={296}
-            />
-            <Image
+            <ScrollReveal
+              as="div"
+              className="absolute top-[390px] w-[192px] bottom-[0px] right-[250px] z-1"
+              variant="dropZ"
+              amount={0.35}
+              delayMs={650}
+            >
+              <Image
+                src="/decor/phoneSmall.png"
+                alt="карточка телефона"
+                width={192}
+                height={179}
+              />
+            </ScrollReveal>
+
+            <ScrollReveal
+              as="div"
               className="absolute bottom-0 right-[92px] z-2"
-              src="/decor/phoneMedium.svg"
-              alt="карточка телефона"
-              width={206}
-              height={222}
-            />
-            <Image
-              className="absolute w-[192px] h-[213px] bottom-[-35px] right-[250px] z-1"
-              src="/decor/phoneSmall.jpeg"
-              alt="карточка телефона"
-              width={192}
-              height={179}
-            />
+              style={{ bottom: "-20px" }}
+              variant="dropZ"
+              amount={0.35}
+              delayMs={820}
+            >
+              <Image
+                src="/decor/phoneMedium.svg"
+                alt="карточка телефона"
+                width={206}
+                height={222}
+              />
+            </ScrollReveal>
+
+            <ScrollReveal
+              as="div"
+              className="absolute bottom-[-50px] right-[-45px] z-3"
+              variant="dropZ"
+              amount={0.35}
+              delayMs={1000}
+            >
+              <Image
+                src="/decor/phoneBigbg.svg"
+                alt="карточка телефона"
+                width={218}
+                height={318}
+              />
+            </ScrollReveal>
+
+            <ScrollReveal
+              as="div"
+              className="absolute bottom-[-40px] right-[-38px] z-4"
+              variant="dropZ"
+              amount={0.35}
+              delayMs={1000}
+            >
+              <Image
+                src="/decor/phoneBig.svg"
+                alt="карточка телефона"
+                width={205}
+                height={296}
+              />
+            </ScrollReveal>
           </div>
         </section>
       </ConsultCardReveal>

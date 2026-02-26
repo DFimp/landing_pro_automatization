@@ -17,6 +17,7 @@ export const AnimatedListItem = ({
   animate = true,
 }: AnimatedListItemProps & { animate?: boolean }) => {
   const isLeft = left ?? index % 2 === 0;
+  const hasCustomRounded = /\brounded\b|\brounded-[^\s]+\b/.test(className);
 
   const content = (
     <>
@@ -40,9 +41,13 @@ export const AnimatedListItem = ({
     </>
   );
 
-  const liClass = `flex items-center gap-4 ${className} ${
-    isLeft ? "rounded-r-full" : "rounded-l-full"
-  }`;
+  const sideRoundingClass = hasCustomRounded
+    ? ""
+    : isLeft
+      ? "rounded-r-full"
+      : "rounded-l-full";
+
+  const liClass = `flex items-center gap-4 ${sideRoundingClass} ${className}`.trim();
 
   if (animate) {
     return (

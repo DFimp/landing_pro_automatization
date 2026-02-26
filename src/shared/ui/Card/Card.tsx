@@ -14,6 +14,8 @@ interface CardProps {
     result?: string;
     isFirst?: boolean;
     isLast?: boolean; // Добавляем новый пропс
+    isActive?: boolean;
+    className?: string;
 }
 
 export const Card = ({
@@ -26,7 +28,9 @@ export const Card = ({
                          result,
                          isFirst = false,
                          isLast = false, // Значение по умолчанию
-                     }: CardProps) => {
+                         isActive = false,
+                         className,
+                      }: CardProps) => {
     const [isExpanded, setIsExpanded] = useState(false);
     const { isMobileView } = detectMobile()
     if (variant === 'expandable') {
@@ -37,9 +41,12 @@ export const Card = ({
                     snap-start shrink-0 bg-black text-white rounded-4xl px-10 py-10
                     flex flex-col justify-start relative cursor-pointer
                     transition-all duration-500 ease-in-out sm:min-w-[360px] sm:w-[360px] w-full will-change-transform
+                    ${isActive ? "sm:scale-[1.02] shadow-[0_0_28px_rgba(55,96,231,0.35)]" : ""}
+                    ${!isExpanded && !isActive ? "sm:opacity-80" : ""}
                     ${isExpanded ? "max-h-[800px]" : "sm:max-h-[270px] max-h-[160px]"}
                     ${isFirst ? "sm:ml-[175px]" : ""}
                     ${isLast ? "sm:mr-[15px]" : ""}
+                    ${className ?? ""}
                 `}
             >
                 <div className='card__header'>

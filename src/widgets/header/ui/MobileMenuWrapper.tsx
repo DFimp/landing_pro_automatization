@@ -1,24 +1,28 @@
-"use client";
-
-import Image from "next/image";
-import { useState } from "react";
+import type { Dispatch, SetStateAction } from "react";
+import { useEffect, useState } from "react";
 import MobileMenu from "./MobileMenu";
 import ConsultationModal from "@/features/consultation/ConsultationModal";
+import { lockBodyScroll } from "@/shared/utils/lockBodyScroll";
 
-const MobileMenuWrapper = () => {
+type MobileMenuWrapperProps = {
+  isOpen: boolean;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
+};
+
+const MobileMenuWrapper = ({ isOpen, setIsOpen }: MobileMenuWrapperProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    return lockBodyScroll();
+  }, [isOpen]);
 
   return (
     <>
-      <button className="sm:hidden" onClick={() => setIsMobileMenuOpen(true)}>
-        <Image src="/decor/menu.svg" alt="кнопка" width={20} height={20} />
-      </button>
-      
       <MobileMenu
         setConsultationModalIsOpen={setIsModalOpen}
-        isOpen={isMobileMenuOpen}
-        setIsOpen={setIsMobileMenuOpen}
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
       />
       
       <ConsultationModal

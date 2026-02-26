@@ -1,9 +1,10 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { WidgetsListItem } from "./WidgetsListItem";
+import ScrollReveal from "@/shared/ui/scrollReveal/ScrollReveal";
 import { SearchWithGroups, SearchableItem } from "@/shared/ui/SearchWithGroups/SearchWithGroups";
 import { WIDGETS_LIST } from "@/shared/constants";
+import { WidgetsListItem } from "./WidgetsListItem";
 
 const VARIANT_PATTERN = [2, 1, 1, 3, 4, 1] as const;
 const getVariant = (index: number) => VARIANT_PATTERN[index % VARIANT_PATTERN.length];
@@ -16,9 +17,7 @@ type Widget = {
   searchText: string;
 };
 
-type WidgetSearchItem = Widget &
-  SearchableItem & {
-};
+type WidgetSearchItem = Widget & SearchableItem;
 
 function normalize(s: string) {
   const value = (s ?? "").trim().toLowerCase();
@@ -26,7 +25,7 @@ function normalize(s: string) {
 }
 
 export function WidgetsList() {
-  const widgets: Widget[] = WIDGETS_LIST.map(w => ({
+  const widgets: Widget[] = WIDGETS_LIST.map((w) => ({
     title: w.seoTitle,
     text: w.description,
     link: w.route,
@@ -100,13 +99,22 @@ export function WidgetsList() {
 
       <div className="mt-10 grid sm:grid-cols-2 grid-cols-1 gap-[40px] min-h-[300px]">
         {filtered.map((widget, index) => (
-          <WidgetsListItem
+          <ScrollReveal
+            key={widget.link}
+            variant="bubbleSoft"
+            durationMs={700}
+            delayMs={index % 2 === 0 ? 0 : 60}
+            amount={0.35}
+            className="h-full"
+          >
+            <WidgetsListItem
             key={widget.link}
             link={widget.link}
             text={widget.text}
             title={widget.title}
             variant={getVariant(index)}
           />
+          </ScrollReveal>
         ))}
       </div>
     </div>
