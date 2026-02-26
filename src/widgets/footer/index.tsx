@@ -349,7 +349,7 @@ export const Footer = () => {
 
       <div className="mt-3 w-full">
         <div className="mx-auto max-w-[1200px] px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-[14px] text-[#4b4b4b]">
-          <div>ИП Горбань М.О. (ИНН 262609479757)</div>
+          <div>ИП Щербаев А.О. (ИНН 262610337108)</div>
           <div className="flex items-center gap-6">
             <Link href="/privacy" className="hover:underline">
               Политика конфиденциальности
