@@ -201,6 +201,7 @@ export const WIDGETS: Widget[] = [
     ],
     showInFooter: true,
     showInSearch: true,
+    clientId: "be8e6006-98ec-4a0f-80c5-9170ba2b675c",
   },
   {
     key: 'meet-calendar',
