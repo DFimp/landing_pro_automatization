@@ -1,12 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: 'standalone',
   poweredByHeader: false,
   eslint: {
     ignoreDuringBuilds: true, // не падать при ошибках линтера
-  },
-  env: {
-    API_URL: process.env.API_URL,
   },
   async headers() {
     return [
