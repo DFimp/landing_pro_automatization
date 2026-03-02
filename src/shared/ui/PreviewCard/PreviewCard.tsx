@@ -21,7 +21,7 @@ const PreviewCard: React.FC<PreviewCardProps> = ({ title, subtitle, videoUrl, im
 
   return (
     <section id={id} className={`preview-section ${hasMedia ? 'has-media' : ''}`}>
-      <div className="at-container">
+      <div className="mx-auto w-full max-w-[1200px] px-4">
         <h2 className="preview-title">{title}</h2>
         <p className="preview-subtitle">{subtitle}</p>
 
@@ -61,10 +61,6 @@ const PreviewCard: React.FC<PreviewCardProps> = ({ title, subtitle, videoUrl, im
             )}
           </div>
         )}
-
-        <p className="preview-footer">
-          Виджет показывает время клиента, регион и оператора связи прямо в amoCRM
-        </p>
       </div>
     </section>
   );
