@@ -41,7 +41,7 @@ const CaseCard: React.FC<CaseCardProps> = ({
 }) => {
   return (
     <section className={clsx("at-cases", className)} id={id}>
-      <div className="at-container">
+      <div className="mx-auto w-full max-w-[1200px] px-4">
         <ScrollReveal
           as="div"
           variant="tilt"

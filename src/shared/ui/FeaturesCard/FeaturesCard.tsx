@@ -27,7 +27,7 @@ const FeaturesCard: React.FC<FeaturesCardProps> = ({
   items,
 }) => {
   return (
-    <section id={id} className={clsx('at-more bg-white', className)}>
+    <section id={id} className={clsx('at-more bg-white pt-6 pb-14', className)}>
       <div className="at-container mx-auto w-full max-w-[1200px] px-4">
         <ScrollReveal
           as="h2"
