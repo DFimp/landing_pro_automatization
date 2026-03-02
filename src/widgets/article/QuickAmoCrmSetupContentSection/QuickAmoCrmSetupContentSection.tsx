@@ -4,13 +4,12 @@ import ArticleList from "@/widgets/article/ArticleContentSection/ui/ArticleList"
 import ArticleAccentBlock from "@/widgets/article/ArticleContentSection/ui/ArticleAccentBlock";
 
 import Reveal from "@/shared/ui/Reveal/Reveal";
-import styles from "@/page/Article/QuickAmoCrmSetup/QuickAmoCrmSetup.module.css";
 
 function ArticleImage({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className={styles.figure}>
-      <div className={styles.figureFrame}>
-        <img className={styles.figureImg} src={src} alt={alt} loading="lazy" />
+    <div className="my-6 flex justify-center">
+      <div className="w-full max-w-[900px] border border-[#3B5BFF] rounded-[12px] bg-white p-2 box-border">
+        <img className="block w-full h-auto rounded-[8px]" src={src} alt={alt} loading="lazy" />
       </div>
     </div>
   );
@@ -19,7 +18,7 @@ function ArticleImage({ src, alt }: { src: string; alt: string }) {
 export default function QuickAmoCrmSetupContentSection() {
   return (
     <div>
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={0}>
+      <Reveal className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none" shownClassName="opacity-100 translate-y-0" delayMs={0}>
         <ArticleBlockWrapper>
           <p>
             <strong>Быстрая настройка amoCRM</strong> возможна — систему действительно можно
@@ -30,7 +29,7 @@ export default function QuickAmoCrmSetupContentSection() {
         </ArticleBlockWrapper>
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={80}>
+      <Reveal className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none" shownClassName="opacity-100 translate-y-0" delayMs={80}>
         <ArticleBlockWrapper>
           <ArticleSubtitle title="Шаг 1. Определите цель CRM" />
 
@@ -52,14 +51,14 @@ export default function QuickAmoCrmSetupContentSection() {
         </ArticleBlockWrapper>
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60} variant="dropZ">
+      <Reveal className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none" shownClassName="opacity-100 translate-y-0" delayMs={60} variant="dropZ">
         <ArticleImage
           src="/articles/QuickAmoCrmSetup/crm-goals-questions.jpeg"
           alt="Questions for CRM goal"
         />
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={120}>
+      <Reveal className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none" shownClassName="opacity-100 translate-y-0" delayMs={120}>
         <ArticleBlockWrapper>
           <ArticleSubtitle title="Шаг 2. Создайте воронку продаж" />
 
@@ -86,14 +85,14 @@ export default function QuickAmoCrmSetupContentSection() {
         </ArticleBlockWrapper>
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60} variant="dropZ">
+      <Reveal className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none" shownClassName="opacity-100 translate-y-0" delayMs={60} variant="dropZ">
         <ArticleImage
           src="/articles/QuickAmoCrmSetup/sales-funnel.jpeg"
           alt="Sales funnel stages"
         />
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={80}>
+      <Reveal className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none" shownClassName="opacity-100 translate-y-0" delayMs={80}>
         <ArticleBlockWrapper>
           <ArticleSubtitle title="Шаг 3. Настройте источники заявок" />
 
@@ -111,14 +110,14 @@ export default function QuickAmoCrmSetupContentSection() {
         </ArticleBlockWrapper>
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60} variant="dropZ">
+      <Reveal className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none" shownClassName="opacity-100 translate-y-0" delayMs={60} variant="dropZ">
         <ArticleImage
           src="/articles/QuickAmoCrmSetup/lead-sources-connect.jpeg"
           alt="Connect lead sources"
         />
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={120}>
+      <Reveal className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none" shownClassName="opacity-100 translate-y-0" delayMs={120}>
         <ArticleBlockWrapper>
           <ArticleSubtitle title="Шаг 4. Добавьте обязательные поля" />
 
@@ -133,14 +132,14 @@ export default function QuickAmoCrmSetupContentSection() {
         </ArticleBlockWrapper>
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60} variant="dropZ">
+      <Reveal className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none" shownClassName="opacity-100 translate-y-0" delayMs={60} variant="dropZ">
         <ArticleImage
           src="/articles/QuickAmoCrmSetup/required-fields-form.jpeg"
           alt="Required lead fields form"
         />
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={80}>
+      <Reveal className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none" shownClassName="opacity-100 translate-y-0" delayMs={80}>
         <ArticleBlockWrapper>
           <ArticleSubtitle title="Шаг 5. Включите базовую автоматизацию" />
 
@@ -159,14 +158,14 @@ export default function QuickAmoCrmSetupContentSection() {
         </ArticleBlockWrapper>
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60} variant="dropZ">
+      <Reveal className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none" shownClassName="opacity-100 translate-y-0" delayMs={60} variant="dropZ">
         <ArticleImage
           src="/articles/QuickAmoCrmSetup/basic-automation.jpeg"
           alt="Basic automation examples"
         />
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={120}>
+      <Reveal className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none" shownClassName="opacity-100 translate-y-0" delayMs={120}>
         <ArticleBlockWrapper>
           <ArticleSubtitle title="Шаг 6. Настройте задачи для менеджеров" />
 
@@ -189,14 +188,14 @@ export default function QuickAmoCrmSetupContentSection() {
         </ArticleBlockWrapper>
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60} variant="dropZ">
+      <Reveal className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none" shownClassName="opacity-100 translate-y-0" delayMs={60} variant="dropZ">
         <ArticleImage
           src="/articles/QuickAmoCrmSetup/manager-tasks.jpeg"
           alt="Tasks for sales managers"
         />
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={80}>
+      <Reveal className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none" shownClassName="opacity-100 translate-y-0" delayMs={80}>
         <ArticleBlockWrapper>
           <ArticleSubtitle title="Шаг 7. Проверьте аналитику" />
 
@@ -214,14 +213,14 @@ export default function QuickAmoCrmSetupContentSection() {
         </ArticleBlockWrapper>
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60} variant="dropZ">
+      <Reveal className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none" shownClassName="opacity-100 translate-y-0" delayMs={60} variant="dropZ">
         <ArticleImage
           src="/articles/QuickAmoCrmSetup/crm-analytics.jpeg"
           alt="CRM analytics dashboard"
         />
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={120}>
+      <Reveal className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none" shownClassName="opacity-100 translate-y-0" delayMs={120}>
         <ArticleBlockWrapper>
           <ArticleSubtitle title="Шаг 8. Протестируйте путь клиента" />
 
@@ -239,14 +238,14 @@ export default function QuickAmoCrmSetupContentSection() {
         </ArticleBlockWrapper>
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60} variant="dropZ">
+      <Reveal className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none" shownClassName="opacity-100 translate-y-0" delayMs={60} variant="dropZ">
         <ArticleImage
           src="/articles/QuickAmoCrmSetup/testing-journey.jpeg"
           alt="Testing customer journey"
         />
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={80}>
+      <Reveal className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none" shownClassName="opacity-100 translate-y-0" delayMs={80}>
         <ArticleBlockWrapper>
           <ArticleSubtitle title="Типичные ошибки новичков" />
           <ArticleList
@@ -261,14 +260,14 @@ export default function QuickAmoCrmSetupContentSection() {
         </ArticleBlockWrapper>
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={60} variant="dropZ">
+      <Reveal className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none" shownClassName="opacity-100 translate-y-0" delayMs={60} variant="dropZ">
         <ArticleImage
           src="/articles/QuickAmoCrmSetup/common-mistakes.jpeg"
           alt="Common CRM setup mistakes"
         />
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={120}>
+      <Reveal className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none" shownClassName="opacity-100 translate-y-0" delayMs={120}>
         <ArticleBlockWrapper>
           <ArticleSubtitle title="Итог" />
 

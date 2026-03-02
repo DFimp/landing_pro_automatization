@@ -4,7 +4,7 @@ import ScrollReveal from "@/shared/ui/scrollReveal/ScrollReveal";
 
 export function ArticleConclusionSection() {
   return (
-    <div className="">
+    <div className="pt-6 pb-6 sm:pt-10 sm:pb-8">
       <div className="container">
         <ScrollReveal
           as="h2"
