@@ -6,7 +6,6 @@ import {
   AccompanimentTariffsSection,
 } from "@/widgets/accompaniment";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
-import "./style.css";
 
 export default function Accompaniment() {
   return (
@@ -21,7 +20,7 @@ export default function Accompaniment() {
       />
       <main
         id="accompaniment"
-        className="sm:pb-20 pb-10 sm:pt-20 overflow-hidden"
+        className="sm:pb-20 pb-10 sm:pt-20 overflow-hidden bg-[linear-gradient(135deg,#000000_0%,#1a0a2e_25%,#16213e_50%,#0f3460_75%,#533483_100%)]"
       >
         <AccompanimentHeroSection />
         <AccompanimentProblemsSection />
