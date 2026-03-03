@@ -246,7 +246,6 @@ export const CASE_ITEMS: CaseItem[] = [
   {
     type: "stripe",
     side: "left",
-    white: true,
     text: "AMO CRM AMO CRM AMO CRM",
   },
 
@@ -274,9 +273,17 @@ export const CASE_ITEMS: CaseItem[] = [
     mobileDecorUrl: "/widgets/CaseCard/amo (1).svg",
   },
 
-  { type: "stripe", side: "right", text: "AMO CRM AMO CRM AMO CRM" },
+  {
+    type: "stripe",
+    side: "right",
+    text: "AMO CRM AMO CRM AMO CRM",
+  },
 
-  { type: "stripe", side: "left", text: "AMO CRM AMO CRM AMO CRM" },
+  {
+    type: "stripe",
+    side: "left",
+    text: "AMO CRM AMO CRM AMO CRM",
+  },
 
   {
     type: "card",
@@ -305,7 +312,6 @@ export const CASE_ITEMS: CaseItem[] = [
   {
     type: "stripe",
     side: "right",
-    white: true,
     text: "AMO CRM AMO CRM AMO CRM",
   },
 ];
