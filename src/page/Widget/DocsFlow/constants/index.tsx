@@ -5,13 +5,29 @@ const Img = ({
   src,
   alt,
   className,
+  imgClassName,
 }: {
   src: string;
   alt: string;
   className?: string;
+  imgClassName?: string;
 }) => (
-  <div className={["df-step-media", className].filter(Boolean).join(" ")}>
-    <img className="df-step-img" src={src} alt={alt} loading="lazy" />
+  <div
+    className={[
+      "w-full max-w-[980px] mx-auto rounded-[16px] border border-white/35 bg-white/4 overflow-hidden",
+      className,
+    ]
+      .filter(Boolean)
+      .join(" ")}
+  >
+    <img
+      className={["block w-full h-auto", imgClassName]
+        .filter(Boolean)
+        .join(" ")}
+      src={src}
+      alt={alt}
+      loading="lazy"
+    />
   </div>
 );
 
@@ -53,7 +69,7 @@ export const PROBLEMS: ProblemItem[] = [
     text: (
       <>
         Настройте права доступа:{" "}
-        кто может <span className="at-mark">формировать</span> документы и шаблоны, а кто — только{" "}
+        кто может <span className="at-mark">формировать</span> докумеьты и шаблоны, а кто — только{" "}
         <span className="at-mark">просматривать</span>
       </>
     ),
@@ -75,11 +91,11 @@ export const STEPS = [
           <li>все сгенерированные документы будут сохраняться в эту папку</li>
           <li>ссылку на эту папку можно найти в разделе настроек</li>
         </ul>
-        <div className="df-step-grid">
+        <div className="grid grid-cols-1 gap-3 mt-3 items-start">
           <Img
             src="/widgets/DocsFlow/settings_google_authorize_banner.jpeg"
             alt="Авторизация Google в настройках виджета"
-            className="df-step-media--md"
+            className="max-w-[760px]"
           />
         </div>
       </div>
@@ -90,22 +106,22 @@ export const STEPS = [
     content: (
       <div>
         <p>
-          Управляйте доступом к вкладке «Документы (Google)» в карточке сделки — 
+          Управляйте доступом к вкладке «Документы (Google)» в карточке сделки —
           определите, кто может формировать документы, а кто только просматривать их.
         </p>
         <p className="sc-note sc-note--green">
           По умолчанию оба списка пусты — доступ закрыт для всех, включая администратора. Чтобы начать работу, добавьте себя в нужный список.
         </p>
-        <div className="df-step-grid">
+        <div className="grid grid-cols-1 gap-3 mt-3 items-start">
           <Img
             src="/widgets/DocsFlow/access_settings_permissions.jpeg"
             alt="Настройки доступа: кто может формировать и кто может просматривать"
-            className="df-step-media--md"
+            className="max-w-[760px]"
           />
           <Img
             src="/widgets/DocsFlow/lead_card_no_access.jpeg"
             alt="Настройки доступа: кто может формировать и кто может просматривать"
-            className="df-step-media--md"
+            className="max-w-[760px]"
           />
         </div>
       </div>
@@ -125,11 +141,11 @@ export const STEPS = [
           <li>введите название</li>
           <li>нажмите «Создать»</li>
         </ul>
-        <div className="df-step-grid">
+        <div className="grid grid-cols-1 gap-3 mt-3 items-start">
           <Img
             src="/widgets/DocsFlow/placeholder_key_selector.jpeg"
             alt="Выбор сущности для формирования ключа"
-            className="df-step-media--md"
+            className="max-w-[760px]"
           />
         </div>
       </div>
@@ -160,21 +176,24 @@ export const STEPS = [
             Скопируйте ключ и вставьте его в шаблон Google Docs в нужное место
           </li>
         </ul>
-        <div className="df-step-grid df-step-grid--tiles">
+        <div className="grid grid-cols-2 gap-3 mt-3 items-stretch justify-items-stretch max-[480px]:grid-cols-1 [&>*:nth-child(3)]:col-span-2 max-[480px]:[&>*:nth-child(3)]:col-span-1">
           <Img
             src="/widgets/DocsFlow/placeholder_key_contacts_list.jpeg"
             alt="Выбор поля для формирования ключа"
-            className="df-step-media--tile"
+            className="max-w-none h-[240px] mx-0 bg-white max-[480px]:h-[200px]"
+            imgClassName="w-full h-full object-contain"
           />
           <Img
             src="/widgets/DocsFlow/placeholder_function_selector_2.jpeg"
             alt="Выбор функции для ключа"
-            className="df-step-media--tile"
+            className="max-w-none h-[240px] mx-0 bg-white max-[480px]:h-[200px]"
+            imgClassName="w-full h-full object-contain"
           />
           <Img
             src="/widgets/DocsFlow/placeholder_example_with_function.jpeg"
             alt="Пример сформированного ключа с функцией"
-            className="df-step-media--tile"
+            className="max-w-none h-[240px] mx-0 bg-white max-[480px]:h-[200px]"
+            imgClassName="w-full h-full object-contain"
           />
         </div>
       </div>
@@ -196,16 +215,16 @@ export const STEPS = [
           Доступные действия зависят от настроек: открыть документ, скачать, получить ссылку,
           удалить
         </p>
-        <div className="df-step-grid">
+        <div className="grid grid-cols-1 gap-3 mt-3 items-start">
           <Img
             src="/widgets/DocsFlow/lead_card_generate_template.jpeg"
             alt="Формирование документа во вкладке «Документы» в карточке сделки"
-            className="df-step-media--sm"
+            className="max-w-[520px]"
           />
           <Img
             src="/widgets/DocsFlow/lead_card_with_generate_template.jpeg"
             alt="Формирование документа во вкладке «Документы» в карточке сделки"
-            className="df-step-media--sm"
+            className="max-w-[520px]"
           />
         </div>
       </div>
@@ -230,11 +249,11 @@ export const STEPS = [
           Сохраните изменения — после этого документы будут формироваться автоматически
           по выбранному событию
         </p>
-        <div className="df-step-grid">
+        <div className="grid grid-cols-1 gap-3 mt-3 items-start">
           <Img
             src="/widgets/DocsFlow/digital_pipeline_step_settings.jpeg"
             alt="Настройка шага для генерации документа"
-            className="df-step-media--md"
+            className="max-w-[760px]"
           />
         </div>
         <p style={{ marginTop: 20 }}>
@@ -244,3 +263,4 @@ export const STEPS = [
     ),
   },
 ];
+
