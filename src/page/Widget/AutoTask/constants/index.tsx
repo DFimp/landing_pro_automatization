@@ -107,7 +107,7 @@ export const PROBLEMS: ProblemItem[] = [
       title: "Сделки «висят» без движения",
       text: (
         <>
-          Менеджеры <span className="at-mark">забывают</span> связаться с
+          Менеджеры <span className="inline-block px-[5px] py-[2px] rounded-[5px] bg-[#4A6DFF] text-white leading-[1.1]">забывают</span> связаться с
           клиентами, сделки теряются, а вы теряете деньги. Особенно критично для
           дорогих продуктов.
         </>
@@ -119,7 +119,7 @@ export const PROBLEMS: ProblemItem[] = [
       text: (
         <>
           Без напоминаний сотрудники могут неделями{" "}
-          <span className="at-mark">не&nbsp;контактировать</span> с
+          <span className="inline-block px-[5px] py-[2px] rounded-[5px] bg-[#4A6DFF] text-white leading-[1.1]">не&nbsp;контактировать</span> с
           потенциальными клиентами. Результат — потерянная прибыль.
         </>
       ),
@@ -131,7 +131,7 @@ export const PROBLEMS: ProblemItem[] = [
         <>
           Без системного подхода к работе со сделками ваша конверсия остаётся на
           уровне 3–5% вместо возможных
-          <span className="at-mark"> 15–20%</span>.
+          <span className="inline-block px-[5px] py-[2px] rounded-[5px] bg-[#4A6DFF] text-white leading-[1.1]"> 15–20%</span>.
         </>
       ),
       bgUrl: "/widgets/AutoTask/back_analitic.jpeg",
@@ -141,7 +141,7 @@ export const PROBLEMS: ProblemItem[] = [
       text: (
         <>
           Руководители тратят часы на проверку активности менеджеров{" "}
-          <span className="at-mark">вместо развития</span> бизнеса.
+          <span className="inline-block px-[5px] py-[2px] rounded-[5px] bg-[#4A6DFF] text-white leading-[1.1]">вместо развития</span> бизнеса.
         </>
       ),
       bgUrl: "/widgets/AutoTask/back_yeys.jpeg",
