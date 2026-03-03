@@ -17,7 +17,7 @@ export default function Audit() {
           description: "Полный аудит настройки amoCRM: воронки, интеграции, автоматизация. Выявим ошибки и дадим рекомендации.",
         }}
       />
-      <main className="sm:pb-20 sm:pt-20">
+      <main className="sm:pb-20 sm:pt-20 w-full overflow-x-hidden">
         <HeroSection />
         <StepsSection />
         <ResultSection />
