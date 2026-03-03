@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import DropdownMenu from "./DropdownMenu";
 import clsx from "clsx";
-import navFlipStyles from "../styles/NavFlip.module.scss";
+import { navFlip } from "./navFlipClasses";
 
 const ServicesItems = [
   { name: "АУДИТ", link: "/audit" },
@@ -36,12 +36,12 @@ const HeaderNav = ({ isFloating = false }: { isFloating?: boolean }) => {
             href="/license"
             className={clsx(
               "font-medium text-h8 transition-colors duration-300",
-              navFlipStyles.link
+              navFlip.link
             )}
           >
-            <span className={navFlipStyles.inner}>
-              <span className={navFlipStyles.front}>ЛИЦЕНЗИЯ</span>
-              <span className={navFlipStyles.top} aria-hidden="true">
+            <span className={navFlip.inner}>
+              <span className={navFlip.front}>ЛИЦЕНЗИЯ</span>
+              <span className={navFlip.top} aria-hidden="true">
                 ЛИЦЕНЗИЯ
               </span>
             </span>
@@ -62,12 +62,12 @@ const HeaderNav = ({ isFloating = false }: { isFloating?: boolean }) => {
             href="/widgets"
             className={clsx(
               "font-medium text-h8 transition-colors duration-300",
-              navFlipStyles.link
+              navFlip.link
             )}
           >
-            <span className={navFlipStyles.inner}>
-              <span className={navFlipStyles.front}>ВИДЖЕТЫ</span>
-              <span className={navFlipStyles.top} aria-hidden="true">
+            <span className={navFlip.inner}>
+              <span className={navFlip.front}>ВИДЖЕТЫ</span>
+              <span className={navFlip.top} aria-hidden="true">
                 ВИДЖЕТЫ
               </span>
             </span>
@@ -79,12 +79,12 @@ const HeaderNav = ({ isFloating = false }: { isFloating?: boolean }) => {
             href="/articles"
             className={clsx(
               "font-medium text-h8 transition-colors duration-300",
-              navFlipStyles.link
+              navFlip.link
             )}
           >
-            <span className={navFlipStyles.inner}>
-              <span className={navFlipStyles.front}>СТАТЬИ</span>
-              <span className={navFlipStyles.top} aria-hidden="true">
+            <span className={navFlip.inner}>
+              <span className={navFlip.front}>СТАТЬИ</span>
+              <span className={navFlip.top} aria-hidden="true">
                 СТАТЬИ
               </span>
             </span>
