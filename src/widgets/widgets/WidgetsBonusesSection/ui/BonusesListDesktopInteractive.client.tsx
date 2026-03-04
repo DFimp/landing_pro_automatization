@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import styles from "./BonusesListDesktopInteractive.module.css";
 import { BonusesListItem } from "./BonusesListItem";
 import BonusesCanvas from "./BonusesCanvas.client";
 
@@ -39,7 +40,7 @@ export default function BonusesListDesktopInteractive() {
             className={[
               "bonus",
               item.pos,
-              "jelly-hover",
+              styles.jellyHover,
               "will-change-transform",
               "transition-transform duration-200",
               activeIndex === i ? "scale-[1.03]" : "",
@@ -60,7 +61,7 @@ export default function BonusesListDesktopInteractive() {
             className={[
               "bonus",
               item.pos,
-              "jelly-hover",
+              styles.jellyHover,
               "will-change-transform",
               "transition-transform duration-200",
               activeIndex === i ? "scale-[1.03]" : "",
@@ -83,7 +84,7 @@ export default function BonusesListDesktopInteractive() {
             className={[
               "bonus",
               item.pos,
-              "jelly-hover",
+              styles.jellyHover,
               "will-change-transform",
               "transition-transform duration-200",
               activeIndex === i ? "scale-[1.03]" : "",
@@ -103,7 +104,7 @@ export default function BonusesListDesktopInteractive() {
             className={[
               "bonus",
               item.pos,
-              "jelly-hover",
+              styles.jellyHover,
               "will-change-transform",
               "transition-transform duration-200",
               activeIndex === i ? "scale-[1.03]" : "",

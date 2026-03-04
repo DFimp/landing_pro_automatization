@@ -1,4 +1,5 @@
 ﻿import Link from "next/link";
+import styles from "./not-found.module.css";
 
 export const metadata = {
   title: "Страница не найдена",
@@ -14,9 +15,9 @@ export default function NotFound() {
         aria-hidden="true"
       >
         <div className="absolute inset-0 bg-[radial-gradient(900px_420px_at_0%_0%,rgba(55,96,231,0.16),transparent_65%),radial-gradient(800px_420px_at_100%_10%,rgba(119,15,235,0.12),transparent_70%),radial-gradient(700px_360px_at_45%_100%,rgba(108,0,255,0.1),transparent_65%)]" />
-        <div className="absolute -left-8 top-12 h-40 w-40 rounded-full bg-[#3760E7]/25 blur-3xl at-404-float" />
-        <div className="absolute right-6 top-28 h-56 w-56 rounded-full bg-[#770FEB]/20 blur-3xl at-404-drift" />
-        <div className="absolute bottom-10 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-[#AFC1FF]/35 blur-3xl at-404-drift" />
+        <div className={`absolute -left-8 top-12 h-40 w-40 rounded-full bg-[#3760E7]/25 blur-3xl ${styles.float}`} />
+        <div className={`absolute right-6 top-28 h-56 w-56 rounded-full bg-[#770FEB]/20 blur-3xl ${styles.drift}`} />
+        <div className={`absolute bottom-10 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-[#AFC1FF]/35 blur-3xl ${styles.drift}`} />
       </div>
 
       <div className="mx-auto w-full max-w-[1200px] px-4 py-[60px] relative z-10">
@@ -101,7 +102,7 @@ export default function NotFound() {
             <div className="widget-card rounded-[40px] border border-[#3760E7]">
               <div className="widget-card__inner rounded-[40px] bg-white/80 px-8 py-10 sm:px-10 sm:py-14">
                 <div className="text-[120px] font-semibold leading-none text-transparent sm:text-[180px]">
-                  <span className="at-404-shimmer bg-[linear-gradient(120deg,#3760E7,#770FEB,#1B46D4)] bg-clip-text">
+                  <span className={`${styles.shimmer} bg-[linear-gradient(120deg,#3760E7,#770FEB,#1B46D4)] bg-clip-text`}>
                     404
                   </span>
                 </div>
@@ -135,7 +136,7 @@ export default function NotFound() {
               </div>
             </div>
 
-            <div className="pointer-events-none absolute -bottom-10 -right-6 h-28 w-28 rounded-full border border-[#3760E7]/30 bg-white/70 shadow-[0_12px_35px_rgba(55,96,231,0.2)] at-404-float" />
+            <div className={`pointer-events-none absolute -bottom-10 -right-6 h-28 w-28 rounded-full border border-[#3760E7]/30 bg-white/70 shadow-[0_12px_35px_rgba(55,96,231,0.2)] ${styles.float}`} />
           </div>
         </div>
       </div>

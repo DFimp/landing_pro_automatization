@@ -2,6 +2,7 @@
 
 import React from 'react';
 import clsx from 'clsx';
+import styles from "./AccordionItem.module.css";
 
 type Step = {
   title: string;
@@ -15,7 +16,7 @@ export default function AccordionItem({ index, step }: { index: number; step: St
     "max-w-full mb-[30px] rounded-[20px] border border-white/45 bg-white/[0.04] transition-[border-color,box-shadow,background] duration-[250ms]",
     open
       ? "border-white shadow-[0_20px_60px_rgba(79,92,255,0.25),inset_0_0_0_1px_rgba(255,255,255,0.15)] bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03))]"
-      : "hover:[animation:sc-border-pulse_1.15s_cubic-bezier(.22,1,.36,1)_infinite] motion-reduce:hover:[animation:none]"
+      : styles.borderPulse
   );
 
   const buttonClass =
