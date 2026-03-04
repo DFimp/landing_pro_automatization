@@ -1,0 +1,29 @@
+# Dependencies — never copy, always install fresh inside builder
+node_modules
+
+# Previous build output
+.next
+out
+
+# Git history
+.git
+.gitignore
+
+# Dev/CI files
+.github
+coverage
+*.log
+npm-debug.log*
+
+# Local env files
+.env*.local
+.env.development
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.pem
+
+# Docs
+README.md
+CHANGELOG.md
