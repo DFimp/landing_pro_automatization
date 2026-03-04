@@ -19,7 +19,7 @@ export default function Googleheets({
           description: widget.description,
         }}
       />
-      <div className="container mx-auto px-4 py-12 max-w-4xl">
+      <div className="mx-auto w-full max-w-[1200px] px-4 mx-auto px-4 py-12 max-w-4xl">
         <h1 className="text-4xl font-bold mb-4">
           ProAutomatization amoCRM for Googlesheets
         </h1>

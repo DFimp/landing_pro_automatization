@@ -7,7 +7,7 @@ import WhyChooseUsSlideIn from "./WhyChooseUsSlideIn.client";
 const WhyChooseUs = () => {
     return (
         <div className="sm:mt-20 mt-10">
-            <div className="sm:text-center container overflow">
+            <div className="sm:text-center mx-auto w-full max-w-[1200px] px-4 overflow">
                 <div className="sm:hidden">
                     <TitleArrow text="Почему выбирают нас?" className="mb-6" />
                 </div>
@@ -39,7 +39,7 @@ const WhyChooseUs = () => {
             </div>
 
             <div className="sm:mb-12 mb-5 relative sm:h-[310px] overflow-hidden">
-                <div className="flex sm:flex-row flex-col gap-20 container h-full">
+                <div className="flex sm:flex-row flex-col gap-20 mx-auto w-full max-w-[1200px] px-4 h-full">
                     <div className="flex sm:flex-row flex-col gap-5 items-center">
                         <Card
                             title="Опыт"
@@ -78,7 +78,7 @@ const WhyChooseUs = () => {
             </div>
 
             <div className="relative sm:h-[310px] overflow-hidden">
-                <div className="flex sm:flex-row flex-col justify-end gap-5 container h-full">
+                <div className="flex sm:flex-row flex-col justify-end gap-5 mx-auto w-full max-w-[1200px] px-4 h-full">
                     <div className="flex sm:flex-row flex-col gap-5 items-center">
                         <div className="hidden sm:block h-full w-[1000px] relative flex-shrink-0" style={{ minWidth: "600px" }}>
                             <WhyChooseUsSlideIn direction="left">

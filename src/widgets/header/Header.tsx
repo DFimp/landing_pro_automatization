@@ -97,7 +97,7 @@ const Header = () => {
               isMenuAlignedRight && "ml-auto"
             )}
           >
-            <div className="container w-full flex justify-between items-center px-4 sm:px-0 !py-4 sm:!py-0">
+            <div className="mx-auto w-full max-w-[1200px] px-4 w-full flex justify-between items-center px-4 sm:px-0 !py-4 sm:!py-0">
               <div className="header__logo">
                 <Link href="/" className="my-1 flex items-center gap-2 sm:gap-3">
                   <Image

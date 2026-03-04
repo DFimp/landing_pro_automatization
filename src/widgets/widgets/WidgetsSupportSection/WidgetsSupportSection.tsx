@@ -9,7 +9,7 @@ export function WidgetsSupportSection() {
     <>
       <ScrollReveal
         as="div"
-        className="container sm:mt-[86px]! mt-[40px]!"
+        className="mx-auto w-full max-w-[1200px] px-4 sm:mt-[86px]! mt-[40px]!"
         variant="wipe"
         yFrom={10}
         durationMs={650}
@@ -82,7 +82,7 @@ export function WidgetsSupportSection() {
 
       <ScrollReveal
         as="div"
-        className="container sm:bg-transparent bg-[#AFC1FF80]"
+        className="mx-auto w-full max-w-[1200px] px-4 sm:bg-transparent bg-[#AFC1FF80]"
         yFrom={18}
         scaleFrom={0.99}
         durationMs={750}

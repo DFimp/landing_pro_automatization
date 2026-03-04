@@ -14,7 +14,7 @@ export default function ConsultCard({ className }: ConsultCardProps) {
       <ConsultCardReveal className="hidden md:block">
         <section id="card">
           <div
-            className={`container rounded-4xl relative bg-[url('/card_bg.svg')] bg-cover bg-center bg-no-repeat ${className || ""}`}
+            className={`mx-auto w-full max-w-[1200px] px-4 rounded-4xl relative bg-[url('/card_bg.svg')] bg-cover bg-center bg-no-repeat ${className || ""}`}
           >
             <div className="p-10 space-y-15 rounded-4xl">
               <h2 className="text-h2 font-semibold text-white w-190">

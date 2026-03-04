@@ -5,7 +5,7 @@ import Image from "next/image";
 const ProcessList = () => {
   return (
     <div>
-      <div className="hidden sm:block process-list__container container">
+      <div className="hidden sm:block process-list__container mx-auto w-full max-w-[1200px] px-4">
         <ul className="space-y-4">
           {solutions.map((solution, index) => (
             <AnimatedListItem

@@ -52,10 +52,7 @@ export default function AccordionItem({ index, step }: { index: number; step: St
     "[&_.sc-note--green]:bg-[rgba(0,255,153,0.06)] [&_.sc-note--green]:border-white",
     "[&_.sc-note--red]:bg-[rgba(255,0,72,0.06)] [&_.sc-note--red]:border-white",
     "[&_.sc-note--yellow]:bg-[rgba(255,214,0,0.08)] [&_.sc-note--yellow]:border-white",
-    "[&_.sc-note--purple]:bg-[rgba(122,89,255,0.1)] [&_.sc-note--purple]:border-white",
-    "[&_.sc-btn]:mt-[18px] [&_.sc-btn]:inline-flex [&_.sc-btn]:items-center [&_.sc-btn]:justify-center [&_.sc-btn]:h-[44px] [&_.sc-btn]:px-[20px] [&_.sc-btn]:rounded-full [&_.sc-btn]:bg-[#386bff] [&_.sc-btn]:text-white [&_.sc-btn]:font-bold [&_.sc-btn]:shadow-[0_12px_28px_rgba(56,107,255,0.35)] [&_.sc-btn]:border-none",
-    "[&_.dist-btn-primary]:mt-[18px] [&_.dist-btn-primary]:inline-flex [&_.dist-btn-primary]:items-center [&_.dist-btn-primary]:justify-center [&_.dist-btn-primary]:h-[44px] [&_.dist-btn-primary]:px-[20px] [&_.dist-btn-primary]:rounded-full [&_.dist-btn-primary]:bg-[#386bff] [&_.dist-btn-primary]:text-white [&_.dist-btn-primary]:font-bold [&_.dist-btn-primary]:shadow-[0_12px_28px_rgba(56,107,255,0.35)] [&_.dist-btn-primary]:border-none",
-    "[&_.sc-cta_a]:mt-[18px] [&_.sc-cta_a]:inline-flex [&_.sc-cta_a]:items-center [&_.sc-cta_a]:justify-center [&_.sc-cta_a]:h-[44px] [&_.sc-cta_a]:px-[20px] [&_.sc-cta_a]:rounded-full [&_.sc-cta_a]:bg-[#386bff] [&_.sc-cta_a]:text-white [&_.sc-cta_a]:font-bold [&_.sc-cta_a]:shadow-[0_12px_28px_rgba(56,107,255,0.35)] [&_.sc-cta_a]:border-none"
+    "[&_.sc-note--purple]:bg-[rgba(122,89,255,0.1)] [&_.sc-note--purple]:border-white"
   );
 
   return (

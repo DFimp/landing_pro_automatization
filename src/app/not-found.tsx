@@ -19,7 +19,7 @@ export default function NotFound() {
         <div className="absolute bottom-10 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-[#AFC1FF]/35 blur-3xl at-404-drift" />
       </div>
 
-      <div className="container at-404-container relative z-10">
+      <div className="mx-auto w-full max-w-[1200px] px-4 py-[60px] relative z-10">
         <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
             <div className="inline-flex items-center gap-3 rounded-full border border-[#3760E7]/25 bg-white/80 px-4 py-2 text-h8 font-medium text-[#1B46D4] shadow-[0_10px_25px_rgba(55,96,231,0.12)] backdrop-blur">
