@@ -33,7 +33,7 @@ export default function TBank({
           <>
             <section className="tg-hero">
               <div className="tg-container">
-                <h1 className="tg-pill tg-bleed-left">Эквайринг Т‑Банк в amoCRM</h1>
+                <h1 className="tg-pill tg-bleed-left">Счета Т‑Банк в amoCRM</h1>
 
                 <h2 className="tg-hero-title">
                   Счёт в amoCRM → ссылка на оплату в Т‑Банке
@@ -94,4 +94,3 @@ export default function TBank({
     </>
   );
 }
-
