@@ -38,7 +38,7 @@ export default function TBank({
                     paddingLeft: "calc(49.5vw - 50% + 16px)",
                     borderTopLeftRadius: 0,
                     borderBottomLeftRadius: 0,
-                  }}>Эквайринг Т‑Банк в amoCRM</h1>
+                  }}>Счета Т‑Банк в amoCRM</h1>
 
                 <h2 className="mt-10 font-semibold text-white text-[clamp(36px,6vw,64px)] leading-[1.05] max-[480px]:mt-5 max-[480px]:text-[clamp(26px,8.5vw,34px)] max-[480px]:leading-[1.12]">
                   Счёт в amoCRM → ссылка на оплату в Т‑Банке
@@ -102,4 +102,3 @@ export default function TBank({
     </>
   );
 }
-
