@@ -1,11 +1,11 @@
 import type { CaseItem } from "@/shared/ui/Case/CaseCard";
 import type { ProblemItem } from "@/shared/ui/ProblemsCard/ProblemsCard";
 import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
-import { color } from "motion/react";
 
 const widget = WIDGETS_DATA["lead-distribution"];
 
-export const STEPS = [    {
+export const STEPS = [
+  {
       title: "Установка и активация виджета",
       content: (
         <div>
@@ -17,19 +17,20 @@ export const STEPS = [    {
             <li>Виджет автоматически синхронизирует список ваших менеджеров</li>
           </ul>
 
-          <div className="sc-cta" style={{ marginTop: 16 }}>
+          <div className="mt-4">
             <a
               href={getWidgetInstallUrl(widget.clientId!)}
               target="_blank"
               rel="noopener"
-              className="dist-btn-primary"
+              className="inline-flex items-center justify-center h-11 px-8 rounded-full bg-[#386bff] text-white font-bold text-[16px] shadow-[0_8px_24px_rgba(56,107,255,0.35)] transition-[transform,box-shadow,background] duration-150 mt-[18px] hover:bg-[#2f5cf0] hover:-translate-y-[1px] hover:shadow-[0_12px_28px_rgba(56,107,255,0.4)]"
             >
               Установить виджет сейчас
             </a>
           </div>
         </div>
       ),
-    },    {
+    },
+  {
       title: "Настройка активности менеджеров",
       content: (
         <div>

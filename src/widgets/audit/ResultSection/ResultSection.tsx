@@ -7,7 +7,7 @@ export function ResultSection() {
       <div className="mb-10">
         <TitleArrow text="Что входит в наши услуги?" />
       </div>
-      <div className="container">
+      <div className="mx-auto w-full max-w-[1200px] px-4">
         <AnalyticsResult />
       </div>
     </section>

@@ -4,7 +4,7 @@ import ScrollReveal from "@/shared/ui/scrollReveal/ScrollReveal";
 export const AccompanimentHeroSection = () => {
   return (
     <section>
-      <div className="container flex flex-col gap-5 sm:gap-20">
+      <div className="mx-auto w-full max-w-[1200px] px-4 flex flex-col gap-5 sm:gap-20">
         <h1 className="mt-4 sm:mt-0 sm:text-h2 text-white sm:font-bold text-2xl font-semibold">
           Сопровождение
         </h1>

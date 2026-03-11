@@ -4,7 +4,7 @@ import ScrollReveal from "@/shared/ui/scrollReveal/ScrollReveal";
 
 const HomeHero = () => {
   return (
-    <section className="container sm:flex justify-between items-center">
+    <section className="mx-auto w-full max-w-[1200px] px-4 sm:flex justify-between items-center">
       <div className="space-y-9">
         <ScrollReveal as="h1" variant="wipe" yFrom={8} durationMs={650}>
           <span className="sm:text-h3 text-2xl font-semibold">

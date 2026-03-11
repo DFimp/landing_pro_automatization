@@ -2,7 +2,7 @@ export function HeroSection() {
   return (
     <section
       className="
-        container
+        mx-auto w-full max-w-[1200px] px-4
         grid grid-cols-1 items-start gap-6
         sm:grid-cols-[1fr_auto] sm:gap-8
         px-4

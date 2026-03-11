@@ -24,7 +24,7 @@ export const STEPS = [
           href={getWidgetInstallUrl(widget.clientId!)}
           target="_blank"
           rel="noopener"
-          className="sc-btn"
+          className="inline-flex items-center justify-center h-11 px-5 rounded-full bg-[#386bff] text-white font-bold shadow-[0_12px_28px_rgba(56,107,255,0.35)] mt-[18px]"
           style={{ marginTop: 12 }}
         >
           Установить виджет сейчас
@@ -246,7 +246,6 @@ export const CASE_ITEMS: CaseItem[] = [
   {
     type: "stripe",
     side: "left",
-    white: true,
     text: "AMO CRM AMO CRM AMO CRM",
   },
 
@@ -274,9 +273,17 @@ export const CASE_ITEMS: CaseItem[] = [
     mobileDecorUrl: "/widgets/CaseCard/amo (1).svg",
   },
 
-  { type: "stripe", side: "right", text: "AMO CRM AMO CRM AMO CRM" },
+  {
+    type: "stripe",
+    side: "right",
+    text: "AMO CRM AMO CRM AMO CRM",
+  },
 
-  { type: "stripe", side: "left", text: "AMO CRM AMO CRM AMO CRM" },
+  {
+    type: "stripe",
+    side: "left",
+    text: "AMO CRM AMO CRM AMO CRM",
+  },
 
   {
     type: "card",
@@ -305,7 +312,6 @@ export const CASE_ITEMS: CaseItem[] = [
   {
     type: "stripe",
     side: "right",
-    white: true,
     text: "AMO CRM AMO CRM AMO CRM",
   },
 ];

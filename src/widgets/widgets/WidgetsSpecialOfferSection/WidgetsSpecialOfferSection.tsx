@@ -7,7 +7,7 @@ export function WidgetsSpecialOfferSection() {
     <>
       <ScrollReveal
         as="section"
-        className="container mt-[50px] sm:mt-[90px]"
+        className="mx-auto w-full max-w-[1200px] px-4 mt-[50px] sm:mt-[90px]"
         staggerChildren
         variant="bubble"
         durationMs={750}

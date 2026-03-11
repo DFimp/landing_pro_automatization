@@ -24,7 +24,7 @@ export const STEPS = [
                     href={getWidgetInstallUrl(widget.clientId!)}
                     target="_blank"
                     rel="noopener"
-                    className="sc-btn"
+                    className="inline-flex items-center justify-center h-11 px-5 rounded-full bg-[#386bff] text-white font-bold shadow-[0_12px_28px_rgba(56,107,255,0.35)] mt-[18px]"
                     style={{ marginTop: 12 }}
                 >
                     Подключить виджет сейчас
