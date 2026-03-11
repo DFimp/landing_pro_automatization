@@ -22,8 +22,14 @@ export default function WorkStepsCarousel({ steps }: Props) {
   const viewportRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLUListElement>(null);
 
-  const [activeIndex, setActiveIndex] = useState(0);
+  const isDraggingRef = useRef(false);
+  const dragStartXRef = useRef(0);
+  const dragStartTranslateRef = useRef(0);
+  const dragMovedRef = useRef(false);
+
   const [xStops, setXStops] = useState<number[]>(() => steps.map(() => 0));
+  const [dragTranslate, setDragTranslate] = useState<number | null>(null);
+  const [settledTranslate, setSettledTranslate] = useState(0);
 
   useEffect(() => {
     const measure = () => {
@@ -44,8 +50,7 @@ export default function WorkStepsCarousel({ steps }: Props) {
 
       setXStops(nextStops);
       const minStop = Math.min(...nextStops);
-      const nextMaxIndex = Math.max(0, nextStops.findIndex((stop) => stop === minStop));
-      setActiveIndex((prev) => clamp(prev, 0, nextMaxIndex));
+      setSettledTranslate((prev) => clamp(prev, minStop, 0));
     };
 
     measure();
@@ -59,13 +64,95 @@ export default function WorkStepsCarousel({ steps }: Props) {
     return Math.max(0, xStops.findIndex((stop) => stop === minStop));
   }, [xStops]);
 
-  const canGoPrev = activeIndex > 0;
-  const canGoNext = activeIndex < maxIndex;
+  const currentTranslate = useMemo(() => {
+    if (dragTranslate !== null) return dragTranslate;
+    return settledTranslate;
+  }, [dragTranslate, settledTranslate]);
+
+  const minTranslate = xStops[maxIndex] ?? 0;
+  const canGoPrev = currentTranslate < -1;
+  const canGoNext = currentTranslate > minTranslate + 1;
 
   const transform = useMemo(() => {
-    const x = xStops[activeIndex] ?? 0;
-    return `translate3d(${x}px, 0, 0)`;
-  }, [activeIndex, xStops]);
+    return `translate3d(${currentTranslate}px, 0, 0)`;
+  }, [currentTranslate]);
+
+  const findNearestIndex = (translate: number) => {
+    if (xStops.length === 0) return 0;
+
+    let nearestIndex = 0;
+    let nearestDistance = Number.POSITIVE_INFINITY;
+
+    for (let i = 0; i <= maxIndex; i += 1) {
+      const distance = Math.abs((xStops[i] ?? 0) - translate);
+      if (distance < nearestDistance) {
+        nearestDistance = distance;
+        nearestIndex = i;
+      }
+    }
+
+    return nearestIndex;
+  };
+
+  const finishDrag = () => {
+    if (!isDraggingRef.current) return;
+    isDraggingRef.current = false;
+
+    const translateAtRelease = dragTranslate ?? currentTranslate;
+    const clampedTranslate = clamp(translateAtRelease, minTranslate, 0);
+    setDragTranslate(null);
+    setSettledTranslate(clampedTranslate);
+  };
+
+  const handlePointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
+    if (event.pointerType === "mouse" && event.button !== 0) return;
+    if (xStops.length === 0) return;
+
+    isDraggingRef.current = true;
+    dragMovedRef.current = false;
+    dragStartXRef.current = event.clientX;
+    dragStartTranslateRef.current = currentTranslate;
+
+    setDragTranslate(currentTranslate);
+    event.currentTarget.setPointerCapture(event.pointerId);
+  };
+
+  const handlePointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
+    if (!isDraggingRef.current) return;
+
+    const delta = event.clientX - dragStartXRef.current;
+    if (Math.abs(delta) > 5) {
+      dragMovedRef.current = true;
+    }
+
+    const nextTranslate = clamp(dragStartTranslateRef.current + delta, minTranslate, 0);
+    setDragTranslate(nextTranslate);
+  };
+
+  const handlePointerUp = (event: React.PointerEvent<HTMLDivElement>) => {
+    if (!isDraggingRef.current) return;
+    finishDrag();
+
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId);
+    }
+  };
+
+  const handlePointerCancel = (event: React.PointerEvent<HTMLDivElement>) => {
+    if (!isDraggingRef.current) return;
+    finishDrag();
+
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId);
+    }
+  };
+
+  const handleTrackClickCapture = (event: React.MouseEvent<HTMLUListElement>) => {
+    if (!dragMovedRef.current) return;
+    event.preventDefault();
+    event.stopPropagation();
+    dragMovedRef.current = false;
+  };
 
   return (
     <>
@@ -76,7 +163,11 @@ export default function WorkStepsCarousel({ steps }: Props) {
           <button
             type="button"
             aria-label="Previous step"
-            onClick={() => setActiveIndex((prev) => clamp(prev - 1, 0, maxIndex))}
+            onClick={() => {
+              const fromIndex = findNearestIndex(currentTranslate);
+              const nextIndex = clamp(fromIndex - 1, 0, maxIndex);
+              setSettledTranslate(xStops[nextIndex] ?? 0);
+            }}
             disabled={!canGoPrev}
             className="h-12 w-12 rounded-xl border border-blue/40 bg-white text-blue text-[28px] font-light leading-none pb-[3px] shadow-[0_8px_20px_rgba(55,96,231,0.14)] transition-all duration-200 hover:-translate-y-[1px] hover:border-blue hover:bg-[#f4f7ff] hover:shadow-[0_10px_22px_rgba(55,96,231,0.2)] active:translate-y-0 active:scale-[0.98] disabled:opacity-45 disabled:border-gray disabled:text-gray disabled:bg-white disabled:shadow-none"
           >
@@ -85,7 +176,11 @@ export default function WorkStepsCarousel({ steps }: Props) {
           <button
             type="button"
             aria-label="Next step"
-            onClick={() => setActiveIndex((prev) => clamp(prev + 1, 0, maxIndex))}
+            onClick={() => {
+              const fromIndex = findNearestIndex(currentTranslate);
+              const nextIndex = clamp(fromIndex + 1, 0, maxIndex);
+              setSettledTranslate(xStops[nextIndex] ?? 0);
+            }}
             disabled={!canGoNext}
             className="h-12 w-12 rounded-xl border border-blue bg-blue text-white text-[28px] font-light leading-none pb-[3px] shadow-[0_10px_24px_rgba(55,96,231,0.32)] transition-all duration-200 hover:-translate-y-[1px] hover:bg-[#2d54d0] hover:shadow-[0_12px_28px_rgba(55,96,231,0.4)] active:translate-y-0 active:scale-[0.98] disabled:opacity-45 disabled:border-gray disabled:text-gray disabled:bg-white disabled:shadow-none"
           >
@@ -95,11 +190,24 @@ export default function WorkStepsCarousel({ steps }: Props) {
       </div>
 
       <div className="hidden sm:block mt-20 animate-[stepsAppear_900ms_cubic-bezier(0.16,1,0.3,1)_both]">
-        <div ref={viewportRef} className="overflow-visible">
+        <div
+          ref={viewportRef}
+          className={isDraggingRef.current ? "overflow-visible select-none" : "overflow-visible"}
+          style={{ touchAction: "pan-y" }}
+          onPointerDown={handlePointerDown}
+          onPointerMove={handlePointerMove}
+          onPointerUp={handlePointerUp}
+          onPointerCancel={handlePointerCancel}
+        >
           <ul
             ref={trackRef}
             style={{ transform }}
-            className="flex gap-4 transition-transform duration-500 ease-in-out will-change-transform"
+            onClickCapture={handleTrackClickCapture}
+            className={
+              isDraggingRef.current
+                ? "flex gap-4 will-change-transform cursor-grabbing"
+                : "flex gap-4 transition-transform duration-500 ease-in-out will-change-transform cursor-grab"
+            }
           >
             {steps.map((step, index) => (
               <Card
