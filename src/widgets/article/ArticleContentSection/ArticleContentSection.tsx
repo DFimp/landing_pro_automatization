@@ -7,7 +7,7 @@ import ScrollReveal from "@/shared/ui/scrollReveal/ScrollReveal";
 
 export function ArticleContentSection() {
     return (
-        <div className="mx-auto w-full max-w-[1200px] px-4 sm:mb-[60px]! mb-[40px]!">
+        <div className="mx-auto w-full max-w-[1200px] px-4 sm:!mb-[60px] !mb-[40px]">
             <ScrollReveal
                 as="h1"
                 variant="typeFast"

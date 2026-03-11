@@ -13,7 +13,7 @@ export function WidgetsBonusesSection() {
         quality={90}
       />
       
-      <div className="relative z-10 sm:pt-[40px]! pt-[18px]! mx-auto w-full max-w-[1200px] px-4">
+      <div className="relative z-10 sm:!pt-[40px] !pt-[18px] mx-auto w-full max-w-[1200px] px-4">
         <h1 className="text-white sm:text-[48px] text-[20px] font-bold sm:mb-[40px] mb-[20px]">
           Лицензии amoCRM c <span className="sm:inline block">бонусами</span>
         </h1>

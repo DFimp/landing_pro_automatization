@@ -78,9 +78,7 @@ export default function RootLayout({
         <Analytics />
         <WebVitals />
         <ScrollRevealObserver />
-        <Suspense fallback={<div className="h-20" />}>
-          <Header />
-        </Suspense>
+        <Header />
         {children}
         <Suspense fallback={null}>
           <Footer />

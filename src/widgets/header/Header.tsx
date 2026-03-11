@@ -8,14 +8,14 @@ import MobileMenuWrapper from "./ui/MobileMenuWrapper";
 import MobileMenuToggle from "./ui/MobileMenuToggle";
 import { useHiddenInIframe } from "@/shared/utils/useHiddenInIframe";
 import clsx from "clsx";
-import { useEffect, useRef, useState } from "react";
+import { CSSProperties, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+
+const HEADER_HEIGHT = 92;
 
 const Header = () => {
   const { isIframe } = useHiddenInIframe();
-  const headerRef = useRef<HTMLElement | null>(null);
   const [isFloating] = useState(true);
-  const [headerHeight, setHeaderHeight] = useState(92);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isHydrated, setIsHydrated] = useState(false);
   const [isMenuAlignedRight, setIsMenuAlignedRight] = useState(false);
@@ -45,31 +45,17 @@ const Header = () => {
     setIsMenuAlignedRight(false);
   }, [pathname]);
 
-  useEffect(() => {
-    if (isIframe) return;
-    if (!headerRef.current || typeof ResizeObserver === "undefined") {
-      return;
-    }
-
-    const updateHeight = () => {
-      setHeaderHeight(headerRef.current?.offsetHeight ?? 0);
-    };
-
-    updateHeight();
-    const observer = new ResizeObserver(updateHeight);
-    observer.observe(headerRef.current);
-
-    return () => observer.disconnect();
-  }, [isIframe]);
-
   if (isIframe) return null;
+  const rootStyle = {
+    ["--header-height" as any]: `${HEADER_HEIGHT}px`,
+  } as CSSProperties;
+
   return (
-    <div style={{ ["--header-height" as any]: `${headerHeight}px` }}>
-      <div aria-hidden="true" style={{ height: headerHeight }} />
+    <div style={rootStyle}>
+      <div aria-hidden="true" style={{ height: HEADER_HEIGHT }} />
       <header
-        ref={headerRef}
         className={clsx(
-          "w-full fixed left-0 right-0 top-0 z-[1500]"
+          "w-full fixed left-0 right-0 top-0 z-[1500] [transform:translate3d(0,0,0)] [backface-visibility:hidden]"
         )}
       >
         <div
@@ -91,15 +77,17 @@ const Header = () => {
           />
           <div
             className={clsx(
-              "max-w-[100vw] min-w-0 transition-[width,max-width] duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] sm:ml-0",
+              "max-w-[100vw] min-w-0 sm:ml-0",
+              (isMenuOpen || isMenuAlignedRight) &&
+                "transition-[width,max-width,margin] duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)]",
               isMenuOpen ? "w-[80vw] min-w-[260px] max-w-[520px]" : "w-full",
               "sm:w-full sm:max-w-none",
               isMenuAlignedRight && "ml-auto"
             )}
           >
-            <div className="mx-auto w-full max-w-[1200px] px-4 w-full flex justify-between items-center px-4 sm:px-0 !py-4 sm:!py-0">
+            <div className="mx-auto flex h-[92px] w-full max-w-[1200px] items-center justify-between px-4 sm:px-0">
               <div className="header__logo">
-                <Link href="/" className="my-1 flex items-center gap-2 sm:gap-3">
+                <Link href="/" className="flex items-center gap-2 sm:gap-3">
                   <Image
                     src="/vector_logo.svg"
                     alt="Логотип Про Автоматизацию"

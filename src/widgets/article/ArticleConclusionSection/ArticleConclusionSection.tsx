@@ -24,7 +24,7 @@ export function ArticleConclusionSection() {
       </div>
       <StickyInfo
         text="Запишитесь на бесплатную консультацию — разберём ваш кейс и предложим лучшее решение под ваш бизнес."
-        className="sm:text-[20px]! text-[14px]! font-[400]!"
+        className="sm:!text-[20px] !text-[14px] !font-[400]"
       ></StickyInfo>
       <div className="sm:mt-[53px] mt-[31px] sm:pb-20">
         <ConsultCard></ConsultCard>

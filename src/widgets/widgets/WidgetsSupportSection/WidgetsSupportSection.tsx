@@ -9,7 +9,7 @@ export function WidgetsSupportSection() {
     <>
       <ScrollReveal
         as="div"
-        className="mx-auto w-full max-w-[1200px] px-4 sm:mt-[86px]! mt-[40px]!"
+        className="mx-auto w-full max-w-[1200px] px-4 sm:!mt-[86px] !mt-[40px]"
         variant="wipe"
         yFrom={10}
         durationMs={650}

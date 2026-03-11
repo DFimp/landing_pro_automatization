@@ -7,7 +7,7 @@ import WhyChooseUsSlideIn from "./WhyChooseUsSlideIn.client";
 const WhyChooseUs = () => {
     return (
         <div className="sm:mt-20 mt-10">
-            <div className="sm:text-center mx-auto w-full max-w-[1200px] px-4 overflow">
+            <div className="sm:text-center mx-auto w-full max-w-[1200px] px-4 overflow-hidden">
                 <div className="sm:hidden">
                     <TitleArrow text="Почему выбирают нас?" className="mb-6" />
                 </div>

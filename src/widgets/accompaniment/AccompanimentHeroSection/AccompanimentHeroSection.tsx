@@ -28,7 +28,7 @@ export const AccompanimentHeroSection = () => {
         <StickyInfo
           text="<b>CRM</b> — это основа вашего бизнеса. Любые сбои в её работе напрямую влияют на его эффективность."
           left={false}
-          className="ml-auto max-w-[355px] sm:max-w-9999"
+          className="ml-auto max-w-[355px] sm:max-w-none"
         />
       </ScrollReveal>
     </section>
