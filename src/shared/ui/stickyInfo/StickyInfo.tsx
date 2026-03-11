@@ -1,3 +1,5 @@
+import { Container } from "@/shared/ui/layout";
+
 type StickyInfoProps = {
   text: string;
   left?: boolean;
@@ -13,7 +15,7 @@ export default function StickyInfo({
     <div className="sticky-info w-full">
       <div className="flex items-stretch">
         <div className={`flex-1 ${left ? "bg-blue -mr-px" : ""}`}></div>
-        <div className="mx-auto w-full max-w-[1200px] px-4" style={{ padding: "0" }}>
+        <Container padding="none">
           <div
             className={`bg-blue text-white sm:text-h4 text-[14px] font-normal py-3 sm:py-5 whitespace-normal 
             ${
@@ -25,7 +27,7 @@ export default function StickyInfo({
           >
             <div dangerouslySetInnerHTML={{ __html: text }}></div>
           </div>
-        </div>
+        </Container>
         <div className={`flex-1 ${!left ? "bg-blue -ml-px" : ""}`}></div>
       </div>
     </div>

@@ -1,11 +1,12 @@
 import { solutions } from "@/widgets/home/homeServiceSection/ui/lib";
 import { AnimatedListItem } from "@/shared/ui/animatedListItem/AnimatedListItem";
 import Image from "next/image";
+import { Container } from "@/shared/ui/layout";
 
 const ProcessList = () => {
   return (
     <div>
-      <div className="hidden sm:block process-list__container mx-auto w-full max-w-[1200px] px-4">
+      <Container className="hidden sm:block process-list__container">
         <ul className="space-y-4">
           {solutions.map((solution, index) => (
             <AnimatedListItem
@@ -19,7 +20,7 @@ const ProcessList = () => {
             />
           ))}
         </ul>
-      </div>
+      </Container>
 
       <div className="block sm:hidden">
         {solutions.map((solution, index) => (
