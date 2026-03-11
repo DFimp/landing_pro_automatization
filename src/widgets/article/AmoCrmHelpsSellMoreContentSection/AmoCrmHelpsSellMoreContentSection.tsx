@@ -4,13 +4,12 @@ import ArticleList from "@/widgets/article/ArticleContentSection/ui/ArticleList"
 import ArticleAccentBlock from "@/widgets/article/ArticleContentSection/ui/ArticleAccentBlock";
 
 import Reveal from "@/shared/ui/Reveal/Reveal";
-import styles from "@/page/Article/AmoCrmHelpsSell/AmoCrmHelpsSell.module.css";
 
 function ArticleImage({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className={styles.figure}>
-      <div className={styles.figureFrame}>
-        <img className={styles.figureImg} src={src} alt={alt} loading="lazy" />
+    <div className="my-6 flex justify-center">
+      <div className="w-full max-w-[900px] border border-[#3B5BFF] rounded-[12px] bg-white p-2 box-border">
+        <img className="block w-full h-auto rounded-[8px]" src={src} alt={alt} loading="lazy" />
       </div>
     </div>
   );
@@ -19,7 +18,7 @@ function ArticleImage({ src, alt }: { src: string; alt: string }) {
 export default function AmoCrmHelpsSellMoreContentSection() {
   return (
     <div>
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={0}>
+      <Reveal className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none" shownClassName="opacity-100 translate-y-0" delayMs={0}>
         <ArticleBlockWrapper>
           <p>
             <strong>amoCRM</strong> — одна из самых популярных CRM-систем для отделов продаж,
@@ -38,14 +37,14 @@ export default function AmoCrmHelpsSellMoreContentSection() {
         </ArticleBlockWrapper>
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={80} variant="dropZ">
+      <Reveal className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none" shownClassName="opacity-100 translate-y-0" delayMs={80} variant="dropZ">
         <ArticleImage
           src="/articles/AmoCRMHelpsSellMore/analytics-growth.jpeg"
           alt="CRM analytics growth chart"
         />
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={120}>
+      <Reveal className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none" shownClassName="opacity-100 translate-y-0" delayMs={120}>
         <ArticleBlockWrapper>
           <ArticleSubtitle title="Что такое amoCRM и для какого бизнеса она подходит" />
 
@@ -78,14 +77,14 @@ export default function AmoCrmHelpsSellMoreContentSection() {
         </ArticleBlockWrapper>
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={80} variant="dropZ">
+      <Reveal className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none" shownClassName="opacity-100 translate-y-0" delayMs={80} variant="dropZ">
         <ArticleImage
           src="/articles/AmoCRMHelpsSellMore/business-segments.jpeg"
           alt="Business segments labels"
         />
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={120}>
+      <Reveal className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none" shownClassName="opacity-100 translate-y-0" delayMs={120}>
         <ArticleBlockWrapper>
           <ArticleSubtitle title="Ключевые преимущества amoCRM по сравнению с другими CRM" />
 
@@ -119,7 +118,7 @@ export default function AmoCrmHelpsSellMoreContentSection() {
         </ArticleBlockWrapper>
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={120}>
+      <Reveal className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none" shownClassName="opacity-100 translate-y-0" delayMs={120}>
         <ArticleBlockWrapper>
           <ArticleSubtitle title="Почему amoCRM идеально подходит для продаж и лидогенерации" />
 
@@ -150,14 +149,14 @@ export default function AmoCrmHelpsSellMoreContentSection() {
         </ArticleBlockWrapper>
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={80} variant="dropZ">
+      <Reveal className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none" shownClassName="opacity-100 translate-y-0" delayMs={80} variant="dropZ">
         <ArticleImage
           src="/articles/AmoCRMHelpsSellMore/omnichannel-leads.jpeg"
           alt="Omnichannel leads on mobile"
         />
       </Reveal>
 
-      <Reveal className={styles.reveal} shownClassName={styles.revealShown} delayMs={120}>
+      <Reveal className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none" shownClassName="opacity-100 translate-y-0" delayMs={120}>
         <ArticleBlockWrapper>
           <ArticleSubtitle title="Автоматизация в amoCRM: воронки, роботы, триггеры" />
 

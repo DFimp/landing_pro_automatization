@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import type { CSSProperties, ElementType, ReactNode } from "react";
-import styles from "./ScrollReveal.module.scss";
 
 type ScrollRevealVariant =
   | "lift"
@@ -74,18 +73,18 @@ export default function ScrollReveal<T extends ElementType = "div">({
   return (
     <Component
       className={clsx(
-        staggerChildren ? styles.stagger : styles.reveal,
-        variant === "tilt" && styles.tilt,
-        variant === "wipe" && styles.wipe,
-        variant === "wipeX" && styles.wipeX,
-        variant === "typeFast" && styles.typeFast,
-        variant === "dropZ" && styles.dropZ,
-        variant === "bubble" && styles.bubble,
-        variant === "bubbleSoft" && styles.bubbleSoft,
-        variant === "prb" && styles.prb,
-        variant === "slideInLeft" && styles.slideInLeft,
-        variant === "slideInRight" && styles.slideInRight,
-        variant === "slideInLeftPulse" && styles.slideInLeftPulse,
+        staggerChildren ? "sr-stagger" : "sr-reveal",
+        variant === "tilt" && "sr-tilt",
+        variant === "wipe" && "sr-wipe",
+        variant === "wipeX" && "sr-wipe-x",
+        variant === "typeFast" && "sr-type-fast",
+        variant === "dropZ" && "sr-drop-z",
+        variant === "bubble" && "sr-bubble",
+        variant === "bubbleSoft" && "sr-bubble-soft",
+        variant === "prb" && "sr-prb",
+        variant === "slideInLeft" && "sr-slide-in-left",
+        variant === "slideInRight" && "sr-slide-in-right",
+        variant === "slideInLeftPulse" && "sr-slide-in-left-pulse",
         className
       )}
       style={{ ...revealVars, ...style }}

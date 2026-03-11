@@ -7,7 +7,7 @@ export function DeliverablesSection() {
       <div className="mb-10">
         <TitleArrow text="Что вы получите в результате?" />
       </div>
-      <div className="container">
+      <div className="mx-auto w-full max-w-[1200px] px-4">
         <AnimatedResultsList />
       </div>
     </section>

@@ -92,7 +92,7 @@ export default function HelpServices() {
   };
 
   return (
-    <div className="flex flex-wrap gap-12 mb-20 container">
+    <div className="flex flex-wrap gap-12 mb-20 mx-auto w-full max-w-[1200px] px-4">
       {services.map((service, index) => {
         const isFlipped = flippedStates[index];
         const state = isFlipped ? "open" : "closed";

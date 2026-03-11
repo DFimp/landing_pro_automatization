@@ -163,7 +163,7 @@ export default function StepTimeline() {
                 />
             )}
 
-            <ul className='relative sm:h-full container'>
+            <ul className='relative sm:h-full mx-auto w-full max-w-[1200px] px-4'>
                 {/* Шаг 1 - появляется сразу */}
                 <motion.li
                     key={2 + Number(isMobileView) * 100}

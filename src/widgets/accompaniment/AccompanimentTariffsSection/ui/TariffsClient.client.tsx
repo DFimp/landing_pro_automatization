@@ -23,7 +23,7 @@ export default function TariffsClient({ tariffs }: { tariffs: Tariff[] }) {
 
     return (
         <>
-            <section className="container">
+            <section className="mx-auto w-full max-w-[1200px] px-4">
                 <ul className="flex sm:flex-row flex-col justify-between items-center gap-8">
                     {tariffs.map((tariff, index) => (
                         <TariffItemMotion key={tariff.title} index={index}>

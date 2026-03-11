@@ -1,0 +1,24 @@
+@keyframes borderPulse {
+  0% {
+    border-color: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 0 0 rgba(79, 92, 255, 0);
+  }
+  55% {
+    border-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 34px rgba(79, 92, 255, 0.22);
+  }
+  100% {
+    border-color: rgba(255, 255, 255, 0.55);
+    box-shadow: 0 0 0 rgba(79, 92, 255, 0);
+  }
+}
+
+.borderPulse:hover {
+  animation: borderPulse 1.15s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .borderPulse:hover {
+    animation: none;
+  }
+}

@@ -4,7 +4,7 @@ import ScrollReveal from "@/shared/ui/scrollReveal/ScrollReveal";
 export function HeroSection() {
   return (
     <section className="flex flex-col sm:gap-20 gap-5">
-      <h1 className="sm:text-h2 text-2xl font-semibold container sm:font-bold sm:max-w-4xl">
+      <h1 className="sm:text-h2 text-2xl font-semibold mx-auto w-full max-w-[1200px] px-4 sm:font-bold sm:max-w-4xl">
         Аудит и предпроектная подготовка
       </h1>
 
@@ -15,7 +15,7 @@ export function HeroSection() {
         />
       </ScrollReveal>
 
-      <div className="container">
+      <div className="mx-auto w-full max-w-[1200px] px-4">
         <h2 className=" font-normal sm:text-h5 max-w-135">
           Мы анализируем текущее состояние вашего бизнеса, выявляем проблемы и
           разрабатываем решения, чтобы ваш проект начался без рисков и лишних
@@ -23,7 +23,7 @@ export function HeroSection() {
         </h2>
       </div>
 
-      <div className="container sm:grid sm:grid-cols-[auto_800px]">
+      <div className="mx-auto w-full max-w-[1200px] px-4 sm:grid sm:grid-cols-[auto_800px]">
         <div className="col-start-2">
           <h5 className="sm:text-h1 text-[64px] font-bold text-blue text-left leading-[1.0] sm:leading-[1.5] mt-5">
             Почему это важно?

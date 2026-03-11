@@ -1,5 +1,4 @@
 import { CSSProperties } from "react";
-import styles from "./index.module.css";
 
 type Testimonial = {
   tag: string;
@@ -42,8 +41,8 @@ const ITEMS: Testimonial[] = [
 function TagBadge({ children, left = "50px" }: { children: string; left?: string }) {
   return (
     <div
-      className={styles.badge}
-      style={{ left }}
+      className="absolute top-[-14px] left-[var(--badge-left)] bg-[#0f1427] text-white px-[2px] text-[18px] tracking-[0.02em] whitespace-nowrap font-medium select-none max-[768px]:!left-4 max-[768px]:!top-[-12px] max-[768px]:!text-[11px]"
+      style={{ ["--badge-left" as any]: left }}
     >
       {children}
     </div>
@@ -78,27 +77,35 @@ function Pill({
   const ml = shape.type === "left" ? `-${shape.amount}vw` : "0px";
   const mr = shape.type === "right" ? `-${shape.amount}vw` : "0px";
 
-  const contentWrapStyle: CSSProperties = {
-    maxWidth: 1150,
-    marginLeft: contentAlign === "right" ? "auto" : 0,
-    marginRight: contentAlign === "left" ? "auto" : 0,
-    textAlign: contentAlign,
+  const contentWrapClass =
+    contentAlign === "right"
+      ? "max-w-[1150px] ml-auto text-right"
+      : "max-w-[1150px] mr-auto text-left";
+
+  const mobileShiftClass =
+    shape.type === "left"
+      ? "max-[768px]:!ml-[-5vw] max-[768px]:!mr-0"
+      : shape.type === "right"
+      ? "max-[768px]:!mr-[-5vw] max-[768px]:!ml-0"
+      : "max-[768px]:!ml-0 max-[768px]:!mr-0";
+
+  const pillStyle: CSSProperties = {
+    ["--pill-radius" as any]: radius,
+    ["--pill-pad-y" as any]: `${padY}px`,
+    ["--pill-pad-x" as any]: `${padX}px`,
+    ["--pill-ml" as any]: ml,
+    ["--pill-mr" as any]: mr,
   };
 
   return (
     <div
-      className={`${styles.pill} ${className ? styles[className] : ""}`}
-      style={{
-        borderRadius: radius,
-        padding: `${padY}px ${padX}px`,
-        marginLeft: ml,
-        marginRight: mr,
-      }}
+      className={`relative bg-[#eef3ff] overflow-visible rounded-[var(--pill-radius)] py-[var(--pill-pad-y)] px-[var(--pill-pad-x)] ml-[var(--pill-ml)] mr-[var(--pill-mr)] max-[768px]:!rounded-[24px] max-[768px]:!p-4 max-[768px]:!w-full max-[768px]:!max-w-full ${mobileShiftClass} ${className || ""}`}
+      style={pillStyle}
     >
       <TagBadge left={badgeLeft}>{tag}</TagBadge>
 
-      <div className={styles.contentWrap} style={contentWrapStyle}>
-        <p className={styles.pillText}>
+      <div className={contentWrapClass}>
+        <p className="text-[#0f1427] text-[16px] leading-[1.6] m-0 text-left break-words max-[768px]:text-[14px] max-[768px]:leading-[1.55]">
           {text}
         </p>
       </div>
@@ -110,52 +117,50 @@ export function TestimonialsSection() {
   const overshoot = 40;
 
   return (
-    <section className={styles.testimonials}>
-      <div className={styles.container}>
-        <h2 className={styles.title}>
+    <section className="pt-4 pb-2 mt-8 mb-8 overflow-visible">
+      <div className="w-full max-w-[1200px] mx-auto px-4">
+        <h2 className="text-[32px] font-extrabold leading-[1.2] mb-3 text-[#0f1427]">
           Отзывы наших клиентов
         </h2>
 
-        <div className={styles.decorLine}>
-          <span className={styles.decorLineBar} />
-          <span className={styles.decorLineArrow} />
+        <div className="relative mb-6 h-7">
+          <span className="absolute left-0 right-0 top-[14px] h-[2px] bg-[#0f1427]" />
+          <span className="absolute right-0 top-[7px] w-[14px] h-[14px] border-t-2 border-r-2 border-[#0f1427] rotate-45" />
         </div>
       </div>
 
-      <div className={styles.container}>
+      <div className="w-full max-w-[1200px] mx-auto px-4">
         <Pill
           tag={ITEMS[0].tag}
           text={ITEMS[0].text}
           shape={{ type: "left", amount: overshoot }}
           contentAlign="right"
           badgeLeft="40vw"
-          className="pillLeft"
         />
-        <div className={`${styles.author} ${styles.authorRight}`}>
+        <div className="mt-[10px] text-[#0f1427] opacity-80 text-[14px] text-right max-[768px]:text-left max-[768px]:text-[13px]">
           — {ITEMS[0].author}
         </div>
       </div>
 
-      <div className={`${styles.container} ${styles.containerSpaced}`}>
+      <div className="w-full max-w-[1200px] mx-auto px-4 mt-6">
         <Pill
           tag={ITEMS[1].tag}
           text={ITEMS[1].text}
           shape={{ type: "right", amount: overshoot }}
           contentAlign="left"
           badgeLeft="30vw"
-          className="pillRight"
         />
-        <div className={`${styles.author} ${styles.authorRight}`}>
+        <div className="mt-[10px] text-[#0f1427] opacity-80 text-[14px] text-right max-[768px]:text-left max-[768px]:text-[13px]">
           — {ITEMS[1].author}
         </div>
       </div>
 
-      <div className={`${styles.container} ${styles.containerSpaced}`}>
-        <div className={styles.pair}>
+      <div className="w-full max-w-[1200px] mx-auto px-4 mt-6">
+        <div className="grid grid-cols-2 gap-6 max-[768px]:grid-cols-1 max-[768px]:gap-4">
           {[ITEMS[2], ITEMS[3]].map((it, i) => (
             <div key={it.tag + i}>
               <Pill tag={it.tag} text={it.text} shape={{ type: "full" }} />
-              <div className={`${styles.author} ${styles.authorRight}`}>
+              <div className="mt-[10px] text-[#0f1427] opacity-80 text-[14px] text-right max-[768px]:text-left max-[768px]:text-[13px]">
                 — {it.author}
               </div>
             </div>

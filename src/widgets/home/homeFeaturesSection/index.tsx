@@ -22,7 +22,7 @@ export function HomeFeaturesSection() {
         />
       </ScrollReveal>
 
-      <div className="container flex flex-col sm:gap-20 gap-10">
+      <div className="mx-auto w-full max-w-[1200px] px-4 flex flex-col sm:gap-20 gap-10">
         <FeaturesList />
 
         <ScrollReveal

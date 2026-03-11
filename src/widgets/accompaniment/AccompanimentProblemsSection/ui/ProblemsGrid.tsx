@@ -4,7 +4,7 @@ import ProblemsGridItemMotion from "./ProblemsGridItemMotion.client";
 
 export default function ProblemsGrid() {
   return (
-    <div className="problems-grid container">
+    <div className="problems-grid mx-auto w-full max-w-[1200px] px-4">
       <ul className="flex flex-wrap justify-center gap-10">
         {problems.map((problem, index) => (
           <ProblemsGridItemMotion key={index} index={index}>

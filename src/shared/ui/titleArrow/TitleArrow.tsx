@@ -34,7 +34,7 @@ export const TitleArrow: FC<TittleArrowProps> = ({
     <div className={`${className}`}>
       <div
         className={`tittleArrow ${
-          variant !== "outline" && "container"
+          variant !== "outline" && "mx-auto w-full max-w-[1200px] px-4"
         } ${className}`}
       >
         <div
@@ -46,7 +46,7 @@ export const TitleArrow: FC<TittleArrowProps> = ({
             className={`sm:text-h4 text-[14px] ${
               bold ? "font-semibold" : ""
             } text-base
-            ${variant === "outline" && "container"} 
+            ${variant === "outline" && "mx-auto w-full max-w-[1200px] px-4"} 
             ${variant === "secondary" ? "text-white" : ""}`}
           >
             {text}
