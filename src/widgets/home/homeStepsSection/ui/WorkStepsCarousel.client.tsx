@@ -218,7 +218,7 @@ export default function WorkStepsCarousel({ steps }: Props) {
                 description={step.description}
                 result={step.result}
                 isActive
-                className="!sm:ml-0 !sm:mr-0"
+                className="sm:!ml-0 sm:!mr-0"
               />
             ))}
           </ul>
