@@ -8,7 +8,7 @@ import MobileMenuWrapper from "./ui/MobileMenuWrapper";
 import MobileMenuToggle from "./ui/MobileMenuToggle";
 import { useHiddenInIframe } from "@/shared/utils/useHiddenInIframe";
 import clsx from "clsx";
-import { CSSProperties, useEffect, useState } from "react";
+import { CSSProperties, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 
 const HEADER_HEIGHT = 92;
@@ -21,6 +21,7 @@ const Header = () => {
   const [isMenuAlignedRight, setIsMenuAlignedRight] = useState(false);
   const pathname = usePathname();
   const isMenuOpen = isHydrated && isMobileMenuOpen;
+  const headerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     setIsHydrated(true);
@@ -45,6 +46,44 @@ const Header = () => {
     setIsMenuAlignedRight(false);
   }, [pathname]);
 
+  useLayoutEffect(() => {
+    const el = headerRef.current;
+    if (!el) return;
+
+    el.style.outline = "1px solid transparent";
+    void el.getBoundingClientRect();
+
+    const rafId = window.requestAnimationFrame(() => {
+      el.style.outline = "";
+    });
+
+    return () => window.cancelAnimationFrame(rafId);
+  }, [pathname]);
+
+  useEffect(() => {
+    const el = headerRef.current;
+    if (!el) return;
+
+    const vv = window.visualViewport;
+    const syncTop = () => {
+      const offsetTop = vv?.offsetTop ?? 0;
+      el.style.top = `${Math.max(0, Math.round(offsetTop))}px`;
+    };
+
+    syncTop();
+
+    if (!vv) return;
+    vv.addEventListener("resize", syncTop);
+    vv.addEventListener("scroll", syncTop);
+    window.addEventListener("orientationchange", syncTop);
+
+    return () => {
+      vv.removeEventListener("resize", syncTop);
+      vv.removeEventListener("scroll", syncTop);
+      window.removeEventListener("orientationchange", syncTop);
+    };
+  }, []);
+
   if (isIframe) return null;
   const rootStyle = {
     ["--header-height" as any]: `${HEADER_HEIGHT}px`,
@@ -54,9 +93,8 @@ const Header = () => {
     <div style={rootStyle}>
       <div aria-hidden="true" style={{ height: HEADER_HEIGHT }} />
       <header
-        className={clsx(
-          "w-full fixed left-0 right-0 top-0 z-[1500] [transform:translate3d(0,0,0)] [backface-visibility:hidden]"
-        )}
+        ref={headerRef}
+        className={clsx("w-full fixed left-0 right-0 top-0 z-[1500]")}
       >
         <div
           className={clsx(
