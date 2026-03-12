@@ -1,5 +1,5 @@
 import ScrollReveal from "@/shared/ui/scrollReveal/ScrollReveal";
-import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
+import ConsultCard from "@/widgets/landing/consultCard/ConsultCard";
 import SpecialOfferCalculator from "./ui/SpecialOfferCalculator";
 
 export function WidgetsSpecialOfferSection() {

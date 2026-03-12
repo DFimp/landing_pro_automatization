@@ -1,5 +1,5 @@
 import React from "react";
-import type { ProblemItem } from "@/shared/ui/ProblemsCard/ProblemsCard";
+import type { ProblemItem } from "@/widgets/landing/problemsCard/ProblemsCard";
 
 const Img = ({
   src,

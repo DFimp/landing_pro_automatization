@@ -1,5 +1,5 @@
 import WhyChooseUs from "@/widgets/audit/FinalSection/ui/WhyChooseUs";
-import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
+import ConsultCard from "@/widgets/landing/consultCard/ConsultCard";
 
 export function FinalSection() {
   return (

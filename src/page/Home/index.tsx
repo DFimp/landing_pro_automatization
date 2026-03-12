@@ -5,7 +5,7 @@ import {
   HomeFeaturesSection,
   HomeStepsSection,
 } from "@/widgets/home";
-import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
+import ConsultCard from "@/widgets/landing/consultCard/ConsultCard";
 import { OrganizationSchemaTag, ORGANIZATION_DATA } from "@/shared/lib/seo";
 
 export default function Home() {

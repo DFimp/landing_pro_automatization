@@ -1,5 +1,5 @@
-import type { ProblemItem } from "@/shared/ui/ProblemsCard/ProblemsCard";
-import type { FeatureItem } from "@/shared/ui/FeaturesCard/FeaturesCard";
+import type { ProblemItem } from "@/widgets/landing/problemsCard/ProblemsCard";
+import type { FeatureItem } from "@/widgets/landing/featuresCard/FeaturesCard";
 import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 
 const widget = WIDGETS_DATA["color-leads"];

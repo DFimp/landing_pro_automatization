@@ -1,10 +1,10 @@
 import React from "react";
-import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
-import SettingsCard from "@/shared/ui/settings/SettingsCard";
-import ProblemsCard from "@/shared/ui/ProblemsCard/ProblemsCard";
-import FeaturesCard from "@/shared/ui/FeaturesCard/FeaturesCard";
+import ConsultCard from "@/widgets/landing/consultCard/ConsultCard";
+import SettingsCard from "@/widgets/landing/settingsCard/SettingsCard";
+import ProblemsCard from "@/widgets/landing/problemsCard/ProblemsCard";
+import FeaturesCard from "@/widgets/landing/featuresCard/FeaturesCard";
 import HowItWorksScroll from "./ui/HowItWorksScroll";
-import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
+import ScrollToInstructionLink from "@/widgets/landing/scrollToInstructionLink/ScrollToInstructionLink";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
 import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 import { STEPS, PROBLEMS, FEATURES } from "./constants";

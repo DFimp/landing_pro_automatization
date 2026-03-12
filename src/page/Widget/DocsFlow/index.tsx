@@ -1,8 +1,8 @@
 import React from "react";
-import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
-import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
-import SettingsCard from "@/shared/ui/settings/SettingsCard";
-import ProblemsCard from "@/shared/ui/ProblemsCard/ProblemsCard";
+import ConsultCard from "@/widgets/landing/consultCard/ConsultCard";
+import ScrollToInstructionLink from "@/widgets/landing/scrollToInstructionLink/ScrollToInstructionLink";
+import SettingsCard from "@/widgets/landing/settingsCard/SettingsCard";
+import ProblemsCard from "@/widgets/landing/problemsCard/ProblemsCard";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
 import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 import { PROBLEMS, STEPS } from "./constants";

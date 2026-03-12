@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
-import SettingsCard from "@/shared/ui/settings/SettingsCard";
-import CaseCard from "@/shared/ui/Case/CaseCard";
-import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
+import ConsultCard from "@/widgets/landing/consultCard/ConsultCard";
+import SettingsCard from "@/widgets/landing/settingsCard/SettingsCard";
+import CaseCard from "@/widgets/landing/caseCard/CaseCard";
+import ScrollToInstructionLink from "@/widgets/landing/scrollToInstructionLink/ScrollToInstructionLink";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
 import { WIDGETS_DATA, getWidgetInstallUrl, phone } from "@/shared/constants";
 import { STEPS, CASE_ITEMS } from "./constants";

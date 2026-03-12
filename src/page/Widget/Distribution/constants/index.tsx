@@ -1,5 +1,5 @@
-import type { CaseItem } from "@/shared/ui/Case/CaseCard";
-import type { ProblemItem } from "@/shared/ui/ProblemsCard/ProblemsCard";
+import type { CaseItem } from "@/widgets/landing/caseCard/CaseCard";
+import type { ProblemItem } from "@/widgets/landing/problemsCard/ProblemsCard";
 import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 
 const widget = WIDGETS_DATA["lead-distribution"];

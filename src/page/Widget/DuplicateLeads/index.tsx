@@ -1,10 +1,10 @@
 import React from "react";
-import SettingsCard from "@/shared/ui/settings/SettingsCard";
-import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
-import CaseCard from "@/shared/ui/Case/CaseCard";
-import ProblemsCard from "@/shared/ui/ProblemsCard/ProblemsCard";
-import FeaturesCard from "@/shared/ui/FeaturesCard/FeaturesCard";
-import ScrollToInstructionLink from "@/shared/ui/ScrollToInstructionLink/ScrollToInstructionLink";
+import SettingsCard from "@/widgets/landing/settingsCard/SettingsCard";
+import ConsultCard from "@/widgets/landing/consultCard/ConsultCard";
+import CaseCard from "@/widgets/landing/caseCard/CaseCard";
+import ProblemsCard from "@/widgets/landing/problemsCard/ProblemsCard";
+import FeaturesCard from "@/widgets/landing/featuresCard/FeaturesCard";
+import ScrollToInstructionLink from "@/widgets/landing/scrollToInstructionLink/ScrollToInstructionLink";
 import { STEPS, FEATURES, PROBLEMS, CASE_ITEMS } from "./constants";
 import Link from "next/link";
 import { ServiceSchemaTag } from "@/shared/lib/seo";

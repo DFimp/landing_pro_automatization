@@ -1,5 +1,5 @@
 import { HeroSection, CasesGrid, TestimonialsSection, CASES } from "@/widgets/cases_widgets";
-import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
+import ConsultCard from "@/widgets/landing/consultCard/ConsultCard";
 import { CollectionPageSchemaTag } from "@/shared/lib/seo";
 import { SITE_URL } from "@/shared/constants";
 

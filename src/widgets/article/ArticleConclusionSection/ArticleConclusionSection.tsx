@@ -1,4 +1,4 @@
-import ConsultCard from "@/shared/ui/ConsultCard/ConsultCard";
+import ConsultCard from "@/widgets/landing/consultCard/ConsultCard";
 import StickyInfo from "@/shared/ui/stickyInfo/StickyInfo";
 import ScrollReveal from "@/shared/ui/scrollReveal/ScrollReveal";
 
