@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export function WidgetsWidgetsSection() {
   return (
-    <div className="mx-auto w-full max-w-[1200px] px-4 -mt-[110px]! sm:-mt-[180px]!">
+    <div className="mx-auto w-full max-w-[1200px] px-4 !-mt-[110px] sm:!-mt-[180px]">
       <div className="flex justify-between items-center mb-[30px]">
         <h2 className="text-white sm:text-[32px] text-[16px] font-semibold">
           Получите виджеты бесплатно. Настроим тоже мы

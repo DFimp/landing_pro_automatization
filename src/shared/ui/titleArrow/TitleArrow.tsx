@@ -1,5 +1,7 @@
+import clsx from "clsx";
 import Image from "next/image";
 import { FC } from "react";
+import { Container } from "@/shared/ui/layout";
 import { TittleArrowProps } from "@/shared/ui/titleArrow/models";
 
 export const TitleArrow: FC<TittleArrowProps> = ({
@@ -22,50 +24,61 @@ export const TitleArrow: FC<TittleArrowProps> = ({
   };
 
   const getArrowDimensions = () => {
-    return variant === "outline"
-      ? { width: 1323, height: 30 }
-      : { width: 114, height: 30 };
+    return variant === "outline" ? { width: 1323, height: 30 } : { width: 114, height: 30 };
   };
 
+  const isOutline = variant === "outline";
   const arrowSrc = getArrowSrc();
   const arrowDimensions = getArrowDimensions();
 
-  return (
-    <div className={`${className}`}>
-      <div
-        className={`tittleArrow ${
-          variant !== "outline" && "mx-auto w-full max-w-[1200px] px-4"
-        } ${className}`}
-      >
-        <div
-          className={`tittleArrow__container flex justify-between items-center ${
-            variant === "outline" ? "relative" : ""
-          }`}
-        >
-          <h2
-            className={`sm:text-h4 text-[14px] ${
-              bold ? "font-semibold" : ""
-            } text-base
-            ${variant === "outline" && "mx-auto w-full max-w-[1200px] px-4"} 
-            ${variant === "secondary" ? "text-white" : ""}`}
-          >
-            {text}
-          </h2>
+  const titleClassName = clsx(
+    "sm:text-h4 text-[14px] text-base",
+    bold && "font-semibold",
+    variant === "secondary" && "text-white"
+  );
 
-          <div
-            className={variant === "outline" ? "absolute left-0 top-15" : ""}
-          >
-            <Image
-              className="w-[42px] h-[10px] sm:w-auto sm:h-auto"
-              src={arrowSrc}
-              alt="стрелка"
-              width={arrowDimensions.width}
-              height={arrowDimensions.height}
-              priority
-            />
+  if (isOutline) {
+    return (
+      <div className={className}>
+        <div className="tittleArrow">
+          <div className="tittleArrow__container relative flex items-center justify-between">
+            <Container as="h2" className={titleClassName}>
+              {text}
+            </Container>
+
+            <div className="absolute left-0 top-15">
+              <Image
+                className="w-[42px] h-[10px] sm:w-auto sm:h-auto"
+                src={arrowSrc}
+                alt="стрелка"
+                width={arrowDimensions.width}
+                height={arrowDimensions.height}
+                priority
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    );
+  }
+
+  return (
+    <Container className={clsx("tittleArrow", className)}>
+      <div className="tittleArrow__container flex items-center justify-between">
+        <h2 className={titleClassName}>{text}</h2>
+
+        <div>
+          <Image
+            className="w-[42px] h-[10px] sm:w-auto sm:h-auto"
+            src={arrowSrc}
+            alt="стрелка"
+            width={arrowDimensions.width}
+            height={arrowDimensions.height}
+            priority
+          />
+        </div>
+      </div>
+    </Container>
   );
 };
+

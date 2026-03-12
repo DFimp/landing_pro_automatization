@@ -1,9 +1,10 @@
 import WorkSteps from "@/widgets/home/homeStepsSection/ui/WorkSteps";
+import { Container } from "@/shared/ui/layout";
 
 export function HomeStepsSection() {
   return (
-    <section className="mx-auto w-full max-w-[1200px] px-4">
+    <Container as="section">
       <WorkSteps />
-    </section>
+    </Container>
   );
 }

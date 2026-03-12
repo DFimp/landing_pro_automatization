@@ -37,7 +37,7 @@ export default function SpecialOfferConfirm({
       <Button
         text="Оформить"
         onClick={onOpenModal}
-        className="sm:py-[16px] py-[10px] sm:text-[20px]! text-[16px]!"
+        className="sm:py-[16px] py-[10px] sm:!text-[20px] !text-[16px]"
         fullWidth
       />
     </div>

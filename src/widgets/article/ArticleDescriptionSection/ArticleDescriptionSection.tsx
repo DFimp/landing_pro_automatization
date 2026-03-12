@@ -17,7 +17,7 @@ export function ArticleDescriptionSection({
     <ScrollReveal
       as="div"
       variant="typeFast"
-      className="mx-auto w-full max-w-[1200px] px-4 mt-[66px]! flex sm:flex-row flex-col gap-x-[60px] gap-y-[18px] sm:items-center mb-[60px]! flex-wrap"
+      className="mx-auto w-full max-w-[1200px] px-4 !mt-[66px] flex sm:flex-row flex-col gap-x-[60px] gap-y-[18px] sm:items-center !mb-[60px] flex-wrap"
     >
       <div className="flex sm:gap-x-[60px] gap-x-[40px] items-center">
         <div className="bg-[#D8E3FD] rounded-[10px] p-[10px] text-[14px] leading-[1]">

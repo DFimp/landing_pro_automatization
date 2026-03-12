@@ -77,6 +77,7 @@ export default function IndustryCards() {
                         <li
                             key={card.alt}
                             data-sr-item
+                            className="w-full"
                             style={{ ["--i" as any]: index }}
                         >
                             <Image
@@ -84,7 +85,7 @@ export default function IndustryCards() {
                                 alt={card.alt}
                                 width={600}
                                 height={214}
-                                className="block sm:hidden"
+                                className="block sm:hidden w-full h-auto"
                             />
                             <Image
                                 src={card.desktopPath}

@@ -67,7 +67,7 @@ export default function ArticleSecondCase() {
             работать максимально эффективно.
         </ScrollReveal>
         <ScrollReveal as="div" variant="typeFast">
-          <h4 className="sm:font-normal font-[600]! text-[24px]">Как настроить объединение правильно?</h4>
+          <h4 className="sm:font-normal !font-[600] text-[24px]">Как настроить объединение правильно?</h4>
         </ScrollReveal>
         <ScrollReveal as="p" variant="typeFast">
             Необходимо в блоке “Основные настройки” выбрать поле “Услуга”, при такой настройке, если в сделке<br/>

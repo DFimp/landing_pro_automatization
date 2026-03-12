@@ -51,7 +51,7 @@ export const Card = ({
             >
                 <div className='card__header'>
                     <h4 className="sm:text-h4 text-[14px] font-bold sm:mb-0 mb-2">Шаг - {index! + 1}.</h4>
-                    <p className="font-semibold sm:text-h5 text-[14px] max-w-62.5">
+                    <p className="font-semibold sm:text-h5 text-[14px] max-w-[250px]">
                         {content}
                     </p>
 

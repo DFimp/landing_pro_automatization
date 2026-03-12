@@ -1,10 +1,11 @@
 import Image from "next/image";
 import HeroActions from "./HeroActions";
 import ScrollReveal from "@/shared/ui/scrollReveal/ScrollReveal";
+import { Container } from "@/shared/ui/layout";
 
 const HomeHero = () => {
   return (
-    <section className="mx-auto w-full max-w-[1200px] px-4 sm:flex justify-between items-center">
+    <Container as="section" className="sm:flex justify-between items-center">
       <div className="space-y-9">
         <ScrollReveal as="h1" variant="wipe" yFrom={8} durationMs={650}>
           <span className="sm:text-h3 text-2xl font-semibold">
@@ -58,7 +59,7 @@ const HomeHero = () => {
           priority
         />
       </ScrollReveal>
-    </section>
+    </Container>
   );
 };
 

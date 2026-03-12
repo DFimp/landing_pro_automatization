@@ -3,6 +3,7 @@ import FeaturesList from "@/widgets/home/homeFeaturesSection/ui/FeatureList";
 import IndustryCards from "@/widgets/home/homeFeaturesSection/ui/IndustryCards";
 import { TitleArrow } from "@/shared/ui/titleArrow/TitleArrow";
 import ScrollReveal from "@/shared/ui/scrollReveal/ScrollReveal";
+import { Container } from "@/shared/ui/layout";
 
 export function HomeFeaturesSection() {
   return (
@@ -22,7 +23,7 @@ export function HomeFeaturesSection() {
         />
       </ScrollReveal>
 
-      <div className="mx-auto w-full max-w-[1200px] px-4 flex flex-col sm:gap-20 gap-10">
+      <Container className="flex flex-col sm:gap-20 gap-10">
         <FeaturesList />
 
         <ScrollReveal
@@ -37,7 +38,7 @@ export function HomeFeaturesSection() {
 
           <IndustryCards />
         </ScrollReveal>
-      </div>
+      </Container>
     </section>
   );
 }

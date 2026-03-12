@@ -94,9 +94,14 @@ export default function WorkStepsCarousel({ steps }: Props) {
     return nearestIndex;
   };
 
-  const finishDrag = () => {
+  const finishDrag = (shouldSnap: boolean) => {
     if (!isDraggingRef.current) return;
     isDraggingRef.current = false;
+
+    if (!shouldSnap) {
+      setDragTranslate(null);
+      return;
+    }
 
     const translateAtRelease = dragTranslate ?? currentTranslate;
     const clampedTranslate = clamp(translateAtRelease, minTranslate, 0);
@@ -113,17 +118,20 @@ export default function WorkStepsCarousel({ steps }: Props) {
     dragStartXRef.current = event.clientX;
     dragStartTranslateRef.current = currentTranslate;
 
-    setDragTranslate(currentTranslate);
-    event.currentTarget.setPointerCapture(event.pointerId);
+    setDragTranslate(null);
   };
 
   const handlePointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
     if (!isDraggingRef.current) return;
 
     const delta = event.clientX - dragStartXRef.current;
-    if (Math.abs(delta) > 5) {
+    if (!dragMovedRef.current && Math.abs(delta) > 5) {
       dragMovedRef.current = true;
+      setDragTranslate(dragStartTranslateRef.current);
+      event.currentTarget.setPointerCapture(event.pointerId);
     }
+
+    if (!dragMovedRef.current) return;
 
     const nextTranslate = clamp(dragStartTranslateRef.current + delta, minTranslate, 0);
     setDragTranslate(nextTranslate);
@@ -131,20 +139,26 @@ export default function WorkStepsCarousel({ steps }: Props) {
 
   const handlePointerUp = (event: React.PointerEvent<HTMLDivElement>) => {
     if (!isDraggingRef.current) return;
-    finishDrag();
+    const wasDragged = dragMovedRef.current;
+    finishDrag(wasDragged);
 
-    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+    if (wasDragged && event.currentTarget.hasPointerCapture(event.pointerId)) {
       event.currentTarget.releasePointerCapture(event.pointerId);
     }
+
+    dragMovedRef.current = false;
   };
 
   const handlePointerCancel = (event: React.PointerEvent<HTMLDivElement>) => {
     if (!isDraggingRef.current) return;
-    finishDrag();
+    const wasDragged = dragMovedRef.current;
+    finishDrag(wasDragged);
 
-    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+    if (wasDragged && event.currentTarget.hasPointerCapture(event.pointerId)) {
       event.currentTarget.releasePointerCapture(event.pointerId);
     }
+
+    dragMovedRef.current = false;
   };
 
   const handleTrackClickCapture = (event: React.MouseEvent<HTMLUListElement>) => {
@@ -218,7 +232,7 @@ export default function WorkStepsCarousel({ steps }: Props) {
                 description={step.description}
                 result={step.result}
                 isActive
-                className="!sm:ml-0 !sm:mr-0"
+                className="sm:!ml-0 sm:!mr-0"
               />
             ))}
           </ul>
