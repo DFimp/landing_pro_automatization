@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import GroupFields from "@/page/Widget/GroupFields";
+import GroupFields from "@/widgets/widgetPages/GroupFields";
 import { WIDGETS_METADATA } from "@/shared/constants/metadata";
 
 export const metadata: Metadata = WIDGETS_METADATA['group-fields'];

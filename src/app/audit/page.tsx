@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Audit from "@/page/Audit";
+import AuditPage from "./AuditPage";
 import { FAQSchemaTag } from "@/shared/lib/seo";
 import { AUDIT_PAGE_METADATA } from "@/shared/constants/metadata";
 
@@ -24,7 +24,7 @@ export default function Page() {
   return (
     <>
       <FAQSchemaTag items={AUDIT_FAQ} />
-      <Audit />
+      <AuditPage />
     </>
   );
 }

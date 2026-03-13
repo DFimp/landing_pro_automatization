@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import MeetCalendar from "@/page/Widget/MeetCalendar";
+import MeetCalendar from "@/widgets/widgetPages/MeetCalendar";
 import { WIDGETS_METADATA } from "@/shared/constants/metadata";
 
 export const metadata: Metadata = WIDGETS_METADATA['meet-calendar'];

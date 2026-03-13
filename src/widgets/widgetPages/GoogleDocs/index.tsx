@@ -1,4 +1,4 @@
-import { ServiceSchemaTag } from "@/shared/lib/seo";
+﻿import { ServiceSchemaTag } from "@/shared/lib/seo";
 import { WIDGETS_DATA } from "@/shared/constants/widgets";
 
 const widget = WIDGETS_DATA["google-docs"];

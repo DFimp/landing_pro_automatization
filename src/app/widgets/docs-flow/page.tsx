@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import DocsFlow from "@/page/Widget/DocsFlow";
+import DocsFlow from "@/widgets/widgetPages/DocsFlow";
 import { WIDGETS_METADATA } from "@/shared/constants/metadata";
 
 export const metadata: Metadata = WIDGETS_METADATA['docs-flow'];

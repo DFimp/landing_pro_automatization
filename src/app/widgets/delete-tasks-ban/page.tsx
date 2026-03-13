@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import DeleteTasksBan from "@/page/Widget/DeleteTasksBan";
+import DeleteTasksBan from "@/widgets/widgetPages/DeleteTasksBan";
 import { WIDGETS_METADATA } from "@/shared/constants/metadata";
 
 export const metadata: Metadata = WIDGETS_METADATA['delete-tasks-ban'];

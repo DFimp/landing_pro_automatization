@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import CopyingFields from "@/page/Widget/CopyingFields";
+import CopyingFields from "@/widgets/widgetPages/CopyingFields";
 import { WIDGETS_METADATA } from "@/shared/constants/metadata";
 
 export const metadata: Metadata = WIDGETS_METADATA['copying-fields'];

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import WhatsappButton from "@/page/Widget/WhatsappButton";
+import WhatsappButton from "@/widgets/widgetPages/WhatsappButton";
 import { WIDGETS_METADATA } from "@/shared/constants/metadata";
 
 export const metadata: Metadata = WIDGETS_METADATA['whatsapp-button'];

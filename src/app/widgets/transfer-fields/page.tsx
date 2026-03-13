@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import TransferFields from "@/page/Widget/TransferFields";
+import TransferFields from "@/widgets/widgetPages/TransferFields";
 import { WIDGETS_METADATA } from "@/shared/constants/metadata";
 
 export const metadata: Metadata = WIDGETS_METADATA['transfer-fields'];

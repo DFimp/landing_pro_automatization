@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ShiftSelect from "@/page/Widget/ShiftSelect";
+import ShiftSelect from "@/widgets/widgetPages/ShiftSelect";
 import { WIDGETS_METADATA } from "@/shared/constants/metadata";
 
 export const metadata: Metadata = WIDGETS_METADATA['shift-select'];

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import AutoTask from "@/page/Widget/AutoTask";
+import AutoTask from "@/widgets/widgetPages/AutoTask";
 import { WIDGETS_METADATA } from "@/shared/constants/metadata";
 
 export const metadata: Metadata = WIDGETS_METADATA['auto-tasks'];

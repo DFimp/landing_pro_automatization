@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import DuplicateContacts from "@/page/Widget/DuplicateContacts";
+import DuplicateContacts from "@/widgets/widgetPages/DuplicateContacts";
 import { WIDGETS_METADATA } from "@/shared/constants/metadata";
 
 export const metadata: Metadata = WIDGETS_METADATA['duplicate-contacts'];

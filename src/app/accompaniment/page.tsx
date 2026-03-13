@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Accompaniment from "@/page/Accompaniment";
+import AccompanimentPage from "./AccompanimentPage";
 import { FAQSchemaTag } from "@/shared/lib/seo";
 import { ACCOMPANIMENT_PAGE_METADATA } from "@/shared/constants/metadata";
 
@@ -30,7 +30,7 @@ export default function Page() {
   return (
     <>
       <FAQSchemaTag items={ACCOMPANIMENT_FAQ} />
-      <Accompaniment />
+      <AccompanimentPage />
     </>
   );
 }

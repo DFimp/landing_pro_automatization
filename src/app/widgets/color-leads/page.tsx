@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ColorDeals from "@/page/Widget/ColorDeals";
+import ColorDeals from "@/widgets/widgetPages/ColorDeals";
 import { WIDGETS_METADATA } from "@/shared/constants/metadata";
 
 export const metadata: Metadata = WIDGETS_METADATA['color-leads'];

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import MassiveLeads from "@/page/Widget/MassiveLeads";
+import MassiveLeads from "@/widgets/widgetPages/MassiveLeads";
 import { WIDGETS_METADATA } from "@/shared/constants/metadata";
 
 export const metadata: Metadata = WIDGETS_METADATA['massive-leads'];

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Googleheets from "@/page/Widget/GoogleSheets";
+import Googleheets from "@/widgets/widgetPages/GoogleSheets";
 import { WIDGETS_METADATA } from "@/shared/constants/metadata";
 
 export const metadata: Metadata = WIDGETS_METADATA['google-sheets'];

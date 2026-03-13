@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import TimeZone from "@/page/Widget/TimeZone";
+import TimeZone from "@/widgets/widgetPages/TimeZone";
 import { WIDGETS_METADATA } from "@/shared/constants/metadata";
 
 export const metadata: Metadata = WIDGETS_METADATA['time-zone'];

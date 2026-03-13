@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import DuplicateLeads from "@/page/Widget/DuplicateLeads";
+import DuplicateLeads from "@/widgets/widgetPages/DuplicateLeads";
 import { WIDGETS_METADATA } from "@/shared/constants/metadata";
 
 export const metadata: Metadata = WIDGETS_METADATA['duplicate-leads'];

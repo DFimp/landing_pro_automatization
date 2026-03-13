@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import СlosingBan from "@/page/Widget/СlosingBan";
+import ClosingBan from "@/widgets/widgetPages/ClosingBan";
 import { WIDGETS_METADATA } from "@/shared/constants/metadata";
 
 export const metadata: Metadata = WIDGETS_METADATA['closing-ban'];
@@ -10,5 +10,5 @@ export default async function Page({
   searchParams: Promise<{ embed?: string }>;
 }) {
   const params = await searchParams;
-  return <СlosingBan searchParams={params} />;
+  return <ClosingBan searchParams={params} />;
 }

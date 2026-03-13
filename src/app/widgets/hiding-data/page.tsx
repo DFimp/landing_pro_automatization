@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import HidingData from "@/page/Widget/HidingData";
+import HidingData from "@/widgets/widgetPages/HidingData";
 import { WIDGETS_METADATA } from "@/shared/constants/metadata";
 
 export const metadata: Metadata = WIDGETS_METADATA['hiding-data'];

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Distribution from "@/page/Widget/Distribution";
+import Distribution from "@/widgets/widgetPages/Distribution";
 import { WIDGETS_METADATA } from "@/shared/constants/metadata";
 
 export const metadata: Metadata = WIDGETS_METADATA['lead-distribution'];

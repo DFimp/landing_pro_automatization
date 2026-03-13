@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import TBank from "@/page/Widget/TBank";
+import TBank from "@/widgets/widgetPages/TBank";
 import { WIDGETS_METADATA } from "@/shared/constants/metadata";
 
 export const metadata: Metadata = WIDGETS_METADATA['t-bank'];
