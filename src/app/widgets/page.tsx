@@ -1,18 +1,8 @@
 import type { Metadata } from "next";
 import WidgetsPage from "@/page/Widget/WidgetsPage";
-import { createSEOMetadata, CORE_KEYWORDS } from "@/shared/lib/seo";
+import { WIDGETS_PAGE_METADATA } from "@/shared/constants/metadata";
 
-export const metadata: Metadata = createSEOMetadata({
-  title: "Виджеты для amoCRM — готовые решения | Про Автоматизацию",
-  description: "Готовые виджеты для amoCRM: Telegram уведомления, распределение лидов, объединение дублей, автозадачи, часовые пояса. От 490₽.",
-  keywords: [
-    ...CORE_KEYWORDS.widgets,
-    "каталог виджетов amocrm",
-    "готовые виджеты amocrm",
-  ],
-  canonical: "/widgets",
-  ogType: "website",
-});
+export const metadata: Metadata = WIDGETS_PAGE_METADATA;
 
 export default function Page() {
   return <WidgetsPage />;

@@ -1,17 +1,8 @@
 import type { Metadata } from "next";
 import DuplicateLeads from "@/page/Widget/DuplicateLeads";
-import { createSEOMetadata } from "@/shared/lib/seo";
-import { WIDGETS_DATA } from "@/shared/constants/widgets";
+import { WIDGETS_METADATA } from "@/shared/constants/metadata";
 
-const widget = WIDGETS_DATA['duplicate-leads'];
-
-export const metadata: Metadata = createSEOMetadata({
-  title: widget.seoTitle,
-  description: widget.description,
-  keywords: widget.keywords,
-  canonical: "/widgets/duplicate-leads",
-  ogType: "website",
-});
+export const metadata: Metadata = WIDGETS_METADATA['duplicate-leads'];
 export default async function Page({
   searchParams,
 }: {

@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
 import { PrivacyPage } from "@/page/PrivacyPage";
+import { PRIVACY_PAGE_METADATA } from "@/shared/constants/metadata";
 
-export const metadata: Metadata = {
-  title: "Политика конфиденциальности",
-  robots: {
-    index: false,
-    follow: true,
-  },
-};
+export const metadata: Metadata = PRIVACY_PAGE_METADATA;
 
 export default PrivacyPage;

@@ -1,17 +1,8 @@
 import type { Metadata } from "next";
 import TelegramWidget from "@/page/Widget/TelegramNotify";
-import { createSEOMetadata } from "@/shared/lib/seo";
-import { WIDGETS_DATA } from "@/shared/constants/widgets";
+import { WIDGETS_METADATA } from "@/shared/constants/metadata";
 
-const widget = WIDGETS_DATA['telegram-notify'];
-
-export const metadata: Metadata = createSEOMetadata({
-  title: widget.seoTitle,
-  description: widget.description,
-  keywords: widget.keywords,
-  canonical: "/widgets/telegram-notify",
-  ogType: "website",
-});
+export const metadata: Metadata = WIDGETS_METADATA['telegram-notify'];
 
 export default async function Page({
   searchParams,

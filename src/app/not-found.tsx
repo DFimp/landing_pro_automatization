@@ -1,11 +1,8 @@
-﻿import Link from "next/link";
+import { NOT_FOUND_PAGE_METADATA } from "@/shared/constants/metadata";
+import Link from "next/link";
 import styles from "./not-found.module.css";
 
-export const metadata = {
-  title: "Страница не найдена",
-  description:
-    "Запрошенная страница не существует или была перемещена. Перейдите на главную или откройте каталог виджетов.",
-};
+export const metadata = NOT_FOUND_PAGE_METADATA;
 
 export default function NotFound() {
   return (

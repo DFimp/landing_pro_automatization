@@ -1,17 +1,8 @@
 import type { Metadata } from "next";
 import СlosingBan from "@/page/Widget/СlosingBan";
-import { createSEOMetadata } from "@/shared/lib/seo";
-import { WIDGETS_DATA } from "@/shared/constants/widgets";
+import { WIDGETS_METADATA } from "@/shared/constants/metadata";
 
-const widget = WIDGETS_DATA['closing-ban'];
-
-export const metadata: Metadata = createSEOMetadata({
-  title: widget.seoTitle,
-  description: widget.description,
-  keywords: widget.keywords,
-  canonical: "/widgets/closing-ban",
-  ogType: "website",
-});
+export const metadata: Metadata = WIDGETS_METADATA['closing-ban'];
 
 export default async function Page({
   searchParams,

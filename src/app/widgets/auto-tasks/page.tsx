@@ -1,17 +1,8 @@
 import type { Metadata } from "next";
 import AutoTask from "@/page/Widget/AutoTask";
-import { createSEOMetadata } from "@/shared/lib/seo";
-import { WIDGETS_DATA } from "@/shared/constants/widgets";
+import { WIDGETS_METADATA } from "@/shared/constants/metadata";
 
-const widget = WIDGETS_DATA['auto-tasks'];
-
-export const metadata: Metadata = createSEOMetadata({
-  title: widget.seoTitle,
-  description: widget.description,
-  keywords: widget.keywords,
-  canonical: "/widgets/auto-tasks",
-  ogType: "website",
-});
+export const metadata: Metadata = WIDGETS_METADATA['auto-tasks'];
 
 export default async function Page({
   searchParams,

@@ -1,17 +1,8 @@
 import type { Metadata } from "next";
 import WhatsappButton from "@/page/Widget/WhatsappButton";
-import { createSEOMetadata } from "@/shared/lib/seo";
-import { WIDGETS_DATA } from "@/shared/constants/widgets";
+import { WIDGETS_METADATA } from "@/shared/constants/metadata";
 
-const widget = WIDGETS_DATA['whatsapp-button'];
-
-export const metadata: Metadata = createSEOMetadata({
-  title: widget.seoTitle,
-  description: widget.description,
-  keywords: widget.keywords,
-  canonical: "/widgets/whatsapp-button",
-  ogType: "website",
-});
+export const metadata: Metadata = WIDGETS_METADATA['whatsapp-button'];
 
 export default async function Page({
   searchParams,

@@ -1,17 +1,8 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import HidingData from "@/page/Widget/HidingData";
-import { createSEOMetadata } from "@/shared/lib/seo";
-import { WIDGETS } from "@/shared/constants/widgets";
+import { WIDGETS_METADATA } from "@/shared/constants/metadata";
 
-const widget = WIDGETS.find((w) => w.key === 'hiding-data')!;
-
-export const metadata: Metadata = createSEOMetadata({
-    title: widget.title,
-    description: widget.description,
-    keywords: widget.keywords,
-    canonical: "/widgets/hiding-data",
-    ogType: "website",
-});
+export const metadata: Metadata = WIDGETS_METADATA['hiding-data'];
 
 export default async function Page({
     searchParams,

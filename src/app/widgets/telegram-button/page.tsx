@@ -1,17 +1,8 @@
 import type { Metadata } from "next";
 import TelegramButton from "@/page/Widget/TelegramButton";
-import { createSEOMetadata } from "@/shared/lib/seo";
-import { WIDGETS_DATA } from "@/shared/constants/widgets";
+import { WIDGETS_METADATA } from "@/shared/constants/metadata";
 
-const widget = WIDGETS_DATA['telegram-button'];
-
-export const metadata: Metadata = createSEOMetadata({
-  title: widget.seoTitle,
-  description: widget.description,
-  keywords: widget.keywords,
-  canonical: "/widgets/telegram-button",
-  ogType: "website",
-});
+export const metadata: Metadata = WIDGETS_METADATA['telegram-button'];
 
 export default async function Page({
   searchParams,

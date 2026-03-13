@@ -1,20 +1,8 @@
 import type { Metadata } from "next";
 import GoogleDocs from "@/page/Widget/GoogleDocs";
-import { createSEOMetadata } from "@/shared/lib/seo";
-import { WIDGETS_DATA } from "@/shared/constants/widgets";
+import { WIDGETS_METADATA } from "@/shared/constants/metadata";
 
-const widget = WIDGETS_DATA['google-docs'];
-
-export const metadata: Metadata = {
-  ...createSEOMetadata({
-    title: widget.seoTitle,
-    description: widget.description,
-    keywords: widget.keywords,
-    canonical: "/widgets/google-docs",
-    ogType: "website",
-  }),
-  robots: { index: false, follow: true },
-};
+export const metadata: Metadata = WIDGETS_METADATA['google-docs'];
 
 export default async function Page({
   searchParams,
