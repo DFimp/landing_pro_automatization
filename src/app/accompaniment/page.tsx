@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
-import AccompanimentPage from "./AccompanimentPage";
-import { FAQSchemaTag } from "@/shared/lib/seo";
+import { FAQSchemaTag, ServiceSchemaTag } from "@/shared/lib/seo";
 import { ACCOMPANIMENT_PAGE_METADATA } from "@/shared/constants/metadata";
+import {
+  AccompanimentHeroSection,
+  AccompanimentScrumSection,
+  AccompanimentHelpSection,
+  AccompanimentProblemsSection,
+  AccompanimentTariffsSection,
+} from "@/widgets/accompaniment";
 
 export const metadata: Metadata = ACCOMPANIMENT_PAGE_METADATA;
 
@@ -30,7 +36,32 @@ export default function Page() {
   return (
     <>
       <FAQSchemaTag items={ACCOMPANIMENT_FAQ} />
-      <AccompanimentPage />
+      <AccompanimentPageContent />
+    </>
+  );
+}
+
+function AccompanimentPageContent() {
+  return (
+    <>
+      <ServiceSchemaTag
+        data={{
+          serviceType: "Техподдержка и сопровождение amoCRM",
+          name: "Сопровождение amoCRM",
+          description:
+            "Профессиональное сопровождение amoCRM: техподдержка, консультации, доработки. Быстрое решение проблем.",
+        }}
+      />
+      <main
+        id="accompaniment"
+        className="sm:pb-20 pb-10 sm:pt-20 overflow-hidden bg-[linear-gradient(135deg,#000000_0%,#1a0a2e_25%,#16213e_50%,#0f3460_75%,#533483_100%)]"
+      >
+        <AccompanimentHeroSection />
+        <AccompanimentProblemsSection />
+        <AccompanimentHelpSection />
+        <AccompanimentScrumSection />
+        <AccompanimentTariffsSection />
+      </main>
     </>
   );
 }

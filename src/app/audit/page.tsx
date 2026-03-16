@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
-import AuditPage from "./AuditPage";
-import { FAQSchemaTag } from "@/shared/lib/seo";
+import { FAQSchemaTag, ServiceSchemaTag } from "@/shared/lib/seo";
 import { AUDIT_PAGE_METADATA } from "@/shared/constants/metadata";
+import {
+  StepsSection,
+  FinalSection,
+  HeroSection,
+  ResultSection,
+  DeliverablesSection,
+} from "@/widgets/audit";
 
 export const metadata: Metadata = AUDIT_PAGE_METADATA;
 
@@ -24,7 +30,28 @@ export default function Page() {
   return (
     <>
       <FAQSchemaTag items={AUDIT_FAQ} />
-      <AuditPage />
+      <AuditPageContent />
+    </>
+  );
+}
+
+function AuditPageContent() {
+  return (
+    <>
+      <ServiceSchemaTag
+        data={{
+          serviceType: "Консалтинг и аудит amoCRM",
+          name: "Аудит amoCRM",
+          description: "Полный аудит настройки amoCRM: воронки, интеграции, автоматизация. Выявим ошибки и дадим рекомендации.",
+        }}
+      />
+      <main className="sm:pb-20 sm:pt-20 w-full overflow-x-hidden">
+        <HeroSection />
+        <StepsSection />
+        <ResultSection />
+        <DeliverablesSection />
+        <FinalSection />
+      </main>
     </>
   );
 }
