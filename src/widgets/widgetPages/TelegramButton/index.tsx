@@ -4,11 +4,9 @@ import ConsultCard from "@/widgets/landing/consultCard/ConsultCard";
 import CaseCard from "@/widgets/landing/caseCard/CaseCard";
 import ProblemsCard from "@/widgets/landing/problemsCard/ProblemsCard";
 import FeaturesCard from "@/widgets/landing/featuresCard/FeaturesCard";
-import ScrollToInstructionLink from "@/widgets/landing/scrollToInstructionLink/ScrollToInstructionLink";
-import { ServiceSchemaTag } from "@/shared/lib/seo";
-import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
+import ScrollToInstructionLink from "@/widgets/landing/scrollToInstructionLink/ScrollToInstructionLink";import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 import { STEPS, CASE_ITEMS, PROBLEMS, FEATURES } from "./constants";
-import { WidgetHeroBadge, WidgetHeroSection, WidgetInstallButton } from "@/widgets/widgetPages/shared";
+import { WidgetHeroBadge, WidgetHeroSection, WidgetInstallButton, WidgetPageTemplate } from "@/widgets/widgetPages/shared";
 
 const widget = WIDGETS_DATA["telegram-button"];
 
@@ -17,19 +15,12 @@ export default function TelegramButton({
 }: {
   searchParams: { embed?: string };
 }) {
-  const isIframe = searchParams.embed === "true";
 
   return (
-    <>
-      <ServiceSchemaTag
-        data={{
-          serviceType: "Разработка виджетов amoCRM",
-          name: widget.seoTitle,
-          description: widget.description,
-        }}
-      />
-      <main className="bg-transparent">
-        {!isIframe && (
+    <WidgetPageTemplate
+      widget={widget}
+      searchParams={searchParams}
+      preInstruction={(
           <>
             <WidgetHeroSection>
                 <WidgetHeroBadge>
@@ -74,8 +65,8 @@ export default function TelegramButton({
             />
             */}
           </>
-        )}
-
+      )}
+      instruction={(
         <SettingsCard
           id="instruction"
           title="Как настроить виджет за 3 минуты"
@@ -84,8 +75,8 @@ export default function TelegramButton({
           showVideo
           videoId="c784467a56b528b34b435a328ceb097e"
         />
-
-        {!isIframe && (
+      )}
+      postInstruction={(
           <>
             <FeaturesCard
               title="Дополнительные возможности"
@@ -102,8 +93,8 @@ export default function TelegramButton({
               </div>
             </section>
           </>
-        )}
-      </main>
-    </>
+      )}
+      consult={false}
+    />
   );
 }

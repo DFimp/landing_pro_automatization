@@ -4,11 +4,9 @@ import ConsultCard from "@/widgets/landing/consultCard/ConsultCard";
 import CaseCard from "@/widgets/landing/caseCard/CaseCard";
 import ProblemsCard from "@/widgets/landing/problemsCard/ProblemsCard";
 import FeaturesCard from "@/widgets/landing/featuresCard/FeaturesCard";
-import ScrollToInstructionLink from "@/widgets/landing/scrollToInstructionLink/ScrollToInstructionLink";
-import { ServiceSchemaTag } from "@/shared/lib/seo";
-import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
+import ScrollToInstructionLink from "@/widgets/landing/scrollToInstructionLink/ScrollToInstructionLink";import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 import { STEPS, CASE_ITEMS, PROBLEMS, FEATURES } from "./constants";
-import { WidgetHeroSection, WidgetInstallButton } from "@/widgets/widgetPages/shared";
+import { WidgetHeroSection, WidgetInstallButton, WidgetPageTemplate } from "@/widgets/widgetPages/shared";
 
 const widget = WIDGETS_DATA["delete-notes-ban"];
 
@@ -17,19 +15,12 @@ export default function DeleteNotesBan({
 }: {
   searchParams: { embed?: string };
 }) {
-  const isIframe = searchParams.embed === "true";
 
   return (
-    <>
-      <ServiceSchemaTag
-        data={{
-          serviceType: "Разработка виджетов amoCRM",
-          name: widget.seoTitle,
-          description: widget.description,
-        }}
-      />
-      <main className="bg-transparent">
-        {!isIframe && (
+    <WidgetPageTemplate
+      widget={widget}
+      searchParams={searchParams}
+      preInstruction={(
           <>
             <WidgetHeroSection>
                 <h1
@@ -74,8 +65,8 @@ export default function DeleteNotesBan({
               items={CASE_ITEMS}
             />
           </>
-        )}
-
+      )}
+      instruction={(
         <SettingsCard
           id="instruction"
           title="Пошаговая настройка виджета"
@@ -83,8 +74,8 @@ export default function DeleteNotesBan({
           steps={STEPS}
           showVideo
         />
-
-        {!isIframe && (
+      )}
+      postInstruction={(
           <>
             <FeaturesCard
               title="Возможности виджета"
@@ -101,8 +92,8 @@ export default function DeleteNotesBan({
               </div>
             </section>
           </>
-        )}
-      </main>
-    </>
+      )}
+      consult={false}
+    />
   );
 }

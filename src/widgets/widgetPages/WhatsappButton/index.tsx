@@ -5,11 +5,9 @@ import CaseCard from "@/widgets/landing/caseCard/CaseCard";
 import ProblemsCard from "@/widgets/landing/problemsCard/ProblemsCard";
 import FeaturesCard from "@/widgets/landing/featuresCard/FeaturesCard";
 import PreviewCard from "@/widgets/landing/previewCard/PreviewCard";
-import ScrollToInstructionLink from "@/widgets/landing/scrollToInstructionLink/ScrollToInstructionLink";
-import { ServiceSchemaTag } from "@/shared/lib/seo";
-import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
+import ScrollToInstructionLink from "@/widgets/landing/scrollToInstructionLink/ScrollToInstructionLink";import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 import { STEPS, CASE_ITEMS, PROBLEMS, FEATURES } from "./constants";
-import { WidgetHeroBadge, WidgetHeroSection, WidgetInstallButton } from "@/widgets/widgetPages/shared";
+import { WidgetHeroBadge, WidgetHeroSection, WidgetInstallButton, WidgetPageTemplate } from "@/widgets/widgetPages/shared";
 
 const widget = WIDGETS_DATA["whatsapp-button"];
 
@@ -18,19 +16,12 @@ export default function WhatsappButton({
 }: {
   searchParams: { embed?: string };
 }) {
-  const isIframe = searchParams.embed === "true";
 
   return (
-    <>
-      <ServiceSchemaTag
-        data={{
-          serviceType: "Разработка виджетов amoCRM",
-          name: widget.seoTitle,
-          description: widget.description,
-        }}
-      />
-      <main className="bg-transparent">
-        {!isIframe && (
+    <WidgetPageTemplate
+      widget={widget}
+      searchParams={searchParams}
+      preInstruction={(
           <>
             <WidgetHeroSection>
                 <WidgetHeroBadge>
@@ -72,10 +63,13 @@ export default function WhatsappButton({
               subtitle="Просто и понятно - кликнул и уже в чате!"
               videoUrl=""
               imageUrl="/widgets/WhatsappButton/WhatsApp.jpeg"
+              hideImageOverlayButton
+              mediaContainerClassName="!h-auto max-[768px]:!aspect-auto max-[480px]:!aspect-auto"
+              imageClassName="max-w-[1120px]"
             />
           </>
-        )}
-
+      )}
+      instruction={(
         <SettingsCard
           id="instruction"
           title="Как настроить виджет за 3 минуты"
@@ -84,8 +78,8 @@ export default function WhatsappButton({
           showVideo
           videoId="c23a5b096d984804fae92f3314449d67"
         />
-
-        {!isIframe && (
+      )}
+      postInstruction={(
           <>
             <FeaturesCard
               title="Дополнительные возможности"
@@ -99,9 +93,9 @@ export default function WhatsappButton({
               </div>
             </section>
           </>
-        )}
-      </main>
-    </>
+      )}
+      consult={false}
+    />
   );
 }
 

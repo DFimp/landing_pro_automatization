@@ -3,11 +3,9 @@ import SettingsCard from "@/widgets/landing/settingsCard/SettingsCard";
 import ConsultCard from "@/widgets/landing/consultCard/ConsultCard";
 import ProblemsCard from "@/widgets/landing/problemsCard/ProblemsCard";
 import FeaturesCard from "@/widgets/landing/featuresCard/FeaturesCard";
-import ScrollToInstructionLink from "@/widgets/landing/scrollToInstructionLink/ScrollToInstructionLink";
-import { ServiceSchemaTag } from "@/shared/lib/seo";
-import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
+import ScrollToInstructionLink from "@/widgets/landing/scrollToInstructionLink/ScrollToInstructionLink";import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 import { STEPS, PROBLEMS, FEATURES } from "./constants";
-import { WidgetHeroBadge, WidgetHeroSection, WidgetInstallButton } from "@/widgets/widgetPages/shared";
+import { WidgetHeroBadge, WidgetHeroSection, WidgetInstallButton, WidgetPageTemplate } from "@/widgets/widgetPages/shared";
 
 const widget = WIDGETS_DATA["setting-feed"];
 
@@ -16,19 +14,12 @@ export default function FeedFilter({
 }: {
   searchParams: { embed?: string };
 }) {
-  const isIframe = searchParams.embed === "true";
 
   return (
-    <>
-      <ServiceSchemaTag
-        data={{
-          serviceType: "Разработка виджетов amoCRM",
-          name: widget.seoTitle,
-          description: widget.description,
-        }}
-      />
-      <main className="bg-transparent">
-        {!isIframe && (
+    <WidgetPageTemplate
+      widget={widget}
+      searchParams={searchParams}
+      preInstruction={(
           <>
             <WidgetHeroSection>
                 <WidgetHeroBadge>
@@ -66,8 +57,8 @@ export default function FeedFilter({
               items={PROBLEMS}
             />
           </>
-        )}
-
+      )}
+      instruction={(
         <SettingsCard
           id="instruction"
           title="Как начать пользоваться за 3 минуты"
@@ -75,8 +66,8 @@ export default function FeedFilter({
           steps={STEPS}
           showVideo={false}
         />
-
-        {!isIframe && (
+      )}
+      postInstruction={(
           <section
             className="bg-white"
             style={{ paddingTop: 24, paddingBottom: 72 }}
@@ -85,8 +76,8 @@ export default function FeedFilter({
               <ConsultCard />
             </div>
           </section>
-        )}
-      </main>
-    </>
+      )}
+      consult={false}
+    />
   );
 }

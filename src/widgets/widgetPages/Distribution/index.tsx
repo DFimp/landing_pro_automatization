@@ -3,11 +3,9 @@ import SettingsCard from "@/widgets/landing/settingsCard/SettingsCard";
 import ConsultCard from "@/widgets/landing/consultCard/ConsultCard";
 import CaseCard from "@/widgets/landing/caseCard/CaseCard";
 import ProblemsCard from "@/widgets/landing/problemsCard/ProblemsCard";
-import ScrollToInstructionLink from "@/widgets/landing/scrollToInstructionLink/ScrollToInstructionLink";
-import { ServiceSchemaTag } from "@/shared/lib/seo";
-import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
+import ScrollToInstructionLink from "@/widgets/landing/scrollToInstructionLink/ScrollToInstructionLink";import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 import { STEPS, CASE_ITEMS, PROBLEMS } from "./constants";
-import { WidgetHeroBadge, WidgetHeroSection, WidgetInstallButton } from "@/widgets/widgetPages/shared";
+import { WidgetHeroBadge, WidgetHeroSection, WidgetInstallButton, WidgetPageTemplate } from "@/widgets/widgetPages/shared";
 
 const widget = WIDGETS_DATA["lead-distribution"];
 
@@ -16,19 +14,13 @@ export default function Distribution({
 }: {
   searchParams: { embed?: string };
 }) {
-  const isIframe = searchParams.embed === "true";
 
   return (
-    <>
-      <ServiceSchemaTag
-        data={{
-          serviceType: "Разработка виджетов amoCRM",
-          name: widget.seoTitle,
-          description: widget.description,
-        }}
-      />
-      <main className="bg-transparent overflow-x-hidden">
-        {!isIframe && (
+    <WidgetPageTemplate
+      widget={widget}
+      searchParams={searchParams}
+      mainClassName="bg-transparent overflow-x-hidden"
+      preInstruction={(
           <>
             <WidgetHeroSection className="pt-[72px] pb-[70px] text-white rounded-b-[28px] bg-[radial-gradient(1200px_600px_at_0%_100%,rgba(108,0,255,0.25),transparent_60%),radial-gradient(1000px_500px_at_100%_20%,rgba(0,102,255,0.25),transparent_60%),linear-gradient(180deg,#0f1427_0%,#151b33_60%,#0f1427_100%)] max-[768px]:pt-[56px] max-[768px]:pb-[96px] max-[480px]:pt-[28px] max-[480px]:pb-[36px] max-[480px]:rounded-b-[24px]">
                 <WidgetHeroBadge>
@@ -65,8 +57,8 @@ export default function Distribution({
               items={CASE_ITEMS}
             />
           </>
-        )}
-
+      )}
+      instruction={(
         <SettingsCard
           id="instruction"
           title="Как настроить виджет за 3 минуты"
@@ -75,15 +67,15 @@ export default function Distribution({
           showVideo
           videoId="b9b542ff41657b10b50987b118fe3920"
         />
-
-        {!isIframe && (
+      )}
+      postInstruction={(
           <section className="mt-[30px] mx-[30px] mb-[80px]">
             <div className="mx-auto w-full max-w-[1200px]">
               <ConsultCard />
             </div>
           </section>
-        )}
-      </main>
-    </>
+      )}
+      consult={false}
+    />
   );
 }

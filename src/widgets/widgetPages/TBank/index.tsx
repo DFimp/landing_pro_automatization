@@ -3,11 +3,9 @@ import SettingsCard from "@/widgets/landing/settingsCard/SettingsCard";
 import ConsultCard from "@/widgets/landing/consultCard/ConsultCard";
 import CaseCard from "@/widgets/landing/caseCard/CaseCard";
 import ProblemsCard from "@/widgets/landing/problemsCard/ProblemsCard";
-import ScrollToInstructionLink from "@/widgets/landing/scrollToInstructionLink/ScrollToInstructionLink";
-import { ServiceSchemaTag } from "@/shared/lib/seo";
-import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
+import ScrollToInstructionLink from "@/widgets/landing/scrollToInstructionLink/ScrollToInstructionLink";import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 import { STEPS, PROBLEMS, CASE_ITEMS } from "./constants";
-import { WidgetHeroBadge, WidgetHeroSection, WidgetInstallButton } from "@/widgets/widgetPages/shared";
+import { WidgetHeroBadge, WidgetHeroSection, WidgetInstallButton, WidgetPageTemplate } from "@/widgets/widgetPages/shared";
 
 const widget = WIDGETS_DATA["t-bank"];
 
@@ -16,20 +14,12 @@ export default function TBank({
 }: {
   searchParams: { embed?: string };
 }) {
-  const isIframe = searchParams.embed === "true";
 
   return (
-    <>
-      <ServiceSchemaTag
-        data={{
-          serviceType: "Разработка виджетов amoCRM",
-          name: widget.seoTitle,
-          description: widget.description,
-        }}
-      />
-
-      <main className="bg-transparent">
-        {!isIframe && (
+    <WidgetPageTemplate
+      widget={widget}
+      searchParams={searchParams}
+      preInstruction={(
           <>
             <WidgetHeroSection>
                 <WidgetHeroBadge>Счета Т‑Банк в amoCRM</WidgetHeroBadge>
@@ -66,8 +56,8 @@ export default function TBank({
               items={CASE_ITEMS}
             />
           </>
-        )}
-
+      )}
+      instruction={(
         <SettingsCard
           id="instruction"
           title="Пошаговая настройка виджета"
@@ -75,8 +65,8 @@ export default function TBank({
           steps={STEPS}
           showVideo={false}
         />
-
-        {!isIframe && (
+      )}
+      postInstruction={(
           <section
             className="bg-white"
             style={{ paddingTop: 24, paddingBottom: 72 }}
@@ -85,8 +75,8 @@ export default function TBank({
               <ConsultCard />
             </div>
           </section>
-        )}
-      </main>
-    </>
+      )}
+      consult={false}
+    />
   );
 }

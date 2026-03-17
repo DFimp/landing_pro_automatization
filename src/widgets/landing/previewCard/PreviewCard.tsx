@@ -6,10 +6,26 @@ interface PreviewCardProps {
   subtitle: string;
   videoUrl?: string;   // mp4/webm или embed-ссылка YouTube/Vimeo
   imageUrl?: string;   // постер или GIF
-  id?: string
+  id?: string;
+  hideImageOverlayButton?: boolean;
+  mediaContainerClassName?: string;
+  imageClassName?: string;
 }
 
-const PreviewCard: React.FC<PreviewCardProps> = ({ title, subtitle, videoUrl, imageUrl, id }) => {
+function cn(...values: Array<string | undefined | false>) {
+  return values.filter(Boolean).join(' ');
+}
+
+const PreviewCard: React.FC<PreviewCardProps> = ({
+  title,
+  subtitle,
+  videoUrl,
+  imageUrl,
+  id,
+  hideImageOverlayButton = false,
+  mediaContainerClassName,
+  imageClassName,
+}) => {
   const isYouTubeOrVimeo = !!videoUrl && /(youtube\.com|youtu\.be|vimeo\.com)/i.test(videoUrl);
   const isGif = !!(videoUrl && videoUrl.toLowerCase().endsWith('.gif'));
   const isMp4 = !!(videoUrl && videoUrl.toLowerCase().endsWith('.mp4'));
@@ -28,7 +44,10 @@ const PreviewCard: React.FC<PreviewCardProps> = ({ title, subtitle, videoUrl, im
         <p className="text-[#5a6180] my-[4px] mb-[18px] text-[16px] leading-[1.6] max-[768px]:mx-auto max-[768px]:mb-[18px] max-[768px]:text-[15px] max-[768px]:leading-[1.55] max-[768px]:max-w-[92%] max-[480px]:text-[14px] max-[480px]:mb-[16px]">{subtitle}</p>
 
         {hasMedia && (
-          <div className="border border-[#d6daf3] rounded-[14px] overflow-hidden bg-[#f9fafc] p-8 flex justify-center items-center mx-auto mb-[16px] shadow-[0_4px_12px_rgba(0,0,0,0.03)] h-[700px] max-[768px]:w-[92%] max-[768px]:max-w-[560px] max-[768px]:mb-[14px] max-[768px]:p-[18px] max-[768px]:rounded-[22px] max-[768px]:border-[2px] max-[768px]:border-[#5f78ff] max-[768px]:bg-white max-[768px]:shadow-[0_14px_26px_rgba(20,27,51,0.08),0_0_0_1px_rgba(95,120,255,0.04)] max-[768px]:h-auto max-[768px]:aspect-[16/9] max-[480px]:w-[92%] max-[480px]:p-4 max-[480px]:rounded-[20px] max-[480px]:border-[2px] max-[480px]:aspect-[16/9]">
+          <div className={cn(
+            "border border-[#d6daf3] rounded-[14px] overflow-hidden bg-[#f9fafc] p-8 flex justify-center items-center mx-auto mb-[16px] shadow-[0_4px_12px_rgba(0,0,0,0.03)] h-[700px] max-[768px]:w-[92%] max-[768px]:max-w-[560px] max-[768px]:mb-[14px] max-[768px]:p-[18px] max-[768px]:rounded-[22px] max-[768px]:border-[2px] max-[768px]:border-[#5f78ff] max-[768px]:bg-white max-[768px]:shadow-[0_14px_26px_rgba(20,27,51,0.08),0_0_0_1px_rgba(95,120,255,0.04)] max-[768px]:h-auto max-[768px]:aspect-[16/9] max-[480px]:w-[92%] max-[480px]:p-4 max-[480px]:rounded-[20px] max-[480px]:border-[2px] max-[480px]:aspect-[16/9]",
+            mediaContainerClassName
+          )}>
             {isYouTubeOrVimeo ? (
               <div className="w-full h-full">
                 <iframe
@@ -56,9 +75,11 @@ const PreviewCard: React.FC<PreviewCardProps> = ({ title, subtitle, videoUrl, im
                 {isWebm && <source src={videoUrl} type="video/webm" />}
               </video>
             ) : (
-              <div className="relative inline-block max-w-full">
-                <img src={imageUrl} alt="превью" className="block w-full h-auto rounded-[10px]" />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[72px] h-[72px] rounded-full bg-[linear-gradient(135deg,#715cff_0%,#8a63ff_100%)] text-white text-[30px] flex items-center justify-center shadow-[0_6px_14px_rgba(0,0,0,0.25)] cursor-pointer transition-[transform,background] duration-200 hover:scale-[1.08] hover:bg-[linear-gradient(135deg,#5d49e8_0%,#7e56ff_100%)] max-[768px]:w-[56px] max-[768px]:h-[56px] max-[768px]:text-[24px] max-[768px]:shadow-[0_6px_16px_rgba(0,0,0,0.22)] max-[480px]:w-[52px] max-[480px]:h-[52px] max-[480px]:text-[22px]">▶</div>
+              <div className="relative w-full flex justify-center">
+                <img src={imageUrl} alt="превью" className={cn("block w-full h-auto max-w-[1040px] rounded-[10px]", imageClassName)} />
+                {!hideImageOverlayButton && (
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[72px] h-[72px] rounded-full bg-[linear-gradient(135deg,#715cff_0%,#8a63ff_100%)] text-white text-[30px] flex items-center justify-center shadow-[0_6px_14px_rgba(0,0,0,0.25)] cursor-pointer transition-[transform,background] duration-200 hover:scale-[1.08] hover:bg-[linear-gradient(135deg,#5d49e8_0%,#7e56ff_100%)] max-[768px]:w-[56px] max-[768px]:h-[56px] max-[768px]:text-[24px] max-[768px]:shadow-[0_6px_16px_rgba(0,0,0,0.22)] max-[480px]:w-[52px] max-[480px]:h-[52px] max-[480px]:text-[22px]">▶</div>
+                )}
               </div>
             )}
           </div>

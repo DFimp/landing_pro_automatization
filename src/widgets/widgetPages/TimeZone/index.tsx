@@ -2,11 +2,9 @@ import React from "react";
 import SettingsCard from "@/widgets/landing/settingsCard/SettingsCard";
 import ConsultCard from "@/widgets/landing/consultCard/ConsultCard";
 import PreviewCard from "@/widgets/landing/previewCard/PreviewCard";
-import ScrollToInstructionLink from "@/widgets/landing/scrollToInstructionLink/ScrollToInstructionLink";
-import { ServiceSchemaTag } from "@/shared/lib/seo";
-import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
+import ScrollToInstructionLink from "@/widgets/landing/scrollToInstructionLink/ScrollToInstructionLink";import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 import { STEPS } from "./constants";
-import { WidgetHeroBadge, WidgetHeroSection, WidgetInstallButton } from "@/widgets/widgetPages/shared";
+import { WidgetHeroBadge, WidgetHeroSection, WidgetInstallButton, WidgetPageTemplate } from "@/widgets/widgetPages/shared";
 
 const widget = WIDGETS_DATA["time-zone"];
 
@@ -15,19 +13,12 @@ export default function TimeZone({
 }: {
   searchParams: { embed?: string };
 }) {
-  const isIframe = searchParams.embed === "true";
 
   return (
-    <>
-      <ServiceSchemaTag
-        data={{
-          serviceType: "Разработка виджетов amoCRM",
-          name: widget.seoTitle,
-          description: widget.description,
-        }}
-      />
-      <main className="bg-transparent">
-        {!isIframe && (
+    <WidgetPageTemplate
+      widget={widget}
+      searchParams={searchParams}
+      preInstruction={(
           <>
             <WidgetHeroSection>
                 <WidgetHeroBadge>
@@ -57,8 +48,8 @@ export default function TimeZone({
               imageUrl=""
             />
           </>
-        )}
-
+      )}
+      instruction={(
         <SettingsCard
           id="instruction"
           title="Как настроить виджет за 3 минуты"
@@ -67,8 +58,8 @@ export default function TimeZone({
           showVideo
           videoId="d7b3dd2910f7129214500d477d347a93"
         />
-
-        {!isIframe && (
+      )}
+      postInstruction={(
           <section
             className="bg-white"
             style={{ paddingTop: 24, paddingBottom: 72 }}
@@ -77,8 +68,8 @@ export default function TimeZone({
               <ConsultCard />
             </div>
           </section>
-        )}
-      </main>
-    </>
+      )}
+      consult={false}
+    />
   );
 }

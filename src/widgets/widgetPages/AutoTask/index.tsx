@@ -4,11 +4,9 @@ import SettingsCard from "@/widgets/landing/settingsCard/SettingsCard";
 import ProblemsCard from "@/widgets/landing/problemsCard/ProblemsCard";
 import FeaturesCard from "@/widgets/landing/featuresCard/FeaturesCard";
 import HowItWorksScroll from "./ui/HowItWorksScroll";
-import ScrollToInstructionLink from "@/widgets/landing/scrollToInstructionLink/ScrollToInstructionLink";
-import { ServiceSchemaTag } from "@/shared/lib/seo";
-import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
+import ScrollToInstructionLink from "@/widgets/landing/scrollToInstructionLink/ScrollToInstructionLink";import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 import { STEPS, PROBLEMS, FEATURES } from "./constants";
-import { WidgetHeroSection, WidgetInstallButton } from "@/widgets/widgetPages/shared";
+import { WidgetHeroSection, WidgetInstallButton, WidgetPageTemplate } from "@/widgets/widgetPages/shared";
 
 const widget = WIDGETS_DATA["auto-tasks"];
 
@@ -17,19 +15,12 @@ export default function AutoTask({
 }: {
   searchParams: { embed?: string };
 }) {
-  const isIframe = searchParams.embed === "true";
 
   return (
-    <>
-      <ServiceSchemaTag
-        data={{
-          serviceType: "Разработка виджетов amoCRM",
-          name: widget.seoTitle,
-          description: widget.description,
-        }}
-      />
-      <main className="bg-transparent">
-        {!isIframe && (
+    <WidgetPageTemplate
+      widget={widget}
+      searchParams={searchParams}
+      preInstruction={(
           <>
             <WidgetHeroSection className="relative z-0 pt-[70px] pb-[70px] text-white rounded-b-[28px] bg-[radial-gradient(1200px_600px_at_0%_100%,rgba(108,0,255,0.25),transparent_60%),radial-gradient(1000px_500px_at_100%_20%,rgba(0,102,255,0.25),transparent_60%),linear-gradient(180deg,#0f1427_0%,#151b33_60%,#0f1427_100%)] max-[768px]:pt-[56px] max-[768px]:pb-[96px] max-[480px]:pt-[28px] max-[480px]:pb-[36px] max-[480px]:rounded-b-[24px]">
                 <h1 className="inline-flex items-center gap-2 bg-[#2847ff] text-[#dfe7ff] rounded-full px-[18px] py-[10px] text-[14px] leading-none rounded-l-none ml-[calc(50%-50vw)] pl-[calc(49.5vw-50%+16px)] max-[480px]:px-[16px] max-[480px]:py-[12px] max-[480px]:text-[12px] max-[480px]:justify-center max-[480px]:box-border">
@@ -90,8 +81,8 @@ export default function AutoTask({
 
             <HowItWorksScroll />
           </>
-        )}
-
+      )}
+      instruction={(
         <SettingsCard
           id="instruction"
           title="Пошаговая настройка виджета"
@@ -100,15 +91,15 @@ export default function AutoTask({
           showVideo
           videoId="68a9811758740029cb2c7a3e3d885869"
         />
-
-        {!isIframe && (
+      )}
+      postInstruction={(
           <section className="py-[24px] pb-[72px] max-[768px]:py-[16px] max-[768px]:pb-[56px]">
             <div className="mx-auto w-full max-w-[1200px] px-4">
               <ConsultCard />
             </div>
           </section>
-        )}
-      </main>
-    </>
+      )}
+      consult={false}
+    />
   );
 }

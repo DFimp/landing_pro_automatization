@@ -2,11 +2,9 @@ import React from "react";
 import ConsultCard from "@/widgets/landing/consultCard/ConsultCard";
 import ScrollToInstructionLink from "@/widgets/landing/scrollToInstructionLink/ScrollToInstructionLink";
 import SettingsCard from "@/widgets/landing/settingsCard/SettingsCard";
-import ProblemsCard from "@/widgets/landing/problemsCard/ProblemsCard";
-import { ServiceSchemaTag } from "@/shared/lib/seo";
-import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
+import ProblemsCard from "@/widgets/landing/problemsCard/ProblemsCard";import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 import { PROBLEMS, STEPS } from "./constants";
-import { WidgetHeroSection, WidgetInstallButton } from "@/widgets/widgetPages/shared";
+import { WidgetHeroSection, WidgetInstallButton, WidgetPageTemplate } from "@/widgets/widgetPages/shared";
 
 const widget = WIDGETS_DATA["docs-flow"];
 
@@ -15,21 +13,14 @@ export default function DocsFlow({
 }: {
   searchParams: { embed?: string };
 }) {
-  const isIframe = searchParams.embed === "true";
   const installUrl = widget.clientId ? getWidgetInstallUrl(widget.clientId) : null;
 
   return (
-    <>
-      <ServiceSchemaTag
-        data={{
-          serviceType: "Разработка виджетов amoCRM",
-          name: widget.seoTitle,
-          description: widget.description,
-        }}
-      />
-
-      <main className="bg-transparent">
-        {!isIframe && (
+    <WidgetPageTemplate
+      widget={widget}
+      searchParams={searchParams}
+      preInstruction={(
+        <>
           <WidgetHeroSection className="pt-[72px] pb-[48px] text-white rounded-b-[28px] bg-[radial-gradient(1200px_600px_at_0%_100%,rgba(108,0,255,0.25),transparent_60%),radial-gradient(1000px_500px_at_100%_20%,rgba(0,102,255,0.25),transparent_60%),linear-gradient(180deg,#0f1427_0%,#151b33_60%,#0f1427_100%)] max-[480px]:pt-[28px] max-[480px]:pb-[36px] max-[480px]:rounded-b-[24px]">
               <h1
                 className="inline-flex items-center gap-2 px-[18px] py-[10px] text-[14px] leading-none bg-[#2847ff] text-[#dfe7ff] rounded-full max-[480px]:box-border max-[480px]:justify-center max-[480px]:px-4 max-[480px]:py-[12px] max-[480px]:text-[12px]"
@@ -62,9 +53,6 @@ export default function DocsFlow({
                 <ScrollToInstructionLink />
               </div>
             </WidgetHeroSection>
-        )}
-
-        {!isIframe && (
           <div className="mx-auto mt-6 max-w-[1200px]">
             <ProblemsCard
               title="Как это работает"
@@ -73,8 +61,9 @@ export default function DocsFlow({
               className="rounded-[28px] overflow-hidden"
             />
           </div>
-        )}
-
+        </>
+      )}
+      instruction={(
         <SettingsCard
           id="instruction"
           title="нструкция по настройке"
@@ -82,15 +71,15 @@ export default function DocsFlow({
           steps={STEPS}
           showVideo={false}
         />
-
-        {!isIframe && (
+      )}
+      postInstruction={(
           <section className="mt-[30px] mb-[80px]">
             <div className="mx-auto w-full max-w-[1200px] px-4">
               <ConsultCard />
             </div>
           </section>
-        )}
-      </main>
-    </>
+      )}
+      consult={false}
+    />
   );
 }

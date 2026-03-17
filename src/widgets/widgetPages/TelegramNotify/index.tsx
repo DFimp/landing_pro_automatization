@@ -3,11 +3,9 @@ import Image from "next/image";
 import ConsultCard from "@/widgets/landing/consultCard/ConsultCard";
 import SettingsCard from "@/widgets/landing/settingsCard/SettingsCard";
 import CaseCard from "@/widgets/landing/caseCard/CaseCard";
-import ScrollToInstructionLink from "@/widgets/landing/scrollToInstructionLink/ScrollToInstructionLink";
-import { ServiceSchemaTag } from "@/shared/lib/seo";
-import { WIDGETS_DATA, getWidgetInstallUrl, phone } from "@/shared/constants";
+import ScrollToInstructionLink from "@/widgets/landing/scrollToInstructionLink/ScrollToInstructionLink";import { WIDGETS_DATA, getWidgetInstallUrl, phone } from "@/shared/constants";
 import { STEPS, CASE_ITEMS } from "./constants";
-import { WidgetHeroSection, WidgetInstallButton } from "@/widgets/widgetPages/shared";
+import { WidgetHeroSection, WidgetInstallButton, WidgetPageTemplate } from "@/widgets/widgetPages/shared";
 
 const widget = WIDGETS_DATA["telegram-notify"];
 
@@ -16,19 +14,12 @@ export default function TelegramNotify({
 }: {
   searchParams: { embed?: string };
 }) {
-  const isIframe = searchParams.embed === "true";
 
   return (
-    <>
-      <ServiceSchemaTag
-        data={{
-          serviceType: "Разработка виджетов amoCRM",
-          name: widget.seoTitle,
-          description: widget.description,
-        }}
-      />
-      <main className="bg-transparent">
-        {!isIframe && (
+    <WidgetPageTemplate
+      widget={widget}
+      searchParams={searchParams}
+      preInstruction={(
           <>
             <WidgetHeroSection className="pb-[120px]">
                 <h1 className="at-pill at-bleed-left inline-flex items-center gap-2 bg-[#2847ff] text-[#dfe7ff] rounded-full px-[18px] py-[10px] text-[14px] leading-none rounded-l-none ml-[calc(50%-50vw)] pl-[calc(49.5vw-50%+16px)] max-[480px]:px-[16px] max-[480px]:py-[12px] max-[480px]:text-[12px] max-[480px]:justify-center max-[480px]:box-border">
@@ -214,8 +205,8 @@ export default function TelegramNotify({
               </div>
             </section>
           </>
-        )}
-
+      )}
+      instruction={(
         <SettingsCard
           id="instruction"
           title="Пошаговая настройка виджета"
@@ -224,8 +215,8 @@ export default function TelegramNotify({
           showVideo
           videoId="4098b9cd2b565c4cd067a39b67350e26"
         />
-
-        {!isIframe && (
+      )}
+      postInstruction={(
           <>
             <CaseCard
               title="Сценарии использования"
@@ -239,8 +230,8 @@ export default function TelegramNotify({
               </div>
             </section>
           </>
-        )}
-      </main>
-    </>
+      )}
+      consult={false}
+    />
   );
 }

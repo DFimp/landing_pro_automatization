@@ -6,10 +6,8 @@ import ProblemsCard from "@/widgets/landing/problemsCard/ProblemsCard";
 import FeaturesCard from "@/widgets/landing/featuresCard/FeaturesCard";
 import ScrollToInstructionLink from "@/widgets/landing/scrollToInstructionLink/ScrollToInstructionLink";
 import { STEPS, FEATURES, PROBLEMS, CASE_ITEMS } from "./constants";
-import Link from "next/link";
-import { ServiceSchemaTag } from "@/shared/lib/seo";
-import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
-import { WidgetHeroSection, WidgetInstallButton } from "@/widgets/widgetPages/shared";
+import Link from "next/link";import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
+import { WidgetHeroSection, WidgetInstallButton, WidgetPageTemplate } from "@/widgets/widgetPages/shared";
 
 const widget = WIDGETS_DATA["duplicate-leads"];
 
@@ -18,19 +16,12 @@ export default function DuplicateLeads({
 }: {
   searchParams: { embed?: string };
 }) {
-  const isIframe = searchParams.embed === "true";
 
   return (
-    <>
-      <ServiceSchemaTag
-        data={{
-          serviceType: "Разработка виджетов amoCRM",
-          name: widget.seoTitle,
-          description: widget.description,
-        }}
-      />
-      <main className="bg-transparent">
-        {!isIframe && (
+    <WidgetPageTemplate
+      widget={widget}
+      searchParams={searchParams}
+      preInstruction={(
           <>
             <WidgetHeroSection>
                 <h1
@@ -79,8 +70,8 @@ export default function DuplicateLeads({
               items={CASE_ITEMS}
             />
           </>
-        )}
-
+      )}
+      instruction={(
         <SettingsCard
           id="instruction"
           title="Пошаговая настройка виджета"
@@ -89,8 +80,8 @@ export default function DuplicateLeads({
           showVideo
           videoId="a0134e2bd2cac580d5d312b60d0874fb"
         />
-
-        {!isIframe && (
+      )}
+      postInstruction={(
           <>
             <FeaturesCard
               title="Дополнительные возможности"
@@ -107,8 +98,8 @@ export default function DuplicateLeads({
               </div>
             </section>
           </>
-        )}
-      </main>
-    </>
+      )}
+      consult={false}
+    />
   );
 }

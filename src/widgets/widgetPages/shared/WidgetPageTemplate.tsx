@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import SettingsCard from "@/widgets/landing/settingsCard/SettingsCard";
 import ConsultCard from "@/widgets/landing/consultCard/ConsultCard";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
 import type { Widget } from "@/shared/constants/widgets";
@@ -9,7 +8,7 @@ type WidgetPageTemplateProps = {
   searchParams: { embed?: string };
   hero?: ReactNode;
   preInstruction?: ReactNode;
-  instruction: React.ComponentProps<typeof SettingsCard>;
+  instruction: ReactNode;
   postInstruction?: ReactNode;
   consult?: ReactNode | false;
   mainClassName?: string;
@@ -42,7 +41,7 @@ export default function WidgetPageTemplate({
         {!isIframe && hero}
         {!isIframe && preInstruction}
 
-        <SettingsCard {...instruction} />
+        {instruction}
 
         {!isIframe && postInstruction}
         {!isIframe &&
