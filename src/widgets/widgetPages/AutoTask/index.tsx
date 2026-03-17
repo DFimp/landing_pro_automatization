@@ -8,6 +8,7 @@ import ScrollToInstructionLink from "@/widgets/landing/scrollToInstructionLink/S
 import { ServiceSchemaTag } from "@/shared/lib/seo";
 import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 import { STEPS, PROBLEMS, FEATURES } from "./constants";
+import { WidgetHeroSection, WidgetInstallButton } from "@/widgets/widgetPages/shared";
 
 const widget = WIDGETS_DATA["auto-tasks"];
 
@@ -30,8 +31,7 @@ export default function AutoTask({
       <main className="bg-transparent">
         {!isIframe && (
           <>
-            <section className="relative z-0 pt-[70px] pb-[70px] text-white rounded-b-[28px] bg-[radial-gradient(1200px_600px_at_0%_100%,rgba(108,0,255,0.25),transparent_60%),radial-gradient(1000px_500px_at_100%_20%,rgba(0,102,255,0.25),transparent_60%),linear-gradient(180deg,#0f1427_0%,#151b33_60%,#0f1427_100%)] max-[768px]:pt-[56px] max-[768px]:pb-[96px] max-[480px]:pt-[28px] max-[480px]:pb-[36px] max-[480px]:rounded-b-[24px]">
-              <div className="mx-auto w-full max-w-[1200px] px-4">
+            <WidgetHeroSection className="relative z-0 pt-[70px] pb-[70px] text-white rounded-b-[28px] bg-[radial-gradient(1200px_600px_at_0%_100%,rgba(108,0,255,0.25),transparent_60%),radial-gradient(1000px_500px_at_100%_20%,rgba(0,102,255,0.25),transparent_60%),linear-gradient(180deg,#0f1427_0%,#151b33_60%,#0f1427_100%)] max-[768px]:pt-[56px] max-[768px]:pb-[96px] max-[480px]:pt-[28px] max-[480px]:pb-[36px] max-[480px]:rounded-b-[24px]">
                 <h1 className="inline-flex items-center gap-2 bg-[#2847ff] text-[#dfe7ff] rounded-full px-[18px] py-[10px] text-[14px] leading-none rounded-l-none ml-[calc(50%-50vw)] pl-[calc(49.5vw-50%+16px)] max-[480px]:px-[16px] max-[480px]:py-[12px] max-[480px]:text-[12px] max-[480px]:justify-center max-[480px]:box-border">
                   Автозадачи в сделках для amoCRM
                 </h1>
@@ -53,14 +53,9 @@ export default function AutoTask({
                 </p>
 
                 <div className="my-10 flex flex-wrap items-center gap-x-5 gap-y-4 max-[640px]:mb-[10px] max-[480px]:grid max-[480px]:grid-cols-1 max-[480px]:gap-3 max-[480px]:mb-0">
-                  <a
-                    className="inline-flex items-center justify-center h-11 px-8 bg-[#386bff] text-white rounded-full font-bold text-[16px] shadow-[0_8px_24px_rgba(56,107,255,0.35)] transition-[transform,box-shadow,background] duration-150 hover:bg-[#2f5cf0] hover:-translate-y-[1px] hover:shadow-[0_12px_28px_rgba(56,107,255,0.4)] max-[480px]:w-full max-[480px]:text-[15px]"
-                    href={getWidgetInstallUrl(widget.clientId!)}
-                    target="_blank"
-                    rel="noopener"
-                  >
+                  <WidgetInstallButton href={getWidgetInstallUrl(widget.clientId!)} className="inline-flex items-center justify-center h-11 px-8 bg-[#386bff] text-white rounded-full font-bold text-[16px] shadow-[0_8px_24px_rgba(56,107,255,0.35)] transition-[transform,box-shadow,background] duration-150 hover:bg-[#2f5cf0] hover:-translate-y-[1px] hover:shadow-[0_12px_28px_rgba(56,107,255,0.4)] max-[480px]:w-full max-[480px]:text-[15px]">
                     Установить виджет
-                  </a>
+                  </WidgetInstallButton>
                   <ScrollToInstructionLink />
                 </div>
 
@@ -78,8 +73,7 @@ export default function AutoTask({
                     <div className="mt-2 text-[#5b6475] text-[20px] max-[640px]:mt-1 max-[640px]:text-[#6b7280] max-[640px]:leading-[1.25] max-[640px]:text-[clamp(10px,3.2vw,12px)] max-[640px]:break-words max-[360px]:text-[clamp(9.5px,3vw,11px)]">На настройку</div>
                   </div>
                 </div>
-              </div>
-            </section>
+              </WidgetHeroSection>
             <ProblemsCard
               title="Проблемы традиционного способа"
               subtitle="Почему менеджеры теряют время и клиентов при работе с WhatsApp"

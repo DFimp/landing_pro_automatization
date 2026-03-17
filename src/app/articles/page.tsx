@@ -23,10 +23,7 @@ function ArticlesPageContent() {
           description: article.description,
         }))}
       />
-      <main
-        id="Articles"
-        className="overflow-x-hidden mx-auto w-full max-w-[1200px] px-4"
-      >
+      <main id="Articles" className="mx-auto w-full max-w-[1200px] px-4">
         <div className="my-10 sm:my-20">
           <ArticlesList />
         </div>
