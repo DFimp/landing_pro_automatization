@@ -1,5 +1,3 @@
-import { phone } from "@/shared/constants";
-
 export const privacyPolicy = [
   {
     title: "1. Общие положения",
