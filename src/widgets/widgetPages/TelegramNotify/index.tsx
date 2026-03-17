@@ -30,7 +30,7 @@ export default function TelegramNotify({
       <main className="bg-transparent">
         {!isIframe && (
           <>
-            <WidgetHeroSection className="pt-[72px] pb-[120px] text-white rounded-b-[28px] bg-[radial-gradient(1200px_600px_at_0%_100%,rgba(108,0,255,0.25),transparent_60%),radial-gradient(1000px_500px_at_100%_20%,rgba(0,102,255,0.25),transparent_60%),linear-gradient(180deg,#0f1427_0%,#151b33_60%,#0f1427_100%)] max-[768px]:pt-[56px] max-[768px]:pb-[96px] max-[480px]:pt-[28px] max-[480px]:pb-[36px] max-[480px]:rounded-b-[24px]">
+            <WidgetHeroSection className="pb-[120px]">
                 <h1 className="at-pill at-bleed-left inline-flex items-center gap-2 bg-[#2847ff] text-[#dfe7ff] rounded-full px-[18px] py-[10px] text-[14px] leading-none rounded-l-none ml-[calc(50%-50vw)] pl-[calc(49.5vw-50%+16px)] max-[480px]:px-[16px] max-[480px]:py-[12px] max-[480px]:text-[12px] max-[480px]:justify-center max-[480px]:box-border">
                   Телеграм уведомления для amoCRM
                 </h1>
@@ -53,7 +53,7 @@ export default function TelegramNotify({
                 </div>
               </WidgetHeroSection>
 
-            <section className="mx-auto w-full max-w-[1200px] px-4">
+            <section className="relative z-10 mx-auto w-full max-w-[1200px] px-4">
               <div className="grid grid-cols-1 gap-[24px] mt-5 px-[24px] -mx-[24px] min-[768px]:gap-[32px] min-[768px]:grid-cols-2 min-[768px]:mt-[-96px] min-[1200px]:grid-cols-3">
                 <div className="bg-white rounded-[40px] p-10 min-h-[240px] w-full shadow-[0_8px_28px_rgba(15,20,39,0.08),inset_0_0_0_1px_#5f78ff] max-[768px]:rounded-[28px] max-[768px]:min-h-[200px]">
                   <div className="w-10 h-10 mb-[10px]">
