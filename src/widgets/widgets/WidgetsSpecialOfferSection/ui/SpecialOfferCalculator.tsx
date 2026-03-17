@@ -19,11 +19,18 @@ export default function SpecialOfferCalculator() {
   const tariffsCosts = [599, 1199, 1699] as const;
   const tariffsNames = ["Базовый", "Расширенный", "Профессиональный", "Архивный"] as const;
 
-    const bonusMonths: Record<MonthsOption, number> = {
+  const bonusMonths: Record<MonthsOption, number> = {
     6: 1,
     9: 2,
     12: 3,
     24: 7,
+  };
+
+  const paidMonthsMap: Record<MonthsOption, number> = {
+    6: 6,
+    9: 8,
+    12: 10,
+    24: 18,
   };
 
   const [archivedPrice, setArchivedPrice] = useState<number>(0);
@@ -47,8 +54,8 @@ export default function SpecialOfferCalculator() {
     const safePrice = Number.isFinite(pricePerUser) ? pricePerUser : 0;
     const safeUsers = Number.isFinite(usersCount) ? usersCount : 0;
 
-    const paidMonths = monthsCount;
-    const totalMonths = monthsCount + bonus;
+    const paidMonths = paidMonthsMap[monthsCount];
+    const totalMonths = paidMonths + bonus;
 
     const full = safePrice * safeUsers * totalMonths;
     const pay = safePrice * safeUsers * paidMonths;
