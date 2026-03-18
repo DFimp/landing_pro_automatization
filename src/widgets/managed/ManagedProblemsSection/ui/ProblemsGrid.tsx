@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { problems } from "@/widgets/accompaniment/AccompanimentProblemsSection/ui/lib";
+import { problems } from "@/widgets/managed/ManagedProblemsSection/ui/lib";
 import ProblemsGridItemMotion from "./ProblemsGridItemMotion.client";
 
 export default function ProblemsGrid() {

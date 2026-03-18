@@ -25,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${SITE_URL}${ROUTES.ACCOMPANIMENT.path}`,
+      url: `${SITE_URL}${ROUTES.MANAGED.path}`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.9,

@@ -1,5 +1,5 @@
 import { ArticleDescriptionSection } from "@/widgets/article/ArticleDescriptionSection/ArticleDescriptionSection";
-import AmoCrmHelpsSellMoreContentSection from "@/widgets/article/AmoCrmHelpsSellMoreContentSection/AmoCrmHelpsSellMoreContentSection";
+import SellMoreContentSection from "@/widgets/article/SellMoreContentSection/SellMoreContentSection";
 import { ArticleConclusionSection } from "@/widgets/article/ArticleConclusionSection/ArticleConclusionSection";
 import { ArticleSchemaTag } from "@/shared/lib/seo";
 import { ARTICLES_DATA } from "@/shared/constants/articles";
@@ -31,7 +31,7 @@ export default function AmoCrmHelpsSellArticle() {
             AmoCRM: почему эта CRM реально помогает бизнесу продавать больше
           </ScrollReveal>
 
-          <AmoCrmHelpsSellMoreContentSection />
+          <SellMoreContentSection />
         </div>
       </div>
 

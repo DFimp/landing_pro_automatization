@@ -6,7 +6,7 @@ export const SITE_URL = "https://pro-automatization.ru";
 export const ROUTES = {
   HOME: { path: "/", name: "Главная" },
   AUDIT: { path: "/audit", name: "Аудит amoCRM" },
-  ACCOMPANIMENT: { path: "/accompaniment", name: "Сопровождение" },
+  MANAGED: { path: "/managed", name: "Сопровождение" },
   WIDGETS: { path: "/widgets", name: "Виджеты amoCRM" },
   ARTICLES: { path: "/articles", name: "Статьи" },
   LICENSE: { path: "/license", name: "Лицензии amoCRM" },

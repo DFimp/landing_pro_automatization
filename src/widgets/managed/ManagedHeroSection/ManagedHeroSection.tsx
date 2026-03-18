@@ -1,7 +1,7 @@
 import StickyInfo from "@/shared/ui/stickyInfo/StickyInfo";
 import ScrollReveal from "@/shared/ui/scrollReveal/ScrollReveal";
 
-export const AccompanimentHeroSection = () => {
+export const ManagedHeroSection = () => {
   return (
     <section>
       <div className="mx-auto w-full max-w-[1200px] px-4 flex flex-col gap-5 sm:gap-20">

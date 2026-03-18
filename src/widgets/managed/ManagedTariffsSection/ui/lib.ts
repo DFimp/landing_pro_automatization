@@ -1,4 +1,4 @@
-import {Tariff} from "@/widgets/accompaniment/AccompanimentTariffsSection/ui/models";
+import {Tariff} from "@/widgets/managed/ManagedTariffsSection/ui/models";
 
 export const tariffs: Tariff[] = [
     {

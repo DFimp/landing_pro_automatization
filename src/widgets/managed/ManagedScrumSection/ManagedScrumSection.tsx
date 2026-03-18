@@ -1,6 +1,6 @@
-import StepTimeline from "@/widgets/accompaniment/AccompanimentScrumSection/ui/StepTimeline";
+import StepTimeline from "@/widgets/managed/ManagedScrumSection/ui/StepTimeline";
 
-export function AccompanimentScrumSection() {
+export function ManagedScrumSection() {
   return (
     <>
       <div className="flex flex-col sm:gap-20 gap-5 sm:mt-20 mt-10">

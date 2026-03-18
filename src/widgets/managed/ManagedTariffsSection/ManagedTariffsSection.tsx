@@ -1,7 +1,7 @@
 import { TitleArrow } from "@/shared/ui/titleArrow/TitleArrow";
-import Tariffs from "@/widgets/accompaniment/AccompanimentTariffsSection/ui/Tariffs";
+import Tariffs from "@/widgets/managed/ManagedTariffsSection/ui/Tariffs";
 
-export function AccompanimentTariffsSection() {
+export function ManagedTariffsSection() {
   return (
     <div
       id="tariffs-area"

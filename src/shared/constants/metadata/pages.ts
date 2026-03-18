@@ -14,20 +14,7 @@ export const HOME_PAGE_METADATA: Metadata = createSEOMetadata({
   ogType: "website",
 });
 
-export const ACCOMPANIMENT_PAGE_METADATA: Metadata = createSEOMetadata({
-  title:
-    "Сопровождение amoCRM — техподдержка и консультации | Про Автоматизацию",
-  description:
-    "Профессиональное сопровождение amoCRM: техподдержка, консультации, доработки. Быстрое решение проблем. От 10 000₽/мес.",
-  keywords: [
-    "сопровождение amocrm",
-    "техподдержка amocrm",
-    "консультации amocrm",
-    ...CORE_KEYWORDS.setup,
-  ],
-  canonical: "/accompaniment",
-  ogType: "website",
-});
+export const MANAGED_PAGE_METADATA: Metadata = createSEOMetadata({   title: "Сопровождение amoCRM — техподдержка и консультации | Про Автоматизацию",   description: "Профессиональное сопровождение amoCRM: техподдержка, консультации, доработки. Быстрое решение проблем. От 10 000₽/мес.",   keywords: ["сопровождение amocrm", "техподдержка amocrm", "консультации amocrm", ...CORE_KEYWORDS.setup],   canonical: "/managed",   ogType: "website", });
 
 export const AUDIT_PAGE_METADATA: Metadata = createSEOMetadata({
   title:

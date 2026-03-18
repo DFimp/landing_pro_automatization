@@ -9,7 +9,7 @@ import { navFlip } from "./navFlipClasses";
 const ServicesItems = [
   { name: "АУДИТ", link: "/audit" },
   { name: "ВНЕДРЕНИЕ С НУЛЯ", link: "/" },
-  { name: "СОПРОВОЖДЕНИЕ", link: "/accompaniment" },
+  { name: "СОПРОВОЖДЕНИЕ", link: "/managed" },
 ];
 
 const HeaderNav = ({ isFloating = false }: { isFloating?: boolean }) => {

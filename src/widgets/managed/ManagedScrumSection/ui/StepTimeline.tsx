@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, useMemo } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { steps } from "@/widgets/accompaniment/AccompanimentScrumSection/ui/lib"
+import { steps } from "@/widgets/managed/ManagedScrumSection/ui/lib"
 import { detectMobile } from '@/shared/utils/detectMobile'
 
 export default function StepTimeline() {

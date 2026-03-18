@@ -15,7 +15,7 @@ function ArticleImage({ src, alt }: { src: string; alt: string }) {
   );
 }
 
-export default function AmoCrmHelpsSellMoreContentSection() {
+export default function SellMoreContentSection() {
   return (
     <div>
       <Reveal className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none" shownClassName="opacity-100 translate-y-0" delayMs={0}>

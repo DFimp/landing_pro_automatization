@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { services } from "@/widgets/accompaniment/AccompanimentHelpSection/ui/lib";
+import { services } from "@/widgets/managed/ManagedHelpSection/ui/lib";
 import * as motion from "motion/react-client";
 import { detectMobile } from "@/shared/utils/detectMobile";
 

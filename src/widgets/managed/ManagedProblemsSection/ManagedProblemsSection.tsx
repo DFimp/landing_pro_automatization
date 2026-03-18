@@ -1,7 +1,7 @@
 import { TitleArrow } from "@/shared/ui/titleArrow/TitleArrow";
-import ProblemsGrid from "@/widgets/accompaniment/AccompanimentProblemsSection/ui/ProblemsGrid";
+import ProblemsGrid from "@/widgets/managed/ManagedProblemsSection/ui/ProblemsGrid";
 
-export function AccompanimentProblemsSection() {
+export function ManagedProblemsSection() {
   return (
     <section className="flex flex-col sm:gap-20 gap-10">
       <TitleArrow

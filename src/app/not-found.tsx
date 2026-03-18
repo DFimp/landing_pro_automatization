@@ -61,7 +61,7 @@ export default function NotFound() {
                   Быстрые разделы
                 </p>
                 <div className="mt-3 flex flex-wrap gap-2 text-h8 text-[#3760E7]">
-                  <Link href="/accompaniment" className="hover:underline">
+                  <Link href="/managed" className="hover:underline">
                     Сопровождение
                   </Link>
                   <Link href="/license" className="hover:underline">

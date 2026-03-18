@@ -10,7 +10,7 @@ interface MobileMenuProps {
 const ServicesItems = [
   { name: "АУДИТ", link: "/audit" },
   { name: "ВНЕДРЕНИЕ С НУЛЯ", link: "/" },
-  { name: "СОПРОВОЖДЕНИЕ", link: "/accompaniment" },
+  { name: "СОПРОВОЖДЕНИЕ", link: "/managed" },
   { name: "ЛИЦЕНЗИЯ", link: "/license" },
 //   { name: "КЕЙСЫ", link: "/cases" },
   { name: "ВИДЖЕТЫ", link: "/widgets" },

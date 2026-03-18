@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Button from "@/shared/ui/button/Button";
 import ConsultationModal from "@/features/consultation/ConsultationModal";
-import { Tariff } from "@/widgets/accompaniment/AccompanimentTariffsSection/ui/models";
+import { Tariff } from "@/widgets/managed/ManagedTariffsSection/ui/models";
 import TariffItemMotion from "./TariffItemMotion.client";
 
 export default function TariffsClient({ tariffs }: { tariffs: Tariff[] }) {
