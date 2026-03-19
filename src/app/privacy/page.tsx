@@ -1,7 +1,4 @@
-import type { Metadata } from "next";
-import { PrivacyPage } from "./PrivacyPage";
-import { PRIVACY_PAGE_METADATA } from "@/shared/constants/metadata";
+import Page, { metadata } from "@/views/privacy";
 
-export const metadata: Metadata = PRIVACY_PAGE_METADATA;
-
-export default PrivacyPage;
+export { metadata };
+export default Page;

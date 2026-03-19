@@ -1,8 +1,6 @@
-import type { Metadata } from "next";
-import DuplicateContacts from "@/widgets/widgetPages/DuplicateContacts";
-import { WIDGETS_METADATA } from "@/shared/constants/metadata";
+import WidgetPage, { metadata } from "@/views/widgets/pages/duplicate-contacts";
 
-export const metadata: Metadata = WIDGETS_METADATA['duplicate-contacts'];
+export { metadata };
 
 export default async function Page({
   searchParams,
@@ -10,5 +8,5 @@ export default async function Page({
   searchParams: Promise<{ embed?: string }>;
 }) {
   const params = await searchParams;
-  return <DuplicateContacts searchParams={params} />;
+  return <WidgetPage searchParams={params} />;
 }

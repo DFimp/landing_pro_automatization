@@ -1,8 +1,6 @@
-import type { Metadata } from "next";
-import MeetCalendar from "@/widgets/widgetPages/MeetCalendar";
-import { WIDGETS_METADATA } from "@/shared/constants/metadata";
+import WidgetPage, { metadata } from "@/views/widgets/pages/meet-calendar";
 
-export const metadata: Metadata = WIDGETS_METADATA['meet-calendar'];
+export { metadata };
 
 export default async function Page({
   searchParams,
@@ -10,5 +8,5 @@ export default async function Page({
   searchParams: Promise<{ embed?: string }>;
 }) {
   const params = await searchParams;
-  return <MeetCalendar searchParams={params} />;
+  return <WidgetPage searchParams={params} />;
 }

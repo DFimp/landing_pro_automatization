@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import React, { Suspense } from "react";
-import Header from "@/widgets/header/Header";
-import { Footer } from "@/widgets/footer";
+import Header from "@/sections/header/Header";
+import { Footer } from "@/sections/footer";
 import { Analytics } from "@/shared/scripts/Analytics";
 import ScrollRevealObserver from "@/shared/ui/scrollReveal/ScrollRevealObserver.client";
 import {

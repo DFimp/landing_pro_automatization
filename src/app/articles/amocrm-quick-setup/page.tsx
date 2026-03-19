@@ -1,9 +1,4 @@
-import type { Metadata } from "next";
-import QuickAmoCrmSetupArticle from "./QuickAmoCrmSetupArticle";
-import { ARTICLES_METADATA } from "@/shared/constants/metadata";
+import ArticlePage, { metadata } from "@/views/articles/pages/amocrm-quick-setup";
 
-export const metadata: Metadata = ARTICLES_METADATA['amocrm-quick-setup'];
-
-export default function Page() {
-  return <QuickAmoCrmSetupArticle />;
-}
+export { metadata };
+export default ArticlePage;

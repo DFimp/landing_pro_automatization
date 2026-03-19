@@ -1,8 +1,6 @@
-import type { Metadata } from "next";
-import TimeZone from "@/widgets/widgetPages/TimeZone";
-import { WIDGETS_METADATA } from "@/shared/constants/metadata";
+import WidgetPage, { metadata } from "@/views/widgets/pages/time-zone";
 
-export const metadata: Metadata = WIDGETS_METADATA['time-zone'];
+export { metadata };
 
 export default async function Page({
   searchParams,
@@ -10,5 +8,5 @@ export default async function Page({
   searchParams: Promise<{ embed?: string }>;
 }) {
   const params = await searchParams;
-  return <TimeZone searchParams={params} />;
+  return <WidgetPage searchParams={params} />;
 }

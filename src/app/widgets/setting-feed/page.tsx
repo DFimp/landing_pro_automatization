@@ -1,14 +1,12 @@
-import type { Metadata } from "next";
-import FeedFilter from "@/widgets/widgetPages/SettingsFeed";
-import { WIDGETS_METADATA } from "@/shared/constants/metadata";
+import WidgetPage, { metadata } from "@/views/widgets/pages/setting-feed";
 
-export const metadata: Metadata = WIDGETS_METADATA['setting-feed'];
+export { metadata };
 
 export default async function Page({
-    searchParams,
+  searchParams,
 }: {
-    searchParams: Promise<{ embed?: string }>;
+  searchParams: Promise<{ embed?: string }>;
 }) {
-    const params = await searchParams;
-    return <FeedFilter searchParams={params} />;
+  const params = await searchParams;
+  return <WidgetPage searchParams={params} />;
 }

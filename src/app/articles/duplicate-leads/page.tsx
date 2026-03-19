@@ -1,9 +1,4 @@
-import type { Metadata } from "next";
-import ArticleDuplicateLeads from "./ArticleDuplicateLeads";
-import { ARTICLES_METADATA } from "@/shared/constants/metadata";
+import ArticlePage, { metadata } from "@/views/articles/pages/duplicate-leads";
 
-export const metadata: Metadata = ARTICLES_METADATA['duplicate-leads'];
-
-export default function Page() {
-    return <ArticleDuplicateLeads />;
-}
+export { metadata };
+export default ArticlePage;

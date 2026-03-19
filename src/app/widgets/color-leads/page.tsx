@@ -1,8 +1,6 @@
-import type { Metadata } from "next";
-import ColorDeals from "@/widgets/widgetPages/ColorDeals";
-import { WIDGETS_METADATA } from "@/shared/constants/metadata";
+import WidgetPage, { metadata } from "@/views/widgets/pages/color-leads";
 
-export const metadata: Metadata = WIDGETS_METADATA['color-leads'];
+export { metadata };
 
 export default async function Page({
   searchParams,
@@ -10,5 +8,5 @@ export default async function Page({
   searchParams: Promise<{ embed?: string }>;
 }) {
   const params = await searchParams;
-  return <ColorDeals searchParams={params} />;
+  return <WidgetPage searchParams={params} />;
 }

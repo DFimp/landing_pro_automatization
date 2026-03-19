@@ -1,0 +1,80 @@
+import React from "react";
+import SettingsCard from "@/sections/landing/settingsCard/SettingsCard";
+import ConsultCard from "@/sections/landing/consultCard/ConsultCard";
+import ProblemsCard from "@/sections/landing/problemsCard/ProblemsCard";
+import FeaturesCard from "@/sections/landing/featuresCard/FeaturesCard";
+import ScrollToInstructionLink from "@/sections/landing/scrollToInstructionLink/ScrollToInstructionLink";import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
+import { STEPS, PROBLEMS, FEATURES } from "./constants";
+import { WidgetHeroBadge, WidgetHeroSection, WidgetInstallButton, WidgetPageTemplate } from "@/features/widget-page";
+
+const widget = WIDGETS_DATA["copying-fields"];
+
+export default function CopyingFields({
+  searchParams,
+}: {
+  searchParams: { embed?: string };
+}) {
+
+  return (
+    <WidgetPageTemplate
+      widget={widget}
+      searchParams={searchParams}
+      mainClassName="bg-transparent overflow-x-hidden"
+      preInstruction={(
+          <>
+            <WidgetHeroSection className="pt-[72px] pb-[70px] text-white rounded-b-[28px] bg-[radial-gradient(1200px_600px_at_0%_100%,rgba(108,0,255,0.25),transparent_60%),radial-gradient(1000px_500px_at_100%_20%,rgba(0,102,255,0.25),transparent_60%),linear-gradient(180deg,#0f1427_0%,#151b33_60%,#0f1427_100%)] max-[768px]:pt-[56px] max-[768px]:pb-[96px] max-[480px]:pt-[28px] max-[480px]:pb-[36px] max-[480px]:rounded-b-[24px]">
+                <WidgetHeroBadge>
+                  Копирование полей между аккаунтами и удаление полей списком в amoCRM
+                </WidgetHeroBadge>
+
+                <h2 className="mt-10 font-semibold text-white text-[clamp(36px,6vw,64px)] leading-[1.05] max-[480px]:mt-5 max-[480px]:text-[clamp(26px,8.5vw,34px)] max-[480px]:leading-[1.12]">
+                  Переносите поля между сделками, контактами и компаниями. Удаляйте поля списком
+                </h2>
+
+                <p className="mt-[18px] max-w-[920px] text-[#cfd6ea] text-[clamp(16px,1.6vw,20px)] leading-[1.6] max-[480px]:mt-[14px] max-[480px]:max-w-none max-[480px]:text-[14.5px] max-[480px]:leading-[1.55] max-[480px]:text-[#e3e8ff]">
+                  Виджет позволяет быстро копировать и вставлять пользовательские поля между
+                  сущностями, сохраняя структуру, типы и порядок. Никаких ручных повторов —
+                  всё делается в пару кликов и сразу видно результат.
+                </p>
+
+                <div className="my-10 flex flex-wrap items-center gap-x-5 gap-y-4 max-[480px]:grid max-[480px]:grid-cols-1 max-[480px]:gap-3 max-[480px]:mb-0">
+                  <WidgetInstallButton href={getWidgetInstallUrl(widget.clientId!)} className="inline-flex items-center justify-center h-11 px-8 bg-[#386bff] text-white rounded-full font-bold text-[16px] shadow-[0_8px_24px_rgba(56,107,255,0.35)] transition-[transform,box-shadow,background] duration-200 hover:bg-[#2f5cf0] hover:-translate-y-[1px] hover:shadow-[0_12px_28px_rgba(56,107,255,0.4)] max-[480px]:w-full max-[480px]:text-[15px]">
+                    Установить виджет
+                  </WidgetInstallButton>
+                  <ScrollToInstructionLink />
+                </div>
+              </WidgetHeroSection>
+
+            <FeaturesCard
+              title="Почему наш виджет незаменим?"
+              subtitle="Понятные действия и быстрый результат в настройках полей"
+              items={FEATURES}
+            />
+
+            <ProblemsCard
+              title="Когда виджет особенно полезен?"
+              subtitle="Сценарии, где копирование полей экономит часы работы"
+              items={PROBLEMS}
+            />
+          </>
+      )}
+      instruction={(
+        <SettingsCard
+          id="instruction"
+          title="Как настроить виджет за 3 минуты"
+          subtitle="Следуйте простым шагам для быстрой настройки:"
+          steps={STEPS}
+          showVideo
+        />
+      )}
+      postInstruction={(
+          <section className="mt-[30px] mx-[30px] mb-[80px]">
+            <div className="mx-auto w-full max-w-[1200px]">
+              <ConsultCard />
+            </div>
+          </section>
+      )}
+      consult={false}
+    />
+  );
+}

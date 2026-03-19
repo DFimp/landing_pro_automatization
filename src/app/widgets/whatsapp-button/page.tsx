@@ -1,8 +1,6 @@
-import type { Metadata } from "next";
-import WhatsappButton from "@/widgets/widgetPages/WhatsappButton";
-import { WIDGETS_METADATA } from "@/shared/constants/metadata";
+import WidgetPage, { metadata } from "@/views/widgets/pages/whatsapp-button";
 
-export const metadata: Metadata = WIDGETS_METADATA['whatsapp-button'];
+export { metadata };
 
 export default async function Page({
   searchParams,
@@ -10,5 +8,5 @@ export default async function Page({
   searchParams: Promise<{ embed?: string }>;
 }) {
   const params = await searchParams;
-  return <WhatsappButton searchParams={params} />;
+  return <WidgetPage searchParams={params} />;
 }

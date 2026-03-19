@@ -1,8 +1,6 @@
-import type { Metadata } from "next";
-import TBank from "@/widgets/widgetPages/TBank";
-import { WIDGETS_METADATA } from "@/shared/constants/metadata";
+import WidgetPage, { metadata } from "@/views/widgets/pages/t-bank";
 
-export const metadata: Metadata = WIDGETS_METADATA['t-bank'];
+export { metadata };
 
 export default async function Page({
   searchParams,
@@ -10,6 +8,5 @@ export default async function Page({
   searchParams: Promise<{ embed?: string }>;
 }) {
   const params = await searchParams;
-  return <TBank searchParams={params} />;
+  return <WidgetPage searchParams={params} />;
 }
-

@@ -1,8 +1,6 @@
-import type { Metadata } from "next";
-import DeleteTasksBan from "@/widgets/widgetPages/DeleteTasksBan";
-import { WIDGETS_METADATA } from "@/shared/constants/metadata";
+import WidgetPage, { metadata } from "@/views/widgets/pages/delete-tasks-ban";
 
-export const metadata: Metadata = WIDGETS_METADATA['delete-tasks-ban'];
+export { metadata };
 
 export default async function Page({
   searchParams,
@@ -10,5 +8,5 @@ export default async function Page({
   searchParams: Promise<{ embed?: string }>;
 }) {
   const params = await searchParams;
-  return <DeleteTasksBan searchParams={params} />;
+  return <WidgetPage searchParams={params} />;
 }

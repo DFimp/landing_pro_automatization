@@ -1,13 +1,12 @@
-import type { Metadata } from "next";
-import DuplicateLeads from "@/widgets/widgetPages/DuplicateLeads";
-import { WIDGETS_METADATA } from "@/shared/constants/metadata";
+import WidgetPage, { metadata } from "@/views/widgets/pages/duplicate-leads";
 
-export const metadata: Metadata = WIDGETS_METADATA['duplicate-leads'];
+export { metadata };
+
 export default async function Page({
   searchParams,
 }: {
   searchParams: Promise<{ embed?: string }>;
 }) {
   const params = await searchParams;
-  return <DuplicateLeads searchParams={params} />;
+  return <WidgetPage searchParams={params} />;
 }

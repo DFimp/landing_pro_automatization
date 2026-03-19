@@ -1,9 +1,4 @@
-import type { Metadata } from "next";
-import AmoCrmHelpsSellArticle from "./AmoCrmHelpsSellArticle";
-import { ARTICLES_METADATA } from "@/shared/constants/metadata";
+import ArticlePage, { metadata } from "@/views/articles/pages/amocrm-helps-sell";
 
-export const metadata: Metadata = ARTICLES_METADATA['amocrm-helps-sell'];
-
-export default function Page() {
-  return <AmoCrmHelpsSellArticle />;
-}
+export { metadata };
+export default ArticlePage;

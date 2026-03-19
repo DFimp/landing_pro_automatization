@@ -1,14 +1,12 @@
-import type { Metadata } from "next";
-import ShiftSelect from "@/widgets/widgetPages/ShiftSelect";
-import { WIDGETS_METADATA } from "@/shared/constants/metadata";
+import WidgetPage, { metadata } from "@/views/widgets/pages/shift-select";
 
-export const metadata: Metadata = WIDGETS_METADATA['shift-select'];
+export { metadata };
 
 export default async function Page({
-    searchParams,
+  searchParams,
 }: {
-    searchParams: Promise<{ embed?: string }>;
+  searchParams: Promise<{ embed?: string }>;
 }) {
-    const params = await searchParams;
-    return <ShiftSelect searchParams={params} />;
+  const params = await searchParams;
+  return <WidgetPage searchParams={params} />;
 }

@@ -1,8 +1,6 @@
-import type { Metadata } from "next";
-import MassiveLeads from "@/widgets/widgetPages/MassiveLeads";
-import { WIDGETS_METADATA } from "@/shared/constants/metadata";
+import WidgetPage, { metadata } from "@/views/widgets/pages/massive-leads";
 
-export const metadata: Metadata = WIDGETS_METADATA['massive-leads'];
+export { metadata };
 
 export default async function Page({
   searchParams,
@@ -10,5 +8,5 @@ export default async function Page({
   searchParams: Promise<{ embed?: string }>;
 }) {
   const params = await searchParams;
-  return <MassiveLeads searchParams={params} />;
+  return <WidgetPage searchParams={params} />;
 }
