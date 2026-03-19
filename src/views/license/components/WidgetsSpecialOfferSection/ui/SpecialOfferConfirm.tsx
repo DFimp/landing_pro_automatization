@@ -16,19 +16,18 @@ export default function SpecialOfferConfirm({
   onOpenModal,
 }: SpecialOfferConfirmProps) {
   return (
-    <div className="w-full flex flex-col">
-      {/* ✅ слева полная (зачёркнута), справа итог */}
-      <div className="w-full flex items-end justify-between gap-6 mb-[18px]">
+    <div className="flex w-full flex-col">
+      <div className="mb-[10px] flex w-full items-end justify-between gap-4 sm:mb-[14px] sm:gap-6">
         <div className="text-left">
-          <p className="sm:text-[20px] text-[16px] text-black/70">Полная цена:</p>
-          <p className="sm:text-[32px] text-[20px] font-medium text-black/50 line-through">
+          <p className="text-[12px] text-black/70 sm:text-[18px]">Полная цена:</p>
+          <p className="text-[14px] font-medium text-black/50 line-through sm:text-[28px]">
             {formatRub(fullCost)} р
           </p>
         </div>
 
-        <div className="text-right sm:mr-[58px]">
-          <p className="sm:text-[20px] text-[16px]">Итого к оплате:</p>
-          <p className="sm:text-[32px] text-[20px] font-medium">
+        <div className="text-right sm:mr-[36px]">
+          <p className="text-[12px] sm:text-[18px]">Итого к оплате:</p>
+          <p className="text-[14px] font-medium sm:text-[28px]">
             {formatRub(finalCost)} р
           </p>
         </div>
@@ -37,7 +36,7 @@ export default function SpecialOfferConfirm({
       <Button
         text="Оформить"
         onClick={onOpenModal}
-        className="sm:py-[16px] py-[10px] sm:!text-[20px] !text-[16px]"
+        className="py-[8px] !text-[14px] sm:py-[13px] sm:!text-[18px]"
         fullWidth
       />
     </div>

@@ -1,14 +1,17 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from "react";
 
 interface SpecialOfferUsersCountProps {
-    setValue: (v:number) => void;
-    value: number
+  setValue: (v: number) => void;
+  value: number;
 }
 
-export default function SpecialOfferUsersCounter({ setValue, value}: SpecialOfferUsersCountProps) {
-    const [count, setCount] = useState(10);
+export default function SpecialOfferUsersCounter({
+  setValue,
+  value,
+}: SpecialOfferUsersCountProps) {
+  const [count, setCount] = useState(10);
 
   const handleDecrement = () => {
     if (count > 0) {
@@ -21,38 +24,33 @@ export default function SpecialOfferUsersCounter({ setValue, value}: SpecialOffe
   };
 
   useEffect(() => {
-      setValue(count)
-    }, [count])
-  
-    useEffect(() => {
-      setCount(value)
-    }, [value])
+    setValue(count);
+  }, [count, setValue]);
+
+  useEffect(() => {
+    setCount(value);
+  }, [value]);
 
   return (
     <div className="flex flex-col">
+      <label className="mb-[8px] text-[14px] font-medium sm:text-[18px]">Пользователи</label>
 
-      <label className="sm:text-[20px] text-[16px] font-medium mb-[16px]">Пользователи</label>
-      
-
-      <div className="h-[44px] flex items-center justify-between bg-white rounded-lg border border-gray-300 px-4 py-2">
-
+      <div className="flex h-[38px] items-center justify-between rounded-lg border border-gray-300 bg-white px-4 py-2 sm:h-[42px]">
         <button
           onClick={handleDecrement}
-          className="w-6 h-6 flex items-center justify-center text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200"
+          className="flex h-6 w-6 items-center justify-center rounded-md text-gray-600 transition-colors duration-200 hover:bg-gray-100 hover:text-gray-800"
           disabled={count <= 0}
         >
           <span className="text-xl font-bold">−</span>
         </button>
-        
 
-        <span className="text-xl font-semibold text-gray-800 min-w-[2rem] text-center">
+        <span className="min-w-[2rem] text-center text-[16px] font-semibold text-gray-800 sm:text-xl">
           {count}
         </span>
-        
 
         <button
           onClick={handleIncrement}
-          className="w-6 h-6 flex items-center justify-center text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200"
+          className="flex h-6 w-6 items-center justify-center rounded-md text-gray-600 transition-colors duration-200 hover:bg-gray-100 hover:text-gray-800"
         >
           <span className="text-xl font-bold">+</span>
         </button>

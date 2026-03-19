@@ -70,28 +70,22 @@ export default function SpecialOfferCalculator() {
     <>
       <div
         id="special_offer_calculator"
-        className="
-          border border-[#3760E7] rounded-[20px]
-          w-full
-          max-w-[820px]  /* ✅ было 580, делаем уже/аккуратнее */
-          overflow-hidden
-          bg-white
-        "
+        className="mx-auto w-full max-w-[660px] overflow-hidden rounded-[20px] border border-[#3760E7] bg-white"
       >
-        <div className="sm:border-b sm:border-[#D9D9D9] flex flex-col justify-center items-center p-[36px] sm:p-[47px] pb-[27px]">
+        <div className="flex flex-col items-center justify-center border-b border-[#D9D9D9] px-[18px] pt-[18px] pb-[12px] sm:px-[32px] sm:pt-[30px] sm:pb-[20px]">
           <SpecialOfferSlider value={monthsCount} setValue={setMonthsCount} />
-          <p className="mt-[85px] text-[#969696] text-center">
-            Чем длинее срок - тем больше месяцев в подарок
+          <p className="mt-[28px] text-center text-[12px] leading-[1.35] text-[#969696] sm:mt-[52px] sm:text-[15px]">
+            Чем длиннее срок — тем больше месяцев в подарок
           </p>
         </div>
 
         <div className="flex flex-col sm:flex-row">
-          <div className="sm:w-1/2 sm:border-r sm:border-[#D9D9D9] flex flex-col gap-[23px] pl-[26px] pr-[26px] sm:pl-[44px] sm:pr-[32px] pt-[15px] pb-[24px]">
+          <div className="flex flex-col gap-[14px] border-b border-[#D9D9D9] px-[18px] pt-[14px] pb-[14px] sm:w-1/2 sm:border-r sm:border-b-0 sm:px-[28px] sm:pt-[20px] sm:pb-[20px]">
             <SpecialOfferPlanSelect value={tariff} setValue={setTariff} />
 
             {tariff === 3 && (
-              <div className="flex flex-col gap-2">
-                <label className="sm:text-[18px] text-[16px] font-medium">
+              <div className="flex flex-col gap-[6px]">
+                <label className="text-[16px] font-medium sm:text-[17px]">
                   Цена за пользователя
                 </label>
 
@@ -105,11 +99,11 @@ export default function SpecialOfferCalculator() {
                     setArchivedPrice(Number.isFinite(v) ? v : 0);
                   }}
                   placeholder="Например: 599"
-                  className="w-full h-[44px] rounded-[12px] border border-[#D9D9D9] px-4 outline-none focus:border-[#3760E7] transition"
+                  className="h-[42px] w-full rounded-[12px] border border-[#D9D9D9] px-4 outline-none transition focus:border-[#3760E7]"
                 />
 
-                <p className="text-[13px] text-[#969696] leading-snug">
-                  Введите цену за пользовтаеля по вашему тарифу в amoCRM
+                <p className="text-[12px] leading-snug text-[#969696] sm:text-[13px]">
+                  Введите цену за пользователя по вашему тарифу в amoCRM
                 </p>
               </div>
             )}
@@ -117,12 +111,12 @@ export default function SpecialOfferCalculator() {
             <SpecialOfferUsersCounter value={usersCount} setValue={setUsersCount} />
           </div>
 
-          <div className="sm:w-1/2 pl-[26px] pr-[26px] sm:pl-[32px] sm:pr-[44px] pt-[15px] pb-[24px]">
+          <div className="px-[18px] pt-[14px] pb-[14px] sm:w-1/2 sm:px-[28px] sm:pt-[20px] sm:pb-[20px]">
             <SpecialOfferProfit profit={profit} months={monthsCount} />
           </div>
         </div>
 
-        <div className="sm:px-[44px] px-[26px] pb-[27px] pt-[14px] sm:border-t sm:border-[#D9D9D9]">
+        <div className="border-t border-[#D9D9D9] px-[18px] pt-[12px] pb-[14px] sm:px-[28px] sm:pt-[16px] sm:pb-[20px]">
           <SpecialOfferConfirm
             finalCost={finalCost}
             fullCost={fullCost}

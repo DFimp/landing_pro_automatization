@@ -24,7 +24,6 @@ export default function SpecialOfferSlider({ setValue, value }: SpecialOfferSlid
 
   const sliderRef = useRef<HTMLDivElement>(null);
 
-  // 0%, 33.33%, 66.66%, 100%
   const STEP = 100 / (availableValues.length - 1);
 
   const getClosestValue = (percentage: number): MonthsOption => {
@@ -97,23 +96,21 @@ export default function SpecialOfferSlider({ setValue, value }: SpecialOfferSlid
   const knobLeft = `${STEP * currentValueIndex}%`;
 
   return (
-    <div id="slider" draggable="false" className="mb-8 h-[20px] w-full">
+    <div id="slider" draggable="false" className="h-[12px] w-full sm:h-[16px]">
       <div
         ref={sliderRef}
-        className="relative h-[5px] bg-[#AFC1FF] rounded-full cursor-pointer"
+        className="relative h-[5px] cursor-pointer rounded-full bg-[#AFC1FF]"
         onMouseDown={handleMouseDown}
         onClick={handleClick}
       >
-        {/* fill */}
         <div
-          className="z-2 absolute top-0 left-0 h-full bg-[#3760E7] rounded-full transition-all duration-150 ease-out"
+          className="absolute top-0 left-0 z-2 h-full rounded-full bg-[#3760E7] transition-all duration-150 ease-out"
           style={{ width: fillWidth }}
         />
 
-        {/* knob */}
         <div
           draggable="false"
-          className="z-3 absolute top-1/2 -translate-y-1/2 -translate-x-1/2 sm:w-6 sm:h-6 w-3 h-3 bg-[#3760E7] border-3 border-[#3760E7] rounded-full shadow-lg cursor-grab active:cursor-grabbing transition-all duration-150 ease-out hover:scale-105"
+          className="absolute top-1/2 z-3 h-3 w-3 -translate-x-1/2 -translate-y-1/2 cursor-grab rounded-full border-3 border-[#3760E7] bg-[#3760E7] shadow-lg transition-all duration-150 ease-out hover:scale-105 active:cursor-grabbing sm:h-6 sm:w-6"
           style={{ left: knobLeft }}
         />
 
@@ -122,8 +119,8 @@ export default function SpecialOfferSlider({ setValue, value }: SpecialOfferSlid
             index === 0
               ? "translateX(0%)"
               : index === availableValues.length - 1
-              ? "translateX(-100%)"
-              : "translateX(-50%)";
+                ? "translateX(-100%)"
+                : "translateX(-50%)";
 
           return (
             <div
@@ -135,26 +132,23 @@ export default function SpecialOfferSlider({ setValue, value }: SpecialOfferSlid
                 transform: "translateX(-50%) translateY(-50%)",
               }}
             >
-              {/* tick */}
               <div
-                className={`select-none w-[3px] h-[18px] transition-colors duration-150 ${
+                className={`h-[18px] w-[3px] select-none transition-colors duration-150 ${
                   currentValueIndex >= index ? "bg-[#3760E7]" : "bg-[#AFC1FF]"
                 }`}
               />
 
-              {/* number */}
               <div
-                className="select-none mt-[13px] mb-[8px] leading-[1] absolute top-[8px]"
+                className="absolute top-[6px] mt-[12px] mb-[2px] select-none text-[12px] leading-[1] sm:top-[8px] sm:mt-[20px] sm:text-[16px]"
                 style={{ left: "50%", transform: "translateX(-50%)" }}
               >
                 {val}
               </div>
 
-              {/* label */}
               {isMobileView ? (
                 currentValue === val && (
                   <div
-                    className="select-none absolute text-[#3760E7] text-[12px] text-nowrap top-[56px]"
+                    className="absolute top-[38px] select-none text-nowrap text-[10px] text-[#3760E7] sm:top-[58px] sm:text-[12px]"
                     style={{ left: "50%", transform: labelTransform }}
                   >
                     {availableValuesLabels[index]}
@@ -162,7 +156,7 @@ export default function SpecialOfferSlider({ setValue, value }: SpecialOfferSlid
                 )
               ) : (
                 <div
-                  className="select-none absolute text-[#3760E7] text-nowrap top-[56px]"
+                  className="absolute top-[38px] select-none text-nowrap text-[10px] text-[#3760E7] sm:top-[58px] sm:text-[13px]"
                   style={{ left: "50%", transform: labelTransform }}
                 >
                   {availableValuesLabels[index]}

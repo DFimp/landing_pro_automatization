@@ -38,11 +38,11 @@ export default function SpecialOfferPlanSelect({ value, setValue }: SpecialOffer
 
   return (
     <div className="flex flex-col">
-      <label className="sm:text-[20px] text-[16px] font-medium mb-[16px]">Тариф</label>
+      <label className="mb-[8px] text-[14px] font-medium sm:text-[18px]">Тариф</label>
 
       <div className="relative">
         <div
-          className="relative cursor-pointer h-[44px] w-full px-4 py-2 bg-white border border-gray-300 rounded-lg flex items-center"
+          className="relative flex h-[38px] w-full cursor-pointer items-center rounded-lg border border-gray-300 bg-white px-4 py-2 sm:h-[42px]"
           onClick={() => setIsOpen((v) => !v)}
           role="button"
           tabIndex={0}
@@ -53,7 +53,7 @@ export default function SpecialOfferPlanSelect({ value, setValue }: SpecialOffer
         >
           <span className="select-none">{tariffs[selectedTariff]}</span>
 
-          <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
+          <div className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2">
             <svg
               width="16"
               height="16"
@@ -70,12 +70,12 @@ export default function SpecialOfferPlanSelect({ value, setValue }: SpecialOffer
         </div>
 
         {isOpen && (
-          <div className="z-20 w-full absolute top-[48px] left-0 bg-white border border-gray-300 rounded-lg overflow-hidden">
+          <div className="absolute top-[42px] left-0 z-20 w-full overflow-hidden rounded-lg border border-gray-300 bg-white sm:top-[46px]">
             {tariffs.map((tariff, index) => (
               <button
                 key={tariff}
                 type="button"
-                className="w-full text-left py-2 px-4 hover:bg-gray-100"
+                className="w-full px-4 py-2 text-left hover:bg-gray-100"
                 onClick={(e) => {
                   e.stopPropagation();
                   handleSelectTariff(index);

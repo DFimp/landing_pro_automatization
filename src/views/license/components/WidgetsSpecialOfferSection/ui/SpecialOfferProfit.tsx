@@ -15,16 +15,16 @@ export default function SpecialOfferProfit({ months, profit }: SpecialOfferProfi
 
   return (
     <div>
-      <p className="sm:mb-[26px] mb-[10px] sm:text-[20px] text-[16px] font-medium">
+      <p className="mb-[6px] text-[14px] font-medium sm:mb-[18px] sm:text-[18px]">
         Бонусных месяцев:
       </p>
-      <p className="sm:mb-[33px] mb-[13px] sm:text-[20px] text-[14px] font-medium text-[#3760E7]">
+      <p className="mb-[12px] text-[10px] font-medium text-[#3760E7] sm:mb-[24px] sm:text-[18px]">
         {bonusMonths[months]}
       </p>
-      <p className="sm:mb-[19px] mb-[6px] tsm:ext-[20px] text-[16px] font-medium">
+      <p className="mb-[4px] text-[14px] font-medium sm:mb-[12px] sm:text-[18px]">
         Экономия:
       </p>
-      <p className="sm:text-[32px] text-[14px] font-medium">
+      <p className="text-[24px] font-medium sm:text-[30px]">
         {profit.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} р
       </p>
     </div>
