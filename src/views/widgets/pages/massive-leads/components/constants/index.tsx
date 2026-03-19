@@ -1,147 +1,121 @@
-import type { ProblemItem } from "@/sections/landing/problemsCard/ProblemsCard";
-import type { FeatureItem } from "@/sections/landing/featuresCard/FeaturesCard";
+import {
+  createFeatures,
+  createProblems,
+  createSteps,
+  stepAction,
+  stepList,
+  stepNote,
+  stepParagraph,
+} from "@/features/widget-page";
 import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 
 const widget = WIDGETS_DATA["massive-leads"];
 
-export const STEPS = [
+export const STEPS = createSteps([
   {
     title: "Установка виджета в amoCRM",
-    content: (
-      <div>
-        <p>
-          Установите виджет «Массовое создание сделок» в вашу amoCRM систему:
-        </p>
-        <ul className="sc-list">
-          <li>Зайдите в amoCRM → Настройки → Виджеты</li>
-          <li>Найдите «Массовое создание сделок» в каталоге</li>
-          <li>Нажмите «Установить» и подтвердите установку</li>
-        </ul>
-
-        <div className="mt-4">
-          <a
-            href={getWidgetInstallUrl(widget.clientId!)}
-            target="_blank"
-            rel="noopener"
-            className="inline-flex items-center justify-center h-11 px-8 rounded-full bg-[#386bff] text-white font-bold text-[16px] shadow-[0_8px_24px_rgba(56,107,255,0.35)] transition-[transform,box-shadow,background] duration-150 mt-[18px] hover:bg-[#2f5cf0] hover:-translate-y-[1px] hover:shadow-[0_12px_28px_rgba(56,107,255,0.4)]"
-          >
-            Установить виджет сейчас
-          </a>
-        </div>
-      </div>
-    ),
+    blocks: [
+      stepParagraph("Установите виджет «Массовое создание сделок» в вашу amoCRM систему:"),
+      stepList([
+        "Зайдите в amoCRM → Настройки → Виджеты",
+        "Найдите «Массовое создание сделок» в каталоге",
+        "Нажмите «Установить» и подтвердите установку",
+      ]),
+      stepAction(getWidgetInstallUrl(widget.clientId!), "Установить виджет сейчас"),
+    ],
   },
   {
     title: "Запуск виджета",
-    content: (
-      <div>
-        <p>Начните создание сделок в списке контактов:</p>
-        <ul className="sc-list">
-          <li>Перейдите в amoCRM → Списки → Контакты</li>
-          <li>Выберите контакты одним из способов:</li>
-        </ul>
-
-        <div style={{ marginTop: 8 }}>
-          <div className="sc-note sc-note--blue">
-            <div className="sc-note-title">Способ 1: По фильтру</div>
-            Укажите нужные фильтры — виджет сам найдёт контакты и создаст для
-            них сделки.
-          </div>
-          <div className="sc-note sc-note--green" style={{ marginTop: 10 }}>
-            <div className="sc-note-title">Способ 2: Конкретные контакты</div>
-            Отметьте галочками контакты в списке — сделки создадутся для
-            выбранных.
-          </div>
-        </div>
-
-        <ul className="sc-list" style={{ marginTop: 10 }}>
-          <li>В левом верхнем углу активируется кнопка «Создать сделки»</li>
-          <li>
-            Наведитесь на неё (выезжает панель) и нажмите — откроется форма
-            виджета
-          </li>
-        </ul>
-      </div>
-    ),
+    blocks: [
+      stepParagraph("Начните создание сделок в списке контактов:"),
+      stepList([
+        "Перейдите в amoCRM → Списки → Контакты",
+        "Выберите контакты одним из способов:",
+      ]),
+      stepNote(
+        "Способ 1: По фильтру",
+        "Укажите нужные фильтры — виджет сам найдёт контакты и создаст для них сделки.",
+        { tone: "blue" },
+      ),
+      stepNote(
+        "Способ 2: Конкретные контакты",
+        "Отметьте галочками контакты в списке — сделки создадутся для выбранных.",
+        { tone: "green", style: { marginTop: 10 } },
+      ),
+      stepList(
+        [
+          "В левом верхнем углу активируется кнопка «Создать сделки»",
+          "Наведитесь на неё и нажмите — откроется форма виджета",
+        ],
+        { style: { marginTop: 10 } },
+      ),
+    ],
   },
   {
     title: "Заполнение основных данных",
-    content: (
-      <div>
-        <p>Настройте параметры будущих сделок:</p>
-
-        <div className="sc-note sc-note--blue">
-          <div className="sc-note-title">Название сделки</div>
-          Укажите понятное общее название (например: «Новогодняя акция 2025»,
-          «Лиды с выставки RetailTech», «Реактивация — май 2025», «Партнёрские
-          лиды CompanyX»).
-        </div>
-
-        <div className="sc-note sc-note--green" style={{ marginTop: 10 }}>
-          <div className="sc-note-title">Воронка и этап</div>В поле «Статус»
-          выберите нужную воронку и этап — все сделки будут созданы именно там.
-        </div>
-
-        <div className="sc-note sc-note--blue" style={{ marginTop: 10 }}>
-          <div className="sc-note-title">Теги для сегментации</div>
-          Добавьте теги (если их нет — создадутся автоматически). Примеры:{" "}
+    blocks: [
+      stepParagraph("Настройте параметры будущих сделок:"),
+      stepNote(
+        "Название сделки",
+        "Укажите понятное общее название, например: «Новогодняя акция 2025», «Лиды с выставки RetailTech», «Реактивация — май 2025», «Партнёрские лиды CompanyX».",
+        { tone: "blue" },
+      ),
+      stepNote(
+        "Воронка и этап",
+        "В поле «Статус» выберите нужную воронку и этап — все сделки будут созданы именно там.",
+        { tone: "green", style: { marginTop: 10 } },
+      ),
+      stepNote(
+        "Теги для сегментации",
+        <>
+          Добавьте теги, если их нет — они создадутся автоматически. Примеры:{" "}
           <code>холодный лид, реклама, москва</code>,{" "}
           <code>выставка, горячий, b2b</code>,{" "}
           <code>реактивация, vip, повторная продажа</code>.
-        </div>
-      </div>
-    ),
+        </>,
+        { tone: "blue", style: { marginTop: 10 } },
+      ),
+    ],
   },
   {
     title: "Запуск создания сделок",
-    content: (
-      <div>
-        <p>Проверьте параметры и запустите процесс:</p>
-        <ul className="sc-list">
-          <li>Проверьте выбранные контакты, статус и теги</li>
-          <li>Убедитесь, что количество сделок соответствует ожиданиям</li>
-          <li>Нажмите «Создать» и дождитесь завершения</li>
-        </ul>
-
-        <div className="sc-note sc-note--blue">
-          <div className="sc-note-title">Прогресс</div>
-          Во время работы виджета отображается прогресс-бар выполнения операции.
-        </div>
-
-        <div className="sc-note sc-note--green" style={{ marginTop: 10 }}>
-          <div className="sc-note-title">Время выполнения</div>
-          Пример: создание ~100 сделок занимает 1–2 минуты. Не закрывайте
-          страницу до завершения.
-        </div>
-      </div>
-    ),
+    blocks: [
+      stepParagraph("Проверьте параметры и запустите процесс:"),
+      stepList([
+        "Проверьте выбранные контакты, статус и теги",
+        "Убедитесь, что количество сделок соответствует ожиданиям",
+        "Нажмите «Создать» и дождитесь завершения",
+      ]),
+      stepNote(
+        "Прогресс",
+        "Во время работы виджета отображается прогресс-бар выполнения операции.",
+        { tone: "blue" },
+      ),
+      stepNote(
+        "Время выполнения",
+        "Пример: создание около 100 сделок занимает 1–2 минуты. Не закрывайте страницу до завершения.",
+        { tone: "green", style: { marginTop: 10 } },
+      ),
+    ],
   },
   {
     title: "Контроль результатов",
-    content: (
-      <div>
-        <p>Проверьте созданные сделки и продолжайте работу:</p>
-        <ul className="sc-list">
-          <li>
-            Перейдите в выбранную воронку и убедитесь, что сделки созданы на
-            нужном этапе
-          </li>
-          <li>
-            Используйте добавленные теги для быстрой фильтрации и сегментации
-          </li>
-        </ul>
-
-        <div className="sc-note sc-note--green">
-          <div className="sc-note-title">Готово!</div>
-          Вы создали множество сделок одновременно — можно сосредоточиться на
-          продажах.
-        </div>
-      </div>
-    ),
+    blocks: [
+      stepParagraph("Проверьте созданные сделки и продолжайте работу:"),
+      stepList([
+        "Перейдите в выбранную воронку и убедитесь, что сделки созданы на нужном этапе",
+        "Используйте добавленные теги для быстрой фильтрации и сегментации",
+      ]),
+      stepNote(
+        "Готово!",
+        "Вы создали множество сделок одновременно — теперь можно сосредоточиться на продажах.",
+        { tone: "green" },
+      ),
+    ],
   },
-];
+]);
 
-export const PROBLEMS: ProblemItem[] = [
+export const PROBLEMS = createProblems([
   {
     title: "Запуск новой рекламной кампании",
     text: (
@@ -203,16 +177,16 @@ export const PROBLEMS: ProblemItem[] = [
     ),
     bgUrl: "/widgets/WhatsappButton/back_switch.jpeg",
   },
-];
+]);
 
-export const FEATURES: FeatureItem[] = [
+export const FEATURES = createFeatures([
   {
     iconUrl: "/widgets/WhatsappButton/group.jpeg",
     title: "Массовое создание за секунды",
     text: (
       <>
         Создавайте сделки для сотен контактов одновременно. То, что раньше
-        занимало часы, теперь делается за минуты!
+        занимало часы, теперь делается за минуты.
       </>
     ),
   },
@@ -222,7 +196,7 @@ export const FEATURES: FeatureItem[] = [
     text: (
       <>
         Выбирайте контакты по любым критериям или загружайте готовый список.
-        Точное попадание в целевую аудиторию!
+        Точное попадание в целевую аудиторию.
       </>
     ),
   },
@@ -232,7 +206,7 @@ export const FEATURES: FeatureItem[] = [
     text: (
       <>
         Создавайте новые теги и автоматически применяйте их ко всем новым
-        сделкам. Идеальная сегментация с самого начала!
+        сделкам. Идеальная сегментация с самого начала.
       </>
     ),
   },
@@ -242,7 +216,7 @@ export const FEATURES: FeatureItem[] = [
     text: (
       <>
         Размещайте сделки точно в нужную воронку и этап. Никакой путаницы — всё
-        структурировано с первого дня!
+        структурировано с первого дня.
       </>
     ),
   },
@@ -252,7 +226,7 @@ export const FEATURES: FeatureItem[] = [
     text: (
       <>
         Видите статус каждой операции в реальном времени. Полный контроль над
-        процессом создания сделок!
+        процессом создания сделок.
       </>
     ),
   },
@@ -261,10 +235,9 @@ export const FEATURES: FeatureItem[] = [
     title: "Простота использования",
     text: (
       <>
-        Интуитивный интерфейс без сложных настроек. Освоите за 5 минут,
-        сэкономите час!
+        Интуитивный интерфейс без сложных настроек. Освоите за 5 минут и сразу
+        начнёте экономить часы работы.
       </>
     ),
   },
-];
-
+]);
