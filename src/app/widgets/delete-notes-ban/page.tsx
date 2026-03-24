@@ -1,23 +1,12 @@
-import type { Metadata } from "next";
-import DeleteNotesBan from "@/page/Widget/DeleteNotesBan";
-import { createSEOMetadata } from "@/shared/lib/seo";
-import { WIDGETS_DATA } from "@/shared/constants/widgets";
+import WidgetPage, { metadata } from "@/views/widgets/pages/delete-notes-ban";
 
-const widget = WIDGETS_DATA['delete-notes-ban'];
-
-export const metadata: Metadata = createSEOMetadata({
-    title: widget.seoTitle,
-    description: widget.description,
-    keywords: widget.keywords,
-    canonical: "/widgets/delete-notes-ban",
-    ogType: "website",
-});
+export { metadata };
 
 export default async function Page({
-    searchParams,
+  searchParams,
 }: {
-    searchParams: Promise<{ embed?: string }>;
+  searchParams: Promise<{ embed?: string }>;
 }) {
-    const params = await searchParams;
-    return <DeleteNotesBan searchParams={params} />;
+  const params = await searchParams;
+  return <WidgetPage searchParams={params} />;
 }

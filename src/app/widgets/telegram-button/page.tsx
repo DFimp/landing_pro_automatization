@@ -1,17 +1,6 @@
-import type { Metadata } from "next";
-import TelegramButton from "@/page/Widget/TelegramButton";
-import { createSEOMetadata } from "@/shared/lib/seo";
-import { WIDGETS_DATA } from "@/shared/constants/widgets";
+import WidgetPage, { metadata } from "@/views/widgets/pages/telegram-button";
 
-const widget = WIDGETS_DATA['telegram-button'];
-
-export const metadata: Metadata = createSEOMetadata({
-  title: widget.seoTitle,
-  description: widget.description,
-  keywords: widget.keywords,
-  canonical: "/widgets/telegram-button",
-  ogType: "website",
-});
+export { metadata };
 
 export default async function Page({
   searchParams,
@@ -19,5 +8,5 @@ export default async function Page({
   searchParams: Promise<{ embed?: string }>;
 }) {
   const params = await searchParams;
-  return <TelegramButton searchParams={params} />;
+  return <WidgetPage searchParams={params} />;
 }

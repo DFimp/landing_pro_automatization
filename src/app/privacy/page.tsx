@@ -1,12 +1,4 @@
-import type { Metadata } from "next";
-import { PrivacyPage } from "@/page/PrivacyPage";
+import Page, { metadata } from "@/views/privacy";
 
-export const metadata: Metadata = {
-  title: "Политика конфиденциальности",
-  robots: {
-    index: false,
-    follow: true,
-  },
-};
-
-export default PrivacyPage;
+export { metadata };
+export default Page;

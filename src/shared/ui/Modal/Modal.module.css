@@ -1,0 +1,123 @@
+@keyframes modalPanelEntrance {
+  0% {
+    opacity: 0;
+    transform: perspective(1200px) translate3d(0, -120px, 0) rotateX(-22deg)
+      rotateZ(-6deg) scale(0.78);
+    filter: blur(12px) saturate(0.88);
+  }
+  58% {
+    opacity: 1;
+    transform: perspective(1200px) translate3d(0, 16px, 0) rotateX(7deg)
+      rotateZ(1.4deg) scale(1.035);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(1200px) translate3d(0, 0, 0) rotateX(0deg)
+      rotateZ(0deg) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes modalGlowEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.35);
+  }
+  55% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes modalContentEntrance {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 22px, 0);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    filter: blur(0);
+  }
+}
+
+@keyframes modalPanelExit {
+  0% {
+    opacity: 1;
+    transform: perspective(1200px) translate3d(0, 0, 0) rotateX(0deg)
+      rotateZ(0deg) scale(1);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 0;
+    transform: perspective(1200px) translate3d(0, -128px, 0) rotateX(16deg)
+      rotateZ(6deg) scale(0.8);
+    filter: blur(12px) saturate(0.9);
+  }
+}
+
+@keyframes modalGlowExit {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.28);
+  }
+}
+
+@keyframes modalContentExit {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, -16px, 0);
+    filter: blur(6px);
+  }
+}
+
+.modalPanelEntrance {
+  animation: modalPanelEntrance 760ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.modalGlowEntrance {
+  animation: modalGlowEntrance 720ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.modalContentEntrance {
+  animation: modalContentEntrance 520ms 90ms cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+.modalPanelExit {
+  animation: modalPanelExit 500ms cubic-bezier(0.4, 0, 1, 1) both;
+}
+
+.modalGlowExit {
+  animation: modalGlowExit 440ms cubic-bezier(0.4, 0, 1, 1) both;
+}
+
+.modalContentExit {
+  animation: modalContentExit 260ms cubic-bezier(0.4, 0, 1, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modalPanelEntrance,
+  .modalGlowEntrance,
+  .modalContentEntrance,
+  .modalPanelExit,
+  .modalGlowExit,
+  .modalContentExit {
+    animation: none !important;
+  }
+}

@@ -1,17 +1,6 @@
-import type { Metadata } from "next";
-import WhatsappButton from "@/page/Widget/WhatsappButton";
-import { createSEOMetadata } from "@/shared/lib/seo";
-import { WIDGETS_DATA } from "@/shared/constants/widgets";
+import WidgetPage, { metadata } from "@/views/widgets/pages/whatsapp-button";
 
-const widget = WIDGETS_DATA['whatsapp-button'];
-
-export const metadata: Metadata = createSEOMetadata({
-  title: widget.seoTitle,
-  description: widget.description,
-  keywords: widget.keywords,
-  canonical: "/widgets/whatsapp-button",
-  ogType: "website",
-});
+export { metadata };
 
 export default async function Page({
   searchParams,
@@ -19,5 +8,5 @@ export default async function Page({
   searchParams: Promise<{ embed?: string }>;
 }) {
   const params = await searchParams;
-  return <WhatsappButton searchParams={params} />;
+  return <WidgetPage searchParams={params} />;
 }

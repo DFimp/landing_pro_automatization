@@ -1,11 +1,8 @@
-﻿import Link from "next/link";
+import { NOT_FOUND_PAGE_METADATA } from "@/shared/constants/metadata";
+import Link from "next/link";
 import styles from "./not-found.module.css";
 
-export const metadata = {
-  title: "Страница не найдена",
-  description:
-    "Запрошенная страница не существует или была перемещена. Перейдите на главную или откройте каталог виджетов.",
-};
+export const metadata = NOT_FOUND_PAGE_METADATA;
 
 export default function NotFound() {
   return (
@@ -64,7 +61,7 @@ export default function NotFound() {
                   Быстрые разделы
                 </p>
                 <div className="mt-3 flex flex-wrap gap-2 text-h8 text-[#3760E7]">
-                  <Link href="/accompaniment" className="hover:underline">
+                  <Link href="/managed" className="hover:underline">
                     Сопровождение
                   </Link>
                   <Link href="/license" className="hover:underline">

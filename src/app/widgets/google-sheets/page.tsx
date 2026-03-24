@@ -1,20 +1,6 @@
-import type { Metadata } from "next";
-import Googleheets from "@/page/Widget/GoogleSheets";
-import { createSEOMetadata } from "@/shared/lib/seo";
-import { WIDGETS_DATA } from "@/shared/constants/widgets";
+import WidgetPage, { metadata } from "@/views/widgets/pages/google-sheets";
 
-const widget = WIDGETS_DATA['google-sheets'];
-
-export const metadata: Metadata = {
-  ...createSEOMetadata({
-    title: widget.seoTitle,
-    description: widget.description,
-    keywords: widget.keywords,
-    canonical: "/widgets/google-sheets",
-    ogType: "website",
-  }),
-  robots: { index: false, follow: true },
-};
+export { metadata };
 
 export default async function Page({
   searchParams,
@@ -22,5 +8,5 @@ export default async function Page({
   searchParams: Promise<{ embed?: string }>;
 }) {
   const params = await searchParams;
-  return <Googleheets  searchParams={params}  />
+  return <WidgetPage searchParams={params} />;
 }

@@ -374,7 +374,7 @@ export const ORGANIZATION_DATA: OrganizationSchema = {
 export const SITE_NAVIGATION: SiteNavigationItem[] = [
   { name: 'Виджеты amoCRM', url: `${SITE_URL}/widgets` },
   { name: 'Аудит amoCRM', url: `${SITE_URL}/audit` },
-  { name: 'Сопровождение', url: `${SITE_URL}/accompaniment` },
+  { name: 'Сопровождение', url: `${SITE_URL}/managed` },
   { name: 'Статьи', url: `${SITE_URL}/articles` },
   { name: 'Кейсы', url: `${SITE_URL}/cases` },
   { name: 'Лицензии amoCRM', url: `${SITE_URL}/license` },

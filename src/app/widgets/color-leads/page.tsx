@@ -1,17 +1,6 @@
-import type { Metadata } from "next";
-import ColorDeals from "@/page/Widget/ColorDeals";
-import { createSEOMetadata } from "@/shared/lib/seo";
-import { WIDGETS_DATA } from "@/shared/constants/widgets";
+import WidgetPage, { metadata } from "@/views/widgets/pages/color-leads";
 
-const widget = WIDGETS_DATA["color-leads"];
-
-export const metadata: Metadata = createSEOMetadata({
-  title: widget.seoTitle,
-  description: widget.description,
-  keywords: widget.keywords,
-  canonical: "/widgets/color-leads",
-  ogType: "website",
-});
+export { metadata };
 
 export default async function Page({
   searchParams,
@@ -19,5 +8,5 @@ export default async function Page({
   searchParams: Promise<{ embed?: string }>;
 }) {
   const params = await searchParams;
-  return <ColorDeals searchParams={params} />;
+  return <WidgetPage searchParams={params} />;
 }

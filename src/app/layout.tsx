@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import React, { Suspense } from "react";
-import Header from "@/widgets/header/Header";
-import { Footer } from "@/widgets/footer";
+import Header from "@/sections/header/Header";
+import { Footer } from "@/sections/footer";
 import { Analytics } from "@/shared/scripts/Analytics";
 import ScrollRevealObserver from "@/shared/ui/scrollReveal/ScrollRevealObserver.client";
 import {
@@ -12,6 +12,7 @@ import {
   SITE_NAVIGATION
 } from '@/shared/lib/seo';
 import { WebVitals } from './web-vitals';
+import { ROOT_LAYOUT_METADATA } from "@/shared/constants/metadata";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -19,43 +20,7 @@ const montserrat = Montserrat({
   display: 'swap',
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL('https://pro-automatization.ru'),
-
-  title: {
-    default: "Про Автоматизацию — интеграция и автоматизация amoCRM",
-    template: "%s | Про Автоматизацию"
-  },
-
-  icons: {
-    icon: [
-      { url: '/favicon.ico', sizes: '108x108' },
-      { url: '/icon-192.webp', sizes: '192x192', type: 'image/webp' },
-      { url: '/icon-512.webp', sizes: '512x512', type: 'image/webp' },
-    ],
-    apple: '/apple-icon.webp',
-  },
-
-  other: {
-    "yandex-verification": "f5d8de67e31c5b38",
-  },
-
-  authors: [{ name: "Про Автоматизацию" }],
-  creator: "Про Автоматизацию",
-  publisher: "Про Автоматизацию",
-
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-};
+export const metadata: Metadata = ROOT_LAYOUT_METADATA;
 
 export const revalidate = 86400;
 

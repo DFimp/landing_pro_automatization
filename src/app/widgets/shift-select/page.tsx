@@ -1,23 +1,12 @@
-import type { Metadata } from "next";
-import ShiftSelect from "@/page/Widget/ShiftSelect";
-import { createSEOMetadata } from "@/shared/lib/seo";
-import { WIDGETS_DATA } from "@/shared/constants/widgets";
+import WidgetPage, { metadata } from "@/views/widgets/pages/shift-select";
 
-const widget = WIDGETS_DATA['shift-select'];
-
-export const metadata: Metadata = createSEOMetadata({
-    title: widget.seoTitle,
-    description: widget.description,
-    keywords: widget.keywords,
-    canonical: "/widgets/shift-select",
-    ogType: "website",
-});
+export { metadata };
 
 export default async function Page({
-    searchParams,
+  searchParams,
 }: {
-    searchParams: Promise<{ embed?: string }>;
+  searchParams: Promise<{ embed?: string }>;
 }) {
-    const params = await searchParams;
-    return <ShiftSelect searchParams={params} />;
+  const params = await searchParams;
+  return <WidgetPage searchParams={params} />;
 }
