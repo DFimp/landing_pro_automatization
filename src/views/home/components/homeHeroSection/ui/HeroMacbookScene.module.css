@@ -14,7 +14,6 @@
 .laptop {
   transform-box: fill-box;
   transform-origin: center;
-  animation: floatScene 7s ease-in-out infinite;
 }
 
 .floorGlow {
@@ -44,17 +43,6 @@
 
 .cursor {
   filter: drop-shadow(0 3px 6px rgba(39, 69, 151, 0.24));
-}
-
-@keyframes floatScene {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-6px);
-  }
 }
 
 @keyframes pulseGlow {

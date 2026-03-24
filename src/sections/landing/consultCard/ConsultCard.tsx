@@ -60,7 +60,7 @@ export default function ConsultCard({
                 <ConsultCardModalClient
                   text={buttonText}
                   variant="outline"
-                  className="!min-h-[52px] !w-full !justify-center !rounded-full !border-white !bg-white !px-5 !py-3 !text-[14px] !font-extrabold !tracking-[0.01em] !text-[#1B46D4] shadow-[0_18px_38px_rgba(12,28,90,0.2)] hover:!border-white hover:!bg-[#F4F7FF] hover:!text-[#163AB8] sm:!min-h-[56px] sm:!w-auto sm:!px-8 sm:!text-[16px]"
+                  className="!min-h-[52px] !w-full !justify-center !rounded-full !border-white !bg-white !px-4 !py-3 !text-center !text-[13px] !font-extrabold !leading-[1.15] !tracking-[0.01em] !text-[#1B46D4] !whitespace-normal shadow-[0_18px_38px_rgba(12,28,90,0.2)] hover:!border-white hover:!bg-[#F4F7FF] hover:!text-[#163AB8] min-[390px]:!text-[14px] sm:!min-h-[56px] sm:!w-auto sm:!px-8 sm:!text-[16px] sm:!leading-none sm:!whitespace-nowrap"
                 />
               </div>
             </div>

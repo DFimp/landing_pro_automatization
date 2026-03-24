@@ -189,7 +189,7 @@
   }
   100% {
     opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1);
+    transform: none;
     filter: blur(0);
   }
 }
@@ -210,7 +210,7 @@
   100% {
     opacity: 1;
     clip-path: inset(0 0 0 0);
-    transform: translate3d(0, 0, 0);
+    transform: none;
     filter: blur(0);
   }
 }
@@ -230,8 +230,7 @@
   }
   100% {
     opacity: 1;
-    transform: perspective(1100px) translate3d(0, 0, 0) rotateY(0deg)
-      rotateX(0deg) scale(1);
+    transform: none;
     filter: blur(0);
   }
 }
@@ -239,8 +238,7 @@
 @keyframes panelFloat {
   0%,
   100% {
-    transform: perspective(1100px) translate3d(0, 0, 0) rotateY(0deg)
-      rotateX(0deg) scale(1);
+    transform: none;
   }
   50% {
     transform: perspective(1100px) translate3d(0, -6px, 0) rotateY(0deg)
@@ -256,7 +254,7 @@
   }
   100% {
     opacity: 1;
-    transform: translate3d(0, 0, 0);
+    transform: none;
     filter: blur(0);
   }
 }
@@ -268,7 +266,7 @@
   }
   100% {
     opacity: 1;
-    transform: scaleX(1);
+    transform: none;
   }
 }
 
@@ -285,7 +283,7 @@
   }
   100% {
     opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1);
+    transform: none;
     filter: blur(0);
   }
 }

@@ -2,10 +2,11 @@ import { useId } from "react";
 import styles from "./HeroMacbookScene.module.css";
 
 type DealLane = {
-  label: string;
+  labelLines: string[];
   count: string;
   color: string;
   x: number;
+  width: number;
   cards: Array<{
     y: number;
     accent: string;
@@ -25,6 +26,7 @@ type LaneCardProps = {
   x: number;
   y: number;
   accent: string;
+  width: number;
 };
 
 const copy = {
@@ -37,39 +39,43 @@ const copy = {
 
 const dealLanes: DealLane[] = [
   {
-    label: "\u041f\u0415\u0420\u0412\u0418\u0427\u041d\u042b\u0419 \u041a\u041e\u041d\u0422\u0410\u041a\u0422",
+    labelLines: ["\u041f\u0415\u0420\u0412\u0418\u0427\u041d\u042b\u0419", "\u041a\u041e\u041d\u0422\u0410\u041a\u0422"],
     count: "4 \u0441\u0434\u0435\u043b\u043a\u0438",
     color: "#7AA6FF",
-    x: 198,
+    x: 196,
+    width: 96,
     cards: [
-      { y: 148, accent: "#4E7CFF" },
-      { y: 214, accent: "#6E95FF" },
-      { y: 280, accent: "#88ABFF" },
+      { y: 156, accent: "#4E7CFF" },
+      { y: 222, accent: "#6E95FF" },
+      { y: 288, accent: "#88ABFF" },
     ],
   },
   {
-    label: "\u041f\u0415\u0420\u0415\u0413\u041e\u0412\u041e\u0420\u042b",
+    labelLines: ["\u041f\u0415\u0420\u0415\u0413\u041e\u0412\u041e\u0420\u042b"],
     count: "2 \u0441\u0434\u0435\u043b\u043a\u0438",
     color: "#F5B339",
-    x: 330,
+    x: 304,
+    width: 96,
     cards: [
-      { y: 148, accent: "#F5B339" },
-      { y: 214, accent: "#F7C569" },
+      { y: 156, accent: "#F5B339" },
+      { y: 222, accent: "#F7C569" },
     ],
   },
   {
-    label: "\u0421\u041e\u0413\u041b\u0410\u0421\u041e\u0412\u0410\u041d\u0418\u0415",
+    labelLines: ["\u0421\u041e\u0413\u041b\u0410\u0421\u041e\u0412\u0410\u041d\u0418\u0415"],
     count: "1 \u0441\u0434\u0435\u043b\u043a\u0430",
     color: "#FF8E77",
-    x: 462,
-    cards: [{ y: 214, accent: "#FF8E77" }],
+    x: 412,
+    width: 96,
+    cards: [{ y: 222, accent: "#FF8E77" }],
   },
   {
-    label: "\u0421\u0414\u0415\u041b\u041a\u0410",
+    labelLines: ["\u0421\u0414\u0415\u041b\u041a\u0410"],
     count: "1 \u0441\u0434\u0435\u043b\u043a\u0430",
     color: "#10B981",
-    x: 594,
-    cards: [{ y: 148, accent: "#10B981" }],
+    x: 520,
+    width: 96,
+    cards: [{ y: 156, accent: "#10B981" }],
   },
 ];
 
@@ -98,14 +104,17 @@ const settingsItems: SettingsItem[] = [
   },
 ];
 
-function LaneCard({ x, y, accent }: LaneCardProps) {
+function LaneCard({ x, y, accent, width }: LaneCardProps) {
+  const height = 52;
+  const accentX = width - 20;
+
   return (
     <g transform={`translate(${x} ${y})`}>
-      <rect width="112" height="54" rx="12" fill="#FFFFFF" stroke="#D8E4FA" strokeWidth="1.2" />
-      <rect x="12" y="12" width="44" height="6" rx="3" fill="#CBD9F6" />
-      <rect x="12" y="24" width="64" height="4" rx="2" fill="#E6EEFF" />
-      <rect x="12" y="33" width="50" height="4" rx="2" fill="#EEF3FF" />
-      <circle cx="92" cy="33" r="8" fill={accent} fillOpacity="0.9" />
+      <rect width={width} height={height} rx="12" fill="#FFFFFF" stroke="#D8E4FA" strokeWidth="1.2" />
+      <rect x="12" y="12" width="34" height="6" rx="3" fill="#CBD9F6" />
+      <rect x="12" y="24" width="50" height="4" rx="2" fill="#E6EEFF" />
+      <rect x="12" y="33" width="38" height="4" rx="2" fill="#EEF3FF" />
+      <circle cx={accentX} cy="31" r="8" fill={accent} fillOpacity="0.9" />
     </g>
   );
 }
@@ -171,7 +180,7 @@ export default function HeroMacbookScene() {
           </filter>
 
           <clipPath id={screenClipId}>
-            <rect x="108" y="42" width="544" height="344" rx="16" />
+            <rect x="102" y="38" width="556" height="352" rx="20" />
           </clipPath>
         </defs>
 
@@ -199,7 +208,7 @@ export default function HeroMacbookScene() {
               strokeOpacity="0.55"
             />
             <rect x="100" y="34" width="560" height="360" rx="18" fill="#050811" />
-            <rect x="108" y="42" width="544" height="344" rx="16" fill={`url(#${screenGradientId})`} />
+            <rect x="102" y="38" width="556" height="352" rx="20" fill="#24384A" />
             <circle cx="380" cy="24" r="4.5" fill="#0B0E15" />
             <circle cx="380" cy="24" r="1.4" fill="#2A3241" />
             <path
@@ -211,11 +220,12 @@ export default function HeroMacbookScene() {
           </g>
 
           <g clipPath={`url(#${screenClipId})`}>
-            <rect x="108" y="42" width="544" height="344" fill={`url(#${screenGradientId})`} />
+            <rect x="100" y="36" width="560" height="356" fill="#24384A" />
 
-            <rect x="108" y="42" width="50" height="344" fill="#24384A" />
-            <rect x="158" y="42" width="494" height="42" fill="#FFFFFF" fillOpacity="0.98" />
-            <line x1="158" y1="84" x2="652" y2="84" stroke="#DCE5F7" strokeWidth="1" />
+            <rect x="96" y="34" width="68" height="360" fill="#24384A" />
+            <rect x="164" y="38" width="494" height="352" fill={`url(#${screenGradientId})`} />
+            <rect x="164" y="38" width="494" height="46" fill="#FFFFFF" fillOpacity="0.98" />
+            <line x1="164" y1="84" x2="658" y2="84" stroke="#DCE5F7" strokeWidth="1" />
 
             <circle cx="124" cy="63" r="4" fill="#7B8DA3" />
             <circle cx="136" cy="63" r="4" fill="#7B8DA3" />
@@ -274,33 +284,43 @@ export default function HeroMacbookScene() {
               </text>
 
               {dealLanes.map((lane) => (
-                <g key={lane.label}>
+                <g key={lane.labelLines.join("-")}>
                   <text
-                    x={lane.x}
-                    y="112"
+                    x={lane.x + lane.width / 2}
+                    y={lane.labelLines.length > 1 ? "108" : "116"}
                     fill="#5D6F98"
-                    fontSize="9"
+                    fontSize="8"
                     fontWeight="700"
-                    letterSpacing="0.05em"
+                    letterSpacing="0.04em"
                     fontFamily="inherit"
+                    textAnchor="middle"
                   >
-                    {lane.label}
+                    {lane.labelLines.map((line, index) => (
+                      <tspan
+                        key={`${line}-${index}`}
+                        x={lane.x + lane.width / 2}
+                        dy={index === 0 ? 0 : 10}
+                      >
+                        {line}
+                      </tspan>
+                    ))}
                   </text>
                   <text
-                    x={lane.x}
-                    y="126"
+                    x={lane.x + lane.width / 2}
+                    y="136"
                     fill="#94A6CB"
                     fontSize="8"
                     fontWeight="600"
                     fontFamily="inherit"
+                    textAnchor="middle"
                   >
                     {lane.count}
                   </text>
                   <line
                     x1={lane.x}
-                    y1="132"
-                    x2={lane.x + 112}
-                    y2="132"
+                    y1="142"
+                    x2={lane.x + lane.width}
+                    y2="142"
                     stroke={lane.color}
                     strokeWidth="2.5"
                     strokeLinecap="round"
@@ -308,10 +328,11 @@ export default function HeroMacbookScene() {
 
                   {lane.cards.map((card, index) => (
                     <LaneCard
-                      key={`${lane.label}-${card.y}-${index}`}
+                      key={`${lane.labelLines.join("-")}-${card.y}-${index}`}
                       x={lane.x}
                       y={card.y}
                       accent={card.accent}
+                      width={lane.width}
                     />
                   ))}
                 </g>
@@ -319,19 +340,19 @@ export default function HeroMacbookScene() {
 
               <g className={styles.dealsPulseCard}>
                 <rect
-                  x="594"
-                  y="148"
-                  width="112"
-                  height="54"
+                  x="520"
+                  y="156"
+                  width="96"
+                  height="52"
                   rx="12"
                   fill="#FFFFFF"
                   stroke="#10B981"
                   strokeWidth="1.3"
                 />
-                <rect x="606" y="160" width="52" height="6" rx="3" fill="#50CFA0" />
-                <rect x="606" y="172" width="70" height="4" rx="2" fill="#E6EEFF" />
-                <rect x="606" y="181" width="58" height="4" rx="2" fill="#EEF4FF" />
-                <circle cx="688" cy="180" r="8" fill="#10B981" />
+                <rect x="532" y="168" width="34" height="6" rx="3" fill="#50CFA0" />
+                <rect x="532" y="180" width="50" height="4" rx="2" fill="#E6EEFF" />
+                <rect x="532" y="189" width="38" height="4" rx="2" fill="#EEF4FF" />
+                <circle cx="596" cy="187" r="8" fill="#10B981" />
               </g>
 
             </g>
