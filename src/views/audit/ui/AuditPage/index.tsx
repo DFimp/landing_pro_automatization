@@ -1,11 +1,9 @@
 import { FAQSchemaTag, ServiceSchemaTag } from "@/shared/lib/seo";
-import {
-  StepsSection,
-  FinalSection,
-  HeroSection,
-  ResultSection,
-  DeliverablesSection,
-} from "@/views/audit/components";
+import { HeroSection } from "../HeroSection/HeroSection";
+import { StepsSection } from "../StepsSection/StepsSection";
+import { ResultSection } from "../ResultSection/ResultSection";
+import { DeliverablesSection } from "../DeliverablesSection/DeliverablesSection";
+import { FinalSection } from "../FinalSection/FinalSection";
 
 const AUDIT_FAQ = [
   {

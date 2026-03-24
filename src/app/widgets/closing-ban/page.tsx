@@ -1,4 +1,4 @@
-import WidgetPage, { metadata } from "@/views/widgets/pages/closing-ban";
+import WidgetPage, { metadata } from "@/views/widgets/ClosingBan";
 
 export { metadata };
 

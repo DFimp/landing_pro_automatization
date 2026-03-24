@@ -1,4 +1,4 @@
-import WidgetPage, { metadata } from "@/views/widgets/pages/hiding-data";
+import WidgetPage, { metadata } from "@/views/widgets/HidingData";
 
 export { metadata };
 

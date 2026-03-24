@@ -1,4 +1,4 @@
-import WidgetPage, { metadata } from "@/views/widgets/pages/lead-distribution";
+import WidgetPage, { metadata } from "@/views/widgets/LeadDistribution";
 
 export { metadata };
 

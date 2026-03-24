@@ -1,4 +1,4 @@
-import WidgetPage, { metadata } from "@/views/widgets/pages/delete-notes-ban";
+import WidgetPage, { metadata } from "@/views/widgets/DeleteNotesBan";
 
 export { metadata };
 

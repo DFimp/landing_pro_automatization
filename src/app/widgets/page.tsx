@@ -1,4 +1,4 @@
-import Page, { metadata } from "@/views/widgets";
+import Page, { metadata } from "@/views/widgetsPage";
 
 export { metadata };
 export default Page;

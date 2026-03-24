@@ -1,4 +1,4 @@
-import WidgetPage, { metadata } from "@/views/widgets/pages/telegram-notify";
+import WidgetPage, { metadata } from "@/views/widgets/TelegramNotify";
 
 export { metadata };
 

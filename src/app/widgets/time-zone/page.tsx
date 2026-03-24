@@ -1,4 +1,4 @@
-import WidgetPage, { metadata } from "@/views/widgets/pages/time-zone";
+import WidgetPage, { metadata } from "@/views/widgets/TimeZone";
 
 export { metadata };
 

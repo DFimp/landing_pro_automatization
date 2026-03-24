@@ -13,7 +13,6 @@ export const WIDGETS_METADATA: Record<WidgetKey, Metadata> = Object.fromEntries(
     const baseMetadata = createSEOMetadata({
       title,
       description: widget.description,
-      keywords: widget.keywords,
       canonical: widget.route,
       ogType: "website",
     });

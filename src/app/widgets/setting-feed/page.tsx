@@ -1,4 +1,4 @@
-import WidgetPage, { metadata } from "@/views/widgets/pages/setting-feed";
+import WidgetPage, { metadata } from "@/views/widgets/SettingFeed";
 
 export { metadata };
 

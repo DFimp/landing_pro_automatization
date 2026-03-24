@@ -1,4 +1,4 @@
-import WidgetPage, { metadata } from "@/views/widgets/pages/copying-fields";
+import WidgetPage, { metadata } from "@/views/widgets/CopyingFields";
 
 export { metadata };
 

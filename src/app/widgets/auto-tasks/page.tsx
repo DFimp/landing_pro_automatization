@@ -1,4 +1,4 @@
-import WidgetPage, { metadata } from "@/views/widgets/pages/auto-tasks";
+import WidgetPage, { metadata } from "@/views/widgets/AutoTasks";
 
 export { metadata };
 

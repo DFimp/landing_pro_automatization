@@ -1,4 +1,4 @@
-import WidgetPage, { metadata } from "@/views/widgets/pages/shift-select";
+import WidgetPage, { metadata } from "@/views/widgets/ShiftSelect";
 
 export { metadata };
 

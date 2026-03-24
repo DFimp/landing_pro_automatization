@@ -1,4 +1,4 @@
-import WidgetPage, { metadata } from "@/views/widgets/pages/google-sheets";
+import WidgetPage, { metadata } from "@/views/widgets/GoogleSheets";
 
 export { metadata };
 

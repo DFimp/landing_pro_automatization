@@ -1,4 +1,4 @@
-import WidgetPage, { metadata } from "@/views/widgets/pages/transfer-fields";
+import WidgetPage, { metadata } from "@/views/widgets/TransferFields";
 
 export { metadata };
 

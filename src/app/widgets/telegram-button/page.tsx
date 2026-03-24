@@ -1,4 +1,4 @@
-import WidgetPage, { metadata } from "@/views/widgets/pages/telegram-button";
+import WidgetPage, { metadata } from "@/views/widgets/TelegramButton";
 
 export { metadata };
 

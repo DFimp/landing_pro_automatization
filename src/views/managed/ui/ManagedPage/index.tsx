@@ -1,11 +1,9 @@
 import { FAQSchemaTag, ServiceSchemaTag } from "@/shared/lib/seo";
-import {
-  ManagedHeroSection,
-  ManagedScrumSection,
-  ManagedHelpSection,
-  ManagedProblemsSection,
-  ManagedTariffsSection,
-} from "@/views/managed/components";
+import { ManagedHeroSection } from "../ManagedHeroSection/ManagedHeroSection";
+import { ManagedScrumSection } from "../ManagedScrumSection/ManagedScrumSection";
+import { ManagedHelpSection } from "../ManagedHelpSection/ManagedHelpSection";
+import { ManagedProblemsSection } from "../ManagedProblemsSection/ManagedProblemsSection";
+import { ManagedTariffsSection } from "../ManagedTariffsSection/ManagedTariffsSection";
 
 export const revalidate = 86400;
 

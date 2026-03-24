@@ -1,4 +1,4 @@
-import ArticlePage, { metadata } from "@/views/articles/pages/amocrm-quick-setup";
+import ArticlePage, { metadata } from "@/views/articles/AmocrmQuickSetup";
 
 export { metadata };
 export default ArticlePage;

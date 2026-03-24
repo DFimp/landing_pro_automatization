@@ -1,4 +1,4 @@
-import WidgetPage, { metadata } from "@/views/widgets/pages/color-leads";
+import WidgetPage, { metadata } from "@/views/widgets/ColorLeads";
 
 export { metadata };
 

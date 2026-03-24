@@ -1,4 +1,4 @@
-import WidgetPage, { metadata } from "@/views/widgets/pages/whatsapp-button";
+import WidgetPage, { metadata } from "@/views/widgets/WhatsappButton";
 
 export { metadata };
 

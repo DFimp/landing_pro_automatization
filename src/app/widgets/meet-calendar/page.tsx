@@ -1,4 +1,4 @@
-import WidgetPage, { metadata } from "@/views/widgets/pages/meet-calendar";
+import WidgetPage, { metadata } from "@/views/widgets/MeetCalendar";
 
 export { metadata };
 

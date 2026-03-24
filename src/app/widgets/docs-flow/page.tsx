@@ -1,4 +1,4 @@
-import WidgetPage, { metadata } from "@/views/widgets/pages/docs-flow";
+import WidgetPage, { metadata } from "@/views/widgets/DocsFlow";
 
 export { metadata };
 

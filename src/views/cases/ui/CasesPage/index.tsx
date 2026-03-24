@@ -1,4 +1,6 @@
-import { HeroSection, CasesGrid, TestimonialsSection, CASES } from "@/views/cases/components";
+import { HeroSection } from "../HeroSection/HeroSection";
+import { CasesGrid, CASES } from "../CasesCard/CasesCard";
+import { TestimonialsSection } from "../TestimonialsSection/TestimonialsSection";
 import ConsultCard from "@/sections/landing/consultCard/ConsultCard";
 import { CollectionPageSchemaTag } from "@/shared/lib/seo";
 import { SITE_URL } from "@/shared/constants";

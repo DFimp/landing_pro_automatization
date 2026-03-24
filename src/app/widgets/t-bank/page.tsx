@@ -1,4 +1,4 @@
-import WidgetPage, { metadata } from "@/views/widgets/pages/t-bank";
+import WidgetPage, { metadata } from "@/views/widgets/TBank";
 
 export { metadata };
 

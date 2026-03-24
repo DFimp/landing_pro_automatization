@@ -1,4 +1,4 @@
-import WidgetPage, { metadata } from "@/views/widgets/pages/group-fields";
+import WidgetPage, { metadata } from "@/views/widgets/GroupFields";
 
 export { metadata };
 

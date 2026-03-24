@@ -8,7 +8,6 @@ export const ARTICLES_METADATA: Record<string, Metadata> = Object.fromEntries(
     createSEOMetadata({
       title: article.title,
       description: article.description,
-      keywords: article.keywords,
       canonical: article.link,
       ogType: "article",
       publishedTime: article.publishedTime,
