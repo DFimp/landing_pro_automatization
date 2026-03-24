@@ -60,7 +60,7 @@ export default function HomeCertificateCard({
               )}
             >
               <Image
-                src="/Про Автоматизацию amoSTART.jpg"
+                src="/certificate_amoSTART.jpg"
                 alt={title}
                 width={1024}
                 height={768}
