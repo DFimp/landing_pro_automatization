@@ -1,4 +1,10 @@
 import type { Metadata } from "next";
-import { ARTICLES_PAGE_METADATA } from "@/shared/constants/metadata";
+import { createSEOMetadata } from "@/shared/lib/seo/metadata";
 
-export const metadata: Metadata = ARTICLES_PAGE_METADATA;
+export const metadata: Metadata = createSEOMetadata({
+  title: "Статьи про amoCRM — база знаний | Про Автоматизацию",
+  description:
+    "Полезные статьи про amoCRM: настройка, автоматизация, интеграции, лайфхаки. Практические кейсы и инструкции.",
+  canonical: "/articles",
+  ogType: "website",
+});

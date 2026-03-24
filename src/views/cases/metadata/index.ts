@@ -1,4 +1,10 @@
 import type { Metadata } from "next";
-import { CASES_PAGE_METADATA } from "@/shared/constants/metadata";
+import { createSEOMetadata } from "@/shared/lib/seo/metadata";
 
-export const metadata: Metadata = CASES_PAGE_METADATA;
+export const metadata: Metadata = createSEOMetadata({
+  title: "Кейсы внедрения amoCRM — реальные проекты | Про Автоматизацию",
+  description:
+    "Кейсы внедрения и автоматизации amoCRM для разных бизнесов. Реальные результаты, сроки, решения.",
+  canonical: "/cases",
+  ogType: "website",
+});

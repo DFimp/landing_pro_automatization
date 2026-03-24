@@ -38,14 +38,6 @@ export const ROOT_LAYOUT_METADATA: Metadata = {
   },
 };
 
-export const PRIVACY_PAGE_METADATA: Metadata = {
-  title: "Политика конфиденциальности",
-  robots: {
-    index: false,
-    follow: true,
-  },
-};
-
 export const NOT_FOUND_PAGE_METADATA: Metadata = {
   title: "Страница не найдена",
   description:

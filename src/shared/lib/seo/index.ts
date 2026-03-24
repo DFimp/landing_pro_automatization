@@ -18,4 +18,4 @@ export type {
   FAQItem,
 } from './schema';
 
-export { createSEOMetadata, SEO_TEMPLATES, CORE_KEYWORDS } from './metadata';
+export { createSEOMetadata, SEO_TEMPLATES } from './metadata';
