@@ -1,7 +1,7 @@
 import { WidgetsBonusesSection } from "../WidgetsBonusesSection/WidgetsBonusesSection";
 import { WidgetsSupportSection } from "../WidgetsSupportSection/WidgetsSupportSection";
 import { WidgetsSpecialOfferSection } from "../WidgetsSpecialOfferSection/WidgetsSpecialOfferSection";
-import { WidgetsWidgetsSection } from "@/views/widgetsPage/ui/WidgetsSection/WidgetsSection";
+import { WidgetsWidgetsSection } from "@/views/WidgetsPage/ui/WidgetsSection/WidgetsSection";
 import { ProductSchemaTag } from "@/shared/lib/seo";
 
 export default LicensePageContent;

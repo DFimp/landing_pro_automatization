@@ -1,4 +1,4 @@
-import { WidgetsList } from "@/views/widgetsPage/ui/WidgetsSection/ui/WidgetsList";
+import { WidgetsList } from "@/views/WidgetsPage/ui/WidgetsSection/ui/WidgetsList";
 
 export default WidgetsPageContent;
 
