@@ -11,7 +11,7 @@ export function HomeProblemSection() {
   const problemAccent = "Мы это исправляем.";
 
   return (
-    <Container as="section" padding="none">
+    <Container as="section" padding="none" className="px-4 sm:px-0">
       <ScrollReveal
         as="div"
         className={`${styles.showcase} relative overflow-hidden rounded-[40px] bg-[#101725] px-6 py-8 text-white sm:px-10 sm:py-12`}

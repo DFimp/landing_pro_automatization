@@ -12,19 +12,24 @@ export default function ConsultCardReveal({
     className?: string;
 }) {
     const controls = useAnimation();
-    const [ref, inView] = useInView({ threshold: 0.5, triggerOnce: true });
+    const [ref, inView] = useInView({ threshold: 0.3, triggerOnce: true });
 
     useEffect(() => {
-        if (inView) controls.start({ opacity: 1 });
+        if (inView) {
+            controls.start({
+                opacity: 1,
+                y: 0,
+            });
+        }
     }, [inView, controls]);
 
     return (
         <motion.div
             ref={ref}
             className={className}
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 0, y: 14 }}
             animate={controls}
-            transition={{ duration: 1.5, ease: "easeOut" }}
+            transition={{ duration: 0.52, ease: [0.22, 1, 0.36, 1] }}
         >
             {children}
         </motion.div>

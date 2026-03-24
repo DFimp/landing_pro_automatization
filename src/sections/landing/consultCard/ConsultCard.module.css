@@ -1,0 +1,342 @@
+.showcase {
+  position: relative;
+  overflow: hidden;
+}
+
+.beam {
+  position: absolute;
+  top: -16%;
+  left: -24%;
+  width: 34%;
+  height: 160%;
+  background:
+    linear-gradient(
+      115deg,
+      transparent 0%,
+      rgba(125, 161, 255, 0.02) 18%,
+      rgba(125, 161, 255, 0.28) 47%,
+      rgba(125, 161, 255, 0.08) 68%,
+      transparent 100%
+    );
+  transform: rotate(12deg) translate3d(-130%, 0, 0);
+  filter: blur(2px);
+  opacity: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.orb,
+.left,
+.title,
+.divider,
+.body,
+.cta,
+.panel,
+.chip,
+.innerDivider {
+  opacity: 0;
+}
+
+.orb {
+  transform: scale(0.72);
+}
+
+.left {
+  transform: translate3d(-46px, 18px, 0) scale(0.98);
+}
+
+.title {
+  clip-path: inset(0 0 100% 0);
+  transform: translate3d(0, 26px, 0);
+}
+
+.divider,
+.innerDivider {
+  transform: scaleX(0.08);
+  transform-origin: left center;
+}
+
+.body {
+  transform: translate3d(0, 22px, 0);
+}
+
+.cta {
+  transform: translate3d(0, 16px, 0) scale(0.86);
+  transform-origin: left center;
+}
+
+.panel {
+  transform: perspective(1100px) translate3d(56px, 24px, 0) rotateY(-14deg)
+    rotateX(5deg) scale(0.94);
+  transform-origin: right center;
+}
+
+.chip {
+  transform: translate3d(0, 16px, 0) scale(0.86);
+  transform-origin: left center;
+}
+
+.showcase[data-sr-revealed="true"] .beam {
+  animation: beamSweep 1200ms 120ms cubic-bezier(0.18, 1, 0.32, 1) both;
+}
+
+.showcase[data-sr-revealed="true"] .orbLeft {
+  animation:
+    orbIn 900ms 80ms cubic-bezier(0.16, 1, 0.3, 1) both,
+    orbFloatLeft 9.5s 1100ms ease-in-out infinite;
+}
+
+.showcase[data-sr-revealed="true"] .orbRight {
+  animation:
+    orbIn 980ms 180ms cubic-bezier(0.16, 1, 0.3, 1) both,
+    orbFloatRight 8.8s 1180ms ease-in-out infinite;
+}
+
+.showcase[data-sr-revealed="true"] .left {
+  animation: leftIn 820ms 110ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.showcase[data-sr-revealed="true"] .title {
+  animation: titleIn 920ms 280ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.showcase[data-sr-revealed="true"] .divider {
+  animation: dividerIn 760ms 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.showcase[data-sr-revealed="true"] .body {
+  animation: textIn 720ms 540ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.showcase[data-sr-revealed="true"] .cta {
+  animation:
+    chipIn 620ms 700ms cubic-bezier(0.2, 1.2, 0.3, 1) both,
+    chipPulse 1600ms 1480ms cubic-bezier(0.22, 1, 0.36, 1) 1;
+}
+
+.showcase[data-sr-revealed="true"] .panel {
+  animation:
+    panelIn 980ms 260ms cubic-bezier(0.16, 1, 0.3, 1) both,
+    panelFloat 7.2s 1320ms ease-in-out infinite;
+}
+
+.showcase[data-sr-revealed="true"] .chip {
+  animation: chipIn 620ms 760ms cubic-bezier(0.2, 1.2, 0.3, 1) both;
+}
+
+.showcase[data-sr-revealed="true"] .innerDivider {
+  animation: dividerIn 760ms 860ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes beamSweep {
+  0% {
+    opacity: 0;
+    transform: rotate(12deg) translate3d(-130%, 0, 0);
+  }
+  18% {
+    opacity: 0.18;
+  }
+  52% {
+    opacity: 0.52;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(12deg) translate3d(420%, 0, 0);
+  }
+}
+
+@keyframes orbIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.62);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes orbFloatLeft {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(18px, -12px, 0) scale(1.04);
+  }
+}
+
+@keyframes orbFloatRight {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-14px, 10px, 0) scale(1.05);
+  }
+}
+
+@keyframes leftIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(-46px, 18px, 0) scale(0.98);
+    filter: blur(8px);
+  }
+  65% {
+    opacity: 1;
+    transform: translate3d(8px, -4px, 0) scale(1.01);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes titleIn {
+  0% {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+    transform: translate3d(0, 26px, 0);
+    filter: blur(8px);
+  }
+  70% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: translate3d(0, -6px, 0);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: translate3d(0, 0, 0);
+    filter: blur(0);
+  }
+}
+
+@keyframes panelIn {
+  0% {
+    opacity: 0;
+    transform: perspective(1100px) translate3d(56px, 24px, 0) rotateY(-14deg)
+      rotateX(5deg) scale(0.94);
+    filter: blur(10px);
+  }
+  58% {
+    opacity: 1;
+    transform: perspective(1100px) translate3d(-8px, -6px, 0) rotateY(4deg)
+      rotateX(-1deg) scale(1.02);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(1100px) translate3d(0, 0, 0) rotateY(0deg)
+      rotateX(0deg) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes panelFloat {
+  0%,
+  100% {
+    transform: perspective(1100px) translate3d(0, 0, 0) rotateY(0deg)
+      rotateX(0deg) scale(1);
+  }
+  50% {
+    transform: perspective(1100px) translate3d(0, -6px, 0) rotateY(0deg)
+      rotateX(0deg) scale(1.004);
+  }
+}
+
+@keyframes textIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+    filter: blur(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    filter: blur(0);
+  }
+}
+
+@keyframes dividerIn {
+  0% {
+    opacity: 0;
+    transform: scaleX(0.08);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes chipIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0) scale(0.86);
+    filter: blur(4px);
+  }
+  68% {
+    opacity: 1;
+    transform: translate3d(0, -2px, 0) scale(1.04);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes chipPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(55, 96, 231, 0);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(55, 96, 231, 0),
+      0 0 26px rgba(87, 123, 255, 0.22);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .beam,
+  .orb,
+  .left,
+  .title,
+  .divider,
+  .body,
+  .cta,
+  .panel,
+  .chip,
+  .innerDivider {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    clip-path: none !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  .beam {
+    display: none;
+  }
+
+  .showcase[data-sr-revealed="true"] .orbLeft,
+  .showcase[data-sr-revealed="true"] .orbRight {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .orbLeft {
+    opacity: 0.38;
+  }
+
+  .orbRight {
+    opacity: 0.22;
+  }
+}

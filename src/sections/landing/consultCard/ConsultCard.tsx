@@ -1,7 +1,6 @@
-import Image from "next/image";
 import ConsultCardModalClient from "./ConsultCardModal.client";
-import ConsultCardReveal from "./ConsultCardReveal.client";
 import ScrollReveal from "@/shared/ui/scrollReveal/ScrollReveal";
+import styles from "./ConsultCard.module.css";
 
 interface ConsultCardProps {
   className?: string;
@@ -11,10 +10,11 @@ interface ConsultCardProps {
 }
 
 const DEFAULT_TITLE =
-  "Освободим ваше время, за счет автоматизации процессов и аналитики";
+  "\u041E\u0441\u0432\u043E\u0431\u043E\u0434\u0438\u043C \u0432\u0430\u0448\u0435 \u0432\u0440\u0435\u043C\u044F, \u0437\u0430 \u0441\u0447\u0435\u0442 \u0430\u0432\u0442\u043E\u043C\u0430\u0442\u0438\u0437\u0430\u0446\u0438\u0438 \u043F\u0440\u043E\u0446\u0435\u0441\u0441\u043E\u0432 \u0438 \u0430\u043D\u0430\u043B\u0438\u0442\u0438\u043A\u0438";
 const DEFAULT_DESCRIPTION =
-  "Возьмем на себя рутину, проконтролируем менеджеров и предоставим отчеты для стратегических решений";
-const DEFAULT_BUTTON_TEXT = "КОНСУЛЬТАЦИЯ";
+  "\u0412\u043E\u0437\u044C\u043C\u0435\u043C \u043D\u0430 \u0441\u0435\u0431\u044F \u0440\u0443\u0442\u0438\u043D\u0443, \u043F\u0440\u043E\u043A\u043E\u043D\u0442\u0440\u043E\u043B\u0438\u0440\u0443\u0435\u043C \u043C\u0435\u043D\u0435\u0434\u0436\u0435\u0440\u043E\u0432 \u0438 \u043F\u0440\u0435\u0434\u043E\u0441\u0442\u0430\u0432\u0438\u043C \u043E\u0442\u0447\u0435\u0442\u044B \u0434\u043B\u044F \u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u0447\u0435\u0441\u043A\u0438\u0445 \u0440\u0435\u0448\u0435\u043D\u0438\u0439";
+const DEFAULT_BUTTON_TEXT =
+  "\u041A\u041E\u041D\u0421\u0423\u041B\u042C\u0422\u0410\u0426\u0418\u042F";
 
 export default function ConsultCard({
   className,
@@ -23,147 +23,84 @@ export default function ConsultCard({
   buttonText = DEFAULT_BUTTON_TEXT,
 }: ConsultCardProps) {
   return (
-    <>
-      {/* Desktop: анимацию оставляем в маленьком клиентском wrapper-е */}
-      <ConsultCardReveal className="hidden md:block">
-        <section id="card">
+    <section id="card">
+      <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-0">
+        <ScrollReveal
+          as="div"
+          className={`${styles.showcase} relative overflow-hidden rounded-[30px] border border-[#D9E4FF] bg-[linear-gradient(135deg,#132544_0%,#2143C8_42%,#3760E7_74%,#F3F7FF_160%)] px-5 py-6 shadow-[0_30px_80px_rgba(26,57,181,0.22)] sm:rounded-[40px] sm:px-8 sm:py-8 lg:px-10 lg:py-10 ${className || ""}`}
+          yFrom={26}
+          scaleFrom={0.97}
+          blurPx={6}
+          durationMs={920}
+          amount={0.18}
+        >
           <div
-            className={`mx-auto w-full max-w-[1200px] px-4 rounded-4xl relative bg-[url('/card_bg.svg')] bg-cover bg-center bg-no-repeat ${className || ""}`}
-          >
-            <div className="p-10 space-y-15 rounded-4xl">
-              <h2 className="text-h2 font-semibold text-white w-190">
+            className={`${styles.orb} ${styles.orbLeft} pointer-events-none absolute -left-14 bottom-[-110px] h-[190px] w-[190px] rounded-full bg-white/10 blur-3xl sm:h-[240px] sm:w-[240px]`}
+            aria-hidden
+          />
+          <div
+            className={`${styles.orb} ${styles.orbRight} pointer-events-none absolute -right-16 top-[-72px] h-[220px] w-[220px] rounded-full border border-white/12 sm:h-[320px] sm:w-[320px]`}
+            aria-hidden
+          />
+          <div className={styles.beam} aria-hidden />
+
+          <div className="relative grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(300px,0.58fr)] lg:items-end lg:gap-10">
+            <div className={`${styles.left} max-w-[760px]`}>
+              <h2 className={`${styles.title} max-w-[13ch] text-[28px] font-semibold leading-[1.04] tracking-[-0.03em] text-white sm:max-w-[15ch] sm:text-[46px] lg:text-[58px]`}>
                 {title}
               </h2>
 
-              <p className="text-h5 font-medium text-white max-w-150">
+              <div className={`${styles.divider} mt-5 h-px w-16 bg-[linear-gradient(90deg,rgba(255,255,255,0.9),rgba(255,255,255,0))] sm:mt-7 sm:w-28`} />
+
+              <p className={`${styles.body} mt-5 block max-w-[20rem] text-[15px] leading-[1.7] text-white/82 sm:mt-7 sm:max-w-[42rem] sm:text-[20px] sm:leading-[1.65]`}>
                 {description}
               </p>
 
-              <div className="btn__container mt-4 w-70">
+              <div className={`${styles.cta} mt-7 sm:mt-10`}>
                 <ConsultCardModalClient
                   text={buttonText}
                   variant="outline"
-                  className="px-7"
+                  className="!min-h-[52px] !w-full !justify-center !rounded-full !border-white !bg-white !px-5 !py-3 !text-[14px] !font-extrabold !tracking-[0.01em] !text-[#1B46D4] shadow-[0_18px_38px_rgba(12,28,90,0.2)] hover:!border-white hover:!bg-[#F4F7FF] hover:!text-[#163AB8] sm:!min-h-[56px] sm:!w-auto sm:!px-8 sm:!text-[16px]"
                 />
               </div>
             </div>
 
-            <ScrollReveal
-              as="div"
-              className="absolute top-[320px] w-[192px] bottom-[0px] right-[230px] z-1"
-              variant="dropZ"
-              amount={0.35}
-              delayMs={650}
-            >
-              <Image
-                src="/decor/phoneSmall.png"
-                alt="карточка телефона"
-                width={192}
-                height={179}
-              />
-            </ScrollReveal>
+            <div className={`${styles.panel} relative hidden min-h-[360px] lg:block`}>
+              <div className="absolute right-[18px] top-[4px] h-[240px] w-[240px] rounded-[38px] border border-white/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.14),rgba(255,255,255,0.03))] shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] rotate-[8deg]" />
+              <div className="absolute right-[120px] top-[72px] h-[220px] w-[220px] rounded-[34px] border border-white/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.12),rgba(255,255,255,0.02))] shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] -rotate-[10deg]" />
 
-            <ScrollReveal
-              as="div"
-              className="absolute bottom-0 right-[92px] z-2"
-              style={{ bottom: "-15px" }}
-              variant="dropZ"
-              amount={0.35}
-              delayMs={820}
-            >
-              <Image
-                src="/decor/phoneMedium.svg"
-                alt="карточка телефона"
-                width={206}
-                height={222}
-              />
-            </ScrollReveal>
+              <div className="absolute bottom-[112px] right-[42px] w-[252px] rounded-[30px] border border-white/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.16),rgba(255,255,255,0.04))] px-6 py-6 shadow-[0_20px_50px_rgba(7,18,60,0.18),inset_0_1px_0_rgba(255,255,255,0.12)]">
+                <div className="flex items-center gap-3">
+                  <span className="h-3 w-3 rounded-full bg-white/90" />
+                  <span className="h-3 w-3 rounded-full bg-white/58" />
+                  <span className="h-3 w-3 rounded-full bg-white/28" />
+                </div>
 
-            <ScrollReveal
-              as="div"
-              className="absolute bottom-[-50px] right-[-45px] z-3"
-              variant="dropZ"
-              amount={0.35}
-              delayMs={1000}
-            >
-              <Image
-                src="/decor/phoneBigbg.svg"
-                alt="карточка телефона"
-                width={218}
-                height={318}
-              />
-            </ScrollReveal>
+                <div className={`${styles.chip} mt-5 inline-flex rounded-full border border-white/14 bg-white/10 px-3 py-1 text-[12px] font-semibold uppercase tracking-[0.08em] text-white/90`}>
+                  {"\u041C\u044B \u0432\u0430\u0441 \u0446\u0435\u043D\u0438\u043C"}
+                </div>
 
-            <ScrollReveal
-              as="div"
-              className="absolute bottom-[-40px] right-[-38px] z-4"
-              variant="dropZ"
-              amount={0.35}
-              delayMs={1000}
-            >
-              <Image
-                src="/decor/phoneBig.svg"
-                alt="карточка телефона"
-                width={205}
-                height={296}
-              />
-            </ScrollReveal>
+                <div className={`${styles.innerDivider} mt-5 h-[2px] w-28 rounded-full bg-white/78`} />
+
+                <div className="mt-5 space-y-3">
+                  <div className="h-[10px] w-full rounded-full bg-white/18" />
+                  <div className="h-[10px] w-[78%] rounded-full bg-white/18" />
+                  <div className="h-[10px] w-[56%] rounded-full bg-white/18" />
+                </div>
+
+                <div className="mt-6 grid grid-cols-2 gap-3">
+                  <div className="rounded-[22px] border border-white/10 bg-white/8 p-4">
+                    <div className="h-8 w-8 rounded-full bg-white/88" />
+                  </div>
+                  <div className="rounded-[22px] border border-white/10 bg-white/8 p-4">
+                    <div className="h-8 w-full rounded-full bg-white/14" />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </section>
-      </ConsultCardReveal>
-
-      {/* Mobile */}
-      <section className="md:hidden">
-        <div className="relative bg-[#3760E7] rounded-[20px] overflow-hidden px-5 pt-6 pb-[22px] min-h-[540px] grid grid-rows-[auto_auto_1fr_auto] gap-y-[10px] max-[640px]:rounded-none max-[640px]:mx-[calc(50%-50vw)] max-[640px]:w-[100vw] max-[360px]:min-h-[520px]">
-          <Image
-            className="absolute right-0 top-[-2px] z-[1] pointer-events-none"
-            src="/decor/Exclude.svg"
-            alt="исключение"
-            width={133}
-            height={201}
-            priority
-          />
-
-          <h3 className="z-[2] text-white font-bold text-[16px] leading-[1.25] max-w-[246px] m-0 mb-1">
-            {title}
-          </h3>
-
-          <p className="z-[2] text-white text-[14px] leading-[1.25] m-0">
-            {description}
-          </p>
-
-          <div className="relative h-[130px] z-[2] max-[360px]:pt-[40px]" aria-hidden>
-            <Image
-              className="absolute w-[138px] h-[200px] left-1/2 translate-x-[-112%] translate-y-[18px] z-[1] max-[360px]:w-[132px] max-[360px]:h-[192px] max-[360px]:translate-x-[-110%] max-[360px]:translate-y-[14px]"
-              src="/decor/phoneMobile_1.svg"
-              alt="мобильный телефон 1"
-              width={123}
-              height={178}
-            />
-            <Image
-              className="absolute w-[138px] h-[200px] left-1/2 translate-x-[-50%] translate-y-[-2px] z-[2] max-[360px]:w-[132px] max-[360px]:h-[192px]"
-              src="/decor/phoneMobile_2.svg"
-              alt="мобильный телефон 2"
-              width={123}
-              height={178}
-            />
-            <Image
-              className="absolute w-[138px] h-[200px] left-1/2 translate-x-[8%] translate-y-[-12px] z-[3] max-[360px]:w-[132px] max-[360px]:h-[192px] max-[360px]:translate-x-[6%] max-[360px]:translate-y-[-10px]"
-              src="/decor/phoneMobile_3.svg"
-              alt="мобильный телефон 3"
-              width={123}
-              height={178}
-            />
-          </div>
-
-          <ConsultCardModalClient
-            text={buttonText}
-            className="!w-full !h-[52px] !rounded-full !bg-white !text-[#2F4EEA] !border-0 font-extrabold tracking-[0.02em] shadow-[0_10px_24px_rgba(0,0,0,0.18)]"
-            fullWidth
-          />
-        </div>
-      </section>
-    </>
+        </ScrollReveal>
+      </div>
+    </section>
   );
 }
-

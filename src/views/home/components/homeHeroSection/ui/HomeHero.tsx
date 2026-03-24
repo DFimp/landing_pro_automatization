@@ -11,11 +11,11 @@ const HomeHero = () => {
     <Container
       as="section"
       padding="none"
-      className="flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between sm:gap-10"
+      className="px-4 sm:px-0 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between sm:gap-10"
     >
-      <div className="space-y-6 px-1 sm:space-y-8 sm:px-0">
+      <div className="space-y-5 sm:space-y-8">
         <ScrollReveal as="h1" variant="wipe" yFrom={8} durationMs={650}>
-          <span className="block max-w-[11ch] text-[34px] font-semibold leading-[1.04] tracking-[-0.03em] sm:max-w-[640px] sm:text-h3 sm:leading-tight sm:tracking-normal">
+          <span className="block max-w-none text-[31px] font-semibold leading-[1.06] tracking-[-0.03em] sm:max-w-[640px] sm:text-h3 sm:leading-tight sm:tracking-normal">
             {hero.title}
           </span>
         </ScrollReveal>
@@ -27,14 +27,14 @@ const HomeHero = () => {
           durationMs={700}
           delayMs={80}
         >
-          <span className="block max-w-[21rem] text-[17px] font-normal leading-7 text-black/76 sm:max-w-[560px] sm:text-h4 sm:leading-8 sm:text-black">
+          <span className="block max-w-none text-[17px] font-normal leading-7 text-black/76 sm:max-w-[560px] sm:text-h4 sm:leading-8 sm:text-black">
             {hero.description}
           </span>
         </ScrollReveal>
 
         <ScrollReveal
           as="div"
-          className="w-full max-w-[360px] sm:w-[360px]"
+          className="w-full sm:w-[360px]"
           yFrom={22}
           scaleFrom={0.98}
           blurPx={0}
@@ -50,7 +50,7 @@ const HomeHero = () => {
 
       <ScrollReveal
         as="div"
-        className="relative mx-auto flex w-full max-w-[380px] justify-center overflow-hidden rounded-[30px] border border-[#DCE6FF] bg-[radial-gradient(130%_110%_at_50%_0%,#F3F7FF_0%,#FFFFFF_68%)] px-3 py-4 shadow-[0_18px_50px_rgba(55,96,231,0.12)] sm:ml-auto sm:block sm:w-auto sm:max-w-none sm:overflow-visible sm:rounded-none sm:border-0 sm:bg-transparent sm:px-0 sm:py-0 sm:shadow-none"
+        className="relative mx-auto flex w-full justify-center overflow-hidden rounded-[28px] border border-[#DCE6FF] bg-[radial-gradient(130%_110%_at_50%_0%,#F3F7FF_0%,#FFFFFF_68%)] px-4 py-5 shadow-[0_18px_50px_rgba(55,96,231,0.12)] sm:ml-auto sm:block sm:w-auto sm:max-w-none sm:overflow-visible sm:rounded-none sm:border-0 sm:bg-transparent sm:px-0 sm:py-0 sm:shadow-none"
         variant="tilt"
         xFrom={36}
         yFrom={0}
@@ -65,7 +65,7 @@ const HomeHero = () => {
         />
 
         <Image
-          className="relative z-[1] h-auto w-full max-w-[320px] sm:w-[580px] sm:max-w-none"
+          className="relative z-[1] h-auto w-full max-w-[360px] sm:w-[580px] sm:max-w-none"
           src="/decor/laptop.jpeg"
           alt="Интерфейс amoCRM на ноутбуке"
           width={580}

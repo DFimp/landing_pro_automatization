@@ -9,7 +9,7 @@ export function HomeStepsSection() {
   const { steps } = HOME_PAGE_COPY;
 
   return (
-    <Container as="section" padding="none" className="space-y-5 sm:space-y-10">
+    <Container as="section" padding="none" className="px-4 sm:px-0 space-y-5 sm:space-y-10">
       <ScrollReveal as="div" variant="wipe" yFrom={10} durationMs={650}>
         <div className="hidden sm:block">
           <TitleArrow text={steps.title} variant="outline" />

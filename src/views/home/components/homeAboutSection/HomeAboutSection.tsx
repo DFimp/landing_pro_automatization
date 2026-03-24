@@ -10,7 +10,7 @@ export function HomeAboutSection() {
     <Container
       as="section"
       padding="none"
-      className="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(320px,0.8fr)] lg:items-start"
+      className="px-4 sm:px-0 grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(320px,0.8fr)] lg:items-start"
     >
       <ScrollReveal
         as="article"
