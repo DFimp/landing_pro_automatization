@@ -1,0 +1,194 @@
+.list {
+  position: relative;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+  will-change: transform, opacity;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.04) 0%,
+      rgba(255, 255, 255, 0.02) 28%,
+      rgba(255, 255, 255, 0) 54%,
+      rgba(55, 96, 231, 0.08) 100%
+    );
+  opacity: 0;
+  transform: translate3d(0, 10px, 0);
+  pointer-events: none;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  top: -34%;
+  left: -18%;
+  width: 20%;
+  height: 190%;
+  background:
+    linear-gradient(
+      105deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.02) 18%,
+      rgba(255, 255, 255, 0.22) 48%,
+      rgba(255, 255, 255, 0.04) 68%,
+      transparent 100%
+    );
+  opacity: 0;
+  transform: skewX(-18deg) translate3d(-180%, 0, 0);
+  pointer-events: none;
+}
+
+.badge,
+.title,
+.body,
+.resultBox {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.badge {
+  transform: translate3d(0, 10px, 0);
+}
+
+.title {
+  transform: translate3d(0, 18px, 0);
+}
+
+.body {
+  transform: translate3d(0, 16px, 0);
+}
+
+.resultBox {
+  transform: translate3d(0, 14px, 0);
+}
+
+.dot {
+  opacity: 0;
+  transform: scale(0.6);
+  will-change: transform, opacity;
+}
+
+.list[data-sr-revealed="true"] .card {
+  animation: stepCardIn 560ms calc(40ms + (var(--i, 0) * 110ms))
+    cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.list[data-sr-revealed="true"] .card::before {
+  animation: stepGlowIn 520ms calc(110ms + (var(--i, 0) * 110ms))
+    cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.list[data-sr-revealed="true"] .card::after {
+  animation: stepSweep 760ms calc(180ms + (var(--i, 0) * 110ms))
+    cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.list[data-sr-revealed="true"] .badge {
+  animation: stepTextIn 440ms calc(130ms + (var(--i, 0) * 110ms))
+    cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.list[data-sr-revealed="true"] .dot {
+  animation: stepDotIn 420ms calc(160ms + (var(--i, 0) * 110ms))
+    cubic-bezier(0.2, 1.2, 0.3, 1) both;
+}
+
+.list[data-sr-revealed="true"] .title {
+  animation: stepTextIn 500ms calc(200ms + (var(--i, 0) * 110ms))
+    cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.list[data-sr-revealed="true"] .body {
+  animation: stepTextIn 540ms calc(250ms + (var(--i, 0) * 110ms))
+    cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.list[data-sr-revealed="true"] .resultBox {
+  animation: stepTextIn 580ms calc(320ms + (var(--i, 0) * 110ms))
+    cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes stepCardIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes stepGlowIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes stepSweep {
+  0% {
+    opacity: 0;
+    transform: skewX(-18deg) translate3d(-180%, 0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: skewX(-18deg) translate3d(480%, 0, 0);
+  }
+}
+
+@keyframes stepTextIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes stepDotIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  68% {
+    opacity: 1;
+    transform: scale(1.16);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card::before,
+  .card::after,
+  .badge,
+  .title,
+  .body,
+  .resultBox,
+  .dot {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

@@ -9,6 +9,7 @@ export function HomeAboutSection() {
   return (
     <Container
       as="section"
+      padding="none"
       className="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(320px,0.8fr)] lg:items-start"
     >
       <ScrollReveal
@@ -40,7 +41,6 @@ export function HomeAboutSection() {
               <p className="max-w-[18rem] text-[18px] font-semibold leading-7 text-[#1B46D4] sm:text-[22px]">
                 {fact}
               </p>
-              <div className="mt-4 h-[2px] w-12 rounded-full bg-[#9EB2FF]" aria-hidden />
             </div>
           ))}
         </div>
