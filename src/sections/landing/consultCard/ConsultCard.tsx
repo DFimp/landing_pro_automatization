@@ -5,9 +5,23 @@ import ScrollReveal from "@/shared/ui/scrollReveal/ScrollReveal";
 
 interface ConsultCardProps {
   className?: string;
+  title?: string;
+  description?: string;
+  buttonText?: string;
 }
 
-export default function ConsultCard({ className }: ConsultCardProps) {
+const DEFAULT_TITLE =
+  "Освободим ваше время, за счет автоматизации процессов и аналитики";
+const DEFAULT_DESCRIPTION =
+  "Возьмем на себя рутину, проконтролируем менеджеров и предоставим отчеты для стратегических решений";
+const DEFAULT_BUTTON_TEXT = "КОНСУЛЬТАЦИЯ";
+
+export default function ConsultCard({
+  className,
+  title = DEFAULT_TITLE,
+  description = DEFAULT_DESCRIPTION,
+  buttonText = DEFAULT_BUTTON_TEXT,
+}: ConsultCardProps) {
   return (
     <>
       {/* Desktop: анимацию оставляем в маленьком клиентском wrapper-е */}
@@ -18,17 +32,16 @@ export default function ConsultCard({ className }: ConsultCardProps) {
           >
             <div className="p-10 space-y-15 rounded-4xl">
               <h2 className="text-h2 font-semibold text-white w-190">
-                Освободим ваше время, за счет автоматизации процессов и аналитики
+                {title}
               </h2>
 
               <p className="text-h5 font-medium text-white max-w-150">
-                Возьмем на себя рутину, проконтролируем менеджеров и предоставим
-                отчеты для стратегических решений
+                {description}
               </p>
 
               <div className="btn__container mt-4 w-70">
                 <ConsultCardModalClient
-                  text="КОНСУЛЬТАЦИЯ"
+                  text={buttonText}
                   variant="outline"
                   className="px-7"
                 />
@@ -37,7 +50,7 @@ export default function ConsultCard({ className }: ConsultCardProps) {
 
             <ScrollReveal
               as="div"
-              className="absolute top-[390px] w-[192px] bottom-[0px] right-[250px] z-1"
+              className="absolute top-[320px] w-[192px] bottom-[0px] right-[230px] z-1"
               variant="dropZ"
               amount={0.35}
               delayMs={650}
@@ -112,13 +125,11 @@ export default function ConsultCard({ className }: ConsultCardProps) {
           />
 
           <h3 className="z-[2] text-white font-bold text-[16px] leading-[1.25] max-w-[246px] m-0 mb-1">
-            Освободим ваше время,
-            <br /> за счет автоматизации процессов и аналитики
+            {title}
           </h3>
 
           <p className="z-[2] text-white text-[14px] leading-[1.25] m-0">
-            Возьмем на себя рутину, проконтролируем менеджеров и предоставим
-            отчеты для стратегических решений
+            {description}
           </p>
 
           <div className="relative h-[130px] z-[2] max-[360px]:pt-[40px]" aria-hidden>
@@ -146,7 +157,7 @@ export default function ConsultCard({ className }: ConsultCardProps) {
           </div>
 
           <ConsultCardModalClient
-            text="КОНСУЛЬТАЦИЯ"
+            text={buttonText}
             className="!w-full !h-[52px] !rounded-full !bg-white !text-[#2F4EEA] !border-0 font-extrabold tracking-[0.02em] shadow-[0_10px_24px_rgba(0,0,0,0.18)]"
             fullWidth
           />

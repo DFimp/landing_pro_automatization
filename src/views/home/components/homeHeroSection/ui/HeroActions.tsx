@@ -4,15 +4,24 @@ import Button from "@/shared/ui/button/Button";
 import { useState } from "react";
 import ConsultationModal from "@/features/consultation/ConsultationModal";
 
-const HeroActions = () => {
+type HeroActionsProps = {
+  text?: string;
+  className?: string;
+};
+
+const HeroActions = ({
+  text = "КОНСУЛЬТАЦИЯ",
+  className,
+}: HeroActionsProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <>
       <Button
-        text="КОНСУЛЬТАЦИЯ"
+        text={text}
         variant="secondary"
         onClick={() => setIsModalOpen(true)}
+        className={className}
       />
 
       <ConsultationModal

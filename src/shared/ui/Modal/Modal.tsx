@@ -9,9 +9,17 @@ interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   children: React.ReactNode;
+  panelClassName?: string;
+  contentClassName?: string;
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
+const Modal: React.FC<ModalProps> = ({
+  isOpen,
+  onClose,
+  children,
+  panelClassName,
+  contentClassName,
+}) => {
   const [mounted, setMounted] = useState(false);
   const [shouldRender, setShouldRender] = useState(false);
   const [isActive, setIsActive] = useState(false);
@@ -118,30 +126,30 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
       />
 
       <div
-        className={`relative w-full max-w-md mx-4 rounded-2xl bg-white shadow-[0_40px_90px_rgba(2,10,30,0.35)] border border-white/70 will-change-transform transition-[opacity,transform,filter] ${
+        className={`relative w-full max-w-md mx-4 overflow-hidden rounded-2xl bg-white shadow-[0_40px_90px_rgba(2,10,30,0.35)] border border-white/70 will-change-transform transition-[opacity,transform,filter] ${
           isActive
             ? `${styles.modalPanelEntrance} opacity-100`
             : isClosing
               ? `${styles.modalPanelExit} opacity-0`
               : "duration-[680ms] ease-[cubic-bezier(0.18,0.9,0.2,1.05)] opacity-0 translate-y-[88px] scale-[0.82] rotate-[-3deg] blur-[12px]"
-        }`}
+        } ${panelClassName ?? ""}`}
       >
         <div
           aria-hidden
-          className={`pointer-events-none absolute inset-0 rounded-2xl transition-opacity duration-500 ${
+          className={`pointer-events-none absolute inset-0 rounded-[inherit] transition-opacity duration-500 ${
             isActive
               ? "opacity-100 [box-shadow:inset_0_0_0_1px_rgba(120,149,255,0.35)]"
               : "opacity-0"
           }`}
         />
         <div
-          className={`relative transition-[opacity,transform] ${
+          className={`relative rounded-[inherit] transition-[opacity,transform] ${
             isActive
               ? `${styles.modalContentEntrance} opacity-100`
               : isClosing
                 ? `${styles.modalContentExit} opacity-0`
                 : "duration-[580ms] ease-[cubic-bezier(0.22,1,0.36,1)] opacity-0 translate-y-[18px]"
-          }`}
+          } ${contentClassName ?? ""}`}
         >
           {children}
         </div>
