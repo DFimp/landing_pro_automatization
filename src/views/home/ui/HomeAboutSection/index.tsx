@@ -1,6 +1,6 @@
 import ScrollReveal from "@/shared/ui/scrollReveal/ScrollReveal";
 import { Container } from "@/shared/ui/layout";
-import { HOME_PAGE_COPY } from "@/views/home/content";
+import { HOME_PAGE_COPY } from "@/views/home/constants";
 import HomeCertificateCard from "./HomeCertificateCard.client";
 
 export function HomeAboutSection() {

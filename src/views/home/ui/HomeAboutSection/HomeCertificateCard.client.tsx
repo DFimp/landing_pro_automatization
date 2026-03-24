@@ -112,7 +112,7 @@ export default function HomeCertificateCard({
 
           <div className="overflow-hidden rounded-[22px] border border-white/10">
             <Image
-              src="/Про Автоматизацию amoSTART.jpg"
+              src="/certificate_amoSTART.jpg"
               alt={description}
               width={1024}
               height={768}

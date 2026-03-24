@@ -2,7 +2,7 @@ import HeroActions from "./HeroActions";
 import HeroMacbookScene from "./HeroMacbookScene";
 import ScrollReveal from "@/shared/ui/scrollReveal/ScrollReveal";
 import { Container } from "@/shared/ui/layout";
-import { HOME_PAGE_COPY } from "@/views/home/content";
+import { HOME_PAGE_COPY } from "@/views/home/constants";
 
 const HomeHero = () => {
   const { hero } = HOME_PAGE_COPY;

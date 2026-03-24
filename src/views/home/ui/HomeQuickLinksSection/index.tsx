@@ -4,7 +4,7 @@ import type { CSSProperties } from "react";
 import ScrollReveal from "@/shared/ui/scrollReveal/ScrollReveal";
 import { Container } from "@/shared/ui/layout";
 import { TitleArrow } from "@/shared/ui/titleArrow/TitleArrow";
-import { HOME_PAGE_QUICK_LINKS } from "@/views/home/content";
+import { HOME_PAGE_QUICK_LINKS } from "@/views/home/constants";
 
 export function HomeQuickLinksSection() {
   return (

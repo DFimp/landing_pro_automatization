@@ -1,13 +1,11 @@
-import {
-  HomeHeroSection,
-  HomeQuickLinksSection,
-  HomeAboutSection,
-  HomeProblemSection,
-  HomeStepsSection,
-} from "@/views/home/components";
+import { HomeHeroSection } from "../HomeHeroSection";
+import { HomeQuickLinksSection } from "../HomeQuickLinksSection";
+import { HomeAboutSection } from "../HomeAboutSection";
+import { HomeProblemSection } from "../HomeProblemSection";
+import { HomeStepsSection } from "../HomeStepsSection";
 import ConsultCard from "@/sections/landing/consultCard/ConsultCard";
 import { OrganizationSchemaTag, ORGANIZATION_DATA } from "@/shared/lib/seo";
-import { HOME_PAGE_COPY } from "@/views/home/content";
+import { HOME_PAGE_COPY } from "@/views/home/constants";
 
 export default HomePageContent;
 
