@@ -1,0 +1,137 @@
+.frame {
+  width: 100%;
+  max-width: 590px;
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  font-family: inherit;
+}
+
+.laptop {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.floorGlow {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pulseGlow 7s ease-in-out infinite;
+}
+
+.screenSheen {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: moveSheen 6s ease-in-out infinite;
+}
+
+.dealsView {
+  animation: dealsViewCycle 8s ease-in-out infinite;
+}
+
+.settingsView {
+  opacity: 0;
+  animation: settingsViewCycle 8s ease-in-out infinite;
+}
+
+.dealsPulseCard {
+  animation: dealsCardPulse 8s ease-in-out infinite;
+}
+
+.cursor {
+  filter: drop-shadow(0 3px 6px rgba(39, 69, 151, 0.24));
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: scaleX(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scaleX(1.08);
+  }
+}
+
+@keyframes moveSheen {
+  0%,
+  100% {
+    opacity: 0.06;
+    transform: translateX(-8px);
+  }
+
+  50% {
+    opacity: 0.12;
+    transform: translateX(10px);
+  }
+}
+
+@keyframes dealsViewCycle {
+  0%,
+  31% {
+    opacity: 1;
+  }
+
+  38%,
+  84% {
+    opacity: 0;
+  }
+
+  88%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes settingsViewCycle {
+  0%,
+  34% {
+    opacity: 0;
+  }
+
+  42%,
+  82% {
+    opacity: 1;
+  }
+
+  87%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes dealsCardPulse {
+  0%,
+  72%,
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  84% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+
+@media (max-width: 639px) {
+  .frame {
+    max-width: 420px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .laptop,
+  .floorGlow,
+  .screenSheen,
+  .dealsView,
+  .settingsView,
+  .dealsPulseCard {
+    animation: none;
+  }
+}

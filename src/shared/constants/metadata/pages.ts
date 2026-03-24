@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import { createSEOMetadata, CORE_KEYWORDS } from "@/shared/lib/seo/metadata";
 
 export const HOME_PAGE_METADATA: Metadata = createSEOMetadata({
-  title: "Про Автоматизацию — интеграция и автоматизация amoCRM",
+  title: "Про Автоматизацию — внедрение и автоматизация amoCRM для бизнеса",
   description:
-    "Ваш эксперт по amoCRM: настройка, интеграции, автоматизация бизнес-процессов. Консультации по amoCRM, воронки продаж, CRM-системы. Полная автоматизация вашего бизнеса с amoCRM.",
+    "Официальный партнёр amoCRM. Внедрение с нуля, настройка воронок, интеграции и автоматизация продаж. Разрабатываем собственные виджеты. Бесплатная консультация — покажем, где теряются ваши лиды.",
   keywords: [
     ...CORE_KEYWORDS.brand,
-    ...CORE_KEYWORDS.widgets.slice(0, 3),
-    ...CORE_KEYWORDS.automation.slice(0, 2),
+    ...CORE_KEYWORDS.setup.slice(0, 2),
+    ...CORE_KEYWORDS.automation.slice(0, 3),
+    "внедрение amocrm для бизнеса",
   ],
   canonical: "/",
   ogType: "website",
