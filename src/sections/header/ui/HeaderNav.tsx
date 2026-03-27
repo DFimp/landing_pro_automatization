@@ -8,7 +8,7 @@ import { navFlip } from "./navFlipClasses";
 
 const ServicesItems = [
   { name: "АУДИТ", link: "/audit" },
-  { name: "ВНЕДРЕНИЕ С НУЛЯ", link: "/" },
+  { name: "ВНЕДРЕНИЕ С НУЛЯ", link: "/onboarding" },
   { name: "СОПРОВОЖДЕНИЕ", link: "/managed" },
 ];
 
