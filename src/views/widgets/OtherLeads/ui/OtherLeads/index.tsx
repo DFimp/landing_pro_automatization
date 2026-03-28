@@ -11,10 +11,10 @@ import {
   type WidgetPageProps,
 } from "@/features/widget-page";
 
-const widget = WIDGETS_DATA["other-deals"];
+const widget = WIDGETS_DATA["other-leads"];
 const installHref = widget.clientId ? getWidgetInstallUrl(widget.clientId) : undefined;
 
-export default function OtherDeals({ searchParams }: WidgetPageProps) {
+export default function OtherLeads({ searchParams }: WidgetPageProps) {
   return (
     <WidgetPageTemplate
       widget={widget}

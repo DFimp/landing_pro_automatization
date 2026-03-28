@@ -232,12 +232,12 @@ export const WIDGETS: Widget[] = [
     clientId: "48c94f76-e88e-4cb5-ad9c-a8a8c53e5a64",
   },
   {
-    key: "other-deals",
+    key: "other-leads",
     title: "Другие сделки",
     seoTitle: "Другие сделки контакта и компании для amoCRM",
     description:
       "Показывайте все связанные сделки контакта и компании прямо в карточке текущей сделки. Полная история клиента, статусы, суммы, ответственные и дополнительные поля без лишних переходов.",
-    route: widgetRoute("other-deals"),
+    route: widgetRoute("other-leads"),
     tags: ["Сделки", "Карточка сделки", "История клиента"],
     aliases: [
       "другие сделки",
@@ -245,7 +245,7 @@ export const WIDGETS: Widget[] = [
       "история сделок",
       "контакт",
       "компания",
-      "other deals",
+      "other leads",
     ],
     showInFooter: true,
     showInSearch: true,

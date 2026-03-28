@@ -9,7 +9,7 @@ import {
 } from "@/features/widget-page";
 import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 
-const widget = WIDGETS_DATA["other-deals"];
+const widget = WIDGETS_DATA["other-leads"];
 
 export const STEPS = createSteps([
   {
