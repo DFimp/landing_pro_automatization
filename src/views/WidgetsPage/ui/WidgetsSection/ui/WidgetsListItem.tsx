@@ -7,7 +7,6 @@ interface WidgetsListItemProps {
   variant: number;
   text: string;
   link: string;
-  tariff?: string;
   className?: string;
 }
 
@@ -17,7 +16,6 @@ export function WidgetsListItem({
   title,
   className,
   link,
-  tariff,
 }: WidgetsListItemProps) {
   let cardClassName = "";
   let upperDecorationPath = "";
@@ -66,22 +64,14 @@ export function WidgetsListItem({
             />
           )}
 
-          <h3 className="relative z-10 sm:font-[20px] font-[16px] font-semibold sm:pb-[20px] pb-[10px]">
-            {title}
-          </h3>
-          {tariff && (
-            <p
-              className={clsx(
-                "relative z-10 pb-[12px] text-[14px] font-medium",
-                [3, 4].includes(variant) ? "text-white/80" : "text-[#3760E7]"
-              )}
-            >
-              Тариф: {tariff}
+          <div className="relative z-10">
+            <h3 className="sm:font-[20px] font-[16px] font-semibold sm:pb-[20px] pb-[10px]">
+              {title}
+            </h3>
+            <p className="sm:font-[16px] font-[14px] leading-[1.5]">
+              {text}
             </p>
-          )}
-          <p className="relative z-10 sm:font-[16px] font-[14px] leading-[1.5]">
-            {text}
-          </p>
+          </div>
 
           {[2, 4].includes(variant) && (
             <Image

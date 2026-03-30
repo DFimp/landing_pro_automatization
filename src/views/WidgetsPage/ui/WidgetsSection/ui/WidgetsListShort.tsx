@@ -45,12 +45,11 @@ export function WidgetsListShort() {
             amount={0.35}
           >
             <WidgetsListItem
-            key={widget.link}
-            link={widget.link}
-            text={widget.text}
-            title={widget.title}
-            variant={getVariant(index)}
-          />
+              link={widget.link}
+              text={widget.text}
+              title={widget.title}
+              variant={getVariant(index)}
+            />
           </ScrollReveal>
         ))}
       </div>

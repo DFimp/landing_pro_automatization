@@ -3,9 +3,9 @@ import Image from "next/image";
 import ConsultCard from "@/sections/landing/consultCard/ConsultCard";
 import SettingsCard from "@/sections/landing/settingsCard/SettingsCard";
 import CaseCard from "@/sections/landing/caseCard/CaseCard";
-import ScrollToInstructionLink from "@/sections/landing/scrollToInstructionLink/ScrollToInstructionLink";import { WIDGETS_DATA, getWidgetInstallUrl, phone } from "@/shared/constants";
+import { WIDGETS_DATA, getWidgetInstallUrl, phone } from "@/shared/constants";
 import { STEPS, CASE_ITEMS } from "./constants";
-import { WidgetHeroSection, WidgetInstallButton, WidgetPageTemplate } from "@/features/widget-page";
+import { WidgetHeroActions, WidgetHeroSection, WidgetPageTemplate, WidgetTariffs } from "@/features/widget-page";
 
 const widget = WIDGETS_DATA["telegram-notify"];
 
@@ -28,19 +28,23 @@ export default function TelegramNotify({
 
                 <h2 className="mt-10 text-white font-semibold text-[clamp(36px,6vw,64px)] leading-[1.05] max-[480px]:mt-5 max-[480px]:text-[clamp(26px,8.5vw,34px)] max-[480px]:leading-[1.12]">Готовы быть в курсе событий?</h2>
 
-                <p className="mt-[18px] max-w-[920px] text-[#cfd6ea] text-[clamp(16px,1.6vw,20px)] leading-[1.6] max-[480px]:mt-[14px] max-[480px]:max-w-none max-[480px]:text-[14.5px] max-[480px]:leading-[1.55] max-[480px]:text-[#e3e8ff]">
+                <div className="mt-[18px] flex flex-col gap-6 min-[901px]:flex-row min-[901px]:items-start min-[901px]:justify-between min-[901px]:gap-8 max-[480px]:mt-[14px]">
+                <div className="min-[901px]:min-w-0 min-[901px]:flex-1">
+                <p className="max-w-[920px] min-[901px]:max-w-none text-[#cfd6ea] text-[clamp(16px,1.6vw,20px)] leading-[1.6] max-[480px]:max-w-none max-[480px]:text-[14.5px] max-[480px]:leading-[1.55] max-[480px]:text-[#e3e8ff]">
                   Получайте мгновенные уведомления в Telegram и запускайте
                   SalesBot
                   <br /> одним нажатием. Полная автоматизация коммуникаций с
                   клиентами
                   <br /> прямо в мессенджере.
                 </p>
-
-                <div className="mt-10 mb-10 flex flex-wrap items-center gap-x-5 gap-y-4 max-[480px]:grid max-[480px]:grid-cols-1 max-[480px]:gap-3 max-[480px]:mb-0">
-                  <WidgetInstallButton href={getWidgetInstallUrl(widget.clientId!)} className="inline-flex items-center justify-center h-11 px-8 bg-[#386bff] text-white rounded-full font-semibold text-[16px] shadow-[0_8px_24px_rgba(56,107,255,0.35)] transition-[transform,box-shadow,background] duration-150 hover:bg-[#2f5cf0] hover:-translate-y-[1px] hover:shadow-[0_12px_28px_rgba(56,107,255,0.4)] max-[480px]:w-full max-[480px]:text-[15px]">
-                    Установить виджет
-                  </WidgetInstallButton>
-                  <ScrollToInstructionLink />
+                                <WidgetHeroActions
+                  className="mb-10"
+                  installHref={getWidgetInstallUrl(widget.clientId!)}
+                  installButtonClassName="inline-flex items-center justify-center h-11 px-8 bg-[#386bff] text-white rounded-full font-semibold text-[16px] shadow-[0_8px_24px_rgba(56,107,255,0.35)] transition-[transform,box-shadow,background] duration-150 hover:bg-[#2f5cf0] hover:-translate-y-[1px] hover:shadow-[0_12px_28px_rgba(56,107,255,0.4)] max-[480px]:w-full max-[480px]:text-[15px]"
+                  widgetId={widget.clientId}
+                />
+                </div>
+                <WidgetTariffs widgetId={widget.clientId!} />
                 </div>
               </WidgetHeroSection>
 

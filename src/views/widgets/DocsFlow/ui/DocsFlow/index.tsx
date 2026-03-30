@@ -1,10 +1,10 @@
 import React from "react";
 import ConsultCard from "@/sections/landing/consultCard/ConsultCard";
-import ScrollToInstructionLink from "@/sections/landing/scrollToInstructionLink/ScrollToInstructionLink";
 import SettingsCard from "@/sections/landing/settingsCard/SettingsCard";
-import ProblemsCard from "@/sections/landing/problemsCard/ProblemsCard";import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
+import ProblemsCard from "@/sections/landing/problemsCard/ProblemsCard";
+import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 import { PROBLEMS, STEPS } from "./constants";
-import { WidgetHeroSection, WidgetInstallButton, WidgetPageTemplate } from "@/features/widget-page";
+import { WidgetHeroActions, WidgetHeroSection, WidgetPageTemplate, WidgetTariffs } from "@/features/widget-page";
 
 const widget = WIDGETS_DATA["docs-flow"];
 
@@ -38,19 +38,21 @@ export default function DocsFlow({
                 Договоры, счета и акты из карточки сделки — в Google Docs
               </h2>
 
-              <p className="mt-[18px] max-w-[980px] text-[#cfd6ea] text-[clamp(16px,1.6vw,20px)] leading-[1.6] max-[480px]:mt-[14px] max-[480px]:max-w-none max-[480px]:text-[14.5px] max-[480px]:leading-[1.55] max-[480px]:text-[#e3e8ff]">
+              <div className="mt-[18px] flex flex-col gap-6 min-[901px]:flex-row min-[901px]:items-start min-[901px]:justify-between min-[901px]:gap-8 max-[480px]:mt-[14px]">
+              <div className="min-[901px]:min-w-0 min-[901px]:flex-1">
+              <p className="max-w-[980px] min-[901px]:max-w-none text-[#cfd6ea] text-[clamp(16px,1.6vw,20px)] leading-[1.6] max-[480px]:max-w-none max-[480px]:text-[14.5px] max-[480px]:leading-[1.55] max-[480px]:text-[#e3e8ff]">
                 Виджет подставляет данные из amoCRM в шаблоны Google Docs: реквиситы
                 клиента, суммы, товары и другие поля. Готовые документы можно
                 скачать, отправить клиенту или выгрузить в СБС для согласования.
               </p>
-
-              <div className="mt-[34px] flex flex-wrap items-center gap-x-5 gap-y-4 max-[480px]:grid max-[480px]:grid-cols-1 max-[480px]:gap-3">
-                {installUrl ? (
-                  <WidgetInstallButton href={installUrl} className="inline-flex items-center justify-center h-11 px-8 bg-[#386bff] text-white rounded-full font-bold text-[16px] shadow-[0_8px_24px_rgba(56,107,255,0.35)] transition-[transform,box-shadow,background] duration-200 hover:bg-[#2f5cf0] hover:-translate-y-[1px] hover:shadow-[0_12px_28px_rgba(56,107,255,0.4)] max-[480px]:w-full max-[480px]:text-[15px]">
-                    Установить виджет
-                  </WidgetInstallButton>
-                ) : null}
-                <ScrollToInstructionLink />
+                            <WidgetHeroActions
+                className="mt-[34px]"
+                installHref={installUrl ?? undefined}
+                installButtonClassName="inline-flex items-center justify-center h-11 px-8 bg-[#386bff] text-white rounded-full font-bold text-[16px] shadow-[0_8px_24px_rgba(56,107,255,0.35)] transition-[transform,box-shadow,background] duration-200 hover:bg-[#2f5cf0] hover:-translate-y-[1px] hover:shadow-[0_12px_28px_rgba(56,107,255,0.4)] max-[480px]:w-full max-[480px]:text-[15px]"
+                widgetId={widget.clientId}
+              />
+              </div>
+              <WidgetTariffs widgetId={widget.clientId!} />
               </div>
             </WidgetHeroSection>
           <div className="mx-auto mt-6 max-w-[1200px]">
