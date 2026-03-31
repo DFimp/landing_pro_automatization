@@ -471,6 +471,28 @@ export const WIDGETS: Widget[] = [
     hidden: false,
     clientId: "689bf620-dffb-40c5-9f3f-7b87359fde27",
   },
+   {
+    key: "search-fields",
+    title: "Поиск по списку",
+    seoTitle: "Поиск по списку для amoCRM",
+    description:
+      "Поиск по полям, спискам и multisuggest в карточках amoCRM. Меньше прокрутки, меньше ошибок, быстрее работа менеджеров.",
+    route: widgetRoute("search-fields"),
+    tags: ["Интерфейс", "Карточка сделки", "Поиск"],
+    aliases: [
+      "поиск по полям",
+      "поиск в карточке",
+      "поиск полей",
+      "поиск по карточке",
+      "search fields",
+      "multisuggest",
+      "select",
+      "dropdown",
+    ],
+    showInFooter: true,
+    showInSearch: true,
+    clientId: "7032bce0-3630-4c73-b3c8-14f438f673e0",
+  },
 
   {
     key: "google-sheets",
