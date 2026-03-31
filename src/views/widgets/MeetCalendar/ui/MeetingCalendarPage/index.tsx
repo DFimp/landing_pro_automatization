@@ -6,7 +6,7 @@ import ProblemsCard from "@/sections/landing/problemsCard/ProblemsCard";
 import FeaturesCard from "@/sections/landing/featuresCard/FeaturesCard";
 import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 import { STEPS, CASE_ITEMS, PROBLEMS, FEATURES } from "./constants";
-import { WidgetHeroActions, WidgetHeroBadge, WidgetHeroSection, WidgetPageTemplate, WidgetTariffs } from "@/features/widget-page";
+import { WidgetHeroActions, WidgetHeroBadge, WidgetHeroSection, WidgetPageTemplate, WidgetTariffsSection } from "@/features/widget-page";
 
 const widget = WIDGETS_DATA["meet-calendar"];
 
@@ -20,6 +20,7 @@ export default function MeetingCalendarPage({
     <WidgetPageTemplate
       widget={widget}
       searchParams={searchParams}
+      tariffs={(<WidgetTariffsSection widgetId={widget.clientId!} />)}
       preInstruction={(
           <>
             <WidgetHeroSection>
@@ -39,7 +40,6 @@ export default function MeetingCalendarPage({
                   widgetId={widget.clientId}
                 />
                 </div>
-                <WidgetTariffs widgetId={widget.clientId!} />
                 </div>
               </WidgetHeroSection>
 

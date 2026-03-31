@@ -7,7 +7,7 @@ import FeaturesCard from "@/sections/landing/featuresCard/FeaturesCard";
 import { STEPS, FEATURES, PROBLEMS, CASE_ITEMS } from "./constants";
 import Link from "next/link";
 import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
-import { WidgetHeroActions, WidgetHeroSection, WidgetPageTemplate, WidgetTariffs } from "@/features/widget-page";
+import { WidgetHeroActions, WidgetHeroSection, WidgetPageTemplate, WidgetTariffsSection } from "@/features/widget-page";
 
 const widget = WIDGETS_DATA["duplicate-leads"];
 
@@ -21,6 +21,7 @@ export default function DuplicateLeads({
     <WidgetPageTemplate
       widget={widget}
       searchParams={searchParams}
+      tariffs={(<WidgetTariffsSection widgetId={widget.clientId!} />)}
       preInstruction={(
           <>
             <WidgetHeroSection>
@@ -58,7 +59,6 @@ export default function DuplicateLeads({
                   widgetId={widget.clientId}
                 />
                 </div>
-                <WidgetTariffs widgetId={widget.clientId!} />
                 </div>
               </WidgetHeroSection>
 

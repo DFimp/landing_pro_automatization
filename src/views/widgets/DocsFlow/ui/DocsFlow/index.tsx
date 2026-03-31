@@ -4,7 +4,7 @@ import SettingsCard from "@/sections/landing/settingsCard/SettingsCard";
 import ProblemsCard from "@/sections/landing/problemsCard/ProblemsCard";
 import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 import { PROBLEMS, STEPS } from "./constants";
-import { WidgetHeroActions, WidgetHeroSection, WidgetPageTemplate, WidgetTariffs } from "@/features/widget-page";
+import { WidgetHeroActions, WidgetHeroSection, WidgetPageTemplate, WidgetTariffsSection } from "@/features/widget-page";
 
 const widget = WIDGETS_DATA["docs-flow"];
 
@@ -19,6 +19,7 @@ export default function DocsFlow({
     <WidgetPageTemplate
       widget={widget}
       searchParams={searchParams}
+      tariffs={(<WidgetTariffsSection widgetId={widget.clientId!} />)}
       preInstruction={(
         <>
           <WidgetHeroSection className="pt-[72px] pb-[48px] text-white rounded-b-[28px] bg-[radial-gradient(1200px_600px_at_0%_100%,rgba(108,0,255,0.25),transparent_60%),radial-gradient(1000px_500px_at_100%_20%,rgba(0,102,255,0.25),transparent_60%),linear-gradient(180deg,#0f1427_0%,#151b33_60%,#0f1427_100%)] max-[480px]:pt-[28px] max-[480px]:pb-[36px] max-[480px]:rounded-b-[24px]">
@@ -52,7 +53,6 @@ export default function DocsFlow({
                 widgetId={widget.clientId}
               />
               </div>
-              <WidgetTariffs widgetId={widget.clientId!} />
               </div>
             </WidgetHeroSection>
           <div className="mx-auto mt-6 max-w-[1200px]">

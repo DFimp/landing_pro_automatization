@@ -2,12 +2,14 @@ import type { ReactNode } from "react";
 import ConsultCard from "@/sections/landing/consultCard/ConsultCard";
 import { ServiceSchemaTag } from "@/shared/lib/seo";
 import type { Widget } from "@/shared/constants/widgets";
+import WidgetTariffsSection from "./WidgetTariffsSection";
 
 type WidgetPageTemplateProps = {
-  widget: Pick<Widget, "seoTitle" | "description">;
+  widget: Pick<Widget, "seoTitle" | "description" | "clientId">;
   searchParams: { embed?: string };
   hero?: ReactNode;
   preInstruction?: ReactNode;
+  tariffs?: ReactNode;
   instruction: ReactNode;
   postInstruction?: ReactNode;
   consult?: ReactNode | false;
@@ -21,12 +23,15 @@ export default function WidgetPageTemplate({
   searchParams,
   hero,
   preInstruction,
+  tariffs,
   instruction,
   postInstruction,
   consult,
   mainClassName = "bg-transparent",
 }: WidgetPageTemplateProps) {
   const isIframe = searchParams.embed === "true";
+  const resolvedTariffs =
+    tariffs ?? (widget.clientId ? <WidgetTariffsSection widgetId={widget.clientId} /> : null);
 
   return (
     <>
@@ -40,6 +45,7 @@ export default function WidgetPageTemplate({
       <main className={mainClassName}>
         {!isIframe && hero}
         {!isIframe && preInstruction}
+        {!isIframe && resolvedTariffs}
 
         {instruction}
 

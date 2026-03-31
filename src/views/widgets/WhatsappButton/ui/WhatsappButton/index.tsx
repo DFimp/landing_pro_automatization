@@ -7,7 +7,7 @@ import FeaturesCard from "@/sections/landing/featuresCard/FeaturesCard";
 import PreviewCard from "@/sections/landing/previewCard/PreviewCard";
 import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 import { STEPS, CASE_ITEMS, PROBLEMS, FEATURES } from "./constants";
-import { WidgetHeroActions, WidgetHeroBadge, WidgetHeroSection, WidgetPageTemplate, WidgetTariffs } from "@/features/widget-page";
+import { WidgetHeroActions, WidgetHeroBadge, WidgetHeroSection, WidgetPageTemplate, WidgetTariffsSection } from "@/features/widget-page";
 
 const widget = WIDGETS_DATA["whatsapp-button"];
 
@@ -21,6 +21,7 @@ export default function WhatsappButton({
     <WidgetPageTemplate
       widget={widget}
       searchParams={searchParams}
+      tariffs={(<WidgetTariffsSection widgetId={widget.clientId!} />)}
       preInstruction={(
           <>
             <WidgetHeroSection>
@@ -44,7 +45,6 @@ export default function WhatsappButton({
                   widgetId={widget.clientId}
                 />
                 </div>
-                <WidgetTariffs widgetId={widget.clientId!} />
                 </div>
               </WidgetHeroSection>
 

@@ -5,7 +5,7 @@ import SettingsCard from "@/sections/landing/settingsCard/SettingsCard";
 import CaseCard from "@/sections/landing/caseCard/CaseCard";
 import { WIDGETS_DATA, getWidgetInstallUrl, phone } from "@/shared/constants";
 import { STEPS, CASE_ITEMS } from "./constants";
-import { WidgetHeroActions, WidgetHeroSection, WidgetPageTemplate, WidgetTariffs } from "@/features/widget-page";
+import { WidgetHeroActions, WidgetHeroSection, WidgetPageTemplate, WidgetTariffsSection } from "@/features/widget-page";
 
 const widget = WIDGETS_DATA["telegram-notify"];
 
@@ -19,6 +19,7 @@ export default function TelegramNotify({
     <WidgetPageTemplate
       widget={widget}
       searchParams={searchParams}
+      tariffs={(<WidgetTariffsSection widgetId={widget.clientId!} />)}
       preInstruction={(
           <>
             <WidgetHeroSection className="pb-[120px]">
@@ -44,7 +45,6 @@ export default function TelegramNotify({
                   widgetId={widget.clientId}
                 />
                 </div>
-                <WidgetTariffs widgetId={widget.clientId!} />
                 </div>
               </WidgetHeroSection>
 

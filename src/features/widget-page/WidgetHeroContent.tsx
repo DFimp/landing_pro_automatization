@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 import WidgetHeroSection from "./WidgetHeroSection";
 import WidgetHeroActions from "./WidgetHeroActions";
-import WidgetTariffs from "./WidgetTariffs.client";
 
 type WidgetHeroContentProps = {
   badge?: ReactNode;
@@ -26,27 +25,10 @@ const DEFAULT_TITLE_CLASS =
 const DEFAULT_DESCRIPTION_CLASS =
   "text-[#cfd6ea] text-[clamp(16px,1.6vw,20px)] leading-[1.6] max-[480px]:max-w-none max-[480px]:text-[14.5px] max-[480px]:leading-[1.55] max-[480px]:text-[#e3e8ff]";
 const DEFAULT_DESCRIPTION_ROW_CLASS =
-  "mt-[18px] flex flex-col gap-6 min-[901px]:flex-row min-[901px]:items-start min-[901px]:justify-between min-[901px]:gap-8 max-[480px]:mt-[14px]";
+  "mt-[18px] flex flex-col gap-6 max-[480px]:mt-[14px]";
 
 function cn(...values: Array<string | undefined>) {
   return values.filter(Boolean).join(" ");
-}
-
-function resolveWidgetId(widgetId?: string, installHref?: string) {
-  if (widgetId) {
-    return widgetId;
-  }
-
-  if (!installHref) {
-    return undefined;
-  }
-
-  try {
-    return new URL(installHref).searchParams.get("client_id") ?? undefined;
-  } catch {
-    const matched = installHref.match(/[?&]client_id=([^&]+)/);
-    return matched?.[1];
-  }
 }
 
 export default function WidgetHeroContent({
@@ -67,7 +49,6 @@ export default function WidgetHeroContent({
   children,
 }: WidgetHeroContentProps) {
   const hasActions = installHref || showInstructionLink || extraActions;
-  const resolvedWidgetId = resolveWidgetId(widgetId, installHref);
 
   return (
     <WidgetHeroSection
@@ -93,7 +74,6 @@ export default function WidgetHeroContent({
             />
           ) : null}
         </div>
-        {resolvedWidgetId ? <WidgetTariffs widgetId={resolvedWidgetId} /> : null}
       </div>
       {children}
     </WidgetHeroSection>
