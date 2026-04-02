@@ -452,7 +452,7 @@ export const WIDGETS: Widget[] = [
     hidden: false,
     clientId: "689bf620-dffb-40c5-9f3f-7b87359fde27",
   },
-   {
+  {
     key: "search-fields",
     title: "Поиск по списку",
     seoTitle: "Поиск по списку для amoCRM",
@@ -473,6 +473,26 @@ export const WIDGETS: Widget[] = [
     showInFooter: true,
     showInSearch: true,
     clientId: "7032bce0-3630-4c73-b3c8-14f438f673e0",
+  },
+  {
+    key: "other-leads",
+    title: "Другие сделки",
+    seoTitle: "Другие сделки контакта и компании для amoCRM",
+    description:
+      "Показывайте все связанные сделки контакта и компании прямо в карточке текущей сделки. Полная история клиента, статусы, суммы, ответственные и дополнительные поля без лишних переходов.",
+    route: widgetRoute("other-leads"),
+    tags: ["Сделки", "Карточка сделки", "История клиента"],
+    aliases: [
+      "другие сделки",
+      "связанные сделки",
+      "история сделок",
+      "контакт",
+      "компания",
+      "other leads",
+    ],
+    showInFooter: true,
+    showInSearch: true,
+    clientId: "f1a51313-36cf-43a9-ba06-0c949466112d",
   },
 
   {

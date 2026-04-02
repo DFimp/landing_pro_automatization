@@ -16,7 +16,7 @@ export default function HomeCertificateCard({
   description,
   buttonText,
 }: HomeCertificateCardProps) {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(true);
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
   const panelId = useId();
 
