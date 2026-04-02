@@ -492,6 +492,7 @@ export const WIDGETS: Widget[] = [
     ],
     showInFooter: true,
     showInSearch: true,
+    clientId: "f1a51313-36cf-43a9-ba06-0c949466112d",
   },
 
   {
