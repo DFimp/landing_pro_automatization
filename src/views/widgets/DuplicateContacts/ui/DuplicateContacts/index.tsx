@@ -4,9 +4,9 @@ import ConsultCard from "@/sections/landing/consultCard/ConsultCard";
 import CaseCard from "@/sections/landing/caseCard/CaseCard";
 import ProblemsCard from "@/sections/landing/problemsCard/ProblemsCard";
 import FeaturesCard from "@/sections/landing/featuresCard/FeaturesCard";
-import ScrollToInstructionLink from "@/sections/landing/scrollToInstructionLink/ScrollToInstructionLink";import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
+import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 import { STEPS, CASE_ITEMS, PROBLEMS, FEATURES } from "./constants";
-import { WidgetHeroBadge, WidgetHeroSection, WidgetInstallButton, WidgetPageTemplate } from "@/features/widget-page";
+import { WidgetHeroActions, WidgetHeroBadge, WidgetHeroSection, WidgetPageTemplate, WidgetTariffsSection } from "@/features/widget-page";
 
 const widget = WIDGETS_DATA["duplicate-contacts"];
 
@@ -20,6 +20,7 @@ export default function DuplicateContacts({
     <WidgetPageTemplate
       widget={widget}
       searchParams={searchParams}
+      tariffs={(<WidgetTariffsSection widgetId={widget.clientId!} />)}
       preInstruction={(
           <>
             <WidgetHeroSection>
@@ -31,17 +32,18 @@ export default function DuplicateContacts({
                   Избавиться от дублей контактов?
                 </h2>
 
-                <p className="mt-[18px] max-w-[920px] text-[#cfd6ea] text-[clamp(16px,1.6vw,20px)] leading-[1.6] max-[480px]:mt-[14px] max-[480px]:max-w-none max-[480px]:text-[14.5px] max-[480px]:leading-[1.55] max-[480px]:text-[#e3e8ff]">
+                <div className="mt-[18px] flex flex-col gap-6 min-[901px]:flex-row min-[901px]:items-start min-[901px]:justify-between min-[901px]:gap-8 max-[480px]:mt-[14px]">
+                <div className="min-[901px]:min-w-0 min-[901px]:flex-1">
+                <p className="max-w-[920px] min-[901px]:max-w-none text-[#cfd6ea] text-[clamp(16px,1.6vw,20px)] leading-[1.6] max-[480px]:max-w-none max-[480px]:text-[14.5px] max-[480px]:leading-[1.55] max-[480px]:text-[#e3e8ff]">
                   Автоматическое склеивание дублированных контактов с умными
                   алгоритмами поиска. Экономьте время менеджеров и улучшайте
                   качество вашей базы контактов.
                 </p>
-
-                <div className="mt-10 flex flex-wrap items-center gap-x-5 gap-y-4 max-[480px]:grid max-[480px]:grid-cols-1 max-[480px]:gap-3 max-[480px]:mb-0">
-                  <WidgetInstallButton href={getWidgetInstallUrl(widget.clientId!)}>
-                    Установить виджет
-                  </WidgetInstallButton>
-                  <ScrollToInstructionLink />
+                                <WidgetHeroActions
+                  installHref={getWidgetInstallUrl(widget.clientId!)}
+                  widgetId={widget.clientId}
+                />
+                </div>
                 </div>
               </WidgetHeroSection>
 
