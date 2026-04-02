@@ -14,7 +14,7 @@ export default function SpecialOfferSlider({ setValue, value }: SpecialOfferSlid
   const { isMobileView } = detectMobile();
 
   const availableValues = [6, 9, 12, 24] as const;
-  const availableValuesLabels = ["+ 1 месяц", "+ 2 месяца", "+ 3 месяца", "+ 7 месяцев"] as const;
+  const availableValuesLabels = ["6 месяцев", "9 месяцев", "12 месяцев", "24 месяца"] as const;
 
   const [currentValue, setCurrentValue] = useState<MonthsOption>(value);
   const [currentValueIndex, setValueIndex] = useState(() =>
