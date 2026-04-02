@@ -12,7 +12,7 @@ const items = [
   },
   {
     pos: "sm:absolute right-0 top-[100px]",
-    text: "Дополнительные месяцы использования",
+    text: "Условия продления лицензий",
   },
   {
     pos: "sm:absolute left-0 bottom-[98px]",

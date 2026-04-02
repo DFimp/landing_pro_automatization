@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { detectMobile } from "@/shared/utils/detectMobile";
 
 type MonthsOption = 6 | 9 | 12 | 24;
 
@@ -11,10 +10,7 @@ interface SpecialOfferSliderProps {
 }
 
 export default function SpecialOfferSlider({ setValue, value }: SpecialOfferSliderProps) {
-  const { isMobileView } = detectMobile();
-
   const availableValues = [6, 9, 12, 24] as const;
-  const availableValuesLabels = ["+ 1 месяц", "+ 2 месяца", "+ 3 месяца", "+ 7 месяцев"] as const;
 
   const [currentValue, setCurrentValue] = useState<MonthsOption>(value);
   const [currentValueIndex, setValueIndex] = useState(() =>
@@ -115,13 +111,6 @@ export default function SpecialOfferSlider({ setValue, value }: SpecialOfferSlid
         />
 
         {availableValues.map((val, index) => {
-          const labelTransform =
-            index === 0
-              ? "translateX(0%)"
-              : index === availableValues.length - 1
-                ? "translateX(-100%)"
-                : "translateX(-50%)";
-
           return (
             <div
               key={val}
@@ -144,24 +133,6 @@ export default function SpecialOfferSlider({ setValue, value }: SpecialOfferSlid
               >
                 {val}
               </div>
-
-              {isMobileView ? (
-                currentValue === val && (
-                  <div
-                    className="absolute top-[38px] select-none text-nowrap text-[10px] text-[#3760E7] sm:top-[58px] sm:text-[12px]"
-                    style={{ left: "50%", transform: labelTransform }}
-                  >
-                    {availableValuesLabels[index]}
-                  </div>
-                )
-              ) : (
-                <div
-                  className="absolute top-[38px] select-none text-nowrap text-[10px] text-[#3760E7] sm:top-[58px] sm:text-[13px]"
-                  style={{ left: "50%", transform: labelTransform }}
-                >
-                  {availableValuesLabels[index]}
-                </div>
-              )}
             </div>
           );
         })}

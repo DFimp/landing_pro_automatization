@@ -75,7 +75,7 @@ export default function SpecialOfferCalculator() {
         <div className="flex flex-col items-center justify-center border-b border-[#D9D9D9] px-[18px] pt-[18px] pb-[12px] sm:px-[32px] sm:pt-[30px] sm:pb-[20px]">
           <SpecialOfferSlider value={monthsCount} setValue={setMonthsCount} />
           <p className="mt-[28px] text-center text-[12px] leading-[1.35] text-[#969696] sm:mt-[52px] sm:text-[15px]">
-            Чем длиннее срок — тем больше месяцев в подарок
+            Выберите срок продления и рассчитайте стоимость
           </p>
         </div>
 

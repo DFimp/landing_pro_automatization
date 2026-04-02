@@ -6,20 +6,13 @@ interface SpecialOfferProfitProps {
 }
 
 export default function SpecialOfferProfit({ months, profit }: SpecialOfferProfitProps) {
-  const bonusMonths: Record<MonthsOption, string> = {
-    6: "+ 1 месяц",
-    9: "+ 2 месяца",
-    12: "+ 3 месяца",
-    24: "+ 7 месяцев",
-  };
-
   return (
     <div>
       <p className="mb-[6px] text-[14px] font-medium sm:mb-[18px] sm:text-[18px]">
-        Бонусных месяцев:
+        Срок продления:
       </p>
       <p className="mb-[12px] text-[10px] font-medium text-[#3760E7] sm:mb-[24px] sm:text-[18px]">
-        {bonusMonths[months]}
+        {months} мес.
       </p>
       <p className="mb-[4px] text-[14px] font-medium sm:mb-[12px] sm:text-[18px]">
         Экономия:
