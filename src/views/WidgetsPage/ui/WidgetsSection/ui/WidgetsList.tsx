@@ -30,12 +30,7 @@ export function WidgetsList() {
     text: w.description,
     link: w.route,
     tags: w.tags,
-    searchText: [
-      w.title,
-      w.seoTitle,
-      w.description,
-      ...(w.aliases ?? []),
-    ].join(" "),
+    searchText: [w.title, w.seoTitle, w.description, ...(w.aliases ?? [])].join(" "),
   }));
 
   const groups = useMemo(
@@ -107,12 +102,11 @@ export function WidgetsList() {
             className="h-full"
           >
             <WidgetsListItem
-            key={widget.link}
-            link={widget.link}
-            text={widget.text}
-            title={widget.title}
-            variant={getVariant(index)}
-          />
+              link={widget.link}
+              text={widget.text}
+              title={widget.title}
+              variant={getVariant(index)}
+            />
           </ScrollReveal>
         ))}
       </div>

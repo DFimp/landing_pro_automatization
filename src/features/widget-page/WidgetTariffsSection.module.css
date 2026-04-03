@@ -1,0 +1,144 @@
+.tariffsCard {
+  position: relative;
+  animation:
+    tariffsCardIn 620ms cubic-bezier(0.16, 1, 0.3, 1) both,
+    tariffsCardBreath 7.2s ease-in-out 900ms infinite;
+}
+
+.tariffsCard::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.22), transparent 52%),
+    radial-gradient(circle at 86% 78%, rgba(122, 162, 255, 0.24), transparent 58%);
+  opacity: 0.45;
+  animation: tariffsAura 8s ease-in-out infinite;
+}
+
+.beam {
+  position: absolute;
+  top: -22%;
+  left: -34%;
+  width: 40%;
+  height: 175%;
+  background:
+    linear-gradient(
+      114deg,
+      transparent 0%,
+      rgba(175, 203, 255, 0.04) 22%,
+      rgba(175, 203, 255, 0.26) 48%,
+      rgba(175, 203, 255, 0.08) 72%,
+      transparent 100%
+    );
+  transform: rotate(12deg) translate3d(-140%, 0, 0);
+  filter: blur(2px);
+  opacity: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  animation: tariffsBeamSweep 5600ms 700ms cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.glowLeft,
+.glowRight {
+  opacity: 0.72;
+}
+
+.glowLeft {
+  animation: tariffsGlowFloatLeft 7.6s ease-in-out infinite;
+}
+
+.glowRight {
+  animation: tariffsGlowFloatRight 8.9s ease-in-out infinite;
+}
+
+@keyframes tariffsCardIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0) scale(0.985);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+@keyframes tariffsCardBreath {
+  0%,
+  100% {
+    box-shadow: 0 26px 62px rgba(21, 51, 168, 0.24);
+  }
+  50% {
+    box-shadow: 0 30px 74px rgba(21, 51, 168, 0.33);
+  }
+}
+
+@keyframes tariffsAura {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.62;
+  }
+}
+
+@keyframes tariffsBeamSweep {
+  0%,
+  56%,
+  100% {
+    opacity: 0;
+    transform: rotate(12deg) translate3d(-140%, 0, 0);
+  }
+  18% {
+    opacity: 0.25;
+  }
+  32% {
+    opacity: 0.56;
+  }
+  48% {
+    opacity: 0;
+    transform: rotate(12deg) translate3d(420%, 0, 0);
+  }
+}
+
+@keyframes tariffsGlowFloatLeft {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(15px, -10px, 0) scale(1.06);
+  }
+}
+
+@keyframes tariffsGlowFloatRight {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-14px, 12px, 0) scale(1.05);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tariffsCard,
+  .tariffsCard::after,
+  .beam,
+  .glowLeft,
+  .glowRight {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .beam {
+    display: none;
+  }
+}

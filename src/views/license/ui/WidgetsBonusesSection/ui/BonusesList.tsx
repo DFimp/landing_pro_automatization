@@ -19,7 +19,7 @@ export function BonusesList() {
         <a href="#special_offer_block" className="w-full">
           <BonusesListItem
             className="text-center"
-            text="Дополнительные месяцы использования"
+            text="Условия продления лицензий"
           />
         </a>
         <a

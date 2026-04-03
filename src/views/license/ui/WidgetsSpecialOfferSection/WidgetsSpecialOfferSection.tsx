@@ -20,7 +20,7 @@ export function WidgetsSpecialOfferSection() {
           style={{ ["--i" as any]: 0 }}
           className="sm:text-[32px] text-[20px] font-semibold sm:mb-[56px] mb-[23px]"
         >
-          Дополнительные бесплатные месяцы использования
+          Условия продления лицензий
         </h2>
 
         <div className="flex flex-col sm:flex-row gap-[20px] sm:gap-[40px] justify-between mb-[42px]">
@@ -31,7 +31,7 @@ export function WidgetsSpecialOfferSection() {
           >
             Продлевая лицензии через{" "}
             <span className="text-[#3760E7]">«Про Автоматизацию»</span>, вы
-            получаете бонусные месяцы использования amoCRM.
+            получаете сопровождение по продлению и помощь в выборе тарифа.
           </div>
 
           <div
@@ -39,8 +39,8 @@ export function WidgetsSpecialOfferSection() {
             style={{ ["--i" as any]: 2 }}
             className="flex items-center sm:max-w-[49%] grow border border-[#3760E7] pr-[19px] pl-[28px] py-[35px] font-[400] sm:text-[20px] text-[14px] leading-[1] rounded-[20px]"
           >
-            За ту же стоимость вы сможете дольше работать в системе и
-            сэкономить на продлении.
+            Рассчитайте стоимость продления для вашего тарифа и количества
+            пользователей.
           </div>
         </div>
 
