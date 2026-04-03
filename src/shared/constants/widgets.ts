@@ -494,6 +494,28 @@ export const WIDGETS: Widget[] = [
     showInSearch: true,
     clientId: "f1a51313-36cf-43a9-ba06-0c949466112d",
   },
+  {
+    key: "color-fields",
+    title: "Подсветка полей",
+    seoTitle: "Подсветка полей в карточке для amoCRM",
+    description:
+      "Автоматически выделяйте ключевые поля и их значения цветом в карточках сделок по выбранным воронкам. Отдельные цвета для названия, значения, списочных вариантов и числовых условий.",
+    route: widgetRoute("color-fields"),
+    tags: ["Интерфейс", "Карточка сделки", "Поля", "Воронка"],
+    aliases: [
+      "подсветка полей",
+      "окраска полей",
+      "цветные поля",
+      "выделение полей",
+      "field coloring",
+      "color fields",
+      "карточка сделки",
+    ],
+    showInFooter: true,
+    showInSearch: true,
+    hidden: false,
+    clientId: "694ac2e0-60d6-4839-a525-2ea6c52ea744",
+  },
 
   {
     key: "google-sheets",
