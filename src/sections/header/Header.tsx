@@ -27,9 +27,11 @@ const Header = () => {
     setIsHydrated(true);
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (isMenuOpen) {
-      setIsMenuAlignedRight(true);
+      if (!isMenuAlignedRight) {
+        setIsMenuAlignedRight(true);
+      }
       return;
     }
 
@@ -85,9 +87,9 @@ const Header = () => {
   }, []);
 
   if (isIframe) return null;
-  const rootStyle = {
-    ["--header-height" as any]: `${HEADER_HEIGHT}px`,
-  } as CSSProperties;
+  const rootStyle: CSSProperties & { "--header-height": string } = {
+    "--header-height": `${HEADER_HEIGHT}px`,
+  };
 
   return (
     <div style={rootStyle}>

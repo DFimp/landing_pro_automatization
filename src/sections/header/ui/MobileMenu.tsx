@@ -33,10 +33,10 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
 
   return (
     <div
-      className={`fixed inset-0 z-[1400] flex h-screen h-[100dvh] w-full justify-end overscroll-contain transition-[visibility] duration-0 ${
+      className={`fixed inset-0 z-[1400] flex h-screen h-[100dvh] w-full justify-end transition-[visibility] duration-0 ${
         isOpen
-          ? "visible delay-0 pointer-events-auto"
-          : "invisible delay-[420ms] pointer-events-none"
+          ? "visible delay-0 pointer-events-auto overscroll-contain"
+          : "invisible delay-[420ms] pointer-events-none overscroll-auto"
       } motion-reduce:transition-none`}
       aria-hidden={!isOpen}
     >
@@ -57,7 +57,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
         aria-label="Мобильное меню"
         onClick={handleNavClick}
       >
-        <ul className="px-8 pt-10 flex flex-col gap-[40px] flex-1 overflow-y-auto pb-10">
+        <ul className="px-8 pt-10 flex flex-col gap-[40px] flex-1 pb-10 overflow-hidden">
           {ServicesItems.map((link, index) => (
             <li key={index} className="text-[18px] uppercase">
               <Link href={link.link} onClick={closeMenu}>
