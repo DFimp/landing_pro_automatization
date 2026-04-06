@@ -19,6 +19,8 @@ export default function SpecialOfferSlider({ setValue, value }: SpecialOfferSlid
   const [isDragging, setIsDragging] = useState(false);
 
   const sliderRef = useRef<HTMLDivElement>(null);
+  const sliderRectRef = useRef<DOMRect | null>(null);
+  const currentValueIndexRef = useRef(currentValueIndex);
 
   const STEP = 100 / (availableValues.length - 1);
 
@@ -28,37 +30,46 @@ export default function SpecialOfferSlider({ setValue, value }: SpecialOfferSlid
     return availableValues[safeIdx];
   };
 
-  const updateValue = (e: React.MouseEvent<HTMLDivElement> | MouseEvent) => {
-    if (!sliderRef.current) return;
+  const updateValueByClientX = (clientX: number) => {
+    const rect = sliderRectRef.current ?? sliderRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    sliderRectRef.current = rect;
 
-    const rect = sliderRef.current.getBoundingClientRect();
-    let clickX = e.clientX - rect.left;
+    let clickX = clientX - rect.left;
 
     clickX = Math.max(0, Math.min(clickX, rect.width));
     const percentage = (clickX / rect.width) * 100;
 
     const targetValue = getClosestValue(percentage);
+    const nextIndex = availableValues.indexOf(targetValue);
+    if (nextIndex === currentValueIndexRef.current) return;
+
     setCurrentValue(targetValue);
-    setValueIndex(availableValues.indexOf(targetValue));
+    setValueIndex(nextIndex);
   };
 
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    sliderRectRef.current = sliderRef.current?.getBoundingClientRect() ?? null;
     setIsDragging(true);
-    updateValue(e);
+    updateValueByClientX(e.clientX);
   };
 
   const handleMouseMove = (e: MouseEvent) => {
-    if (isDragging) updateValue(e);
+    if (isDragging) updateValueByClientX(e.clientX);
   };
 
   const handleMouseUp = () => {
     document.removeEventListener("mousemove", handleMouseMove);
     document.removeEventListener("mouseup", handleMouseUp);
+    sliderRectRef.current = null;
     setIsDragging(false);
   };
 
   const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!isDragging) updateValue(e);
+    if (!isDragging) {
+      sliderRectRef.current = sliderRef.current?.getBoundingClientRect() ?? null;
+      updateValueByClientX(e.clientX);
+    }
   };
 
   useEffect(() => {
@@ -83,6 +94,10 @@ export default function SpecialOfferSlider({ setValue, value }: SpecialOfferSlid
   }, [value]);
 
   useEffect(() => {
+    currentValueIndexRef.current = currentValueIndex;
+  }, [currentValueIndex]);
+
+  useEffect(() => {
     const el = document.getElementById("slider");
     el?.addEventListener("mouseleave", handleMouseUp);
     return () => el?.removeEventListener("mouseleave", handleMouseUp);
@@ -100,13 +115,13 @@ export default function SpecialOfferSlider({ setValue, value }: SpecialOfferSlid
         onClick={handleClick}
       >
         <div
-          className="absolute top-0 left-0 z-2 h-full rounded-full bg-[#3760E7] transition-all duration-150 ease-out"
+          className="absolute top-0 left-0 z-2 h-full rounded-full bg-[#3760E7] transition-[width,background-color] duration-150 ease-out"
           style={{ width: fillWidth }}
         />
 
         <div
           draggable="false"
-          className="absolute top-1/2 z-3 h-3 w-3 -translate-x-1/2 -translate-y-1/2 cursor-grab rounded-full border-3 border-[#3760E7] bg-[#3760E7] shadow-lg transition-all duration-150 ease-out hover:scale-105 active:cursor-grabbing sm:h-6 sm:w-6"
+          className="absolute top-1/2 z-3 h-3 w-3 -translate-x-1/2 -translate-y-1/2 cursor-grab rounded-full border-3 border-[#3760E7] bg-[#3760E7] shadow-lg transition-[left,transform,background-color] duration-150 ease-out hover:scale-105 active:cursor-grabbing sm:h-6 sm:w-6"
           style={{ left: knobLeft }}
         />
 

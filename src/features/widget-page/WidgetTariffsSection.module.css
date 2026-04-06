@@ -1,8 +1,6 @@
 .tariffsCard {
   position: relative;
-  animation:
-    tariffsCardIn 620ms cubic-bezier(0.16, 1, 0.3, 1) both,
-    tariffsCardBreath 7.2s ease-in-out 900ms infinite;
+  animation: tariffsCardIn 620ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .tariffsCard::after {
@@ -140,5 +138,11 @@
 @media (max-width: 768px) {
   .beam {
     display: none;
+  }
+
+  .tariffsCard::after,
+  .glowLeft,
+  .glowRight {
+    animation: none;
   }
 }

@@ -69,8 +69,14 @@ export default function ScrollRevealObserver() {
       for (const m of mutations) {
         for (const node of Array.from(m.addedNodes)) {
           if (!(node instanceof HTMLElement)) continue;
-          if (node.matches?.('[data-sr="true"]')) observeOne(node);
-          observeAll(node);
+          if (node.matches?.('[data-sr="true"]')) {
+            observeOne(node);
+            continue;
+          }
+
+          if (node.querySelector?.('[data-sr="true"]')) {
+            observeAll(node);
+          }
         }
       }
     });
