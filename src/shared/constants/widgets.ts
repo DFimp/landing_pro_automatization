@@ -516,6 +516,25 @@ export const WIDGETS: Widget[] = [
     hidden: false,
     clientId: "694ac2e0-60d6-4839-a525-2ea6c52ea744",
   },
+  {
+    key: "color-tags",
+    title: "Раскраска тегов",
+    seoTitle: "Раскраска тегов в сделках для amoCRM",
+    description:
+      "Автоматически раскрашивайте выбранные теги в нужные цвета. Подсветка работает в списке сделок, на доске канбан и внутри карточки сделки.",
+    route: widgetRoute("color-tags"),
+    tags: ["Сделки", "Теги", "Приоритет", "Интерфейс"],
+    aliases: [
+      "раскраска тегов",
+      "цветные теги",
+      "подсветка тегов",
+      "tags coloring",
+      "color tags",
+    ],
+    showInFooter: true,
+    showInSearch: true,
+    hidden: false,
+  },
 
   {
     key: "google-sheets",
