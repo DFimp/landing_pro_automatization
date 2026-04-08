@@ -116,6 +116,25 @@ export const WIDGETS: Widget[] = [
     clientId: "e6a1837c-6178-4a0c-9fc0-3e5768595fa2",
   },
   {
+    key: "text-rewrite",
+    title: "TextRewrite AI",
+    seoTitle: "TextRewrite AI: переписывание текста для amoCRM",
+    description:
+      "AI-виджет для переписывания сообщений прямо в карточке сделки amoCRM. Управляйте стилем ответа, добавляйте свои инструкции и ускоряйте коммуникацию с клиентами.",
+    route: widgetRoute("text-rewrite"),
+    tags: ["AI", "Текст", "Коммуникации", "Автоматизация"],
+    aliases: [
+      "text rewrite",
+      "text-rewrite",
+      "переписать текст",
+      "перефразировать",
+      "ai текст",
+      "тон общения",
+    ],
+    showInFooter: true,
+    showInSearch: true,
+  },
+  {
     key: "docs-flow",
     title: "Документы(Google)",
     seoTitle: "Документы(Google) для amoCRM",
