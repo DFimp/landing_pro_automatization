@@ -48,7 +48,7 @@ export default function LicenseBonusComparison() {
                 <span className="text-[20px] sm:text-[22px]">&#10003;</span>
               </div>
               <div className="flex items-center justify-between border-b border-white/20 pb-3">
-                <div>
+                <div className="text-left">
                   <span className="block">Консультации</span>
                   <span className="block">и рекомендации</span>
                 </div>
@@ -97,7 +97,7 @@ export default function LicenseBonusComparison() {
                 </span>
               </div>
               <div className="flex items-center justify-between border-b border-[#E6E6E6] pb-3">
-                <div>
+                <div className="text-left">
                   <span className="block">Консультации</span>
                   <span className="block">и рекомендации</span>
                 </div>
