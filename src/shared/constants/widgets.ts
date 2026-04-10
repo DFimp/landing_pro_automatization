@@ -535,6 +535,27 @@ export const WIDGETS: Widget[] = [
     showInSearch: true,
     hidden: false,
   },
+  {
+     key: "field-hints",
+    title: "Подсказки для полей и этапов",
+    seoTitle: "Подсказки для полей и этапов в amoCRM",
+    description:
+      "Добавляйте контекстные подсказки к этапам воронки и полям в карточке сделки. Менеджеры сразу видят правила заполнения и перехода по этапам, что снижает ошибки и ускоряет адаптацию команды.",
+    route: widgetRoute("field-hints"),
+    tags: ["Интерфейс", "Карточка сделки", "Воронка", "Поля"],
+    aliases: [
+      "подсказки",
+      "подсказки полей",
+      "подсказки этапов",
+      "этапы воронки",
+      "field hints",
+      "hints",
+      "карточка сделки",
+    ],
+    showInFooter: true,
+    showInSearch: true,
+    hidden: false,
+  },
 
   {
     key: "google-sheets",
