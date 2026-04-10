@@ -34,6 +34,7 @@ export default function ShiftSelect({ searchParams }: WidgetPageProps) {
             title="Как это работает?"
             subtitle="После установки виджета в списках amoCRM вы сможете выделять сущности с зажатым Shift при наведении на чекбоксы, а также протягивать мышью с зажатой левой кнопкой и моментально выбирать целые диапазоны."
             videoUrl="/widgets/ShiftSelect/shift-select.gif"
+            disableAmbientEffects
           />
         </>
       }

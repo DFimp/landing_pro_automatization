@@ -57,7 +57,6 @@ export default function TelegramNotify({
                       alt="иконка колокольчика"
                       width={40}
                       height={40}
-                      priority
                     />
                   </div>
                   <h3 className="text-[18px] font-semibold text-[#0f1427] mb-[10px]">Мгновенные уведомления</h3>
@@ -74,7 +73,6 @@ export default function TelegramNotify({
                       alt="иконка письма"
                       width={40}
                       height={40}
-                      priority
                     />
                   </div>
                   <h3 className="text-[18px] font-semibold text-[#0f1427] mb-[10px]">Умные триггеры</h3>
@@ -91,7 +89,6 @@ export default function TelegramNotify({
                       alt="иконка курсора"
                       width={40}
                       height={40}
-                      priority
                     />
                   </div>
                   <h3 className="text-[18px] font-semibold text-[#0f1427] mb-[10px]">
@@ -110,7 +107,6 @@ export default function TelegramNotify({
                       alt="иконка часов"
                       width={40}
                       height={40}
-                      priority
                     />
                   </div>
                   <h3 className="text-[18px] font-semibold text-[#0f1427] mb-[10px]">
@@ -129,7 +125,6 @@ export default function TelegramNotify({
                       alt="иконка письма с кистью"
                       width={40}
                       height={40}
-                      priority
                     />
                   </div>
                   <h3 className="text-[18px] font-semibold text-[#0f1427] mb-[10px]">Автоочистка сообщений</h3>
@@ -146,7 +141,6 @@ export default function TelegramNotify({
                       alt="иконка пирамидки со стрелкой"
                       width={40}
                       height={40}
-                      priority
                     />
                   </div>
                   <h3 className="text-[18px] font-semibold text-[#0f1427] mb-[10px]">
@@ -179,7 +173,6 @@ export default function TelegramNotify({
                       width={540}
                       height={760}
                       className="relative z-[1] w-full h-auto max-[640px]:absolute max-[640px]:top-[-50px] max-[640px]:right-[-240px] max-[640px]:left-auto max-[640px]:h-[600px] max-[640px]:w-auto max-[640px]:max-w-none max-[640px]:pointer-events-none"
-                      priority
                     />
                     <div className="absolute left-[30%] top-[28%] -translate-x-1/2 -translate-y-[10%] w-[min(520px,70%)] z-[2] rounded-[62px] bg-[linear-gradient(180deg,rgba(249,251,255,0.3)_0%,#f0f5ff_50%)] shadow-[0_28px_80px_rgba(79,92,255,0.25),inset_0_0_0_1px_rgba(255,255,255,0.7)] p-[18px] max-[640px]:left-1/2 max-[640px]:top-[20%] max-[640px]:-translate-y-[6%] max-[640px]:w-full max-[640px]:rounded-[24px] max-[640px]:bg-[linear-gradient(180deg,#f9fbff_0%,#f1f5ff_100%)]">
                       <div className="rounded-[48px] bg-white p-[18px] shadow-[0_1px_0_rgba(9,17,43,0.04),inset_0_0_0_1px_#e6ebff] max-[640px]:bg-transparent max-[640px]:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.14)]">

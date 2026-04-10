@@ -34,6 +34,7 @@ export default function ClosingBan({ searchParams }: WidgetPageProps) {
             title="Как это выглядит?"
             subtitle="После установки виджета при попытке закрыть задачу пустое поле с результатом подсвечивается красным, и кнопка закрытия не срабатывает. Можно задать минимальное количество символов для текста с результатом."
             videoUrl="/widgets/ClosingBan/closing-ban.gif"
+            disableAmbientEffects
           />
         </>
       }

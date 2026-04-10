@@ -18,13 +18,11 @@ export default function HelpServices() {
       opacity: 0,
       y: 28,
       scale: 0.975,
-      filter: "blur(10px)",
     },
     show: (i: number) => ({
       opacity: 1,
       y: 0,
       scale: 1,
-      filter: "blur(0px)",
       transition: {
         duration: 0.85,
         delay: Math.min(i * 0.07, 0.28),
@@ -38,13 +36,11 @@ export default function HelpServices() {
       opacity: 1,
       x: 0,
       scale: 1,
-      filter: "blur(0px)",
     },
     open: {
       opacity: 0,
       x: -42,
       scale: 0.985,
-      filter: "blur(10px)",
     },
   } as const;
 
@@ -53,15 +49,11 @@ export default function HelpServices() {
       opacity: 0,
       x: 28,
       scale: 0.99,
-      filter: "blur(12px)",
-      clipPath: "circle(0% at 72% 30%)",
     },
     open: {
       opacity: 1,
       x: 0,
       scale: 1,
-      filter: "blur(0px)",
-      clipPath: "circle(150% at 50% 50%)",
     },
   } as const;
 
@@ -75,8 +67,8 @@ export default function HelpServices() {
   } as const;
 
   const listItemVariants = {
-    closed: { opacity: 0, y: 10, filter: "blur(6px)" },
-    open: { opacity: 1, y: 0, filter: "blur(0px)" },
+    closed: { opacity: 0, y: 10 },
+    open: { opacity: 1, y: 0 },
   } as const;
 
   const handleClick = (index: number) => {
@@ -145,7 +137,6 @@ export default function HelpServices() {
                     "radial-gradient(520px 420px at 78% 26%, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.10) 30%, rgba(255,255,255,0.00) 62%), linear-gradient(115deg, rgba(255,255,255,0.00) 0%, rgba(255,255,255,0.00) 40%, rgba(255,255,255,0.14) 50%, rgba(255,255,255,0.00) 62%, rgba(255,255,255,0.00) 100%)",
                   backgroundSize: "220% 100%",
                   backgroundPositionY: "0%",
-                  filter: "blur(14px)",
                   mixBlendMode: "screen",
                 }}
               />
@@ -204,9 +195,6 @@ export default function HelpServices() {
                   animate={{
                     scale: isFlipped ? 1 : 0.96,
                     rotate: isFlipped ? 0 : 6,
-                    filter: isFlipped
-                      ? "drop-shadow(0 14px 32px rgba(55, 96, 231, 0.28))"
-                      : "drop-shadow(0 0 0 rgba(0,0,0,0))",
                   }}
                   transition={{
                     type: "spring",

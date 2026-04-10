@@ -7,12 +7,20 @@ type Props = {
 };
 
 type Point = { x: number; y: number };
+type MeasuredLayout = {
+  canvas: HTMLCanvasElement;
+  start: Point;
+  ends: Point[];
+  dpr: number;
+  width: number;
+  height: number;
+};
 
 function clamp(value: number, min: number, max: number) {
   return Math.min(max, Math.max(min, value));
 }
 
-function measurePoints(container: HTMLElement) {
+function measurePoints(container: HTMLElement): MeasuredLayout | null {
   const canvas = container.querySelector<HTMLCanvasElement>("canvas");
   const circle = document.getElementById("bonus_center");
   const bonuses = Array.from(container.querySelectorAll<HTMLElement>(".bonus"));
@@ -23,9 +31,19 @@ function measurePoints(container: HTMLElement) {
   const canvasRect = canvas.getBoundingClientRect();
   const circleRect = circle.getBoundingClientRect();
 
-  const dpr = window.devicePixelRatio || 1;
-  canvas.width = Math.round(containerRect.width * dpr);
-  canvas.height = Math.round(containerRect.height * dpr);
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const width = Math.round(containerRect.width);
+  const height = Math.round(containerRect.height);
+  const scaledWidth = Math.round(width * dpr);
+  const scaledHeight = Math.round(height * dpr);
+
+  if (canvas.width !== scaledWidth) {
+    canvas.width = scaledWidth;
+  }
+  if (canvas.height !== scaledHeight) {
+    canvas.height = scaledHeight;
+  }
+
   canvas.style.width = `${containerRect.width}px`;
   canvas.style.height = `${containerRect.height}px`;
 
@@ -63,7 +81,7 @@ function measurePoints(container: HTMLElement) {
     };
   });
 
-  return { canvas, start, ends, containerRect, dpr };
+  return { canvas, start, ends, dpr, width, height };
 }
 
 function drawLine(ctx: CanvasRenderingContext2D, a: Point, b: Point) {
@@ -75,6 +93,7 @@ function drawLine(ctx: CanvasRenderingContext2D, a: Point, b: Point) {
 
 export default function BonusesCanvas({ activeIndex }: Props) {
   const rafId = useRef<number | null>(null);
+  const measuredRef = useRef<MeasuredLayout | null>(null);
 
   useEffect(() => {
     const container = document.getElementById("bonuses_list") as HTMLElement | null;
@@ -82,17 +101,21 @@ export default function BonusesCanvas({ activeIndex }: Props) {
 
     let frameStart = 0;
 
+    const updateMeasurements = () => {
+      measuredRef.current = measurePoints(container);
+    };
+
     const render = (t: number) => {
       if (!frameStart) frameStart = t;
-      const measured = measurePoints(container);
+      const measured = measuredRef.current;
       if (!measured) return;
 
-      const { canvas, start, ends, dpr } = measured;
+      const { canvas, start, ends, dpr, width, height } = measured;
       const ctx = canvas.getContext("2d");
       if (!ctx) return;
 
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+      ctx.clearRect(0, 0, width, height);
 
       ctx.lineWidth = 1;
       ctx.strokeStyle = "rgba(255,255,255,0.55)";
@@ -142,11 +165,15 @@ export default function BonusesCanvas({ activeIndex }: Props) {
     };
 
     const onResize = () => {
+      updateMeasurements();
       if (activeIndex == null) drawOnce();
     };
 
+    updateMeasurements();
     window.addEventListener("resize", onResize);
+
     const timeout = window.setTimeout(() => {
+      updateMeasurements();
       if (activeIndex == null) drawOnce();
       else startLoop();
     }, 0);

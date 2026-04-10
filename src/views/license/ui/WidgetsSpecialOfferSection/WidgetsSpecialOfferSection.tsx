@@ -59,13 +59,13 @@ export function WidgetsSpecialOfferSection() {
             scrollMarginTop: "calc(40vh + 100px)",
           }}
           id="special_offer_block"
-          className="flex justify-center mb-[68px]"
+          className="flex justify-center mb-[31px] sm:mb-[68px]"
         >
           <SpecialOfferCalculator />
         </div>
       </ScrollReveal>
 
-      <aside className="block sm:hidden mt-[31px] mb-0">
+      <aside className="block sm:hidden mt-0 mb-[31px]">
         <ConsultCard />
       </aside>
     </>

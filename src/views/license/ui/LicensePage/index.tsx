@@ -21,7 +21,7 @@ function LicensePageContent() {
           },
         }}
       />
-      <main className="overflow-x-hidden">
+      <main>
         <WidgetsBonusesSection />
         <WidgetsWidgetsSection />
         <WidgetsSupportSection />

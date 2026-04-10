@@ -33,8 +33,8 @@ export default function TimeZone({ searchParams }: WidgetPageProps) {
           <PreviewCard
             title="Как это выглядит?"
             subtitle="Виджет автоматически отображается прямо в карточке контакта"
-            videoUrl="/widgets/TimeZone/time-zone-demo.gif"
-            imageUrl=""
+            videoUrl="/widgets/TimeZone/time-zone-demo.mp4"
+            disableAmbientEffects
           />
         </>
       }
