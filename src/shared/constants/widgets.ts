@@ -116,25 +116,6 @@ export const WIDGETS: Widget[] = [
     clientId: "e6a1837c-6178-4a0c-9fc0-3e5768595fa2",
   },
   {
-    key: "text-rewrite",
-    title: "TextRewrite AI",
-    seoTitle: "TextRewrite AI: переписывание текста для amoCRM",
-    description:
-      "AI-виджет для переписывания сообщений прямо в карточке сделки amoCRM. Управляйте стилем ответа, добавляйте свои инструкции и ускоряйте коммуникацию с клиентами.",
-    route: widgetRoute("text-rewrite"),
-    tags: ["AI", "Текст", "Коммуникации", "Автоматизация"],
-    aliases: [
-      "text rewrite",
-      "text-rewrite",
-      "переписать текст",
-      "перефразировать",
-      "ai текст",
-      "тон общения",
-    ],
-    showInFooter: true,
-    showInSearch: true,
-  },
-  {
     key: "docs-flow",
     title: "Документы(Google)",
     seoTitle: "Документы(Google) для amoCRM",
@@ -552,10 +533,10 @@ export const WIDGETS: Widget[] = [
     ],
     showInFooter: true,
     showInSearch: true,
-    hidden: false,
+    clientId: "f871e5bb-6b67-40ae-94a5-82277fb248b0"
   },
   {
-     key: "field-hints",
+    key: "field-hints",
     title: "Подсказки для полей и этапов",
     seoTitle: "Подсказки для полей и этапов в amoCRM",
     description:
@@ -573,7 +554,27 @@ export const WIDGETS: Widget[] = [
     ],
     showInFooter: true,
     showInSearch: true,
-    hidden: false,
+    clientId: "7e1f2761-7a5b-4adc-bb33-ec828ff4c448"
+  },
+  {
+    key: "text-rewrite",
+    title: "TextRewrite AI",
+    seoTitle: "TextRewrite AI: переписывание текста для amoCRM",
+    description:
+      "AI-виджет для переписывания сообщений прямо в карточке сделки amoCRM. Управляйте стилем ответа, добавляйте свои инструкции и ускоряйте коммуникацию с клиентами.",
+    route: widgetRoute("text-rewrite"),
+    tags: ["AI", "Текст", "Коммуникации", "Автоматизация"],
+    aliases: [
+      "text rewrite",
+      "text-rewrite",
+      "переписать текст",
+      "перефразировать",
+      "ai текст",
+      "тон общения",
+    ],
+    showInFooter: true,
+    showInSearch: true,
+    clientId: "7c40a411-00f8-473a-bc0c-be5cca21f372"
   },
 
   {
