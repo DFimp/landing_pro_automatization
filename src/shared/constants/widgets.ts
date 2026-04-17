@@ -536,25 +536,6 @@ export const WIDGETS: Widget[] = [
     clientId: "f871e5bb-6b67-40ae-94a5-82277fb248b0"
   },
   {
-    key: "ltv-client",
-    title: "LTV клиента",
-    seoTitle: "LTV клиента в карточке сделки для amoCRM",
-    description:
-      "Показывайте LTV клиента прямо в карточке и канбане: сумма успешных сделок, количество выигранных и проигранных сделок, отдельная плашка «Новый клиент» и гибкие цветовые правила по порогам.",
-    route: widgetRoute("ltv-client"),
-    tags: ["Сделки", "LTV", "Канбан", "Карточка сделки"],
-    aliases: [
-      "ltv",
-      "ltv клиента",
-      "ltv клиент",
-      "ценность клиента",
-      "новый клиент",
-      "ltv badge",
-    ],
-    showInFooter: true,
-    showInSearch: true,
-  },
-  {
     key: "field-hints",
     title: "Подсказки для полей и этапов",
     seoTitle: "Подсказки для полей и этапов в amoCRM",
@@ -594,6 +575,26 @@ export const WIDGETS: Widget[] = [
     showInFooter: true,
     showInSearch: true,
     clientId: "7c40a411-00f8-473a-bc0c-be5cca21f372"
+  },
+  {
+    key: "ltv-client",
+    title: "LTV клиента",
+    seoTitle: "LTV клиента в карточке сделки для amoCRM",
+    description:
+      "Показывайте LTV клиента прямо в карточке и канбане: сумма успешных сделок, количество выигранных и проигранных сделок, отдельная плашка «Новый клиент» и гибкие цветовые правила по порогам.",
+    route: widgetRoute("ltv-client"),
+    tags: ["Сделки", "LTV", "Канбан", "Карточка сделки"],
+    aliases: [
+      "ltv",
+      "ltv клиента",
+      "ltv клиент",
+      "ценность клиента",
+      "новый клиент",
+      "ltv badge",
+    ],
+    showInFooter: true,
+    showInSearch: true,
+    clientId: "bd254886-6487-4fe6-9c0e-3357f815bfaf"
   },
 
   {
