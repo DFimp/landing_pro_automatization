@@ -6,7 +6,7 @@ RUN apk add --no-cache libc6-compat
 
 # Install deps first (layer cached until package*.json changes)
 COPY package*.json ./
-RUN npm ci
+RUN npm install
 
 COPY . .
 RUN npm run build
