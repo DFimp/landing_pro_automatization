@@ -164,6 +164,27 @@ export const WIDGETS: Widget[] = [
     clientId: "be8e6006-98ec-4a0f-80c5-9170ba2b675c",
   },
   {
+    key: "payment-checker",
+    title: "Проверка оплат",
+    seoTitle: "Проверка оплат и автозапуск Salesbot для amoCRM",
+    description:
+      "Автоматически сопоставляйте входящие платежи со сделками по паттерну назначения платежа. После совпадения запускайте нужный Salesbot и стандартизируйте обработку оплат в amoCRM.",
+    route: widgetRoute("payment-checker"),
+    tags: ["Оплата", "Финансы", "Salesbot", "Автоматизация"],
+    aliases: [
+      "payment checker",
+      "payment-checker",
+      "проверка оплат",
+      "сопоставление платежей",
+      "паттерн оплаты",
+      "назначение платежа",
+      "автозапуск salesbot",
+      "t-bank платежи",
+    ],
+    showInFooter: true,
+    showInSearch: true,
+  },
+  {
     key: "meet-calendar",
     title: "Календарь встреч",
     seoTitle: "Календарь встреч для amoCRM",
