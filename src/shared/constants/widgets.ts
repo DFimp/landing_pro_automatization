@@ -578,6 +578,25 @@ export const WIDGETS: Widget[] = [
     clientId: "7e1f2761-7a5b-4adc-bb33-ec828ff4c448"
   },
   {
+    key: "normalizer-tel",
+    title: "Нормализация телефонов",
+    seoTitle: "Нормализация телефонов в amoCRM",
+    description:
+      "Автоматически приводите номера телефонов к единому формату по шаблонам условий и действий. Нормализация работает в карточках и поддерживает массовую обработку базы.",
+    route: widgetRoute("normalizer-tel"),
+    tags: ["Телефония", "Контакты", "Качество данных", "Автоматизация"],
+    aliases: [
+      "normalizer tel",
+      "normalizer-tel",
+      "нормализация телефонов",
+      "нормализация номера",
+      "формат телефона",
+      "очистка телефонов",
+    ],
+    showInFooter: true,
+    showInSearch: true,
+  },
+  {
     key: "text-rewrite",
     title: "TextRewrite AI",
     seoTitle: "TextRewrite AI: переписывание текста для amoCRM",
