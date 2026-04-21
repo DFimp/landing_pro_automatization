@@ -57,6 +57,26 @@ export const WIDGETS: Widget[] = [
     clientId: "c31be896-9148-4ec1-9d7a-2aba7b16906e",
   },
   {
+    key: "max-notice",
+    title: "Уведомления MAX",
+    seoTitle: "Уведомления MAX для amoCRM",
+    description:
+      "Получайте уведомления из amoCRM в MAX и запускайте нужные действия по сделке в один клик. Поддержка сценариев по этапам воронки и расписанию отправки.",
+    route: widgetRoute("max-notice"),
+    tags: ["Соц сети", "MAX", "Уведомления", "Автоматизация"],
+    aliases: [
+      "max",
+      "max notice",
+      "max-notice",
+      "уведомления max",
+      "мессенджер max",
+      "оповещения",
+      "notify",
+    ],
+    showInFooter: true,
+    showInSearch: true,
+  },
+  {
     key: "lead-distribution",
     title: "Распределение лидов",
     seoTitle: "Распределение сделок для amoCRM",
