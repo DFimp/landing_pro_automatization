@@ -2,7 +2,7 @@ import type { CaseItem } from "@/sections/landing/caseCard/CaseCard";
 import type { ProblemItem } from "@/sections/landing/problemsCard/ProblemsCard";
 import { WIDGETS_DATA, getWidgetInstallUrl } from "@/shared/constants/widgets";
 
-const widget = WIDGETS_DATA["payment-checker"];
+const widget = WIDGETS_DATA["tbank-check-pay"];
 const installHref = widget.clientId ? getWidgetInstallUrl(widget.clientId) : undefined;
 
 export const STEPS = [

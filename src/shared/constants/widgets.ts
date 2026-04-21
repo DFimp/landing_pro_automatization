@@ -164,16 +164,18 @@ export const WIDGETS: Widget[] = [
     clientId: "be8e6006-98ec-4a0f-80c5-9170ba2b675c",
   },
   {
-    key: "payment-checker",
+    key: "tbank-check-pay",
     title: "Проверка оплат",
     seoTitle: "Проверка оплат и автозапуск Salesbot для amoCRM",
     description:
       "Автоматически сопоставляйте входящие платежи со сделками по паттерну назначения платежа. После совпадения запускайте нужный Salesbot и стандартизируйте обработку оплат в amoCRM.",
-    route: widgetRoute("payment-checker"),
+    route: widgetRoute("tbank-check-pay"),
     tags: ["Оплата", "Финансы", "Salesbot", "Автоматизация"],
     aliases: [
       "payment checker",
       "payment-checker",
+      "tbank-check-pay",
+      "tbank_check_pay",
       "проверка оплат",
       "сопоставление платежей",
       "паттерн оплаты",
@@ -183,6 +185,7 @@ export const WIDGETS: Widget[] = [
     ],
     showInFooter: true,
     showInSearch: true,
+    clientId: "27692bfa-2bfa-4694-be90-b9cda639fcde",
   },
   {
     key: "meet-calendar",
