@@ -13,9 +13,9 @@ import {
   WidgetsCatalogCard,
 } from "./WidgetsCatalogCard";
 
-const GROUP_ALL = "\u0412\u0441\u0435";
-const PRICE_FROM_LABEL = "\u043e\u0442 1 800 \u20BD";
-const PRICE_FREE_LABEL = "\u0411\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u043e";
+const GROUP_ALL = "Все";
+const PRICE_FROM_LABEL = "от 1 800 ₽";
+const PRICE_FREE_LABEL = "Бесплатно";
 
 const CATEGORY_ORDER: WidgetCategory[] = [
   "social",
@@ -60,7 +60,7 @@ type WidgetSearchItem = WidgetListItem & SearchableItem;
 function normalize(value: string) {
   const prepared = (value ?? "").trim().toLowerCase();
   return prepared.replace(
-    /[\u2010\u2011\u2012\u2013\u2014\u2212\uFE63\uFF0D]/g,
+    /[‐‑‒–—−﹣－]/g,
     "-"
   );
 }
@@ -82,27 +82,27 @@ function resolveCategory(
 
   if (
     hasAny(values, [
-      "\u0441\u043e\u0446",
+      "соц",
       "telegram",
       "whatsapp",
-      "\u0442\u0435\u043b\u0435\u0433\u0440\u0430\u043c",
-      "\u0442\u0433",
-      "\u0432\u0430\u0442\u0441\u0430\u043f",
+      "телеграм",
+      "тг",
+      "ватсап",
     ])
   ) {
     return "social";
   }
 
-  if (hasAny(values, ["\u0437\u0430\u0434\u0430\u0447", "task"])) {
+  if (hasAny(values, ["задач", "task"])) {
     return "tasks";
   }
 
   if (
     hasAny(values, [
-      "\u0434\u0443\u0431\u043b",
+      "дубл",
       "duplicate",
-      "\u0441\u043a\u043b\u0435\u0439",
-      "\u043e\u0431\u044a\u0435\u0434\u0438\u043d",
+      "склей",
+      "объедин",
     ])
   ) {
     return "duplicates";
@@ -110,10 +110,10 @@ function resolveCategory(
 
   if (
     hasAny(values, [
-      "\u043a\u043e\u043d\u0442\u0440\u043e\u043b",
-      "\u0437\u0430\u043f\u0440\u0435\u0442",
-      "\u0431\u0435\u0437\u043e\u043f\u0430\u0441",
-      "\u0434\u043e\u0441\u0442\u0443\u043f",
+      "контрол",
+      "запрет",
+      "безопас",
+      "доступ",
       "ban",
     ])
   ) {
@@ -122,13 +122,13 @@ function resolveCategory(
 
   if (
     hasAny(values, [
-      "\u0438\u043d\u0442\u0435\u0433\u0440\u0430\u0446",
+      "интеграц",
       "google",
-      "\u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442",
+      "документ",
       "t-bank",
-      "\u0442\u0438\u043d\u044c\u043a\u043e\u0444\u0444",
-      "\u043e\u043f\u043b\u0430\u0442",
-      "\u0444\u0438\u043d\u0430\u043d\u0441",
+      "тинькофф",
+      "оплат",
+      "финанс",
     ])
   ) {
     return "integrations";
@@ -136,16 +136,16 @@ function resolveCategory(
 
   if (
     hasAny(values, [
-      "\u0438\u043d\u0442\u0435\u0440\u0444\u0435\u0439\u0441",
-      "\u043a\u0430\u0440\u0442\u043e\u0447",
-      "\u043f\u043e\u043b\u0435",
-      "\u0442\u0435\u0433",
-      "\u043f\u043e\u0434\u0441\u0432\u0435\u0442",
-      "\u043f\u043e\u0438\u0441\u043a",
-      "\u043b\u0435\u043d\u0442\u0430",
+      "интерфейс",
+      "карточ",
+      "поле",
+      "тег",
+      "подсвет",
+      "поиск",
+      "лента",
       "shift",
-      "\u0433\u0440\u0443\u043f\u043f\u0438\u0440\u043e\u0432",
-      "\u043f\u043e\u0434\u0441\u043a\u0430\u0437",
+      "группиров",
+      "подсказ",
     ])
   ) {
     return "interface";
@@ -153,12 +153,12 @@ function resolveCategory(
 
   if (
     hasAny(values, [
-      "\u043f\u0440\u043e\u0434\u0430\u0436",
-      "\u0441\u0434\u0435\u043b\u043a",
-      "\u0432\u043e\u0440\u043e\u043d",
-      "\u043b\u0438\u0434",
+      "продаж",
+      "сделк",
+      "ворон",
+      "лид",
       "ltv",
-      "\u043a\u0430\u043b\u0435\u043d\u0434\u0430\u0440",
+      "календар",
     ])
   ) {
     return "sales";
@@ -293,9 +293,7 @@ export function WidgetsList({ priceLabelsByKey }: WidgetsListProps) {
       <SearchWithGroups
         items={items}
         groups={groups}
-        queryPlaceholder={
-          "\u041f\u043e\u0438\u0441\u043a \u043f\u043e \u0432\u0438\u0434\u0436\u0435\u0442\u0430\u043c..."
-        }
+        queryPlaceholder="Поиск по виджетам..."
         query={query}
         selectedGroup={selectedGroup}
         onQueryChange={setQuery}
@@ -303,7 +301,7 @@ export function WidgetsList({ priceLabelsByKey }: WidgetsListProps) {
       />
 
       <div className="mt-4 text-[14px] text-black/60">
-        {"\u041d\u0430\u0439\u0434\u0435\u043d\u043e"}: {filtered.length}
+        Найдено: {filtered.length}
       </div>
 
       {filtered.length > 0 ? (
@@ -331,9 +329,7 @@ export function WidgetsList({ priceLabelsByKey }: WidgetsListProps) {
         </div>
       ) : (
         <div className="mt-6 rounded-[20px] border border-[#d9e4ff] bg-white px-6 py-8 text-center text-black/60">
-          {
-            "\u041d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e. \u041f\u043e\u043f\u0440\u043e\u0431\u0443\u0439\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0439 \u0437\u0430\u043f\u0440\u043e\u0441 \u0438\u043b\u0438 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044e."
-          }
+          Ничего не найдено. Попробуйте другой запрос или категорию.
         </div>
       )}
     </div>

@@ -28,7 +28,7 @@ type Props<T extends SearchableItem> = {
 export function SearchWithGroups<T extends SearchableItem>({
   items,
   groups,
-  queryPlaceholder = "\u041f\u043e\u0438\u0441\u043a...",
+  queryPlaceholder = "Поиск...",
   suggestionsLimit = 6,
   query,
   selectedGroup,
@@ -110,7 +110,7 @@ export function SearchWithGroups<T extends SearchableItem>({
             type="button"
             onMouseDown={(event) => event.preventDefault()}
             onClick={() => setIsOpen(Boolean(query.trim()))}
-            aria-label="\u041d\u0430\u0439\u0442\u0438"
+            aria-label="Найти"
             className="absolute bottom-[4px] right-[4px] top-[4px] flex w-[36px] items-center justify-center rounded-[10px] bg-[#3760E7] text-white transition hover:opacity-90"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none">

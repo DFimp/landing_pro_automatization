@@ -10,11 +10,11 @@ interface ConsultCardProps {
 }
 
 const DEFAULT_TITLE =
-  "\u041E\u0441\u0432\u043E\u0431\u043E\u0434\u0438\u043C \u0432\u0430\u0448\u0435 \u0432\u0440\u0435\u043C\u044F, \u0437\u0430 \u0441\u0447\u0435\u0442 \u0430\u0432\u0442\u043E\u043C\u0430\u0442\u0438\u0437\u0430\u0446\u0438\u0438 \u043F\u0440\u043E\u0446\u0435\u0441\u0441\u043E\u0432 \u0438 \u0430\u043D\u0430\u043B\u0438\u0442\u0438\u043A\u0438";
+  "Освободим ваше время, за счет автоматизации процессов и аналитики";
 const DEFAULT_DESCRIPTION =
-  "\u0412\u043E\u0437\u044C\u043C\u0435\u043C \u043D\u0430 \u0441\u0435\u0431\u044F \u0440\u0443\u0442\u0438\u043D\u0443, \u043F\u0440\u043E\u043A\u043E\u043D\u0442\u0440\u043E\u043B\u0438\u0440\u0443\u0435\u043C \u043C\u0435\u043D\u0435\u0434\u0436\u0435\u0440\u043E\u0432 \u0438 \u043F\u0440\u0435\u0434\u043E\u0441\u0442\u0430\u0432\u0438\u043C \u043E\u0442\u0447\u0435\u0442\u044B \u0434\u043B\u044F \u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u0447\u0435\u0441\u043A\u0438\u0445 \u0440\u0435\u0448\u0435\u043D\u0438\u0439";
+  "Возьмем на себя рутину, проконтролируем менеджеров и предоставим отчеты для стратегических решений";
 const DEFAULT_BUTTON_TEXT =
-  "\u041A\u041E\u041D\u0421\u0423\u041B\u042C\u0422\u0410\u0426\u0418\u042F";
+  "КОНСУЛЬТАЦИЯ";
 
 export default function ConsultCard({
   className,
@@ -77,7 +77,7 @@ export default function ConsultCard({
                 </div>
 
                 <div className={`${styles.chip} mt-5 inline-flex rounded-full border border-white/14 bg-white/10 px-3 py-1 text-[12px] font-semibold uppercase tracking-[0.08em] text-white/90`}>
-                  {"\u041C\u044B \u0432\u0430\u0441 \u0446\u0435\u043D\u0438\u043C"}
+                  Мы вас ценим
                 </div>
 
                 <div className={`${styles.innerDivider} mt-5 h-[2px] w-28 rounded-full bg-white/78`} />

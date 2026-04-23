@@ -30,17 +30,17 @@ type LaneCardProps = {
 };
 
 const copy = {
-  dealsPage: "\u0412\u041e\u0420\u041e\u041d\u041a\u0410",
-  addDeal: "+ \u0421\u0414\u0415\u041b\u041a\u0410",
-  settingsPage: "\u041d\u0410\u0421\u0422\u0420\u041e\u0419\u041a\u0418",
+  dealsPage: "ВОРОНКА",
+  addDeal: "+ СДЕЛКА",
+  settingsPage: "НАСТРОЙКИ",
   brand: "amoCRM",
-  conversion: "\u041a\u041e\u041d\u0412\u0415\u0420\u0421\u0418\u042f",
+  conversion: "КОНВЕРСИЯ",
 };
 
 const dealLanes: DealLane[] = [
   {
-    labelLines: ["\u041f\u0415\u0420\u0412\u0418\u0427\u041d\u042b\u0419", "\u041a\u041e\u041d\u0422\u0410\u041a\u0422"],
-    count: "4 \u0441\u0434\u0435\u043b\u043a\u0438",
+    labelLines: ["ПЕРВИЧНЫЙ", "КОНТАКТ"],
+    count: "4 сделки",
     color: "#7AA6FF",
     x: 196,
     width: 96,
@@ -51,8 +51,8 @@ const dealLanes: DealLane[] = [
     ],
   },
   {
-    labelLines: ["\u041f\u0415\u0420\u0415\u0413\u041e\u0412\u041e\u0420\u042b"],
-    count: "2 \u0441\u0434\u0435\u043b\u043a\u0438",
+    labelLines: ["ПЕРЕГОВОРЫ"],
+    count: "2 сделки",
     color: "#F5B339",
     x: 304,
     width: 96,
@@ -62,16 +62,16 @@ const dealLanes: DealLane[] = [
     ],
   },
   {
-    labelLines: ["\u0421\u041e\u0413\u041b\u0410\u0421\u041e\u0412\u0410\u041d\u0418\u0415"],
-    count: "1 \u0441\u0434\u0435\u043b\u043a\u0430",
+    labelLines: ["СОГЛАСОВАНИЕ"],
+    count: "1 сделка",
     color: "#FF8E77",
     x: 412,
     width: 96,
     cards: [{ y: 222, accent: "#FF8E77" }],
   },
   {
-    labelLines: ["\u0421\u0414\u0415\u041b\u041a\u0410"],
-    count: "1 \u0441\u0434\u0435\u043b\u043a\u0430",
+    labelLines: ["СДЕЛКА"],
+    count: "1 сделка",
     color: "#10B981",
     x: 520,
     width: 96,
@@ -81,7 +81,7 @@ const dealLanes: DealLane[] = [
 
 const settingsItems: SettingsItem[] = [
   {
-    title: "\u0423\u0432\u0435\u0434\u043e\u043c\u043b\u0435\u043d\u0438\u044f Telegram",
+    title: "Уведомления Telegram",
     lineOne: 156,
     lineTwo: 138,
     y: 110,
@@ -89,14 +89,14 @@ const settingsItems: SettingsItem[] = [
     animated: true,
   },
   {
-    title: "\u0420\u0430\u0441\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u0435 \u043b\u0438\u0434\u043e\u0432",
+    title: "Распределение сделок",
     lineOne: 164,
     lineTwo: 124,
     y: 188,
     active: true,
   },
   {
-    title: "\u0414\u0443\u0431\u043b\u0438\u043a\u0430\u0442\u044b \u043b\u0438\u0434\u043e\u0432",
+    title: "Дубликаты сделок",
     lineOne: 142,
     lineTwo: 118,
     y: 266,

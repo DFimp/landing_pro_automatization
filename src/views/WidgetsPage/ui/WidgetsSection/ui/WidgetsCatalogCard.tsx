@@ -12,14 +12,14 @@ export type WidgetCategory =
   | "data";
 
 export const CATEGORY_LABELS: Record<WidgetCategory, string> = {
-  social: "\u0421\u043e\u0446 \u0441\u0435\u0442\u0438",
-  tasks: "\u0417\u0430\u0434\u0430\u0447\u0438",
-  duplicates: "\u0414\u0443\u0431\u043b\u0438",
-  sales: "\u041f\u0440\u043e\u0434\u0430\u0436\u0438",
-  interface: "\u0418\u043d\u0442\u0435\u0440\u0444\u0435\u0439\u0441",
-  control: "\u041a\u043e\u043d\u0442\u0440\u043e\u043b\u044c",
-  integrations: "\u0418\u043d\u0442\u0435\u0433\u0440\u0430\u0446\u0438\u0438",
-  data: "\u0414\u0430\u043d\u043d\u044b\u0435",
+  social: "Соц сети",
+  tasks: "Задачи",
+  duplicates: "Дубли",
+  sales: "Продажи",
+  interface: "Интерфейс",
+  control: "Контроль",
+  integrations: "Интеграции",
+  data: "Данные",
 };
 
 type WidgetsCatalogCardProps = {
@@ -34,6 +34,7 @@ type WidgetsCatalogCardProps = {
 type WidgetIconType =
   | "telegram"
   | "whatsapp"
+  | "max"
   | "distribution"
   | "duplicate"
   | "duplicateContacts"
@@ -53,6 +54,9 @@ type WidgetIconType =
   | "noteLock"
   | "feed"
   | "hide"
+  | "brush"
+  | "highlighter"
+  | "tagColor"
   | "palette"
   | "search"
   | "related"
@@ -77,6 +81,8 @@ function resolveWidgetIconType(widgetKey: string): WidgetIconType {
       return "telegram";
     case "whatsapp-button":
       return "whatsapp";
+    case "max-notice":
+      return "max";
     case "lead-distribution":
       return "distribution";
     case "duplicate-leads":
@@ -118,9 +124,11 @@ function resolveWidgetIconType(widgetKey: string): WidgetIconType {
     case "hiding-data":
       return "hide";
     case "color-leads":
+      return "brush";
     case "color-fields":
+      return "highlighter";
     case "color-tags":
-      return "palette";
+      return "tagColor";
     case "search-fields":
       return "search";
     case "other-leads":
@@ -156,9 +164,16 @@ function IconPath({ type }: { type: WidgetIconType }) {
     case "whatsapp":
       return (
         <>
-          <path d="M12 20a8 8 0 1 0-4.8-1.6L4 20l1.8-3.2A8 8 0 0 0 12 20Z" {...common} />
-          <path d="M9 8.8c.4 2.4 2.1 4.3 4.4 5" {...common} />
-          <path d="M14 13.8c-.8.7-1.9.5-3-.3-1-.7-1.8-1.7-2.2-2.9-.4-1.2-.2-2.3.6-3" {...common} />
+          <path d="M12 4.2a7.8 7.8 0 0 0-6.8 11.7L4 20l4.2-1.1A7.8 7.8 0 1 0 12 4.2Z" {...common} />
+          <path d="m9.3 8.8.7-.7a.9.9 0 0 1 1.3 0l.8.8a.9.9 0 0 1 0 1.3l-.4.4a.7.7 0 0 0-.1.8 6.4 6.4 0 0 0 1.7 1.7.7.7 0 0 0 .8-.1l.4-.4a.9.9 0 0 1 1.3 0l.8.8a.9.9 0 0 1 0 1.3l-.7.7c-.8.8-2.2.8-3.3.1a9.4 9.4 0 0 1-2.6-2.6c-.7-1.1-.7-2.5.1-3.3Z" transform="translate(-1.1 0)" {...common} />
+        </>
+      );
+    case "max":
+      return (
+        <>
+          <rect x="4" y="4" width="16" height="16" rx="5" {...common} />
+          <path d="M12 7.3a4.7 4.7 0 1 1-3.7 7.6L7 17.3" {...common} />
+          <circle cx="12" cy="12" r="1.9" fill={c} />
         </>
       );
     case "distribution":
@@ -207,8 +222,8 @@ function IconPath({ type }: { type: WidgetIconType }) {
     case "paymentCheck":
       return (
         <>
-          <rect x="3.5" y="5" width="17" height="14" rx="2.5" {...common} />
-          <path d="M3.5 10h17M9.5 15.5l2 2 3.8-3.8" {...common} />
+          <circle cx="12" cy="12" r="8" {...common} />
+          <path d="m8.6 12.3 2.2 2.2 4.6-4.6" {...common} />
         </>
       );
     case "calendar":
@@ -223,7 +238,7 @@ function IconPath({ type }: { type: WidgetIconType }) {
       return (
         <>
           <circle cx="12" cy="12" r="8" {...common} />
-          <path d="M12 8v4l3 2M4.5 12h15" {...common} />
+          <path d="M12 7v5l3 2" {...common} />
         </>
       );
     case "tasks":
@@ -303,6 +318,29 @@ function IconPath({ type }: { type: WidgetIconType }) {
           <path d="m5 5 14 14" {...common} />
         </>
       );
+    case "brush":
+      return (
+        <>
+          <path d="m14.7 4.3 5 5-8.6 8.6-5-5 8.6-8.6Z" {...common} />
+          <path d="m6.1 12.9-2 4.4a2.3 2.3 0 0 0 .5 2.5 2.3 2.3 0 0 0 2.5.5l4.4-2" {...common} />
+          <path d="m16.6 2.4 5 5" {...common} />
+        </>
+      );
+    case "highlighter":
+      return (
+        <>
+          <path d="m5 19 4-.5 8.9-8.9a2 2 0 0 0 0-2.9l-.6-.6a2 2 0 0 0-2.9 0L5.5 15 5 19Z" {...common} />
+          <path d="m12.7 7.7 3.6 3.6M4 21h8" {...common} />
+        </>
+      );
+    case "tagColor":
+      return (
+        <>
+          <path d="M3.5 11.5V6.8A2.8 2.8 0 0 1 6.3 4h4.5L20 13.2 13.2 20 3.5 11.5Z" {...common} />
+          <circle cx="8" cy="8.2" r="1.2" {...common} />
+          <circle cx="15.8" cy="15.8" r="1.4" fill={c} />
+        </>
+      );
     case "palette":
       return (
         <>
@@ -380,7 +418,7 @@ export function WidgetsCatalogCard({
 }: WidgetsCatalogCardProps) {
   const isFree = priceLabel
     .toLowerCase()
-    .includes("\u0431\u0435\u0441\u043f\u043b\u0430\u0442");
+    .includes("бесплат");
 
   return (
     <Link href={link} className="block h-full">
@@ -388,8 +426,8 @@ export function WidgetsCatalogCard({
         <div className="widget-card__inner relative h-full overflow-hidden rounded-[22px] bg-white px-5 py-4">
           {!isFree && (
             <div className="pointer-events-none absolute inset-0 z-20">
-              <div className="absolute left-[75%] top-[75%] flex h-[28px] w-[88%] -translate-x-1/2 -translate-y-1/2 -rotate-45 items-center justify-center rounded-none bg-[#ef4444] px-3 text-center text-[10px] font-semibold uppercase leading-none tracking-[0.08em] text-white shadow-[0_8px_18px_rgba(239,68,68,0.45)]">
-                {"\u0032 \u043d\u0435\u0434\u0435\u043b\u0438 \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u043e"}
+              <div className="absolute left-[75%] top-[75%] flex h-[28px] w-[100%] -translate-x-1/2 -translate-y-1/2 -rotate-45 items-center justify-center rounded-none bg-[#ef4444] px-3 text-center text-[10px] font-semibold uppercase leading-none tracking-[0.08em] text-white shadow-[0_8px_18px_rgba(239,68,68,0.45)]">
+                2 недели бесплатно
               </div>
             </div>
           )}
@@ -422,7 +460,7 @@ export function WidgetsCatalogCard({
                 </span>
 
                 <span className="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#3760E7]">
-                  {"\u041e\u0442\u043a\u0440\u044b\u0442\u044c"}
+                  Открыть
                   <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden>
                     <path
                       d="M3 8h10m0 0-4-4m4 4-4 4"
