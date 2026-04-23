@@ -12,10 +12,10 @@ import {
   WidgetPageTemplate,
 } from "@/features/widget-page";
 
-const widget = WIDGETS_DATA["payment-checker"];
+const widget = WIDGETS_DATA["tbank-check-pay"];
 const installHref = widget.clientId ? getWidgetInstallUrl(widget.clientId) : undefined;
 
-export default function PaymentChecker({
+export default function TBankCheckPay({
   searchParams,
 }: {
   searchParams: { embed?: string };

@@ -1,4 +1,4 @@
-import WidgetPage, { metadata } from "@/views/widgets/PaymentChecker";
+import WidgetPage, { metadata } from "@/views/widgets/TBankCheckPay";
 
 export { metadata };
 
