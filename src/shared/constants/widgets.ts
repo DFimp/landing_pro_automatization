@@ -75,6 +75,7 @@ export const WIDGETS: Widget[] = [
     ],
     showInFooter: true,
     showInSearch: true,
+    clientId: "9ae6d449-560a-4428-9976-654022c7faf6",
   },
   {
     key: "lead-distribution",
