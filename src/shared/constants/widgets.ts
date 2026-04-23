@@ -58,8 +58,8 @@ export const WIDGETS: Widget[] = [
   },
   {
     key: "max-notice",
-    title: "Уведомления MAX",
-    seoTitle: "Уведомления MAX для amoCRM",
+    title: "МАКС(MAX) уведомления",
+    seoTitle: "МАКС(MAX) уведомления для amoCRM",
     description:
       "Получайте уведомления из amoCRM в MAX и запускайте нужные действия по сделке в один клик. Поддержка сценариев по этапам воронки и расписанию отправки.",
     route: widgetRoute("max-notice"),
