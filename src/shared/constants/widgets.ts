@@ -1,4 +1,4 @@
-﻿// ============================================
+// ============================================
 // WIDGETS - единый источник данных для всех виджетов
 // ============================================
 
@@ -162,6 +162,20 @@ export const WIDGETS: Widget[] = [
     clientId: "e27fe468-e09b-4b17-8786-48e01614e951",
   },
   {
+    key: "meet-calendar",
+    title: "Календарь встреч",
+    seoTitle: "Календарь встреч для amoCRM",
+    description:
+      "Создавайте встречи по триггерам и вручную. Назначайте ответственных, дату и время.",
+    route: widgetRoute("meet-calendar"),
+    tags: ["Календарь", "Встречи", "Автоматизация"],
+    aliases: ["календарь", "встречи", "meet", "calendar", "записи"],
+    showInFooter: true,
+    showInSearch: true,
+    hidden: false,
+    clientId: "6292aa61-5947-4291-a0f0-6819fccb07c0",
+  },
+  {
     key: "t-bank",
     title: "Т‑Банк(Тинькофф). Счета",
     seoTitle: "Т‑Банк(Тинькофф). Счета для amoCRM",
@@ -209,18 +223,90 @@ export const WIDGETS: Widget[] = [
     clientId: "27692bfa-2bfa-4694-be90-b9cda639fcde",
   },
   {
-    key: "meet-calendar",
-    title: "Календарь встреч",
-    seoTitle: "Календарь встреч для amoCRM",
+    key: "hiding-data",
+    title: "Скрытие данных",
+    seoTitle: "Скрытие данных в amoCRM",
     description:
-      "Создавайте встречи по триггерам и вручную. Назначайте ответственных, дату и время.",
-    route: widgetRoute("meet-calendar"),
-    tags: ["Календарь", "Встречи", "Автоматизация"],
-    aliases: ["календарь", "встречи", "meet", "calendar", "записи"],
+      "Скрывайте пункты меню, воронки и этапы, поля в карточках и блоки по тегам. Гибкие режимы (без ограничений, белый и чёрный список), настройки для каждого пользователя и быстрые изменения без ручной правки интерфейса.",
+    route: widgetRoute("hiding-data"),
+    tags: ["Интерфейс", "Доступ", "Безопасность"],
+    aliases: [
+      "скрытие",
+      "данные",
+      "поля",
+      "воронки",
+      "этапы",
+      "теги",
+      "доступ",
+      "ограничение",
+      "visibility",
+      "hide data",
+    ],
+    showInFooter: true,
+    showInSearch: true,
+    clientId: "05b6ae88-d0fb-4fce-b17a-6a38cfaeb4a8",
+  },
+  {
+    key: "color-leads",
+    title: "Подкрашивание сделок (цветные сделки)",
+    seoTitle: "Подкрашивание сделок (цветные сделки) для amoCRM",
+    description:
+      "Автоматически выделяйте сделки цветом по правилам: бюджет, этап, теги, пользовательские поля и другие условия.",
+    route: widgetRoute("color-leads"),
+    tags: ["Продажи", "Сделки", "Воронка", "Автоматизация"],
+    aliases: [
+      "окраска сделок",
+      "раскраска сделок",
+      "цвет сделок",
+      "lead coloring",
+      "leads coloring",
+      "color deals",
+      "color leads",
+    ],
     showInFooter: true,
     showInSearch: true,
     hidden: false,
-    clientId: "6292aa61-5947-4291-a0f0-6819fccb07c0",
+    clientId: "689bf620-dffb-40c5-9f3f-7b87359fde27",
+  },
+  {
+    key: "ltv-client",
+    title: "LTV клиента",
+    seoTitle: "LTV клиента в карточке сделки для amoCRM",
+    description:
+      "Показывайте LTV клиента прямо в карточке и канбане: сумма успешных сделок, количество выигранных и проигранных сделок, отдельная плашка «Новый клиент» и гибкие цветовые правила по порогам.",
+    route: widgetRoute("ltv-client"),
+    tags: ["Сделки", "LTV", "Канбан", "Карточка сделки"],
+    aliases: [
+      "ltv",
+      "ltv клиента",
+      "ltv клиент",
+      "ценность клиента",
+      "новый клиент",
+      "ltv badge",
+    ],
+    showInFooter: true,
+    showInSearch: true,
+    clientId: "bd254886-6487-4fe6-9c0e-3357f815bfaf"
+  },
+  {
+    key: "text-rewrite",
+    title: "TextRewrite AI",
+    seoTitle: "TextRewrite AI: переписывание текста для amoCRM",
+    description:
+      "AI-виджет для переписывания сообщений прямо в карточке сделки amoCRM. Управляйте стилем ответа, добавляйте свои инструкции и ускоряйте коммуникацию с клиентами.",
+    route: widgetRoute("text-rewrite"),
+    tags: ["AI", "Текст", "Коммуникации", "Автоматизация"],
+    aliases: [
+      "text rewrite",
+      "text-rewrite",
+      "переписать текст",
+      "перефразировать",
+      "ai текст",
+      "тон общения",
+    ],
+    showInFooter: true,
+    showInSearch: true,
+    clientId: "7c40a411-00f8-473a-bc0c-be5cca21f372"
   },
   {
     key: "time-zone",
@@ -452,52 +538,6 @@ export const WIDGETS: Widget[] = [
     clientId: "6738863c-0c64-46c6-81fb-d2403c5a60b7",
   },
   {
-    key: "hiding-data",
-    title: "Скрытие данных",
-    seoTitle: "Скрытие данных в amoCRM",
-    description:
-      "Скрывайте пункты меню, воронки и этапы, поля в карточках и блоки по тегам. Гибкие режимы (без ограничений, белый и чёрный список), настройки для каждого пользователя и быстрые изменения без ручной правки интерфейса.",
-    route: widgetRoute("hiding-data"),
-    tags: ["Интерфейс", "Доступ", "Безопасность"],
-    aliases: [
-      "скрытие",
-      "данные",
-      "поля",
-      "воронки",
-      "этапы",
-      "теги",
-      "доступ",
-      "ограничение",
-      "visibility",
-      "hide data",
-    ],
-    showInFooter: true,
-    showInSearch: true,
-    clientId: "05b6ae88-d0fb-4fce-b17a-6a38cfaeb4a8",
-  },
-  {
-    key: "color-leads",
-    title: "Подкрашивание сделок (цветные сделки)",
-    seoTitle: "Подкрашивание сделок (цветные сделки) для amoCRM",
-    description:
-      "Автоматически выделяйте сделки цветом по правилам: бюджет, этап, теги, пользовательские поля и другие условия.",
-    route: widgetRoute("color-leads"),
-    tags: ["Продажи", "Сделки", "Воронка", "Автоматизация"],
-    aliases: [
-      "окраска сделок",
-      "раскраска сделок",
-      "цвет сделок",
-      "lead coloring",
-      "leads coloring",
-      "color deals",
-      "color leads",
-    ],
-    showInFooter: true,
-    showInSearch: true,
-    hidden: false,
-    clientId: "689bf620-dffb-40c5-9f3f-7b87359fde27",
-  },
-  {
     key: "search-fields",
     title: "Поиск по списку",
     seoTitle: "Поиск по списку для amoCRM",
@@ -602,47 +642,6 @@ export const WIDGETS: Widget[] = [
     clientId: "7e1f2761-7a5b-4adc-bb33-ec828ff4c448"
   },
   {
-    key: "text-rewrite",
-    title: "TextRewrite AI",
-    seoTitle: "TextRewrite AI: переписывание текста для amoCRM",
-    description:
-      "AI-виджет для переписывания сообщений прямо в карточке сделки amoCRM. Управляйте стилем ответа, добавляйте свои инструкции и ускоряйте коммуникацию с клиентами.",
-    route: widgetRoute("text-rewrite"),
-    tags: ["AI", "Текст", "Коммуникации", "Автоматизация"],
-    aliases: [
-      "text rewrite",
-      "text-rewrite",
-      "переписать текст",
-      "перефразировать",
-      "ai текст",
-      "тон общения",
-    ],
-    showInFooter: true,
-    showInSearch: true,
-    clientId: "7c40a411-00f8-473a-bc0c-be5cca21f372"
-  },
-  {
-    key: "ltv-client",
-    title: "LTV клиента",
-    seoTitle: "LTV клиента в карточке сделки для amoCRM",
-    description:
-      "Показывайте LTV клиента прямо в карточке и канбане: сумма успешных сделок, количество выигранных и проигранных сделок, отдельная плашка «Новый клиент» и гибкие цветовые правила по порогам.",
-    route: widgetRoute("ltv-client"),
-    tags: ["Сделки", "LTV", "Канбан", "Карточка сделки"],
-    aliases: [
-      "ltv",
-      "ltv клиента",
-      "ltv клиент",
-      "ценность клиента",
-      "новый клиент",
-      "ltv badge",
-    ],
-    showInFooter: true,
-    showInSearch: true,
-    clientId: "bd254886-6487-4fe6-9c0e-3357f815bfaf"
-  },
-
-  {
     key: "google-sheets",
     title: "Google Sheets",
     seoTitle: "Google Таблицы для amoCRM",
@@ -711,4 +710,3 @@ export const WIDGETS_LIST = WIDGETS.filter((w) => !w.hidden);
 
 // Для обратной совместимости со старым интерфейсом WidgetData
 export type WidgetData = Widget;
-
