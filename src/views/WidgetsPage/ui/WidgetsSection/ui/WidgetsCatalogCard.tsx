@@ -426,7 +426,7 @@ export function WidgetsCatalogCard({
         <div className="widget-card__inner relative h-full overflow-hidden rounded-[22px] bg-white px-5 py-4">
           {!isFree && (
             <div className="pointer-events-none absolute inset-0 z-20">
-              <div className="absolute left-[75%] top-[75%] flex h-[28px] w-[88%] -translate-x-1/2 -translate-y-1/2 -rotate-45 items-center justify-center rounded-none bg-[#16a34a] px-3 text-center text-[10px] font-semibold uppercase leading-none tracking-[0.08em] text-white shadow-[0_8px_18px_rgba(22,163,74,0.45)]">
+              <div className="absolute left-[75%] top-[75%] flex h-[28px] w-[110%] -translate-x-1/2 -translate-y-1/2 -rotate-45 items-center justify-center rounded-none bg-[#16a34a] px-3 text-center text-[10px] font-semibold uppercase leading-none tracking-[0.08em] text-white shadow-[0_8px_18px_rgba(22,163,74,0.45)]">
                 14 дней бесплатно
               </div>
             </div>
