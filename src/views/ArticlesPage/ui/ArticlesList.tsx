@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useMemo, useState } from "react";
 import { ArticlesListItem } from "./ArticlesListItem";
@@ -31,7 +31,7 @@ const ARTICLES: Article[] = [
     tags: ["Дубли", "Продажи"],
   },
   {
-    title: "AmoCRM: почему эта CRM реально помогает бизнесу продавать больше",
+    title: "amoCRM: почему эта CRM реально помогает бизнесу продавать больше",
     text: "Чем amoCRM хороша для бизнеса: воронка продаж, омниканальность, роботы и триггеры, интеграции и ошибки настройки.",
     link: "/articles/amocrm-helps-sell",
     variant: 2,
@@ -72,15 +72,47 @@ const ARTICLES: Article[] = [
     variant: 3,
     tags: ["Дубли", "CRM", "Продажи"],
   },
+  {
+    title: "Настройка amoCRM: что нужно сделать, чтобы CRM работала",
+    text: "Разбираем, что входит в настройку amoCRM: воронки, поля, задачи, источники, права, уведомления, аналитику и контроль менеджеров.",
+    link: "/articles/amocrm-working-crm",
+    variant: 4,
+    tags: ["CRM", "Настройка", "Продажи"],
+  },
+  {
+    title: "Как не терять заявки в amoCRM - настройка контроля лидов",
+    text: "Разбираем, почему заявки теряются в amoCRM и что настроить: источники, задачи, уведомления, этапы, контроль менеджеров и аналитику.",
+    link: "/articles/amocrm-lead-control",
+    variant: 2,
+    tags: ["CRM", "Продажи", "Контроль"],
+  },
+  {
+    title: "Настройка amoCRM цена - от чего зависит стоимость работ",
+    text: "Сколько стоит настройка amoCRM: что входит в работу, от чего зависит цена, какие бывают уровни настройки и почему дешевый запуск часто приходится переделывать.",
+    link: "/articles/amocrm-cost-dependence",
+    variant: 1,
+    tags: ["CRM", "Настройка", "Стоимость"],
+  },
+  {
+    title: "CRM-аудит amoCRM: что показывает проверка настроек",
+    text: "Разбираем, зачем нужен CRM-аудит amoCRM, какие проблемы он находит и как понять, что текущая настройка мешает продажам.",
+    link: "/articles/amocrm-check-settings",
+    variant: 3,
+    tags: ["CRM", "Аудит", "Контроль"],
+  },
 ];
 
 const GROUPS = [
   "Все",
   "Дубли",
+  "Настройка",
+  "Контроль",
   "Автоматизация",
   "Продажи",
   "Внедрение",
   "Виджеты",
+  "Стоимость",
+  "Аудит",
 ] as const;
 
 export function ArticlesList() {
@@ -133,9 +165,7 @@ export function ArticlesList() {
         onGroupChange={setSelectedGroup}
       />
 
-      <div className="mt-4 text-[14px] text-black/60">
-        Найдено: {filtered.length}
-      </div>
+      <div className="mt-4 text-[14px] text-black/60">Найдено: {filtered.length}</div>
 
       <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[40px] min-h-[300px]">
         {filtered.map((article, index) => (

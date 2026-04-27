@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Единый источник данных для всех статей
  * Используется для:
  * - Списка статей
@@ -23,7 +23,7 @@ export interface ArticleData {
 export const ARTICLES_DATA: Record<string, ArticleData> = {
   "duplicate-leads": {
     slug: "duplicate-leads",
-    title: "Как работать с дублями сделок в amoCRM - 3 кейса на практике",
+    title: "Как работать с дублями сделок в amoCRM — 3 кейса на практике",
     shortName: "Как работать с дублями сделок",
     description:
       "Разбираем на реальных кейсах, как правильно объединять дубли сделок в amoCRM. Узнайте, как не потерять клиентов, сэкономить время менеджеров и навести порядок в базе CRM.",
@@ -117,6 +117,62 @@ export const ARTICLES_DATA: Record<string, ArticleData> = {
     readTime: "14 минут",
     wordCount: 3000,
     articleSection: "Дубли в amoCRM",
+  },
+
+  "amocrm-working-crm": {
+    slug: "amocrm-working-crm",
+    title: "Настройка amoCRM: что нужно сделать, чтобы CRM работала",
+    shortName: "Настройка amoCRM",
+    description:
+      "Разбираем, что входит в настройку amoCRM: воронки, поля, задачи, источники, права, уведомления, аналитику и контроль менеджеров.",
+    link: "/articles/amocrm-working-crm",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 3200,
+    articleSection: "Настройка amoCRM",
+  },
+
+  "amocrm-lead-control": {
+    slug: "amocrm-lead-control",
+    title: "Как не терять заявки в amoCRM - настройка контроля лидов",
+    shortName: "Контроль заявок в amoCRM",
+    description:
+      "Разбираем, почему заявки теряются в amoCRM и что настроить: источники, задачи, уведомления, этапы, контроль менеджеров и аналитику.",
+    link: "/articles/amocrm-lead-control",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 3200,
+    articleSection: "Контроль лидов",
+  },
+
+  "amocrm-cost-dependence": {
+    slug: "amocrm-cost-dependence",
+    title: "Настройка amoCRM цена - от чего зависит стоимость работ",
+    shortName: "Цена настройки amoCRM",
+    description:
+      "Сколько стоит настройка amoCRM: что входит в работу, от чего зависит цена, какие бывают уровни настройки и почему дешевый запуск часто приходится переделывать.",
+    link: "/articles/amocrm-cost-dependence",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 3300,
+    articleSection: "Стоимость настройки amoCRM",
+  },
+
+  "amocrm-check-settings": {
+    slug: "amocrm-check-settings",
+    title: "CRM-аудит amoCRM: что показывает проверка настроек",
+    shortName: "CRM-аудит amoCRM",
+    description:
+      "Разбираем, зачем нужен CRM-аудит amoCRM, какие проблемы он находит и как понять, что текущая настройка мешает продажам.",
+    link: "/articles/amocrm-check-settings",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 3200,
+    articleSection: "CRM-аудит",
   },
 };
 

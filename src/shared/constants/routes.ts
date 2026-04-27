@@ -1,4 +1,4 @@
-import { WIDGETS } from "./widgets";
+﻿import { WIDGETS } from "./widgets";
 
 export const SITE_URL = "https://pro-automatization.ru";
 
@@ -43,6 +43,22 @@ export const ARTICLES_ROUTES = {
   RUINED_SALES: {
     path: "/articles/amocrm-ruined-sales",
     name: "Дубли в amoCRM",
+  },
+  WORKING_CRM: {
+    path: "/articles/amocrm-working-crm",
+    name: "Настройка amoCRM",
+  },
+  LEAD_CONTROL: {
+    path: "/articles/amocrm-lead-control",
+    name: "Контроль заявок в amoCRM",
+  },
+  COST_DEPENDENCE: {
+    path: "/articles/amocrm-cost-dependence",
+    name: "Цена настройки amoCRM",
+  },
+  CHECK_SETTINGS: {
+    path: "/articles/amocrm-check-settings",
+    name: "CRM-аудит amoCRM",
   },
 } as const;
 

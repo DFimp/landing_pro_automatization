@@ -1,0 +1,535 @@
+﻿import ArticleBlockWrapper from "@/views/articles/shared/ArticleContentSection/ui/ArticleBlockWrapper";
+import Reveal from "@/shared/ui/Reveal/Reveal";
+
+function BaseSetupTable() {
+  return (
+    <div className="my-4 overflow-x-auto">
+      <div className="min-w-[723px] overflow-hidden rounded-[16px] border border-[#3760E7]/45 bg-white">
+        <table className="w-full border-collapse">
+          <tbody>
+            <tr>
+              <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">Блок</td>
+              <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">Что делается</td>
+            </tr>
+            <tr>
+              <td className="border-b border-r border-[#3760E7]/20 p-3">Пользователи</td>
+              <td className="border-b border-[#3760E7]/20 p-3">добавление сотрудников</td>
+            </tr>
+            <tr>
+              <td className="border-b border-r border-[#3760E7]/20 p-3">Воронка</td>
+              <td className="border-b border-[#3760E7]/20 p-3">создание базовых этапов</td>
+            </tr>
+            <tr>
+              <td className="border-b border-r border-[#3760E7]/20 p-3">Поля</td>
+              <td className="border-b border-[#3760E7]/20 p-3">настройка основных данных по сделке</td>
+            </tr>
+            <tr>
+              <td className="border-b border-r border-[#3760E7]/20 p-3">Задачи</td>
+              <td className="border-b border-[#3760E7]/20 p-3">простые задачи на действия менеджера</td>
+            </tr>
+            <tr>
+              <td className="border-b border-r border-[#3760E7]/20 p-3">Права</td>
+              <td className="border-b border-[#3760E7]/20 p-3">базовое разделение доступа</td>
+            </tr>
+            <tr>
+              <td className="border-r border-[#3760E7]/20 p-3">Инструкция</td>
+              <td className="p-3">краткое объяснение работы в CRM</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+function CostCalculationTable() {
+  return (
+    <div className="my-4 overflow-x-auto">
+      <div className="min-w-[723px] overflow-hidden rounded-[16px] border border-[#3760E7]/45 bg-white">
+        <table className="w-full border-collapse">
+          <tbody>
+            <tr>
+              <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">Направление</td>
+              <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">Что оценивается</td>
+            </tr>
+            <tr>
+              <td className="border-b border-r border-[#3760E7]/20 p-3">Анализ</td>
+              <td className="border-b border-[#3760E7]/20 p-3">разбор процесса, текущей CRM, источников и задач</td>
+            </tr>
+            <tr>
+              <td className="border-b border-r border-[#3760E7]/20 p-3">Настройка</td>
+              <td className="border-b border-[#3760E7]/20 p-3">воронки, поля, права, задачи, отчеты</td>
+            </tr>
+            <tr>
+              <td className="border-b border-r border-[#3760E7]/20 p-3">Автоматизация</td>
+              <td className="border-b border-[#3760E7]/20 p-3">сценарии, уведомления, контроль, регламенты</td>
+            </tr>
+            <tr>
+              <td className="border-b border-r border-[#3760E7]/20 p-3">Виджеты</td>
+              <td className="border-b border-[#3760E7]/20 p-3">установка, настройка, адаптация под процесс</td>
+            </tr>
+            <tr>
+              <td className="border-b border-r border-[#3760E7]/20 p-3">Интеграции</td>
+              <td className="border-b border-[#3760E7]/20 p-3">обмен данными, статусы, ошибки, тестирование</td>
+            </tr>
+            <tr>
+              <td className="border-b border-r border-[#3760E7]/20 p-3">Обучение</td>
+              <td className="border-b border-[#3760E7]/20 p-3">менеджеры, руководитель, администратор</td>
+            </tr>
+            <tr>
+              <td className="border-r border-[#3760E7]/20 p-3">Сопровождение</td>
+              <td className="p-3">правки после запуска, поддержка, развитие CRM</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+export default function CostDependenceContentSection() {
+  return (
+    <div>
+      <Reveal
+        className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none"
+        shownClassName="opacity-100 translate-y-0"
+        delayMs={0}
+      >
+        <ArticleBlockWrapper>
+          <p>
+            <strong>Цена настройки amoCRM зависит не от самой CRM, а от объема задач бизнеса.</strong>
+          </p>
+          <p>
+            Одной компании нужно настроить простую воронку, добавить пользователей и подключить форму с сайта. Другой
+            - связать amoCRM с телефонией, мессенджерами, сайтом, задачами, отчетами, виджетами, интеграциями,
+            правами доступа и несколькими отделами продаж.
+          </p>
+          <p>
+            Поэтому вопрос «сколько стоит настройка amoCRM» нельзя корректно ответить без разбора процесса. Иначе
+            получится случайная цена, а не расчет работ.
+          </p>
+        </ArticleBlockWrapper>
+      </Reveal>
+
+      <Reveal
+        className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none"
+        shownClassName="opacity-100 translate-y-0"
+        delayMs={30}
+      >
+        <ArticleBlockWrapper>
+          <h2>Почему нет одной фиксированной цены</h2>
+          <p>amoCRM можно настроить по-разному.</p>
+          <p>Можно сделать минимальную настройку:</p>
+          <ul>
+            <li>создать одну воронку;</li>
+            <li>добавить этапы;</li>
+            <li>добавить пользователей;</li>
+            <li>настроить несколько полей;</li>
+            <li>показать менеджерам базовый порядок работы.</li>
+          </ul>
+          <p>А можно настроить CRM как систему управления отделом продаж:</p>
+          <ul>
+            <li>подключить все источники заявок;</li>
+            <li>настроить распределение менеджеров;</li>
+            <li>поставить задачи на первый контакт;</li>
+            <li>настроить недозвоны;</li>
+            <li>добавить уведомления;</li>
+            <li>настроить отчеты руководителю;</li>
+            <li>убрать дубли;</li>
+            <li>подключить виджеты;</li>
+            <li>связать CRM с сайтом, телефонией, мессенджерами, 1С, МойСклад, СДЭК или другими сервисами.</li>
+          </ul>
+          <p>Это разные объемы работ. И цена у них будет разная.</p>
+        </ArticleBlockWrapper>
+      </Reveal>
+
+      <Reveal
+        className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none"
+        shownClassName="opacity-100 translate-y-0"
+        delayMs={50}
+      >
+        <ArticleBlockWrapper>
+          <h2>Основные уровни настройки amoCRM</h2>
+
+          <h3>1. Базовая настройка</h3>
+          <p>Подходит небольшому отделу продаж, где нужен простой запуск CRM без сложных сценариев.</p>
+          <p>Обычно входит:</p>
+          <BaseSetupTable />
+          <p>
+            Такой вариант подходит, если заявок немного, источников мало, а процесс продаж простой.
+          </p>
+          <p>
+            Риск: если бизнес быстро растет, базовой настройки может не хватить уже через несколько месяцев.
+          </p>
+
+          <h3>2. Настройка отдела продаж</h3>
+          <p>
+            Подходит компаниям, где уже есть поток заявок, несколько менеджеров и руководитель, которому нужен
+            контроль.
+          </p>
+          <p>В такую настройку обычно входит:</p>
+          <ul>
+            <li>разбор процесса продаж;</li>
+            <li>настройка воронок под реальные этапы;</li>
+            <li>подключение источников заявок;</li>
+            <li>настройка задач на первый контакт;</li>
+            <li>сценарий недозвонов;</li>
+            <li>распределение ответственных;</li>
+            <li>обязательные поля;</li>
+            <li>причины отказов;</li>
+            <li>отчеты для руководителя;</li>
+            <li>контроль просрочек;</li>
+            <li>проверка дублей;</li>
+            <li>обучение сотрудников.</li>
+          </ul>
+          <p>Это уже не просто «завести CRM». Это настройка amoCRM под работу отдела продаж.</p>
+          <p>
+            <strong>Внутренняя ссылка:</strong> страница «Настройка amoCRM для отдела продаж»
+            <br />
+            <strong>Анкор:</strong> настройка amoCRM для отдела продаж
+          </p>
+        </ArticleBlockWrapper>
+      </Reveal>
+
+      <Reveal
+        className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none"
+        shownClassName="opacity-100 translate-y-0"
+        delayMs={70}
+      >
+        <ArticleBlockWrapper>
+          <h3>3. Расширенная настройка с автоматизацией</h3>
+          <p>Подходит компаниям, где нужно убрать ручную работу и связать CRM с реальными процессами.</p>
+          <p>Может включать:</p>
+          <ul>
+            <li>автоматическое создание сделок;</li>
+            <li>распределение заявок;</li>
+            <li>уведомления в Telegram;</li>
+            <li>автозадачи;</li>
+            <li>контроль сделок без движения;</li>
+            <li>создание документов;</li>
+            <li>выставление счетов;</li>
+            <li>контроль оплаты;</li>
+            <li>подключение виджетов;</li>
+            <li>настройку сложных отчетов.</li>
+          </ul>
+          <p>
+            Здесь цена выше, потому что требуется не только техническая настройка, но и проектирование логики: что
+            должно происходить, когда, с кем и при каких условиях.
+          </p>
+
+          <h3>4. Настройка amoCRM с интеграциями</h3>
+          <p>Это самый сложный уровень.</p>
+          <p>Он нужен, если amoCRM нужно связать с другими сервисами:</p>
+          <ul>
+            <li>сайтом;</li>
+            <li>телефонией;</li>
+            <li>WhatsApp;</li>
+            <li>Telegram;</li>
+            <li>1С;</li>
+            <li>МойСклад;</li>
+            <li>СДЭК;</li>
+            <li>hh.ru;</li>
+            <li>платежными системами;</li>
+            <li>аналитикой;</li>
+            <li>маркетплейсами;</li>
+            <li>внутренними системами.</li>
+          </ul>
+          <p>
+            В таком проекте цена зависит от количества сервисов, направления обмена данными, правил обработки ошибок,
+            статусов, полей и сценариев.
+          </p>
+          <p>
+            <strong>Внутренняя ссылка:</strong> страница «Интеграции amoCRM с внешними сервисами»
+            <br />
+            <strong>Анкор:</strong> интеграции amoCRM с внешними сервисами
+          </p>
+        </ArticleBlockWrapper>
+      </Reveal>
+
+      <Reveal
+        className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none"
+        shownClassName="opacity-100 translate-y-0"
+        delayMs={90}
+      >
+        <ArticleBlockWrapper>
+          <h2>Что влияет на стоимость настройки amoCRM</h2>
+
+          <h3>Количество воронок</h3>
+          <p>Одна простая воронка и несколько разных процессов - это разный объем.</p>
+          <p>Например, отдельные воронки могут быть нужны для:</p>
+          <ul>
+            <li>первичных продаж;</li>
+            <li>повторных продаж;</li>
+            <li>сопровождения;</li>
+            <li>сервисных заявок;</li>
+            <li>партнерских обращений;</li>
+            <li>заявок по отдельному продукту;</li>
+            <li>подбора сотрудников;</li>
+            <li>доставки или исполнения.</li>
+          </ul>
+          <p>Чем больше процессов, тем больше времени нужно на проектирование и настройку.</p>
+
+          <h3>Количество источников заявок</h3>
+          <p>Если заявки приходят только с одной формы сайта - это один уровень.</p>
+          <p>Если источников много, настройка сложнее:</p>
+          <ul>
+            <li>сайт;</li>
+            <li>формы;</li>
+            <li>телефония;</li>
+            <li>WhatsApp;</li>
+            <li>Telegram;</li>
+            <li>email;</li>
+            <li>реклама;</li>
+            <li>Авито;</li>
+            <li>социальные сети;</li>
+            <li>посадочные страницы.</li>
+          </ul>
+          <p>
+            Для каждого источника нужно определить, куда попадает заявка, кто ответственный, какая задача создается и
+            как фиксируется источник.
+          </p>
+        </ArticleBlockWrapper>
+      </Reveal>
+
+      <Reveal
+        className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none"
+        shownClassName="opacity-100 translate-y-0"
+        delayMs={110}
+      >
+        <ArticleBlockWrapper>
+          <h3>Задачи и регламенты</h3>
+          <p>Если задачи ставятся вручную, настройка проще, но слабее.</p>
+          <p>Если нужно настроить управляемый процесс, появляются сценарии:</p>
+          <ul>
+            <li>первый контакт;</li>
+            <li>недозвон;</li>
+            <li>повторный звонок;</li>
+            <li>отправка предложения;</li>
+            <li>контроль оплаты;</li>
+            <li>возврат к клиенту;</li>
+            <li>задача руководителю при просрочке.</li>
+          </ul>
+          <p>
+            Чем точнее регламент, тем полезнее CRM. Но и настройка требует больше работы.
+          </p>
+
+          <h3>Отчеты для руководителя</h3>
+          <p>Базовые отчеты можно собрать быстрее. Но если руководителю нужны конкретные показатели, объем растет.</p>
+          <p>Например:</p>
+          <ul>
+            <li>скорость обработки заявок;</li>
+            <li>просрочки по менеджерам;</li>
+            <li>конверсия по этапам;</li>
+            <li>источники заявок;</li>
+            <li>причины отказов;</li>
+            <li>сделки без задач;</li>
+            <li>сделки без движения;</li>
+            <li>эффективность менеджеров;</li>
+            <li>отчеты по филиалам или направлениям.</li>
+          </ul>
+          <p>
+            Отчеты зависят от качества данных. Если поля и этапы настроены плохо, сначала нужно исправлять структуру
+            CRM.
+          </p>
+
+          <h3>Виджеты</h3>
+          <p>Если стандартной amoCRM не хватает, подключаются виджеты.</p>
+          <p>На стоимость влияет:</p>
+          <ul>
+            <li>какой виджет нужен;</li>
+            <li>требуется ли установка;</li>
+            <li>нужна ли настройка под процесс;</li>
+            <li>есть ли обучение сотрудников;</li>
+            <li>нужна ли поддержка после запуска.</li>
+          </ul>
+          <p>Виджет может быть дешевле индивидуальной разработки, если задача типовая.</p>
+
+          <h3>Интеграции</h3>
+          <p>Интеграции чаще всего сильнее всего влияют на стоимость.</p>
+          <p>Цена зависит от:</p>
+          <ul>
+            <li>количества сервисов;</li>
+            <li>наличия API;</li>
+            <li>направления обмена данными;</li>
+            <li>количества полей;</li>
+            <li>статусов;</li>
+            <li>ошибок;</li>
+            <li>правил дублей;</li>
+            <li>задач и уведомлений;</li>
+            <li>тестирования;</li>
+            <li>дальнейшей поддержки.</li>
+          </ul>
+          <p>
+            Простая передача формы сайта в amoCRM и сложная интеграция amoCRM с 1С, складом, доставкой и оплатами -
+            это разные проекты.
+          </p>
+        </ArticleBlockWrapper>
+      </Reveal>
+
+      <Reveal
+        className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none"
+        shownClassName="opacity-100 translate-y-0"
+        delayMs={130}
+      >
+        <ArticleBlockWrapper>
+          <h3>Состояние текущей amoCRM</h3>
+          <p>Если CRM уже настроена плохо, стоимость может вырасти.</p>
+          <p>Почему:</p>
+          <ul>
+            <li>нужно разобраться в старых настройках;</li>
+            <li>убрать лишние поля;</li>
+            <li>исправить воронки;</li>
+            <li>проверить задачи;</li>
+            <li>найти дубли;</li>
+            <li>понять, какие интеграции уже работают;</li>
+            <li>не сломать текущий процесс.</li>
+          </ul>
+          <p>
+            Иногда дешевле и правильнее сначала провести аудит, а потом принимать решение: дорабатывать текущую
+            amoCRM или пересобирать структуру.
+          </p>
+          <p>
+            <strong>Внутренняя ссылка:</strong> страница «CRM-аудит amoCRM»
+            <br />
+            <strong>Анкор:</strong> аудит amoCRM перед настройкой
+          </p>
+
+          <h2>Почему «дешевая настройка amoCRM» часто выходит дороже</h2>
+          <p>Проблема дешевой настройки обычно не в самой цене, а в составе работ.</p>
+          <p>Часто за минимальную стоимость делают только внешнюю оболочку:</p>
+          <ul>
+            <li>создали воронку;</li>
+            <li>добавили этапы;</li>
+            <li>завели пользователей;</li>
+            <li>настроили пару полей;</li>
+            <li>показали, как двигать сделки.</li>
+          </ul>
+          <p>Через месяц появляются вопросы:</p>
+          <ul>
+            <li>почему заявки зависают без задач;</li>
+            <li>почему менеджеры не перезванивают;</li>
+            <li>почему руководитель не видит просрочки;</li>
+            <li>почему источники не считаются;</li>
+            <li>почему в базе дубли;</li>
+            <li>почему отчеты бесполезны;</li>
+            <li>почему сотрудники снова работают в таблицах.</li>
+          </ul>
+          <p>В итоге бизнес платит второй раз - уже за исправление.</p>
+          <p>
+            Дешево можно сделать простую настройку. Но нельзя дешево и быстро построить управляемый отдел продаж,
+            если процесс сложный.
+          </p>
+        </ArticleBlockWrapper>
+      </Reveal>
+
+      <Reveal
+        className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none"
+        shownClassName="opacity-100 translate-y-0"
+        delayMs={150}
+      >
+        <ArticleBlockWrapper>
+          <h2>Как понять, какой объем настройки нужен</h2>
+          <p>Перед расчетом стоимости нужно ответить на вопросы:</p>
+          <ol>
+            <li>Сколько менеджеров будет работать в amoCRM?</li>
+            <li>Сколько направлений продаж есть в компании?</li>
+            <li>Откуда приходят заявки?</li>
+            <li>Кто и как распределяет обращения?</li>
+            <li>За сколько минут нужно делать первый контакт?</li>
+            <li>Что происходит при недозвоне?</li>
+            <li>Какие данные менеджеры должны заполнять?</li>
+            <li>Какие отчеты нужны руководителю?</li>
+            <li>Какие действия сейчас делаются вручную?</li>
+            <li>Нужны ли виджеты?</li>
+            <li>Нужны ли интеграции?</li>
+            <li>Есть ли уже настроенная amoCRM?</li>
+            <li>Нужно ли обучение сотрудников?</li>
+            <li>Нужно ли сопровождение после запуска?</li>
+          </ol>
+          <p>Без этих ответов цена будет приблизительной.</p>
+
+          <h2>Пример расчета логики проекта</h2>
+          <p>Допустим, у компании:</p>
+          <ul>
+            <li>8 менеджеров;</li>
+            <li>заявки с сайта, телефонии и WhatsApp;</li>
+            <li>одна основная воронка продаж;</li>
+            <li>нужны задачи на первый контакт;</li>
+            <li>нужен сценарий недозвона;</li>
+            <li>руководителю нужны отчеты по источникам и просрочкам;</li>
+            <li>менеджеры вручную готовят документы;</li>
+            <li>в базе есть дубли.</li>
+          </ul>
+          <p>В этом случае настройка не может ограничиться созданием этапов. Нужно:</p>
+          <ul>
+            <li>подключить источники;</li>
+            <li>настроить задачи;</li>
+            <li>прописать недозвоны;</li>
+            <li>настроить отчеты;</li>
+            <li>проверить дубли;</li>
+            <li>рассмотреть виджет документов;</li>
+            <li>обучить сотрудников.</li>
+          </ul>
+          <p>
+            Цена будет выше базовой, но и результат другой: CRM начинает управлять процессом, а не просто хранить
+            сделки.
+          </p>
+        </ArticleBlockWrapper>
+      </Reveal>
+
+      <Reveal
+        className="opacity-0 translate-y-[14px] transition-[opacity,transform] duration-[520ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none"
+        shownClassName="opacity-100 translate-y-0"
+        delayMs={170}
+      >
+        <ArticleBlockWrapper>
+          <h2>Что входит в расчет стоимости</h2>
+          <p>При оценке проекта нужно разделять:</p>
+          <CostCalculationTable />
+          <p>Такой подход честнее, чем одна фраза «настройка amoCRM под ключ».</p>
+
+          <h2>Когда можно назвать точную цену</h2>
+          <p>Точную цену можно назвать после короткого разбора задачи.</p>
+          <p>Для этого нужно понять:</p>
+          <ul>
+            <li>текущую ситуацию;</li>
+            <li>цели настройки;</li>
+            <li>количество пользователей;</li>
+            <li>источники заявок;</li>
+            <li>нужные воронки;</li>
+            <li>ручные действия;</li>
+            <li>требования к отчетам;</li>
+            <li>наличие интеграций;</li>
+            <li>ожидания по срокам.</li>
+          </ul>
+          <p>
+            После этого можно предложить не абстрактную цену, а нормальный состав работ: что делаем, зачем, в каком
+            порядке и какой результат должен получить бизнес.
+          </p>
+
+          <h2>Что подготовить для оценки</h2>
+          <p>Чтобы быстрее получить расчет, подготовьте:</p>
+          <ul>
+            <li>ссылку на amoCRM или описание текущей системы;</li>
+            <li>количество менеджеров;</li>
+            <li>список источников заявок;</li>
+            <li>текущие этапы продаж;</li>
+            <li>какие проблемы есть сейчас;</li>
+            <li>какие сервисы нужно подключить;</li>
+            <li>какие отчеты нужны руководителю;</li>
+            <li>примеры ручных действий;</li>
+            <li>пожелания по срокам.</li>
+          </ul>
+          <p>Если этих данных нет, можно начать с консультации или аудита.</p>
+
+          <h2>CTA</h2>
+          <p>Оставьте заявку на расчет стоимости настройки amoCRM.</p>
+          <p>
+            Разберем ваш процесс продаж, определим нужный объем работ и покажем, из чего будет складываться цена:
+            воронки, заявки, задачи, источники, отчеты, виджеты, интеграции и сопровождение.
+          </p>
+        </ArticleBlockWrapper>
+      </Reveal>
+    </div>
+  );
+}
