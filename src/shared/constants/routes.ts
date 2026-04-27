@@ -28,6 +28,22 @@ export const ARTICLES_ROUTES = {
     path: "/articles/amocrm-quick-setup",
     name: "Быстрая настройка amoCRM",
   },
+  BUSINESS_PROCESS_IMPLEMENTATION: {
+    path: "/articles/amocrm-business-process-implementation",
+    name: "Внедрение amoCRM - не просто настройка CRM",
+  },
+  REMOVE_MANUAL_WORK: {
+    path: "/articles/amocrm-remove-manual-work",
+    name: "Автоматизация отдела продаж в amoCRM",
+  },
+  STANDARD_SOLUTIONS: {
+    path: "/articles/amocrm-standard-solutions",
+    name: "Виджеты для amoCRM",
+  },
+  RUINED_SALES: {
+    path: "/articles/amocrm-ruined-sales",
+    name: "Дубли в amoCRM",
+  },
 } as const;
 
 // Все пути одним списком

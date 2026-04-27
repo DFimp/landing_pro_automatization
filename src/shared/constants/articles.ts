@@ -62,6 +62,62 @@ export const ARTICLES_DATA: Record<string, ArticleData> = {
     wordCount: 2100,
     articleSection: "Настройка CRM",
   },
+
+  "amocrm-business-process-implementation": {
+    slug: "amocrm-business-process-implementation",
+    title: "Внедрение amoCRM под процессы бизнеса - не просто настройка CRM",
+    shortName: "Внедрение amoCRM - не просто настройка CRM",
+    description:
+      "Как внедрить amoCRM под реальные процессы бизнеса: заявки, этапы, задачи, роли, источники, отчеты, автоматизация и контроль продаж.",
+    link: "/articles/amocrm-business-process-implementation",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 2800,
+    articleSection: "Внедрение CRM",
+  },
+
+  "amocrm-remove-manual-work": {
+    slug: "amocrm-remove-manual-work",
+    title: "Автоматизация отдела продаж в amoCRM - убрать ручную работу",
+    shortName: "Автоматизация отдела продаж в amoCRM",
+    description:
+      "Автоматизация отдела продаж в amoCRM: заявки, задачи, недозвоны, распределение, уведомления, документы, счета, дубли, отчеты и контроль менеджеров.",
+    link: "/articles/amocrm-remove-manual-work",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "15 минут",
+    wordCount: 3300,
+    articleSection: "Автоматизация CRM",
+  },
+
+  "amocrm-standard-solutions": {
+    slug: "amocrm-standard-solutions",
+    title: "Виджеты для amoCRM: когда стандартных функций уже не хватает",
+    shortName: "Виджеты для amoCRM",
+    description:
+      "Разбираем, когда бизнесу нужны виджеты для amoCRM, какие задачи они закрывают и как понять, что пора дорабатывать CRM.",
+    link: "/articles/amocrm-standard-solutions",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "13 минут",
+    wordCount: 3000,
+    articleSection: "Виджеты amoCRM",
+  },
+
+  "amocrm-ruined-sales": {
+    slug: "amocrm-ruined-sales",
+    title: "Дубли в amoCRM: почему портят продажи и как их убрать",
+    shortName: "Дубли в amoCRM",
+    description:
+      "Разбираем, чем опасны дубли контактов и сделок в amoCRM, почему они появляются и как навести порядок в базе без ручной чистки.",
+    link: "/articles/amocrm-ruined-sales",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 3000,
+    articleSection: "Дубли в amoCRM",
+  },
 };
 
 export const ARTICLES_LIST = Object.values(ARTICLES_DATA);
