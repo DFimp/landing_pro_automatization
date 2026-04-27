@@ -15,7 +15,7 @@ export function WidgetsBonusesSection() {
       
       <div className="relative z-10 sm:!pt-[40px] !pt-[18px] mx-auto w-full max-w-[1200px] px-4">
         <h1 className="text-white sm:text-[48px] text-[20px] font-bold sm:mb-[40px] mb-[20px]">
-          Лицензии amoCRM c <span className="sm:inline block">бонусами</span>
+          Продление лицензии amoCRM с бонусами, виджетами и сопровождением
         </h1>
         <h2 className="text-white sm:text-[20px] text-[14px] font-normal">
           Выбирая "Про Автоматизацию"{" "}

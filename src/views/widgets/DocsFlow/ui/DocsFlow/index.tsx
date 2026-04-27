@@ -32,7 +32,7 @@ export default function DocsFlow({
                   borderBottomLeftRadius: 0,
                 }}
               >
-                Автоматическое формирование документов
+                {widget.seoTitle}
               </h1>
 
               <h2 className="mt-10 font-bold text-white text-[clamp(34px,5.5vw,56px)] leading-[1.05] max-[480px]:mt-5 max-[480px]:text-[clamp(26px,8.5vw,34px)] max-[480px]:leading-[1.12]">

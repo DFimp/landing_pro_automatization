@@ -78,7 +78,10 @@ async function WidgetsPageContent() {
 
   return (
     <main id="Widgets" className="mx-auto w-full max-w-[1200px] px-4">
-      <div className="my-10 sm:my-20">
+      <h1 className="text-2xl sm:text-[32px] font-semibold mt-10 sm:mt-20 mb-6 sm:mb-10">
+        Виджеты для amoCRM - готовые решения для продаж и автоматизации
+      </h1>
+      <div className="mb-10 sm:mb-20">
         <WidgetsList priceLabelsByKey={priceLabelsByKey} />
       </div>
     </main>

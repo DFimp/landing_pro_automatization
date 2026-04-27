@@ -23,9 +23,7 @@ export default function OtherLeads({ searchParams }: WidgetPageProps) {
         <>
           <WidgetHeroContent
             badge={
-              <WidgetHeroBadge>
-                Другие сделки клиента в amoCRM
-              </WidgetHeroBadge>
+              <WidgetHeroBadge>{widget.seoTitle}</WidgetHeroBadge>
             }
             title="Видьте все связанные сделки контакта и компании прямо в карточке"
             description="Виджет «Другие сделки» автоматически собирает историю клиента по контактам и компании в текущей сделке. Менеджер сразу видит все найденные сделки, их суммы, статусы, воронки, ответственных и выбранные поля без переходов по нескольким карточкам."

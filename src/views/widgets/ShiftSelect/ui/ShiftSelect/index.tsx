@@ -21,9 +21,7 @@ export default function ShiftSelect({ searchParams }: WidgetPageProps) {
         <>
           <WidgetHeroContent
             badge={
-              <WidgetHeroBadge>
-                Групповое выделение (Shift-выбор) для amoCRM
-              </WidgetHeroBadge>
+              <WidgetHeroBadge>{widget.seoTitle}</WidgetHeroBadge>
             }
             title="Выделяйте десятки сделок и контактов за пару секунд"
             description="Виджет добавляет удобное выделение чекбоксов по Shift и протягиванием мышью в списках amoCRM. Ускорьте массовое изменение ответственных, статусов и запуск автоматизаций."

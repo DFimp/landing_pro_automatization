@@ -13,7 +13,7 @@ export function ArticleContentSection() {
                 variant="typeFast"
                 className="font-bold sm:text-[48px] text-[20px] leading-[1.2] sm:mb-[40px] mb-[20px]"
             >
-                Как работать с дублями и почему<br/>это очень важно.
+                Как работать с дублями сделок в amoCRM - 3 практических кейса
             </ScrollReveal>
             <div className="flex flex-col sm:gap-[60px] gap-[40px]">
             <ArticleIntroducion></ArticleIntroducion>

@@ -24,7 +24,7 @@ export default function TelegramNotify({
           <>
             <WidgetHeroSection className="pb-[120px]">
                 <h1 className="at-pill at-bleed-left inline-flex items-center gap-2 bg-[#2847ff] text-[#dfe7ff] rounded-full px-[18px] py-[10px] text-[14px] leading-none rounded-l-none ml-[calc(50%-50vw)] pl-[calc(49.5vw-50%+16px)] max-[480px]:px-[16px] max-[480px]:py-[12px] max-[480px]:text-[12px] max-[480px]:justify-center max-[480px]:box-border">
-                  Телеграм уведомления для amoCRM
+                  {widget.seoTitle}
                 </h1>
 
                 <h2 className="mt-10 text-white font-semibold text-[clamp(36px,6vw,64px)] leading-[1.05] max-[480px]:mt-5 max-[480px]:text-[clamp(26px,8.5vw,34px)] max-[480px]:leading-[1.12]">Готовы быть в курсе событий?</h2>
