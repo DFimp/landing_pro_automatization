@@ -76,6 +76,22 @@ export const ARTICLES_ROUTES = {
     path: "/articles/amocrm-reports-manager",
     name: "Отчеты руководителю отдела продаж в amoCRM",
   },
+  SETTING_ITSELF: {
+    path: "/articles/amocrm-setting-itself",
+    name: "Почему CRM не работает сама по себе",
+  },
+  APPLICATION_RULES: {
+    path: "/articles/amocrm-application-rules",
+    name: "Регламент обработки заявок в amoCRM",
+  },
+  IMPLEMENT_ERRORS: {
+    path: "/articles/amocrm-implement-errors",
+    name: "Ошибки внедрения amoCRM",
+  },
+  SALES_DEPARTMENT: {
+    path: "/articles/amocrm-sales-department",
+    name: "До и после автоматизации amoCRM",
+  },
 } as const;
 
 // Все пути одним списком

@@ -121,11 +121,7 @@ export default function RuinedSalesContentSection() {
             старые сделки, комментарии, переписку.
           </p>
           <p>Это прямые потери времени. Вместо работы с клиентом менеджер занимается чисткой базы.</p>
-          <p>
-            <strong>Место для внутренней ссылки:</strong> страница «CRM-аудит amoCRM»
-            <br />
-            <strong>Анкор:</strong> аудит текущей базы и настроек amoCRM
-          </p>
+          <p><a href="/audit">аудит текущей базы и настроек amoCRM</a></p>
         </ArticleBlockWrapper>
       </Reveal>
 
@@ -248,11 +244,7 @@ export default function RuinedSalesContentSection() {
             Это особенно важно для компаний, где много входящих заявок, повторных обращений, звонков и сообщений из
             разных каналов.
           </p>
-          <p>
-            <strong>Место для внутренней ссылки:</strong> страница «Виджеты для amoCRM»
-            <br />
-            <strong>Анкор:</strong> виджеты для поиска и объединения дублей в amoCRM
-          </p>
+          <p><a href="/widgets">виджеты для поиска и объединения дублей в amoCRM</a></p>
         </ArticleBlockWrapper>
       </Reveal>
 

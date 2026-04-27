@@ -230,6 +230,62 @@ export const ARTICLES_DATA: Record<string, ArticleData> = {
     wordCount: 3400,
     articleSection: "Отчеты в amoCRM",
   },
+
+  "amocrm-setting-itself": {
+    slug: "amocrm-setting-itself",
+    title: "Почему CRM не работает сама по себе и что нужно настроить",
+    shortName: "Почему CRM не работает сама по себе",
+    description:
+      "Разбираем, почему amoCRM не решает проблемы продаж без процессов, регламентов, задач, контроля менеджеров и правильной настройки.",
+    link: "/articles/amocrm-setting-itself",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 3300,
+    articleSection: "Настройка amoCRM",
+  },
+
+  "amocrm-application-rules": {
+    slug: "amocrm-application-rules",
+    title: "Регламент обработки заявок в amoCRM: что должно быть прописано",
+    shortName: "Регламент обработки заявок в amoCRM",
+    description:
+      "Разбираем, как составить регламент обработки заявок в amoCRM: первый контакт, недозвоны, задачи, этапы, контроль и ответственность менеджеров.",
+    link: "/articles/amocrm-application-rules",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 3400,
+    articleSection: "Регламенты в amoCRM",
+  },
+
+  "amocrm-implement-errors": {
+    slug: "amocrm-implement-errors",
+    title: "Ошибки внедрения amoCRM, из-за которых менеджеры саботируют CRM",
+    shortName: "Ошибки внедрения amoCRM",
+    description:
+      "Разбираем, почему менеджеры не хотят работать в amoCRM: лишние поля, слабая воронка, нет регламента, неудобные задачи и плохое внедрение.",
+    link: "/articles/amocrm-implement-errors",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 3400,
+    articleSection: "Внедрение amoCRM",
+  },
+
+  "amocrm-sales-department": {
+    slug: "amocrm-sales-department",
+    title: "До и после автоматизации amoCRM: как меняется отдел продаж",
+    shortName: "До и после автоматизации amoCRM",
+    description:
+      "Показываем, как меняется работа отдела продаж после автоматизации amoCRM: заявки, задачи, контроль менеджеров, дубли, документы и отчеты.",
+    link: "/articles/amocrm-sales-department",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 3400,
+    articleSection: "Автоматизация CRM",
+  },
 };
 
 export const ARTICLES_LIST = Object.values(ARTICLES_DATA);

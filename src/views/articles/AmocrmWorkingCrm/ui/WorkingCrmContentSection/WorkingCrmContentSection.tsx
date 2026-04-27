@@ -230,11 +230,7 @@ export default function WorkingCrmContentSection() {
             Автоматизация нужна не ради «технологичности». Она нужна, чтобы менеджеры меньше занимались рутиной и
             быстрее работали с клиентами.
           </p>
-          <p>
-            <strong>Место для внутренней ссылки:</strong> страница «Виджеты для amoCRM»
-            <br />
-            <strong>Анкор:</strong> готовые виджеты для автоматизации amoCRM
-          </p>
+          <p><a href="/widgets">готовые виджеты для автоматизации amoCRM</a></p>
         </ArticleBlockWrapper>
       </Reveal>
 
@@ -346,11 +342,7 @@ export default function WorkingCrmContentSection() {
             Если половина пунктов не выполнена, amoCRM работает не как система управления продажами, а как электронная
             таблица с карточками клиентов.
           </p>
-          <p>
-            <strong>Место для внутренней ссылки:</strong> страница «CRM-аудит amoCRM»
-            <br />
-            <strong>Анкор:</strong> аудит текущей настройки amoCRM
-          </p>
+          <p><a href="/audit">аудит текущей настройки amoCRM</a></p>
         </ArticleBlockWrapper>
       </Reveal>
 

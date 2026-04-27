@@ -108,12 +108,7 @@ export default function StandardSolutionsContentSection() {
             управляемым. Заявка попадает в CRM, система смотрит заданные правила
             и назначает ответственного автоматически.
           </p>
-          <p>
-            <strong>Место для внутренней ссылки:</strong> страница виджета
-            распределения сделок
-            <br />
-            <strong>Анкор:</strong> виджет распределения сделок в amoCRM
-          </p>
+          <p><a href="/widgets/lead-distribution">виджет распределения сделок в amoCRM</a></p>
         </ArticleBlockWrapper>
       </Reveal>
 
@@ -183,12 +178,7 @@ export default function StandardSolutionsContentSection() {
             Это особенно важно для бизнеса с повторными продажами, большим
             потоком входящих обращений и несколькими каналами коммуникации.
           </p>
-          <p>
-            <strong>Место для внутренней ссылки:</strong> статья про дубли в
-            amoCRM
-            <br />
-            <strong>Анкор:</strong> как убрать дубли в amoCRM
-          </p>
+          <p><a href="/articles/amocrm-ruined-sales">как убрать дубли в amoCRM</a></p>
         </ArticleBlockWrapper>
       </Reveal>
 
@@ -387,12 +377,7 @@ export default function StandardSolutionsContentSection() {
             ради функций. Нужны инструменты, которые решают конкретную проблему
             отдела продаж.
           </p>
-          <p>
-            <strong>Место для внутренней ссылки:</strong> страница «Виджеты для
-            amoCRM»
-            <br />
-            <strong>Анкор:</strong> готовые виджеты для amoCRM
-          </p>
+          <p><a href="/widgets">готовые виджеты для amoCRM</a></p>
         </ArticleBlockWrapper>
       </Reveal>
 
