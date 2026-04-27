@@ -174,6 +174,62 @@ export const ARTICLES_DATA: Record<string, ArticleData> = {
     wordCount: 3200,
     articleSection: "CRM-аудит",
   },
+
+  "amocrm-incorrect-settings": {
+    slug: "amocrm-incorrect-settings",
+    title: "Как понять, что amoCRM настроена неправильно",
+    shortName: "Неправильная настройка amoCRM",
+    description:
+      "Разбираем признаки неправильной настройки amoCRM: потерянные заявки, просрочки, дубли, слабый контроль менеджеров и неточная аналитика.",
+    link: "/articles/amocrm-incorrect-settings",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 3300,
+    articleSection: "Ошибки настройки amoCRM",
+  },
+
+  "amocrm-real-help": {
+    slug: "amocrm-real-help",
+    title: "Автоматические задачи в amoCRM: где они реально помогают",
+    shortName: "Автоматические задачи в amoCRM",
+    description:
+      "Разбираем, как автоматические задачи в amoCRM помогают не терять заявки, контролировать менеджеров, обрабатывать недозвоны и снижать ручную работу.",
+    link: "/articles/amocrm-real-help",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 3300,
+    articleSection: "Задачи в amoCRM",
+  },
+
+  "amocrm-notice-in-tg": {
+    slug: "amocrm-notice-in-tg",
+    title: "Уведомления из amoCRM в Telegram: когда они нужны бизнесу",
+    shortName: "Уведомления из amoCRM в Telegram",
+    description:
+      "Разбираем, зачем нужны Telegram-уведомления из amoCRM, какие события стоит выводить в чат и как не превратить уведомления в шум.",
+    link: "/articles/amocrm-notice-in-tg",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 3300,
+    articleSection: "Уведомления в amoCRM",
+  },
+
+  "amocrm-reports-manager": {
+    slug: "amocrm-reports-manager",
+    title: "Какие отчеты нужны руководителю отдела продаж в amoCRM",
+    shortName: "Отчеты руководителю продаж в amoCRM",
+    description:
+      "Разбираем, какие отчеты в amoCRM нужны руководителю продаж: заявки, источники, задачи, менеджеры, конверсия, причины отказов и потери.",
+    link: "/articles/amocrm-reports-manager",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 3400,
+    articleSection: "Отчеты в amoCRM",
+  },
 };
 
 export const ARTICLES_LIST = Object.values(ARTICLES_DATA);

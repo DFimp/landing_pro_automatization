@@ -60,6 +60,22 @@ export const ARTICLES_ROUTES = {
     path: "/articles/amocrm-check-settings",
     name: "CRM-аудит amoCRM",
   },
+  INCORRECT_SETTINGS: {
+    path: "/articles/amocrm-incorrect-settings",
+    name: "Неправильная настройка amoCRM",
+  },
+  REAL_HELP: {
+    path: "/articles/amocrm-real-help",
+    name: "Автоматические задачи в amoCRM",
+  },
+  NOTICE_IN_TG: {
+    path: "/articles/amocrm-notice-in-tg",
+    name: "Уведомления из amoCRM в Telegram",
+  },
+  REPORTS_MANAGER: {
+    path: "/articles/amocrm-reports-manager",
+    name: "Отчеты руководителю отдела продаж в amoCRM",
+  },
 } as const;
 
 // Все пути одним списком
