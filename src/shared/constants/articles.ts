@@ -286,6 +286,62 @@ export const ARTICLES_DATA: Record<string, ArticleData> = {
     wordCount: 3400,
     articleSection: "Автоматизация CRM",
   },
+
+  "amocrm-what-choose": {
+    slug: "amocrm-what-choose",
+    title: "Виджет или индивидуальная разработка для amoCRM: что выбрать",
+    shortName: "Виджет или разработка для amoCRM",
+    description:
+      "Разбираем, когда бизнесу достаточно готового виджета для amoCRM, а когда нужна индивидуальная разработка под процессы компании.",
+    link: "/articles/amocrm-what-choose",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "15 минут",
+    wordCount: 3600,
+    articleSection: "Виджеты amoCRM",
+  },
+
+  "amocrm-choose-contractor": {
+    slug: "amocrm-choose-contractor",
+    title: "Как выбрать подрядчика по amoCRM и не получить настройку ради настройки",
+    shortName: "Как выбрать подрядчика по amoCRM",
+    description:
+      "Разбираем, как выбрать подрядчика по amoCRM: что спрашивать, на что смотреть в предложении, какие риски проверить до начала работ.",
+    link: "/articles/amocrm-choose-contractor",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "16 минут",
+    wordCount: 4100,
+    articleSection: "Внедрение amoCRM",
+  },
+
+  "amocrm-funnels-tasks-control": {
+    slug: "amocrm-funnels-tasks-control",
+    title: "Настройка amoCRM для отдела продаж - воронки, задачи, контроль",
+    shortName: "Настройка amoCRM для отдела продаж",
+    description:
+      "Настраиваем amoCRM для отдела продаж: заявки, воронки, задачи, источники, права, отчеты, контроль менеджеров и автоматизация ручной работы.",
+    link: "/articles/amocrm-funnels-tasks-control",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "15 минут",
+    wordCount: 3800,
+    articleSection: "Настройка amoCRM",
+  },
+
+  "amocrm-support": {
+    slug: "amocrm-support",
+    title: "Сопровождение amoCRM после внедрения - поддержка и доработки",
+    shortName: "Сопровождение amoCRM после внедрения",
+    description:
+      "Сопровождение amoCRM после внедрения: доработка воронок, задач, отчетов, виджетов, интеграций, источников заявок и поддержка отдела продаж.",
+    link: "/articles/amocrm-support",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 3600,
+    articleSection: "Сопровождение amoCRM",
+  },
 };
 
 export const ARTICLES_LIST = Object.values(ARTICLES_DATA);

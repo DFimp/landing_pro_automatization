@@ -92,6 +92,22 @@ export const ARTICLES_ROUTES = {
     path: "/articles/amocrm-sales-department",
     name: "До и после автоматизации amoCRM",
   },
+  WHAT_CHOOSE: {
+    path: "/articles/amocrm-what-choose",
+    name: "Виджет или разработка для amoCRM",
+  },
+  CHOOSE_CONTRACTOR: {
+    path: "/articles/amocrm-choose-contractor",
+    name: "Как выбрать подрядчика по amoCRM",
+  },
+  FUNNELS_TASKS_CONTROL: {
+    path: "/articles/amocrm-funnels-tasks-control",
+    name: "Настройка amoCRM для отдела продаж",
+  },
+  SUPPORT: {
+    path: "/articles/amocrm-support",
+    name: "Сопровождение amoCRM после внедрения",
+  },
 } as const;
 
 // Все пути одним списком
