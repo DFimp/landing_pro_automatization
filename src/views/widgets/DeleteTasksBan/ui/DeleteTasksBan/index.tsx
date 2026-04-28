@@ -23,9 +23,7 @@ export default function DeleteTasksBan({ searchParams }: WidgetPageProps) {
         <>
           <WidgetHeroContent
             badge={
-              <WidgetHeroBadge>
-                Запрет удаления задач в amoCRM
-              </WidgetHeroBadge>
+              <WidgetHeroBadge>{widget.seoTitle}</WidgetHeroBadge>
             }
             title="Перестаньте терять задачи и историю работы с клиентами"
             description="Виджет блокирует удаление и изменение задач для выбранных менеджеров, с гибкими исключениями по типам задач. Сохраните честную аналитику и полную историю коммуникаций в amoCRM."

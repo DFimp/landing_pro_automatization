@@ -5,7 +5,7 @@ export function HeroSection() {
   return (
     <section className="flex flex-col sm:gap-20 gap-5">
       <h1 className="sm:text-h2 text-2xl font-semibold mx-auto w-full max-w-[1200px] px-4 sm:font-bold sm:max-w-4xl">
-        Аудит и предпроектная подготовка
+        Аудит amoCRM - проверка заявок, воронок, задач и отчетов
       </h1>
 
       <ScrollReveal as="div" variant="slideInLeft" amount={0.25} durationMs={750}>

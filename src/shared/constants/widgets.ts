@@ -37,7 +37,7 @@ export const WIDGETS: Widget[] = [
   {
     key: "telegram-notify",
     title: "Уведомления Telegram",
-    seoTitle: "Телеграм уведомления для amoCRM",
+    seoTitle: "Telegram-уведомления для amoCRM - контроль заявок, задач и сделок",
     description:
       "Получайте мгновенные уведомления в Telegram и запускайте SalesBot одним нажатием. Полная автоматизация коммуникаций с клиентами прямо в мессенджере.",
     route: widgetRoute("telegram-notify"),
@@ -59,7 +59,7 @@ export const WIDGETS: Widget[] = [
   {
     key: "max-notice",
     title: "МАКС(MAX) уведомления",
-    seoTitle: "МАКС(MAX) уведомления для amoCRM",
+    seoTitle: "MAX-уведомления для amoCRM - события по сделкам в рабочем чате",
     description:
       "Получайте уведомления из amoCRM в MAX и запускайте нужные действия по сделке в один клик. Поддержка сценариев по этапам воронки и расписанию отправки.",
     route: widgetRoute("max-notice"),
@@ -80,7 +80,7 @@ export const WIDGETS: Widget[] = [
   {
     key: "lead-distribution",
     title: "Распределение сделок",
-    seoTitle: "Распределение сделок для amoCRM",
+    seoTitle: "Распределение сделок в amoCRM между менеджерами",
     description:
       "Автоматическое распределение новых сделок между менеджерами по процентам, максимальному количеству или равными долями. Учет контактов, компаний и активности менеджеров.",
     route: widgetRoute("lead-distribution"),
@@ -100,7 +100,7 @@ export const WIDGETS: Widget[] = [
   {
     key: "duplicate-leads",
     title: "Дубликаты сделок",
-    seoTitle: "Дубли сделок (объединение дублей сделок) для amoCRM",
+    seoTitle: "Объединение дублей сделок в amoCRM без потери заявок",
     description:
       "Автоматическое склеивание дублированных сделок с сохранением всех важных данных. Экономьте время менеджеров и улучшайте качество вашей базы данных.",
     route: widgetRoute("duplicate-leads"),
@@ -120,7 +120,7 @@ export const WIDGETS: Widget[] = [
   {
     key: "duplicate-contacts",
     title: "Дубликаты контактов",
-    seoTitle: "Дубли контактов (объединение дублей контактов) для amoCRM",
+    seoTitle: "Объединение дублей контактов в amoCRM и очистка базы",
     description:
       "Автоматическое склеивание дублированных контактов с умными алгоритмами поиска. Экономьте время менеджеров и улучшайте качество вашей базы контактов.",
     route: widgetRoute("duplicate-contacts"),
@@ -139,7 +139,7 @@ export const WIDGETS: Widget[] = [
   {
     key: "docs-flow",
     title: "Документы(Google)",
-    seoTitle: "Документы(Google) для amoCRM",
+    seoTitle: "Google Документы для amoCRM - договоры, счета и акты из сделки",
     description:
       "Автоматически создавайте документы из шаблонов Google Docs на основе данных из amoCRM. Генерация в карточке сделки, по триггерам Digital Pipeline и из Salesbot.",
     route: widgetRoute("docs-flow"),
@@ -164,7 +164,7 @@ export const WIDGETS: Widget[] = [
   {
     key: "meet-calendar",
     title: "Календарь встреч",
-    seoTitle: "Календарь встреч для amoCRM",
+    seoTitle: "Календарь встреч в amoCRM - задачи, встречи и контроль менеджеров",
     description:
       "Создавайте встречи по триггерам и вручную. Назначайте ответственных, дату и время.",
     route: widgetRoute("meet-calendar"),
@@ -178,7 +178,7 @@ export const WIDGETS: Widget[] = [
   {
     key: "t-bank",
     title: "Т‑Банк(Тинькофф). Счета",
-    seoTitle: "Т‑Банк(Тинькофф). Счета для amoCRM",
+    seoTitle: "Счета Т-Банк в amoCRM - выставление и контроль оплаты",
     description:
       "Выставляйте счёт в amoCRM и получайте ссылку на оплату в Т‑Банке в поле сделки. Поддержка нескольких организаций и выбора расчетного счета.",
     route: widgetRoute("t-bank"),
@@ -201,7 +201,7 @@ export const WIDGETS: Widget[] = [
   {
     key: "tbank-check-pay",
     title: "Проверка оплат",
-    seoTitle: "Проверка оплат и автозапуск Salesbot для amoCRM",
+    seoTitle: "Проверка оплат в amoCRM - автоматическое сопоставление платежей со сделками",
     description:
       "Автоматически сопоставляйте входящие платежи со сделками по паттерну назначения платежа. После совпадения запускайте нужный Salesbot и стандартизируйте обработку оплат в amoCRM.",
     route: widgetRoute("tbank-check-pay"),
@@ -225,7 +225,7 @@ export const WIDGETS: Widget[] = [
   {
     key: "hiding-data",
     title: "Скрытие данных",
-    seoTitle: "Скрытие данных в amoCRM",
+    seoTitle: "Скрытие полей, воронок и данных в amoCRM по ролям",
     description:
       "Скрывайте пункты меню, воронки и этапы, поля в карточках и блоки по тегам. Гибкие режимы (без ограничений, белый и чёрный список), настройки для каждого пользователя и быстрые изменения без ручной правки интерфейса.",
     route: widgetRoute("hiding-data"),
@@ -249,7 +249,7 @@ export const WIDGETS: Widget[] = [
   {
     key: "color-leads",
     title: "Подкрашивание сделок (цветные сделки)",
-    seoTitle: "Подкрашивание сделок (цветные сделки) для amoCRM",
+    seoTitle: "Цветные сделки в amoCRM - подсветка важных заявок и этапов",
     description:
       "Автоматически выделяйте сделки цветом по правилам: бюджет, этап, теги, пользовательские поля и другие условия.",
     route: widgetRoute("color-leads"),
@@ -271,7 +271,7 @@ export const WIDGETS: Widget[] = [
   {
     key: "ltv-client",
     title: "LTV клиента",
-    seoTitle: "LTV клиента в карточке сделки для amoCRM",
+    seoTitle: "LTV клиента в amoCRM - сумма продаж и история сделок в карточке",
     description:
       "Показывайте LTV клиента прямо в карточке и канбане: сумма успешных сделок, количество выигранных и проигранных сделок, отдельная плашка «Новый клиент» и гибкие цветовые правила по порогам.",
     route: widgetRoute("ltv-client"),
@@ -291,7 +291,7 @@ export const WIDGETS: Widget[] = [
   {
     key: "text-rewrite",
     title: "TextRewrite AI",
-    seoTitle: "TextRewrite AI: переписывание текста для amoCRM",
+    seoTitle: "TextRewrite AI для amoCRM - переписывание сообщений в карточке сделки",
     description:
       "AI-виджет для переписывания сообщений прямо в карточке сделки amoCRM. Управляйте стилем ответа, добавляйте свои инструкции и ускоряйте коммуникацию с клиентами.",
     route: widgetRoute("text-rewrite"),
@@ -311,7 +311,7 @@ export const WIDGETS: Widget[] = [
   {
     key: "time-zone",
     title: "Часовые пояса",
-    seoTitle: "Регион по телефону для amoCRM",
+    seoTitle: "Регион и время клиента по телефону в amoCRM",
     description:
       "Автоматически определяйте регион и текущее время клиента по номеру телефона. Никогда больше не разбудите клиента в 6 утра или не позвоните в полночь!",
     route: widgetRoute("time-zone"),
@@ -332,7 +332,7 @@ export const WIDGETS: Widget[] = [
   {
     key: "auto-tasks",
     title: "Автозадачи",
-    seoTitle: "Автозадачи в сделках для amoCRM",
+    seoTitle: "Автозадачи в amoCRM - сделки без активности под контролем",
     description:
       "Автоматически создавайте задачи для сделок без активности. Настраиваемые статусы, типы задач и ответственные. Увеличьте конверсию на 35% благодаря своевременному контакту с клиентами.",
     route: widgetRoute("auto-tasks"),
@@ -352,7 +352,7 @@ export const WIDGETS: Widget[] = [
   {
     key: "massive-leads",
     title: "Массовое создание сделок",
-    seoTitle: "Массовое создание сделок для amoCRM",
+    seoTitle: "Массовое создание сделок в amoCRM из контактов",
     description:
       "Автоматизируйте создание сделок для всех ваших контактов одним нажатием. Забудьте о рутинной работе - виджет сделает всё за вас быстро и без ошибок.",
     route: widgetRoute("massive-leads"),
@@ -365,7 +365,7 @@ export const WIDGETS: Widget[] = [
   {
     key: "closing-ban",
     title: "Запрет закрытия",
-    seoTitle: "Запрет закрытия задач без результата для amoCRM",
+    seoTitle: "Запрет закрытия задач без результата в amoCRM",
     description:
       "Виджет не даст закрыть задачу без описания результата. Полная прозрачность работы команды и контроль качества выполнения.",
     route: widgetRoute("closing-ban"),
@@ -385,7 +385,7 @@ export const WIDGETS: Widget[] = [
   {
     key: "telegram-button",
     title: "Кнопка Telegram",
-    seoTitle: "Мгновенный переход в Telegram из amoCRM",
+    seoTitle: "Кнопка Telegram в amoCRM - переход в чат клиента за 1 клик",
     description:
       "Превратите каждый номер телефона в прямую ссылку на чат с клиентом в Telegram. Больше никакого копирования номеров и поиска контактов!",
     route: widgetRoute("telegram-button"),
@@ -398,7 +398,7 @@ export const WIDGETS: Widget[] = [
   {
     key: "whatsapp-button",
     title: "Кнопка WhatsApp",
-    seoTitle: "Мгновенный переход в WhatsApp из amoCRM",
+    seoTitle: "Кнопка WhatsApp в amoCRM - быстрый переход в переписку с клиентом",
     description:
       "Превратите каждый номер телефона в прямую ссылку на чат с клиентом в WhatsApp. Мгновенное общение с клиентами прямо из карточки сделки!",
     route: widgetRoute("whatsapp-button"),
@@ -420,7 +420,7 @@ export const WIDGETS: Widget[] = [
   {
     key: "delete-tasks-ban",
     title: "Запрет удаления задач",
-    seoTitle: "Запрет удаления задач для amoCRM",
+    seoTitle: "Запрет удаления задач в amoCRM для контроля менеджеров",
     description:
       "Полный контроль над удалением задач в amoCRM. Ограничьте удаление для менеджеров, настраивайте исключения по типам задач и защитите вашу воронку от случайных и намеренных потерь активности.",
     route: widgetRoute("delete-tasks-ban"),
@@ -433,7 +433,7 @@ export const WIDGETS: Widget[] = [
   {
     key: "shift-select",
     title: "Выбор смены",
-    seoTitle: "Групповое выделение (Shift-выбор) для amoCRM",
+    seoTitle: "Выбор сделок через Shift в amoCRM - массовое выделение карточек",
     description:
       "Мгновенно выделяйте группы сделок, контактов и компаний: обычный клик запоминает опорный чекбокс, Shift+клик выделяет диапазон, а зажатие и протягивание ЛКМ помогает быстро выбирать подряд идущие строки. Ускорьте массовое изменение ответственных, статусов, запуск автоматизаций и другие групповые действия в amoCRM.",
     route: widgetRoute("shift-select"),
@@ -452,7 +452,7 @@ export const WIDGETS: Widget[] = [
   {
     key: "group-fields",
     title: "Группировка полей",
-    seoTitle: "Группировка полей для amoCRM",
+    seoTitle: "Группировка полей в amoCRM - порядок в карточке сделки",
     description:
       "Автоматически группируйте поля в карточке сделки по логической структуре. Удобная навигация, свертываемые группы и аккуратный внешний вид, даже при большом числе полей.",
     route: widgetRoute("group-fields"),
@@ -465,7 +465,7 @@ export const WIDGETS: Widget[] = [
   {
     key: "transfer-fields",
     title: "Перенос полей",
-    seoTitle: "Перенос длинных названий полей для amoCRM",
+    seoTitle: "Перенос длинных названий полей в amoCRM без обрезки",
     description:
       "Автоматически переносит длинные названия пользовательских полей в карточках amoCRM. Убирает многоточия, предотвращает наложения и делает интерфейс аккуратным и читаемым.",
     route: widgetRoute("transfer-fields"),
@@ -484,8 +484,7 @@ export const WIDGETS: Widget[] = [
   {
     key: "copying-fields",
     title: "Копирование полей",
-    seoTitle:
-      "Копирование полей между аккаунтами и удаление полей списком для amoCRM",
+    seoTitle: "Копирование полей в amoCRM между сделками, контактами и компаниями",
     description:
       "Быстро копируйте и вставляйте пользовательские поля между сделками, контактами и компаниями. Сохраняйте структуру и порядок без ручной настройки.",
     route: widgetRoute("copying-fields"),
@@ -507,7 +506,7 @@ export const WIDGETS: Widget[] = [
   {
     key: "delete-notes-ban",
     title: "Запрет удаления заметок",
-    seoTitle: "Запрет удаления и редактирования примечаний для amoCRM",
+    seoTitle: "Запрет удаления заметок в amoCRM - защита истории клиента",
     description:
       "Полный контроль над удалением и редактированием примечаний в amoCRM. Ограничивайте действия менеджеров, защищайте историю коммуникаций и предотвращайте случайные или намеренные потери важных комментариев.",
     route: widgetRoute("delete-notes-ban"),
@@ -527,7 +526,7 @@ export const WIDGETS: Widget[] = [
   {
     key: "setting-feed",
     title: "Настройка ленты",
-    seoTitle: "Фильтр ленты событий в сделке для amoCRM",
+    seoTitle: "Фильтр ленты событий в amoCRM - задачи, звонки, письма и чаты без шума",
     description:
       "Фильтруйте ленту событий в карточке сделки по типам: задачи, примечания, письма, звонки и чаты. Быстро находите нужную активность без прокрутки и хаоса, даже в длинной истории сделки.",
     route: widgetRoute("setting-feed"),
@@ -540,7 +539,7 @@ export const WIDGETS: Widget[] = [
   {
     key: "search-fields",
     title: "Поиск по списку",
-    seoTitle: "Поиск по списку для amoCRM",
+    seoTitle: "Поиск по полям и спискам в карточке amoCRM",
     description:
       "Поиск по полям, спискам и multisuggest в карточках amoCRM. Меньше прокрутки, меньше ошибок, быстрее работа менеджеров.",
     route: widgetRoute("search-fields"),
@@ -562,7 +561,7 @@ export const WIDGETS: Widget[] = [
   {
     key: "other-leads",
     title: "Другие сделки",
-    seoTitle: "Другие сделки контакта и компании для amoCRM",
+    seoTitle: "Связанные сделки в amoCRM - вся история клиента в карточке",
     description:
       "Показывайте все связанные сделки контакта и компании прямо в карточке текущей сделки. Полная история клиента, статусы, суммы, ответственные и дополнительные поля без лишних переходов.",
     route: widgetRoute("other-leads"),
@@ -582,7 +581,7 @@ export const WIDGETS: Widget[] = [
   {
     key: "color-fields",
     title: "Подсветка полей",
-    seoTitle: "Подсветка полей в карточке для amoCRM",
+    seoTitle: "Подсветка полей в amoCRM - важные данные в карточке сделки",
     description:
       "Автоматически выделяйте ключевые поля и их значения цветом в карточках сделок по выбранным воронкам. Отдельные цвета для названия, значения, списочных вариантов и числовых условий.",
     route: widgetRoute("color-fields"),
@@ -604,7 +603,7 @@ export const WIDGETS: Widget[] = [
   {
     key: "color-tags",
     title: "Раскраска тегов",
-    seoTitle: "Раскраска тегов в сделках для amoCRM",
+    seoTitle: "Раскраска тегов в amoCRM - цветная навигация по сделкам",
     description:
       "Автоматически раскрашивайте выбранные теги в нужные цвета. Подсветка работает в списке сделок, на доске канбан и внутри карточки сделки.",
     route: widgetRoute("color-tags"),
@@ -623,7 +622,7 @@ export const WIDGETS: Widget[] = [
   {
     key: "field-hints",
     title: "Подсказки для полей и этапов",
-    seoTitle: "Подсказки для полей и этапов в amoCRM",
+    seoTitle: "Подсказки для полей и этапов amoCRM - регламент прямо в карточке",
     description:
       "Добавляйте контекстные подсказки к этапам воронки и полям в карточке сделки. Менеджеры сразу видят правила заполнения и перехода по этапам, что снижает ошибки и ускоряет адаптацию команды.",
     route: widgetRoute("field-hints"),

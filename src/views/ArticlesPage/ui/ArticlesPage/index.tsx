@@ -21,7 +21,10 @@ function ArticlesPageContent() {
         }))}
       />
       <main id="Articles" className="mx-auto w-full max-w-[1200px] px-4">
-        <div className="my-10 sm:my-20">
+        <h1 className="text-2xl sm:text-[32px] font-semibold mt-10 sm:mt-20 mb-6 sm:mb-10">
+          Статьи про amoCRM, автоматизацию продаж и виджеты
+        </h1>
+        <div className="mb-10 sm:mb-20">
           <ArticlesList />
         </div>
       </main>

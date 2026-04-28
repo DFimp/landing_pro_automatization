@@ -55,9 +55,9 @@ export const Footer = () => {
       {
         title: "Услуги",
         items: [
-          { label: "Аудит", href: "/#audit" },
-          { label: "Внедрение", href: "/#implementation" },
-          { label: "Сопровождение", href: "/#support" },
+          { label: "Аудит", href: "/audit" },
+          { label: "Внедрение", href: "/onboarding" },
+          { label: "Сопровождение", href: "/managed" },
           { label: "Лицензия", href: "/license" },
           { label: "Статьи", href: "/articles" },
 //           { label: "Кейсы", href: "/cases" },

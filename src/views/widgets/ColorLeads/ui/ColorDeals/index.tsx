@@ -23,9 +23,7 @@ export default function ColorDeals({ searchParams }: WidgetPageProps) {
         <>
           <WidgetHeroContent
             badge={
-              <WidgetHeroBadge>
-                Окраска сделок для amoCRM
-              </WidgetHeroBadge>
+              <WidgetHeroBadge>{widget.seoTitle}</WidgetHeroBadge>
             }
             title="Автоматически выделяйте сделки цветом по правилам"
             description="Настройте условия: бюджет, этап, теги, пользовательские поля и другие признаки, и подсветите сделки в воронке и в списке. Команда быстрее видит приоритеты и меньше пропускает важное."

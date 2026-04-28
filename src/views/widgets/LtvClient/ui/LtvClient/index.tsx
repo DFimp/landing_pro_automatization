@@ -22,7 +22,7 @@ export default function LtvClient({ searchParams }: WidgetPageProps) {
       preInstruction={
         <>
           <WidgetHeroContent
-            badge={<WidgetHeroBadge>LTV клиента для amoCRM</WidgetHeroBadge>}
+            badge={<WidgetHeroBadge>{widget.seoTitle}</WidgetHeroBadge>}
             title="Показывайте ценность клиента прямо в карточке"
             description="Виджет рассчитывает LTV по сделкам в статусе «Успешно реализовано», отдельно учитывает «Закрыто и не реализовано» и добавляет плашку «Новый клиент». Менеджеры сразу видят ценность клиента в карточке и в канбане."
             sectionClassName="pt-[72px] pb-[70px] text-white rounded-b-[28px] bg-[radial-gradient(1200px_600px_at_0%_100%,rgba(0,130,90,0.24),transparent_60%),radial-gradient(1000px_500px_at_100%_20%,rgba(19,118,255,0.24),transparent_60%),linear-gradient(180deg,#0f1427_0%,#151b33_60%,#0f1427_100%)] max-[768px]:pt-[56px] max-[768px]:pb-[96px] max-[480px]:pt-[28px] max-[480px]:pb-[36px] max-[480px]:rounded-b-[24px]"

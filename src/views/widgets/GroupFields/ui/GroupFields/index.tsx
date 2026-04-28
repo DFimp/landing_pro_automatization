@@ -22,9 +22,7 @@ export default function GroupFields({ searchParams }: WidgetPageProps) {
         <>
           <WidgetHeroContent
             badge={
-              <WidgetHeroBadge>
-                Группировка полей в карточке сделки в amoCRM
-              </WidgetHeroBadge>
+              <WidgetHeroBadge>{widget.seoTitle}</WidgetHeroBadge>
             }
             title="Наведите порядок в полях и ускорьте работу менеджеров"
             description="Автоматически группируйте поля в карточке сделки по логическим блокам. Удобная навигация, меньше прокрутки, быстрый доступ к нужной информации даже при большом количестве полей."

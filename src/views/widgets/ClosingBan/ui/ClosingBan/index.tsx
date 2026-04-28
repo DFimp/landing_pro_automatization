@@ -21,9 +21,7 @@ export default function ClosingBan({ searchParams }: WidgetPageProps) {
         <>
           <WidgetHeroContent
             badge={
-              <WidgetHeroBadge>
-                Запрет закрытия задач без результата для amoCRM
-              </WidgetHeroBadge>
+              <WidgetHeroBadge>{widget.seoTitle}</WidgetHeroBadge>
             }
             title="Нет задачам без результата!"
             description="Виджет не даст закрыть задачу без описания результата. Полная прозрачность работы команды и контроль качества выполнения."
