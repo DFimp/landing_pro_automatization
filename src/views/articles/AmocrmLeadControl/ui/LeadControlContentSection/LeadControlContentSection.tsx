@@ -1,4 +1,5 @@
-﻿import ArticleBlockWrapper from "@/views/articles/shared/ArticleContentSection/ui/ArticleBlockWrapper";
+import Link from "next/link";
+import ArticleBlockWrapper from "@/views/articles/shared/ArticleContentSection/ui/ArticleBlockWrapper";
 import Reveal from "@/shared/ui/Reveal/Reveal";
 
 export default function LeadControlContentSection() {
@@ -81,7 +82,11 @@ export default function LeadControlContentSection() {
             <li>контроль дублей при повторных обращениях.</li>
           </ul>
           <p>Задача простая: каждое новое обращение должно попадать в amoCRM без ручного переноса.</p>
-          <p>[Внутренняя ссылка: на страницу услуги «Настройка amoCRM»]</p>
+          <p>
+            <Link href="/articles/amocrm-funnels-tasks-control" className="text-[#3760E7] underline underline-offset-2 hover:opacity-75 transition-opacity">
+              настройка amoCRM для отдела продаж
+            </Link>
+          </p>
 
           <h3>2. Нет четкого правила распределения заявок</h3>
           <p>
@@ -163,7 +168,11 @@ export default function LeadControlContentSection() {
             Но уведомления нужно настраивать аккуратно. Если система шлет все подряд, сотрудники перестают читать
             сообщения. Уведомлять надо только о том, что требует действия или контроля.
           </p>
-          <p>[Внутренняя ссылка: на страницу виджета «Telegram-уведомления для amoCRM»]</p>
+          <p>
+            <Link href="/articles/amocrm-notice-in-tg" className="text-[#3760E7] underline underline-offset-2 hover:opacity-75 transition-opacity">
+              Telegram-уведомления для amoCRM
+            </Link>
+          </p>
         </ArticleBlockWrapper>
       </Reveal>
 
@@ -248,7 +257,11 @@ export default function LeadControlContentSection() {
             Для компаний с большим потоком лидов ручная чистка дублей быстро перестает работать. Здесь лучше
             использовать автоматизацию или отдельные виджеты для дублей контактов и сделок.
           </p>
-          <p>[Внутренняя ссылка: на страницу виджетов «Дубли контактов» и «Дубли сделок»]</p>
+          <p>
+            <Link href="/articles/amocrm-ruined-sales" className="text-[#3760E7] underline underline-offset-2 hover:opacity-75 transition-opacity">
+              дубли контактов и сделок в amoCRM
+            </Link>
+          </p>
         </ArticleBlockWrapper>
       </Reveal>
 

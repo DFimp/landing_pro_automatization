@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ArticleBlockWrapper from "@/views/articles/shared/ArticleContentSection/ui/ArticleBlockWrapper";
 import Reveal from "@/shared/ui/Reveal/Reveal";
 
@@ -112,9 +113,14 @@ export default function SupportContentSection() {
           </ul>
           <p>Важно, чтобы заявка не просто создала сделку, а сразу получила источник, ответственного, задачу и контроль обработки.</p>
           <p>
-            <strong>Место для внутренней ссылки:</strong> статья «Интеграция amoCRM с формами заявок»
-            <br />
-            <strong>Анкор:</strong> интеграция форм заявок с amoCRM
+            Подробнее — в статье про{" "}
+            <Link
+              href="/articles/amocrm-integration-forms"
+              className="text-[#3760E7] underline underline-offset-2 hover:opacity-75 transition-opacity"
+            >
+              интеграцию форм заявок с amoCRM
+            </Link>
+            .
           </p>
           <h3>Поддержка виджетов</h3>
           <p>Если в amoCRM используются виджеты, их нужно не только установить, но и поддерживать в рабочем процессе.</p>
@@ -151,9 +157,14 @@ export default function SupportContentSection() {
           </ul>
           <p>Проверяем, корректно ли передаются данные, не появляются ли ошибки, не ломаются ли статусы, не возвращается ли ручной перенос.</p>
           <p>
-            <strong>Место для внутренней ссылки:</strong> страница «Интеграции amoCRM с внешними сервисами»
-            <br />
-            <strong>Анкор:</strong> сопровождение интеграций amoCRM
+            Подробнее — в статье про{" "}
+            <Link
+              href="/articles/amocrm-integration-service"
+              className="text-[#3760E7] underline underline-offset-2 hover:opacity-75 transition-opacity"
+            >
+              сопровождение интеграций amoCRM
+            </Link>
+            .
           </p>
         </ArticleBlockWrapper>
       </Reveal>

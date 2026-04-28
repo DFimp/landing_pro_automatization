@@ -156,6 +156,18 @@ export const ARTICLES_ROUTES = {
     path: "/articles/amocrm-integration-1c",
     name: "Интеграция amoCRM с 1С",
   },
+  INTEGRATION_WAREHOUSE: {
+    path: "/articles/amocrm-integration-warehouse",
+    name: "Интеграция amoCRM с МойСклад",
+  },
+  INTEGRATION_AVITO: {
+    path: "/articles/amocrm-integration-avito",
+    name: "Интеграция amoCRM с Авито",
+  },
+  INTEGRATION_TG: {
+    path: "/articles/amocrm-integration-tg",
+    name: "Интеграция amoCRM с Telegram",
+  },
 } as const;
 
 // Все пути одним списком

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ArticleBlockWrapper from "@/views/articles/shared/ArticleContentSection/ui/ArticleBlockWrapper";
 import Reveal from "@/shared/ui/Reveal/Reveal";
 
@@ -104,9 +105,14 @@ export default function ImplementOrderContentSection() {
           </ul>
           <p>Без этого внедрение превращается в угадывание. Можно настроить красивую воронку, которая не совпадет с реальной работой отдела продаж.</p>
           <p>
-            <strong>Место для внутренней ссылки:</strong> статья «Внедрение amoCRM под процессы бизнеса»
-            <br />
-            <strong>Анкор:</strong> внедрение amoCRM под реальные процессы продаж
+            Подробнее — в статье про{" "}
+            <Link
+              href="/articles/amocrm-business-process-implementation"
+              className="text-[#3760E7] underline underline-offset-2 hover:opacity-75 transition-opacity"
+            >
+              внедрение amoCRM под реальные процессы продаж
+            </Link>
+            .
           </p>
         </ArticleBlockWrapper>
       </Reveal>
@@ -166,9 +172,14 @@ export default function ImplementOrderContentSection() {
           </ul>
           <p>В карточке должны быть не только имя и телефон, но и источник, страница обращения, сообщение клиента, дата, ответственный и следующий шаг.</p>
           <p>
-            <strong>Место для внутренней ссылки:</strong> статья «Интеграция amoCRM с сайтом»
-            <br />
-            <strong>Анкор:</strong> интеграция amoCRM с сайтом
+            Подробнее о подключении источников — в статье про{" "}
+            <Link
+              href="/articles/amocrm-integration-website"
+              className="text-[#3760E7] underline underline-offset-2 hover:opacity-75 transition-opacity"
+            >
+              интеграцию amoCRM с сайтом
+            </Link>
+            .
           </p>
         </ArticleBlockWrapper>
       </Reveal>

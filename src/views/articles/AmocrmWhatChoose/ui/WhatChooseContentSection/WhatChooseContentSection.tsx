@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ArticleBlockWrapper from "@/views/articles/shared/ArticleContentSection/ui/ArticleBlockWrapper";
 import Reveal from "@/shared/ui/Reveal/Reveal";
 
@@ -137,7 +138,16 @@ export default function WhatChooseContentSection() {
             <li>системы аналитики.</li>
           </ul>
           <p>Здесь важно не просто «передать данные», а правильно определить правила обмена: что, когда, куда передается, как обрабатываются ошибки, какие статусы возвращаются обратно в amoCRM.</p>
-          <p><strong>Место для внутренней ссылки:</strong> страница «Интеграции amoCRM с внешними сервисами»<br /><strong>Анкор:</strong> индивидуальная интеграция amoCRM с внешними сервисами</p>
+          <p>
+            Подробнее — в статье про{" "}
+            <Link
+              href="/articles/amocrm-integration-service"
+              className="text-[#3760E7] underline underline-offset-2 hover:opacity-75 transition-opacity"
+            >
+              индивидуальную интеграцию amoCRM с внешними сервисами
+            </Link>
+            .
+          </p>
 
           <h2>3. Нужна логика, которой нет в готовых решениях</h2>
           <p>Бывает, что задача выглядит простой, но внутри много условий.</p>

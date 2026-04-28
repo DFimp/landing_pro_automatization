@@ -1,4 +1,5 @@
-﻿import ArticleBlockWrapper from "@/views/articles/shared/ArticleContentSection/ui/ArticleBlockWrapper";
+import Link from "next/link";
+import ArticleBlockWrapper from "@/views/articles/shared/ArticleContentSection/ui/ArticleBlockWrapper";
 import Reveal from "@/shared/ui/Reveal/Reveal";
 
 function BaseSetupTable() {
@@ -177,9 +178,9 @@ export default function CostDependenceContentSection() {
           </ul>
           <p>Это уже не просто «завести CRM». Это настройка amoCRM под работу отдела продаж.</p>
           <p>
-            <strong>Внутренняя ссылка:</strong> страница «Настройка amoCRM для отдела продаж»
-            <br />
-            <strong>Анкор:</strong> настройка amoCRM для отдела продаж
+            <Link href="/articles/amocrm-funnels-tasks-control" className="text-[#3760E7] underline underline-offset-2 hover:opacity-75 transition-opacity">
+              настройка amoCRM для отдела продаж
+            </Link>
           </p>
         </ArticleBlockWrapper>
       </Reveal>
@@ -232,9 +233,9 @@ export default function CostDependenceContentSection() {
             статусов, полей и сценариев.
           </p>
           <p>
-            <strong>Внутренняя ссылка:</strong> страница «Интеграции amoCRM с внешними сервисами»
-            <br />
-            <strong>Анкор:</strong> интеграции amoCRM с внешними сервисами
+            <Link href="/articles/amocrm-integration-service" className="text-[#3760E7] underline underline-offset-2 hover:opacity-75 transition-opacity">
+              интеграции amoCRM с внешними сервисами
+            </Link>
           </p>
         </ArticleBlockWrapper>
       </Reveal>
@@ -382,9 +383,9 @@ export default function CostDependenceContentSection() {
             amoCRM или пересобирать структуру.
           </p>
           <p>
-            <strong>Внутренняя ссылка:</strong> страница «CRM-аудит amoCRM»
-            <br />
-            <strong>Анкор:</strong> аудит amoCRM перед настройкой
+            <Link href="/articles/amocrm-check-settings" className="text-[#3760E7] underline underline-offset-2 hover:opacity-75 transition-opacity">
+              аудит amoCRM перед настройкой
+            </Link>
           </p>
 
           <h2>Почему «дешевая настройка amoCRM» часто выходит дороже</h2>

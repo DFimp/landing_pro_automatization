@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ArticleBlockWrapper from "@/views/articles/shared/ArticleContentSection/ui/ArticleBlockWrapper";
 import Reveal from "@/shared/ui/Reveal/Reveal";
 
@@ -115,9 +116,14 @@ export default function FunnelsTasksControlContentSection() {
             <li>что переводит сделку дальше.</li>
           </ul>
           <p>
-            <strong>Место для внутренней ссылки:</strong> статья «Внедрение amoCRM под процессы бизнеса»
-            <br />
-            <strong>Анкор:</strong> внедрение amoCRM под реальные процессы продаж
+            Подробнее — в статье про{" "}
+            <Link
+              href="/articles/amocrm-business-process-implementation"
+              className="text-[#3760E7] underline underline-offset-2 hover:opacity-75 transition-opacity"
+            >
+              внедрение amoCRM под реальные процессы продаж
+            </Link>
+            .
           </p>
           <h3>Источники заявок</h3>
           <p>Настраиваем попадание заявок в amoCRM из ключевых каналов:</p>

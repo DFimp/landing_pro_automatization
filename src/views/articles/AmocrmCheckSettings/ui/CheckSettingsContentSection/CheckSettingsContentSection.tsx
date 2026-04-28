@@ -1,4 +1,5 @@
-﻿import ArticleBlockWrapper from "@/views/articles/shared/ArticleContentSection/ui/ArticleBlockWrapper";
+﻿import Link from "next/link";
+import ArticleBlockWrapper from "@/views/articles/shared/ArticleContentSection/ui/ArticleBlockWrapper";
 import Reveal from "@/shared/ui/Reveal/Reveal";
 
 export default function CheckSettingsContentSection() {
@@ -98,9 +99,14 @@ export default function CheckSettingsContentSection() {
             нужен.
           </p>
           <p>
-            <strong>Место для внутренней ссылки:</strong> страница «Настройка amoCRM»
-            <br />
-            <strong>Анкор:</strong> настройка воронки amoCRM под реальные процессы продаж
+            Подробнее — в статье про{" "}
+            <Link
+              href="/articles/amocrm-business-process-implementation"
+              className="text-[#3760E7] underline underline-offset-2 hover:opacity-75 transition-opacity"
+            >
+              настройку воронки amoCRM под реальные процессы продаж
+            </Link>
+            .
           </p>
 
           <h3>2. Источники заявок</h3>

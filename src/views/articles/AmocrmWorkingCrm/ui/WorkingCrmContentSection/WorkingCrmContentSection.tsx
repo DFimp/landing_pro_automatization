@@ -1,4 +1,5 @@
-﻿import ArticleBlockWrapper from "@/views/articles/shared/ArticleContentSection/ui/ArticleBlockWrapper";
+﻿import Link from "next/link";
+import ArticleBlockWrapper from "@/views/articles/shared/ArticleContentSection/ui/ArticleBlockWrapper";
 import Reveal from "@/shared/ui/Reveal/Reveal";
 
 export default function WorkingCrmContentSection() {
@@ -156,9 +157,14 @@ export default function WorkingCrmContentSection() {
             быстро, а где бизнес теряет деньги.
           </p>
           <p>
-            <strong>Место для внутренней ссылки:</strong> страница «Внедрение и настройка amoCRM»
-            <br />
-            <strong>Анкор:</strong> настройка amoCRM под процессы отдела продаж
+            Подробнее — в статье про{" "}
+            <Link
+              href="/articles/amocrm-business-process-implementation"
+              className="text-[#3760E7] underline underline-offset-2 hover:opacity-75 transition-opacity"
+            >
+              настройку amoCRM под процессы отдела продаж
+            </Link>
+            .
           </p>
 
           <h3>4. Настройка задач и напоминаний</h3>

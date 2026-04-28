@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ArticleBlockWrapper from "@/views/articles/shared/ArticleContentSection/ui/ArticleBlockWrapper";
 import Reveal from "@/shared/ui/Reveal/Reveal";
 
@@ -166,10 +167,9 @@ export default function RemoveManualWorkContentSection() {
             заявка не висит без ответственного, руководитель видит нарушение.
           </p>
           <p>
-            <strong>Внутренняя ссылка:</strong> статья «Как не терять заявки в
-            amoCRM»
-            <br />
-            <strong>Анкор:</strong> как не терять заявки в amoCRM
+            <Link href="/articles/amocrm-lead-control" className="text-[#3760E7] underline underline-offset-2 hover:opacity-75 transition-opacity">
+              как не терять заявки в amoCRM
+            </Link>
           </p>
         </ArticleBlockWrapper>
       </Reveal>
@@ -259,10 +259,9 @@ export default function RemoveManualWorkContentSection() {
             процесса.
           </p>
           <p>
-            <strong>Внутренняя ссылка:</strong> статья «Автоматические задачи в
-            amoCRM»
-            <br />
-            <strong>Анкор:</strong> автоматические задачи в amoCRM
+            <Link href="/articles/amocrm-real-help" className="text-[#3760E7] underline underline-offset-2 hover:opacity-75 transition-opacity">
+              автоматические задачи в amoCRM
+            </Link>
           </p>
         </ArticleBlockWrapper>
       </Reveal>
@@ -330,9 +329,9 @@ export default function RemoveManualWorkContentSection() {
             <li>источнику заявки.</li>
           </ul>
           <p>
-            <strong>Внутренняя ссылка:</strong> статья «Дубли в amoCRM»
-            <br />
-            <strong>Анкор:</strong> как убрать дубли в amoCRM
+            <Link href="/articles/amocrm-ruined-sales" className="text-[#3760E7] underline underline-offset-2 hover:opacity-75 transition-opacity">
+              как убрать дубли в amoCRM
+            </Link>
           </p>
         </ArticleBlockWrapper>
       </Reveal>
@@ -402,10 +401,9 @@ export default function RemoveManualWorkContentSection() {
             <li>Как руководитель видит статус.</li>
           </ol>
           <p>
-            <strong>Внутренняя ссылка:</strong> страница «Интеграции amoCRM с
-            внешними сервисами»
-            <br />
-            <strong>Анкор:</strong> интеграции amoCRM с внешними сервисами
+            <Link href="/articles/amocrm-integration-service" className="text-[#3760E7] underline underline-offset-2 hover:opacity-75 transition-opacity">
+              интеграции amoCRM с внешними сервисами
+            </Link>
           </p>
         </ArticleBlockWrapper>
       </Reveal>
@@ -600,9 +598,9 @@ export default function RemoveManualWorkContentSection() {
             <li>что можно не трогать.</li>
           </ul>
           <p>
-            <strong>Внутренняя ссылка:</strong> страница «CRM-аудит amoCRM»
-            <br />
-            <strong>Анкор:</strong> аудит amoCRM перед автоматизацией
+            <Link href="/articles/amocrm-check-settings" className="text-[#3760E7] underline underline-offset-2 hover:opacity-75 transition-opacity">
+              аудит amoCRM перед автоматизацией
+            </Link>
           </p>
         </ArticleBlockWrapper>
       </Reveal>

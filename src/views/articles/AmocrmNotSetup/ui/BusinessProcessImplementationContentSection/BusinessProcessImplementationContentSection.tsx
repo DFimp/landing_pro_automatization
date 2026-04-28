@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ArticleBlockWrapper from "@/views/articles/shared/ArticleContentSection/ui/ArticleBlockWrapper";
 import Reveal from "@/shared/ui/Reveal/Reveal";
 
@@ -199,10 +200,9 @@ export default function BusinessProcessImplementationContentSection() {
             <li>как руководитель видит просрочку.</li>
           </ul>
           <p>
-            <strong>Внутренняя ссылка:</strong> статья «Интеграция amoCRM с
-            сайтом»
-            <br />
-            <strong>Анкор:</strong> интеграция amoCRM с сайтом
+            <Link href="/articles/amocrm-integration-website" className="text-[#3760E7] underline underline-offset-2 hover:opacity-75 transition-opacity">
+              интеграция amoCRM с сайтом
+            </Link>
           </p>
         </ArticleBlockWrapper>
       </Reveal>
@@ -379,10 +379,9 @@ export default function BusinessProcessImplementationContentSection() {
             <li>клиент попросил позже - задача на конкретную дату.</li>
           </ul>
           <p>
-            <strong>Внутренняя ссылка:</strong> статья «Регламент обработки
-            заявок в amoCRM»
-            <br />
-            <strong>Анкор:</strong> регламент обработки заявок в amoCRM
+            <Link href="/articles/amocrm-application-rules" className="text-[#3760E7] underline underline-offset-2 hover:opacity-75 transition-opacity">
+              регламент обработки заявок в amoCRM
+            </Link>
           </p>
         </ArticleBlockWrapper>
       </Reveal>
@@ -534,9 +533,9 @@ export default function BusinessProcessImplementationContentSection() {
             <li>есть интеграции, которые нельзя сломать.</li>
           </ul>
           <p>
-            <strong>Внутренняя ссылка:</strong> страница «CRM-аудит amoCRM»
-            <br />
-            <strong>Анкор:</strong> аудит amoCRM перед перенастройкой
+            <Link href="/articles/amocrm-check-settings" className="text-[#3760E7] underline underline-offset-2 hover:opacity-75 transition-opacity">
+              аудит amoCRM перед перенастройкой
+            </Link>
           </p>
           <p>
             Аудит покажет, что можно сохранить, что нужно исправить, а что

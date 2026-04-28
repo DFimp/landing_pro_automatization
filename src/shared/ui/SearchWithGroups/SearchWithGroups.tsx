@@ -62,8 +62,8 @@ export function SearchWithGroups<T extends SearchableItem>({
 
   return (
     <div className="mb-10">
-      <div className="grid grid-cols-1 items-start gap-4 md:grid-cols-[1fr_auto]">
-        <div className="relative max-w-[640px]">
+      <div className="flex flex-col gap-3 md:flex-row md:items-start md:gap-4">
+        <div className="relative w-full max-w-[640px]">
           <input
             value={query}
             onChange={(event) => {
@@ -161,7 +161,8 @@ export function SearchWithGroups<T extends SearchableItem>({
           )}
         </div>
 
-        <div className="flex flex-wrap gap-2">
+        <div className="md:flex-1">
+          <div className="flex flex-wrap gap-2">
           {groups.map((group) => {
             const active = group === selectedGroup;
             return (
@@ -179,6 +180,7 @@ export function SearchWithGroups<T extends SearchableItem>({
               </button>
             );
           })}
+          </div>
         </div>
       </div>
     </div>

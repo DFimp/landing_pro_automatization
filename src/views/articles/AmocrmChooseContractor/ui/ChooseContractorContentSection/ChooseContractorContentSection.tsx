@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ArticleBlockWrapper from "@/views/articles/shared/ArticleContentSection/ui/ArticleBlockWrapper";
 import Reveal from "@/shared/ui/Reveal/Reveal";
 
@@ -55,7 +56,16 @@ export default function ChooseContractorContentSection() {
             <li>какие роли и права доступа нужны.</li>
           </ul>
           <p>Без этих данных нельзя нормально настроить amoCRM. Можно только сделать типовую схему, которая может не совпасть с реальной работой отдела продаж.</p>
-          <p><strong>Место для внутренней ссылки:</strong> статья «Внедрение amoCRM под процессы бизнеса»<br /><strong>Анкор:</strong> внедрение amoCRM под процессы бизнеса</p>
+          <p>
+            Подробнее об этом — в статье про{" "}
+            <Link
+              href="/articles/amocrm-business-process-implementation"
+              className="text-[#3760E7] underline underline-offset-2 hover:opacity-75 transition-opacity"
+            >
+              внедрение amoCRM под процессы бизнеса
+            </Link>
+            .
+          </p>
         </ArticleBlockWrapper>
       </Reveal>
 

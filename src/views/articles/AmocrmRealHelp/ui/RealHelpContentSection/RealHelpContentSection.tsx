@@ -1,4 +1,5 @@
-﻿import ArticleBlockWrapper from "@/views/articles/shared/ArticleContentSection/ui/ArticleBlockWrapper";
+﻿import Link from "next/link";
+import ArticleBlockWrapper from "@/views/articles/shared/ArticleContentSection/ui/ArticleBlockWrapper";
 import Reveal from "@/shared/ui/Reveal/Reveal";
 
 export default function RealHelpContentSection() {
@@ -125,7 +126,16 @@ export default function RealHelpContentSection() {
             <li>сумма сделки высокая, но активности нет.</li>
           </ul>
           <p>Это позволяет руководителю не проверять каждую карточку вручную. Он видит отклонения и вмешивается там, где действительно нужен контроль.</p>
-          <p><strong>Место для внутренней ссылки:</strong> статья «Как контролировать менеджеров в amoCRM без ручного микроменеджмента»<br /><strong>Анкор:</strong> контроль менеджеров в amoCRM</p>
+          <p>
+            Подробнее — в статье про{" "}
+            <Link
+              href="/articles/amocrm-lead-control"
+              className="text-[#3760E7] underline underline-offset-2 hover:opacity-75 transition-opacity"
+            >
+              контроль менеджеров в amoCRM
+            </Link>
+            .
+          </p>
         </ArticleBlockWrapper>
       </Reveal>
 

@@ -510,6 +510,48 @@ export const ARTICLES_DATA: Record<string, ArticleData> = {
     wordCount: 4000,
     articleSection: "Интеграции amoCRM",
   },
+
+  "amocrm-integration-warehouse": {
+    slug: "amocrm-integration-warehouse",
+    title: "Интеграция amoCRM с МойСклад - заказы, остатки и отгрузки в CRM",
+    shortName: "Интеграция amoCRM с МойСклад",
+    description:
+      "Настраиваем интеграцию amoCRM с МойСклад: передача заказов, товаров, остатков, резервов, счетов, отгрузок и статусов без ручного переноса.",
+    link: "/articles/amocrm-integration-warehouse",
+    publishedTime: "2026-04-28T00:00:00Z",
+    modifiedTime: "2026-04-28T00:00:00Z",
+    readTime: "16 минут",
+    wordCount: 4000,
+    articleSection: "Интеграции amoCRM",
+  },
+
+  "amocrm-integration-avito": {
+    slug: "amocrm-integration-avito",
+    title: "Интеграция amoCRM с Авито - заявки и сообщения в CRM",
+    shortName: "Интеграция amoCRM с Авито",
+    description:
+      "Настраиваем интеграцию amoCRM с Авито: передача заявок, сообщений, контактов, источников, ответственных, задач и контроль обработки обращений.",
+    link: "/articles/amocrm-integration-avito",
+    publishedTime: "2026-04-28T00:00:00Z",
+    modifiedTime: "2026-04-28T00:00:00Z",
+    readTime: "16 минут",
+    wordCount: 4000,
+    articleSection: "Интеграции amoCRM",
+  },
+
+  "amocrm-integration-tg": {
+    slug: "amocrm-integration-tg",
+    title: "Интеграция amoCRM с Telegram - заявки, переписки и уведомления в CRM",
+    shortName: "Интеграция amoCRM с Telegram",
+    description:
+      "Настраиваем интеграцию amoCRM с Telegram: заявки из бота и чатов, уведомления менеджерам, контроль задач, история общения и обработка обращений.",
+    link: "/articles/amocrm-integration-tg",
+    publishedTime: "2026-04-28T00:00:00Z",
+    modifiedTime: "2026-04-28T00:00:00Z",
+    readTime: "16 минут",
+    wordCount: 4000,
+    articleSection: "Интеграции amoCRM",
+  },
 };
 
 export const ARTICLES_LIST = Object.values(ARTICLES_DATA);
