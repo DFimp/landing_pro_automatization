@@ -342,6 +342,76 @@ export const ARTICLES_DATA: Record<string, ArticleData> = {
     wordCount: 3600,
     articleSection: "Сопровождение amoCRM",
   },
+
+  "amocrm-implement-order": {
+    slug: "amocrm-implement-order",
+    title: "Заказать внедрение amoCRM - настройка CRM под отдел продаж",
+    shortName: "Заказать внедрение amoCRM",
+    description:
+      "Внедрение amoCRM под процессы бизнеса: воронки, заявки, задачи, источники, права, отчеты, автоматизация, обучение и сопровождение.",
+    link: "/articles/amocrm-implement-order",
+    publishedTime: "2026-04-28T00:00:00Z",
+    modifiedTime: "2026-04-28T00:00:00Z",
+    readTime: "15 минут",
+    wordCount: 3800,
+    articleSection: "Внедрение amoCRM",
+  },
+
+  "amocrm-buy-widget": {
+    slug: "amocrm-buy-widget",
+    title: "Купить виджет amoCRM - готовые решения для отдела продаж",
+    shortName: "Купить виджет amoCRM",
+    description:
+      "Купить виджет amoCRM для распределения сделок, уведомлений, дублей, документов, счетов, задач и контроля продаж. Поможем выбрать и настроить.",
+    link: "/articles/amocrm-buy-widget",
+    publishedTime: "2026-04-28T00:00:00Z",
+    modifiedTime: "2026-04-28T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 3500,
+    articleSection: "Виджеты amoCRM",
+  },
+
+  "amocrm-audit-order": {
+    slug: "amocrm-audit-order",
+    title: "Заказать аудит amoCRM - проверка настроек, заявок и продаж",
+    shortName: "Заказать аудит amoCRM",
+    description:
+      "CRM-аудит amoCRM: проверим воронки, заявки, задачи, источники, дубли, отчеты, права доступа и дадим план доработок.",
+    link: "/articles/amocrm-audit-order",
+    publishedTime: "2026-04-28T00:00:00Z",
+    modifiedTime: "2026-04-28T00:00:00Z",
+    readTime: "16 минут",
+    wordCount: 4000,
+    articleSection: "Аудит amoCRM",
+  },
+
+  "amocrm-ready-solutions": {
+    slug: "amocrm-ready-solutions",
+    title: "Виджеты «Про Автоматизация» для amoCRM - готовые решения",
+    shortName: "Виджеты «Про Автоматизация» для amoCRM",
+    description:
+      "Виджеты для amoCRM от «Про Автоматизация»: распределение сделок, Telegram-уведомления, дубли, документы, счета, задачи и контроль продаж.",
+    link: "/articles/amocrm-ready-solutions",
+    publishedTime: "2026-04-28T00:00:00Z",
+    modifiedTime: "2026-04-28T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 3500,
+    articleSection: "Виджеты amoCRM",
+  },
+
+  "amocrm-integration-service": {
+    slug: "amocrm-integration-service",
+    title: "Интеграции amoCRM с внешними сервисами - настройка под бизнес",
+    shortName: "Интеграции amoCRM с внешними сервисами",
+    description:
+      "Настраиваем интеграции amoCRM с сайтом, телефонией, мессенджерами, 1С, МойСклад, СДЭК, hh.ru, платежами, аналитикой и другими сервисами.",
+    link: "/articles/amocrm-integration-service",
+    publishedTime: "2026-04-28T00:00:00Z",
+    modifiedTime: "2026-04-28T00:00:00Z",
+    readTime: "18 минут",
+    wordCount: 4500,
+    articleSection: "Интеграции amoCRM",
+  },
 };
 
 export const ARTICLES_LIST = Object.values(ARTICLES_DATA);

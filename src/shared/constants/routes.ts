@@ -108,6 +108,26 @@ export const ARTICLES_ROUTES = {
     path: "/articles/amocrm-support",
     name: "Сопровождение amoCRM после внедрения",
   },
+  IMPLEMENT_ORDER: {
+    path: "/articles/amocrm-implement-order",
+    name: "Заказать внедрение amoCRM",
+  },
+  BUY_WIDGET: {
+    path: "/articles/amocrm-buy-widget",
+    name: "Купить виджет amoCRM",
+  },
+  AUDIT_ORDER: {
+    path: "/articles/amocrm-audit-order",
+    name: "Заказать аудит amoCRM",
+  },
+  READY_SOLUTIONS: {
+    path: "/articles/amocrm-ready-solutions",
+    name: "Виджеты «Про Автоматизация» для amoCRM",
+  },
+  INTEGRATION_SERVICE: {
+    path: "/articles/amocrm-integration-service",
+    name: "Интеграции amoCRM с внешними сервисами",
+  },
 } as const;
 
 // Все пути одним списком
