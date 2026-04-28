@@ -31,55 +31,40 @@ export default function IntergationServiceContentSection() {
               <table className="w-full border-collapse">
                 <tbody>
                   <tr>
-                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">Направление</td>
-                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">Какие сервисы</td>
-                    <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">Что дает интеграция</td>
+                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                      Направление
+                    </td>
+                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                      Какие сервисы
+                    </td>
+                    <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                      Что дает интеграция
+                    </td>
                   </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Сайт и формы</td>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">сайт, квизы, формы, Tilda, WordPress</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">заявки сразу попадают в amoCRM</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Коммуникации</td>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">телефония, WhatsApp, Telegram, ВКонтакте, email</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">история общения сохраняется в карточке клиента</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Учет и склад</td>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">1С, МойСклад, внутренние базы</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">заказы, товары, остатки и статусы не переносятся вручную</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Доставка</td>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">СДЭК, Boxberry, Яндекс Доставка, Почта России</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">отправления и статусы доставки видны в CRM</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Платежи</td>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Т-Банк, ЮKassa, CloudPayments, Robokassa</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">счета и оплаты связаны со сделками</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Подбор</td>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">hh.ru, SuperJob, Авито Работа</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">отклики и кандидаты обрабатываются в воронке</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Документы</td>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Google Документы, Google Таблицы, Диадок, Контур</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">документы формируются из данных CRM</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Аналитика</td>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Яндекс Метрика, Google Analytics, Roistat, Power BI</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">источники, заявки и продажи собираются в отчеты</td>
-                  </tr>
-                  <tr>
-                    <td className="border-r border-[#3760E7]/20 p-3">Маркетплейсы</td>
-                    <td className="border-r border-[#3760E7]/20 p-3">Wildberries, Ozon, Яндекс Маркет, Лемана ПРО</td>
-                    <td className="p-3">заказы и статусы можно передавать в CRM</td>
-                  </tr>
+
+                  {[
+                    ["Сайт и формы", "сайт, квизы, формы, Tilda, WordPress", "заявки сразу попадают в amoCRM"],
+                    ["Коммуникации", "телефония, WhatsApp, Telegram, ВКонтакте, email", "история общения сохраняется в карточке клиента"],
+                    ["Учет и склад", "1С, МойСклад, внутренние базы", "заказы, товары, остатки и статусы не переносятся вручную"],
+                    ["Доставка", "СДЭК, Boxberry, Яндекс Доставка, Почта России", "отправления и статусы доставки видны в CRM"],
+                    ["Платежи", "Т-Банк, ЮKassa, CloudPayments, Robokassa", "счета и оплаты связаны со сделками"],
+                    ["Подбор", "hh.ru, SuperJob, Авито Работа", "отклики и кандидаты обрабатываются в воронке"],
+                    ["Документы", "Google Документы, Google Таблицы, Диадок, Контур", "документы формируются из данных CRM"],
+                    ["Аналитика", "Яндекс Метрика, Google Analytics, Roistat, Power BI", "источники, заявки и продажи собираются в отчеты"],
+                    ["Маркетплейсы", "Wildberries, Ozon, Яндекс Маркет, Лемана ПРО", "заказы и статусы можно передавать в CRM"],
+                  ].map((row, index) => (
+                    <tr key={index}>
+                      <td className="border-b border-r border-[#3760E7]/20 p-3">
+                        {row[0]}
+                      </td>
+                      <td className="border-b border-r border-[#3760E7]/20 p-3">
+                        {row[1]}
+                      </td>
+                      <td className="border-b border-[#3760E7]/20 p-3">
+                        {row[2]}
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
@@ -335,37 +320,32 @@ export default function IntergationServiceContentSection() {
               <table className="w-full border-collapse">
                 <tbody>
                   <tr>
-                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">Если болит</td>
-                    <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">Что интегрировать первым</td>
+                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                      Если болит
+                    </td>
+                    <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                      Что интегрировать первым
+                    </td>
                   </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Теряются заявки</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">сайт, формы, телефонию, мессенджеры</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Менеджеры забывают отвечать</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">WhatsApp, Telegram, уведомления, задачи</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Много ручного переноса заказов</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">1С, МойСклад, складскую систему</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Доставка контролируется отдельно</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">СДЭК, Boxberry, Яндекс Доставку</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Оплаты проверяются вручную</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">банк, платежную систему, онлайн-кассу</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Нет нормальной аналитики</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">источники, метрику, сквозную аналитику</td>
-                  </tr>
-                  <tr>
-                    <td className="border-r border-[#3760E7]/20 p-3">Кандидаты теряются в подборе</td>
-                    <td className="p-3">hh.ru, SuperJob, Авито Работа</td>
-                  </tr>
+
+                  {[
+                    ["Теряются заявки", "сайт, формы, телефонию, мессенджеры"],
+                    ["Менеджеры забывают отвечать", "WhatsApp, Telegram, уведомления, задачи"],
+                    ["Много ручного переноса заказов", "1С, МойСклад, складскую систему"],
+                    ["Доставка контролируется отдельно", "СДЭК, Boxberry, Яндекс Доставку"],
+                    ["Оплаты проверяются вручную", "банк, платежную систему, онлайн-кассу"],
+                    ["Нет нормальной аналитики", "источники, метрику, сквозную аналитику"],
+                    ["Кандидаты теряются в подборе", "hh.ru, SuperJob, Авито Работа"],
+                  ].map((row, index) => (
+                    <tr key={index}>
+                      <td className="border-b border-r border-[#3760E7]/20 p-3">
+                        {row[0]}
+                      </td>
+                      <td className="border-b border-[#3760E7]/20 p-3">
+                        {row[1]}
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
@@ -398,37 +378,32 @@ export default function IntergationServiceContentSection() {
               <table className="w-full border-collapse">
                 <tbody>
                   <tr>
-                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">Этап</td>
-                    <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">Что делаем</td>
+                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                      Этап
+                    </td>
+                    <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                      Что делаем
+                    </td>
                   </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">1. Разбор задачи</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">определяем, какую ручную работу или потерю контроля нужно убрать</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">2. Схема обмена</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">описываем, какие данные и когда передаются</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">3. Подготовка amoCRM</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">проверяем поля, этапы, задачи и ответственных</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">4. Настройка интеграции</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">связываем amoCRM с нужным сервисом</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">5. Тестирование</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">проверяем успешные и ошибочные сценарии</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">6. Запуск</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">переводим процесс в рабочий режим</td>
-                  </tr>
-                  <tr>
-                    <td className="border-r border-[#3760E7]/20 p-3">7. Поддержка</td>
-                    <td className="p-3">контролируем ошибки, изменения и доработки</td>
-                  </tr>
+
+                  {[
+                    ["1. Разбор задачи", "определяем, какую ручную работу или потерю контроля нужно убрать"],
+                    ["2. Схема обмена", "описываем, какие данные и когда передаются"],
+                    ["3. Подготовка amoCRM", "проверяем поля, этапы, задачи и ответственных"],
+                    ["4. Настройка интеграции", "связываем amoCRM с нужным сервисом"],
+                    ["5. Тестирование", "проверяем успешные и ошибочные сценарии"],
+                    ["6. Запуск", "переводим процесс в рабочий режим"],
+                    ["7. Поддержка", "контролируем ошибки, изменения и доработки"],
+                  ].map((row, index) => (
+                    <tr key={index}>
+                      <td className="border-b border-r border-[#3760E7]/20 p-3">
+                        {row[0]}
+                      </td>
+                      <td className="border-b border-[#3760E7]/20 p-3">
+                        {row[1]}
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>

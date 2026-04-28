@@ -15,86 +15,28 @@ function ManualActionsTable() {
                 Что можно настроить в amoCRM
               </td>
             </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">
-                Менеджер сам создает сделку
-              </td>
-              <td className="border-b border-[#3760E7]/20 p-3">
-                автоматическое создание сделки из заявки
-              </td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">
-                Руководитель вручную раздает лиды
-              </td>
-              <td className="border-b border-[#3760E7]/20 p-3">
-                распределение заявок по правилам
-              </td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">
-                Менеджер сам ставит задачу
-              </td>
-              <td className="border-b border-[#3760E7]/20 p-3">
-                автоматические задачи на каждом этапе
-              </td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">
-                Недозвоны держатся в памяти
-              </td>
-              <td className="border-b border-[#3760E7]/20 p-3">
-                повторные задачи и отдельный сценарий
-              </td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">
-                Руководитель ищет просрочки
-              </td>
-              <td className="border-b border-[#3760E7]/20 p-3">
-                уведомления и отчеты по нарушениям
-              </td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">
-                Клиенты дублируются
-              </td>
-              <td className="border-b border-[#3760E7]/20 p-3">
-                проверка дублей контактов и сделок
-              </td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">
-                Документы делают вручную
-              </td>
-              <td className="border-b border-[#3760E7]/20 p-3">
-                генерация документов из данных CRM
-              </td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">
-                Счета выставляют отдельно
-              </td>
-              <td className="border-b border-[#3760E7]/20 p-3">
-                интеграция с платежами или банком
-              </td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">
-                Статусы доставки проверяют в кабинете
-              </td>
-              <td className="border-b border-[#3760E7]/20 p-3">
-                интеграция с доставкой
-              </td>
-            </tr>
-            <tr>
-              <td className="border-r border-[#3760E7]/20 p-3">
-                Отчеты собирают в таблицах
-              </td>
-              <td className="p-3">
-                аналитика внутри amoCRM или во внешней BI-системе
-              </td>
-            </tr>
+
+            {[
+              ["Менеджер сам создает сделку", "автоматическое создание сделки из заявки"],
+              ["Руководитель вручную раздает лиды", "распределение заявок по правилам"],
+              ["Менеджер сам ставит задачу", "автоматические задачи на каждом этапе"],
+              ["Недозвоны держатся в памяти", "повторные задачи и отдельный сценарий"],
+              ["Руководитель ищет просрочки", "уведомления и отчеты по нарушениям"],
+              ["Клиенты дублируются", "проверка дублей контактов и сделок"],
+              ["Документы делают вручную", "генерация документов из данных CRM"],
+              ["Счета выставляют отдельно", "интеграция с платежами или банком"],
+              ["Статусы доставки проверяют в кабинете", "интеграция с доставкой"],
+              ["Отчеты собирают в таблицах", "аналитика внутри amoCRM или во внешней BI-системе"],
+            ].map((row, index) => (
+              <tr key={index}>
+                <td className="border-b border-r border-[#3760E7]/20 p-3">
+                  {row[0]}
+                </td>
+                <td className="border-b border-[#3760E7]/20 p-3">
+                  {row[1]}
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
@@ -116,68 +58,26 @@ function StageActionsTable() {
                 Автоматическое действие
               </td>
             </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">
-                Новая заявка
-              </td>
-              <td className="border-b border-[#3760E7]/20 p-3">
-                связаться с клиентом
-              </td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">
-                Недозвон
-              </td>
-              <td className="border-b border-[#3760E7]/20 p-3">
-                повторить звонок
-              </td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">
-                Квалификация
-              </td>
-              <td className="border-b border-[#3760E7]/20 p-3">
-                уточнить потребность
-              </td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">
-                Предложение отправлено
-              </td>
-              <td className="border-b border-[#3760E7]/20 p-3">
-                проверить решение клиента
-              </td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">
-                Счет выставлен
-              </td>
-              <td className="border-b border-[#3760E7]/20 p-3">
-                проконтролировать оплату
-              </td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">
-                Договор в работе
-              </td>
-              <td className="border-b border-[#3760E7]/20 p-3">
-                проверить согласование
-              </td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">
-                Ожидаем решение
-              </td>
-              <td className="border-b border-[#3760E7]/20 p-3">
-                сделать повторное касание
-              </td>
-            </tr>
-            <tr>
-              <td className="border-r border-[#3760E7]/20 p-3">
-                Сделка без движения
-              </td>
-              <td className="p-3">уведомить менеджера или руководителя</td>
-            </tr>
+
+            {[
+              ["Новая заявка", "связаться с клиентом"],
+              ["Недозвон", "повторить звонок"],
+              ["Квалификация", "уточнить потребность"],
+              ["Предложение отправлено", "проверить решение клиента"],
+              ["Счет выставлен", "проконтролировать оплату"],
+              ["Договор в работе", "проверить согласование"],
+              ["Ожидаем решение", "сделать повторное касание"],
+              ["Сделка без движения", "уведомить менеджера или руководителя"],
+            ].map((row, index) => (
+              <tr key={index}>
+                <td className="border-b border-r border-[#3760E7]/20 p-3">
+                  {row[0]}
+                </td>
+                <td className="border-b border-[#3760E7]/20 p-3">
+                  {row[1]}
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

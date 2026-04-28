@@ -440,6 +440,76 @@ export const ARTICLES_DATA: Record<string, ArticleData> = {
     wordCount: 4000,
     articleSection: "Интеграции amoCRM",
   },
+
+  "amocrm-integration-tel": {
+    slug: "amocrm-integration-tel",
+    title: "Интеграция amoCRM с телефонией - звонки под контролем",
+    shortName: "Интеграция amoCRM с телефонией",
+    description:
+      "Настраиваем интеграцию amoCRM с телефонией: входящие и исходящие звонки, карточки клиентов, задачи, пропущенные вызовы, записи и отчеты.",
+    link: "/articles/amocrm-integration-tel",
+    publishedTime: "2026-04-28T00:00:00Z",
+    modifiedTime: "2026-04-28T00:00:00Z",
+    readTime: "16 минут",
+    wordCount: 4000,
+    articleSection: "Интеграции amoCRM",
+  },
+
+  "amocrm-integration-whatsapp": {
+    slug: "amocrm-integration-whatsapp",
+    title: "Интеграция amoCRM с WhatsApp - переписки и заявки в CRM",
+    shortName: "Интеграция amoCRM с WhatsApp",
+    description:
+      "Настраиваем интеграцию amoCRM с WhatsApp: заявки, переписки, карточки клиентов, задачи, ответственные, история общения и контроль обработки сообщений.",
+    link: "/articles/amocrm-integration-whatsapp",
+    publishedTime: "2026-04-28T00:00:00Z",
+    modifiedTime: "2026-04-28T00:00:00Z",
+    readTime: "16 минут",
+    wordCount: 4000,
+    articleSection: "Интеграции amoCRM",
+  },
+
+  "amocrm-integration-sdec": {
+    slug: "amocrm-integration-sdec",
+    title: "Интеграция amoCRM с СДЭК - доставка из сделки без ручного переноса",
+    shortName: "Интеграция amoCRM с СДЭК",
+    description:
+      "Настраиваем интеграцию amoCRM с СДЭК: передача данных заказа, создание отправлений, трек-номер, статусы доставки, задачи и контроль ошибок.",
+    link: "/articles/amocrm-integration-sdec",
+    publishedTime: "2026-04-28T00:00:00Z",
+    modifiedTime: "2026-04-28T00:00:00Z",
+    readTime: "16 минут",
+    wordCount: 4000,
+    articleSection: "Интеграции amoCRM",
+  },
+
+  "amocrm-integration-hhru": {
+    slug: "amocrm-integration-hhru",
+    title: "Интеграция amoCRM с hh.ru - отклики и кандидаты в CRM",
+    shortName: "Интеграция amoCRM с hh.ru",
+    description:
+      "Настраиваем интеграцию amoCRM с hh.ru: отклики, кандидаты, статусы подбора, задачи рекрутерам, история общения и контроль найма.",
+    link: "/articles/amocrm-integration-hhru",
+    publishedTime: "2026-04-28T00:00:00Z",
+    modifiedTime: "2026-04-28T00:00:00Z",
+    readTime: "16 минут",
+    wordCount: 4000,
+    articleSection: "Интеграции amoCRM",
+  },
+
+  "amocrm-integration-1c": {
+    slug: "amocrm-integration-1c",
+    title: "Интеграция amoCRM с 1С - сделки, счета и статусы без ручного переноса",
+    shortName: "Интеграция amoCRM с 1С",
+    description:
+      "Настраиваем интеграцию amoCRM с 1С: передача клиентов, заказов, счетов, оплат, товаров, статусов и документов между CRM и учетом.",
+    link: "/articles/amocrm-integration-1c",
+    publishedTime: "2026-04-28T00:00:00Z",
+    modifiedTime: "2026-04-28T00:00:00Z",
+    readTime: "16 минут",
+    wordCount: 4000,
+    articleSection: "Интеграции amoCRM",
+  },
 };
 
 export const ARTICLES_LIST = Object.values(ARTICLES_DATA);

@@ -51,41 +51,33 @@ export default function ImplementOrderContentSection() {
               <table className="w-full border-collapse">
                 <tbody>
                   <tr>
-                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">Ситуация</td>
-                    <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">Что нужно исправить через amoCRM</td>
+                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                      Ситуация
+                    </td>
+                    <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                      Что нужно исправить через amoCRM
+                    </td>
                   </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Заявки приходят в разные каналы</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">собрать обращения в CRM</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Менеджеры забывают перезванивать</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">настроить задачи и напоминания</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Руководитель не видит работу отдела</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">настроить отчеты и контроль просрочек</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Сделки ведутся в таблицах</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">перенести процесс в воронку amoCRM</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Источники заявок не считаются</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">фиксировать канал обращения</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Много ручной работы</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">автоматизировать повторяющиеся действия</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Нет единого регламента</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">связать этапы, задачи и правила работы</td>
-                  </tr>
-                  <tr>
-                    <td className="border-r border-[#3760E7]/20 p-3">Менеджеры работают по-разному</td>
-                    <td className="p-3">сделать единый процесс обработки заявок</td>
-                  </tr>
+
+                  {[
+                    ["Заявки приходят в разные каналы", "собрать обращения в CRM"],
+                    ["Менеджеры забывают перезванивать", "настроить задачи и напоминания"],
+                    ["Руководитель не видит работу отдела", "настроить отчеты и контроль просрочек"],
+                    ["Сделки ведутся в таблицах", "перенести процесс в воронку amoCRM"],
+                    ["Источники заявок не считаются", "фиксировать канал обращения"],
+                    ["Много ручной работы", "автоматизировать повторяющиеся действия"],
+                    ["Нет единого регламента", "связать этапы, задачи и правила работы"],
+                    ["Менеджеры работают по-разному", "сделать единый процесс обработки заявок"],
+                  ].map((row, index) => (
+                    <tr key={index}>
+                      <td className="border-b border-r border-[#3760E7]/20 p-3">
+                        {row[0]}
+                      </td>
+                      <td className="border-b border-[#3760E7]/20 p-3">
+                        {row[1]}
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
@@ -253,50 +245,39 @@ export default function ImplementOrderContentSection() {
               <table className="w-full border-collapse">
                 <tbody>
                   <tr>
-                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">Этап</td>
-                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">Что делаем</td>
-                    <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">Результат</td>
+                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                      Этап
+                    </td>
+                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                      Что делаем
+                    </td>
+                    <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                      Результат
+                    </td>
                   </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">1. Диагностика</td>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">разбираем процесс продаж и текущие проблемы</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">понятно, что нужно настроить</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">2. Проектирование</td>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">описываем воронки, поля, задачи, источники, роли</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">появляется структура будущей CRM</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">3. Настройка</td>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">создаем воронки, поля, задачи, права, отчеты</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">CRM готова к тестированию</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">4. Подключения</td>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">связываем сайт, телефонию, мессенджеры, формы, сервисы</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">заявки начинают попадать в CRM</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">5. Тестирование</td>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">проверяем реальные сценарии</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">находим ошибки до запуска</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">6. Обучение</td>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">показываем менеджерам и руководителю порядок работы</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">сотрудники понимают, как работать</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">7. Запуск</td>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">переводим процесс в amoCRM</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">отдел продаж начинает работать в системе</td>
-                  </tr>
-                  <tr>
-                    <td className="border-r border-[#3760E7]/20 p-3">8. Корректировки</td>
-                    <td className="border-r border-[#3760E7]/20 p-3">исправляем замечания после запуска</td>
-                    <td className="p-3">CRM адаптируется под реальную работу</td>
-                  </tr>
+
+                  {[
+                    ["1. Диагностика", "разбираем процесс продаж и текущие проблемы", "понятно, что нужно настроить"],
+                    ["2. Проектирование", "описываем воронки, поля, задачи, источники, роли", "появляется структура будущей CRM"],
+                    ["3. Настройка", "создаем воронки, поля, задачи, права, отчеты", "CRM готова к тестированию"],
+                    ["4. Подключения", "связываем сайт, телефонию, мессенджеры, формы, сервисы", "заявки начинают попадать в CRM"],
+                    ["5. Тестирование", "проверяем реальные сценарии", "находим ошибки до запуска"],
+                    ["6. Обучение", "показываем менеджерам и руководителю порядок работы", "сотрудники понимают, как работать"],
+                    ["7. Запуск", "переводим процесс в amoCRM", "отдел продаж начинает работать в системе"],
+                    ["8. Корректировки", "исправляем замечания после запуска", "CRM адаптируется под реальную работу"],
+                  ].map((row, index) => (
+                    <tr key={index}>
+                      <td className="border-b border-r border-[#3760E7]/20 p-3">
+                        {row[0]}
+                      </td>
+                      <td className="border-b border-r border-[#3760E7]/20 p-3">
+                        {row[1]}
+                      </td>
+                      <td className="border-b border-[#3760E7]/20 p-3">
+                        {row[2]}
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>

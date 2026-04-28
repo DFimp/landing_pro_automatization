@@ -30,49 +30,35 @@ export default function BuyWidgetContentSection() {
               <table className="w-full border-collapse">
                 <tbody>
                   <tr>
-                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">Задача в amoCRM</td>
-                    <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">Какой виджет нужен</td>
+                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                      Задача в amoCRM
+                    </td>
+                    <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                      Какой виджет нужен
+                    </td>
                   </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Заявки вручную распределяются между менеджерами</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">распределение сделок</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Менеджеры поздно видят новые обращения</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">Telegram-уведомления</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Руководитель не видит просрочки</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">контроль задач и уведомления</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">В базе много повторяющихся клиентов</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">дубли контактов</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">В воронке есть одинаковые сделки</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">дубли сделок</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Документы готовятся вручную</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">Google Документы</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Счета выставляются отдельно от CRM</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">счета через Т-Банк</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Сделки висят без следующего действия</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">автозадачи и контроль сделок без задач</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Менеджеры теряют важные события</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">уведомления по событиям</td>
-                  </tr>
-                  <tr>
-                    <td className="border-r border-[#3760E7]/20 p-3">CRM неудобна для ежедневной работы</td>
-                    <td className="p-3">интерфейсные улучшения, фильтры, подсказки</td>
-                  </tr>
+
+                  {[
+                    ["Заявки вручную распределяются между менеджерами", "распределение сделок"],
+                    ["Менеджеры поздно видят новые обращения", "Telegram-уведомления"],
+                    ["Руководитель не видит просрочки", "контроль задач и уведомления"],
+                    ["В базе много повторяющихся клиентов", "дубли контактов"],
+                    ["В воронке есть одинаковые сделки", "дубли сделок"],
+                    ["Документы готовятся вручную", "Google Документы"],
+                    ["Счета выставляются отдельно от CRM", "счета через Т-Банк"],
+                    ["Сделки висят без следующего действия", "автозадачи и контроль сделок без задач"],
+                    ["Менеджеры теряют важные события", "уведомления по событиям"],
+                    ["CRM неудобна для ежедневной работы", "интерфейсные улучшения, фильтры, подсказки"],
+                  ].map((row, index) => (
+                    <tr key={index}>
+                      <td className="border-b border-r border-[#3760E7]/20 p-3">
+                        {row[0]}
+                      </td>
+                      <td className="border-b border-[#3760E7]/20 p-3">
+                        {row[1]}
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
@@ -282,37 +268,32 @@ export default function BuyWidgetContentSection() {
               <table className="w-full border-collapse">
                 <tbody>
                   <tr>
-                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">Шаг</td>
-                    <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">Что происходит</td>
+                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                      Шаг
+                    </td>
+                    <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                      Что происходит
+                    </td>
                   </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">1. Заявка</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">вы описываете задачу или проблему</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">2. Разбор</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">смотрим, подходит ли готовый виджет</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">3. Подбор</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">выбираем нужное решение</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">4. Настройка</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">подключаем виджет к amoCRM</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">5. Проверка</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">тестируем на реальных сценариях</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">6. Объяснение</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">показываем, как пользоваться</td>
-                  </tr>
-                  <tr>
-                    <td className="border-r border-[#3760E7]/20 p-3">7. Корректировка</td>
-                    <td className="p-3">при необходимости уточняем правила</td>
-                  </tr>
+
+                  {[
+                    ["1. Заявка", "вы описываете задачу или проблему"],
+                    ["2. Разбор", "смотрим, подходит ли готовый виджет"],
+                    ["3. Подбор", "выбираем нужное решение"],
+                    ["4. Настройка", "подключаем виджет к amoCRM"],
+                    ["5. Проверка", "тестируем на реальных сценариях"],
+                    ["6. Объяснение", "показываем, как пользоваться"],
+                    ["7. Корректировка", "при необходимости уточняем правила"],
+                  ].map((row, index) => (
+                    <tr key={index}>
+                      <td className="border-b border-r border-[#3760E7]/20 p-3">
+                        {row[0]}
+                      </td>
+                      <td className="border-b border-[#3760E7]/20 p-3">
+                        {row[1]}
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>

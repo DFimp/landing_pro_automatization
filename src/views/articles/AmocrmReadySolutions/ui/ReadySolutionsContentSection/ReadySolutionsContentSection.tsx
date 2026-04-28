@@ -161,41 +161,33 @@ export default function ReadySolutionsContentSection() {
               <table className="w-full border-collapse">
                 <tbody>
                   <tr>
-                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">Проблема</td>
-                    <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">Какой виджет может помочь</td>
+                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                      Проблема
+                    </td>
+                    <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                      Какой виджет может помочь
+                    </td>
                   </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Заявки распределяются вручную</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">Виджет распределения сделок</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Менеджеры поздно видят новые заявки</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">Telegram-уведомления</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Руководитель не видит просрочки</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">Виджет контроля задач</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">В базе много повторяющихся клиентов</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">Виджет дублей контактов</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">В воронке повторяются одинаковые сделки</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">Виджет дублей сделок</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Документы готовятся вручную</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">Виджет Google Документы</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Счета выставляются отдельно от CRM</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">Виджет Т-Банк</td>
-                  </tr>
-                  <tr>
-                    <td className="border-r border-[#3760E7]/20 p-3">Сделки зависают без движения</td>
-                    <td className="p-3">Виджет контроля сделок</td>
-                  </tr>
+
+                  {[
+                    ["Заявки распределяются вручную", "Виджет распределения сделок"],
+                    ["Менеджеры поздно видят новые заявки", "Telegram-уведомления"],
+                    ["Руководитель не видит просрочки", "Виджет контроля задач"],
+                    ["В базе много повторяющихся клиентов", "Виджет дублей контактов"],
+                    ["В воронке повторяются одинаковые сделки", "Виджет дублей сделок"],
+                    ["Документы готовятся вручную", "Виджет Google Документы"],
+                    ["Счета выставляются отдельно от CRM", "Виджет Т-Банк"],
+                    ["Сделки зависают без движения", "Виджет контроля сделок"],
+                  ].map((row, index) => (
+                    <tr key={index}>
+                      <td className="border-b border-r border-[#3760E7]/20 p-3">
+                        {row[0]}
+                      </td>
+                      <td className="border-b border-[#3760E7]/20 p-3">
+                        {row[1]}
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>

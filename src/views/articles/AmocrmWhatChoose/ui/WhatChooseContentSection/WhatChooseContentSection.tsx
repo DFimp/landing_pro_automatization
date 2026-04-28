@@ -276,49 +276,35 @@ export default function WhatChooseContentSection() {
               <table className="w-full border-collapse">
                 <tbody>
                   <tr>
-                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">Ситуация</td>
-                    <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">Что выбрать</td>
+                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                      Ситуация
+                    </td>
+                    <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                      Что выбрать
+                    </td>
                   </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Нужно быстро закрыть типовую задачу</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">Готовый виджет</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Нужно уведомлять менеджеров или руководителя</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">Виджет</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Нужно убрать дубли контактов или сделок</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">Виджет</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Нужно формировать простые документы</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">Виджет или небольшая доработка</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Нужна сложная логика распределения заявок</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">Индивидуальная разработка</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Нужно связать amoCRM с несколькими системами</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">Индивидуальная интеграция</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Процесс нестандартный и зависит от многих условий</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">Индивидуальная разработка</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Готовое решение закрывает только часть задачи</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">Сначала аудит, потом выбор решения</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Нужна быстрая проверка гипотезы</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">Виджет</td>
-                  </tr>
-                  <tr>
-                    <td className="border-r border-[#3760E7]/20 p-3">Процесс критичен для денег, доставки или документов</td>
-                    <td className="p-3">Индивидуальная разработка с сопровождением</td>
-                  </tr>
+
+                  {[
+                    ["Нужно быстро закрыть типовую задачу", "Готовый виджет"],
+                    ["Нужно уведомлять менеджеров или руководителя", "Виджет"],
+                    ["Нужно убрать дубли контактов или сделок", "Виджет"],
+                    ["Нужно формировать простые документы", "Виджет или небольшая доработка"],
+                    ["Нужна сложная логика распределения заявок", "Индивидуальная разработка"],
+                    ["Нужно связать amoCRM с несколькими системами", "Индивидуальная интеграция"],
+                    ["Процесс нестандартный и зависит от многих условий", "Индивидуальная разработка"],
+                    ["Готовое решение закрывает только часть задачи", "Сначала аудит, потом выбор решения"],
+                    ["Нужна быстрая проверка гипотезы", "Виджет"],
+                    ["Процесс критичен для денег, доставки или документов", "Индивидуальная разработка с сопровождением"],
+                  ].map((row, index) => (
+                    <tr key={index}>
+                      <td className="border-b border-r border-[#3760E7]/20 p-3">
+                        {row[0]}
+                      </td>
+                      <td className="border-b border-[#3760E7]/20 p-3">
+                        {row[1]}
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>

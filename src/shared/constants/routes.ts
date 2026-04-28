@@ -136,6 +136,26 @@ export const ARTICLES_ROUTES = {
     path: "/articles/amocrm-integration-forms",
     name: "Интеграция amoCRM с формами заявок",
   },
+  INTEGRATION_TEL: {
+    path: "/articles/amocrm-integration-tel",
+    name: "Интеграция amoCRM с телефонией",
+  },
+  INTEGRATION_WHATSAPP: {
+    path: "/articles/amocrm-integration-whatsapp",
+    name: "Интеграция amoCRM с WhatsApp",
+  },
+  INTEGRATION_SDEC: {
+    path: "/articles/amocrm-integration-sdec",
+    name: "Интеграция amoCRM с СДЭК",
+  },
+  INTEGRATION_HHRU: {
+    path: "/articles/amocrm-integration-hhru",
+    name: "Интеграция amoCRM с hh.ru",
+  },
+  INTEGRATION_1C: {
+    path: "/articles/amocrm-integration-1c",
+    name: "Интеграция amoCRM с 1С",
+  },
 } as const;
 
 // Все пути одним списком

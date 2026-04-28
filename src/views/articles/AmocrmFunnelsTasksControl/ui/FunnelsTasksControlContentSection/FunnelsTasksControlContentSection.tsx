@@ -44,41 +44,33 @@ export default function FunnelsTasksControlContentSection() {
               <table className="w-full border-collapse">
                 <tbody>
                   <tr>
-                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">Ситуация</td>
-                    <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">Что происходит в бизнесе</td>
+                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                      Ситуация
+                    </td>
+                    <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                      Что происходит в бизнесе
+                    </td>
                   </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Заявки приходят из разных каналов</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">сайт, звонки, мессенджеры, почта и реклама обрабатываются разрозненно</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Менеджеры забывают перезванивать</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">нет автоматических задач и контроля первого контакта</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Руководитель не видит просрочки</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">приходится проверять сделки вручную</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Воронка слишком общая</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">этапы «В работе» и «Думает» не показывают реальное состояние клиента</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">CRM неудобна менеджерам</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">слишком много лишних полей, непонятные этапы, нет пользы в ежедневной работе</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Нет нормальной аналитики</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">источники, причины отказов и задачи заполнены хаотично</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Есть дубли</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">один клиент может быть в нескольких карточках</td>
-                  </tr>
-                  <tr>
-                    <td className="border-r border-[#3760E7]/20 p-3">Много ручной работы</td>
-                    <td className="p-3">данные переносятся между сервисами вручную</td>
-                  </tr>
+
+                  {[
+                    ["Заявки приходят из разных каналов", "сайт, звонки, мессенджеры, почта и реклама обрабатываются разрозненно"],
+                    ["Менеджеры забывают перезванивать", "нет автоматических задач и контроля первого контакта"],
+                    ["Руководитель не видит просрочки", "приходится проверять сделки вручную"],
+                    ["Воронка слишком общая", "этапы «В работе» и «Думает» не показывают реальное состояние клиента"],
+                    ["CRM неудобна менеджерам", "слишком много лишних полей, непонятные этапы, нет пользы в ежедневной работе"],
+                    ["Нет нормальной аналитики", "источники, причины отказов и задачи заполнены хаотично"],
+                    ["Есть дубли", "один клиент может быть в нескольких карточках"],
+                    ["Много ручной работы", "данные переносятся между сервисами вручную"],
+                  ].map((row, index) => (
+                    <tr key={index}>
+                      <td className="border-b border-r border-[#3760E7]/20 p-3">
+                        {row[0]}
+                      </td>
+                      <td className="border-b border-[#3760E7]/20 p-3">
+                        {row[1]}
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
@@ -228,33 +220,31 @@ export default function FunnelsTasksControlContentSection() {
               <table className="w-full border-collapse">
                 <tbody>
                   <tr>
-                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">Роль</td>
-                    <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">Что обычно нужно</td>
+                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                      Роль
+                    </td>
+                    <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                      Что обычно нужно
+                    </td>
                   </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Менеджер</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">видеть свои сделки и задачи</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Руководитель группы</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">видеть команду и просрочки</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">РОП</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">видеть весь отдел продаж</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Собственник</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">видеть ключевые отчеты и контрольные показатели</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Маркетолог</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">видеть источники и заявки</td>
-                  </tr>
-                  <tr>
-                    <td className="border-r border-[#3760E7]/20 p-3">Администратор CRM</td>
-                    <td className="p-3">управлять настройками</td>
-                  </tr>
+
+                  {[
+                    ["Менеджер", "видеть свои сделки и задачи"],
+                    ["Руководитель группы", "видеть команду и просрочки"],
+                    ["РОП", "видеть весь отдел продаж"],
+                    ["Собственник", "видеть ключевые отчеты и контрольные показатели"],
+                    ["Маркетолог", "видеть источники и заявки"],
+                    ["Администратор CRM", "управлять настройками"],
+                  ].map((row, index) => (
+                    <tr key={index}>
+                      <td className="border-b border-r border-[#3760E7]/20 p-3">
+                        {row[0]}
+                      </td>
+                      <td className="border-b border-[#3760E7]/20 p-3">
+                        {row[1]}
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
@@ -314,49 +304,35 @@ export default function FunnelsTasksControlContentSection() {
               <table className="w-full border-collapse">
                 <tbody>
                   <tr>
-                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">Блок работ</td>
-                    <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">Что делаем</td>
+                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                      Блок работ
+                    </td>
+                    <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                      Что делаем
+                    </td>
                   </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Разбор процесса</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">выясняем, как приходят заявки и как работает отдел продаж</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Воронки</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">настраиваем этапы под реальный путь клиента</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Поля</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">убираем лишнее, добавляем нужные данные</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Источники</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">подключаем заявки из сайта, телефонии, мессенджеров и других каналов</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Задачи</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">настраиваем первый контакт, недозвоны, повторы, оплаты</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Права</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">разделяем доступ по ролям</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Уведомления</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">настраиваем сигналы по важным событиям</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Отчеты</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">собираем управленческую картину для руководителя</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Дубли</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">проверяем, где появляются повторные карточки</td>
-                  </tr>
-                  <tr>
-                    <td className="border-r border-[#3760E7]/20 p-3">Обучение</td>
-                    <td className="p-3">объясняем менеджерам и руководителю логику работы</td>
-                  </tr>
+
+                  {[
+                    ["Разбор процесса", "выясняем, как приходят заявки и как работает отдел продаж"],
+                    ["Воронки", "настраиваем этапы под реальный путь клиента"],
+                    ["Поля", "убираем лишнее, добавляем нужные данные"],
+                    ["Источники", "подключаем заявки из сайта, телефонии, мессенджеров и других каналов"],
+                    ["Задачи", "настраиваем первый контакт, недозвоны, повторы, оплаты"],
+                    ["Права", "разделяем доступ по ролям"],
+                    ["Уведомления", "настраиваем сигналы по важным событиям"],
+                    ["Отчеты", "собираем управленческую картину для руководителя"],
+                    ["Дубли", "проверяем, где появляются повторные карточки"],
+                    ["Обучение", "объясняем менеджерам и руководителю логику работы"],
+                  ].map((row, index) => (
+                    <tr key={index}>
+                      <td className="border-b border-r border-[#3760E7]/20 p-3">
+                        {row[0]}
+                      </td>
+                      <td className="border-b border-[#3760E7]/20 p-3">
+                        {row[1]}
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>

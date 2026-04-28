@@ -15,76 +15,27 @@ function ProcessMappingTable() {
                 Как это отражается в amoCRM
               </td>
             </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">
-                Клиент оставил заявку
-              </td>
-              <td className="border-b border-[#3760E7]/20 p-3">
-                создается сделка или лид
-              </td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">
-                Нужно быстро связаться
-              </td>
-              <td className="border-b border-[#3760E7]/20 p-3">
-                ставится задача на первый контакт
-              </td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">
-                Клиент не ответил
-              </td>
-              <td className="border-b border-[#3760E7]/20 p-3">
-                включается сценарий недозвона
-              </td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">
-                Менеджер отправил предложение
-              </td>
-              <td className="border-b border-[#3760E7]/20 p-3">
-                создается задача на контроль решения
-              </td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">
-                Выставлен счет
-              </td>
-              <td className="border-b border-[#3760E7]/20 p-3">
-                появляется контроль оплаты
-              </td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">
-                Клиент отказался
-              </td>
-              <td className="border-b border-[#3760E7]/20 p-3">
-                фиксируется причина отказа
-              </td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">
-                Сделка зависла
-              </td>
-              <td className="border-b border-[#3760E7]/20 p-3">
-                руководитель видит просрочку или отсутствие движения
-              </td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">
-                Клиент пришел повторно
-              </td>
-              <td className="border-b border-[#3760E7]/20 p-3">
-                система помогает найти старую карточку
-              </td>
-            </tr>
-            <tr>
-              <td className="border-r border-[#3760E7]/20 p-3">
-                Заявка пришла из рекламы
-              </td>
-              <td className="p-3">источник фиксируется для отчета</td>
-            </tr>
+
+            {[
+              ["Клиент оставил заявку", "создается сделка или лид"],
+              ["Нужно быстро связаться", "ставится задача на первый контакт"],
+              ["Клиент не ответил", "включается сценарий недозвона"],
+              ["Менеджер отправил предложение", "создается задача на контроль решения"],
+              ["Выставлен счет", "появляется контроль оплаты"],
+              ["Клиент отказался", "фиксируется причина отказа"],
+              ["Сделка зависла", "руководитель видит просрочку или отсутствие движения"],
+              ["Клиент пришел повторно", "система помогает найти старую карточку"],
+              ["Заявка пришла из рекламы", "источник фиксируется для отчета"],
+            ].map((row, index) => (
+              <tr key={index}>
+                <td className="border-b border-r border-[#3760E7]/20 p-3">
+                  {row[0]}
+                </td>
+                <td className="border-b border-[#3760E7]/20 p-3">
+                  {row[1]}
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
@@ -106,58 +57,25 @@ function ManagerActionsTable() {
                 Действие менеджера
               </td>
             </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">
-                Новая заявка
-              </td>
-              <td className="border-b border-[#3760E7]/20 p-3">
-                связаться с клиентом
-              </td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">
-                Недозвон
-              </td>
-              <td className="border-b border-[#3760E7]/20 p-3">
-                повторить звонок по регламенту
-              </td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">
-                Квалификация
-              </td>
-              <td className="border-b border-[#3760E7]/20 p-3">
-                уточнить потребность, бюджет, сроки
-              </td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">
-                Предложение отправлено
-              </td>
-              <td className="border-b border-[#3760E7]/20 p-3">
-                проверить, получил ли клиент предложение
-              </td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">
-                Счет выставлен
-              </td>
-              <td className="border-b border-[#3760E7]/20 p-3">
-                проконтролировать оплату
-              </td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">
-                Ожидаем решение
-              </td>
-              <td className="border-b border-[#3760E7]/20 p-3">
-                сделать повторное касание
-              </td>
-            </tr>
-            <tr>
-              <td className="border-r border-[#3760E7]/20 p-3">Отказ</td>
-              <td className="p-3">указать точную причину</td>
-            </tr>
+
+            {[
+              ["Новая заявка", "связаться с клиентом"],
+              ["Недозвон", "повторить звонок по регламенту"],
+              ["Квалификация", "уточнить потребность, бюджет, сроки"],
+              ["Предложение отправлено", "проверить, получил ли клиент предложение"],
+              ["Счет выставлен", "проконтролировать оплату"],
+              ["Ожидаем решение", "сделать повторное касание"],
+              ["Отказ", "указать точную причину"],
+            ].map((row, index) => (
+              <tr key={index}>
+                <td className="border-b border-r border-[#3760E7]/20 p-3">
+                  {row[0]}
+                </td>
+                <td className="border-b border-[#3760E7]/20 p-3">
+                  {row[1]}
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

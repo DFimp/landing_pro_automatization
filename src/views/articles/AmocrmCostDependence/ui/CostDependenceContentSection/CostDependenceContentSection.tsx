@@ -8,33 +8,31 @@ function BaseSetupTable() {
         <table className="w-full border-collapse">
           <tbody>
             <tr>
-              <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">Блок</td>
-              <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">Что делается</td>
+              <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                Блок
+              </td>
+              <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                Что делается
+              </td>
             </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">Пользователи</td>
-              <td className="border-b border-[#3760E7]/20 p-3">добавление сотрудников</td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">Воронка</td>
-              <td className="border-b border-[#3760E7]/20 p-3">создание базовых этапов</td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">Поля</td>
-              <td className="border-b border-[#3760E7]/20 p-3">настройка основных данных по сделке</td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">Задачи</td>
-              <td className="border-b border-[#3760E7]/20 p-3">простые задачи на действия менеджера</td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">Права</td>
-              <td className="border-b border-[#3760E7]/20 p-3">базовое разделение доступа</td>
-            </tr>
-            <tr>
-              <td className="border-r border-[#3760E7]/20 p-3">Инструкция</td>
-              <td className="p-3">краткое объяснение работы в CRM</td>
-            </tr>
+
+            {[
+              ["Пользователи", "добавление сотрудников"],
+              ["Воронка", "создание базовых этапов"],
+              ["Поля", "настройка основных данных по сделке"],
+              ["Задачи", "простые задачи на действия менеджера"],
+              ["Права", "базовое разделение доступа"],
+              ["Инструкция", "краткое объяснение работы в CRM"],
+            ].map((row, index) => (
+              <tr key={index}>
+                <td className="border-b border-r border-[#3760E7]/20 p-3">
+                  {row[0]}
+                </td>
+                <td className="border-b border-[#3760E7]/20 p-3">
+                  {row[1]}
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
@@ -49,37 +47,32 @@ function CostCalculationTable() {
         <table className="w-full border-collapse">
           <tbody>
             <tr>
-              <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">Направление</td>
-              <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">Что оценивается</td>
+              <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                Направление
+              </td>
+              <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                Что оценивается
+              </td>
             </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">Анализ</td>
-              <td className="border-b border-[#3760E7]/20 p-3">разбор процесса, текущей CRM, источников и задач</td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">Настройка</td>
-              <td className="border-b border-[#3760E7]/20 p-3">воронки, поля, права, задачи, отчеты</td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">Автоматизация</td>
-              <td className="border-b border-[#3760E7]/20 p-3">сценарии, уведомления, контроль, регламенты</td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">Виджеты</td>
-              <td className="border-b border-[#3760E7]/20 p-3">установка, настройка, адаптация под процесс</td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">Интеграции</td>
-              <td className="border-b border-[#3760E7]/20 p-3">обмен данными, статусы, ошибки, тестирование</td>
-            </tr>
-            <tr>
-              <td className="border-b border-r border-[#3760E7]/20 p-3">Обучение</td>
-              <td className="border-b border-[#3760E7]/20 p-3">менеджеры, руководитель, администратор</td>
-            </tr>
-            <tr>
-              <td className="border-r border-[#3760E7]/20 p-3">Сопровождение</td>
-              <td className="p-3">правки после запуска, поддержка, развитие CRM</td>
-            </tr>
+
+            {[
+              ["Анализ", "разбор процесса, текущей CRM, источников и задач"],
+              ["Настройка", "воронки, поля, права, задачи, отчеты"],
+              ["Автоматизация", "сценарии, уведомления, контроль, регламенты"],
+              ["Виджеты", "установка, настройка, адаптация под процесс"],
+              ["Интеграции", "обмен данными, статусы, ошибки, тестирование"],
+              ["Обучение", "менеджеры, руководитель, администратор"],
+              ["Сопровождение", "правки после запуска, поддержка, развитие CRM"],
+            ].map((row, index) => (
+              <tr key={index}>
+                <td className="border-b border-r border-[#3760E7]/20 p-3">
+                  {row[0]}
+                </td>
+                <td className="border-b border-[#3760E7]/20 p-3">
+                  {row[1]}
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

@@ -25,45 +25,34 @@ export default function SupportContentSection() {
               <table className="w-full border-collapse">
                 <tbody>
                   <tr>
-                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">Признак</td>
-                    <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">Что это значит</td>
+                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                      Признак
+                    </td>
+                    <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                      Что это значит
+                    </td>
                   </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">После внедрения прошло 3-6 месяцев</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">настройки могли устареть, процесс изменился</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Появились новые источники заявок</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">их нужно правильно подключить к CRM</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Менеджеры работают не по регламенту</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">нужны задачи, контроль и корректировка процесса</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Руководителю не хватает отчетов</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">текущая аналитика не отвечает на управленческие вопросы</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Появились дубли</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">нужно проверять правила создания контактов и сделок</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Заявки снова теряются</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">нужно искать слабое место: источник, задача, ответственный, уведомление</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Нужны новые виджеты</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">стандартной amoCRM стало недостаточно</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Есть интеграции</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">их нужно поддерживать и проверять</td>
-                  </tr>
-                  <tr>
-                    <td className="border-r border-[#3760E7]/20 p-3">CRM стала неудобной</td>
-                    <td className="p-3">накопились лишние поля, этапы и сценарии</td>
-                  </tr>
+
+                  {[
+                    ["После внедрения прошло 3-6 месяцев", "настройки могли устареть, процесс изменился"],
+                    ["Появились новые источники заявок", "их нужно правильно подключить к CRM"],
+                    ["Менеджеры работают не по регламенту", "нужны задачи, контроль и корректировка процесса"],
+                    ["Руководителю не хватает отчетов", "текущая аналитика не отвечает на управленческие вопросы"],
+                    ["Появились дубли", "нужно проверять правила создания контактов и сделок"],
+                    ["Заявки снова теряются", "нужно искать слабое место: источник, задача, ответственный, уведомление"],
+                    ["Нужны новые виджеты", "стандартной amoCRM стало недостаточно"],
+                    ["Есть интеграции", "их нужно поддерживать и проверять"],
+                    ["CRM стала неудобной", "накопились лишние поля, этапы и сценарии"],
+                  ].map((row, index) => (
+                    <tr key={index}>
+                      <td className="border-b border-r border-[#3760E7]/20 p-3">
+                        {row[0]}
+                      </td>
+                      <td className="border-b border-[#3760E7]/20 p-3">
+                        {row[1]}
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
@@ -278,25 +267,29 @@ export default function SupportContentSection() {
               <table className="w-full border-collapse">
                 <tbody>
                   <tr>
-                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">Неделя</td>
-                    <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">Что делаем</td>
+                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                      Неделя
+                    </td>
+                    <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                      Что делаем
+                    </td>
                   </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">1 неделя</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">проверяем заявки, задачи, просрочки, новые обращения</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">2 неделя</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">дорабатываем воронку, поля, уведомления или задачи</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">3 неделя</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">подключаем новый источник, форму, виджет или отчет</td>
-                  </tr>
-                  <tr>
-                    <td className="border-r border-[#3760E7]/20 p-3">4 неделя</td>
-                    <td className="p-3">смотрим, что изменилось, фиксируем проблемы и планируем следующие доработки</td>
-                  </tr>
+
+                  {[
+                    ["1 неделя", "проверяем заявки, задачи, просрочки, новые обращения"],
+                    ["2 неделя", "дорабатываем воронку, поля, уведомления или задачи"],
+                    ["3 неделя", "подключаем новый источник, форму, виджет или отчет"],
+                    ["4 неделя", "смотрим, что изменилось, фиксируем проблемы и планируем следующие доработки"],
+                  ].map((row, index) => (
+                    <tr key={index}>
+                      <td className="border-b border-r border-[#3760E7]/20 p-3">
+                        {row[0]}
+                      </td>
+                      <td className="border-b border-[#3760E7]/20 p-3">
+                        {row[1]}
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>

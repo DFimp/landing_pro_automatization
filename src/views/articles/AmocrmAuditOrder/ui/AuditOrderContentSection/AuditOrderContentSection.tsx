@@ -32,53 +32,36 @@ export default function AuditOrderContentSection() {
               <table className="w-full border-collapse">
                 <tbody>
                   <tr>
-                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">Что проверяем</td>
-                    <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">Что вы получаете</td>
+                    <td className="border-b border-r border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                      Что проверяем
+                    </td>
+                    <td className="border-b border-[#3760E7]/30 bg-[#EEF3FF] p-3">
+                      Что вы получаете
+                    </td>
                   </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Воронки и этапы</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">какие этапы лишние, каких не хватает, где сделки зависают</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Заявки</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">какие обращения могут теряться и почему</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Задачи</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">где менеджеры работают без следующего действия</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Недозвоны</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">есть ли повторные касания и контроль</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Источники</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">можно ли доверять аналитике по каналам</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Дубли</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">где база загрязняется и как это исправить</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Поля</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">какие данные лишние, каких не хватает</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Отчеты</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">видит ли руководитель реальную картину</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Права доступа</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">кто что видит и кто может менять настройки</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-r border-[#3760E7]/20 p-3">Автоматизация</td>
-                    <td className="border-b border-[#3760E7]/20 p-3">какие ручные действия можно убрать</td>
-                  </tr>
-                  <tr>
-                    <td className="border-r border-[#3760E7]/20 p-3">Виджеты и интеграции</td>
-                    <td className="p-3">что можно подключить для усиления CRM</td>
-                  </tr>
+
+                  {[
+                    ["Воронки и этапы", "какие этапы лишние, каких не хватает, где сделки зависают"],
+                    ["Заявки", "какие обращения могут теряться и почему"],
+                    ["Задачи", "где менеджеры работают без следующего действия"],
+                    ["Недозвоны", "есть ли повторные касания и контроль"],
+                    ["Источники", "можно ли доверять аналитике по каналам"],
+                    ["Дубли", "где база загрязняется и как это исправить"],
+                    ["Поля", "какие данные лишние, каких не хватает"],
+                    ["Отчеты", "видит ли руководитель реальную картину"],
+                    ["Права доступа", "кто что видит и кто может менять настройки"],
+                    ["Автоматизация", "какие ручные действия можно убрать"],
+                    ["Виджеты и интеграции", "что можно подключить для усиления CRM"],
+                  ].map((row, index) => (
+                    <tr key={index}>
+                      <td className="border-b border-r border-[#3760E7]/20 p-3">
+                        {row[0]}
+                      </td>
+                      <td className="border-b border-[#3760E7]/20 p-3">
+                        {row[1]}
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
