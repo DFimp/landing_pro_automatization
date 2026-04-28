@@ -412,6 +412,34 @@ export const ARTICLES_DATA: Record<string, ArticleData> = {
     wordCount: 4500,
     articleSection: "Интеграции amoCRM",
   },
+
+  "amocrm-integration-website": {
+    slug: "amocrm-integration-website",
+    title: "Интеграция amoCRM с сайтом - заявки сразу в CRM",
+    shortName: "Интеграция amoCRM с сайтом",
+    description:
+      "Настраиваем интеграцию amoCRM с сайтом: формы, заявки, источники, задачи, распределение менеджеров, уведомления и контроль обработки лидов.",
+    link: "/articles/amocrm-integration-website",
+    publishedTime: "2026-04-28T00:00:00Z",
+    modifiedTime: "2026-04-28T00:00:00Z",
+    readTime: "16 минут",
+    wordCount: 4000,
+    articleSection: "Интеграции amoCRM",
+  },
+
+  "amocrm-integration-forms": {
+    slug: "amocrm-integration-forms",
+    title: "Интеграция amoCRM с формами заявок - лиды сразу в работу",
+    shortName: "Интеграция amoCRM с формами заявок",
+    description:
+      "Настраиваем интеграцию amoCRM с формами заявок: сайт, квизы, посадочные страницы, источники, задачи, уведомления и контроль обработки лидов.",
+    link: "/articles/amocrm-integration-forms",
+    publishedTime: "2026-04-28T00:00:00Z",
+    modifiedTime: "2026-04-28T00:00:00Z",
+    readTime: "16 минут",
+    wordCount: 4000,
+    articleSection: "Интеграции amoCRM",
+  },
 };
 
 export const ARTICLES_LIST = Object.values(ARTICLES_DATA);

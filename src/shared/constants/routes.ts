@@ -128,6 +128,14 @@ export const ARTICLES_ROUTES = {
     path: "/articles/amocrm-integration-service",
     name: "Интеграции amoCRM с внешними сервисами",
   },
+  INTEGRATION_WEBSITE: {
+    path: "/articles/amocrm-integration-website",
+    name: "Интеграция amoCRM с сайтом",
+  },
+  INTEGRATION_FORMS: {
+    path: "/articles/amocrm-integration-forms",
+    name: "Интеграция amoCRM с формами заявок",
+  },
 } as const;
 
 // Все пути одним списком
