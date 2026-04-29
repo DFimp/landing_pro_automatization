@@ -1,74 +1,194 @@
 import Link from "next/link";
-import { WidgetsListItem } from "./WidgetsListItem";
 import ScrollReveal from "@/shared/ui/scrollReveal/ScrollReveal";
+import { WIDGETS_LIST } from "@/shared/constants";
+import {
+  WidgetCategory,
+  WidgetsCatalogCard,
+} from "./WidgetsCatalogCard";
 
-const VARIANT_PATTERN = [2, 1, 1, 3, 4, 1] as const;
-const getVariant = (index: number) => VARIANT_PATTERN[index % VARIANT_PATTERN.length];
+const PRICE_FROM_LABEL = "от 1 800 ₽";
+const PRICE_FREE_LABEL = "Бесплатно";
+const FREE_WIDGET_KEYS = new Set<string>(["time-zone"]);
 
-export function WidgetsListShort() {
-  const widgets = [
-    {
-      text: `Получайте мгновенные уведомления в Telegram
-                и запускайте SalesBot одним нажатием. Полная автоматизация коммуникаций с клиентами прямо
-                в мессенджере.`,
-      title: `Телеграм уведомления для amoCRM`,
-      link: "/widgets/telegram-notify",
-    },
-    {
-      text: `Автоматическое распределение новых сделок между менеджерами по процентам, максимальному количеству или равными долями. Учет контактов, компаний и активности менеджеров.`,
-      title: `Распределение сделок для amoCRM`,
-      link: "/widgets/lead-distribution",
-    },
-    {
-      text: `Автоматическое склеивание дублированных сделок
-с сохранением всех важных данных. Экономьте время менеджеров и улучшайте качество вашей базы данных.`,
-      title: `Дубли сделок (объединение дублей сделок) для amoCRM`,
-      link: "/widgets/duplicate-leads",
-    },
-    {
-      text: `Автоматическое склеивание дублированных контактов с умными алгоритмами поиска. Экономьте время менеджеров и улучшайте качество вашей базы контактов.`,
-      title: `Дубли контактов (объединение дублей контактов) для amoCRM`,
-      link: "/widgets/duplicate-contacts",
-    },
-  ];
+const SHORT_WIDGET_KEYS = [
+  "telegram-notify",
+  "max-notice",
+  "lead-distribution",
+  "duplicate-leads",
+  "duplicate-contacts",
+  "docs-flow",
+  "meet-calendar",
+  "t-bank",
+];
+
+function normalize(value: string) {
+  return (value ?? "").trim().toLowerCase();
+}
+
+function hasAny(values: string[], keywords: string[]) {
+  return keywords.some((keyword) =>
+    values.some((value) => value.includes(normalize(keyword)))
+  );
+}
+
+function resolveCategory(
+  tags: string[],
+  aliases: readonly string[],
+  key: string,
+  title: string,
+  seoTitle: string
+): WidgetCategory {
+  const values = [...tags, ...aliases, key, title, seoTitle].map(normalize);
+
+  if (
+    hasAny(values, [
+      "соц",
+      "telegram",
+      "whatsapp",
+      "телеграм",
+      "тг",
+      "ватсап",
+    ])
+  ) {
+    return "social";
+  }
+
+  if (hasAny(values, ["задач", "task"])) {
+    return "tasks";
+  }
+
+  if (
+    hasAny(values, ["дубл", "duplicate", "склей", "объедин"])
+  ) {
+    return "duplicates";
+  }
+
+  if (
+    hasAny(values, ["контроль", "запрет", "безопас", "доступ", "ban"])
+  ) {
+    return "control";
+  }
+
+  if (
+    hasAny(values, [
+      "интеграц",
+      "google",
+      "документ",
+      "t-bank",
+      "тинькофф",
+      "оплат",
+      "финанс",
+    ])
+  ) {
+    return "integrations";
+  }
+
+  if (
+    hasAny(values, [
+      "интерфейс",
+      "карточ",
+      "поле",
+      "тег",
+      "подсвет",
+      "поиск",
+      "лента",
+      "shift",
+      "группиров",
+      "подсказ",
+    ])
+  ) {
+    return "interface";
+  }
+
+  if (
+    hasAny(values, [
+      "продаж",
+      "сделк",
+      "ворон",
+      "лид",
+      "ltv",
+      "календар",
+    ])
+  ) {
+    return "sales";
+  }
+
+  return "data";
+}
+
+function toCompactDescription(value: string, maxLength = 120) {
+  if (value.length <= maxLength) {
+    return value;
+  }
+
+  const trimmed = value.slice(0, maxLength);
+  const withWordBoundary = trimmed.slice(0, Math.max(trimmed.lastIndexOf(" "), 0));
+  return `${withWordBoundary.trimEnd()}...`;
+}
+
+function formatPriceLabel(
+  widgetKey: string,
+  priceLabelsByKey?: Record<string, string>
+) {
+  const actualLabel = priceLabelsByKey?.[widgetKey];
+  if (actualLabel) {
+    return actualLabel;
+  }
+
+  return FREE_WIDGET_KEYS.has(widgetKey) ? PRICE_FREE_LABEL : PRICE_FROM_LABEL;
+}
+
+type WidgetsListShortProps = {
+  priceLabelsByKey?: Record<string, string>;
+};
+
+export function WidgetsListShort({ priceLabelsByKey }: WidgetsListShortProps) {
+  const widgets = SHORT_WIDGET_KEYS.map((key) =>
+    WIDGETS_LIST.find((widget) => widget.key === key)
+  ).filter(
+    (widget): widget is (typeof WIDGETS_LIST)[number] => Boolean(widget)
+  );
 
   return (
     <div>
-      <div className="grid sm:grid-cols-2 grid-cols-1 gap-[40px]">
-        {widgets.map((widget, index) => (
-          <ScrollReveal
-            key={widget.link}
-            yFrom={0}
-            xFrom={index % 2 === 0 ? -140 : 140}
-            durationMs={600}
-            delayMs={index * 140}
-            amount={0.35}
-          >
-            <WidgetsListItem
-              link={widget.link}
-              text={widget.text}
-              title={widget.title}
-              variant={getVariant(index)}
-            />
-          </ScrollReveal>
-        ))}
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        {widgets.map((widget, index) => {
+          const category = resolveCategory(
+            widget.tags,
+            widget.aliases ?? [],
+            widget.key,
+            widget.title,
+            widget.seoTitle
+          );
+          const priceLabel = formatPriceLabel(widget.key, priceLabelsByKey);
+
+          return (
+            <ScrollReveal
+              key={widget.key}
+              variant="lift"
+              yFrom={14}
+              durationMs={520}
+              delayMs={Math.min(index * 30, 220)}
+              amount={0.25}
+              className="h-full"
+            >
+              <WidgetsCatalogCard
+                widgetKey={widget.key}
+                link={widget.route}
+                text={toCompactDescription(widget.description)}
+                title={widget.title}
+                category={category}
+                priceLabel={priceLabel}
+              />
+            </ScrollReveal>
+          );
+        })}
       </div>
 
       <div className="mt-10 flex justify-center">
         <Link
           href="/widgets"
-          className="
-            inline-flex items-center justify-center
-            px-8 py-4
-            rounded-full
-            bg-[#3F5FEA]
-            text-white
-            text-[16px] sm:text-[18px]
-            font-semibold
-            leading-none
-            hover:bg-[#3554D6]
-            transition-colors
-          "
+          className="inline-flex items-center justify-center rounded-full bg-[#3F5FEA] px-8 py-4 text-[16px] font-semibold leading-none text-white transition-colors hover:bg-[#3554D6] sm:text-[18px]"
         >
           Посмотреть все виджеты
         </Link>

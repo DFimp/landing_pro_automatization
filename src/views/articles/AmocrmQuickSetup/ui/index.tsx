@@ -18,7 +18,7 @@ export default function QuickAmoCrmSetupArticle() {
           dateModified: article.modifiedTime,
         }}
       />
-      <div className="mx-auto max-w-[1200px] px-5 [&_.sm\:gap-\[40px\]]:gap-[16px]">
+      <div className="mx-auto max-w-[1200px] px-5">
         <ArticleDescriptionSection
           category="CRM"
           tag="#СТАТЬИ"
