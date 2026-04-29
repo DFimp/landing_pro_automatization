@@ -61,6 +61,8 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({
     selectedTariff: ''
   });
   const [errors, setErrors] = useState<FormErrors>({});
+  const [privacyConsent, setPrivacyConsent] = useState<boolean>(false);
+  const [privacyConsentError, setPrivacyConsentError] = useState<string>('');
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [alert, setAlert] = useState<AlertState>({
     isVisible: false,
@@ -80,8 +82,14 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({
       newErrors.phone = 'Пожалуйста, введите корректный номер телефона';
     }
     
+    if (!privacyConsent) {
+      setPrivacyConsentError('Необходимо согласие на обработку персональных данных');
+    } else {
+      setPrivacyConsentError('');
+    }
+
     setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    return Object.keys(newErrors).length === 0 && privacyConsent;
   };
 
   const showAlert = (type: 'success' | 'error', message: string) => {
@@ -121,6 +129,8 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({
       // Очищаем форму и закрываем модальное окно
       setFormData({ name: '', phone: '', monthsCount: 0, usersCount: 0, amoTariff: '', selectedTariff: '' });
       setErrors({});
+      setPrivacyConsent(false);
+      setPrivacyConsentError('');
       onClose();
     } catch (error) {
       console.error('Ошибка отправки формы:', error);
@@ -187,7 +197,36 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({
               disabled={isSubmitting}
             />
 
-            <div className="flex gap-3 pt-4">
+            <div className="pt-2 pb-2">
+              <label className="flex items-start gap-2 cursor-pointer select-none">
+                <input
+                  type="checkbox"
+                  checked={privacyConsent}
+                  onChange={e => {
+                    setPrivacyConsent(e.target.checked);
+                    if (e.target.checked) setPrivacyConsentError('');
+                  }}
+                  disabled={isSubmitting}
+                  className="mt-0.5 h-4 w-4 shrink-0 accent-blue"
+                />
+                <span className="text-sm text-gray-600">
+                  Я согласен(а) на{' '}
+                  <a
+                    href="/privacy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 underline hover:text-blue-800"
+                  >
+                    обработку персональных данных
+                  </a>
+                </span>
+              </label>
+              {privacyConsentError && (
+                <p className="mt-1 text-xs text-red-500">{privacyConsentError}</p>
+              )}
+            </div>
+
+            <div className="flex gap-3 pt-2">
               <Button
                 text={
                   <div className="flex items-center justify-center gap-2">
