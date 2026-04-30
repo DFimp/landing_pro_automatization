@@ -28,7 +28,7 @@ const CATEGORY_ORDER: WidgetCategory[] = [
   "data",
 ];
 
-const FREE_WIDGET_KEYS = new Set<string>(["time-zone"]);
+const FREE_WIDGET_KEYS = new Set<string>(["time-zone", "super-tasks"]);
 
 const TITLE_OVERRIDES: Record<string, string> = {
   "lead-distribution": "Распределение сделок",

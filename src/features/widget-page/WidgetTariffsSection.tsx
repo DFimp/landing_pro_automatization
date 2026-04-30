@@ -2,7 +2,7 @@ import WidgetTariffs from "./WidgetTariffs";
 import styles from "./WidgetTariffsSection.module.css";
 
 type WidgetTariffsSectionProps = {
-  widgetId: string;
+  widgetId?: string;
 };
 
 export default function WidgetTariffsSection({
@@ -38,10 +38,17 @@ export default function WidgetTariffsSection({
                 Стоимость подписки на виджет
               </h3>
 
-              <WidgetTariffs
-                widgetId={widgetId}
-                className="mt-5 !w-full !rounded-[18px] !border !border-white/18 !bg-white/[0.08] !px-4 !pb-3.5 !pt-4 sm:mt-6 sm:!px-5"
-              />
+              {widgetId ? (
+                <WidgetTariffs
+                  widgetId={widgetId}
+                  className="mt-5 !w-full !rounded-[18px] !border !border-white/18 !bg-white/[0.08] !px-4 !pb-3.5 !pt-4 sm:mt-6 sm:!px-5"
+                />
+              ) : (
+                <div className="mt-5 !w-full rounded-[18px] border border-white/18 bg-white/[0.08] px-4 pb-3.5 pt-4 sm:mt-6 sm:px-5">
+                  <p className="mt-0.5 text-[14px] font-medium text-white/62">Стоимость</p>
+                  <p className="mt-3 text-[15px] font-medium text-white">Бесплатный виджет</p>
+                </div>
+              )}
             </div>
           </div>
         </div>

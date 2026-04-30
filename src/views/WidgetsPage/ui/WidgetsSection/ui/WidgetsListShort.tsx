@@ -8,7 +8,7 @@ import {
 
 const PRICE_FROM_LABEL = "от 1 800 ₽";
 const PRICE_FREE_LABEL = "Бесплатно";
-const FREE_WIDGET_KEYS = new Set<string>(["time-zone"]);
+const FREE_WIDGET_KEYS = new Set<string>(["time-zone", "super-tasks"]);
 
 const SHORT_WIDGET_KEYS = [
   "telegram-notify",

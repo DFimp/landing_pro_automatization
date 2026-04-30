@@ -350,6 +350,28 @@ export const WIDGETS: Widget[] = [
     clientId: "ffb5b225-672a-4016-b868-6a98db446851",
   },
   {
+    key: "super-tasks",
+    title: "SUPER задачи",
+    seoTitle: "SUPER задачи для amoCRM - цепочки действий после результата задачи",
+    description:
+      "Создавайте SUPER-задачи в amoCRM: менеджер выбирает результат задачи, а виджет автоматически запускает цепочку действий: создание задач, смена этапа, работа с полями, примечаниями, Salesbot, webhook и встречами.",
+    route: widgetRoute("super-tasks"),
+    tags: ["Задачи", "Автоматизация", "Карточка сделки"],
+    aliases: [
+      "super tasks",
+      "super-task",
+      "super задачи",
+      "супер",
+      "результат задачи",
+      "цепочка действий",
+      "автоматизация задач",
+      "fill_form",
+      "schedule_meeting",
+    ],
+    showInFooter: true,
+    showInSearch: true,
+  },
+  {
     key: "massive-leads",
     title: "Массовое создание сделок",
     seoTitle: "Массовое создание сделок в amoCRM из контактов",
