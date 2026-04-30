@@ -5,13 +5,13 @@ import React, { Suspense } from "react";
 import Header from "@/sections/header/Header";
 import { Footer } from "@/sections/footer";
 import { Analytics } from "@/shared/scripts/Analytics";
+import { CookieBanner } from "@/shared/ui/CookieBanner/CookieBanner";
 import ScrollRevealObserver from "@/shared/ui/scrollReveal/ScrollRevealObserver.client";
 import {
   SiteNavigationSchemaTag,
   WebSiteSchemaTag,
   SITE_NAVIGATION
 } from '@/shared/lib/seo';
-import { WebVitals } from './web-vitals';
 import { ROOT_LAYOUT_METADATA } from "@/shared/constants/metadata";
 
 const montserrat = Montserrat({
@@ -32,8 +32,6 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <head>
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://mc.yandex.ru" />
         <link rel="dns-prefetch" href="https://mc.yandex.ru" />
         <WebSiteSchemaTag />
@@ -41,7 +39,7 @@ export default function RootLayout({
       </head>
       <body className={`${montserrat.variable} antialiased`}>
         <Analytics />
-        <WebVitals />
+        <CookieBanner />
         <ScrollRevealObserver />
         <Suspense fallback={null}>
           <Header />
