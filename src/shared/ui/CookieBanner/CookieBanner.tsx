@@ -2,13 +2,16 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import Button from "@/shared/ui/button/Button";
 
 export function CookieBanner() {
   const [visible, setVisible] = useState(false);
   const [animate, setAnimate] = useState(false);
+  const searchParams = useSearchParams();
 
   useEffect(() => {
+    if (searchParams.get("embed") !== null) return;
     if (localStorage.getItem("cookie_accepted")) return;
 
     const show = setTimeout(() => {

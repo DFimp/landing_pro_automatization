@@ -39,7 +39,9 @@ export default function RootLayout({
       </head>
       <body className={`${montserrat.variable} antialiased`}>
         <Analytics />
-        <CookieBanner />
+        <Suspense fallback={null}>
+          <CookieBanner />
+        </Suspense>
         <ScrollRevealObserver />
         <Suspense fallback={null}>
           <Header />
