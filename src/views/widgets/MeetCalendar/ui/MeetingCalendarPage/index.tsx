@@ -24,9 +24,7 @@ export default function MeetingCalendarPage({
       preInstruction={(
           <>
             <WidgetHeroSection>
-                <WidgetHeroBadge>
-                  Календарь записей/встреч для amoCRM
-                </WidgetHeroBadge>
+                <WidgetHeroBadge>{widget.seoTitle}</WidgetHeroBadge>
 
                 <h2 className="mt-10 font-semibold text-white text-[clamp(36px,6vw,64px)] leading-[1.05] max-[480px]:mt-5 max-[480px]:text-[clamp(26px,8.5vw,34px)] max-[480px]:leading-[1.12]">
                   Создавайте встречи по триггеру и вручную

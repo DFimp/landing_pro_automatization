@@ -23,9 +23,7 @@ export default function CopyingFields({ searchParams }: WidgetPageProps) {
         <>
           <WidgetHeroContent
             badge={
-              <WidgetHeroBadge>
-                Копирование полей между аккаунтами и удаление полей списком в amoCRM
-              </WidgetHeroBadge>
+              <WidgetHeroBadge>{widget.seoTitle}</WidgetHeroBadge>
             }
             title="Переносите поля между сделками, контактами и компаниями. Удаляйте поля списком"
             description="Виджет позволяет быстро копировать и вставлять пользовательские поля между сущностями, сохраняя структуру, типы и порядок. Никаких ручных повторов, все делается в пару кликов и сразу видно результат."

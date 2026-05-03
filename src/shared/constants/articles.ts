@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Единый источник данных для всех статей
  * Используется для:
  * - Списка статей
@@ -23,7 +23,7 @@ export interface ArticleData {
 export const ARTICLES_DATA: Record<string, ArticleData> = {
   "duplicate-leads": {
     slug: "duplicate-leads",
-    title: "Как работать с дублями сделок в amoCRM - 3 кейса на практике",
+    title: "Как работать с дублями сделок в amoCRM — 3 кейса на практике",
     shortName: "Как работать с дублями сделок",
     description:
       "Разбираем на реальных кейсах, как правильно объединять дубли сделок в amoCRM. Узнайте, как не потерять клиентов, сэкономить время менеджеров и навести порядок в базе CRM.",
@@ -61,6 +61,496 @@ export const ARTICLES_DATA: Record<string, ArticleData> = {
     readTime: "12 минут",
     wordCount: 2100,
     articleSection: "Настройка CRM",
+  },
+
+  "amocrm-business-process-implementation": {
+    slug: "amocrm-business-process-implementation",
+    title: "Внедрение amoCRM под процессы бизнеса - не просто настройка CRM",
+    shortName: "Внедрение amoCRM - не просто настройка CRM",
+    description:
+      "Как внедрить amoCRM под реальные процессы бизнеса: заявки, этапы, задачи, роли, источники, отчеты, автоматизация и контроль продаж.",
+    link: "/articles/amocrm-business-process-implementation",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 2800,
+    articleSection: "Внедрение CRM",
+  },
+
+  "amocrm-remove-manual-work": {
+    slug: "amocrm-remove-manual-work",
+    title: "Автоматизация отдела продаж в amoCRM - убрать ручную работу",
+    shortName: "Автоматизация отдела продаж в amoCRM",
+    description:
+      "Автоматизация отдела продаж в amoCRM: заявки, задачи, недозвоны, распределение, уведомления, документы, счета, дубли, отчеты и контроль менеджеров.",
+    link: "/articles/amocrm-remove-manual-work",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "15 минут",
+    wordCount: 3300,
+    articleSection: "Автоматизация CRM",
+  },
+
+  "amocrm-standard-solutions": {
+    slug: "amocrm-standard-solutions",
+    title: "Виджеты для amoCRM: когда стандартных функций уже не хватает",
+    shortName: "Виджеты для amoCRM",
+    description:
+      "Разбираем, когда бизнесу нужны виджеты для amoCRM, какие задачи они закрывают и как понять, что пора дорабатывать CRM.",
+    link: "/articles/amocrm-standard-solutions",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "13 минут",
+    wordCount: 3000,
+    articleSection: "Виджеты amoCRM",
+  },
+
+  "amocrm-ruined-sales": {
+    slug: "amocrm-ruined-sales",
+    title: "Дубли в amoCRM: почему портят продажи и как их убрать",
+    shortName: "Дубли в amoCRM",
+    description:
+      "Разбираем, чем опасны дубли контактов и сделок в amoCRM, почему они появляются и как навести порядок в базе без ручной чистки.",
+    link: "/articles/amocrm-ruined-sales",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 3000,
+    articleSection: "Дубли в amoCRM",
+  },
+
+  "amocrm-working-crm": {
+    slug: "amocrm-working-crm",
+    title: "Настройка amoCRM: что нужно сделать, чтобы CRM работала",
+    shortName: "Настройка amoCRM",
+    description:
+      "Разбираем, что входит в настройку amoCRM: воронки, поля, задачи, источники, права, уведомления, аналитику и контроль менеджеров.",
+    link: "/articles/amocrm-working-crm",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 3200,
+    articleSection: "Настройка amoCRM",
+  },
+
+  "amocrm-lead-control": {
+    slug: "amocrm-lead-control",
+    title: "Как не терять заявки в amoCRM - настройка контроля лидов",
+    shortName: "Контроль заявок в amoCRM",
+    description:
+      "Разбираем, почему заявки теряются в amoCRM и что настроить: источники, задачи, уведомления, этапы, контроль менеджеров и аналитику.",
+    link: "/articles/amocrm-lead-control",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 3200,
+    articleSection: "Контроль лидов",
+  },
+
+  "amocrm-cost-dependence": {
+    slug: "amocrm-cost-dependence",
+    title: "Настройка amoCRM цена - от чего зависит стоимость работ",
+    shortName: "Цена настройки amoCRM",
+    description:
+      "Сколько стоит настройка amoCRM: что входит в работу, от чего зависит цена, какие бывают уровни настройки и почему дешевый запуск часто приходится переделывать.",
+    link: "/articles/amocrm-cost-dependence",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 3300,
+    articleSection: "Стоимость настройки amoCRM",
+  },
+
+  "amocrm-check-settings": {
+    slug: "amocrm-check-settings",
+    title: "CRM-аудит amoCRM: что показывает проверка настроек",
+    shortName: "CRM-аудит amoCRM",
+    description:
+      "Разбираем, зачем нужен CRM-аудит amoCRM, какие проблемы он находит и как понять, что текущая настройка мешает продажам.",
+    link: "/articles/amocrm-check-settings",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 3200,
+    articleSection: "CRM-аудит",
+  },
+
+  "amocrm-incorrect-settings": {
+    slug: "amocrm-incorrect-settings",
+    title: "Как понять, что amoCRM настроена неправильно",
+    shortName: "Неправильная настройка amoCRM",
+    description:
+      "Разбираем признаки неправильной настройки amoCRM: потерянные заявки, просрочки, дубли, слабый контроль менеджеров и неточная аналитика.",
+    link: "/articles/amocrm-incorrect-settings",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 3300,
+    articleSection: "Ошибки настройки amoCRM",
+  },
+
+  "amocrm-real-help": {
+    slug: "amocrm-real-help",
+    title: "Автоматические задачи в amoCRM: где они реально помогают",
+    shortName: "Автоматические задачи в amoCRM",
+    description:
+      "Разбираем, как автоматические задачи в amoCRM помогают не терять заявки, контролировать менеджеров, обрабатывать недозвоны и снижать ручную работу.",
+    link: "/articles/amocrm-real-help",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 3300,
+    articleSection: "Задачи в amoCRM",
+  },
+
+  "amocrm-notice-in-tg": {
+    slug: "amocrm-notice-in-tg",
+    title: "Уведомления из amoCRM в Telegram: когда они нужны бизнесу",
+    shortName: "Уведомления из amoCRM в Telegram",
+    description:
+      "Разбираем, зачем нужны Telegram-уведомления из amoCRM, какие события стоит выводить в чат и как не превратить уведомления в шум.",
+    link: "/articles/amocrm-notice-in-tg",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 3300,
+    articleSection: "Уведомления в amoCRM",
+  },
+
+  "amocrm-reports-manager": {
+    slug: "amocrm-reports-manager",
+    title: "Какие отчеты нужны руководителю отдела продаж в amoCRM",
+    shortName: "Отчеты руководителю продаж в amoCRM",
+    description:
+      "Разбираем, какие отчеты в amoCRM нужны руководителю продаж: заявки, источники, задачи, менеджеры, конверсия, причины отказов и потери.",
+    link: "/articles/amocrm-reports-manager",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 3400,
+    articleSection: "Отчеты в amoCRM",
+  },
+
+  "amocrm-setting-itself": {
+    slug: "amocrm-setting-itself",
+    title: "Почему CRM не работает сама по себе и что нужно настроить",
+    shortName: "Почему CRM не работает сама по себе",
+    description:
+      "Разбираем, почему amoCRM не решает проблемы продаж без процессов, регламентов, задач, контроля менеджеров и правильной настройки.",
+    link: "/articles/amocrm-setting-itself",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 3300,
+    articleSection: "Настройка amoCRM",
+  },
+
+  "amocrm-application-rules": {
+    slug: "amocrm-application-rules",
+    title: "Регламент обработки заявок в amoCRM: что должно быть прописано",
+    shortName: "Регламент обработки заявок в amoCRM",
+    description:
+      "Разбираем, как составить регламент обработки заявок в amoCRM: первый контакт, недозвоны, задачи, этапы, контроль и ответственность менеджеров.",
+    link: "/articles/amocrm-application-rules",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 3400,
+    articleSection: "Регламенты в amoCRM",
+  },
+
+  "amocrm-implement-errors": {
+    slug: "amocrm-implement-errors",
+    title: "Ошибки внедрения amoCRM, из-за которых менеджеры саботируют CRM",
+    shortName: "Ошибки внедрения amoCRM",
+    description:
+      "Разбираем, почему менеджеры не хотят работать в amoCRM: лишние поля, слабая воронка, нет регламента, неудобные задачи и плохое внедрение.",
+    link: "/articles/amocrm-implement-errors",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 3400,
+    articleSection: "Внедрение amoCRM",
+  },
+
+  "amocrm-sales-department": {
+    slug: "amocrm-sales-department",
+    title: "До и после автоматизации amoCRM: как меняется отдел продаж",
+    shortName: "До и после автоматизации amoCRM",
+    description:
+      "Показываем, как меняется работа отдела продаж после автоматизации amoCRM: заявки, задачи, контроль менеджеров, дубли, документы и отчеты.",
+    link: "/articles/amocrm-sales-department",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 3400,
+    articleSection: "Автоматизация CRM",
+  },
+
+  "amocrm-what-choose": {
+    slug: "amocrm-what-choose",
+    title: "Виджет или индивидуальная разработка для amoCRM: что выбрать",
+    shortName: "Виджет или разработка для amoCRM",
+    description:
+      "Разбираем, когда бизнесу достаточно готового виджета для amoCRM, а когда нужна индивидуальная разработка под процессы компании.",
+    link: "/articles/amocrm-what-choose",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "15 минут",
+    wordCount: 3600,
+    articleSection: "Виджеты amoCRM",
+  },
+
+  "amocrm-choose-contractor": {
+    slug: "amocrm-choose-contractor",
+    title: "Как выбрать подрядчика по amoCRM и не получить настройку ради настройки",
+    shortName: "Как выбрать подрядчика по amoCRM",
+    description:
+      "Разбираем, как выбрать подрядчика по amoCRM: что спрашивать, на что смотреть в предложении, какие риски проверить до начала работ.",
+    link: "/articles/amocrm-choose-contractor",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "16 минут",
+    wordCount: 4100,
+    articleSection: "Внедрение amoCRM",
+  },
+
+  "amocrm-funnels-tasks-control": {
+    slug: "amocrm-funnels-tasks-control",
+    title: "Настройка amoCRM для отдела продаж - воронки, задачи, контроль",
+    shortName: "Настройка amoCRM для отдела продаж",
+    description:
+      "Настраиваем amoCRM для отдела продаж: заявки, воронки, задачи, источники, права, отчеты, контроль менеджеров и автоматизация ручной работы.",
+    link: "/articles/amocrm-funnels-tasks-control",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "15 минут",
+    wordCount: 3800,
+    articleSection: "Настройка amoCRM",
+  },
+
+  "amocrm-support": {
+    slug: "amocrm-support",
+    title: "Сопровождение amoCRM после внедрения - поддержка и доработки",
+    shortName: "Сопровождение amoCRM после внедрения",
+    description:
+      "Сопровождение amoCRM после внедрения: доработка воронок, задач, отчетов, виджетов, интеграций, источников заявок и поддержка отдела продаж.",
+    link: "/articles/amocrm-support",
+    publishedTime: "2026-04-27T00:00:00Z",
+    modifiedTime: "2026-04-27T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 3600,
+    articleSection: "Сопровождение amoCRM",
+  },
+
+  "amocrm-implement-order": {
+    slug: "amocrm-implement-order",
+    title: "Заказать внедрение amoCRM - настройка CRM под отдел продаж",
+    shortName: "Заказать внедрение amoCRM",
+    description:
+      "Внедрение amoCRM под процессы бизнеса: воронки, заявки, задачи, источники, права, отчеты, автоматизация, обучение и сопровождение.",
+    link: "/articles/amocrm-implement-order",
+    publishedTime: "2026-04-28T00:00:00Z",
+    modifiedTime: "2026-04-28T00:00:00Z",
+    readTime: "15 минут",
+    wordCount: 3800,
+    articleSection: "Внедрение amoCRM",
+  },
+
+  "amocrm-buy-widget": {
+    slug: "amocrm-buy-widget",
+    title: "Купить виджет amoCRM - готовые решения для отдела продаж",
+    shortName: "Купить виджет amoCRM",
+    description:
+      "Купить виджет amoCRM для распределения сделок, уведомлений, дублей, документов, счетов, задач и контроля продаж. Поможем выбрать и настроить.",
+    link: "/articles/amocrm-buy-widget",
+    publishedTime: "2026-04-28T00:00:00Z",
+    modifiedTime: "2026-04-28T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 3500,
+    articleSection: "Виджеты amoCRM",
+  },
+
+  "amocrm-audit-order": {
+    slug: "amocrm-audit-order",
+    title: "Заказать аудит amoCRM - проверка настроек, заявок и продаж",
+    shortName: "Заказать аудит amoCRM",
+    description:
+      "CRM-аудит amoCRM: проверим воронки, заявки, задачи, источники, дубли, отчеты, права доступа и дадим план доработок.",
+    link: "/articles/amocrm-audit-order",
+    publishedTime: "2026-04-28T00:00:00Z",
+    modifiedTime: "2026-04-28T00:00:00Z",
+    readTime: "16 минут",
+    wordCount: 4000,
+    articleSection: "Аудит amoCRM",
+  },
+
+  "amocrm-ready-solutions": {
+    slug: "amocrm-ready-solutions",
+    title: "Виджеты «Про Автоматизация» для amoCRM - готовые решения",
+    shortName: "Виджеты «Про Автоматизация» для amoCRM",
+    description:
+      "Виджеты для amoCRM от «Про Автоматизация»: распределение сделок, Telegram-уведомления, дубли, документы, счета, задачи и контроль продаж.",
+    link: "/articles/amocrm-ready-solutions",
+    publishedTime: "2026-04-28T00:00:00Z",
+    modifiedTime: "2026-04-28T00:00:00Z",
+    readTime: "14 минут",
+    wordCount: 3500,
+    articleSection: "Виджеты amoCRM",
+  },
+
+  "amocrm-integration-service": {
+    slug: "amocrm-integration-service",
+    title: "Интеграции amoCRM с внешними сервисами - настройка под бизнес",
+    shortName: "Интеграции amoCRM с внешними сервисами",
+    description:
+      "Настраиваем интеграции amoCRM с сайтом, телефонией, мессенджерами, 1С, МойСклад, СДЭК, hh.ru, платежами, аналитикой и другими сервисами.",
+    link: "/articles/amocrm-integration-service",
+    publishedTime: "2026-04-28T00:00:00Z",
+    modifiedTime: "2026-04-28T00:00:00Z",
+    readTime: "18 минут",
+    wordCount: 4500,
+    articleSection: "Интеграции amoCRM",
+  },
+
+  "amocrm-integration-website": {
+    slug: "amocrm-integration-website",
+    title: "Интеграция amoCRM с сайтом - заявки сразу в CRM",
+    shortName: "Интеграция amoCRM с сайтом",
+    description:
+      "Настраиваем интеграцию amoCRM с сайтом: формы, заявки, источники, задачи, распределение менеджеров, уведомления и контроль обработки лидов.",
+    link: "/articles/amocrm-integration-website",
+    publishedTime: "2026-04-28T00:00:00Z",
+    modifiedTime: "2026-04-28T00:00:00Z",
+    readTime: "16 минут",
+    wordCount: 4000,
+    articleSection: "Интеграции amoCRM",
+  },
+
+  "amocrm-integration-forms": {
+    slug: "amocrm-integration-forms",
+    title: "Интеграция amoCRM с формами заявок - лиды сразу в работу",
+    shortName: "Интеграция amoCRM с формами заявок",
+    description:
+      "Настраиваем интеграцию amoCRM с формами заявок: сайт, квизы, посадочные страницы, источники, задачи, уведомления и контроль обработки лидов.",
+    link: "/articles/amocrm-integration-forms",
+    publishedTime: "2026-04-28T00:00:00Z",
+    modifiedTime: "2026-04-28T00:00:00Z",
+    readTime: "16 минут",
+    wordCount: 4000,
+    articleSection: "Интеграции amoCRM",
+  },
+
+  "amocrm-integration-tel": {
+    slug: "amocrm-integration-tel",
+    title: "Интеграция amoCRM с телефонией - звонки под контролем",
+    shortName: "Интеграция amoCRM с телефонией",
+    description:
+      "Настраиваем интеграцию amoCRM с телефонией: входящие и исходящие звонки, карточки клиентов, задачи, пропущенные вызовы, записи и отчеты.",
+    link: "/articles/amocrm-integration-tel",
+    publishedTime: "2026-04-28T00:00:00Z",
+    modifiedTime: "2026-04-28T00:00:00Z",
+    readTime: "16 минут",
+    wordCount: 4000,
+    articleSection: "Интеграции amoCRM",
+  },
+
+  "amocrm-integration-whatsapp": {
+    slug: "amocrm-integration-whatsapp",
+    title: "Интеграция amoCRM с WhatsApp - переписки и заявки в CRM",
+    shortName: "Интеграция amoCRM с WhatsApp",
+    description:
+      "Настраиваем интеграцию amoCRM с WhatsApp: заявки, переписки, карточки клиентов, задачи, ответственные, история общения и контроль обработки сообщений.",
+    link: "/articles/amocrm-integration-whatsapp",
+    publishedTime: "2026-04-28T00:00:00Z",
+    modifiedTime: "2026-04-28T00:00:00Z",
+    readTime: "16 минут",
+    wordCount: 4000,
+    articleSection: "Интеграции amoCRM",
+  },
+
+  "amocrm-integration-sdec": {
+    slug: "amocrm-integration-sdec",
+    title: "Интеграция amoCRM с СДЭК - доставка из сделки без ручного переноса",
+    shortName: "Интеграция amoCRM с СДЭК",
+    description:
+      "Настраиваем интеграцию amoCRM с СДЭК: передача данных заказа, создание отправлений, трек-номер, статусы доставки, задачи и контроль ошибок.",
+    link: "/articles/amocrm-integration-sdec",
+    publishedTime: "2026-04-28T00:00:00Z",
+    modifiedTime: "2026-04-28T00:00:00Z",
+    readTime: "16 минут",
+    wordCount: 4000,
+    articleSection: "Интеграции amoCRM",
+  },
+
+  "amocrm-integration-hhru": {
+    slug: "amocrm-integration-hhru",
+    title: "Интеграция amoCRM с hh.ru - отклики и кандидаты в CRM",
+    shortName: "Интеграция amoCRM с hh.ru",
+    description:
+      "Настраиваем интеграцию amoCRM с hh.ru: отклики, кандидаты, статусы подбора, задачи рекрутерам, история общения и контроль найма.",
+    link: "/articles/amocrm-integration-hhru",
+    publishedTime: "2026-04-28T00:00:00Z",
+    modifiedTime: "2026-04-28T00:00:00Z",
+    readTime: "16 минут",
+    wordCount: 4000,
+    articleSection: "Интеграции amoCRM",
+  },
+
+  "amocrm-integration-1c": {
+    slug: "amocrm-integration-1c",
+    title: "Интеграция amoCRM с 1С - сделки, счета и статусы без ручного переноса",
+    shortName: "Интеграция amoCRM с 1С",
+    description:
+      "Настраиваем интеграцию amoCRM с 1С: передача клиентов, заказов, счетов, оплат, товаров, статусов и документов между CRM и учетом.",
+    link: "/articles/amocrm-integration-1c",
+    publishedTime: "2026-04-28T00:00:00Z",
+    modifiedTime: "2026-04-28T00:00:00Z",
+    readTime: "16 минут",
+    wordCount: 4000,
+    articleSection: "Интеграции amoCRM",
+  },
+
+  "amocrm-integration-warehouse": {
+    slug: "amocrm-integration-warehouse",
+    title: "Интеграция amoCRM с МойСклад - заказы, остатки и отгрузки в CRM",
+    shortName: "Интеграция amoCRM с МойСклад",
+    description:
+      "Настраиваем интеграцию amoCRM с МойСклад: передача заказов, товаров, остатков, резервов, счетов, отгрузок и статусов без ручного переноса.",
+    link: "/articles/amocrm-integration-warehouse",
+    publishedTime: "2026-04-28T00:00:00Z",
+    modifiedTime: "2026-04-28T00:00:00Z",
+    readTime: "16 минут",
+    wordCount: 4000,
+    articleSection: "Интеграции amoCRM",
+  },
+
+  "amocrm-integration-avito": {
+    slug: "amocrm-integration-avito",
+    title: "Интеграция amoCRM с Авито - заявки и сообщения в CRM",
+    shortName: "Интеграция amoCRM с Авито",
+    description:
+      "Настраиваем интеграцию amoCRM с Авито: передача заявок, сообщений, контактов, источников, ответственных, задач и контроль обработки обращений.",
+    link: "/articles/amocrm-integration-avito",
+    publishedTime: "2026-04-28T00:00:00Z",
+    modifiedTime: "2026-04-28T00:00:00Z",
+    readTime: "16 минут",
+    wordCount: 4000,
+    articleSection: "Интеграции amoCRM",
+  },
+
+  "amocrm-integration-tg": {
+    slug: "amocrm-integration-tg",
+    title: "Интеграция amoCRM с Telegram - заявки, переписки и уведомления в CRM",
+    shortName: "Интеграция amoCRM с Telegram",
+    description:
+      "Настраиваем интеграцию amoCRM с Telegram: заявки из бота и чатов, уведомления менеджерам, контроль задач, история общения и обработка обращений.",
+    link: "/articles/amocrm-integration-tg",
+    publishedTime: "2026-04-28T00:00:00Z",
+    modifiedTime: "2026-04-28T00:00:00Z",
+    readTime: "16 минут",
+    wordCount: 4000,
+    articleSection: "Интеграции amoCRM",
   },
 };
 

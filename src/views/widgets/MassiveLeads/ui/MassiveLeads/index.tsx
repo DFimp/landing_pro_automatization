@@ -22,9 +22,7 @@ export default function MassiveLeads({ searchParams }: WidgetPageProps) {
         <>
           <WidgetHeroContent
             badge={
-              <WidgetHeroBadge>
-                Массовое создание сделок в amoCRM
-              </WidgetHeroBadge>
+              <WidgetHeroBadge>{widget.seoTitle}</WidgetHeroBadge>
             }
             title="Создавайте сотни сделок за секунды!"
             description="Автоматизируйте создание сделок для всех ваших контактов одним нажатием. Забудьте о рутинной работе, виджет сделает все за вас быстро и без ошибок."

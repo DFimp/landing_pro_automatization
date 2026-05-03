@@ -23,7 +23,7 @@ export default function HidingData({
       preInstruction={(
           <>
             <WidgetHeroSection>
-                <WidgetHeroBadge>Скрытие данных в amoCRM</WidgetHeroBadge>
+                <WidgetHeroBadge>{widget.seoTitle}</WidgetHeroBadge>
 
                 <h2 className="mt-10 font-semibold text-white text-[clamp(36px,6vw,64px)] leading-[1.05] max-[480px]:mt-5 max-[480px]:text-[clamp(26px,8.5vw,34px)] max-[480px]:leading-[1.12]">
                   Ограничьте видимость интерфейса для разных сотрудников без сложных прав

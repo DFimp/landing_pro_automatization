@@ -22,9 +22,7 @@ export default function FeedFilter({ searchParams }: WidgetPageProps) {
         <>
           <WidgetHeroContent
             badge={
-              <WidgetHeroBadge>
-                Фильтр ленты событий в сделке amoCRM
-              </WidgetHeroBadge>
+              <WidgetHeroBadge>{widget.seoTitle}</WidgetHeroBadge>
             }
             title="Смотрите только нужные события, без шума и прокрутки"
             description="Переключайтесь между задачами, примечаниями, письмами, звонками и чатами одним кликом. Виджет скрывает лишнее, прячет пустые даты и автоматически применяет фильтр при догрузке ленты."

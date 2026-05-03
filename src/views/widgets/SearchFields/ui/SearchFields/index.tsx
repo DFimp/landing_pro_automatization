@@ -25,9 +25,7 @@ export default function SearchFields({ searchParams }: WidgetPageProps) {
         <>
           <WidgetHeroContent
             badge={
-              <WidgetHeroBadge>
-                Поиск по списку в amoCRM
-              </WidgetHeroBadge>
+              <WidgetHeroBadge>{widget.seoTitle}</WidgetHeroBadge>
             }
             title="Находите нужные поля и значения в карточке за секунды"
             description="Виджет добавляет поиск по полям, выпадающим спискам и multisuggest прямо в карточках сделок, контактов и компаний. Команда быстрее заполняет данные, тратит меньше времени на прокрутку и реже ошибается при выборе значений."

@@ -1,4 +1,4 @@
-import { WIDGETS } from "./widgets";
+﻿import { WIDGETS } from "./widgets";
 
 export const SITE_URL = "https://pro-automatization.ru";
 
@@ -27,6 +27,146 @@ export const ARTICLES_ROUTES = {
   QUICK_SETUP: {
     path: "/articles/amocrm-quick-setup",
     name: "Быстрая настройка amoCRM",
+  },
+  BUSINESS_PROCESS_IMPLEMENTATION: {
+    path: "/articles/amocrm-business-process-implementation",
+    name: "Внедрение amoCRM - не просто настройка CRM",
+  },
+  REMOVE_MANUAL_WORK: {
+    path: "/articles/amocrm-remove-manual-work",
+    name: "Автоматизация отдела продаж в amoCRM",
+  },
+  STANDARD_SOLUTIONS: {
+    path: "/articles/amocrm-standard-solutions",
+    name: "Виджеты для amoCRM",
+  },
+  RUINED_SALES: {
+    path: "/articles/amocrm-ruined-sales",
+    name: "Дубли в amoCRM",
+  },
+  WORKING_CRM: {
+    path: "/articles/amocrm-working-crm",
+    name: "Настройка amoCRM",
+  },
+  LEAD_CONTROL: {
+    path: "/articles/amocrm-lead-control",
+    name: "Контроль заявок в amoCRM",
+  },
+  COST_DEPENDENCE: {
+    path: "/articles/amocrm-cost-dependence",
+    name: "Цена настройки amoCRM",
+  },
+  CHECK_SETTINGS: {
+    path: "/articles/amocrm-check-settings",
+    name: "CRM-аудит amoCRM",
+  },
+  INCORRECT_SETTINGS: {
+    path: "/articles/amocrm-incorrect-settings",
+    name: "Неправильная настройка amoCRM",
+  },
+  REAL_HELP: {
+    path: "/articles/amocrm-real-help",
+    name: "Автоматические задачи в amoCRM",
+  },
+  NOTICE_IN_TG: {
+    path: "/articles/amocrm-notice-in-tg",
+    name: "Уведомления из amoCRM в Telegram",
+  },
+  REPORTS_MANAGER: {
+    path: "/articles/amocrm-reports-manager",
+    name: "Отчеты руководителю отдела продаж в amoCRM",
+  },
+  SETTING_ITSELF: {
+    path: "/articles/amocrm-setting-itself",
+    name: "Почему CRM не работает сама по себе",
+  },
+  APPLICATION_RULES: {
+    path: "/articles/amocrm-application-rules",
+    name: "Регламент обработки заявок в amoCRM",
+  },
+  IMPLEMENT_ERRORS: {
+    path: "/articles/amocrm-implement-errors",
+    name: "Ошибки внедрения amoCRM",
+  },
+  SALES_DEPARTMENT: {
+    path: "/articles/amocrm-sales-department",
+    name: "До и после автоматизации amoCRM",
+  },
+  WHAT_CHOOSE: {
+    path: "/articles/amocrm-what-choose",
+    name: "Виджет или разработка для amoCRM",
+  },
+  CHOOSE_CONTRACTOR: {
+    path: "/articles/amocrm-choose-contractor",
+    name: "Как выбрать подрядчика по amoCRM",
+  },
+  FUNNELS_TASKS_CONTROL: {
+    path: "/articles/amocrm-funnels-tasks-control",
+    name: "Настройка amoCRM для отдела продаж",
+  },
+  SUPPORT: {
+    path: "/articles/amocrm-support",
+    name: "Сопровождение amoCRM после внедрения",
+  },
+  IMPLEMENT_ORDER: {
+    path: "/articles/amocrm-implement-order",
+    name: "Заказать внедрение amoCRM",
+  },
+  BUY_WIDGET: {
+    path: "/articles/amocrm-buy-widget",
+    name: "Купить виджет amoCRM",
+  },
+  AUDIT_ORDER: {
+    path: "/articles/amocrm-audit-order",
+    name: "Заказать аудит amoCRM",
+  },
+  READY_SOLUTIONS: {
+    path: "/articles/amocrm-ready-solutions",
+    name: "Виджеты «Про Автоматизация» для amoCRM",
+  },
+  INTEGRATION_SERVICE: {
+    path: "/articles/amocrm-integration-service",
+    name: "Интеграции amoCRM с внешними сервисами",
+  },
+  INTEGRATION_WEBSITE: {
+    path: "/articles/amocrm-integration-website",
+    name: "Интеграция amoCRM с сайтом",
+  },
+  INTEGRATION_FORMS: {
+    path: "/articles/amocrm-integration-forms",
+    name: "Интеграция amoCRM с формами заявок",
+  },
+  INTEGRATION_TEL: {
+    path: "/articles/amocrm-integration-tel",
+    name: "Интеграция amoCRM с телефонией",
+  },
+  INTEGRATION_WHATSAPP: {
+    path: "/articles/amocrm-integration-whatsapp",
+    name: "Интеграция amoCRM с WhatsApp",
+  },
+  INTEGRATION_SDEC: {
+    path: "/articles/amocrm-integration-sdec",
+    name: "Интеграция amoCRM с СДЭК",
+  },
+  INTEGRATION_HHRU: {
+    path: "/articles/amocrm-integration-hhru",
+    name: "Интеграция amoCRM с hh.ru",
+  },
+  INTEGRATION_1C: {
+    path: "/articles/amocrm-integration-1c",
+    name: "Интеграция amoCRM с 1С",
+  },
+  INTEGRATION_WAREHOUSE: {
+    path: "/articles/amocrm-integration-warehouse",
+    name: "Интеграция amoCRM с МойСклад",
+  },
+  INTEGRATION_AVITO: {
+    path: "/articles/amocrm-integration-avito",
+    name: "Интеграция amoCRM с Авито",
+  },
+  INTEGRATION_TG: {
+    path: "/articles/amocrm-integration-tg",
+    name: "Интеграция amoCRM с Telegram",
   },
 } as const;
 

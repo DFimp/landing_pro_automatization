@@ -24,9 +24,7 @@ export default function ColorFields({ searchParams }: WidgetPageProps) {
         <>
           <WidgetHeroContent
             badge={
-              <WidgetHeroBadge>
-                Подсветка полей в amoCRM
-              </WidgetHeroBadge>
+              <WidgetHeroBadge>{widget.seoTitle}</WidgetHeroBadge>
             }
             title="Выделяйте ключевые поля и значения в карточке сделки цветом"
             description="Виджет помогает команде быстрее считывать важные данные в карточке сделки. Для каждой воронки можно собрать свой список полей, отдельно настроить цвет названия и значения, а для списков и числовых полей задать собственные сценарии подсветки."

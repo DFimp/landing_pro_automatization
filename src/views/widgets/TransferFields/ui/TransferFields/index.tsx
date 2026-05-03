@@ -21,9 +21,7 @@ export default function TransferFields({ searchParams }: WidgetPageProps) {
         <>
           <WidgetHeroContent
             badge={
-              <WidgetHeroBadge>
-                Перенос длинных названий полей в amoCRM
-              </WidgetHeroBadge>
+              <WidgetHeroBadge>{widget.seoTitle}</WidgetHeroBadge>
             }
             title="Длинные названия полей без обрезки и наложений"
             description="Виджет автоматически переносит длинные названия полей в карточках amoCRM, убирает многоточия и делает текст полностью читаемым. Больше никаких наложений строк и обрезанных заголовков в важных пользовательских полях."
